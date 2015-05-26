@@ -2,16 +2,69 @@ Let $F$ be a field and let $n \in \Z^+$.
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.1]   Prove that $|GL_2(\F_2)| = 6$.
+
+      \textbf{Solution.} Use Exercise 1.4.7 (set $p = 2$).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.2]   Write out all the elements of $GL_2(\F_2)$ and compute the
                   order of each element.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.3]   Show that $GL_2(\F_2)$ is non-abelian.
+
+      \textbf{Solution.}
+      \begin{center}
+         \begin{tabular}{@{}|c|c|@{}} \hline
+            Matrix in $GL_2(\F_2)$           & Order  \\ \hline            
+            $\left(\begin{tabular}{@{}cc@{}}
+               1 & 0 \\
+               0 & 1
+            \end{tabular}\right)$            & 1      \\ \hline           
+            $\left(\begin{tabular}{@{}cc@{}}
+               1 & 0 \\
+               1 & 1
+            \end{tabular}\right)$            & 2      \\ \hline           
+            $\left(\begin{tabular}{@{}cc@{}}
+               1 & 1 \\
+               0 & 1
+            \end{tabular}\right)$            & 2      \\ \hline           
+            $\left(\begin{tabular}{@{}cc@{}}
+               1 & 1 \\
+               1 & 0
+            \end{tabular}\right)$            & 3      \\ \hline           
+            $\left(\begin{tabular}{@{}cc@{}}
+               0 & 1 \\
+               1 & 0
+            \end{tabular}\right)$            & 2      \\ \hline           
+            $\left(\begin{tabular}{@{}cc@{}}
+               0 & 1 \\
+               1 & 1
+            \end{tabular}\right)$            & 3      \\ \hline
+         \end{tabular}
+      \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.4]   Show that if $n$ is not prime then $\Z/n\Z$ is not a field.
+
+      \textbf{Proof.} Suppose that $n$ is not prime. Then there exist positive
+      integers $a$ and $b$, with $1 < a \le b < n$, such that $n = ab$. Now
+      suppose to the contrary that $\Z/n\Z$ is a field. Since $a$ is not 0 in
+      $\Z/n\Z$ it must have a multiplicative inverse, say $a^{-1}$, so that
+      $b \equiv a^{-1}(ab) \equiv a^{-1}n \equiv 0$ mod $n$, a contradiction
+      since $1 < b < n$. It follows that $\Z/n\Z$ is not a field. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.5]   Show that $GL_n(F)$ is a finite group if and only if $F$ has a
                   finite number of elements.
+
+      \textbf{Proof.} ($\Leftarrow$) Suppose $|F| = m$. Let $M_n(F)$ be the
+      set of $n \times n$ matrices with entries in $F$. Clearly
+      $GL_n(F) \subset M_n(F)$; since $|M_n(F)| = m^{n^2}$, it follows that
+      $GL_n(F)$ is finite.
+
+      ($\Rightarrow$) We shall instead prove the contrapositive in this
+      direction. So suppose $F$ is infinite, so that $F^\times$ is also
+      infinite. Then the set $\left\{\left(\begin{tabular}{@{}cc@{}}
+         $a$ & 0 \\
+         0 & 1
+      \end{tabular}\right) : a \in F^\times\right\}$ is not only infinite but 
+      also a subset of $GL_n(F)$. Thus $GL_n(F)$ is infinite, as desired. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.6]   If $|F| = q$ is finite prove that $|GL_n(F)| < q^{n^2}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
