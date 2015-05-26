@@ -1,0 +1,442 @@
+\noindent \textbf{Computations}
+
+\noindent In Exercises 1 through 4 concern the binary operation $*$ defined on
+$S = \{a, b, c, d, e\}$ by means of Table 2.26.
+
+$$   
+   \begin{tabular}{@{}c | c | c | c | c | c@{}} 
+      \multicolumn{6}{c}{\textbf{2.26 Table}} \\
+      $*$ & $a$ & $b$ & $c$ & $d$ & $e$ \\ \hline
+      $a$ & $a$ & $b$ & $c$ & $b$ & $d$ \\ \hline
+      $b$ & $b$ & $c$ & $a$ & $e$ & $c$ \\ \hline
+      $c$ & $c$ & $a$ & $b$ & $b$ & $a$ \\ \hline
+      $d$ & $b$ & $e$ & $b$ & $e$ & $d$ \\ \hline
+      $e$ & $d$ & $b$ & $a$ & $d$ & $c$
+   \end{tabular} \qquad
+   \begin{tabular}{@{}c | c | c | c | c@{}} 
+      \multicolumn{5}{c}{\textbf{2.27 Table}} \\
+      $*$ & $a$ & $b$ & $c$ & $d$ \\ \hline
+      $a$ & $a$ & $b$ & $c$ & $ $ \\ \hline
+      $b$ & $b$ & $d$ & $ $ & $c$ \\ \hline
+      $c$ & $c$ & $a$ & $d$ & $b$ \\ \hline
+      $d$ & $d$ & $ $ & $ $ & $a$
+   \end{tabular} \qquad
+   \begin{tabular}{@{}c | c | c | c | c@{}} 
+      \multicolumn{5}{c}{\textbf{2.28 Table}} \\
+      $*$ & $a$ & $b$ & $c$ & $d$ \\ \hline
+      $a$ & $a$ & $b$ & $c$ & $d$ \\ \hline
+      $b$ & $b$ & $a$ & $c$ & $d$ \\ \hline
+      $c$ & $c$ & $d$ & $c$ & $d$ \\ \hline
+      $d$ & $ $ & $ $ & $ $ & $ $
+   \end{tabular}
+$$
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.1] Compute $b * d$, $c * c$, and $[(a * c) * e] * a$.
+
+      \textbf{Solution:} Using Table 2.26, we get the following
+
+      $b * d = e$, $c * c = b$, $[(a * c) * e] * a = (c * e) * e = a * e = d$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.2] $(a * b) * c$ and $a * (b * c)$. Can you say on the basis of these
+              computations whether $*$ is associative?
+
+      \textbf{Solution:} Using Table 2.26, we have $(a * b) * c = a$ and
+      $a * (b * c) = a$. No, we can't conclude that $*$ is associative because
+      we haven't shown that associativity holds for all possible elements of
+      $S$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.3] $(b * d) * c$ and $b * (d * c)$. Can you say on the basis of these
+              computations whether $*$ is associative?
+
+      \textbf{Solution:} Using Table 2.26, we have $(b * d) * c = a$ and
+      $b * (d * c) = c$. Since $(b * d) * c \neq b * (d * c) = c$, we can
+      conclude that $*$ is not associative. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.4] Is $*$ commutative? Why?
+
+      \textbf{Solution:} Since $e * b \neq b * e$, it follows that $*$ is not
+      commutative.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.5] Complete Table 2.27 so as to define a commutative binary operation
+              $*$ on $S = \{a, b, c, d\}$.
+
+      \textbf{Solution:} $$ 
+         \begin{tabular}{@{}c | c | c | c | c@{}}
+            $*$ & $a$ & $b$ & $c$ & $d$ \\ \hline
+            $a$ & $a$ & $b$ & $c$ & $d$ \\ \hline
+            $b$ & $b$ & $d$ & $a$ & $c$ \\ \hline
+            $c$ & $c$ & $a$ & $d$ & $b$ \\ \hline
+            $d$ & $d$ & $c$ & $b$ & $a$
+         \end{tabular}
+      $$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.6] Table 2.28 can be completed to define an associate binary
+              operation $*$ on $S = \{a, b, c, d\}$. Assume this is possible and
+              compute the missing entries.
+
+      \textbf{Solution:} Assume that $*$ is associative in Table 2.28. Thus
+      $(c * b) * a = c * (b * a)$, so that $d * a = d$. Replace the $a$ with
+      $b$, $c$, and $d$ to complete the Table.
+      $$ 
+         \begin{tabular}{@{}c | c | c | c | c@{}}
+            $*$ & $a$ & $b$ & $c$ & $d$ \\ \hline
+            $a$ & $a$ & $b$ & $c$ & $d$ \\ \hline
+            $b$ & $b$ & $a$ & $c$ & $d$ \\ \hline
+            $c$ & $c$ & $d$ & $c$ & $d$ \\ \hline
+            $d$ & $d$ & $c$ & $c$ & $d $
+         \end{tabular}
+      $$
+\end{enumerate}
+
+\noindent In Exercises 7 through 11, determine whether the binary operation $*$
+          defined is commutative and whether $*$ is associative.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.7] $*$ defined on $\Z$ by letting $a * b = a - b$.
+
+      \textbf{Solution:} We have that $- 5 = 2 * 7 \neq 7 * 2 = 5$ and
+      $-6 = (2 * 7) * 1 \neq 2 * (7 * 1) = -4$ so that $*$ is neither 
+      commutative nor associative.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.8] $*$ defined on $\Q$ by letting $a * b = ab + 1$.
+
+      \textbf{Solution:} Let $q_1$ and $q_2$ be rational numbers. Then we have
+      that $q_1q2 + 1 = q_2q_1 + 1$ so that $q_1 * q_2 = q_2 * q_1$. Hence $*$
+      is commutative. However $*$ is not associative since
+      $1 = 0 * (0 * 1) \neq (0 * 0) * 1 = 2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.9] $*$ defined on $\Q$ by letting $a * b = ab/2$.
+
+      \textbf{Solution:} Let $q_1$, $q_2$, and $q_3$ be rational numbers. Then 
+      we have that $q_1q2/2 = q_2q_1/2$ so that $q_1 * q_2 = q_2 * q_1$. Hence 
+      $*$ is commutative. Also $*$ is associative since
+      $q_1 * (q_2 * q_3) = (q_1 * q_2) * q_3 = q_1q_2q_3/4$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.10] $*$ defined on $\Z^+$ by letting $a * b = 2^{ab}$.
+
+      \textbf{Solution:} Let $z_1$ and $z_2$ be positive integers. Then we have
+      that $2^{z_1z2} = 2^{z_2z_1}$ so that $z_1 * z_2 = z_2 * z_1$. Hence $*$
+      is commutative. However $*$ is not associative since
+      $64 = 3 * (1 * 1) \neq (3 * 1) * 1 = 256$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.11] $*$ defined on $\Z^+$ by letting $a * b = a^b$.
+
+      \textbf{Solution:} The binary operation $*$ is neither commutative nor 
+      associative because $1 = 1 * 2 \neq 2 * 1 = 2$ and
+      $4 = (2 * 1) * 2 \neq 2 * (1 * 2) = 2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.12] Let $S$ be a set having exactly one element. How many different
+               binary operations can be defined on $S$? Answer the question if
+               $S$ has exactly 2 elements; exactly 3 elements; exactly $n$ 
+               elements.
+
+      \textbf{Solution:} We shall solve the general case. Suppose a set $S$ has
+      $n$ elements. The set $S \times S$ will then have $n^2$ elements. Since
+      each binary operation will assign an element in $S \times S$ to an element
+      in $S$, we must have $n^{n^2}$ possible binary operations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.13] How many different commutative binary operations can be defined 
+               on a set of 2 elements? on a set of 3 elements? on a set of $n$
+               elements?
+
+      \textbf{Solution:} We shall solve the general case. Suppose a set $S$ has
+      $n$ elements. In order for a binary operation on $S$ to be commutative, it
+      has to treat the pairs in $S \times S$ as unordered. Since the number of
+      unordered pairs in $S \times S$ is $\binom{n}{2} + n$, it follows that we 
+      have to assign one of $n$ elements to $\binom{n}{2} + n$ (the second 
+      term comes form the pairs of the form $(s, s))$ elements. Thus we have
+      $$n^{\binom{n}{2} + n} \mbox{ binary operations}.$$
+
+\end{enumerate}
+
+\noindent \textbf{Concepts}
+
+\noindent In Exercises 14 through 16, correct the definition of the italicized
+          term without reference to the text, if correction is needed, so that
+          it is in a form acceptable for publication.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.14] A binary operation $*$ is \textit{commutative} if and only if
+               $a * b = b * a$.
+
+      \textbf{Solution:} A binary operation $*$ on a set $S$ is
+      \textit{commutative} if and only if for all $a, b \in S$, we have
+      $a * b = b * a$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.15] A binary operation $*$ on a set $S$ is \textit{associative} if
+               and only if, for all $a, b, c \in S$, we have
+               $(b * c) * a = b * (c * a)$.
+
+      \textbf{Solution:} No correction needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.16] A subset $H$ of a set $S$ is \textit{closed} under a binary
+               operation $*$ on $S$ if and only if $(a * b) \in H$ for all
+               $a, b \in S$.
+
+      \textbf{Solution:} A subset $H$ of a set $S$ is \textit{closed} under a 
+      binary operation $*$ on $S$ if and only if $(a * b) \in H$ for all
+      $a, b \in H$.
+\end{enumerate}
+
+\noindent In Exercises 17 through 22, determine whether the definition of $*$
+          does give a binary operation on the set. In the event that $*$ is not
+          a binary operation, state whether Condition 1, Condition 2, or both of
+          these conditions on page 24 are violated.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.17] On $\Z^+$, define $*$ by letting $a * b = a - b$.
+
+      \textbf{Solution:} Condition 2 is violated, for $2 * 7 = -5 \notin \Z^+$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.18] On $\Z^+$, define $*$ by letting $a * b =  a^b$.
+
+      \textbf{Solution:} The operation is well defined.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.19] On $\R$, define $*$ by letting $a * b = a - b$.
+
+      \textbf{Solution:} The operation is well defined.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.20] On $\Z^+$, define $*$ by letting $a * b = c$, where $c$ is the
+               smallest integer greater than both $a$ and $b$.
+
+      \textbf{Solution:} The operation is well defined.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.21] On $\Z^+$, define $*$ by letting $a * b = c$, where $c$ is at
+               least 5 more than $a + b$.
+
+      \textbf{Solution:} Condition 1 is violated, for any integer greater than 6
+      could be assigned to $1 * 1$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.22] On $\Z^+$, define $*$ by letting $a * b = c$, where $c$ is the
+               largest integer less than the product of $a$ and $b$.
+
+      \textbf{Solution:} Condition 2 is violated, for $1 * 1 = 0 \notin \Z^+$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.23] Let $H$ be the subset of $M_2(\R)$ consisting of all matrices of
+               the form $\left[
+               \begin{tabular}{@{}l r@{}} 
+                  $a$ & $-b$ \\ 
+                  $b$ & $a$
+               \end{tabular}\right]$
+               for $a, b \in \R$. Is $H$ closed under \\
+               \textbf{a} matrix addition \qquad\qquad\qquad\qquad
+               \textbf{b} matrix multiplication
+
+      \textbf{Solution:} Let $\left[
+      \begin{tabular}{@{}l r@{}} 
+         $a_1$ & $-b_1$ \\ 
+         $b_1$ & $a_1$
+      \end{tabular}\right]$ and $\left[
+      \begin{tabular}{@{}l r@{}} 
+         $a_2$ & $-b_2$ \\ 
+         $b_2$ & $a_2$
+      \end{tabular}\right]$
+      be members of $H$. Since
+      \begin{align*}
+         \left[
+         \begin{tabular}{@{}l r@{}} 
+            $a_1$ & $-b_1$ \\ 
+            $b_1$ & $a_1$
+         \end{tabular}\right] + \left[
+         \begin{tabular}{@{}l r@{}} 
+            $a_2$ & $-b_2$ \\ 
+            $b_2$ & $a_2$
+         \end{tabular}\right] &= \left[
+         \begin{tabular}{@{}l r@{}} 
+            $a_1 + a_2$ & $-(b_1 + b_2)$ \\ 
+            $b_1 + b_2$ & $a_1 + a_2$
+         \end{tabular}\right] \in H \mbox{ and } \\
+         \left[
+         \begin{tabular}{@{}l r@{}} 
+            $a_1$ & $-b_1$ \\ 
+            $b_1$ & $a_1$
+         \end{tabular}\right] \cdot \left[
+         \begin{tabular}{@{}l r@{}} 
+            $a_2$ & $-b_2$ \\ 
+            $b_2$ & $a_2$
+         \end{tabular}\right] &= \left[
+         \begin{tabular}{@{}l r@{}} 
+            $a_1a_2 - b_1b_2$ & $-(a_1b_2 + a_2b_1)$ \\ 
+            $a_1b_2 + a_2b_1$ & $a_1a_2 - b_1b_2$
+         \end{tabular}\right] \in H,
+      \end{align*}
+      it follows that $H$ is closed under addition and multiplication.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.24] Mark each of the following true or false.
+
+      \textbf{Solution:}
+
+      \begin{tabularx}{\linewidth}{@{}c c X@{}} 
+         F & \textbf{a.} & If $*$ is any binary operation on any set $S$, then
+                           $a * a = a$ for all $a \in S$. \\
+         T & \textbf{b.} & If $*$ is any commutative binary operation on any 
+                           set $S$, then $a * (b * c) = (b * c) * a$ for all 
+                           $a, b, c \in S$. \\
+         F & \textbf{c.} & If $*$ is any associative binary operation on any 
+                           set $S$, then $a * (b * c) = (b * c) * a$ for all 
+                           $a, b, c \in S$. \\
+         F & \textbf{d.} & The only binary operations of any importance are 
+                           those defined on sets of numbers. \\
+         F & \textbf{e.} & A binary operation $*$ on a set $S$ is commutative
+                           if there exist $a, b \in S$ such that
+                           $a * b = b * a$. \\
+         T & \textbf{f.} & Every binary operation defined on a set having
+                           exactly one element is both commutative and 
+                           associative. \\
+         T & \textbf{g.} & A binary operation on a set $S$ assigns at least 
+                           one element of $S$ to each ordered pair of elements
+                           of $S$. \\
+         T & \textbf{h.} & A binary operation on a set $S$ assigns at most one
+                           element of $S$ to each ordered pair of elements of
+                           $S$. \\
+         T & \textbf{i.} & A binary operation on a set $S$ assigns exactly one
+                           element of $S$ to each ordered pair of elements of
+                           $S$. \\
+         F & \textbf{j.} & A binary operation on a set $S$ may assign more 
+                           than one element of $S$ to some ordered pair of 
+                           elements of $S$.
+      \end{tabularx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.25] Give a set different from any of those described in the examples
+               of the text and not a set of numbers. Define two different binary
+               operations $*$ and $*'$ on this set. Be sure that your set is
+               \textit{well defined}.
+
+      \textbf{Solution:} Let $P$ be the set of all mathematical statements. Let
+      $p$ and $q$ be statements. We say the statement $p \land q$ is true if and
+      only if $p$ is true and $q$ is true. Also ${\sim}p$ is true iff $p$ is
+      false. So for every, $p_1, p_2 \in P$, define
+      $$*(p_1, p_2) = p_1 \land p_2 \qquad \mbox{ and }
+        *'(p_1, p_2) = {\sim}p_1 \land {\sim}p_2.$$
+\end{enumerate}
+
+\noindent \textbf{Theory}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.26] Prove that if $*$ is an associative and commutative binary
+               operation on a set $S$, then
+               $$(a * b) * (c * d) = [(d * c) * a] * b$$
+               for all $a, b, c, d \in S$. Assume the associative law only for
+               triples as in the definition, that is, assume only
+               $$(x * y) * z =  x * (y * z)$$
+               for all $x, y, z \in S$.
+
+      \textbf{Solution:} Let $*$ be an associative and commutative binary
+               operation on a set $S$. Let $a, b, c, d$ be members of $S$.
+      \begin{align*}
+         (a * b) * (c * d) &= (c * d) * (a * b) &\qquad[\text{Commutativity}] \\
+            &= (d * c) * (a * b) &\qquad [\text{Commutativity}] \\
+            &= [(d * c) * a] * b &\qquad [\text{Associativity}]
+      \end{align*}
+\end{enumerate}
+
+\noindent In Exercises 27 and 28, either prove the statement or give a 
+          counterexample.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.27] Every binary operation on a set consisting of a single element is
+               both commutative and asssociative.
+
+      \textbf{Solution:} Let $S = \{s\}$ be a set with a single element. Let 
+      $*$ be any binary operation on $S$. Since $S$ has a single element, it 
+      must necessrily be the case that $*(s, s) = s$. Now consider
+      $a, b, c \in S$. Again since $S$ has a single element, we must have that
+      $a = b = c = s$. Thus $a * b = s * s = b * a = s$, and $a * (b * c) =
+      (a * b) * c = s$, so that $*$ is both commutative and associative.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.28] Every commutative binary operation on a set having just two
+               elements is associative.
+
+      \textbf{Solution:} False. Suppose $*$ is a commutative binary operation
+      on $A = \{a, b\}$ defined by $*(a, b) = *(b, a) = *(b, b) = a$ and
+      $*(a, a) = b$. Since $(a * b) * b = a \neq b = a * (b * b)$, it follows
+      that $*$ is not associative.
+\end{enumerate}
+
+\noindent Let $F$ be the set of all real-valued functions having as domain the
+          set $\R$ of all real numbers. Example 2.7 defined the binary 
+          operations $+, -, \cdot$, and $\circ$ on $F$. In Exercises 29 through
+          35, either prove the given statement or give a counterexample.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.29] Function addition $+$ on $F$ is associative.
+
+      \textbf{Solution:} True. This follows from the associativity of addition 
+      on the real numbers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.30] Function subtraction $-$ on $F$ is commutative.
+
+      \textbf{Solution:} False. This follows from the non-commutativity of the
+      $-$ operation on the real numbers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.31] Function subtraction $-$ on $F$ is associative.
+
+      \textbf{Solution:} False. This follows from the non-associativity of the
+      $-$ operation on the real numbers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.32] Function multiplication $\cdot$ on $F$ is commutative.
+
+      \textbf{Solution:} True. This follows from the commutativity of the
+      $\cdot$ operation on the real numbers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.33] Function multiplication $\cdot$ on $F$ is associative.
+
+      \textbf{Solution:} True. This follows from the associativity of the
+      $\cdot$ operation on the real numbers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.34] Function composition $\circ$ on $F$ is commutative.
+
+      \textbf{Solution:} False. Let $f(x) = x^2$ and $g(x) = \sin(x)$. Then
+      $(f \circ g)(2\pi) = 0 \neq (g \circ f)(2\pi)$, so that
+      $f \circ g \neq g \circ f$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.35] If $*$ and $*'$ are any two binary operations on a set $S$, then
+               $$a * (b *' c) = (a * b) *' (a * c) \quad \mbox{ for all }
+                 a, b, c \in S.$$
+
+      \textbf{Solution:} False. This is immediately clear if we let $*$ and $*'$
+      be the addition and multiplication operations on $S = \R$. It follows that
+      $2 + (0 \times 0) = 2 \neq 4 = (2 + 0) \times (2 + 0)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.36] Suppose that $*$ is an \textit{associative binary} operation on
+               a set $S$. Let
+               $H = \{a \in S : a * x = x * a \mbox{ for all } x \in S\}$. Show
+               that $H$ is closed under $*$.
+
+      \textbf{Proof:} If $S$ is empty then we are done, so assume that
+      $S \neq \{\}$. Let $h_1, h_2 \in H$, and let $s \in S$. Then
+      \begin{align*}
+         (h_1 * h_2) * s &= h_1 * (h_2 * s) &\qquad[\text{Associativity}] \\
+            &= h_1 * (s * h_2) &\qquad [h_2 \in H] \\
+            &= (h_1 * s) * h_2 &\qquad [\text{Associativity}] \\
+            &= (s * h_1) * h_2 &\qquad [h_1 \in H] \\
+            &= s * (h_1 * h_2), &\qquad [\text{Associativity}] \\
+      \end{align*}
+      so that $h_1 * h_2 \in H$; that is, $H$ is closed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.37%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.37] Suppose that $*$ is an associative and commutative binary
+               operation on a set $S$. Show that $H = \{a \in S : a * a = a\}$
+               is closed under $*$. (The elements of $H$ are
+               \textbf{idempotents} of the binary operation $*$.)
+
+      \textbf{Proof:} If $S$ is empty then we are done, so assume that
+      $S \neq \{\}$. Let $h_1$ and $h_2$ be idempotents of $*$. Then
+      \begin{align*}
+         (h_1 * h_2) * (h_1 * h_2) &= h_1 * [h_2 * (h_1 * h_2)]
+            &\qquad[\text{Associativity}] \\
+            &= h_1 * [h_2 * (h_2 * h_1)] &\qquad[\text{Commutativity}] \\
+            &= h_1 * [(h_2 * h_2) * h_1] &\qquad[\text{Associativity}] \\
+            &= h_1 * (h_2 * h_1) &\qquad[h_2 \text{ is idempotent}] \\
+            &= h_1 * (h_1 * h_2) &\qquad[\text{Commutativity}] \\
+            &= (h_1 * h_1) * h_2 &\qquad[\text{Associativity}] \\
+            &= h_1 * h_2, &\qquad[h_1 \text{ is idempotent}]
+      \end{align*}
+      so that $h_1 * h_2$ is also idempotent; that is, $H$ is closed.
+\end{enumerate}

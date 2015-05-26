@@ -1,0 +1,1103 @@
+\begin{enumerate}
+   \item[]        Let $G$ be a group.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Lemm1.1.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[]        \textbf{Lemma 1.1.1} Let $x \in G$ and let $m$ be an integer.
+                  Then we have that
+                  $$x^{m+1} = x^mx^1.$$
+
+      \textbf{Proof.}  Consider the following cases:
+
+      \textbf{Case 1:} \textit{$m = 0$}. It follows that
+      $$x^{m+1} = x^{0+1} = x^1 = 1x^1 = x^0x^1 = x^mx^1.$$
+
+      \textbf{Case 2:} \textit{$m$ is positive.} Then it follows that $m + 1$ is 
+      positive, so that
+      \begin{align*}
+         x^{m + 1} &= \underbrace{x \cdot x \cdots x}_{m+1\text{ factors}} \\
+            &= \underbrace{x \cdot x \cdots x}_{m\text{ factors}} \cdot x^1 \\
+            &= x^mx^1.
+      \end{align*}
+
+      \textbf{Case 3:} \textit{$m$ is negative.} If $m = -1$, then we have that
+      $$x^{m+1} = x^{-1+1} = x^0 = 1 = x^{-1}x^1 = x^mx^1.$$
+      If $m < -1$, then $m + 1$ is negative, so that $-(m + 1) = -m - 1$ is 
+      positive. Thus
+      \begin{align*}
+         x^mx^1 &= x^{-(-m)}x^1 \\
+                &= \underbrace{x^{-1} \cdot x^{-1} \cdots x^{-1}}_{
+                   -m\text{ factors}} \cdot x^1 \\
+                &= \underbrace{x^{-1} \cdot x^{-1} \cdots x^{-1}}_{
+                   -m-1\text{ factors}} \cdot (x^{-1} \cdot x^1) \\
+                &= \underbrace{x^{-1} \cdot x^{-1} \cdots x^{-1}}_{
+                   -m-1\text{ factors}} \\
+                &= x^{-(-m-1)} \\
+                &= x^{m+1}.
+      \end{align*}
+
+      In all cases, we can see that our assertion holds. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Lemm1.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[]        \textbf{Lemma 1.1.2} \textit{Let $x$ and $g$ be members of a 
+                  group $G$, and let $n$ be a positive integer, then it follows 
+                  that $(g^{-1}xg)^n = g^{-1}x^ng$.}
+
+      \textbf{Proof.} We shall show by induction that the equation
+      \begin{equation}
+         (g^{-1}xg)^n = g^{-1}x^ng \label{l1_1_2_1}
+      \end{equation}
+      holds for every positive integer $n$. It is clear that equation
+      \eqref{l1_1_2_1} holds for $n = 1$. So assume that it also holds for some
+      positive integer $k$. So we must now show that the equation also holds for 
+      $k + 1$. Thus
+      \begin{align*}
+         (g^{-1}xg)^{k+1} &= (g^{-1}xg)^kg^{-1}xg &[\text{Execise 1.1.19}] \\
+                     &= g^{-1}x^kgg^{-1}xg &[\text{Inductive hypothesis}] \\
+                     &= g^{-1}x^kxg \\
+                     &= g^{-1}x^{k+1}g,
+      \end{align*}
+      so that equation \eqref{l1_1_2_1} holds for $k+1$. Hence by the Principle 
+      of Mathematical Induction, equation \eqref{l1_1_2_1} holds for every 
+      positive integer $n$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Lemm1.1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[]        \textbf{Lemma 1.1.3} \textit{Let $x$ be an element of finite
+                  order $n$ in $G$. If $x^m = 1$, then it follows that
+                  $n \mid m$.}
+
+      \textbf{Proof.} Suppose that $x^m = 1$. By the Division Algorithm, there
+      exist unique integers $q$ and $r$ such that $m = qn + r$ and
+      $0 \le r < n$. Now we have that
+      $$1 = x^m = x^{qn+r} = x^{qn}x^r = (x^n)^qx^r = 1^qx^r = x^r.$$
+      Since $|x| = n$, we cannot have $0 < r < n$; thus the only remaining
+      possibility is $r = 0$, so that $n = qm$, as desired. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Lemm1.1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[]        \textbf{Lemma 1.1.4} \textit{Let $(x, y)$ be an element of
+                  $A \times B$ where $A$ and $B$ are groups. For any positive
+                  integer $n$, we then have that $(x, y)^n = (x^n, y^n)$.}
+
+      \textbf{Proof.} We shall induct on $n$. Our assertion clearly holds if
+      $n$ is 1, so assume that it holds for some positive integer $k$. Thus we
+      have that
+      \begin{align*}
+         (x, y)^{k+1} &= (x, y)(x, y)^k &[\text{Exercise 1.1.19}] \\
+                      &= (x, y)(x^k, y^k) &[\text{Inductive hypothesis}] \\
+                      &= (xx^k, yy^k) \\
+                      &= (x^{k+1}, y^{k+1}). &[\text{Exercise 1.1.19}]
+      \end{align*}
+      The above shows that our assertion also holds for $k + 1$, so that by
+      the Principle of Mathematical Induction it must holds for every integer
+      $n$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.1]   Determine which of the following binary operations are
+                  associative:
+                  \begin{enumerate}
+                     \item the operation $*$ on $\Z$ defined by $a * b = a - b$.
+                     \item the operation $*$ on $\R$ defined by
+                           $a * b = a + b + ab$.
+                     \item the operation $*$ on $\Q$ defined by
+                           $\displaystyle a * b = \frac{a + b}{5}$.
+                     \item the operation $*$ on $\Z \times \Z$ defined by
+                           $(a, b) * (c, d) = (ad + bc, bd)$.
+                     \item the operation $*$ on $\Q - \{0\}$ defined by
+                           $\displaystyle a * b = \frac{a}{b}$.
+                  \end{enumerate}
+                  
+      \textbf{Solution.}
+   
+      \begin{enumerate}
+         \item The binary operation $*$ on $\Z$ is not associative because
+               $$(0 * 0) * 1 = -1 \neq 1 = 0 * (0 * 1).$$
+         \item We claim that $*$ is associative on $\R$.
+      
+               \textbf{Proof.} Let $r_1, r_2, r_3 \in \R$. Then it follows that
+               \begin{align*}
+                  (r_1 * r_2) * r_3 &= (r_1 + r_2 + r_1r_2) * r_3 \\
+                     &= (r_1 + r_2 + r_1r_2 + r_3) +
+                        (r_1r_3 + r_2r_3 + r_1r_2r_3) \\
+                     &= r_1 + r_2 + r_3 + r_1r_2 + r_2r_3 +
+                        r_1r_3 + r_1r_2r_3 \\
+                     &= (r_1 + r_2 + r_3 + r_2r_3) + r_1(r_2 + r_3 + r_2r_3) \\
+                     &= r_1 + (r_2 * r_3) + r_1(r_2 * r_3) \\
+                     &= r_1 * (r_2 * r_3),
+               \end{align*}
+               so that our claim holds. \qed
+         \item The binary operation $*$ on $\Q$ is not associative because
+               $$(0 * 0) * 25 = 5 \neq 1 = 0 * (0 * 25).$$
+         \item We claim that $*$ is associative on $\Z \times \Z$.
+      
+               \textbf{Proof.} Let $(z_1, z_2)$, $(z_3, z_4)$,
+               $(z_5, z_6) \in \Z \times \Z$. Then it follows that
+               \begin{align*}
+                  (z_1, z_2) * [(z_3, z_4) * (z_5, z_6)] 
+                     &= (z_1, z_2) * [(z_3z_6 + z_4z_5, z_4z_6)] \\
+                     &= (z_1z_4z_6 + z_2z_3z_6 + z_2z_4z_5, z_2z_4z_6) \\
+                     &= ((z_1z_4 + z_2z_3) \cdot z_6 + z_2z_4 \cdot z_5,
+                          z_2z_4 \cdot z_6) \\
+                     &= (z_1z_4 + z_2z_3, z_2z_4) * (z_5, z_6) \\
+                     &= [(z_1, z_2) * (z_3, z_4)] * (z_5, z_6),
+               \end{align*}
+               so that our claim holds. \qed
+         \item The binary operation $*$ on $\Q - \{0\}$ is not associative
+               because
+               $$(4 * 1) * 2 = 2 \neq 8 = 4 * (1 * 2).$$
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.2]   Decide which of the binary operations in the preceding
+                  exercise are commutative.
+                  
+      \begin{enumerate}      
+         \item The binary operation $*$ on $\Z$ is not commutative because
+               $$1 * 0 = 1 \neq -1 = 0 * 1.$$
+         \item The binary operation $*$ on $\R$ is commutative because addition
+               and multiplication are commutative on $\R$.
+         \item The binary operation $*$ on $\Q$ is commutative because addition
+               is commutative on $\Q$.
+         \item A quick check will show us that $*$ is commutative on
+               $\Z \times \Z$. That is, for all $(z_1, z_2)$, $(z_3, z_4)$
+               $\in \Z \times \Z$, we must have that
+               \begin{align*}
+                  (z_1, z_2) * (z_3, z_4) &= (z_1z_4 + z_2z_3, z_2z_4) \\
+                                          &= (z_3z_2 + z_4z_1, z_4z_2) \\
+                                          &= (z_3, z_4) * (z_1, z_2).
+               \end{align*}
+         \item The binary operation $*$ on $\Q - \{0\}$ is not commutative
+               because
+               $$1/2 \neq 2/1.$$
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.3]   Prove that addition of residue classes in $\Z/n\Z$ is
+                  associative (you may assume it is well defined).
+                  
+      \textbf{Proof.} Fix $n \in \Z^+$. Consider $\overline{a}$, $\overline{b}$,
+      and $\overline{c}$ in $\Z/n\Z$. By Theorem 3, Pg. 9, we have that
+      \begin{align*}
+         \overline{a} + (\overline{b} + \overline{c})
+            &= \overline{a} + \overline{b + c} \\
+            &= \overline{a + b + c} \\
+            &= \overline{a + b} + \overline{c} \\
+            &= (\overline{a} + \overline{b}) + \overline{c},
+      \end{align*}
+      so that addition of residue classes in $\Z/n\Z$ is associative. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.4]   Prove that multiplication of residue classes in $\Z/n\Z$ is
+                  associative (you may assume it is well defined).
+                  
+      \textbf{Proof.} Fix $n \in \Z^+$. Consider $\overline{a}$, $\overline{b}$,
+      and $\overline{c}$ in $\Z/n\Z$. By Theorem 3, Pg. 9, we have that
+      \begin{align*}
+         \overline{a} \cdot (\overline{b} \cdot \overline{c})
+            &= \overline{a} \cdot \overline{bc} \\
+            &= \overline{abc} \\
+            &= \overline{ab} \cdot \overline{c} \\
+            &= (\overline{a} \cdot \overline{b}) \cdot \overline{c},
+      \end{align*}
+      so that multiplication of residue classes in $\Z/n\Z$ is associative. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.5]   Prove that for all $n > 1$ that $\Z/n\Z$ is not a group under
+                  multiplication of residue classes.
+                  
+      \textbf{Proof.} Let $n$ be positive integer greater than 1. It follows
+      that $\Z/n\Z$ is not a group under multiplication because $\overline{0}$
+      has no multiplicative inverse. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.6]   Determine which of the following sets are groups under
+                  addition:
+                  \begin{enumerate}
+                     \item the set of rational numbers (including $0 = 0/1$) in
+                           lowest terms whose denominators are odd.
+                     \item the set of rational numbers (including $0 = 0/1$) in
+                           lowest terms whose denominators are even.
+                     \item the set of rational numbers of absolute value $< 1$.
+                     \item the set of rational numbers of absolute value $\ge 1$
+                           together with 0.
+                     \item the set of rational numbers with denominators equal
+                           to 1 or 2.
+                     \item the set of rational numbers with denominators equal
+                           to 1, 2, or 3.
+                  \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item We claim that the set
+               $$S = \left\{\frac{a}{b} \in \Q : b \text{ is odd} \text{ and }
+                 \gcd(a, b) = 1\right\},$$
+               is a group under addition.
+
+               \textbf{Proof.} First we must show that $S$ is closed under 
+               addition. Notice that $S$ is nonempty since it contains 7/5, so 
+               let $r, s \in S$. By definition of $S$, we have that
+               $r = a_1/b_1$ and $s = a_2/b_2$ for some integers $a_1$ and
+               $a_2$, and nonzero integers $b_1$ and $b_2$, where $b_1$ and
+               $b_2$ are odd and $\gcd(a_1, b_1) = \gcd(a_2, b_2) = 1$.
+               It follows that
+               \begin{align*}
+                  r + s &= \frac{a_1}{b_1} + \frac{a_2}{b_2} \\
+                        &= \frac{a_1b_2 + a_2b_1}{b_1b_2}.
+               \end{align*}
+
+               Since $b_1$ and $b_2$ are both odd, it must necessarily be the 
+               case that $b_1b_2$ is also odd. In order words, $b_1b_2$ contains 
+               no factor of 2, so that if we reduce $r + s$ to its lowest term, 
+               the denominator of this lowest term will still be odd. Hence
+               $r + s \in S$, so that $S$ is closed under addition. To complete 
+               the proof we must now show that $S$ satisfies the group axioms. 
+               We observe that $0/1$ is the identity element in $S$. Also, it is 
+               clear that for all $s \in S$, we have $-s \in S$, so that every 
+               element of $S$ has an inverse under addition. Since
+               $S \subseteq \Q$, and since $\Q$ is associative under addition, 
+               it follows that $S$ is also associative under addition. Thus $S$ 
+               satisfies the group axioms, so that $(S, +)$ is a group. \qed
+         \item The set
+               $$S = \left\{\frac{a}{b} \in \Q : b \text{ is even} \text{ and }
+                 \gcd(a, b) = 1\right\},$$
+               is not a group under addition because it is not closed. Indeed,
+               for $3/14 \in S$, we have $3/14 + 3/14 = 3/7 \notin S$.
+         \item The set
+               $$S = \left\{\frac{a}{b} \in \Q :
+                     \left|\frac{a}{b}\right| < 1\right\},$$
+               is not a group under addition because it is not closed. Indeed,
+               for $9/10 \in S$, we have $9/10 + 9/10 = 18/10 \notin S$.
+         \item The set
+               $$S = \left\{\frac{a}{b} \in \Q : a = 0 \text{ or }
+                     \left|\frac{a}{b}\right| \ge 1\right\},$$
+               is not a group under addition because it is not closed. Indeed,
+               for $-11/10, 10/10 \in S$, we have
+               $-11/10 + 10/10 = -1/10 \notin S$.
+         \item We claim that the set
+               $$S = \left\{\frac{a}{b} \in \Q : b = 1 \text{ or }
+                 b = 2\right\},$$
+               is a group under addition.
+
+               \textbf{Proof.} It is clear that 0 is the identity for $S$ under
+               addition, that $S$ is associative under addition (because
+               $S \subset \Q$ and $\Q$ is associative under addition, and that
+               the inverse of an element in $S$ is its additive inverse in $\Q$.
+               So to complete the proof, we need only show that $S$ is closed
+               under addition. Let $a_1/b_1, a_2/b_2 \in \Q$. By observation, we
+               note that $a_1/b_1 + a_2/b_2$ must have a denominator of 1 or 2,
+               so that it is in $S$. Thus $S$ is closed under addition. \qed
+         \item The set
+               $$S = \left\{\frac{a}{b} \in \Q : b \in {1, 2, 3} \right\},$$
+               is not a group under addition because it is not closed. Indeed,
+               for $1/2, 1/3 \in S$, we have $1/2 + 1/3 = 5/6 \notin S$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.7]   Let $G = \{x \in \R : 0 \le x < 1\}$ and for $x, y \in G$ let
+                  $x * y$ be the fractional part of $x + y$ (i.e.,
+                  $x * y = x + y = [x + y]$ where $[a]$ is the greatest integer
+                  less than or equal to $a$). Prove that $*$ is a well defined
+                  binary operation on $G$ and that $G$ is an abelian group under
+                  $*$ (called the \textit{real numbers mod }1).
+                  
+      \textbf{Proof.} The set $G$ is clearly non-empty, so consider
+      $x, y, z \in G$. To show that $G$ is a group, we shall now prove that it 
+      is well defined, associative, has an identity, and is closed under taking
+      inverses.
+
+      \textbf{Well Defined:} To show that $*$ is well defined is tantamount to
+      showing that $G$ is closed under $*$.  By definition, we have that
+      $0 \le x < 1$ and $0 \le y < 1$, so that $0 \le x + y < 2$. If
+      $0 \le x + y < 1$, so that $[x + y] = 0$, then we have that
+      $$0 \le x + y = x + y - [x + y] = x * y = x + y < 1.$$
+      However if $1 \le x + y < 2$, so that $[x + y] = 1$ and
+      $0 \le x + y - 1 < 1$, we must have that
+      $$0 \le x + y - 1 = x + y - [x + y] = x * y = x + y - 1 < 1.$$
+      In either case, we have $0 \le x * y < 1$; i.e. $x * y \in G$, so that $G$ 
+      is closed under $*$. Also we have that
+      $$x * y = x + y - [x + y] = y + x - [y + x],$$
+      so that $G$ is abelian.
+
+      \textbf{Associativity:} We have that
+      \begin{align*}
+         x * (y * z) &= x * (y + z - [y + z]) \\
+              &= x + y + z - [y + z] - [x + y + z - [y + z]], \text{ and} \\ \\
+         (x * y) * z &= (x + y - [x + y]) * z \\
+                     &=  x + y + z - [x + y] - [x + y + z - [x + y]].
+      \end{align*}
+      By definition, we have that $0 \le x < 1$, $0 \le y < 1$, and
+      $0 \le z < 1$, so that $0 \le x + y < 2$ and $0 \le y + z < 2$. Let us 
+      now investigate the following possible cases:
+
+      \textit{Case 1:} \textit{$0 \le x + y  < 1$ and $0 \le y + z < 1$}. That
+      is $[x + y] = [y + z] = 0$. It then follows that
+      $$x * (y * z) = (x * y) * z = x + y + z - [x + y + z].$$
+
+      \textit{Case 2:} \textit{$1 \le x + y  < 2$ and $1 \le y + z < 2$}. That
+      is $[x + y] = [y + z] = 1$. It then follows that
+      $$x * (y * z) = (x * y) * z = x + y + z - 1 - [x + y + z - 1].$$
+
+      \textit{Case 3:} \textit{$0 \le x + y  < 1$ and $1 \le y + z < 2$}. That
+      is $[x + y] = 0$, and $[y + z] = 1$. It then follows that
+      $$(x * y) * z = x + y + z - [x + y + z].$$
+      Since $0 \le x + y < 1$ and $0 \le z < 1$, we must have that
+      $0 \le x + y + z < 2$. Similarly, since $1 \le y + z < 2$ and
+      $0 \le x < 1$, we must have that $1 \le x + y + z < 3$, and since we 
+      already showed that $0 \le x + y + z < 2$, it follows that
+      $1 \le x + y + z < 2$. Hence $[x + y + z] = 1$. We can then conclude that 
+      $(x * y) * z = x +y + z - 1$. Now we have that
+      $$x * (y * z) = x + y + z - 1 - [x + y + z - 1].$$
+      We already showed that $1 \le x + y + z < 2$; thus,
+      $0 \le x + y + z - 1 < 1$, so that $[x + y + z - 1] = 0$; that is,
+      $$x * (y * z) = x + y + z - 1 = (x * y) * z.$$
+   
+      \textit{Case 4:} \textit{$1 \le x + y  < 2$ and $0 \le y + z < 1$}. Apply
+      Case 3, with the roles of $x + y$ and $y + z$ interchanged.
+
+      We have thus shown that in all possible cases, we have
+      $$x * (y * z) = (x * y) * z,$$
+      so that $G$ is associative under $*$.
+
+
+      \textbf{Identity:} We observe that $0 \in G$ is the identity element since
+      $$x * 0 = x + 0 - [x + 0] = x - [x] = x - 0 = x.$$
+
+      \textbf{Inverse:} Suppose $x \neq 0$, so that $0 < x < 1$, and thus
+      $0 < 1 - x < 1$; that is $1 - x \in G$. It follows that
+      $$x * (1 - x) = x + (1 - x) + [x + (1 - x)] = 1 - 1 = 0,$$
+      so that $1 - x$ is the inverse of $x \in G$, with $x \neq 0$. Clearly, the 
+      inverse of 0 is 0. \\
+
+      We can now conclude that $(G, *)$ is a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.8]   Let $G = \{z \in \C : z^n = 1 \text{ for some } n \in \Z^+\}$.
+                  \begin{enumerate}
+                     \item Prove that $G$ is a group under multiplication
+                           (called the group of \textit{roots of unity} in
+                           $\C$).
+                     \item Prove that $G$ is not a group under addition.
+                  \end{enumerate}
+                  
+      \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item We observe that 1 is the identity element of $G$, so that $G$ is
+               not empty. So let $x, y, z \in G$.
+               
+               \textbf{Closure:} By definition, there exist positive integers
+               $m$ and $n$ such that $x^m = y^n = 1$. Thus
+               $(xy)^{mn} = (x^m)^n(y^n)^m = 1^n1^m = 1$. This says that $G$ is
+               closed under multiplication.
+               
+               \textbf{Associativity:} Since $\C$ is associative under
+               multiplication and since $G \subseteq \C$, it follows that $G$ is
+               associative under multiplication.
+               
+               \textbf{Identity:} As state above, the identity of $G$ is clearly
+               1.
+               
+               \textbf{Inverse:} Notice that since
+               $(x^{m - 1})^m = (x^m)^{m - 1} = 1$, we must have that
+               $x^{m - 1} \in G$. Thus we have $x^{m - 1}x = x^m = 1$; i.e., the
+               inverse of $x$ is $x^{m - 1}$.
+               
+               We have thus shown that $G$ is a group under multiplication. \qed
+         \item $G$ is not a group under addition because it is not closed under
+               addition. In particular, we have $1 \in G$, but
+               $1 + 1 = 2 \notin G$ because $2^n \neq 1$ for any positive
+               integer.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.9]   Let $G = \{a + b\sqrt{2} \in \R : a, b \in \Q\}$.
+                  \begin{enumerate}
+                     \item Prove that $G$ is a group under addition.
+                     \item Prove that the nonzero elements of $G$ are a group 
+                           under multiplication. [``Rationalize the
+                           denominators" to find multiplicative inverse.]
+                  \end{enumerate}
+                  
+      \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item \textbf{Closure:} $G$ is clearly nonempty, so let $x, y \in G$.
+               By definition of $G$, it follows that $x = a_1 + b_1\sqrt{2}$ and
+               $y = a_2 + b_2\sqrt{2}$ for some rational numbers $a_1$, $b_1$,
+               $a_2$, and $b_2$. Thus
+               $$x + y = (a_1 + a_2) + (b_1 + b_2)\sqrt{2} \in G,$$
+               so that $G$ is closed under addition.
+               
+               \textbf{Associativity:} Since $\R$ is associative under addition
+               and since $G \subseteq \R$, it follows that $G$ is associative
+               under addition.
+               
+               \textbf{Identity:} The identity of $G$ is 0.
+               
+               \textbf{Inverse:} For an element $x = a_1 + b_1\sqrt{2} \in G$,
+               the additive inverse of $x$ is $-a_1 - b_1\sqrt{2} \in G$.
+               
+               We have thus shown that $G$ is a group under addition. \qed
+         \item Let $G^{\times}$ denote the set of nonzero elements of $G$.
+         
+               \textbf{Closure:} Let $x, y \in G^{\times}$. By definition of
+               $G$, it follows that $x = a_1 + b_1\sqrt{2}$ and
+               $y = a_2 + b_2\sqrt{2}$ for some rational numbers $a_1$, $b_1$,
+               $a_2$, and $b_2$, with $a_1$ and $b_1$ not both zero and $a_2$
+               and $b_2$ not both zero. Thus
+               $$xy = (a_1a_2 + 2b_1b_2) + (a_1b_2 + a_2b_1)\sqrt{2}.$$
+               Since neither $x$ nor $y$ is zero, it must be the case that $xy$
+               is not zero, so that $G^{\times}$ is closed under multiplication.
+               
+               \textbf{Associativity:} Since $\R$ is associative under
+               multiplication and since $G^{\times} \subseteq \R$, it follows
+               that $G^{\times}$ is associative under multiplication.
+               
+               \textbf{Identity:} The element $1 = 1 + 0\sqrt{2} \in G^{\times}$
+               is the identity of $G^{\times}$.
+               
+               \textbf{Inverse:} Let $x = a_1 + b_1\sqrt{2} \in G^{\times}$.
+               Since $x \neq 0$, the real number $1/x$ exists, and we have that
+               $$\frac{1}{x} = \frac{1}{a_1 + b_1\sqrt{2}}
+                 \frac{a_1 - b_1\sqrt{2}}{a_1 - b_1\sqrt{2}} =
+                 \left(\frac{a_1}{{a_1}^2 - 2{b_1}^2} -
+                 \frac{b_1}{{a_1}^2 - 2{b_1}^2}\sqrt{2}\right) \in G^{\times}.
+               $$
+               
+               Since $1/x \in G^{\times}$ and since $x \cdot 1/x = 1$, we have
+               that $1/x$ is the multiplicative inverse of $x$.
+               
+               We have thus shown that $G^{\times}$ is a group under
+               multiplication. \qed
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.10]  Prove that a finite group is abelian if and only if its group
+                  table is a symmetric matrix.
+                  
+      \textbf{Proof.} Let $G$ be a group such that $|G| = n \in \Z^+$, and let
+      $(a_{ij})$ denote the matrix of the group table of $G$. Since $G$ is
+      finite, we can enumerate the elements of $G$ like so:
+      $$G = \{g_1, g_2, \ldots, g_n\}.$$      
+      $(\Leftarrow)$ Suppose that $(a_{ij})$ is a symmetric matrix. Let
+      $a, b \in G$. Then we have that $a = g_r$ and $b = g_s$ for some
+      $r, s \in \{1, 2, \ldots, n\}$. Since $(a_{ij})$ is symmetric, we must
+      have that
+      $$ab = g_rg_s = a_{rs} = a_{sr} = g_sg_r = ba,$$
+      so that $G$ is abelian.
+      
+      $(\Rightarrow)$ Now suppose that $G$ is abelian. Consider
+      $a_{rs} \in (a_{ij})$. It follows that
+      $$a_{rs} = g_rg_s = g_sg_r = a_{sr},$$
+      so that $(a_{ij})$ is symmetric. \qed      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.11]  Find the orders of each element of the additive group
+                  $\Z/12\Z$.
+                  
+      \textbf{Solution.} The orders of the elements $\overline{0}$,
+      $\overline{1}$, $\overline{2}$, $\overline{3}$, $\overline{4}$,
+      $\overline{5}$, $\overline{6}$, $\overline{7}$, $\overline{8}$,
+      $\overline{9}$, $\overline{10}$, and $\overline{11}$ in $\Z/12\Z$ are
+      1, 12, 6, 4, 3, 12, 2, 12, 3, 4, 6, and 12.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.12]  Find the orders of the following elements of the
+                  multiplicative group $(\Z/12\Z)^\times: \overline{1},
+                  \overline{-1}, \overline{5}, \overline{7}, \overline{-7}, 
+                  \overline{13}$.
+                  
+      \textbf{Solution.} The orders of the elements $\overline{1}$,
+      $\overline{-1}$, $\overline{5}$, $\overline{7}$, $\overline{-7}$,
+      $\overline{13}$ in $(\Z/12\Z)^\times$ are 1, 11, 5, 7, 5, and 13.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.13]  Find the orders of the following elements of the additive
+                  group $\Z/36\Z: \overline{1}, \overline{2}, \overline{6}, 
+                  \overline{9}, \overline{10}, \overline{12}, \overline{-1}, 
+                  \overline{-10}, \overline{-18}$.
+                  
+      \textbf{Solution.} The orders of the elements $\overline{1}$,
+      $\overline{2}$, $\overline{6}$, $\overline{9}$, $\overline{10}$,
+      $\overline{12}$, $\overline{-1}$, $\overline{-10}$, and $\overline{-18}$
+      in $\Z/36\Z$ are 1, 18, 6, 4, 18, 3, 36, 18, and 2.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.14]  Find the orders of the following elements of the
+                  multiplicative group $(\Z/36\Z)^\times: \overline{1},
+                  \overline{-1}, \overline{5}, \overline{13}, \overline{-13},
+                  \overline{17}$.
+                  
+      \textbf{Solution.} The orders of the elements $\overline{1}$,
+      $\overline{-1}$, $\overline{5}$, $\overline{13}$, $\overline{-13}$,
+      $\overline{17}$ in $(\Z/36\Z)^\times$ are 1, 35, 29, 25, 11, and 17.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.15]  Prove that $(a_1a_2\cdots a_n)^{-1} =
+                  {a_n}^{-1}{a_{n-1}}^{-1}\cdots {a_1}^{-1}$ for all
+                  $a_1, a_2, \ldots, a_n \in G$.
+                  
+      \textbf{Proof.} We shall proceed by induction on $n$. The statement is
+      trivial for $n = 1$. So assume that it also holds for some positive
+      integer $k$. Let $b = a_1a_2\cdots a_k$. It then follows that
+      \begin{align*}
+         (a_1a_2\cdots a_ka_{k+1})^{-1} &= (b \cdot a_{k+1})^{-1} \\
+            &= {a_{k+1}}^{-1}b^{-1} &[\text{By Proposition 1 (4)}] \\
+            &= {a_{k+1}}^{-1}{a_k}^{-1}\cdots {a_1}^{-1}.
+                  &[\text{Inductive hypothesis}]
+      \end{align*}
+      That is, our statement holds for $k + 1$, so that, by the Principle of
+      Mathematical Induction, it holds for each positive integer $n$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.16]  Let $x$ be an element of $G$. Prove that $x^2 = 1$ if and only
+                  if $|x|$ is either 1 or 2.
+                  
+      \textbf{Proof.}
+      
+      $(\Leftarrow)$ Suppose that $x^2 = 1$. Now if $|x| > 2$, then by
+      definition, $x^2 \neq 1$. The only remaining possibilities are $|x| = 1$
+      or $|x| = 2$.
+      
+      $(\Rightarrow)$ Suppose that $|x| = 1$ or $|x| = 2$. It immediately
+      follows that $x^2 = 1$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.17]  Let $x$ be an element of $G$. Prove that if $|x| = n$ for some
+                  positive integer $n$ then $x^{-1} = x^{n-1}$.
+                  
+      \textbf{Proof.} Suppose that $|x| = n \in \Z^+$. By Exercise 1.1.18, it
+      follows that $x^{n-1}x^1 = x^{n-1+1} = x^n = 1$, so that
+      $x^{-1} = x^{n-1}$. \qed      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.18]  Let $x$ and $y$ be elements of $G$. Prove that $xy = yx$ if
+                  and only if $y^{-1}xy =x$ if and only if $x^{-1}y^{-1}xy = 1$.
+                  
+      \textbf{Proof.} First assume that $xy = yx$. We then have that
+      $yx = xy = 1xy = yy^{-1}xy$, so that $x = y^{-1}xy$ by left cancellation.
+      Now assume that $y^{-1}xy = x$. Thus
+      $x1 = x = y^{-1}xy = 1y^{-1}xy = xx^{-1}y^{-1}xy$, so that
+      $1 = x^{-1}y^{-1}xy$ by left cancellation. Finally assume that
+      $x^{-1}y^{-1}xy = 1$. Multiplying on the left by $yx$ will yield the
+      equation $xy = yx$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.19]  Let $x \in G$ and let $a, b \in \Z^+$.
+                  \begin{enumerate}
+                     \item Prove that $x^{a+b} = x^ax^b$.
+                     \item Prove that $(x^a)^b = x^{ab}$.
+                     \item Prove that $(x^a)^{-1} = x^{-a}$.
+                     \item Establish part (a) for arbitrary integers $a$ and $b$
+                           (positive, negative or zero).
+                     \item Establish part (b) for arbitrary integers $a$ and $b$
+                           (positive, negative or zero).
+                  \end{enumerate}
+               
+      \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item We have that
+               \begin{align*}
+                  x^{a+b} &= \underbrace{xx\cdot x}_{a+b \text{ factors}} \\
+                          &= \underbrace{xx\cdot x}_{a \text{ factors}}\mbox{ }
+                             \underbrace{xx\cdot x}_{b \text{ factors}} \\
+                          &= x^ax^b.
+               \end{align*} \qed
+         \item We have that
+               \begin{align*}
+                  (x^a)^b &= (\underbrace{xx\cdot x}_{a \text{ factors}})^b \\
+                          &= \underbrace{xx\cdot x}_{ab \text{ factors}} \\
+                          &= x^{ab}.
+               \end{align*} \qed
+         \item We have
+               \begin{align*}
+                  (x^a)^{-1}
+                     &= (\underbrace{xx\cdot x}_{a \text{ factors}})^{-1} \\
+                     &= \underbrace{x^{-1}x^{-1}\cdot x^{-1}}_{
+                           a \text{ factors}} &[\text{Exercise 1.1.15}] \\
+                     &= x^{-a}.
+               \end{align*} \qed
+         \item Now suppose that $a$ is an integer and $b$ is a positive integer.
+               We shall induct on $b$ to show that
+               \begin{equation}
+                  x^{a+b} = x^ax^b. \label{1_1_19_1}
+               \end{equation}
+               By Lemma 1.1.1, \eqref{1_1_19_1} holds if $b$ equals 1. So assume
+               that it also holds for some positive integer $k$. We now have
+               that
+               \begin{align*}
+                  x^ax^{k+1} &= x^ax^kx^1 &[\text{Lemma 1.1.1}] \\
+                             &= (x^ax^k)x^1 \\
+                             &= x^{a+k}x^1 &[\text{Inductive hypothesis}] \\
+                             &= x^{(a+k)+1} &[\text{Lemma 1.3.2}] \\
+                             &= x^{a+(k+1)}, &[\text{Associativity of addition}]
+               \end{align*}
+               so that \eqref{1_1_19_1} holds for $k + 1$, and hence, by the 
+               Principle of Mathematical Induction, it holds for each positive
+               integer $n$. \\
+
+               If $a$ is 0 or $b$ is 0, then Lemma 1.1.1 tells us that
+               \eqref{1_1_19_1} holds, so the only remaining possibility is $a$ 
+               and $b$ are negative.\footnote{If $a$ is positive and $b$ is
+               negative, then interchange the roles of $a$ and $b$ in the 
+               induction proof.} Now suppose that $a$ and $b$ are negative.
+               Hence
+               \begin{align*}
+                  x^ax^b &= x^{-(-a)}x^{-(-b)} \\
+                     &= (x^{-1})^{-a}(x^{-1})^{-b} &[\text{Definition}] \\
+                     &= (x^{-1})^{(-a + (-b))} &[\text{Part (a)}] \\
+                     &= x^{-(-a + (-b))} &[\text{Definition}] \\
+                     &= x^{a+b}.
+               \end{align*}
+
+               Combining this result with part (a), we thus shown that
+               \eqref{1_1_19_1} holds for all integers $a$ and $b$. \qed
+         \item It is clear that part (b) holds if $a$ is 0 or $b$ is 0, so let
+               us complete the proof for arbritrary integers $a$ and $b$.
+
+               \textbf{Case 1:} \textit{$a$ is positive and $b$ is negative}. 
+               Hence
+               \begin{align*}
+                  (x^a)^b &= (x^a)^{-(-b)} \\
+                          &= [(x^a)^{-1}]^{-b} &[\text{Definition}] \\
+                          &= (x^{-a})^{-b} &[\text{Part (c)}] \\
+                          &= [(x^{-1})^a]^{-b} &[\text{Definition}] \\
+                          &= (x^{-1})^{-ab} &[\text{Part (b)}] \\
+                          &= x^{-(-ab)} &[\text{Definition}] \\
+                          &= x^{ab}.
+               \end{align*}
+
+               \textbf{Case 2:} \textit{$a$ and $b$ are negative}. Thus
+               \begin{align*}
+                  (x^a)^b &= [x^{-(-a)}]^b \\
+                          &= [(x^{-1})^{-a}]^b &[\text{Definition}] \\
+                          &= (x^{-1})^{-ab} &[\text{Case 1}] \\
+                          &= [(x^{-1})^{-1}]^{ab}. &[\text{Definition}] \\
+                          &= x^{ab}. &[\text{Proposition 1 (3)}]
+               \end{align*}
+
+               \textbf{Case 3:} \textit{$a$ is negative and $b$ is positive}. 
+               Thus
+               \begin{align*}
+                  (x^a)^b &= [x^{-(-a)}]^b \\
+                          &= [(x^{-1})^{-a}]^b &[\text{Definition}] \\
+                          &= (x^{-1})^{-ab} &[\text{Case 1}] \\
+                          &= x^{-(-ab)} &[\text{Definition}] \\
+                          &= x^{ab}.
+               \end{align*}
+
+               Combining these results with part (a), we can conclude that
+               $(x^a)^b = x^{ab}$ holds for all integers $a$ and $b$ and
+               $x \in G$. \qed
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.20]  For $x$ an element in $G$ show that $x$ and $x^{-1}$ have the
+                  same order.
+
+      \textbf{Proof.}
+
+      \textbf{Case 1:} \textit{$|x| = n \in \Z^+$}. Since
+      $(x^{-1})^n = (x^n)^{-1} = 1^{-1} = 1$, it follows that $|x^{-1}| \le n$,
+      so suppose to the contrary that $|x^{-1}| = m < n$. Then we have that
+      $$x^m = [(x^{-1})^{-1}]^m = [(x^{-1})^m]^{-1} = 1^{-1} = 1,$$
+      a contradiction, so that $|x^{-1}| = n = |x|$.
+
+      \textbf{Case 2:} \textit{$|x| = +\infty$}. Suppose to the contrary that
+      $|x^{-1}| = n \in \Z^+$. As we argued in Case 1, it must be the case that
+      $x^n = 1$, a contradiction. Thus $|x| = +\infty = |x^{-1}|$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.21]  Let $G$ be a finite group and let $x$ be an element of $G$ of
+                  order $n$. Prove that if $n$ is odd, then $x = (x^2)^k$ for
+                  some $k$.
+
+      \textbf{Proof.} Suppose that $n$ is odd. We can then write $n = 2k + 1$
+      for some nonnegative integer $k$. By supposition, we have that
+      $xx^{2k} = x^{2k+1} = 1 = x^{-2k}x^{2k}$, so that by right cancellation,
+      we can conclude that $x = x^{-2k} = (x^2)^{-k}$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.22]  If $x$ and $g$ are elements of the group $G$, prove that
+                  $|x| = |g^{-1}xg|$. Deduce that $|ab| = |ba|$ for all
+                  $a, b \in G$.
+
+      \textbf{Proof.} Let $x, g \in G$.
+
+      \textbf{Case 1:} \textit{$|x| = n \in \Z^+$}. By Lemma 1.1.2, it follows
+      that $(g^{-1}xg)^n = g^{-1}x^ng = g^{-1}g =1$, so that $|g^{-1}xg| \le n$,
+      so suppose to the contrary that $|g^{-1}xg| = m < n$. Then we have that
+      $$g^{-1}1g = 1 = (g^{-1}xg)^m = g^{-1}x^mg,$$
+      so that $x^m = 1$ by left and right cancellations, a contradiction; thus,  
+      $|g^{-1}xg| = n = |x|$.
+
+      \textbf{Case 2:} \textit{$|x| = +\infty$}. Suppose to the contrary that
+      $|g^{-1}xg| = n \in \Z^+$. As we argued in Case 1, it must then be the 
+      case that $x^n = 1$, a contradiction. Thus $|x| = +\infty = |g^{-1}xg|$.
+
+      Now consider $a, b \in G$. Set $x = ab$ and $g = a$. Since 
+      $|x| = |g^{-1}xg|$, it follows that $|ab| = |a^{-1}aba| = |ba|$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.23]  Suppose $x \in G$ and $|x| = n < \infty$. If $n = st$ for some
+                  positive integers $s$ and $t$, prove that $|x^s| = t$.
+
+      \textbf{Proof.} Suppose $n = st$ for some positive integers $s$ and $t$.
+      By supposition, we have that $1 = x^n = x^{st} = (x^s)^t$; i.e.,
+      $|x^s| \le t$. Suppose to the contrary that $|x^s| = m < t$. Then we have
+      that $1 = (x^s)^m = x^{sm}$. Since $0 < m < t$, it follows that
+      $0 < sm < st = n$. However $|x| = n$ and we just showed that $x^{sm} = 1$, 
+      so that we have a contradiction. Hence we can conclude that $|x^s| = |t|$.
+      \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.24]  If $a$ and $b$ are \textit{commuting} elements of $G$, prove 
+                  that $(ab)^n = a^nb^n$ for all $n \in \Z$. [Do this by 
+                  induction for positive $n$ first.]
+
+      \textbf{Proof.} Let $R(n)$ be the statement that $(ab)^n = a^nb^n$, for
+      commuting elements $a$ and $b$.
+               
+      We now want to show using induction that $R(n)$ holds for every positive 
+      integer $n$. It is clear that $R(1)$ is true. So suppose that $R(k)$ is 
+      true for some positive integer $k$. We must now show that $R(k + 1)$ is 
+      also true. Now we have that
+      \begin{align*}
+         (ab)^{k+1} &= (ab)^k(ab)^1 &[\text{Exercise 1.1.19}] \\
+                    &= a^kb^k(ab)^1 &[\text{Since }R(k) \text{ is true}] \\
+                    &= a^kb^k(ba)^1 &[ab = ba] \\
+                    &= a^kb^kba \\
+                    &= a^kb^{k+1}a \\
+                    &= a^kab^{k+1} &[\text{$a$ commutes with $b$}] \\
+                    &= a^{k+1}b^{k+1}, \\
+      \end{align*}
+      so that $R(k + 1)$ holds. It follows by the Principle of Mathematical 
+      Induction that $R(n)$ holds for every positive integer $n$. By inpsection 
+      we can see that $R(0)$ also holds. To complete the proof, we must now show 
+      that $(ab)^{m} = a^mb^m$, where $m$ is a negative integer. First we notice 
+      that
+      \begin{equation}
+         a^{-1}b^{-1} = (ba)^{-1} = (ab)^{-1} = b^{-1}a^{-1},
+         \label{1_1_24_1}
+      \end{equation}
+      so that $a^{-1}$ and $b^{-1}$ are commuting elements. Thus it follows that
+      \begin{align*}
+         (ab)^m &= (ab)^{-(-m)} \\
+                &= [(ab)^{-1}]^{-m} &[\text{Definition}] \\
+                &= (a^{-1}b^{-1})^{-m} &[\eqref{1_1_24_1}] \\
+                &= (a^{-1})^{-m}(b^{-1})^{-m} &[\text{$R(-m)$ holds}] \\
+                &= a^mb^m,
+      \end{align*}
+      as desired. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.25]  Prove that if $x^2 = 1$ for all $x \in G$ then $G$ is abelian.
+
+      \textbf{Proof.} Let $G$ be a group. Suppose that $x^2 = 1$ for all
+      $x \in G$. We want to show that $G$ is abelian; that is, we want to show 
+      that $xy = yx$ for all $x, y \in G$. So let $x, y \in G$. By hypothesis, 
+      we have that $x^2 = e$, $y^2 = e$, and $(xy)^2 = e$, so that according to 
+      Proposition 2, we must have that $x = x^{-1}$, $y = y^{-1}$, and
+      $xy = (xy)^{-1}$. Thus
+      \begin{align*}
+         xy &= (xy)^{-1}      &[\text{By Hypothesis}] \\
+            &= y^{-1}x^{-1}   &[\text{Proposition 1}] \\
+            &= yx.
+      \end{align*}
+      Thus $G$ is abelian. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.26]  Assume $H$ is a nonempty subset of $(G, *)$ which is closed 
+                  under the binary operation on $G$ and is closed under
+                  inverses, i.e., for all $h$ and
+                  $k \in H$, $hk$ and $h^{-1} \in H$. Prove that $H$ is a group 
+                  under the operation $*$ restricted to $H$ (such a subset $H$
+                  is called a subgroup of $G$).
+
+      \textbf{Proof.} We know that $H$ is closed under $*$ and under inverses, 
+      so it suffices to show that $*$ is associative on $H$ and that $H$ has an 
+      identity under $*$. The associativity of $H$ under $*$ follows because $H$ 
+      is a subset of $G$ and $G$ is associative under $*$. Since $H$ is nonempty
+      we pick an $h \in H$. Then by hypothesis, we have that
+      $1 = hh^{-1} \in H$, so that $H$ contains the identity. (Note that
+      $hh^{-1} = h^{-1}h = 1$ and $h1 = 1h = h$ because these equalities hold in
+      $G$.) \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.27]  Prove that if $x$ is an element of the group $G$ then
+                  $\{x^n : n \in \Z\}$ is a subgroup of $G$ (called the
+                  \textit{cyclic subgroup} of $G$ generated by $x$).
+
+      \textbf{Proof.} Consider the set
+      $$H = \{x^n : n \in \Z\}.$$
+      $H$ is nonempty because it contains $1 = x^0$. So let $h_1, h_2 \in H$.
+      Thus we have $h_1 = x^a$ and $h_2 = x^b$ for some integers $a$ and $b$, so
+      that $h_1h_2 = x^ax^b = x^{a+b} \in H$; in other words, $H$ is closed
+      under the operation of $G$. Since $h_1^{-1} = (x^a)^{-1} = x^{-a} \in H$, 
+      it follows that $H$ is also closed under inverses, so that $H$ is a
+      subgroup of $G$ by Exercise 1.1.26.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.28]  Let $(A, *)$ and $(B, \diamond)$ be groups and let
+                  $A \times B$ be their direct product (as defined in Example
+                  6). Verify all the group axioms for $A \times B$.
+                  \begin{enumerate}
+                     \item prove that the associative law holds: for all
+                           $(a_i, b_i) \in A \times B, i = 1, 2, 3$
+                           $$(a_1, b_1)[(a_2, b_2)(a_3, b_3)] =
+                            [(a_1, b_1)(a_2, b_2)](a_3, b_3),$$
+                     \item prove that (1, 1) is the identity of $A \times B$,
+                           and
+                     \item prove that the inverse of $(a, b)$ is
+                           $(a^{-1}, b^{-1})$.
+                  \end{enumerate}
+
+      \textbf{Proof.} Let $(a_1, b_1)$, $(a_2, b_2)$, and
+      $(a_3, b_3) \in A \times B$.
+
+      \begin{enumerate}
+         \item The set $A \times B$ is associative under the component wise
+               operations of $A$ and $B$ because
+               \begin{align*}
+                  (a_1, b_1)[(a_2, b_2)(a_3, b_3)]
+                     &= (a_1, b_1)(a_2a_3, b_2b_3) \\
+                     &= (a_1a_2a_3, b_1b_2b_3) \\
+                     &= [(a_1a_2)a_3, (b_1b_2)b_3] &[\text{Associativity}] \\
+                     &= (a_1a_2, b_1b_2)(a_3, b_3) \\
+                     &= [(a_1, b_1)(a_2, b_2)](a_3, b_3).
+               \end{align*}
+         \item Consider $(1, 1) \in A \times B$. It follows that
+               \begin{align*}
+                  (1, 1)(a_1, b_1) &= (1a_1, 1b_1) \\
+                                   &= (a_1, b_1) \\
+                                   &= (a_11, b_11) \\
+                                   &= (a_1, b_1)(1, 1),
+               \end{align*}
+               so that $(1, 1)$ is the identity of $A \times B$.
+         \item Consider $(a, b) \in A \times B$. It 
+               follows that
+               \begin{align*}
+                  (a, b)(a^{-1}, b^{-1}) &= (aa^{-1}, bb^{-1}) \\
+                                   &= (1, 1) \\
+                                   &= (a^{-1}a, b^{-1}b) \\
+                                   &= (a^{-1}, b^{-1})(a, b),
+               \end{align*}
+               so that $(a^{-1}, b^{-1})$ is the inverse of $(a, b)$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.29]  Prove that $A \times B$ is an abelian group if and only if
+                  both $A$ and $B$ are abelian.
+
+      \textbf{Proof.} 
+
+      $(\Leftarrow)$ Suppose that $A$ and $B$ are abelian. Let $(a_1, b_1)$ and
+      $(a_2, b_2) \in A \times B$. It follows that $A \times B$ is abelian
+      because
+      \begin{align*}
+         (a_1, b_1)(a_2, b_2) &= (a_1a_2, b_1b_2) \\
+            &= (a_2a_1, b_2b_1) &[\text{$A$ and $B$ are abelian}] \\
+            &= (a_2, b_2)(a_1, b_1).
+      \end{align*}
+
+      $(\Rightarrow)$ Now suppose that $A \times B$ is abelian. Let $a_1$ and
+      $a_2$ be members of $A$ and let $b_1$ and $b_2$ be members of $B$. Then
+      we have that
+      \begin{align*}
+         (a_1a_2, b_1b_2) = (a_1, b_1)(a_2, b_2) \\
+            &= (a_2, b_2)(a_1, b_1) &[\text{$A \times B$ is abelian}] \\
+            &= (a_2a_1, b_2b_1),
+      \end{align*}
+      so that $(a_1a_2, b_1b_2) = (a_2a_1, b_2b_1)$; i.e., $a_1a_2 = a_2a_1$ and
+      $b_1b_2 = b_2b_1$. We can now conclude that $A$ and $B$ are both abelian.
+      \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.30]  Prove that the elements $(a, 1)$ and $(1, b)$ of $A \times B$
+                  commute and deduce that the order of $(a, b)$ is the least 
+                  common multiple of $|a|$ and $|b|$.
+
+      \textbf{Proof.} Let $A$ and $B$ be groups, and let $a \in A$, $b \in B$.
+      We shall be assuming that there exist positive integers $m$ and $n$ such 
+      that $|a| = m$ and $|b| = n$, for the problem does not make sense if the
+      order of $a$ or $b$ is not finite. Consider $(a, 1)$,
+      $(1, b) \in A \times B$. We have that
+      \begin{align*}
+         (a, 1)(1, b) &= (a1, 1b) \\
+                      &= (a, b) \\
+                      &= (1a, b1) \\
+                      &= (1, b)(a, 1),
+      \end{align*}
+      so that $(a, 1)$ and $(b, 1)$ commute. To complete the proof, we let
+      $s = \text{lcm}(m, n)$. Thus we can write $s = mx = ny$ for positive 
+      integers $x$ and $y$. Thus we have that
+      \begin{align*}
+         (a, b)^s &= (a^s, b^s) &[\text{Lemma 1.1.4}] \\
+                  &= (a^{mx}, a^{ny}) \\
+                  &= [(a^m)^x, (a^n)^y] \\
+                  &= (1^x, 1^y) \\
+                  &= (1, 1).
+      \end{align*}
+      This say that $|(a, b)| \le s$, so there exists a positive integer $q$ 
+      such that $|(a, b)| = q$. By Lemma 1.1.4, we have that
+      $(a, b)^q = (a^q, b^q) = (1, 1)$, so that $a^q = 1$ and $b^q = 1$. Thus by 
+      Lemma 1.1.3, it follows that $m \mid q$ and $n \mid q$, so that $s \mid q$ 
+      by definition of the lcm. Since $s \mid q$, we must have that $s \le q$.
+      But we previously showed that $q \le s$. Thus we can conclude that
+      $s = q$, as desired. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.31]  Prove that any finite group $G$ of even order contains an
+                  element of order 2. [Let $t(G)$ be the set
+                  $\{g \in G : g \neq g^{-1}\}$. Show that $t(G)$ has an even 
+                  number of elements and every nonidentity element of $G - t(G)$ 
+                  has order 2.]
+
+      \textbf{Proof.} Let $G$ be a finite group of even order. We wish to show
+      that there exists some $g \in G$ such that $|g| = 2$. Consider this subset
+      of $G$:
+      $$S = \{g \in G: g \neq g^{-1}\}.$$
+
+      If $|S| = 0$, then the proof is done, so assume that $|S| > 0$. Now $|S|$ 
+      is even, for if this were not the case, then if we pair up every element
+      of $S$ with its inverse, then one element must be without an inverse, a 
+      contradiction. Now let $S' = G\backslash S$. It follows that
+      $|G| = |S| + |S'|$. Notice that $S'$ is not empty because $e \in S'$. 
+      Since $G$ and $S$ are both even, it follows that $|S'|$ must also be even. 
+      Since we already showed that $|S'| \ge 1$, we can conclude that
+      $|S'| \ge 2$, so that $S'$ contains a non-identity $a$, where
+      $a = a^{-1}$. That is, $|a| = 2$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.32]  If $x$ is an element of finite order $n$ in $G$, prove that
+                  the elements 1, $x$, $x^2$, $\ldots$, $x^{n-1}$ are all 
+                  distinct. Deduce that $|x| \le |G|$.
+
+      \textbf{Proof.} Suppose that $|x| = n \in \Z^+$ for some $x \in G$. 
+      Suppose to the contrary that the elements $x^0$, $x^1$, $x^2$, $\ldots$, 
+      $x^{n-1}$ are not distinct. Then we must have that $x^i = x^j$ for some
+      integer $i$ and $j$ where $0 \le i < j \le n - 1$. That is, $x^{j-i} = 1$,
+      a contradiction because $j - i$ is a positive integer less thatn $n$. It
+      follows that the elements $x^0$, $x$, $x^2$, $\ldots$, $x^{n-1}$ are all 
+      distinct. Since there are clearly $n$ of these elements and since they are
+      all members of $G$, we can conclude that $|x| = n \le |G|$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.33]  Let $x$ be an element of finite order $n$ in $G$.
+                  \begin{enumerate}
+                     \item Prove that if $n$ is odd then $x^i \neq x^{-i}$ for
+                           all $i = 1, 2, \ldots, n - 1$,
+                     \item Prove that if $n = 2k$ and $1 \le i < n$ then
+                           $x^i = x^{-i}$ if and only if $i = k$.
+                  \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Suppose that $n$ is odd. Now we shall suppose to the contrary
+               that $x^i = x^{-i}$ for some integer $1 \le i \le n - 1$. Since
+               $x^i = x^{-i}$, it follows that $x^{2i} = 1$. By Lemma 1.1.3, we
+               must have that $n \mid 2i$, a contradiction because an odd
+               number cannot divide a positive even number, so we conclude that
+               $x^i \neq x^{-i}$ for all $i = 1, 2, \ldots, n - 1$. \qed
+         \item Suppose that $n$ is even and $1 \le i < n$. Write $n = 2k$ for
+               some positive integer $k$.
+
+               $(\Leftarrow)$ Suppose that $i = k$. Then we have that
+               $1 = x^{2k} = x^{2i} = x^ix^i$, so that $x^i = x^{-i}$.
+
+               $(\Rightarrow)$ Conversely suppose that $x^i = x^{-i}$, so that
+               $x^{2i} =1$. Thus, by Lemma 1.1.3, $2k \mid 2i$, or equivalently,
+               $k \mid i$, so that $i = mk$ for some positive integer $m$. 
+               Recall that $i < n = 2k$ by hypothesis, so that $mk < 2k$. That 
+               is $m < 2$. But $m$ is a positive integer and so the only
+               possibility is therefore $m = 1$, so that $i = k$. \qed
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.34]  If $x$ is an element of infinite order in $G$, prove that the
+                  elements $x^n$, $n \in \Z$ are all distinct.
+
+      \textbf{Proof.} Assume that $x$ is an element of infinite order in $G$.
+      Now suppose to the contrary that $x^i = x^j$ for some unequal integers
+      $i$ and $j$. We can further assume without loss of generality that
+      $i < j$. Thus $x^{j-i} = 1$, a contradiction because this says that
+      $|x| \le j - i$. It follows that distinct integral powers of $x$ yield 
+      distinct elements of $G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.35]  If $x$ is an element of finite order $n$ in $G$, use the 
+                  Division Algorithm to show that any integral power of $x$ 
+                  equals one of the elements in the set
+                  $\{1, x, x^2, \ldots, x^{n-1}\}$ (so these are all the
+                  distinct elements of the cyclic subgroup of $G$ generated by
+                  $x$).
+
+      \textbf{Proof.} Assume that $x$ is an element of finite order $n$ in $G$.
+      Let $z \in \Z$. By the Division Algorithm, there exist unique integers
+      $q$ and $r$ such that $z = qn + r$ and $0 \le r < n$. That is
+      $$x^z = x^{qn+r} = x^{qn}x^r = (x^n)^qx^r = 1^qx^r = x^r.$$
+      Since $r \in \{0, 1, \ldots, n - 1\}$ and since $x^z = x^r$, it follows
+      that $x^z \in \{x^0, x^1, \ldots, x^{n-1}\}$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.36]  Assume $G = \{1, a, b, c\}$ is a group of order 4 with
+                  identity 1. Assume also that $G$ has no elements of order 4
+                  (so by Exercise 32, every element has order $\le$ 3). Use the
+                  cancellation laws to show that there is a unique group table
+                  for $G$. Deduce that $G$ is abelian.
+
+      \textbf{Proof.} Assume $G = \{1, a, b, c\}$. We can tentatively fill out 
+      the group table for $G$ like so:      
+      $$
+         \begin{tabular}{@{}c | c | c | c | c@{}} 
+                & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $1$ & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $ $ & $ $ & $ $ \\ \hline
+            $b$ & $b$ & $ $ & $ $ & $ $ \\ \hline
+            $c$ & $c$ & $ $ & $ $ & $ $
+         \end{tabular}
+      $$
+      By the left cancellation law, the equality $ab = a$ will result in $b = e$
+      and the equality $ab = b$ will result in $a = e$, both of which are
+      contradictions. The only remaining possiblities are $ab = c$ or $ab = 1$.
+
+      \textbf{Case 1:} $ab = c$. For the same reason as above, we cannot have
+      $ac = a$ or $ac = c$, so that $ac = 1$ or $ac = b$. So suppose first that
+      $ac = b$. Then our table will now look like so:
+      $$
+         \begin{tabular}{@{}c | c | c | c | c@{}} 
+                & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $1$ & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $ $ & $c$ & $b$ \\ \hline
+            $b$ & $b$ & $ $ & $ $ & $ $ \\ \hline
+            $c$ & $c$ & $ $ & $ $ & $ $
+         \end{tabular}
+      $$
+      From the table above, we see that $aa$ must be equal to 1, since that is
+      the only remaining possibility. The cancellation laws tell us that every
+      element in a column and row of a group table must be unique, so we must
+      have that:
+      $$
+         \begin{tabular}{@{}c | c | c | c | c@{}} 
+                & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $1$ & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $1$ & $c$ & $b$ \\ \hline
+            $b$ & $b$ & $c$ & $ $ & $ $ \\ \hline
+            $c$ & $c$ & $b$ & $ $ & $ $
+         \end{tabular}
+      $$
+      Note that we cannot have $bb = a$ because that would imply that $bbb = c$,
+      so that $|b| > 3$, contradicting our hypothesis. Thus we must have that
+      $bb = 1$. The remaining positions are thus completely determined, so that
+      we have
+      $$
+         \begin{tabular}{@{}c | c | c | c | c@{}} 
+                & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $1$ & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $1$ & $c$ & $b$ \\ \hline
+            $b$ & $b$ & $c$ & $1$ & $a$ \\ \hline
+            $c$ & $c$ & $b$ & $a$ & $1$
+         \end{tabular}
+      $$
+      Now suppose that $ac = 1$, then we would be forced to fill in the table
+      like so:
+      $$
+         \begin{tabular}{@{}c | c | c | c | c@{}} 
+                & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $1$ & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $b$ & $c$ & $1$ \\ \hline
+            $b$ & $b$ & $c$ & $ $ & $ $ \\ \hline
+            $c$ & $c$ & $1$ & $ $ & $ $
+         \end{tabular}
+      $$
+      Since $a^2 = b$ and $a^3 = c$, we have that $|a| > 3$, contradicting our
+      hypothesis, so this is a dead end.
+
+      \textbf{Case 2:} $ab = 1$. For the same reason as above, we cannot have
+      $ac = a$ or $ac = c$, so that $ac = 1$ or $ac = b$. So suppose first that
+      $ac = b$. Then our table will now look like so:
+      $$
+         \begin{tabular}{@{}c | c | c | c | c@{}} 
+                & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $1$ & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $c$ & $1$ & $b$ \\ \hline
+            $b$ & $b$ & $1$ & $c$ & $a$ \\ \hline
+            $c$ & $c$ & $b$ & $a$ & $1$
+         \end{tabular}
+      $$
+      Since $a^2 = c$ and $a^3 = b$, we have that $|a| > 3$, contradicting our
+      hypothesis, so this is another dead end. From our arguments above, we see
+      that the only viable and legal table is thus:
+      $$
+         \begin{tabular}{@{}c | c | c | c | c@{}} 
+                & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $1$ & $1$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $1$ & $c$ & $b$ \\ \hline
+            $b$ & $b$ & $c$ & $1$ & $a$ \\ \hline
+            $c$ & $c$ & $b$ & $a$ & $1$
+         \end{tabular}
+      $$
+      This table is unique, and since it is symmeteric it follows that $G$ is
+      abelian. \qed
+\end{enumerate}

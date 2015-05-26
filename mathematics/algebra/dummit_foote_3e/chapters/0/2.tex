@@ -1,0 +1,403 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.1]   For each of the following pairs of integers $a$ and $b$,
+                  determine their greatest common divisor, ther least common
+                  multiple, and write their greatest common divisor in the form
+                  $ax + by$ for some integers $x$ and $y$.
+                  \begin{enumerate}
+                     \item $a = 20$, $b = 13$.
+                     \item $a = 69$, $b = 372$.
+                     \item $a = 792$, $b = 275$.
+                     \item $a = 11391$, $b = 5673$.
+                     \item $a = 1761$, $b = 1567$.
+                     \item $a = 507885$, $b = 60808$.
+                  \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item Using the Euclidean Algorithm we have
+               \begin{align*}
+                  20 &= 1 \cdot 13 + 7 \\
+                  13 &= 1 \cdot 7 + 6 \\
+                  7  &= 1 \cdot 6 + 1, \text{ so that } \\ \\
+                  1  &= 7 - 1 \cdot 6 \\
+                     &= 7 - 1 \cdot (13 - 1 \cdot 7) \\
+                     &= 2 \cdot 7 - 1 \cdot 13 \\
+                     &= 2 \cdot (20 - 1 \cdot 13) - 1 \cdot 13 \\
+                     &= 2 \cdot 20 - 3 \cdot 13.
+               \end{align*}
+
+               Thus $\gcd(20, 13) = 1$ and we have $x = 2$ and $y = -3$.
+         \item Using the Euclidean Algorithm we have
+               \begin{align*}
+                  69  &= 0 \cdot 372 + 69 \\
+                  372 &= 5 \cdot 69 + 27 \\
+                  69  &= 2 \cdot 27 + 15 \\
+                  27  &= 1 \cdot 15 + 12 \\
+                  15  &= 1 \cdot 12 + 3 \\
+                  12  &= 4 \cdot 3 + 0, \text{ so that } \\ \\
+                   3 &= 15 - 1 \cdot 12 \\
+                     &= 15 - 1 \cdot (27 - 1 \cdot 15) \\
+                     &= 2 \cdot 15 - 1 \cdot 27 \\
+                     &= 2 \cdot (69 - 2 \cdot 27) - 1 \cdot 27 \\
+                     &= 2 \cdot 69 - 5 \cdot 27 \\
+                     &= 2 \cdot 69 - 5 \cdot (372 - 5 \cdot 69) \\
+                     &= 27 \cdot 69 - 5 \cdot 372 \\
+                     &= 27 \cdot 69 - 5 \cdot 372.
+               \end{align*}
+
+               Thus $\gcd(69, 372) = 1$ and we have $x = 27$ and $y = -5$.
+         \item Using the Euclidean Algorithm we have
+               \begin{align*}
+                  792 &= 2 \cdot 275 + 242 \\
+                  275 &= 1 \cdot 242 + 33 \\
+                  242 &= 7 \cdot 33 + 11 \\
+                  33  &= 3 \cdot 11 + 0, \text{ so that } \\ \\
+                  11  &= 242 - 7 \cdot 33 \\
+                      &= 242 - 7 \cdot (275 - 1 \cdot 242) \\
+                      &= 8 \cdot 242 - 7 \cdot 275 \\
+                      &= 8 \cdot (792 - 2 \cdot 275) - 7 \cdot 275 \\
+                      &= 8 \cdot 792 - 23 \cdot 275.
+               \end{align*}
+
+               Thus $\gcd(792, 275) = 11$ and we have $x = 8$ and $y = -23$.
+         \item Using the Euclidean Algorithm we have
+               \begin{align*}
+                  11391 &= 2 \cdot 5673 + 45 \\
+                  5673  &= 126 \cdot 45 + 3 \\
+                  45    &= 3 \cdot 15 + 0, \text{ so that } \\ \\
+                  3     &= 5673 - 126 \cdot 45 \\
+                        &= 5673 - 126 \cdot (11391 - 2 \cdot 5673) \\
+                        &= -126 \cdot 11391 + 253 \cdot 5673.
+               \end{align*}
+
+               Thus $\gcd(11391, 5673) = 3$ and we have $x = -126$ and
+               $y = 253$.
+         \item Using the Euclidean Algorithm we have
+               \begin{align*}
+                  1761 &= 1 \cdot 1567 + 194 \\
+                  1567 &= 8 \cdot 194 + 15 \\
+                  194  &= 12 \cdot 15 + 14 \\
+                  15   &= 1 \cdot 14 + 1, \text{ so that } \\ \\
+                   1   &= 15 - 1 \cdot 14 \\
+                       &= 15 - 1 \cdot (194 - 12 \cdot 15) \\
+                       &= 13 \cdot 15 - 1 \cdot 194 \\
+                       &= 13 \cdot (1567 - 8 \cdot 194) - 1 \cdot 194 \\
+                       &= 13 \cdot 1567 - 105 \cdot 194 \\
+                       &= 13 \cdot 1567 - 105 \cdot (1761 - 1 \cdot 1567) \\
+                       &= 118 \cdot 1567 - 105 \cdot 1761.
+               \end{align*}
+
+               Thus $\gcd(1761, 1567) = 1$ and we have $x = -105$ and $y = 118$.
+         \item Using the Euclidean Algorithm we have
+               \begin{align*}
+                  507885 &= 8 \cdot 60808 + 21421 \\
+                  60808  &= 2 \cdot 21421 + 17966 \\
+                  21421  &= 1 \cdot 17966 + 3455 \\
+                  17966  &= 5 \cdot 3455 +  691 \\
+                  3455   &= 5 \cdot 691 + 0, \text{ so that } \\ \\
+                  691    &= 17966 - 5 \cdot 3455 \\
+                         &= 17966 - 5 \cdot (21421 - 1 \cdot 17966) \\
+                         &= 6 \cdot 17966 - 5 \cdot 21421 \\
+                         &= 6 \cdot (60808 - 2 \cdot 21421) - 5 \cdot 21421 \\
+                         &= 6 \cdot 60808 - 17 \cdot 21421 \\
+                         &= 6 \cdot 60808 - 17 \cdot (507885 - 8 \cdot 60808) \\
+                         &= 142 \cdot 60808 - 17 \cdot 507885.
+               \end{align*}
+
+               Thus $\gcd(507885, 60808) = 691$ and we have $x = -17$ and
+               $y = 142$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.2]   Prove that if the integer $k$ divides the integers $a$ and $b$
+                  then $k$ divides $as + bt$ for every pair of integers $s$ and
+                  $t$.
+
+      \textbf{Proof:} Let $a$ and $b$ be integers. Assume that $k$ divides
+      $a$ and $b$. Consider any pair of integers $s$ and $t$. We want to show
+      that $k$ also divides $as + bt$; that is, we must show that there exists
+      some integer $m_1$ such that $as + bt = km_1$. Since $k$ divides $a$ and
+      $b$, we must have that $a = km_2$ and $b = km_3$ for some integers $m_2$
+      and $m_3$. Thus
+      \begin{align*}
+         as + bt &= km_2s + km_3t \\
+                 &= k(m_2s + m_3t). 
+      \end{align*}
+
+      So take $m_1 = m_2s + m_3t$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.3]   Prove that if $n$ is composite then there are integers $a$ and
+                  $b$ such that $n$ divides $ab$ but $n$ does not divide either
+                  $a$ or $b$.
+
+      \textbf{Proof:} Let $n > 1$ be a composite integer. We shall 
+      investigate the following two cases:
+
+      \textbf{Case I:} \textit{n has more than 1 prime factor}. Then by The 
+      Fundamental Theorem of Arithmetic, we have that
+      $$n = p_1^{a_1}p_2^{a_2} \cdots p_m^{a_m},$$
+      for some integer $m \ge 2$, positive integer exponents $a_i$, and distinct
+      primes $p_i$, $1 \le i \le m$. So let $a = p_1^{a_1}$ and
+      $b = p_2^{a_2} \cdots p_m^{a_m}$. Then $n = ab$ so that $n$ divides $ab$.
+      Clearly $n$ does not divide $a$ and $b$.
+
+      \textbf{Case II:} \textit{n has exactly 1 prime factor}. Then we must
+      have that $n = p^{k}$ for some prime $p$ and integer $k \ge 2$. So choose
+      $a = p$ and $b = p^{k - 1}$. Similarly as in the first case, we have that
+      $n$ divides $ab$, but $n$ divides neither $a$ nor $b$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.4]   Let $a$, $b$ and $N$ be fixed integers with $a$ and $b$ 
+                  nonzero and let $d = (a, b)$ be the greatest common divisor of
+                  $a$ and $b$. Suppose $x_0$ and $y_0$ are particular solutions
+                  to $ax + by = N$. Prove for any integer $t$ that the integers
+                  $$x = x_0 + \frac{b}{d}t \qquad y = y_0 - \frac{a}{d}t$$
+                  are also solutions to $ax + by = N$.
+
+      \textbf{Proof:} Let $t$ be an integer, and let
+		$$x = x_0 + \frac{b}{d}t \text{ and } y = y_0 - \frac{a}{d}t.$$
+		Then we have
+		\begin{align*}
+			ax + by &= a\left(x_0 + \frac{b}{d}t\right) +
+						  b\left(y_0 - \frac{a}{d}t\right) \\
+					  &= ax_0 + by_0 \\
+					  &= N,					  
+		\end{align*}
+		so that $x = x_0 + \frac{b}{d}t$ and $y = y_0 - \frac{a}{d}t$ are
+		solutions to the equation $ax + by = N$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.5]   Determine the value $\varphi(n)$ for each integer $n \le 30$
+                  where $\varphi$ denotes the Euler $\varphi-$function.  
+
+      \textbf{Solution:}
+
+      We shall be making use of the multiplicative property of the Euler
+		$\varphi-$function. So 
+
+      \begin{center}
+         \begin{tabular}{@{}l c r c l c l c r@{}}
+            $\varphi(1)$ & = & 1, & & $\varphi(2)$ & = & 1, & & \\
+            $\varphi(3)$ & = & 2, & & $\varphi(4)$ & = &
+            $\varphi(2^2)$ & = & 2, \\
+            $\varphi(5)$ & = & 4, & & $\varphi(6)$ & = &
+            $\varphi(2)\varphi(3)$ & = & 2, \\
+            $\varphi(7)$ & = & 6, & & $\varphi(8)$ & = &
+            $\varphi(2^3)$ & = & 4, \\
+            $\varphi(9) = \varphi(3^2)$ & = & 6, & & $\varphi(10)$ & = &
+            $\varphi(2)\varphi(5)$ & = & 4, \\
+            $\varphi(11)$ & = & 10, & & $\varphi(12)$ & = &
+            $\varphi(3)\varphi(4)$ & = & 4, \\
+            $\varphi(13)$ & = & 12, & & $\varphi(14)$ & = &
+            $\varphi(2)\varphi(7)$ & = & 6, \\
+            $\varphi(15) = \varphi(3)\varphi(5)$ & = & 8, & &
+            $\varphi(16)$ & = &  $\varphi(2^4)$ & = & 8, \\
+            $\varphi(17)$ & = & 16, & & $\varphi(18)$ & = &
+            $\varphi(2)\varphi(9)$ & = & 6, \\
+            $\varphi(19)$ & = & 18, & & $\varphi(20)$ & = &
+            $\varphi(4)\varphi(5)$ & = & 8, \\
+            $\varphi(21) = \varphi(3)\varphi(7)$ & = & 12, & &
+            $\varphi(22)$ & = & $\varphi(2)\varphi(11)$ & = & 10, \\
+            $\varphi(23)$ & = & 22, & &
+            $\varphi(24)$ & = & $\varphi(3)\varphi(8)$ & = & 8, \\
+            $\varphi(25) = \varphi(5^2)$ & = & 20, & &
+            $\varphi(26)$ & = & $\varphi(2)\varphi(13)$ & = & 12, \\
+            $\varphi(27) = \varphi(3^3)$ & = & 18, & &
+            $\varphi(28)$ & = & $\varphi(4)\varphi(7)$ & = & 12, \\
+            $\varphi(29)$ & = & 28, & &
+            $\varphi(30)$ & = & $\varphi(2)\varphi(15)$ & = & 8. \\
+         \end{tabular}
+      \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.6]   Prove the Well Ordering Principle of $\Z$ by induction and
+                  prove the minimal element is unique.
+
+      \textbf{Proof:} Let $P$ be a nonempty subset of $\Z^+$. We want to show 
+      that $P$ has a minimal element. So suppose by way of contradiction that
+      $P$ does not have a minimal element. For a natural number $n$, let $S(n)$ 
+      be the statement that $n$ is not a member of $P$. We now want to show that
+      by Strong Induction that $S(n)$ holds for every natural number $n$. If 1
+      is in $P$, then it would be the smallest member of $P$, contradicting our
+      assumption that $P$ has no minimal element, so $1 \notin P$; hence $S(1)$ 
+      is true. Now suppose that $S(j)$ is true for every natural number $j < k$,
+      where $k$ is a natural number greater than 1. By our supposition, we know
+      that every integer less than $k$ is not in $P$, so if $k$ is in $P$, it
+      would be the minimal element of $P$, contradicting our assumption that $P$
+      has no minimal element. Thus $S(k)$ is true. It follows by Mathematical
+      Induction that $S(n)$ holds for every positive integer $n$. That is, $P$
+      is empty, a contradiction. We can now conclude that $P$ has a minimal 
+      element, say $p$. To show that $p$ is unique assume that $q$ is also a
+      minimal element of $P$. By virtue of $p$ as a minimal element of $P$, we 
+      have $p \le q$ and, by virtue of $q$ as a minimal element of $P$, we have
+      $q \le p$, so that $p = q$. Hence the minimal element of $P$ is
+      unique. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.7]   If $p$ is a prime prove that there do not exist nonzero
+                  integers $a$ and $b$ such that $a^2 = pb^2$.
+
+      \textbf{Proof:} Let $p$ be a prime number. Suppose by contradiction that 
+      there exist nonzero integers $a$ and $b$ such that $a^2 = pb^2$. We can
+      further suppose that $a$ and $b$ are relatively prime. Since $a^2 = pb^2$,
+      it follows that $a^2$ has $p$ as one of its prime factors, so that $a$
+      also has $p$ as one of its prime factors. We can then write $a = pm$
+      for some integer $m$. Substituting $a = pm$ in the equation $a^2 = pb^2$,
+      will give us the equation $pm^2 = b^2$. We can similarly conclude that
+      $b$ has $p$ as one of its prime factors, so that $\gcd(a, b) \ge p$, a
+      contradiction. Thus there do not exist nonzero integers $a$ and $b$ such 
+      that $a^2 = pb^2$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.8]   Let $p$ be a prime, $n \in \Z^+$. Find a formula for the
+                  largest power of $p$ which divides
+                  $n! = n(n - 1)(n - 2)\cdots2 \cdot 1$ (it involves the
+                  greatest integer function).
+
+      \textbf{Proof:} Let $p$ be a prime and let $n$ be a positive integer. The
+      largest power of $p$ that divides $n!$, say $k$, is simply the number of 
+      multiples of $p$ in the set $\{1, 2, \ldots, n\}$. Thus
+      $k = \lfloor{n/p}\rfloor$, where $\lfloor{x}\rfloor$ is the greatest
+      integer less than the real number $x$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.9]   Write a computer program to determine the greatest common
+                  divisor $(a, b)$ of two integers $a$ and $b$ and to express
+                  $(a, b)$ in the form $ax + by$ for some integers $x$ and $y$.
+
+   \begin{verbatim}
+# Python
+# For positive integers a and b gcd(a, b) returns
+# a tuple (r, x, y) where r = gcd(a, b) and xa + yb = r
+def gcd(a, b, x1 = 1, y1 = 0, x2 = 0, y2 = 1):
+   q = a // b
+   r = a % b
+
+   if r == 0:
+      return (b, 0, 1)
+
+   x1 = x1 - q * x2
+   y1 = y1 - q * y2
+
+   if b % r == 0:
+      return (r, x1, y1)
+
+   return gcd(b, r, x2, y2, x1, y1)
+   \end{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.10]  Prove for any given positive integer $N$ there exist only
+                  finitely many integers $n$ with $\varphi(n) = N$ where
+                  $\varphi$ denotes Euler's $\varphi$-function. Conclude in 
+                  particular that $\varphi(n)$ tends to infinity as $n$ tends to
+                  infinity.
+
+      \textbf{Proof:} Let $M$ be a positive integer. We shall denote a 
+      factorization of $M$ as a tuple $(a_1, a_2, \ldots, a_m)$, where
+      $m \in \Z^+$, each $a_i$---called a factor of $M$---is a positive integer,
+      and $\prod_{i=1}^m a_i = M$. If we remove all the 1s in a tuple $h$ to get
+      a tuple $t$, then $h = t$, so we can further assume that all the factors 
+      in a tuple are greater than 1. Also if we permute the factors in a tuple 
+      $h$ to get a tuple $t$, then $h = t$; that is, the order of factors in a 
+      tuple is irrelevant. We shall denote a tuple that contains only 1s as (1).
+      So let $F_M$ denote the set of all factorizations of $M$. For example,
+      $$F_1 = \{(1)\} \text{ and }
+        F_{20} = \{(2, 10), (5, 4), (20), (5, 2, 2)\}.$$
+
+      Since there is a finite number of factors of $M$, and since each factor is
+      at least 2 (except if $M$ is 1), it follows that $|F_M|$ is finite. Let 
+      $P_M$ be the set of all factorizations of $M$ of the form
+      $({p_1}^{c_1}, p_1 - 1, {p_2}^{c_2}, p_2 - 1, \ldots,
+      {p_k}^{c_k}, p_k - 1)$ where each $p_i$ is a unique prime, each $c_i$ is a
+      nonnegative integer, and $k$ is a positive integer. Note that
+      $P_M \subseteq F_M$. We are now ready to complete the proof. Let $N$ be a 
+      positive integer. Let $B_N$ be the set of positive integers $n$ such that 
+      $\varphi(n) = N$. If $|B_N| = 0$, then there exists a finite
+      number---exactly zero---of integers $n$ such that $\varphi(n) = N$. So 
+      assume that $|B_N| \ge 1$. Now consider the map
+      $$\phi : P_N \rightarrow B_N,$$
+      defined by
+      $$\phi(t) = {p_1}^{c_1 + 1}{p_2}^{c_2 + 1}\cdots{p_k}^{c_k + 1}$$
+      where $t \in P_N$ and $t = ({p_1}^{c_1}, p_1 - 1, {p_2}^{c_2}, p_2 - 1, 
+      \ldots, {p_k}^{c_k}, p_k - 1)$. Notice that $\phi$ is well 
+      defined since if $t = ({p_1}^{c_1}, p_1 - 1, {p_2}^{c_2}, p_2 - 1, \ldots,
+      {p_k}^{c_k}, p_k - 1)$ then
+      \begin{align*}
+         \varphi(\phi(t)) &= \varphi({p_1}^{c_1 + 1}{p_2}^{c_2 + 1}\cdots
+                             {p_k}^{c_k + 1}) \\
+                          &= {p_1}^{c_1}(p_1 - 1){p_2}^{c_2}(p_2 - 1) \cdots
+                             {p_k}^{c_k}(p_k - 1) \\
+                    &= N,
+      \end{align*}
+      so that $\phi(t)$, indeed, is a member of $B_N$. Since $|P_N|$ is finite, 
+      it suffices to show that $\phi$ is a bijection. First we want to show that
+      $\phi$ is onto. So let $d \in B_N$. By the Fundamental Theorem of
+      Arithmetic, we have
+      $$d = {d_1}^{a_1}{d_2}^{a_2}\cdots{d_j}^{a_j}$$
+      where each $a_i$ is a positive integer and each $d_i$ is a unique prime.
+      That is
+      $$\phi(({d_1}^{a_1 - 1}, d_1 - 1, {d_2}^{a_2 - 1}, d_2 - 1, \ldots,
+      {d_j}^{a_j - 1}, d_j - 1)) = d,$$
+      so that $\phi$ is onto. Finally, we must now show that $\phi$ is
+      one-to-one. That is, suppose that $\phi(s) = \phi(t)$ for some tuples
+      $s, t \in P_N$; we must prove that $s = t$. Since $s$ and $t$ are tuples
+      in $P_N$, we must have that
+      $$s = ({s_1}^{a_1}, s_1 - 1, {s_2}^{a_2}, s_2 - 1, \ldots, {s_j}^{a_j}, 
+            s_j - 1),$$
+      and
+      $$t = ({t_1}^{b_1}, t_1 - 1, {t_2}^{b_2}, t_2 - 1, \ldots, {t_k}^{b_k}, 
+      t_k - 1).$$
+
+      Since $\phi(s) = \phi(t)$, it follows that
+      $${s_1}^{a_1 + 1}{s_2}^{a_2 + 1}\cdots{s_j}^{a_j + 1} = 
+        {t_1}^{b_1 + 1}{t_2}^{b_2 + 1}\cdots{t_k}^{b_k + 1} $$
+      Since all the exponents in the equation above are positive and since
+      the primes $s_i$ are unique and $t_i$ are unique, it follows by the
+      Fundamental Theorem of Arithmetic that $j = k$ and each prime $s_i$ is
+      equal to some prime $t_r$ (with exponents $a_i + 1 = b_r + 1$, so that 
+      $a_i = b_r$). Thus $s = t$, so that $\phi$ is 1-1. Thus $|B_N| = |P_N|$. 
+      Hence there exist only finitely many integers $n$ with $\varphi(n) = N$.
+      Now we have shown that there exists a maximum positive integer $M$ such 
+      that $\varphi(M) = N$. For each natural number $n$, let $M_n$ denote the
+      maximum positive integer such that $\varphi(M_n) = n$. Thus
+      $\varphi(m) \neq n$ for all $m > M_n$. Let $\varepsilon$ be a positive 
+      number. To show that $\varphi(n)$ tends to infinity, we must find a
+      natural number $K$ such that $\varphi(n) > \varepsilon$ for all $n \ge K$.
+      Choose $K = \max\{M_1, M_2, \ldots, M_{\lceil\varepsilon \rceil}\}$,
+      ($\lceil\varepsilon\rceil$ is the least integer greater than
+      $\varepsilon$). So if $n \ge K$, we know that $\varphi(n)$ cannot be a
+      member of $\{1, 2, \ldots, \lceil\varepsilon\rceil\}$; in particular, we
+      have that $\varphi(n) > \lceil\varepsilon\rceil \ge \varepsilon$. \qed
+      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2.11]  Prove that if $d$ divides $n$ then $\varphi(d)$ divides
+                  $\varphi(n)$ where $\varphi$ denotes Euler's
+                  $\varphi-$function.
+
+      \textbf{Proof:} Let $d$ and $n$ be positive integers such that $d \mid n$.
+      We want to show that $\varphi(d) \mid \varphi(n)$. Let
+      ${d_1}^{a_1}{d_2}^{a_2}\cdots{d_k}^{a_k}$ be the prime factorization of
+      $d$, where each $a_i$ is a positive integer and each $d_i$ is a unique
+      prime. Since $d \mid n$, it follows that there exists an integer $m$ such
+      that
+      $$n = ({d_1}^{a_1}{d_2}^{a_2}\cdots{d_k}^{a_k})m.$$
+      Now we shall factor out the maximum powers of each $d_i$ in $m$, so that 
+      we can write
+      $$m = ({d_1}^{c_1}{d_2}^{c_2}\cdots{d_k}^{c_k})m'$$
+      where each $c_i$ is a nonnegative integer and $m'$ is an integer that is
+      prime to ${d_1}^{c_1}{d_2}^{c_2}\cdots{d_k}^{c_k}$. Thus we have that
+      $$n = ({d_1}^{b_1}{d_2}^{b_2}\cdots{d_k}^{b_k})m', \quad b_i = a_i + c_i$$
+      so that
+      \begin{align*}
+         \varphi(n) &= \varphi({d_1}^{b_1}{d_2}^{b_2}\cdots{d_k}^{b_k}m') \\
+                    &= \varphi({d_1}^{b_1}{d_2}^{b_2}\cdots{d_k}^{b_k})
+                       \varphi(m') \\
+                    &= {d_1}^{b_1 - 1}(d_1 - 1){d_2}^{b_2 - 1}(d_2 - 1)\cdots
+                       {d_k}^{b_k - 1}(d_k - 1)\varphi(m') \\
+                    &= {d_1}^{c_1}{d_1}^{a_1 - 1}(d_1 - 1)
+                       {d_2}^{c_2}{d_2}^{a_2 - 1}(d_2 - 1)\cdots
+                       {d_k}^{c_k}{d_k}^{a_k - 1}(d_k - 1)\varphi(m')\\
+                    &= {d_1}^{c_1}{d_2}^{c_2}\cdots{d_k}^{c_k}\varphi(m')
+                       {d_1}^{a_1 - 1}(d_1 - 1)
+                       {d_2}^{a_2 - 1}(d_2 - 1)\cdots
+                       {d_k}^{a_k - 1}(d_k - 1) \\
+                    &= ({d_1}^{c_1}{d_2}^{c_2}\cdots{d_k}^{c_k}
+                        \varphi(m'))\varphi(d),
+      \end{align*}
+      so that $\varphi(d) \mid \varphi(n)$. \qed
+      
+\end{enumerate}

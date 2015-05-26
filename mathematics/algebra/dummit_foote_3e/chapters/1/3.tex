@@ -1,0 +1,381 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.1]   Let $\sigma$ be the permutation
+                  $$1 \mapsto 3 \quad 2 \mapsto 4 \quad 3 \mapsto 5 \quad
+                    4 \mapsto 2 \quad 5 \mapsto 1$$
+                  and let $\tau$ be the permutation
+                  $$1 \mapsto 5 \quad 2 \mapsto 3 \quad 3 \mapsto 2 \quad
+                    4 \mapsto 4 \quad 5 \mapsto 1.$$
+                  Find the cycle decompositions of each of the following
+                  permutations: $\sigma$, $\tau$, $\sigma^2$, $\sigma\tau$,
+                  $\tau\sigma$, and $\tau^2\sigma$.
+
+      \textbf{Solution.}
+      \begin{center}
+         \begin{tabular}{@{}|c|c|@{}} \hline
+            Permutation    & Cycle decomposition   \\ \hline
+            $\sigma$       & (1 3 5)(2 4)          \\ \hline
+            $\tau$         & (1 5)(2 3)            \\ \hline 
+            $\sigma^2$     & (1 5 3)               \\ \hline
+            $\sigma\tau$   & (2 5 3 4)             \\ \hline
+            $\tau\sigma$   & (1 2 4 3)             \\ \hline
+            $\tau^2\sigma$ & (1 3 5)(2 4)          \\ \hline
+         \end{tabular}
+      \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.2]   Let $\sigma$ be the permutation
+                  \begin{center}
+                     \begin{tabular}{@{}rclrclrclrclrcl@{}}
+                        1 & $\mapsto$ & 13 & 2 & $\mapsto$ & 2 &
+                        3 & $\mapsto$ & 15 & 4 & $\mapsto$ & 14 &
+                        5 & $\mapsto$ & 10 \\
+                        6 & $\mapsto$ & 6 & 7 & $\mapsto$ & 12 &
+                        8 & $\mapsto$ & 3 & 9 & $\mapsto$ & 4 &
+                        10 & $\mapsto$ & 1 \\
+                        11 & $\mapsto$ & 7 & 12 & $\mapsto$ & 9 &
+                        13 & $\mapsto$ & 5 & 14 & $\mapsto$ & 11 &
+                        15 & $\mapsto$ & 8
+                  \end{tabular}
+                  \end{center}
+                  and let $\tau$ be the permutation
+                  \begin{center}
+                     \begin{tabular}{@{}rclrclrclrclrcl@{}}
+                        1 & $\mapsto$ & 14 & 2 & $\mapsto$ & 9 &
+                        3 & $\mapsto$ & 10 & 4 & $\mapsto$ & 2 &
+                        5 & $\mapsto$ & 12 \\
+                        6 & $\mapsto$ & 6 & 7 & $\mapsto$ & 5 &
+                        8 & $\mapsto$ & 11 & 9 & $\mapsto$ & 15 &
+                        10 & $\mapsto$ & 3 \\
+                        11 & $\mapsto$ & 8 & 12 & $\mapsto$ & 7 &
+                        13 & $\mapsto$ & 4 & 14 & $\mapsto$ & 1 &
+                        15 & $\mapsto$ & 13.
+                  \end{tabular}
+                  \end{center}
+                  Find the cycle decompositions of the following permutations:
+                  $\sigma$, $\tau$, $\sigma^2$, $\sigma\tau$, $\tau\sigma$, and
+                  $\tau^2\sigma$.
+
+      \textbf{Solution.}
+      \begin{center}
+         \begin{tabular}{@{}|c|c|@{}} \hline
+            Permutation    & Cycle decomposition   \\ \hline
+            $\sigma$       & (1 13 5 10)(3 15 8)(4 14 11 7 12 9)     \\ \hline
+            $\tau$         & (1 14)(2 9 15 13 4)(3 10)(5 12 7)(8 11) \\ \hline 
+            $\sigma^2$     & (1 5)(3 8 15)(4 11 12)(7 9 14)(10 13)   \\ \hline
+            $\sigma\tau$   & (1 11 3)(2 4)(5 9 8 7 10 15)(13 14)     \\ \hline
+            $\tau\sigma$   & (1 4)(2 9)(3 13 12 15 11 5)(8 10 14)\\ \hline
+            $\tau^2\sigma$ & (1 2 15 8 3 4 14 11 12 13 7 5 10)\\ \hline
+         \end{tabular}
+      \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.3]   For each of the permutations whose cycle decompositions were
+                  computed in the preceding two exercises compute its order.
+
+      \textbf{Solution.} We shall use Exercise 1.3.15 to find the orders of the 
+      elements in the preceding two exercises. 
+
+      \textbf{From Ex. 1.3.1.}
+      \begin{center}
+         \begin{tabular}{@{}|c|c|@{}}   \hline
+            Permutation    & Order   \\ \hline
+            $\sigma$       & 6       \\ \hline
+            $\tau$         & 2       \\ \hline 
+            $\sigma^2$     & 3       \\ \hline
+            $\sigma\tau$   & 4       \\ \hline
+            $\tau\sigma$   & 4       \\ \hline
+            $\tau^2\sigma$ & 6       \\ \hline
+         \end{tabular}
+      \end{center} 
+
+      \textbf{From Ex. 1.3.2.}
+      \begin{center}
+         \begin{tabular}{@{}|c|c|@{}}     \hline
+            Permutation    & Order     \\ \hline
+            $\sigma$       & 12        \\ \hline
+            $\tau$         & 30        \\ \hline 
+            $\sigma^2$     & 6         \\ \hline
+            $\sigma\tau$   & 6         \\ \hline
+            $\tau\sigma$   & 6         \\ \hline
+            $\tau^2\sigma$ & 13        \\ \hline
+         \end{tabular}
+      \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.4]   Compute the order of each of the elements in the following
+                  groups: (a) $S_3$ \qquad (b) $S_4$.
+
+      \textbf{Solution.} We shall use Exercise 1.3.15 to find the orders of the 
+      elements in the preceding two exercises.
+
+      \textbf{(a)}
+      \begin{center}
+         \begin{tabular}{@{}|c|c|@{}}   \hline
+            Permutation in $S_3$    & Order   \\ \hline
+            (1)      & 1       \\ \hline
+            (1 2)    & 2       \\ \hline 
+            (1 3)    & 2       \\ \hline
+            (2 3)    & 2       \\ \hline
+            (1 2 3)  & 3       \\ \hline
+            (1 3 2)  & 3       \\ \hline
+         \end{tabular}
+      \end{center}
+
+      \textbf{(b)}
+      \begin{center}
+         \begin{tabular}{@{}|c|c|c|@{}}   \hline
+            \# & Permutation in $S_4$    & Order   \\ \hline
+            1. &  (1)         & 1     \\ \hline
+            2. &  (1 2)       & 2     \\ \hline 
+            3. &  (1 3)       & 2     \\ \hline
+            4. &  (1 4)       & 2     \\ \hline
+            5. &  (2 3)       & 2     \\ \hline
+            6. &  (2 4)       & 2     \\ \hline
+            7. &  (3 4)       & 2     \\ \hline
+            8. &  (1 2)(3 4)  & 2     \\ \hline
+            9. &  (1 3)(2 4)  & 2     \\ \hline
+            10.&  (1 4)(2 3)  & 2     \\ \hline
+            11.&  (1 2 3)     & 3     \\ \hline
+            12.&  (1 3 2)     & 3     \\ \hline
+            13.&  (1 2 4)     & 3     \\ \hline
+            14.&  (1 4 2)     & 3     \\ \hline
+            15.&  (1 3 4)     & 3     \\ \hline
+            16.&  (1 4 3)     & 3     \\ \hline
+            17.&  (2 3 4)     & 3     \\ \hline
+            18.&  (2 4 3)     & 3     \\ \hline
+            19.&  (1 2 3 4)   & 4     \\ \hline
+            20.&  (1 2 4 3)   & 4     \\ \hline
+            21.&  (1 3 2 4)   & 4     \\ \hline
+            22.&  (1 3 4 2)   & 4     \\ \hline
+            23.&  (1 4 2 3)   & 4     \\ \hline
+            24.&  (1 4 3 2)   & 4     \\ \hline
+         \end{tabular}
+      \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.5]   Find the order of $(1\;12\;8\;10\;4)(2\;13)(5\;11\;7)(6\;9)$.
+
+      \textbf{Solution.} Since (1 12 8 10 4)(2 13)(5 11 7)(6 9) is a product of
+      disjoint cycles, it follows by Exercise 1.3.15 that its order is
+      lcm$(5, 2, 3, 2) = 30$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.6]   Write out the cycle decomposition of each element of order 4
+                  in $S_4$.
+
+      \textbf{Solution.} See Exercise 1.3.4.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.7]   Write out the cycle decomposition of each element of order 2
+                  in $S_4$.
+
+      \textbf{Solution.} See Exercise 1.3.4.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.8]   Prove that if $\Omega = \{1, 2, 3, \ldots\}$ then $S_\Omega$
+                  is an infinite group (do not say $\infty! = \infty$).
+
+      \textbf{Proof.} Suppose to the contrary that $S_\Omega$ is finite.
+      Consider $T = \{\sigma(1) : \sigma \in S_\Omega\}$. Since $S_\Omega$ is
+      finite, it follows that $T$ is finite. Now notice that $T$ is a finite
+      subset of the positive integers; thus $T$ has a maximum, say $n \in \Z^+$.
+      But the permutation (1 \; $n+1$) is a member of $S_\Omega$ so that
+      $n + 1 \in T$, a contradiction since $n$ is the maximum element of T. Thus
+      $S_\Omega$ is infinite. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.9]   \begin{enumerate}
+                     \item Let $\sigma$ be the 12-cycle
+                           (1 2 3 4 5 6 7 8 9 10 11 12). For which positive
+                           integers $i$ is $\sigma^i$ also a 12-cycle?
+                     \item Let $\tau$ be the 8-cycle (1 2 3 4 5 6 7 8). For
+                           which positive integers $i$ is $\tau^i$ also an
+                           8-cycle?
+                     \item Let $\omega$ be the 14-cycle
+                           (1 2 3 4 5 6 7 8 9 10 11 12 13 14). For which
+                           positive integers $i$ is $\omega^i$ also a 14-cycle?
+                  \end{enumerate}
+
+      \textbf{Solution.} See Exercise 1.3.11.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.10]  Prove that if $\sigma$ is the $m$-cycle
+                  ($a_1$ $a_2$ $\ldots$ $a_m$), then for all
+                  $i \in \{1, 2, \ldots, m\}$, $\sigma^i(a_k) = a_{k+i}$,
+                  where $k + i$ is replaced by its least residue mod $m$ when
+                  $k + i > m$ (so that $a_0 = a_m$). Deduce that
+                  $|\sigma| = m$.
+
+      \textbf{Proof.} Let $\sigma$ be an $m$-cycle ($a_1$ $a_2$ $\ldots$ $a_m$).
+      We want to show that if $i$ is a positive integer then
+      \begin{equation} \label{1_3_10_1}
+         \sigma^i(a_k) = a_{k+i}
+      \end{equation}
+      We shall proceed by induction on $i$.
+
+      \textbf{Base Case.} $i = 1$. If $1 \le k < m$, then
+      $\sigma^1(a_k) = a_{k+1}$. If $k = m$ then $k + 1 \equiv 1 \mod m$, so
+      that $\sigma^1(a_k) = a_{k+1} = a_1$. Thus \eqref{1_3_10_1} holds for
+      $i = 1$.
+
+      \textbf{Inductive Hypothesis.} Suppose \eqref{1_3_10_1} holds for some
+      positive integer $j$.
+
+      So we have that
+      \begin{align*}
+         \sigma^{j+1}(a_k) &= \sigma(\sigma^j(a_k)) \\
+            &= \sigma(a_{k+j}) &[\text{Inductive Hypothesis}] \\
+            &= a_{k+j+1}.
+      \end{align*}
+
+      That is \eqref{1_3_10_1} holds for $j + 1$. It follows by Mathematical
+      Induction that it holds for all positive $n$. Now we have that
+      $\sigma^m(a_k) = a_{k + m} = a_k$, so that $\sigma^m = 1$ and thus
+      $|\sigma| \le m$. Consider $1 \le s < m$. We have
+      $\sigma^s(a_m) = a_{m + s} = a_s \neq a_m$ since $1 \le s < m$. Thus
+      $\sigma^s \neq 1$. We can then conclude that $|\sigma| = m$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[\textcolor{red}{1.3.11}] \textcolor{red}{Let $\sigma$ be the $m$-cycle 
+                                 (1 2 $\ldots$ $m$). Show that $\sigma^i$ is 
+                                 also an $m$-cycle if and only if $i$ is
+                                 relatively prime to $m$.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.12]  \begin{enumerate}
+                     \item If $\tau$ = (1 2)(3 4)(5 6)(7 8)(9 10) determine
+                           whether there is an $n$-cycle $\sigma$ ($n \ge 10$)
+                           with $\tau = \sigma^k$ for some integer $k$.
+                     \item If $\tau$ = (1 2)(3 4 5) determine whether there is
+                           an $n$-cycle $\sigma (n \ge 5)$ with
+                           $\tau = \sigma^k$ for some integer $k$.
+                  \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item We have (1 3 5 7 9 2 4 6 8 10)$^5 = \tau$.
+         \item There is no $n$-cycle $\sigma$ such that $\tau = \sigma^k$ for
+               some integer $k$.
+
+               \textbf{Proof.} Suppose to the contrary that there exists an
+               $n$-cycle $\sigma$ = ($a_1$ $a_2$ $\ldots$ $a_n$) ($n \ge 5$) and
+               positive integer $k$ such that $\tau = \sigma^k$. We can assume
+               without loss of generality that $a_1 = 1$. Now we have
+               $$a_{k+1} = \sigma^k(a_1) = \tau(a_1) = 2 \text{ so that }
+                 a_{2k+1} = \sigma^k(a_{k+1}) = \tau(2) = a_1.$$
+               Since $a_{2k+1} = a_1$, it follows that $2k \equiv 0$ mod $n$.
+               We must now have that $a_i = 3$ for some $1 < i \le n$. So
+               $a_{k+i} = \sigma^k(a_i) = \tau(a_i) = 4$. But
+               $$5 = \tau(4) = \tau(a_{k+i}) = \sigma^k(a_{k+i}) = a_{2k+i} =
+                 a_i = 3,$$
+               a contradiction since $3 \neq 5$. The proof is done. \qed
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.13]  Show that an element has order 2 in $S_n$ if and only if its
+                  cycle decomposition is a product of commuting 2-cycles.
+
+      \textbf{Proof.} Use Exercise 1.3.14 (set $p = 2$).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.14]  Let $p$ be a prime. Show that an element has order $p$ in
+                  $S_n$ if and only if its cycle decomposition is a product of
+                  commuting $p$-cycles. Show by an explicit example that this
+                  need not be the case if $p$ is not prime.
+
+      \textbf{Proof.} Let $p$ be a prime and let $\sigma \in S_n$.
+
+      $(\Rightarrow)$ Suppose $|\sigma| = p$. Let
+      $\sigma_1\sigma_2\cdots\sigma_m$ be the cycle decomposition of $\sigma$,
+      with each cycle having length greater than 1. It follows by Exercise
+      1.3.15 that $p = \text{lcm}(|\sigma_1|, \ldots, |\sigma_m|)$. Thus
+      $|\sigma_i| \mid p$ for all $1 \le i \le m$. Since $|\sigma_i| > 1$ and
+      since $p$ is prime it follows that $|\sigma_i| = p$, for all
+      $1 \le i \le m$. The converse follows immediately from Exercise 1.3.15.
+      \qed
+
+      Consider $\sigma \in S_{10}$, where $\sigma = $(1 2 3 4)(5 6 7 8 9 10). 
+      Notice that $|\sigma| = 20$, but it is not a product of commuting
+      $20$-cycles.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.15]  Prove that the order of an element in $S_n$ equals the least
+                  common multiple of the lengths of the cycles in its cycle
+                  decomposition.
+                  [\textbf{Hint.} Use Exercises 1.3.10 and 1.1.24.]
+
+      \textbf{Proof.} Let $\sigma \in S_n$. Consider the cycle decomposition of
+      $\sigma$, say $\sigma = \sigma_1\cdots\sigma_m$. Let
+      $r = \text{lcm}(|\sigma_1|, \ldots, |\sigma_m|)$, so that
+      $|\sigma_i| \mid r$ (i.e there exists an integer $k_i$ such that
+      $r = k_i \cdot |\sigma_i|$) for all $1 \le i \le m$. We can assume that
+      $r > 1$ since the proof is trivial otherwise. Now
+      \begin{align*}
+         \sigma^r &= (\sigma_1\cdots\sigma_m)^r \\
+               &= {\sigma_1}^r\cdots{\sigma_m}^r &[\text{Exercise 1.1.24}] \\
+               &= ({\sigma_1}^{|\sigma_1|})^{k_1}\cdots
+                  ({\sigma_m}^{|\sigma_m|})^{k_m} \\
+               &= 1^{k_1}\cdots1^{k_m} = 1, &[\text{Exercise 1.3.10}]
+      \end{align*}
+      so that $|\sigma| \le r$. Now consider any positive integer $s < r$. Since
+      $s$ is less than the least common multiple of the lengths of the cycles in
+      the cycle decomposition of $\sigma$, it follows that $|\sigma| \nmid j$
+      for some $1 \le j \le m$, so that ${\sigma_j}^s \neq 1$. Thus
+      $\sigma^s \neq 1$, and we can conclude that $|\sigma| = r$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.16]  Show that if $n \ge m$ then the number of $m$-cycles in $S_n$
+                  is given by
+                  $$\frac{n(n - 1)(n - 2) \cdots (n - m + 1)}{m}.$$
+
+      \textbf{Proof.} Note that if we fix an element of an $m$-cycle of $S_n$
+      as the first element, then we can permute the remaining elements in
+      $(m - 1)!$ ways. Thus there are $\D\binom{n}{m} \cdot (m - 1)!$ $m$-cycles
+      in $S_n$. So
+      $$\binom{n}{m} \cdot (m - 1)! = \frac{n!(m - 1)!}{m!(n - m)!} =
+        \frac{n(n - 1)(n - 2) \cdots (n - m + 1)}{m}.$$ \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.17]  Show that if $n \ge 4$ then the number of permutations in
+                  $S_n$ which are the product of two disjoint 2-cycles is
+                  $n(n-1)(n-2)(n-3)/8$.
+
+      \textbf{Proof.} Let $n \ge 4$. To form a product of two disjoint 2-cycles 
+      in $S_n$, we first select two elements in $\{1, 2, \ldots, n\}$, and then 
+      we select another two elements from the same set (not including the first 
+      two elements we selected). Thus there are $\D\binom{n}{2}\binom{n-2}{2}$ to
+      achieve this. But notice that the permutations (1 2)(3 4) and (3 4)(1 2)
+      will both be counted since the selection does not consider them equal.
+      Thus there are
+      $$\frac{\D\binom{n}{2}\binom{n-2}{2}}{2} = \frac{n(n-1)(n-2)(n-3)}{8}$$
+      permutations in $S_n$ which are the product of two disjoint 2-cycles. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.18]  Find all numbers $n$ such that $S_5$ contains an element of
+                  order $n$.
+
+      \textbf{Solution.} $S_5$ has no element of order greater than 6.
+      \begin{center}
+         \begin{tabular}{@{}|c|c|@{}}   \hline
+            Permutation in $S_5$    & Order   \\ \hline
+            (1)          & 1       \\ \hline
+            (1 2)        & 2       \\ \hline 
+            (1 2 3)      & 3       \\ \hline
+            (1 2 3 4)    & 4       \\ \hline
+            (1 2 3 4 5)  & 5       \\ \hline
+            (1 2)(3 4 5) & 6       \\ \hline
+         \end{tabular}
+      \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.19]  Find all numbers $n$ such that $S_7$ contains an element of
+                  order $n$.
+
+      \textbf{Solution.} $S_7$ has no element of order 8, 9, and greater than
+      12.
+      \begin{center}
+         \begin{tabular}{@{}|c|c|@{}}   \hline
+            Permutation in $S_7$    & Order   \\ \hline
+            (1)              & 1       \\ \hline
+            (1 2)            & 2       \\ \hline 
+            (1 2 3)          & 3       \\ \hline
+            (1 2 3 4)        & 4       \\ \hline
+            (1 2 3 4 5)      & 5       \\ \hline
+            (1 2 3 4 5 6)    & 6       \\ \hline
+            (1 2 3 4 5 6 7)  & 7       \\ \hline
+            (1 2)(3 4 5 6 7) & 10      \\ \hline
+            (1 2 3)(4 5 6 7) & 12      \\ \hline
+         \end{tabular}
+      \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3.20]  Find a set of generators and relations for $S_3$.
+
+      \textbf{Solution.} Let $\sigma$= (1 2 3) and $\alpha$ = (1 3). So we have 
+      that
+      $$S_3 = \cyc{\sigma, \alpha : \sigma^3 = \alpha^2 = 1, \;
+                   \sigma\alpha = \alpha\sigma^{-1}}.$$
+\end{enumerate}

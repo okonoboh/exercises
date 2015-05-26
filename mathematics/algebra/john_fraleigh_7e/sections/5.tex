@@ -1,0 +1,801 @@
+\noindent      \textbf{Computations}
+
+\noindent      In Exercises 1 through 6, determine whether the given subset of 
+               the complex numbers is a subgroup of the group $\C$ of complex 
+               numbers under addition. \\
+
+\noindent      \textit{We shall be using the subgroup criterion: that is if $G$ 
+               is a group, then $H \le G$ if and only if $H$ is not empty and 
+               $ab^{-1} \in H$ for all $a, b \in H$. See Exercise 5.45 below.}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.1]  $\R$. Claim that $\cyc{\R, +} \le \cyc{\C, +}$.
+
+      \textbf{Proof.} $\R$ is clearly nonempty and since $a - b \in \R$ for all
+      $a$, $b$ in $\R$, it follows by the subgroup criterion that
+      $\cyc{\R, +} \le \cyc{\C, +}$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.2]  $\Q^+$. Claim that $\cyc{\Q^+, +}$ is not a subgroup of
+               $\cyc{\C, +}$.
+
+      \textbf{Proof.} Since $0 \notin \Q^+$ and since 0 is the identity 
+      element of $\cyc{\C, +}$, it follows that $\cyc{Q, +}$ is not a subgroup
+      of $\cyc{\C, +}$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.3]  $7\Z$. Claim that $\cyc{7\Z, +} \le \cyc{\C, +}$.
+
+      \textbf{Proof.} $7\Z$ is clearly nonempty, so consider $a, b \in 7\Z$.
+      Then there exist integers $x_1$ and $x_2$ such that $a = 7x_1$ and
+      $b = 7x_2$; thus $a - b = 7(x_1 - x_2) \in 7\Z$. Hence, by the subgroup
+      criterion, $7\Z$ is a subgroup of $\C$ under addition. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.4]  The set $i\R$ of pure imaginary numbers including 0. Claim that
+               $\cyc{i\R, +} \le \cyc{\C, +}$.
+
+      \textbf{Proof.} $i\R$ is clearly nonempty, so consider $a, b \in i\R$.
+      Then there exist real numbers $x_1$ and $x_2$ such that $a = ix_1$ and
+      $b = ix_2$; thus $a - b = i(x_1 - x_2) \in i\R$. Hence, by the subgroup
+      criterion, $i\R$ is a subgroup  of $\C$ under addition. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.5]  The set $\pi\Q$ of rational multiples of $\pi$. Claim that
+               $\cyc{\pi\Q, +} \le \cyc{\C, +}$.
+
+      \textbf{Proof.} $\pi\Q$ is clearly nonempty, so consider $a, b \in \pi\Q$.
+      Then there exist rational numbers $p$ and $q$ such that $a = p\pi$ and
+      $b = q\pi$; thus $a - b = \pi(p - q) \in \pi\Q$. Hence, by the subgroup
+      criterion, $\pi\Q$ is a subgroup of $\C$ under addition. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.6]  The set $H = \{\pi^n : n \in \Z\}$. Claim that $\cyc{H, +}$ is 
+               not a subgroup of $\cyc{\C, +}$.
+
+      \textbf{Proof.} We know that $\pi^n > 0$ for every integer $n$. It
+      follows that the set $\{\pi^n : n \in \Z\}$ is not a subgroup of $\C$ 
+      under addition since the former does not contain 0. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.7]  Which of the sets in Exercises 1 through 6 are subgroups of the
+               group $\C^*$ of nonzero complex numbers under multiplication?
+
+      \textbf{Proof.} Claim that the sets $\Q^+$ and
+      $H = \{\pi^n : n \in \Z\}$ are both subgroups of $\C$ under 
+      multiplication. These two sets are clearly nonempty. It suffices to show 
+      that they both satisfy the subgroup criterion. So consider $a, b \in \Q^+$
+      and $c, d \in H$. Then there exist positive integers $p, q, r, s$ and
+      integers $u, v$ such that $a = p/q$, $b = r/s$, $c = \pi^u$, and
+      $d = \pi^v$. Thus $ab^{-1} = ps/qr$ and $cd^{-1} = \pi^{u - v}$, so that
+      $ab^{-1} \in \Q^+$ and $cd^{-1} \in H$. We are done. The remaining sets 
+      contain 0, and since 0 does not have a multiplicative inverse, these sets 
+      are not subgroups of $\cyc{\C, \cdot}$. \qed
+\end{enumerate}
+
+\noindent      In Exercises 8 through 13, determine whether the given set of
+               invertible $n \times n$ matrices with real number entries is a
+               subgroup of $GL(n, \R)$.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.8]  The $n \times n$ matrices with determinant 2.
+
+      \textbf{Proof.} Let $F$ denote the set of $n \times n$ matrices with 
+      determinant 2. We want to show that $F$ is not a subgroup of $GL(n, \R)$. 
+      Since the determinant of the identity matrix---also the identity element
+      of $GL(n, \R)$---is 1, it's not in $F$. Thus $F$ is not a subgroup of
+      $G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.9]  The diagonal $n \times n$ matrices with no zeroes on the 
+               diagonal.
+
+      \textbf{Proof.} We showed in Exercise 4.13 that this was a group. Thus 
+      this set is a subgroup of $GL(n, \R)$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.10] The upper-triangular $n \times n$ matrices with no zeroes on the
+               diagonal.
+   
+      \textbf{Proof.} This is a subgroup of $GL(n, \R)$.[Will give proof later.]
+      \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.11] The $n \times n$ matrices with determinant $-1$.
+
+      \textbf{Proof.} This is not a subgroup of $GL(n, \R)$ for the same reason
+      we gave in Exercise 5.8; that is, the identity element of $GL(n, \R)$ is
+      not in the set of $n \times n$ matrices with determinant $-1$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.12] The $n \times n$ matrices with determinant $-1$ or 1.
+
+      \textbf{Proof.} We showed in Exercise 4.18 that this was a group. Thus 
+      this set is a subgroup of $GL(n, \R)$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.13] The set of all $n \times n$ matrices $A$ such that
+               $A^TA = I_n$. [These matrices are called \textbf{orthogonal}.
+               Recall that $A^T$, the \textit{transpose} of $A$, is the matrix
+               whose $j$th column is the $j$th row of $A$ for $1 \le j \le n$,
+               and that the transpose operation has the property
+               $(AB)^T = B^TA^T$.]
+
+      \textbf{Proof.} Let $F$ denote the set of all $n \times n$ matrices $A$
+      such that $(A^T)A = I_n$. We want to show that $F \le GL(n, \R)$. It is
+      clear that $I_n \in F$. So consider $A, B \in F$. It suffices to show that
+      $AB^{-1} \in F$; that is, we must show that $(AB^{-1})^T(AB^{-1}) = I_n$. 
+      Notice that $(A^T)A = I_n$ if and only if $A^{-1} = A^T$. Thus
+      \begin{align*}
+         (AB^{-1})^T(AB^{-1}) &= (AB^T)^T(AB^{-1}) \\ 
+                              &= ((B^T)^TA^T)(AB^{-1}) \\
+                              &= (BA^T)(AB^{-1}) \\
+                              &= (BA^{-1})(AB^{-1}) \\
+                              &= B((A^{-1})A)B^{-1} \\
+                              &= BI_nB^{-1} \\
+                              &= BB^{-1} \\
+                              &= I_n. \\
+      \end{align*}
+
+      It follows that $F \le GL(n, \R)$. \qed
+\end{enumerate}
+
+\noindent      Let $F$ be the set of all real-valued functions with domain $\R$
+               and let $\tilde{F}$ be the subset of $F$ consisting of those
+               functions that have a nonzero value at every point in $\R$. In
+               Exercises 14 through 19, determine whether the given subset of
+               $F$ with the induced operation is (a) a subgroup of the group $F$
+               under addition, (b) a subgroup of the group $\tilde{F}$ under
+               multiplication.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.14] The subset $\tilde{F}$.
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item $\cyc{\tilde{F}, +}$ is not a subgroup of $\cyc{F, +}$ because 
+               the zero function(the identity of $\cyc{F, +}$) is not a member
+               of $\tilde{F}$.
+         \item Yes, it trivially follows that
+               $\cyc{\tilde{F}, \cdot} \le \cyc{\tilde{F}, \cdot}$.
+      \end{enumerate} \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.15] The subset of all $f \in F$ such that $f(1) = 0$.
+
+      \textbf{Proof.} Let $F_1$ denote the subset of all $f \in F$ such that 
+      $f(1) = 0$.
+
+      \begin{enumerate}
+         \item The set $F_1$ is nonempty because it contains the zero function. 
+               So consider $f, g \in F_1$. To conclude that
+               $\cyc{F_1, +} \le \cyc{F, +}$, it suffices by the subgroup 
+               criterion to show that $f - g \in F_1$. This immediately follows
+               because $(f - g)(1) = f(1) - g(1) = 0$, so that $f - g \in F_1$.
+         \item No, the statement $\cyc{F_1, \cdot} \le \cyc{\tilde{F}, \cdot}$
+               is not true because the zero function is in $F_1$, but it is not
+               in $\tilde{F}$.
+      \end{enumerate} \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.16] The subset of all $f \in \tilde{F}$ such that $f(1) = 1$.
+
+      \textbf{Proof.} Let $F_2$ denote the subset of all $f \in \tilde{F}$ such 
+      that $f(1) = 1$.
+
+      \begin{enumerate}
+         \item $F_2$ clearly doesn't contain the zero function, so that
+               $F_2$ cannot be a subgroup of $F$ under addition.
+         \item The set $F_2$ is nonempty because it contains the identity       
+               function under multiplication. So consider $f, g \in F_2$. To 
+               conclude that $\cyc{F_2, \cdot} \le \cyc{\tilde{F}, \cdot}$, it 
+               suffices by the subgroup criterion to show that $fg \in F_2$. 
+               This immediately follows because $(fg)(1) = f(1)g(1) = 1$, so 
+               that $fg \in F_2$.
+      \end{enumerate} \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.17] The subset of all $f \in \tilde{F}$ such that $f(0) = 1$.
+
+      \textbf{Solution:} The answers are the same as Exercise 5.16(a) and (b).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.18] The subset of all $f \in \tilde{F}$ such that $f(0) = -1$.
+
+      \textbf{Proof.} Let $F_3$ denote the subset of all $f \in \tilde{F}$ such 
+      that $f(0) = -1$.
+
+      \begin{enumerate}
+         \item $F_3$ clearly doesn't contain the zero function, so that
+               $F_3$ cannot be a subgroup of $F$ under addition.
+         \item The constant function $f(x) = -1$ for all real $x$ is a member of
+               $F_3$, but $f \cdot f \notin F_3$ because $(f \cdot f)(-1) = 1$.
+               Thus $F_3$ is not closed under multiplication so that it is not
+               a subgroup of $\tilde{F}$.
+      \end{enumerate} \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.19] The subset of all constant functions in $F$.
+
+      \textbf{Proof.} Let $F_4$ denote the subset of all constant functions in 
+      $F$.
+
+      \begin{enumerate}
+         \item It is clear that $F_4$ is a subgroup of $F$.
+         \item $F_4$ is not a subgroup of $\tilde{F}$ because the former 
+               contains the zero function, while latter doesn't.
+      \end{enumerate} \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.20] Nine groups are given below. Give a complete list of all subgroup
+               relations, of the form $G_i \le G_j$, that exist between these
+               groups $G_1$, $G_2$, $\cdots$, $G_9$.
+
+               \begin{tabular}{@{}l l l@{}}
+                  $G_1$ & = & $\Z$ under addition \\
+                  $G_2$ & = & $12\Z$ under addition \\
+                  $G_3$ & = & $\Q^+$ under multiplication \\
+                  $G_4$ & = & $\R$ under addition \\
+                  $G_5$ & = & $\R^+$ under multiplication \\
+                  $G_6$ & = & $\{\pi^n : n \in \Z\}$ under multiplication \\
+                  $G_7$ & = & $3\Z$ under addition \\
+                  $G_8$ & = & the set of all integral multiples of 6 under 
+                              addition \\
+                  $G_9$ & = & $\{6^n : n \in \Z\}$ under multiplication
+               \end{tabular}
+
+      \textbf{Solution:}
+
+      \begin{itemize}
+         \item $G_2 \le G_8 \le G_7 \le G_1 \le G_4$.
+         \item $G_9 \le G_3 \le G_5$.
+         \item $G_6 \le G_5$.
+      \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.21] Write at least 5 elements of each of the following cyclic groups.
+               \begin{enumerate}
+                  \item $25\Z$ under addition.
+                  \item $\{(\frac{1}{2})^n : n \in \Z\}$ under multiplication.
+                  \item $\{\pi^n : n \in \Z\}$ under multiplication.
+               \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item $-$250, $-$125, 0, 275, 300, 2200.
+         \item 0, .5, .25, .125, .0625.
+         \item 1, $\pi^{10}$, $\pi^{22}$, $\pi^{222}$, $\pi^{7772}$.
+      \end{enumerate}
+   
+\end{enumerate}
+
+\noindent      In Exercises 22 through 25, describe all the elements in the
+               cyclic subgroup of $GL(2, \R)$ generated by the given
+               $2 \times 2$ matrix.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.22] $\left[
+                  \begin{tabular}{@{}r r@{}}
+                     0 & $-$1 \\
+                     $-1$ & 0
+                  \end{tabular}\right]$.
+
+      \textbf{Solution:}
+
+      $$\left\cyc{\left[
+                  \begin{tabular}{@{}r r@{}}
+                     0 & $-$1 \\
+                     $-1$ & 0
+                  \end{tabular}\right]\right} = \left\{\left[
+                  \begin{tabular}{@{}r r@{}}
+                     0 & $-$1 \\
+                     $-1$ & 0
+                  \end{tabular}\right], \left[
+                  \begin{tabular}{@{}r r@{}}
+                     1 & 0 \\
+                     0 & 1
+                  \end{tabular}\right]\right\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.23] $\left[
+                  \begin{tabular}{@{}r r@{}}
+                     1 & 1 \\
+                     0 & 1
+                  \end{tabular}\right]$.
+
+      \textbf{Solution:}
+
+      $$\left\cyc{\left[
+                  \begin{tabular}{@{}r r@{}}
+                     1 & 1 \\
+                     0 & 1
+                  \end{tabular}\right]\right} = \left\{\left[
+                  \begin{tabular}{@{}r r@{}}
+                     1 & $n$ \\
+                     0 & 1
+                  \end{tabular}\right] : n \in \Z\right\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.24] $\left[
+                  \begin{tabular}{@{}r r@{}}
+                     3 & 0 \\
+                     0 & 2
+                  \end{tabular}\right]$.
+
+      \textbf{Solution:}
+
+      $$\left\cyc{\left[
+                  \begin{tabular}{@{}r r@{}}
+                     3 & 0 \\
+                     0 & 2
+                  \end{tabular}\right]\right} = \left\{\left[
+                  \begin{tabular}{@{}r r@{}}
+                     $3^n$ & 0 \\
+                     0 & $2^n$
+                  \end{tabular}\right] : n \in \Z\right\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.25] $\left[
+                  \begin{tabular}{@{}r r@{}}
+                     0 & $-$2 \\
+                     $-2$ & 0
+                  \end{tabular}\right]$.
+
+      \textbf{Solution:}
+
+      $$\left\cyc{\left[
+                  \begin{tabular}{@{}r r@{}}
+                     0 & $-$2 \\
+                     $-2$ & 0
+                  \end{tabular}\right]\right} = \left\{\left[
+                  \begin{tabular}{@{}r r@{}}
+                     $2^{2n}$ & 0 \\
+                     0 & $2^{2n}$
+                  \end{tabular}\right] \mbox{ or } \left[
+                  \begin{tabular}{@{}r r@{}}
+                     0 & $-2^{2k + 1}$ \\
+                     $-2^{2k + 1}$ & 0
+                  \end{tabular}\right]: n, k \in \Z\right\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.26] Which of the following groups are cyclic? For each cyclic group,
+               list all the generators of the group.
+               \begin{align*}
+                  G_1 &= \cyc{\Z, +} \quad G_2  = \cyc{\Q, +} \quad
+                  G_3 = \cyc{\Q^+, \cdot} \quad G_4 = \cyc{6\Z, +} \\
+                  G_5 &= \{6^n : n \in \Z\} \text{ under multiplication} \\
+                  G_6 &= \{a + b\sqrt{2} : a, b \in \Z\} \text{ under addition}
+               \end{align*}
+
+      \textbf{Solution:} The cyclic groups ae $G_1$, $G_4$, and $G_5$. The
+      generators for $G_1$ are $\pm1$; the generator for $G_4$ is 6, and the
+      generator for $G_5$ is 6.
+\end{enumerate}
+
+\noindent      In Exercises 27 through 35, find the order of the cyclic subgroup
+               of the given group generated by the indicated element.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.27] The subgroup of $\Z_4$ generated by 3.
+
+      \textbf{Solution:} We have $\cyc{3} = \{3, 2, 1, 0\}$, so that
+      $|\cyc{3}| = 4$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.28] The subgroup of $V$ generated by $c$ (see Table 5.11).
+
+      \textbf{Solution:} We have $\cyc{c} = \{e, c\}$, so that $|\cyc{c}| = 2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.29] The subgroup of $U_6$ generated by
+               $\cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}$.
+
+      \textbf{Solution:} Let $\zeta = \cos\frac{\pi}{3} + i\sin\frac{\pi}{3}$.
+      Then $\zeta^2 = \cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}$, so that
+      $\cyc{\zeta^2} = \{\zeta^2, \zeta^4, 1\}$, and $|\cyc{\zeta^2}| = 3$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.30] The subgroup of $U_5$ generated by
+               $\cos\frac{4\pi}{5} + i\sin\frac{4\pi}{5}$.
+
+      \textbf{Solution:} Let $\zeta = \cos\frac{2\pi}{5} + i\sin\frac{2\pi}{5}$.
+      Then $\zeta^2 = \cos\frac{4\pi}{5} + i\sin\frac{4\pi}{5}$, so that
+      $\cyc{\zeta^2} = \{\zeta^2, \zeta^4, \zeta^1, \zeta^3, 1\}$, and
+      $|\cyc{\zeta^2}| = 5$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.31] The subgroup of $U_8$ generated by
+               $\cos\frac{3\pi}{2} + i\sin\frac{3\pi}{2}$.
+
+      \textbf{Solution:} Let $\zeta = \cos\frac{\pi}{4} + i\sin\frac{\pi}{4}$.
+      Then $\zeta^{6} = \cos\frac{3\pi}{2} + i\sin\frac{3\pi}{2}$, so that
+      $\cyc{\zeta^6} = \{\zeta^6, \zeta^4, \zeta^2, 1\}$, and
+      $|\cyc{\zeta^6}| = 4$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.32] The subgroup of $U_8$ generated by
+               $\cos\frac{5\pi}{4} + i\sin\frac{5\pi}{4}$.
+
+      \textbf{Solution:} Let $\zeta = \cos\frac{\pi}{4} + i\sin\frac{\pi}{4}$.
+      Then $\zeta^{5} = \cos\frac{5\pi}{4} + i\sin\frac{5\pi}{4}$, so that
+      $\cyc{\zeta^5} = \{\zeta^5, \zeta^2, \zeta^7, \zeta^4,
+       \zeta, \zeta^6, \zeta^3, 1\}$, and $|\cyc{\zeta^5}| = 8$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.33] The subgroup of the multiplicative group $G$ of invertible
+               $4 \times 4$ matrices generated by
+               $$H_1 = \left[
+                  \begin{tabular}{@{}c c c c@{}}
+                     0 & 0 & 1 & 0 \\
+                     0 & 0 & 0 & 1 \\
+                     1 & 0 & 0 & 0 \\
+                     0 & 1 & 0 & 0
+                  \end{tabular}\right].$$
+
+      \textbf{Solution:} Since $\cyc{H_1} = \{H_1, I_4\}$, it follows that
+      $|\cyc{H_1}|$ is 2.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.34] The subgroup of the multiplicative group $G$ of invertible
+               $4 \times 4$ matrices generated by
+               $$H_2 = \left[
+                  \begin{tabular}{@{}c c c c@{}}
+                     0 & 0 & 0 & 1 \\
+                     0 & 0 & 1 & 0 \\
+                     1 & 0 & 0 & 0 \\
+                     0 & 1 & 0 & 0
+                  \end{tabular}\right].$$
+
+      \textbf{Solution:} Since
+      $$\cyc{H_2} = \left\{H_2, \left[
+           \begin{tabular}{@{}c c c c@{}}
+              0 & 1 & 0 & 0 \\
+              1 & 0 & 0 & 0 \\
+              0 & 0 & 0 & 1 \\
+              0 & 0 & 1 & 0
+           \end{tabular}\right], \left[
+           \begin{tabular}{@{}c c c c@{}}
+              0 & 0 & 1 & 0 \\
+              0 & 0 & 0 & 1 \\
+              0 & 1 & 0 & 0 \\
+              1 & 0 & 0 & 0
+           \end{tabular}\right], I_4\right\},$$
+      it follows that $|\cyc{H_2}|$ is 4.   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.35] The subgroup of the multiplicative group $G$ of invertible
+               $4 \times 4$ matrices generated by
+               $$H_3 = \left[
+                  \begin{tabular}{@{}c c c c@{}}
+                     0 & 1 & 0 & 0 \\
+                     0 & 0 & 0 & 1 \\
+                     0 & 0 & 1 & 0 \\
+                     1 & 0 & 0 & 0
+                  \end{tabular}\right].$$
+
+      \textbf{Solution:} Since
+      $$\cyc{H_3} = \left\{H_3, \left[
+           \begin{tabular}{@{}c c c c@{}}
+              0 & 0 & 0 & 1 \\
+              1 & 0 & 0 & 0 \\
+              0 & 0 & 1 & 0 \\
+              0 & 1 & 0 & 0
+           \end{tabular}\right], I_4\right\},$$
+      it follows that $|\cyc{H_3}|$ is 3.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.36] \begin{enumerate}
+                  \item Complete Table 5.25 to give the group $\Z_6$ of 6 
+                        elements.
+                  \item Compute the subgroups $\cyc{0}$, $\cyc{1}$, $\cyc{2}$,
+                        $\cyc{3}$, $\cyc{4}$, and $\cyc{5}$ of the group $\Z_6$
+                        given in part (a).
+                  \item Which elements are generators for the group $\Z_6$ of 
+                        part (a)?
+                  \item Give the subgroup diagram for the part(b) subgroups of
+                        $\Z_6$.
+               \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item $$
+                  \begin{tabular}{@{}c  c | c | c | c | c | c | c@{}} 
+                     \multicolumn{8}{c}{\textbf{5.25 Table}} \\
+                     $\Z_6:$ & $+$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \cline{2-8}
+                             &   0 & 0 & 1 & 2 & 3 & 4 & 5 \\ \cline{2-8}
+                             &   1 & 1 & 2 & 3 & 4 & 5 & 0 \\ \cline{2-8}
+                             &   2 & 2 & 3 & 4 & 5 & 0 & 1 \\ \cline{2-8}
+                             &   3 & 3 & 4 & 5 & 0 & 1 & 2 \\ \cline{2-8}
+                             &   4 & 4 & 5 & 0 & 1 & 2 & 3 \\ \cline{2-8}
+                             &   5 & 5 & 0 & 1 & 2 & 3 & 4
+                  \end{tabular}
+               $$
+         \item \begin{align*}
+                  \cyc{0} &= \{0\}, \\
+                  \cyc{1} &= \Z_6, \\
+                  \cyc{2} &= \{0, 2, 4\}, \\
+                  \cyc{3} &= \{0, 3\}, \\
+                  \cyc{4} &= \{0, 4, 2\}, \mbox{ and } \\
+                  \cyc{5} &= \Z_6.                  
+               \end{align*}
+         \item 1 and 5 are generators for $\Z_6$.
+         \item TODO [Upgrade your tikz skills].
+      \end{enumerate}
+\end{enumerate}
+
+\noindent      \textbf{Concepts}
+
+\noindent      In Exercises 37 and 38, correct the definition of the italicized
+               term without reference to the text, if correction is needed, so
+               that it is in a form acceptable for publication.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.37%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.37] A subgroup of a group $G$ is a subset $H$ of $G$ that contains
+               the identity element $e$ of $G$ and also contains the inverse of
+               each of its elements.
+
+      \textbf{Solution:} We must also add that $H$ must be closed under the
+      operation of $G$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.38%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.38] A group $G$ is cyclic if and only if there exists $a \in G$
+               such that $G = \{a^n : n \in \Z\}$.
+
+      \textbf{Solution:} Okay.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.39%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.39] Mark each of the following true or false.
+
+      \textbf{Solution:}
+
+      \begin{tabularx}{\linewidth}{@{}c c X@{}} 
+         T & \textbf{a.} & The associative law holds in every group. \\
+         F & \textbf{b.} & There may be a group in which the cancellation law
+                           fails. \\
+         T & \textbf{c.} & Every group is a subgroup of itself. \\
+         F & \textbf{d.} & Every group has exactly two improper subgroups. \\
+         F & \textbf{e.} & In every cyclic group, every element is a
+                           generator. \\
+         F & \textbf{f.} & A cyclic group has a unique generator. \\
+         F & \textbf{g.} & Every set of numbers that is a group under addition
+                           is also a group under multiplication. \\
+         F & \textbf{h.} & A subroup may be defined as a subset of a group. \\
+         T & \textbf{i.} & $\Z_4$ is a cyclic group. \\
+         F & \textbf{j.} & Every subset of every group is a subgroup under the
+                           induced operation. \\
+      \end{tabularx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.40%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.40] Show by means of an example that it is possible for the quadratic
+               equation $x^2 = e$ to have more than two solutions in some group
+               $G$ with identity $e$.
+
+      \textbf{Solution:} In the Klein 4-group (See Table 5.11), the equation
+      $x^2 = e$ has four solutions, namely $a$, $b$, $c$, and $e$.
+\end{enumerate}
+
+\noindent      \textbf{Theory}
+
+\noindent      In Exercises 41 and 42, let $\phi : G \rightarrow G'$ be an
+               isomorphism of a group $\cyc{G, *}$ with a group $\cyc{G', *'}$.
+               Write out a proof to convince a skeptic of the intuitively clear
+               statement.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.41%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.41] If $H$ is a subgroup of $G$, then
+               $\phi[H] = \{\phi(h) : h \in H\}$ is a subgroup of $G'$. That is,
+               an isomorphism carries subgroups into subgroups.
+
+      \textbf{Proof.} $\phi[H]$ is nonempty because it contains $\phi(e)$. So
+      consider $g_1, g_2 \in \phi[H]$. Then there exist $h_1, h_2 \in H$ such 
+      that $g_1 = \phi(h_1)$ and $g_2 = \phi(h_2)$. It suffices to show that 
+      $g_1g_2^{-1}$ is also a member of $\phi[H]$. Then
+      \begin{align*}
+         g_1g_2^{-1} &= \phi(h_1)\phi(h_2)^{-1} \\
+                     &= \phi(h_1)\phi(h_2^{-1}) &[\text{ See Exercise 4.28}] \\
+                     &= \phi(h_1h_2^{-1}). &[\text{Homomorphism property}]
+      \end{align*}
+
+      Since $H$ is a group, it follows that $\phi(h_1h_2^{-1}) \in H$, so that
+      $g_1g_2^{-1} \in \phi[H]$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.42%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.42] If $G$ is cyclic, then $G'$ is cyclic.
+
+      \textbf{Proof.} Suppose $G$ is cyclic. Then $G = \cyc{g}$ for some
+      $g \in G$. Claim that $G' = \cyc{\phi(g)}$. So let $h' \in G'$. Then there
+      exists an integer $n$ such that  $\phi(g^n) = h'$. Using the homomorphism
+      property of $\phi$, we have that $\phi(g^n) = \phi(g)^n = h'$, so that 
+      $G'$ is cyclic. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.43%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.43] Show that if $H$ and $K$ are subgroups of an abelian group $G$,
+               then
+               $$\{hk : h \in H  \text{ and } k \in K\}$$
+               is a subgroup of $G$.
+
+      \textbf{Proof.} Let $H$ and $K$ be subgroups of an abelian group $G$, and
+      let
+      $$J = \{hk : h \in H  \text{ and } k \in K\}.$$
+      We want to show that $J \le G$. It is clear $J$ is nonempty because it
+      contains $e$. So let $j_1$ and $j_2$ be members of $J$. To complete the
+      proof we must show that $j_1j_2^{-1} \in J$. By the definition of $J$, 
+      there exist $h_1, h_2 \in H$ and $k_1, k_2 \in K$ such that $j_1 = h_1k_1$
+      and $j_2 = h_2k_2$. It follows that
+      \begin{align*}
+         j_1j_2^{-1} &= h_1k_1(h_2k_2)^{-1} \\
+                    &= h_1k_1k_2^{-1}h_2^{-1} \\
+                    &= (h_1h_2^{-1})(k_1k_2^{-1}). &[G\text{ is abelian}]
+      \end{align*}
+
+      The preceding calculations show that $j_1j_2^{-1} \in J$, so that $J$ is
+      a subgroup of $G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.44%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.44] Find the flaw in the following argument: ``Condition 2 of Theorem
+               5.14 is reduntant, since it can be derived from 1 and 3, for let
+               $a \in H$. Then $a^{-1} \in H$ by 3, and by 1, $aa^{-1} = e$ is 
+               an element of $H$, proving 2."
+
+      \textbf{Solution:} We cannot say let $a \in H$ if we haven't shown that
+      $H$ is nonempty.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.45%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.45] Show that a nonempty subset $H$ of a group $G$ is a subgroup of
+               $G$ if and only if $ab^{-1} \in H$ for all $a, b \in H$.
+
+      \textbf{Proof.} $(\Leftarrow)$ Let $H$ be a nonempty subset of $G$ such
+      $ab^{-1} \in H$ for all $a, b \in H$. To show that $H \le G$, we must
+      show that $H$ satisfies all the three conditions in Theorem 5.14. Let
+      $a, b \in H$. Then we must have that  $aa^{-1} = e \in H$, so that 
+      condition 2 holds. Since $e, b \in H$, it must be the case that
+      $eb^{-1} = b^{-1} \in H$, so that condition 3 three holds. Finally since
+      $a, b^{-1} \in H$, we must have that $a(b^{-1})^{-1} = ab \in H$, so that
+      condition 1 holds. That is $H \le G$.
+
+      $(\Rightarrow)$ Now suppose that $H \le G$. Let $a, b \in H$. Since $H$ is
+      a group it immediately follows that $ab^{-1} \in H$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.46%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.46] Prove that a cyclic group with only one generator can have at
+               most 2 elements.
+
+      \textbf{Proof.} Let $G$ be a cyclic group. Then it follows that
+      $G = \cyc{a}$ for some $a \in G$. We want to show that if $G$ has 1
+      generator, then $|G| \le 2$. We shall instead prove the contrapositive of
+      this statement; that is, if $|G| \ge 3$, then $G$ has at least 2
+      generators. So suppose that $|G| \ge 3$. It suffices to find two nonequal
+      generators for $G$. We observe that $a$ cannot be the identity since that 
+      would imply that $G$ is trivial. Also, if $a^2 = e$,  then we would have 
+      that $G = \{e, a\}$ so that $|G| = 2$, contradicting our assumption. Thus 
+      $a^2 \neq e$ so that $a \neq a^{-1}$. Since $\cyc{a} = \cyc{a^{-1}}$, it
+      follows that $a$ and $a^{-1}$ are two generators for $G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.47%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.47] Prove that if $G$ is an abelian group, written multiplicatively,
+               with identity element $e$, then all elements $x$ of $G$ 
+               satisfying the equation $x^2 = e$ form a subgroup $H$ of $G$.
+
+      \textbf{Proof.} Take $n = 2$ in Exercise 4.48. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.48%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.48] Repeat Exercise 47 for the general situation of the set $H$ of 
+               all solutions $x$ of the equation $x^n = e$ for a fixed integer
+               $n \ge 1$ in an abelian group $G$ with identity $e$.
+
+      \textbf{Proof.} Let $G$ be an abelian group, let $n$ be a positive 
+      integer, and let
+      $$H = \{x \in G: x^n = e\}.$$
+      We want to show that $H \le G$. $H$ is clearly nonempty since $e \in H$.
+      So consider $a, b \in H$. It suffices to show that $ab^{-1} \in H$; that
+      is, $(ab^{-1})^n = e$. So
+      \begin{align*}
+         (ab^{-1})^n &= a^n(b^{-1})^n &[\text{Exercise 4.33}] \\
+                     &= a^n(b^n)^{-1}  \\
+                     &= e(e)^{-1} &[a, b \text{ is in }H] \\
+                     &= ee = e.
+      \end{align*}
+
+      Hence $H \le G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.49%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.49] Show that if $a \in G$, where $G$ is a finite group with identity
+               $e$, then there exists $n \in \Z^+$ such that $a^n = e$.
+
+      \textbf{Proof.} See Exercise 4.34. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.50%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.50] Let a nonempty finite subset $H$ of a group $G$ be closed under
+               the binary operation of $G$. Show that $H$ is a subgroup of $G$.
+
+      \textbf{Proof.} Let $H$ be a nonempty finite subset of a group $G$ closed 
+      under the binary operation of $G$. We want to show that $H \le G$. Since
+      $H$ is nonempty, let $a, b \in H$. By assumption, we have that $ab \in H$.
+      By Theorem 5.14, it only remains to show  that $e$ and $a^{-1}$ are also 
+      in $H$. By Exercise 5.49 there exists a positive integer $n$ such that
+      $a^n = e$. Since $H$ is closed under the binary operation of $G$, we must
+      have that $a^n \in H$, so that $e \in H$. Now if $n = 1$ then $a = e$, so
+      that $a^{-1} = e \in H$. So suppose that $n \ge 2$. Thus
+      $e = a^n = a^{n-1}a$, so that $a^{n-1} = a^{-1}$. Similarly since $H$ is 
+      closed under the binary operation of $G$, we must have that
+      $a^{n - 1} \in H$, so that $a^{-1} \in H$. That is, $H \le G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.51%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.51] Let $G$ be a group and let $a$ be one fixed element of $G$. Show
+               that
+               $$H_a = \{x \in G : xa = ax\}$$
+               is a subgroup of $G$.
+
+      \textbf{Proof.} Let $G$ be a group and let $a \in G$ be fixed. Take
+      $S = \{a\}$ in Exercise 5.52(a). \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.52%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.52] Generalizing Exercise 51, let $S$ be any subset of a group $G$.
+               \begin{enumerate}
+                  \item Show that
+                        $H_S = \{x \in G : xs = sx \text{ for all } s \in S\}$
+                        is a subgroup of $G$.
+                  \item In reference to part(a), the subgroup $H_G$ is the
+                        \textbf{center of} $G$. Show that $H_G$ is an abelian
+                        group.
+               \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $S$ be any subset of a group $G$.
+               $$H_S = \{x \in G : xs = sx \text{ for all } s \in S\}.$$
+               We want to show that $H_S \le G$. Let $s \in S$. Since
+               $es = se = s$, it follows that $e \in H_S$, so that $H_S$ is 
+               nonempty. So let $r, t \in H_S$. So we have that $rs = sr$, so 
+               that $s = r^{-1}sr$; that is, $sr^{-1} = r^{-1}s$, so
+               that $r^{-1} \in H_S$. It remains to show that $rt \in H_S$. I.e.
+               we want to show that $(rt)s = s(rt)$; so,
+               \begin{align*}
+                  (rt)s &= r(ts) \\
+                        &= r(st) &[t \in H_S] \\
+                        &= (rs)t \\
+                        &= (sr)t &[r \in H_S] \\
+                        &= s(rt).
+               \end{align*}
+
+               Since $e, r^{-1}, rt \in H_S$, it follows by Theorem 5.14 that 
+               $H_S$ is a subgroup of $G$. \qed
+         \item By (a), it follows that $H_G \le G$. Consider $a, b \in H_G$.
+               Since $a \in H_G$ and since $b \in G$, it follows that $ab = ba$
+               so that $H_G$ is abelian. \qed
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.53%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.53] Let $H$ be a subgroup of a group $G$. For $a, b \in G$, let
+               $a \sim b$ if and only if $ab^{-1} \in H$. Show that $\sim$ is an
+               equivalence relation on $G$. Then
+
+      \textbf{Proof.} To show that $\sim$ is an equivalence relation on $G$, we
+      must show that $\sim$ is reflexive, symmetric, and transitive. So consider
+      $a, b, c \in G$. 
+      \begin{enumerate}
+         \item[Reflexivity:]  We have that $a \sim a$ since $aa^{-1} = e \in H$.
+         \item[Symmetry:]     Suppose that $a \sim b$. Then it follows that
+                              $ab^{-1} \in H$, and since $H$ is closed under
+                              taking inverses, we must have that
+                              $(ab^{-1})^{-1} = ba^{-1} \in H$. Thus $b \sim a$.
+         \item[Transitivity:] Finally suppose that $a \sim b$ and $b \sim c$.
+                              That is, $ab^{-1}, bc^{-1} \in H$. By closure of
+                              $H$ under the operation of $G$, we have that
+                              $ab^{-1}bc^{-1} = ac^{-1}\in H$. That is
+                              $a \sim c$.
+      \end{enumerate}
+
+      The above shows that $\sim$ is an equivalence relation on $G$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.54%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.54] For the sets $H$ and $K$, we define the \textbf{intersection}
+               $H \cap K$ by
+               $$H \cap K = \{x : x \in H \text{ and } x \in K\}.$$
+               Show that if $H \le G$ and $K \le G$, then $H \cap K \le G$.
+
+      \textbf{Proof.} Let $G$ be a group. Suppose that $H \le G$ and $K \le G$.
+      We want to show that $H \cap K \le G$. We shall proceed by the Subgroup
+      Criterion. Since $H$ and $K$ are subgroups of $G$, they both contain $e$
+      so that $e \in (H \cap K)$. Let $a$ and $b$ be members of $H \cap K$. Then
+      $a$ and $b$ are also members of both $H$ and $K$, so that $ab^{-1}$ is
+      in both $H$ and $K$. Thus $ab^{-1} \in (H \cap K)$. Hence $H \cap K$ is a
+      subgroup of $G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.55%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.55] Prove that every cyclic group is abelian.
+
+      \textbf{Proof.} See Theorem 6.1. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.56%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.56] Let $G$ be a group and let $G_n = \{g^n : g \in G\}$. Under what
+               hypothesis about $G$ can we show that $G_n$ is a subgroup of $G$?
+
+      \textbf{Solution:} We want to first show that $G_n$ contains the identity 
+      of $G$ and that $G_n$ is closed under taking inverses. So let $e$ be the 
+      identity of $G$. Then since $e^n = e$, it follows that $e \in G_n$. Now 
+      consider $h \in G_n$. Then $h = {g_1}^n$ for some $g_1 \in G$. Note that
+      $({g_1}^{-1})^n$ is also in $G_n$. Since
+      ${g_1}^n({g_1}^{-1})^n = {g_1}^n({g_1}^n)^{-1} = e$, we have that
+      $h^{-1} = ({g_1}^n)^{-1} \in G_n$. Thus we have shown that
+      $G_n$ satisfies conditions 2 and 3 of Theorem 5.14. So in order for $G_n$ 
+      to be a subgroup of $G$, it must closed under the binary operation of $G$.
+      That is, if $f = {g_2}^n \in G_n$, where $g_2 \in G$, we want the
+      statement ${g_1}^n{g_2}^n \in G_n$ to be true. This will be so if $G$
+      is abelian, so that ${g_1}^n{g_2}^n = {g_1g_2}^n$ will be a member of
+      $G_n$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.57%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.57] Show that a group with no proper nontrivial subgroups is
+               cyclic?
+
+      \textbf{Proof.} Let $G$ be a group with no proper nontrivial subgroup, and
+      let $e$ be the identity element of $G$. If $G$ is the trivial group, then 
+      we are done. So assume that $|G| > 1$. Then there exists a nonidenity 
+      element $a \in G$. Let $H$ be the subgroup of $G$ generated by $a$. 
+      Observe that $H$ is nontrivial because it contains at least two unequal 
+      members $a$ and $e$. If $H < G$, then we would have a contradiction since 
+      we assumed that $G$ contains no proper nontrivial subgroup. Thus we must 
+      have that $H = G$; that is, $G$ is cyclic. \qed
+\end{enumerate}

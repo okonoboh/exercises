@@ -1,0 +1,228 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1]  Suppose $a$ and $b$ are real numbers, not both 0. Find real
+               numbers $c$ and $d$ such that
+               $$1/(a + bi) = c + di.$$
+
+      \textbf{Solution:} Let $a$ and $b$ real numbers, not both 0. Then we have
+      \begin{align*}
+         \frac{1}{a + bi} &= \frac{a - bi}{(a + bi)(a - bi)} \\
+                          &= \frac{a - bi}{a^2 + b^2} \\
+                          &= \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2}i.
+      \end{align*}
+
+      The above suggests that we take $c = a/(a^2 + b^2)$ and
+      $d = -b/(a^2 + b^2)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2]  Show that
+               $$\frac{-1 + \sqrt{3}i}{2}$$
+               is a cube root of 1 (meaning that its cube equals 1).
+
+      \textbf{Proof:} It suffices to show that the statement
+      $$\left(\frac{-1 + \sqrt{3}i}{2}\right)^3 = 1$$
+      is true. So
+      \begin{align*}
+         \left(\frac{-1 + \sqrt{3}i}{2}\right)^3 &=
+            \left(\frac{-1 + \sqrt{3}i}{2}\right)
+            \left(\frac{-1 + \sqrt{3}i}{2}\right)
+            \left(\frac{-1 + \sqrt{3}i}{2}\right) \\
+                                                 &=
+            \left(\frac{-2 - 2\sqrt{3}i}{4}\right)
+            \left(\frac{-1 + \sqrt{3}i}{2}\right) \\
+                                                 &= 1.
+      \end{align*} \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.3]  Prove that $-(-v) = v$ for every $v \in V$.
+
+      \textbf{Proof:} Let $v \in V$. It suffices to show that the additive
+      inverse of $-v$ is $v$. This immediately follows because we have
+      $v + (-v) = 0$, so that $-(-v) = v$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.4]  Prove that if $a \in \F$, $v \in V$, and $av = 0$, then $a = 0$
+               or $v = 0$.
+
+      \textbf{Proof:} Let $a \in \F$ and let $v \in V$. Assume that $av = 0$. If
+      $a = 0$, then the proof is done. So assume that $a \neq 0$. Since $a$ is
+      not 0, it has a multiplicative inverse $a^{-1} \in \F$. So we shall
+      multiply both sides of the equation $av = 0$ by $a^{-1}$ to get
+      $1v = a^{-1}0 = 0$. Since $1v = v$, it follows that $v = 0$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.5]  For each of the following subsets of $\F^3$, determine whether it
+               is a subspace of $\F^3$:
+               \begin{enumerate}
+                  \item $\{(x_1, x_2, x_3) \in \F^3 : x_1 + 2x_2 + 3x_3 = 0\}$;
+                  \item $\{(x_1, x_2, x_3) \in \F^3 : x_1 + 2x_2 + 3x_3 = 4\}$;
+                  \item $\{(x_1, x_2, x_3) \in \F^3 : x_1x_2x_3 = 0\}$;
+                  \item $\{(x_1, x_2, x_3) \in \F^3 : x_1 = 5x_3\}$;
+               \end{enumerate}
+      
+      \textbf{Solution:} (We observe that all the subsets above are not empty.)
+
+      \begin{enumerate}
+         \item Let $F_1 = \{(x_1, x_2, x_3) \in \F^3 : x_1 + 2x_2 + 3x_3 = 0\}$.
+               We claim that $F_1$ is a subspace of $\F^3$. So let
+               $u = (a, b, c)$ and $v = (a', b', c')$ be members of $F_1$(so 
+               that $a + 2b + 3c = a' + 2b' + 3c' = 0$), and let $r \in \F$. We 
+               wish to show that $u - v$ and $ru$ are members of $F_1$. So
+               $u - v = (a - a', b - b', c - c')$ and
+               \begin{align*}
+                  a - a' + 2(b - b') + 3(c - c') &=
+                     (a + 2b + 3c) - (a' + 2b' + 3c') \\
+                                                 &=
+                     0 - 0 = 0,
+               \end{align*}
+               so that $u - v \in F_1$. Also $ru = (ra, rb, rc)$ and
+               $ra + 2rb + 3rc = r(a + 2b + 3c) = r0 = 0$, so that
+               $ru \in F_1$. \qed
+         \item Let $F_2 = \{(x_1, x_2, x_3) \in \F^3 : x_1 + 2x_2 + 3x_3 = 4\}$.
+               We claim that $F_2$ is not a subspace of $\F^3$. This is evident
+               because $(0, 0, 0) \notin F_2$.
+         \item Let $F_3 = \{(x_1, x_2, x_3) \in \F^3 : x_1x_2x_3 = 0\}$. We
+               claim that $F_3$ is not a subspace of $\F^3$ because $F_3$ is not
+               closed under addition. For example: although $(1, 1, 0)$ and
+               $(0, 0, 1)$ are members of $F_3$, their sum $(1, 1, 1)$ is not
+               in $F_3$.
+         \item Let $F_4 = \{(x_1, x_2, x_3) \in \F^3 : x_1 = 5x_3\}$.
+               We claim that $F_4$ is a subspace of $\F^3$. So let
+               $u = (a, b, c)$ and $v = (a', b', c')$ be members of $F_4$(so 
+               that $a = 5c$ and $a' = 5c'$), and let $r \in \F$. We 
+               wish to show that $u - v$ and $ru$ are members of $F_4$. So
+               $u - v = (a - a', b - b', c - c')$ and
+               $a - a' = 5c - 5c' = 5(c - c')$ so that $u - v \in F_4$. Also
+               $ru = (ra, rb, rc)$ and $ra = r(5c) = 5(rc)$, so that
+               $ru \in F_4$. \qed      
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.6]  Give an example of a nonempty subset $U$ of $\R^2$ such that $U$
+               is closed under addition and under taking additive inverses
+               (meaning $-u \in U$ whenever $u \in U$), but $U$ is not a
+               subspace of $\R^2$.
+
+      \textbf{Solution:} Let $U = \{(x, y) \in \Z^2\}$. Clearly $U$ is nonempty
+      and closed under addition and taking inverses. However for $(1, 1) \in U$,
+      $0.5(1, 1) \notin U$ so that $U$ is not a subspace of $\R^2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.7]  Give an example of a nonempty subset $U$ of $\R^2$ such that $U$
+               is closed under scalar multiplication, but $U$ is not a subspace
+               of $\R^2$.
+
+      \textbf{Solution:} Let
+      $U = \{(x, y) \in \R^2 : x = 3y \mbox{ or } x = 5y\}$. Let $r \in R$ and
+      let $(u_1, u_2) \in U$. Then $u_1 = 3u_2$ or $u_1 = 5u_2$, so that
+      $ru_1 = 3ru_2$ or $ru_1 = 5ru_2$; hence $r(u_1, u_2)$ is in $U$. We have
+      shown that $U$ is closed under scalar multiplication. However, $U$ is not
+      a subspace of $\R^2$ because it is not closed under addition. For example,
+      $(1, 3)$ and $(1, 5)$ are members of $U$ but their sum, $(2, 8)$, is not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.8]  Prove that the intersection of any collection of subspaces of $V$
+               is a subspace of $V$.
+
+      \textbf{Proof:} Let $\{V_i : i \in I\}$ be a collection of subspaces of
+      some vector space $V$, where $I$ is some indexing set. We want to show
+      that
+      $$T = \bigcap_{i \in I} V_i$$
+      is a subspace of $V$. The set $T$ is not empty since each $V_i$ contains
+      0, so that $T$ contains 0. So let $a, b \in T$, and let $r \in \F$. It
+      suffices to show that $a - b$ and $ra$ are also members of $T$. Since
+      $a$ and $b$ are in $T$, then $a$ and $b$ must be in each $V_i$. Since each
+      $V_i$ is a vector space, it must contain $a - b$ and $ra$. Hence $T$ must
+      contain $a - b$ and $ra$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.9]  Prove that the union of two subspaces of $V$ is a subspace of $V$
+               if and only if one of the subspaces is contained in the other.
+
+      \textbf{Proof:} Let $T$ and $W$ be subspaces of some vector space $V$.
+
+      $(\Leftarrow)$ Assume that $T \subseteq W$. Then $T \cup W = W$, a
+      subspace of $V$ as hypothesized.
+
+      $(\Rightarrow)$ Assume that $T$ is not contained in $W$ and that $W$ is 
+      not contained in $T$. That is, there exist $t \in T$ and $w \in W$ such
+      that $t \notin W$ and $w \notin T$. We shall complete the proof by way of
+      contradiction. So suppose that $T \cup W$ is a vector space of $V$. Then
+      since $T \cup W$ is closed under addition, we must have
+      $t + w \in (T \cup W)$. So we now investigate the following two cases:
+
+      \textbf{Case I:} $t + w \in T$. Then since $-t \in T$, we must have that
+      $w = (t + w) + (-t) \in T$, a contradiction.
+
+      \textbf{Case II:} $t + w \in W$. Then since $-w \in W$, we must have that
+      $t = (t + w) + (-w) \in W$, a contradiction.
+
+      Thus $T \cup W$ is not a subspace of $V$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.10] Suppose that $U$ is a subspace of $V$. What is $U + U$?
+
+      \textbf{Proof:} Let $U$ be a subspace of some vector space $V$. We claim
+      that $U + U = U$. So we must show that each set is a subset of the other.
+      Let $u \in U$. Since $u = u + 0$ and since $0 \in U$, it follows that
+      $u \in U + U$, so that $U \subseteq U + U$. Now let $u_1 + u_2 \in U + U$.
+      Since $u_1$ and $u_2$ are members of $U$ and since $U$ is closed under
+      addition, we must have that $u_1 + u_2 \in U$, so that
+      $U + U \subseteq U$. Thus $U = U + U$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.11] Is the operation of addition on the subspaces of $V$ commutative?
+               Associative? (In other words, if $U_1$, $U_2$, $U_3$ are 
+               subspaces of $V$, is $U_1 + U_2 = U_2 + U_1$? Is
+               $(U_1 + U_2) + U_3 = U_1 + (U_2 + U_3)$?)
+
+      \textbf{Solution:} Let $V$ be a vector space. We can easily show that the
+      operation of addition on the subspaces of $V$ is commutative and 
+      associative. Let $U_1$, $U_2$, and $U_3$ be subspaces of $V$. We want to
+      show that addition on the subspaces is commutative; that is,
+      $U_1 + U_2 = U_2 + U_1$. So consider some element $u \in U_1 + U_2$. Then
+      $u = v + w$ for some $v \in U_1$ and $w \in U_2$. Since addition is
+      commutative in $V$, we must have $u = v + w = w + v$, a member of
+      $U_2 + U_1$; thus $U_1 + U_2 \subseteq U_2 + U_1$. We can similarly show
+      that $U_2 + U_1 \subseteq U_1 + U_2$ to conclude that
+      $U_1 + U_2 = U_2 + U_1$. Using this same procedure and the associativity
+      of addition in $V$ we can also conclude that
+      $(U_1 + U_2) + U_3 = U_1 + (U_2 + U_3)$, so that addition on the subspaces
+      of $V$ is commutative and associative.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.12] Does the operation of addition on the subspaces of $V$ have an
+               additive identity? Which subspaces have additive inverses?
+
+      \textbf{Solution} Let $V$ be a vector space and let $U$ be any subspace of
+      $V$. Then $U + \{0\} = U$, so that the zero subspace is the additive
+      identity of the operation of addition on the subspaces of $V$. Suppose
+      that $U$ has an additive inverse $W$. Then we must have that
+      $U + W = \{0\}$. But this would imply that $U \subseteq \{0\}$ and
+      $W \subseteq \{0\}$, so that $U = W = \{0\}$. So only the zero subspace
+      has an additive inverse.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.13] Prove or give a counterexample: if $U_1$, $U_2$, $W$ are 
+               subspaces of $V$ such that
+               $$U_1 + W = U_2 + W,$$
+               then $U_1 = U_2$.
+
+      \textbf{Counterexample:} Let $V$ be a nontrivial vector space. We showed
+      that in Problem 1.10 that $V + V = V$. Thus we have
+      $$\{0\} + V = V + V,$$
+      but $V \neq \{0\}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.14] Suppose $U$ is the subspace of $\mathcal{P}(\F)$ consisting of
+               all polynomials $p$ of the form
+               $$p(z) = az^2 + bz^5,$$
+               where $a, b \in \F$. Find a subspace $W$ of $\mathcal{P}(\F)$
+               such that $\mathcal{P}(\F) = U \oplus W$.
+
+      \textbf{Solution:} Let $W$ be the set of all polynomials such that for
+      for each nonnegative integer $m$ there exists a $p \in W$ of the form if
+      and only if
+      $$p(z) = a_0 + a_1z + a_2z^3 + a_3z^4 + a_4z^6 + \cdots + a_mz^{m + 2}.$$
+      We observe that $W$ is a subspace of $\mathcal{P}(\F)$, that
+      $\mathcal{P}(\F) = U + W$, and that $U \cap W = \{0\}$. Hence by
+      Proposition 1.9, we must have $\mathcal{P}(\F) = U \oplus W$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.15] Prove or give a counterexample: if $U_1$, $U_2$, $W$ are
+               subspaces of $V$ such that
+               $$V = U_1 \oplus W \quad \text{ and } \quad V = U_2 \oplus W,$$
+               then $U_1 = U_2$.
+
+      \textbf{Counterexample:} Let $V = \R^2$, $U_1 = \{(x, 0) : x \in \R\}$,
+      $U_2 = \{(s, 5s) : s \in \R\}$, and $W = \{(0, y) : y \in \R\}$. One can
+      easily check that
+      $$V = U_1 \oplus W \quad \text{ and } \quad V = U_2 \oplus W,$$
+      but $U_1 \neq U_2$.
+\end{enumerate}

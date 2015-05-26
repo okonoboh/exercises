@@ -1,0 +1,910 @@
+\noindent In Exercises 1 through 6, determine whether the binary operation $*$
+          gives a group structure on the given set. If no group results, give
+          the first axiom in the order $\mathscr{G}_1$, $\mathscr{G}_2$,
+          $\mathscr{G}_3$ from Definition 4.1 that does not hold. \\
+
+\noindent \textbf{Computations}
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.1] Let $*$ be defined on $\Z$ by letting $a * b = ab$.
+	
+		\textbf{Proof:} We claim that $\cyc{\Z, *}$ is not a group. We know that 
+      1 is the identity for multiplication on $\Z$. But no element apart from 
+      $-1$ and 1 have inverses. Thus $\cyc{\Z, *}$ is not a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.2] Let $*$ be defined on $2\Z = \{2n : n \in \Z\}$ by letting
+              $a * b = a + b$.
+	
+		\textbf{Proof:} We claim that $\cyc{2\Z, *}$ is a group. It is trivial to
+      show that $2\Z$ is closed under $*$. So we must now show that
+      $\cyc{2\Z, *}$ satisfies the axioms of a group. 
+		\begin{enumerate}
+			\item[$\mathscr{G}_1$:] Since $2\Z \subset \Z$ and since addition is
+											associative on $\Z$, it follows that $*$ is
+											associative on $2\Z$.
+			\item[$\mathscr{G}_2$:] Let $k \in 2\Z$. Since 0 is an even number it
+											is a member of $2\Z$. So we have that
+											$k * 0 = k + 0 = k = 0 + k = 0 * k$. That is, 0
+											is the identity for $*$.
+			\item[$\mathscr{G}_3$:] Let $k \in 2\Z$. Then it follows that $-k$ is
+											also a member of $2\Z$. But
+											$k * (-k) = k + (-k) = 0 = (-k)+ k = (-k) * k$,
+											so that $-k$ is the inverse of $k$ under $*$.
+		\end{enumerate}
+		
+		The aforementioned properties showed that $\cyc{2\Z, *}$ is a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.3] Let $*$ be defined on $\R^+$ by letting $a * b = \sqrt{ab}$.
+
+      \textbf{Proof:} We claim that $\cyc{\R^+, *}$ is not a group. It suffices 
+      to show that $\cyc{\R^+, *}$ does not have an identity element. Assume by 
+      way of contradiction that this group has an identity element $e$. Then 
+      consider any $r \in \R^+$. It follows that $r * e = r$, so that
+      $\sqrt{re} = r$. That is $re = r^2$, so that $r(e - r) = 0$. Since
+      $r > 0$, we must have $e = r$, a contradiction since $r$ was arbitrarily
+      chosen. Thus $\cyc{\R^+, *}$ is not a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.4] Let $*$ be defined on $\Q$ by letting $a * b = ab$.
+	
+		\textbf{Proof:} We claim that $\cyc{\Q, *}$ is not a group. We know that 
+      1 is the identity for multiplication on $\Q$. But 0 does not have an
+      inverse under $*$ because $0 * q = 0 \neq 1$ for all $q \in \Q$. Thus
+      $\cyc{\Q, *}$ is not a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.5] Let $*$ be defined on the set $\R^*$ of nonzero real numbers by 
+              letting $a * b = a/b$.
+	
+		\textbf{Proof:} We claim that $\cyc{\R^*, *}$ is not a group. It suffices
+      to show that $*$ is not associative. This instantly follows since
+      $1/2 = ((1 * 1) * 2) \neq (1 * (1 * 2)) = 2$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.6] Let $*$ be defined on $\C$ by letting $a * b = |ab|$.
+
+      \textbf{Proof:} $\cyc{\C, *}$ is not a group because the binary operation 
+      $*$ is not closed on $\C$, since it maps pairs in $\C$ to an element in
+      $\R$, instead of mapping to an element in $\C$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.7] Give an example of an abelian group $G$ where $G$ has exactly
+              1000 elements.
+
+      \textbf{Solution:} $\Z_{1000}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.8] We can also consider multiplication $\cdot_n$ modulo $n$ in
+              $\Z_n$. For example, $5 \cdot_7 6 = 2$ in $\Z_7$ because
+              $5 \cdot 6 = 30 = 4(7) + 2$. The set $\{1, 3, 5, 7\}$ with
+              multiplication $\cdot_8$ modulo 8 is a group. Give the table for
+              this group.
+
+      \textbf{Solution:}
+      $$
+         \begin{tabular}{@{}c | c | c | c | c@{}} 
+            $\cdot_8$ & 1 & 3 & 5 & 7 \\ \hline
+            1 & 1 & 3 & 5 & 7 \\ \hline
+            3 & 3 & 1 & 7 & 5 \\ \hline
+            5 & 5 & 7 & 1 & 3 \\ \hline
+            7 & 7 & 5 & 3 & 1
+         \end{tabular}
+      $$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.9] Show that the group $\cyc{U, \cdot}$ is not isomorphic to either
+              $\cyc{\R, +}$ or $\cyc{\R^*, \cdot}$. (All three groups have
+              cardinality $|\R|$.)
+				  
+		\textbf{Proof:} The equation $x \cdot x = 1$ has two solutions in $U$, but
+		the equation $x + x = 0$ only has one solution in $\R$. Similarly the
+		equation $x \cdot x \cdot x = 1$ has three solutions in $U$, but the 
+      equation	$x \cdot x \cdot x = 1$ only has one solution in $\R^*$. Thus
+		$\cyc{U, \cdot}$ is not isomorphic to either
+		$\cyc{\R, +}$ or $\cyc{\R^*, \cdot}$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.10] Let $n$ be a positive integer and let $n\Z : \{nm : m \in \Z\}$.
+      \begin{enumerate}
+         \item Show that $\cyc{n\Z, +}$ is a group.
+         \item Show that $\cyc{n\Z, +} \simeq \cyc{\Z, +}$.
+      \end{enumerate}
+		
+		\textbf{Proof:}
+		
+		\begin{enumerate}
+         \item It is clear that $n\Z$ is closed under addition and not empty, so
+					it suffices to show that $\cyc{n\Z, +}$ satisfies the three
+					group axioms.
+					\begin{enumerate}
+						\item[$\mathscr{G}_1$:]	Since $n\Z \subset \Z$ and since $\Z$
+														is associative under addition, it
+														follows that $\cyc{n\Z, +}$ is
+														associative.
+						\item[$\mathscr{G}_2$:]	Since $n \cdot 0 = 0$, it follows that
+														$0 \in n\Z$. It is clear that 0 is the
+														identity for this group.
+						\item[$\mathscr{G}_3$:]	Let $y \in n\Z$, then $y = nz$ for
+														some $z \in \Z$. Since $-z$ is an
+														integer, then $n(-z) = -y$ is also a
+														member of $n\Z$ and we have
+														$y + (-y) = 0$. So the inverse of $y$
+														is $-y$.
+		         \end{enumerate}
+
+               Thus $\cyc{n\Z, +}$ is a group. \qed
+         \item Show that $\cyc{n\Z, +} \simeq \cyc{\Z, +}$.
+					Consider the map
+					$$\phi : n\Z \rightarrow \Z$$
+					defined by $\phi(x) = x/n$ for all $x \in n\Z$. This map can be
+					easily shown to be bijective. So we must show that it is an
+					homomorphism; that is, $\phi(a + b) = \phi(a) + \phi(b)$ for all
+					$a, b \in n\Z$. So let $a, b \in n\Z$. Then $a = nk_1$ and
+					$b = nk_2$ for some integers $k_1$ and $k_2$. So we have that
+					$\phi(a + b) = \phi(n(k_1 + k_2)) = k_1 + k_2 =
+					\phi(a) + \phi(b)$, so that $\phi$ is an isomorphism. That is
+					$\cyc{n\Z, +} \simeq \cyc{\Z, +}$. \qed
+      \end{enumerate}
+\end{enumerate}
+
+\noindent In Exercises 11 through 18, determine whether the given set of
+          matrices under the specified operation, matrix addition or 
+          multiplication, is a group. Recall that a \textbf{diagonal matrix} is
+          a square matrix whose only nonzero entries lie on the
+          \textbf{main diagonal}, from the upper left to the lower right corner.
+          An \textbf{upper-triangular matrix} is a square matrix with only zero
+          entries below the main diagonal. Associated with each $n \times n$
+          matrix $A$ is a number called the determinant of $A$, denoted by
+          $\det(A)$. If $A$ and $B$ are both $n \times n$ matrices, then
+          $\det(AB) = \det(A)\det(B)$. Also, det($I_n$) = 1 and $A$ is
+          invertible if and only if $\det(A) \neq 0$. We shall let $D_n(\R)$ be
+			 the set of all $n \times n$ diagonal matrices with real entries, let
+			 diag[$a_1$ $a_2$ $\cdots$ $a_n$] represent an element in $D_n(\R)$
+			 such that $a_i$ is the element in the $i$th row and $i$th column, and
+			 let $0_n$ represent the $n \times n$ zero matrix.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.11] All $n \times n$ diagonal matrices under matrix addition.
+	
+		\textbf{Proof:} We want to prove that $\cyc{D_n(\R), +}$ is a group. First
+      we must show that $D_n(\R)$ is closed under addition. Let $X$ and $Y$ be
+      some members of $D_n(\R)$ such that $X$ = diag[$x_1$ $x_2$ $\cdots$ $x_n$]
+      and $Y$ = diag[$y_1$ $y_2$ $\cdots$ $y_n$]. Then $X + Y$ = diag[$(x_1 + 
+      y_1)$ $(x_2 + y_2)$ $\cdots$ $(x_n + y_n)$] so that $D_n(\R)$ is closed 
+      under addition. So now we must now show that the group axioms hold for
+      $\cyc{D_n(\R), +}$.
+		\begin{enumerate}
+			\item[$\mathscr{G}_1$:] Since $M_n(\R)$ is associative under addition
+											and since $D_n(\R) \subset M_n(\R)$ it follows
+											that $D_n(\R)$ is also associative under
+											addition.
+											
+			\item[$\mathscr{G}_2$:] The matrix $0_n$ is the identity for the binary
+											structure $\cyc{D_n(\R), +}$ because
+											$Z + 0_n = 0_n + Z$ for all $Z \in D_n(\R)$.
+			\item[$\mathscr{G}_3$:] Let diag[$b_1$ $b_2$ $\ldots$ $b_n$]
+											$\in D_n(\R)$. Then we have that
+											diag[$b_1$ $b_2$ $\cdots$ $b_n$] +
+											diag[$-b_1$ $-b_2$ $\cdots$ $-b_n$] =
+											diag[$-b_1$ $-b_2$ $\cdots$ $-b_n$] +
+											diag[$b_1$ $b_2$ $\cdots$ $b_n$] = $0_n$,
+											so that every element of $D_n(\R)$ has an
+											inverse under addition.
+		\end{enumerate}
+		
+		We have shown in the above that $\cyc{D_n(\R), +}$ is a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.12] All $n \times n$ diagonal matrices under matrix multiplication.
+	
+		\textbf{Proof:} We want to show that the binary structure
+		$\cyc{D_n(\R), \cdot}$ is not a group. Let $A \in  D_n(\R)$. We know that
+		$A \cdot I_n = I_n \cdot A = A$. Thus $I_n$ is the identity for
+		$\cyc{D_n(\R), \cdot}$. However since $X \cdot 0_n \neq I_n$ for all
+		$X \in D_n(\R)$, it follows that $0_n$ has no inverse under	$\cdot$, so
+		that $\cyc{D_n(\R), \cdot}$ is not a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.13] All $n \times n$ diagonal matrices with no zero diagonal entry 
+               under matrix multiplication.
+	
+		\textbf{Proof:} We want to prove that $\cyc{D_n(\R^*), \cdot}$ is a group.
+      First we must show that $D_n(\R^*)$ is closed under $\cdot$. Let $X$ and 
+      $Y$ be some members of $D_n(\R^*)$ such that
+      $X$ = diag[$x_1$ $x_2$ $\cdots$ $x_n$] and
+      $Y$ = diag[$y_1$ $y_2$ $\cdots$ $y_n$]. Then $X \cdot Y$ =
+      diag[$(x_1 \cdot y_1)$ $(x_2 \cdot y_2)$ $\cdots$ $(x_n \cdot y_n)$]. 
+      Since $x_i$ and $y_i$ are nonzero, we must have that $x_iy_i \neq 0$, so 
+      that $X \cdot Y \in D_n(\R^*)$; i.e., $D_n(\R^*)$ is closed under 
+      multiplication. So now we must now show that the group axioms hold for
+      $\cyc{D_n(\R^*), \cdot}$.
+		\begin{enumerate}
+			\item[$\mathscr{G}_1$:] See Exercise 4.11.
+											
+			\item[$\mathscr{G}_2$:] Since $I_n \in \cyc{D_n(\R^*)}$, it is the
+											identity for $\cyc{D_n(\R^*), \cdot}$.
+			\item[$\mathscr{G}_3$:] Let diag[$b_1$ $b_2$ $\cdots$ $b_n$]
+											$\in D_n(\R*)$. Then we have that
+											diag[$b_1$ $b_2$ $\cdots$ $b_n$] $\cdot$
+											diag[$1/b_1$ $1/b_2$ $\cdots$ $1/b_n$] =
+											diag[$1/b_1$ $1/b_2$ $\cdots$ $1/b_n$] $\cdot$
+											diag[$b_1$ $b_2$ $\cdots$ $b_n$] = $I_n$,
+											so that every element of $D_n(\R)$ has an
+											inverse under multiplication. We were able to
+											take the reciprocals of the real numbers $b_1$,
+											$b_2$, $\ldots$, $b_n$ because they were all
+											nonzero numbers.
+		\end{enumerate}
+		
+		We have shown in the above that $\cyc{D_n(\R^*), \cdot}$ is a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.14] All $n \times n$ diagonal matrices with all diagonal entries 1 or
+               $-$1 under matrix multiplication.
+	
+		\textbf{Proof:} If we follow the arguments in Exercise 4.13, then we can
+      conclude that $\cyc{D_n(\{-1, 1\}), \cdot}$ is a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.15] All $n \times n$ upper-triangular matrices under matrix 
+               multiplication.
+	
+		\textbf{Proof:} $0_n$ is an upper-triangular matrix, but has no inverse
+      under multiplication, so the binary structure in question is not a group.
+      \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.16] All $n \times n$ upper-triangular matrices under matrix addition.
+	
+		\textbf{Proof:} It can easily be shown that this is a group. To show
+      closure under addition is trivial. Associativity is also trivial. $0_n$
+      is the identity for this binary structure. Negating the numbers in an
+      upper-triangular matrix will give us its additive inverse. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.17] All $n \times n$ upper-triangular matrices with determinant 1 
+               under matrix multiplication.
+	
+		\textbf{Proof:} The set---call it $UL_n(\R)$---of all $n \times n$ upper-
+      triangular matrices with entries in $\R$ and with determinant 1,  is 
+      closed under matrix multiplication because if $A$ and $B$  are in
+      $UL_n(\R)$, then $AB$ is upper-triangular and
+      $\det(A \cdot B) = \det(A)\det(B) = 1$. We know that
+      $\cyc{UL_n(\R), \cdot}$ is associative. Also note that
+      $I_n \in \cyc{UL_n(\R), \cdot}$, so it is the identity for
+      $\cyc{UL_n(\R), \cdot}$. Let $A \in UL_n(\R)$. Then $A$ has an inverse 
+      under $\cdot$ since $\det(A) = 1$. Also, we have that $AA^{-1} = I_n$, so 
+      that $\det(A)\det(A^{-1}) = \det(I_n)$. Solving this equation results in
+      $\det(A^{-1}) = 1$. From Linear Algebra, it can be shown that the
+      multiplicative inverse of an invertible upper-triangular matrix is also
+      an upper-triangular matrix. So $A^{-1} \in UL_n(\R)$. Thus $UL_n(\R)$ is
+      a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.18] All $n \times n$ matrices with determinant either 1 or $-$1 under
+               matrix multiplication.
+	
+		\textbf{Proof:} If we follow the ideas in Exercise 4.17, we can see that
+      this binary structure is a group.\qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.19] Let $S$ be the set of all real numbers except $-$1. Define $*$ on
+					$S$ by $$a * b = a + b + ab.$$
+      \begin{enumerate}
+         \item Show that $*$ gives a binary operation on $S$.
+         \item Show that $\cyc{S, *}$ is a group.
+         \item Find the solution of the equation $2 * x * 3 = 7$ in $S$.
+      \end{enumerate}
+	
+		\textbf{Proof:}
+      \begin{enumerate}
+         \item Let $a, b \in S$. We want to show that $a * b \in S$, so it
+               suffices to show that $a * b \neq -1$. We shall prove by way of 
+               contradiction that $a * b \neq -1$. So assume that $a * b = -1$.
+               That is, $a + b + ab = -1$. Then we have that
+               $a(1 + b) = -1(1 + b)$. Since $b \in S$, it follows that
+               $b \neq -1$ so that $1 + b \neq 0$. So we can divide the equation
+               $a(1 + b) = -1(1 + b)$ by $1 + b$ to get $a = -1$, a 
+               contradiction since $a \in S$. So $a * b \neq -1$. Hence $S$ is
+               closed under $*$.
+         \item \begin{enumerate}
+			         \item[$\mathscr{G}_1$:] Let $a, b, c \in S$. Then
+                                          \begin{align*}
+                                             a * (b * c) &= a + (b * c) +
+                                                            a(b * c) \\
+                                                         &= a + (b + c + bc) +
+                                                            a(b + c + bc) \\
+                                                         &= a + b + c + ab +
+                                                            ac + bc + abc \\
+                                                         &= (a + b + ab) + c +
+                                                            (a + b + ab)c \\
+                                                         &= (a * b) + c +
+                                                            (a * b)c \\
+                                                         &= (a * b) * c.
+                                          \end{align*}
+
+                                          Hence $\cyc{S, *}$ is associative.
+											
+			         \item[$\mathscr{G}_2$:] Let $a \in S$. Suppose there exists 
+                                          $e \in S$ such that $a * e = a$, then
+                                          $a + e + ae = a$ so that
+                                          $e(1 + a) = 0$. Since $1 + a \neq 0$
+                                          it must be the case that $e = 0$.
+                                          Similarly we must have that
+                                          $0 * a = a$. Thus 0 is the identity
+                                          for $\cyc{S, *}$.
+                           
+			         \item[$\mathscr{G}_3$:] Let $a \in S$. Suppose there exists
+                                          $y \in S$ such that $a * y = 0$. 
+                                          Solving this equation will give us
+                                          $y = -a/(1 + a)$. Thus the identity of
+                                          an $a \in S$ is $-a/(1 + a)$.
+		\end{enumerate}
+         \item Find the solution of the equation $2 * x * 3 = 7$ in $S$. Using 
+               the formula in (b) above we have that $-2/3$ and $-3/4$ are the 
+               inverses of 2 and 3 in the group $\cyc{S, *}$. So given
+               $2 * x * 3 = 7$, it follows that $2 * x * 3 * -3/4 = 7 * -3/4$, 
+               so that $2 * x = 7 * -3/4$. Also, $-2/3 *2* x = -2/3 * 7 * -3/4$,
+               so that $x = -2/3 * 7 * -3/4 = -1/3$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.20] This exercise shows that there are two nonisomorphic group
+               structures on a set of 4 elements. Let the set be
+               $V = \{e, a, b, c\}$, with $e$ the identity element for the group
+               operation. A group table would then have to start in the manner
+               shown in Table 4.22. The square indicated by the question mark
+               cannot be filled in with $a$. It must be filled in either with 
+               the identity element $e$ or with an element different from both
+               $e$ and $a$. In this latter case, it is no loss of generality to
+               assume that this element is $b$. If this square is filled in with
+               $e$, the table can be completed in two ways to give a group. Find
+               these two tables. (You need not check the associative law.) If
+               this square is filled in with $b$, then the table can only be
+               completed in one way to give a group. Find this table. (Again, 
+               you need not check the associative law.) Of the three tables you
+               now have, two give isomorphic groups. Determine which two tables
+               these are, and give the one-to-one onto renaming function which
+               is an isomorphism.
+      \begin{enumerate}
+         \item Are all groups of 4 elements commutative?
+         \item Which table gives a group isomorphic to the group $U_4$, so that
+               we know the binary operation defined by the table is associative?
+         \item Show that the group given by one of the other tables is
+               structurally the same as the group in Exercise 14 for one
+               particular value of $n$, so that we know that the operation
+               defined by that table is associative also.
+      \end{enumerate}
+
+      \textbf{Solution:} $$
+         \begin{tabular}{@{}c | c | c | c | c@{}}
+            \multicolumn{5}{c}{\textbf{Table 1}} \\
+            $*$ & $e$ & $a$ & $b$ & $c$ \\ \hline
+            $e$ & $e$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $e$ & $c$ & $b$ \\ \hline
+            $b$ & $b$ & $c$ & $e$ & $a$ \\ \hline
+            $c$ & $c$ & $b$ & $a$ & $e$
+         \end{tabular} \qquad
+         \begin{tabular}{@{}c | c | c | c | c@{}}
+            \multicolumn{5}{c}{\textbf{Table 2}} \\
+            $*'$ & $e$ & $a$ & $b$ & $c$ \\ \hline
+            $e$ & $e$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $e$ & $c$ & $b$ \\ \hline
+            $b$ & $b$ & $c$ & $a$ & $e$ \\ \hline
+            $c$ & $c$ & $b$ & $e$ & $a$
+         \end{tabular} \qquad
+         \begin{tabular}{@{}c | c | c | c | c@{}}
+            \multicolumn{5}{c}{\textbf{Table 3}} \\
+            $*''$ & $e$ & $a$ & $b$ & $c$ \\ \hline
+            $e$ & $e$ & $a$ & $b$ & $c$ \\ \hline
+            $a$ & $a$ & $b$ & $c$ & $e$ \\ \hline
+            $b$ & $b$ & $c$ & $e$ & $a$ \\ \hline
+            $c$ & $c$ & $e$ & $a$ & $b$
+         \end{tabular}
+      $$
+
+      We can check that the map
+      $$\phi : V \rightarrow V$$
+      defined by $\phi(a) = b$, $\phi(b) = c$, $\phi(c) = a$, and $\phi(e) = e$
+      is an isomorphism from $\cyc{V, *'}$ to $\cyc{V, *''}$. Thus Table 2 is
+      isomorphic to Table 3. In Table 1, notice that the equation $x * x = e$ 
+      has four solutions, namely every element in $V$, but this equation has
+      only two solutions in Table 2, namely $e$ and $a$. Thus, Table 1 and
+      Table 2 are not isomorphic.
+      \begin{enumerate}
+         \item Yes.
+         \item We observe that Table 2 is isomorphic to $U_4$. We can see this
+               from the isomorpic map
+               $$\phi : V \rightarrow U_4$$
+               defined by $\phi(e) = 1$, $\phi(a) = \zeta^2$,
+               $\phi(b) = \zeta^3$, $\phi(c) = \zeta$, with $*'$ as the binary
+               operation on $V$.. Thus $\cyc{V, *'}$ is associative.
+               
+         \item In Exercise 4.14, we proved that the binary structure below is a
+               $$ \left\langle M = \left\{\left[
+                  \begin{tabular}{@{}c c@{}}
+                     1 & 0 \\
+                     0 & 1
+                  \end{tabular}\right],
+                  \left[
+                  \begin{tabular}{@{}r r@{}}
+                     $-$1 & 0 \\
+                     0    & $-$1
+                  \end{tabular}\right],
+                  \left[
+                  \begin{tabular}{@{}c r@{}}
+                     1 & 0 \\
+                     0 & $-$1
+                  \end{tabular}\right],
+                  \left[
+                  \begin{tabular}{@{}r c@{}}
+                     $-$1 & 0 \\
+                     0    & 1
+                  \end{tabular}\right]\right\}, \cdot\right\rangle
+               $$
+               
+               group. The map
+               $$\phi : V \rightarrow M$$ 
+               defined by $\phi(e) = I_2$, $\phi(a) = -I_2$, $\phi(b) = \left[
+               \begin{tabular}{@{}c r@{}}
+                  1 & 0 \\
+                  0 & $-$1
+               \end{tabular}\right]$, and $\phi(c) = \left[
+               \begin{tabular}{@{}r r@{}}
+                  $-$1 & 0 \\
+                  0    & 1
+               \end{tabular}\right]$ is isomorphic, with $*$ as the binary
+               operation on $V$. So Table 1 is isomorphic to $\cyc{M, \cdot}$,
+               and since the latter is associative, it follows that
+               $\cyc{V, *}$ is also associative.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.21] According to Exercise 12 of Section 2, there are 16 possible
+               binary operations on a set of 2 elements. How many of these give
+               a structure of a group? How many of the 19,683 possible binary
+               operations on a set of 3 elements give a group structure?
+
+      \textbf{Solution:} From the textbook, it was shown that all groups with  
+      two elements have the same structure. Since we can make any of the two
+      elements to act as the identity, it follows that of the 16 possible binary
+      operations on a set of 2 elements, only 2 give a group. The book also
+      shows us that there all groups with two elements have the same structure.
+      So there are three choices for the identity, so it follows that of the 
+      19,683 possible binary operations on a set of 3 elements, only 3 give a 
+      group.
+\end{enumerate}
+
+\noindent \textbf{Concepts}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.22] Consider our axioms $\mathscr{G}_1$, $\mathscr{G}_2$, and
+               $\mathscr{G}_3$ for a group. We gave them in the order
+               $\mathscr{G}_1\mathscr{G}_2\mathscr{G}_3$. Conceivable other
+               orders to state the axioms are
+               $\mathscr{G}_1\mathscr{G}_3\mathscr{G}_2$,
+               $\mathscr{G}_2\mathscr{G}_1\mathscr{G}_3$,
+               $\mathscr{G}_2\mathscr{G}_3\mathscr{G}_1$,
+               $\mathscr{G}_3\mathscr{G}_1\mathscr{G}_2$, and
+               $\mathscr{G}_3\mathscr{G}_2\mathscr{G}_1$. Of these six possible
+               orders, exactly three are acceptable for a definition. Which
+               orders are not acceptable, and why?
+
+      \textbf{Solution:} The unacceptable orders are
+      $\mathscr{G}_1\mathscr{G}_3\mathscr{G}_2$,
+      $\mathscr{G}_3\mathscr{G}_1\mathscr{G}_2$, and
+      $\mathscr{G}_3\mathscr{G}_2\mathscr{G}_1$, while the rest are acceptable.
+      They are unacceptable because they refer to the existence of an element 
+      (identity element) which hasn't yet been defined.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.23] The following ``definitions'' of a group are taken verbatim,
+               including spelling and punctuation, from papers of students who
+               wrote a bit too quickly and carelessly. Criticize them.
+               \begin{enumerate}
+                  \item A group $G$ is a set of elements together with a binary
+                        operation $*$ such that the following conditions are
+                        satisfied \\
+                        $*$ is associative \\
+                        There exists $e \in G$ such that \\
+                        $$e * x = x * e = x \mbox{ identity}.$$
+                        For every $a \in G$ there exists an $a'$ (inverse) such
+                        that
+                        $$a \cdot a' = a' \cdot a = e$$
+                  \item A group is a set $G$ such that \\
+                        The operation on $G$ is associative. \\
+                        there is an identity element ($e$) in $G$. \\
+                        for every $a \in G$, there is an $a'$ (inverse for each
+                        element)
+                  \item A group is a set with a binary operation such \\
+                        the binary operation is defined \\
+                        an inverse exists \\
+                        an identity element exists
+                  \item A set $G$ is called a group over the binary operation
+                        $*$ such that for all $a, b \in G$. \\
+                        Binary operation $*$ is associative under addition \\
+                        there exist an element $\{e\}$ such that \\
+                        $$a * e = e * a = e$$
+                        Fore every element $a$ there exists an element $a'$ such
+                        that
+                        $$a * a' = a' * a = e$$
+               \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item To say a ``A group $G$" is wrong because a group is an ordered
+               pair $\cyc{G, *}$ where $G$ is a nonempty set and $*$ is a
+               binary operation such that
+               $\mathscr{G}_1\mathscr{G}_2\mathscr{G}_3$ hold. Although the
+               student correctly wrote that $*$ must be associative, they must
+               also explicit define what the terminology means. The word
+               ``identity" should be removed from the second condition. In the
+               third condition, the binary operation should be changed from
+               $\cdot$ to $*$. Proper punctuation should also be employed.
+         \item A group is not a set. The operation on $G$ was not specified.
+               Associativity wasn't defined. What is an identity element?
+               What is an inverse element? These terms should be defined. Proper
+               grammar must be employed.
+         \item The binary operation wasn't explicitly specified, and we don't
+               know what set it is acting on. The sentence ``the binary 
+               operation" is meaningless. The remaining two lines are also
+               meaningless. Proper grammar and punctuation weren't employed.
+         \item Bad grammar. Bad punctuation. The first sentence was badly worded
+               and it prematurely ended. Although the student wrote down three
+               badly worded axioms, they did not explicitly say that the
+               $\cyc{G, *}$ must obey them.
+               
+         
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.24] Give a table for a binary operation on the set $\{e, a, b\}$ of
+               three elements satisfying axioms $\mathscr{G}_2$ and
+               $\mathscr{G}_3$ for a group but not axiom $\mathscr{G}_1$.
+
+      \textbf{Solution:} $$
+         \begin{tabular}{@{}c | c | c | c@{}}
+            $*$ & $e$ & $a$ & $b$ \\ \hline
+            $e$ & $e$ & $a$ & $b$ \\ \hline
+            $a$ & $a$ & $e$ & $b$ \\ \hline
+            $b$ & $b$ & $a$ & $e$
+         \end{tabular}
+      $$
+
+      From observing the table above, we see that $e$ is the identity element.
+      Also $b^{-1} = b$ and $a^{-1} = a$. But
+      $(a * b) * b = e \neq a = a * (b * b)$, so that $\cyc{\{e, a, b\}, *}$ 
+      satisfies $\mathscr{G}_2$ and $\mathscr{G}_3$ for a group but not axiom
+      $\mathscr{G}_1$.
+      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.25] Mark each of the following true or false.
+
+      \textbf{Solution:}
+
+      \begin{tabularx}{\linewidth}{@{}c c X@{}} 
+         F & \textbf{a.} & A group may have more than one identity element. \\
+         T & \textbf{b.} & Any two groups of three elements are isomorphic. \\
+         T & \textbf{c.} & In a group, each linear equation has a solution. \\
+         F & \textbf{d.} & The proper attitude toward a definition is to
+                           memorize it so that you can reproduce it word for
+                           word as in the text. \\
+         F & \textbf{e.} & Any definition a person gives for a group is correct
+                           provided that everything that is a group by that
+                           person's definition is also a group by the
+                           definition in the text. \\
+         T & \textbf{f.} & Any definition a person gives for a group is correct
+                           provided he or she can show that everything that
+                           satisfies the definition satisfies the one in the
+                           text and conversely. \\
+         T & \textbf{g.} & Every finite group of at most three elements is
+                           abelian. \\
+         T & \textbf{h.} & An equation of the form $a * x * b = c$ always has a
+                           unique solution in a group. \\
+         F & \textbf{i.} & The empty set can be considered a group. \\
+         T & \textbf{j.} & Every group is a binary algebraic structure.
+      \end{tabularx}
+\end{enumerate}
+
+\noindent \textbf{Proof synopsis}
+
+\noindent We give an example of a proof synopsis. Here is a one-sentence
+          synopsis of the proof that the inverse of an element $a$ in a group
+          $\cyc{G, *}$ is unique.
+\begin{quote}
+Assuming that $a * a' = e$ and $a * a'' = e$, apply the left cancellation law to
+the equation $a * a' = a * a''$.
+\end{quote}
+
+\noindent Note that we said ``the left cancellation law" and not
+          ``Theorem 4.15." We always suppose that our synopsis was given as an
+          explanation given during a conversation at lunch, with no reference to
+          text numbering and as little notation as is practical.
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.26] Give a one-sentence synopsis of the proof of the left 
+               cancellation law in Theorem 4.15.
+
+      \textbf{Solution:} Suppose that $a * b = a * c$ in some group
+      $\cyc{G, *}$. Multiply the equation on both sides by $a'$ and then use
+      the group axioms to simply the equation.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.27] Give at most a two-sentence synopsis of the proof in Theorem
+               4.16 that an equation $ax = b$ has a unique solution in a group.
+
+      \textbf{Solution:} First we must show that a solution exists, and then we 
+      next suppose that $x_1$ and $x_2$ are two solutions of the equations, so 
+      that $a * x_1 = a * x_2$. Then we apply the left cancellation law to the 
+      equation $a * x_1 = a * x_2$.
+      
+
+
+\end{enumerate}
+
+\noindent \textbf{Theory}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.28] From our intuitive grasp of the notion of isomorphic groups, it
+               should be clear that if $\phi : G \rightarrow G'$ is a group
+               isomorphism, then $\phi(e)$ is the identity $e'$ of $G'$. Recall
+               that Theorem 3.14 gave a proof of this for isomorphic binary
+               $\cyc{S, *}$ and $\cyc{S', *'}$. Of course, this covers the case
+               of groups.
+
+               \quad It should be also be intuitively clear that if $a$ and $a'$
+               are inverse pairs in $G$, then $\phi(a)$ and $\phi(a')$ are
+               inverse pairs in $G'$, that is, that $\phi(a)' = \phi(a')$. Give 
+               a careful proof of this for a skeptic who can't see the forest 
+               for all the trees.
+
+      \textbf{Proof:} It suffices to show that $\phi(a) *' \phi(a') = e'$. Since
+      $a * a' = e$, it follows that $\phi(a * a') = \phi(e)$ so that
+      $\phi(a) *' \phi(a') = \phi(e) = e'$. Since $e'$ is the identity of the
+      group $\cyc{G', *'}$ and since $\phi(a) *' \phi(a') = e'$, it must be the
+      case that $\phi(a)' = \phi(a')$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.29] Show that if $G$ is a finite group with identity $e$ and with an
+               even number of elements, then there is $a \neq e$ in $G$ such
+               that $a * a = e$.
+      
+      \textbf{Proof:} Suppose $|G| = 2k$, for some positive integer $k$. We 
+      define a binary relation $\sim$ on $G$ such that for all $a, b \in G$,
+      $a \sim b$ if and only if $a' = b$. We can show that $\sim$ is an 
+      equivalence relation on $G$. Let $\mathcal{C}$ be the set of equivalence 
+      classes of $\sim$. We observe that an equivalence class
+      $C \in \mathcal{C}$ contains either 1 element or 2 elements. We can write
+      $\mathcal{C}$ as a union of two disjoint sets, say
+      $$\mathcal{C} = \mathcal{C}_1 \cup \mathcal{C}_2$$
+      where $\mathcal{C}_i$ is the set of equivalence classes of $\sim$ that 
+      contain $i$ elements. Thus
+      $$|G| = |\mathcal{C}_1| + 2|\mathcal{C}_2| = 2k.$$
+      Since $\{e\} \in \mathcal{C}_1$, it follows that $|\mathcal{C}_1| \ge 1$.
+      To complete the proof it suffices to show that $|\mathcal{C}_1| \ge 2$.
+      First we want to show that $|\mathcal{C}_2| \le k - 1$. So assume by
+      contradiction that $|\mathcal{C}_2| \ge k$. Then since
+      $|\mathcal{C}_1| \ge 1$, it must be the case that
+      $2k = |\mathcal{C}_1| + 2|\mathcal{C}_2| \ge 1 + 2k$, a contradiction. So
+      we must have that $|\mathcal{C}_2| \le k - 1$, so that
+      $2k = |\mathcal{C}_1| + 2|\mathcal{C}_2| \le |\mathcal{C}_1| + 2k - 2$.
+      That is, $2k \le |\mathcal{C}_1| + 2k - 2$. Solving this inequality gives
+      us $|\mathcal{C}_1| \ge 2$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.30] Let $\R^*$ be the set of all real numbers except 0. Define $*$ on
+               $\R^*$ by letting $a * b = |a|b$.
+               \begin{enumerate}
+                  \item Show that $*$ gives an associative binary operation on
+                        $\R^*$.
+                  \item Show that there is a left identity for $*$ and a right
+                        inverse for each element in $\R^*$.
+                  \item Is $\R^*$ with this binary operation a group?
+                  \item Explain the significance of this exercise.
+               \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item Consider $a, b, c \in \R^*$. Then
+               \begin{align*}
+                  a * (b * c) &= a * (|b|c)           \\
+                              &= |a| \cdot |b|c       \\
+                              &= ||a|| \cdot |b|c     \\
+                              &= (||a|| \cdot |b|)c   \\
+                              &= (||a|b|)c            \\
+                              &= (|a * b|)c           \\
+                              &= (a * b) * c,         \\
+               \end{align*}
+               so that $*$ is associative on $\R^*$.
+         \item Let $r \in \R^*$. Then $-1 * r = |-1|r = r$, so that $-1$ is a 
+               left identity for $*$ on $\R^*$. Also $r * -1/|r| = -1$, so that
+               $-1/|r|$ is a right inverse for $r$.
+         \item No it is not since the group has more than one left identity,
+               namely 1 and $-1$.
+         \item A one sided definition of a group cannot mix left and right 
+               conditions.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.31] If $*$ is a binary operation on a set $S$, an element $x$ of $S$
+               is an \textbf{idempotent for} $*$ if $x * x = x$. Prove that a
+               group has exactly one idempotent element. (You may use any
+               theorems proved so far in the text.)
+
+      \textbf{Proof:} It suffices to show that $x * x = x$ if and only if
+      $x = e$. The ($\Leftarrow$) direction is trivial. For the
+      $(\Rightarrow)$ direction, we multiply both sides of the equation
+      $x * x = x$ by $x'$ and use the group axioms to get $x = e$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.32] Show that every group $G$ with identity $e$ and such that
+               $x * x = e$ for all $x \in G$ is abelian.
+
+      \textbf{Proof:} Let $\cyc{G, *}$ be a group with identity $e$ such
+      that $x * x = e$ for all $x \in G$, or equivalently, $x' = x$ for all
+      $x \in G$. Let $a, b \in G$. Then $(a * b)' = a * b$. But we know from the
+      discussion in the textbook that $(a * b)' = b' * a'$. Thus we have that
+      $a * b = b' * a' = b * a$, so that $\cyc{G, *}$ is abelian. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.33] Let $G$ be an abelian group and let $c^n = c * c * \cdots * c$
+               for $n$ factors $c$, where $c \in G$ and $n \in \Z^+$. Give a 
+               mathematical induction proof that $(a * b)^n = (a^n) * (b^n)$ for
+               all $a, b \in G$.
+
+      \textbf{Proof:} The base case, $n = 1$, trivially holds. So assume that
+      $(a * b)^k = (a^k) * (b^k)$, for some positive integer $k$. Then we have
+      that
+      \begin{align*}
+         (a * b)^{k+1} &= (a * b)^k * (a * b) \\
+            &= (a^k * b^k) * (a * b) \qquad &\text{[Inductive Hypothesis]} \\
+            &= ((a^k * b^k) * a) * b \qquad &\text{[Associativity]} \\
+            &= (a^k * (b^k * a)) * b \qquad &\text{[Associativity]} \\
+            &= (a^k * (a * b^k)) * b \qquad &\text{[Commutativity]} \\
+            &= ((a^k * a) * b^k) * b \qquad &\text{[Associativity]} \\
+            &= (a^{k+1} * b^k) * b   \\
+            &= a^{k+1} * (b^k * b) \qquad &\text{[Associativity]} \\
+            &= a^{k+1} * b^{k+1}, 
+      \end{align*}
+      so that, by Mathematical Induction, we have $(a * b)^n = (a^n) * (b^n)$ 
+      for all $a, b \in G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.34] Let $G$ be a group with a finite number of elements. Show that
+               for any $a \in G$, there exists an $n \in \Z^+$ such that
+               $a^ n = e$.
+   
+      \textbf{Proof:} Let $\cyc{G, *}$ be a group such that $|G| = n \in \Z^+$.
+      Let $a \in G$. Consider the following elements of $G$:
+      $$e, a, a^2, \ldots, a^n.$$
+      Since $G$ has $n$ elements and since there are $n + 1$ elements of $G$ 
+      listed above, it must be the case that at least two of them are equal. If
+      one of these two elements is $e$, then the proof is done. So assume that
+      $a^i = a^j$, with $i < j$ and $i, j \in \{1, 2, \ldots, n\}$. Applying the
+      Cancellation Law $i$ times to the equation $a^i = a^j$ gives us
+      $a^{j - i} = e$. Since $j - i$ is a positive integer, we are done. \qed
+      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.35] Show that if $(a * b)^2 = a^2 * b^2$ for $a$ and $b$ in a group
+               $G$, then $a * b = b * a$.
+
+      \textbf{Proof:} Let $\cyc{G, *}$ be a group. Suppose that
+      $(a * b)^2 = a^2 * b^2$ for $a$ and $b$ in $G$. Then it follows that
+      \begin{align}
+         (a * b) * (a * b) = (a * a) * (b * b). \label{4_35_1}
+      \end{align}
+      By associativity of $*$, Equation \eqref{4_35_1} becomes
+      \begin{align}
+         a * (b * (a * b)) = a * (a * (b * b)). \label{4_35_2}
+      \end{align}
+      Applying the Cancellation Law to Equation \eqref{4_35_2} gives us
+      \begin{align}
+         b * (a * b) = a * (b * b). \label{4_35_3}
+      \end{align}
+      Again, by associativity of $*$, Equation \eqref{4_35_3} gives us
+      \begin{align}
+         (b * a) * b = (a * b) * b, \label{4_35_4}
+      \end{align}
+      so that $b * a = a * b$ by applying the Cancellation Law to
+      \eqref{4_35_4}. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.36] Let $G$ be a group and let $a, b \in G$. Show that
+               $(a * b)' = a' * b'$ if and only if $a * b = b * a$.
+
+      \textbf{Proof:} Let $\cyc{G, *}$ be a group. Let $a, b \in G$.
+
+      $(\Rightarrow)$ Suppose that $(a * b)' = a' * b'$. Since
+      $(b * a)' = a' * b'$, it follows that $(a * b)' = (b * a)'$, Taking the
+      inverse of each side of the equation $(a * b)' = (b * a)'$ results in
+      $a * b = b * a$.
+
+      $(\Leftarrow)$ Now suppose that $a * b = b * a$. Then it follows that
+      $(a * b)' = (b * a)' = a' * b'$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.37%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.37] Let $G$ be a group and suppose that $a * b * c = e$ for
+               $a, b, c \in G$. Show that $b * c * a = e$ also.
+
+      \textbf{Proof:} Let $\cyc{G, *}$ be a group. Let $a, b, c \in G$, with
+      $a * b * c = e$. So we have that $a * (b * c) = e$. This says that the
+      inverse of $a$ is $b * c$. Since $\cyc{G, *}$ is a group, it must be the
+      case that $a * a' = a' * a = e$, so that $a * (b * c) = (b * c) * a =
+      b * c * a = e$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.38%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.38] Prove that a set $G$, together with a binary operation $*$ on $G$
+               satisfying the left axioms 1, 2, and 3 given on page 43, is a
+               group.
+
+      \textbf{Proof:} Let $e_L$ be the left identity of $\cyc{G, *}$ and let
+      $a \in G$. It suffices to show that $e_L * a = a * e_L = a$ and
+      $a_L * a = a * a_L = e_L$ where $a_L$ is the left identity of $a$. We have
+      \begin{align*}
+         (a * a_L) * (a * a_L) &= a * (a_L * a) * a_L \\
+                               &= a * e_L * a_L \\
+                               &= a * (e_L * a_L) \\
+                               &= a * a_L,
+      \end{align*}
+      so that
+      \begin{align}
+         (a * a_L) * (a * a_L) = a * a_L. \label{4_38_1}
+      \end{align}
+
+      Let $y$ be the left identity of $(a * a_L)$. Multiplying Equation
+      \eqref{4_38_1} on the left by $y$ yields 
+      $$e_L * (a * a_L) = e_L,$$
+      so that $a * a_L = e_L$. It now remains to show that $a * e_L = e_L * a$.
+      So we have that
+      \begin{align*}
+         a * e_L &= a * (a_L * a) \\
+                 &= (a * a_L) * a \\
+                 &= e_L * a.
+      \end{align*}
+      That is, $a * e_L = e_L * a$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.39%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.39] Prove that a nonempty set $G$, together with an associative
+               binary operation $*$ on $G$ such that  
+               $$a * x = b \mbox{ and } y * a = b \mbox{ have solutions in } G
+                 \mbox{ for all } a, b \in G,$$
+               is a group.
+
+      \textbf{Proof:} Consider $a, b \in G$. Then it follows that the equation
+      $x * a = a$ has a solution in $G$. Call this solution $x_1$. We now want
+      to show that $x_1$ is a left identity of $\cyc{G, *}$, so it suffices to
+      show that $x_1 * b = b$. By our supposition, it must be the case that
+      $a * x_2 = b$ for some $x_2 \in G$. So we have that
+      $x_1 * b = x_1 * (a * x_2) = (x_1 * a) * x_2 = a * x_2 = b$. So $x_1$ is
+      a left identity of $\cyc{G, *}$. By our supposition, the equation
+      $y * a = x_1$ has a solution in $G$. This solution is the left invserse of
+      $a$. Since the binary structure $\cyc{G, *}$ has a left identity and since
+      every element in $G$ has a left inverse, it follows by Exercise 4.38 that
+      $\cyc{G, *}$ is a group. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.40%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.40] Let $\cyc{G, \cdot}$ be a group. Consider the binary operation
+               $*$ on the set $G$ defined by
+               $$a * b = b \cdot a$$
+               for $a, b \in G$. Show that $\cyc{G, *}$ is a group and that
+               $\cyc{G, *}$ is actually isomorphic to $\cyc{G, \cdot}$.
+
+      \textbf{Proof:} Since $\cdot$ is closed on $G$, it follows that $*$ is
+      closed on $G$. Let $e$ be the identity of $\cyc{G, \cdot}$, and let
+      $a, b, c \in G$. Since $a \cdot e = e \cdot a = a$, it follows that
+      $e * a = a * e = a$, so that $e$ is also an identity of $\cyc{G, *}$.
+      Similarly $a \cdot a' = a' \cdot a = e$ implies that
+      $a' * a = a * a' = e$, so that every element of $G$ has an inverse under
+      $*$. Also since $(c \cdot b) \cdot a = c \cdot (b \cdot a)$, it must be
+      the case that $a * (b * c) = (a * b) * c$, so that the binary structure
+      $\cyc{G, *}$ is associative. Thus $\cyc{G, *}$ is a group. Now we consider
+      a map from $\cyc{G, *}$ to $\cyc{G, \cdot}$: $\phi : G \rightarrow G$ 
+      defined by $\phi(g) = g'$, for all $g \in G$. If $\phi(x) = \phi(y)$ for
+      some $x, y \in G$, then we have that $x' = y'$, and taking the inverse of
+      both sides of the equation $x' = y'$ gives us $x = y$, so that the
+      function $\phi$ is injective. For any $z \in G$, we have that
+      $\phi(z') = (z')' = z$. Thus $\phi$ is onto. We have shown that $\phi$ is
+      a bijection. Now it remains to show the homorphism property holds for
+      $\phi$. Thus we
+      have that
+      \begin{align*}
+         \phi(a * b) &= (a * b)'       \\
+                     &= (b \cdot a)'   \\
+                     &= a' \cdot b'    \\
+                     &= \phi(a) \cdot \phi(b).
+      \end{align*}
+      That is $\cyc{G, *} \simeq \cyc{G, \cdot}$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.41%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.41] Let $G$ be a group and let $g$ be one fixed element of $G$. Show
+               that the map $i_g$, such that $i_g(x) = gxg'$ for $x \in G$, is
+               an isomorphism of $G$ with itself.
+
+      \textbf{Proof:} First we must show injectivity and surjectivity of $i_g$.
+      So assume that $i_g(x) = i_g(y)$ for some $x, y \in G$. Then it follows
+      that $gxg' = gyg'$. Applying the Left Cancellation Law and then applying
+      the Right Cancellation Law to the equation $gxg' = gyg'$ results in
+      $x = y$, so that $i_g$ is injective.  Now let $z$ be an element of $G$.
+      Then we have that $i_g(g'zg) = gg'zgg' = eze = z$. That is, $i_g$ is onto.
+      Finally we must show that the homomorphism property holds for $i_g$. So we
+      have that
+      \begin{align*}
+         i_g(xy) &= gxyg'        \\
+                 &= gxeyg'       \\
+                 &= gxg'gyg      \\
+                 &= i_g(x)i_g(y).
+      \end{align*} \qed
+\end{enumerate}

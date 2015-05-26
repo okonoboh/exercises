@@ -1,0 +1,167 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.1]   For each of the following statements, determine whether it is 
+                  true or false and justify your answer.
+                  \begin{enumerate}
+                     \item The set $\Z$ of integers is dense in $\R$.
+                     \item The set of positive real numbers is dense in $\R$.
+                     \item The set $\Q\backslash \Z$ of rational numbers that 
+                           are not integers is dense in $\R$.
+                  \end{enumerate}  
+
+      \textbf{Solution:} 
+
+      \begin{enumerate}
+         \item False. Proposition 1.6 states that there is no integer in the
+               interval (0, 1).
+         \item False. The interval $(-1, 0)$ contains no positive real number.
+         \item True. Let $a$ and $b$ be real numbers. Then we shall investigate
+               the following two cases:
+               
+               \textbf{Case I:} $a < a + 1 \le b$. Theorem 1.8 says that there
+               exists a unique integer $k$ in $[a, a + 1)$. Thus there is no
+               integer in the interval $(k, a + 1)$. By the density of $\Q$ in
+               $\R$, there exists a rational $q \in (k, a + 1)$. Since
+               $(k, a + 1)$ contains no integer, then $q$ must be a member of
+               $\Q\backslash\Z$. We observe that $q \in (a, b)$.
+               
+               \textbf{Case II:} $a < b < a + 1$. Theorem 1.8 says that there
+               exists a unique integer $k$ in $[a, a + 1)$. If $k  \le b$, then
+               $(a, k)$ has no integer, so there exists a noninteger rational
+               in $(a, k) \subseteq (a, b)$ by the density of $\Q$ in $\R$. If,
+               however, $k > b$, then the interval $(a, b)$ contains no integer,
+               so that there exists a noninteger rational in $(a, b)$ by the
+               density of $\Q$ in $\R$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.2]   Suppose that $S$ is a nonempty set of integers that is bounded
+                  below. Show that $S$ has a minimum. In particular, conclude
+                  that every nonempty set of natural numbers has a minimum.  
+
+      \textbf{Proof:}
+
+      Let $S$ be a nonempty set of integers bounded below. Then there exists
+      some $r \in \R$ such that for every $a \in S$, we have that $r \le a$.
+      Consider the set $S' = \{-s: s \in S\}$, the set of the additive inverses
+      of the elements of $S$. Note that $S'$ is also a nonempty set of integers.
+      So let $-d \in S'$ where $d \in S$. Hence $r \le d$, so that $-d \le -r$;
+      that is $S'$ is bounded above. By Proposition 1.7 $S'$ has a maximum, say
+      $-b$, where $b \in S$. It suffices to show that $b$ is the minimum in $S$.
+      Let $c \in S$. Then we have that $-c \le -b$, so that $b \le c$; that is,
+      $b$ is the minimum element in $S$. In paritcular, we can see that the
+      Well Ordering Principle follows. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.3]   Let $S$ be a nonempty set of real numbers that is bounded
+                  below. Prove that the set $S$ has a minimum if and only if the
+                  number $\inf S$ belongs to $S$.
+			
+		\textbf{Proof:} Let $S$ be a nonempty set of real numbers that is bounded
+      below.
+
+      $(\Leftarrow)$ Suppose $\inf S$ belongs in $S$; then it immediately
+      follows by definition that $\inf S$ is the minimum element of $S$. \\
+      $(\Rightarrow)$ Now suppose that $S$ has a minimum, say $s$. By the
+      Completeness Axiom, we have that $\inf S$ exists; since $s \in S$, we must
+      have that $\inf S \le s$. But $s$ is also a lower bound for $S$ and since
+      every lower bound of $S$ cannot exceed $\inf S$, we must have that
+      $s \le \sup S$; we have shown that $\inf S \le s$ and $s \le \inf S$ so
+      that $s = \inf S$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.4]   For each of the following two sets, find the maximum, minimum,
+                  infimum, and supremum if they are defined. Justify your
+                  conclusions.
+                  \begin{enumerate}
+                     \item $S = \{1/n : n \in \N\}$.
+                     \item $T = \{x \in \R : x^2 < 2\}$.
+                  \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item The \textbf{maximum} is 1. To show this consider any natural
+               number $n$; then we have $n \ge 1$. Multiply this inequality by
+               the positive number $1/n$ to give us $1/n \le 1$. Since
+               $1 = 1/1 \in S$, we are done. $S$ has no \textbf{minimum}. Assume
+               by way of contradiction that $\min S$ exists. Then by definition
+               of $S$, we know that $\min S$ must be positive. So by the
+               Archimedean Property, there exists a natural number $n_1$(so that
+               $1/n_1 \in S$) such that $1/n_1 < \min S$, a contradiction. So
+               $\min S$ doesn't exist. Since the Archimedean Property enables us
+               to find a member of $S$ that is less than any positive number, no
+               positive number can be a lower bound for $S$. Thus $S$ can only 
+               be bounded below by negative numbers and 0. It follows that the
+               \textbf{infimum} of  $S$ is 0. Since $S$ has a maximum, this
+               maximum. By Problem 1.1.15, we have that the \textbf{supremum} of
+               $S = 1$. If we consider $-T$, the set of the additive inverses of
+               the elements of $T$.
+         \item It is trivial to show that%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Show true
+               $T = \{x \in \R: -\sqrt{2} < x < \sqrt{2}\}$. We claim that the
+               \textbf{infimum} and \textbf{supremum} of $T$ are $-\sqrt{2}$ and
+               $\sqrt{2}$. Suppose by contradiction that this is false; then 
+               there exist $a > -\sqrt{2}$ and $b < \sqrt{2}$ such that $a$ and 
+               $b$ are the infimum and supremum of $T$. Then by the density of
+               $\Q$ in $\R$, there exist rationals $p$ and $q$ such that
+               $-\sqrt{2} < p < a$ and $b < q < \sqrt{2}$; that is, $p$ and $q$ 
+               are members of $T$. But since $p$ is less than $a$ and $q > b$, 
+               we have contradictions. Thus our claim holds. Since the infimum 
+               and supremum are not members of $T$, it follows that $T$ has 
+               neither a \textbf{maximum} nor a \textbf{minimum}.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.5]   Suppose that the number $a$ has the property that for every
+                  natural number $n$, $a \le 1/n$. Prove that $a \le 0$.
+
+      \textbf{Proof:} Assume by way of contradiction that $a > 0$. By The
+      Archimedean Property there exists a natural number $k$ such that
+      $a > 1/k$, a contradiction. Thus $a \le 0$. \qed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.6]   Given a real number $a$, define
+                  $S \equiv \{x : x \in \Q, x < a\}$. Prove that $a = \sup S$.
+
+      \textbf{Proof:} By the density of $\Q$ in $\R$, there exists a rational
+      $q \in (a - 1, a)$, so that $q \in S$. Thus $S$ is nonempty. By 
+      definition, $S$ is bounded above by $a$; since $S$ is also nonempty, the
+      Completeness Axiom says that $\sup S$ exists. So we must have that
+      $\sup S \le a$. Now suppose that $\sup S < a$, then the density of $\Q$ in
+      $\R$ guarantees that we have a rational $q$ in $(\sup S, a)$, so that $q$
+      is also a member of $S$, a contradiction since we cannot have a member of
+      $S$ that is greater than $\sup S$. Thus $a = \sup S$. \qed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.7]   Show that for any real number $c$, there is exactly one 
+                  integer in the interval $(c, c+1]$.
+
+      \textbf{Proof:} Let $c$ be a real number. According to Theorem 1.8, there
+      exists a unique integer $k$ in the interval $[-(c + 1), -c)$. So we have
+      $-(c + 1) \le k < -c$, so that $c < -k \le c + 1$. Hence we have an
+      integer $-k$ in the interval $(c, c + 1]$. We can see that $-k$ is unique
+      because if another integer $h$ exists in $(c, c + 1]$, then $-h$ would
+      also be in $[-(c + 1), -c)$, and since $k$ is unique, we must have
+      $-h = k$, so that $h = -k$. \qed
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.8]   Show that the Archimedean Property is a consequence of the
+                  assertion that for any real number $c$, there is an integer in
+                  the interval $[c, c + 1)$.
+
+      \textbf{Proof:} Let $\epsilon$ be a positive real number. It suffices to
+      show that there exists a natural number greater than $\epsilon$. By our
+      assertion, there exists an integer $k$ in the interval
+      $[\epsilon+ 1, \epsilon + 2)$. So we have $\epsilon < \epsilon + 1 \le k$,
+      so that $k$ is a positive integer. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.2_9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.2.9]   Show that the Archimedean Property is a consequence of the
+                  assertion that every interval $(a, b)$ contains a rational
+                  number.
+
+      \textbf{Proof:} Let $\epsilon$ be a positive real number. It suffices to
+      show that there exists a natural number greater than $\epsilon$. By our
+      assertion, there exist positive integers $p$ and $q$ such that
+      $p/q \in (\epsilon, \epsilon + 1)$. Since $p$ and $q$ are positive, we 
+      have that $q \ge 1$ so that $pq \ge p$; that is $p/q \le p$. We have now
+      shown that $\varepsilon < p/q \le p$. Particularly $p > \varepsilon$,
+      which is what we wanted to prove. \qed
+
+      
+\end{enumerate}

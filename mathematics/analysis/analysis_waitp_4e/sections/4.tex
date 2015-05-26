@@ -1,0 +1,393 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.1]  Mark each statement True or False. Justify each answer.
+               \begin{enumerate}
+                  \item To prove a universal statement $\forall$ $x$, $p(x)$, we 
+                        let $x$ represent an arbitrary member from the system 
+                        under consideration and show that $p(x)$ is true.
+                  \item To prove an existential statement
+                        $\exists$ $x \ni p(x)$, we must find a particular $x$ in 
+                        the system for which $p(x)$ is true.
+                  \item In writing a proof, it is important to include all the 
+                        logical steps.
+               \end{enumerate}
+
+      \textbf{Solution:} 
+
+      \begin{enumerate}
+         \item True. Since the $x$ is arbitrary, then if $p(x)$ is true, it must
+               be the case that the statement is true for all $x$.
+         \item False. We must find at least one $x$ in the system for which
+               $p(x)$ is true.
+         \item False. Only ``relevant" steps should be included.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.2]  Mark each statement True or False. Justify each answer.
+               \begin{enumerate}
+                  \item A proof by contradiction may use the tautology
+                        $({\sim}p \Rightarrow c) \Leftrightarrow p$.
+                  \item A proof by contradiction may use the tautology
+                        $[(p \lor {\sim}q) \Rightarrow c] \Leftrightarrow
+                        (p \Rightarrow q)$.
+                  \item Definitions often play an important role in proofs.
+               \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item True. [See Text]
+         \item False. The left side of the tautology should be
+               $[(p \land {\sim}q) \Rightarrow c]$.
+         \item True. [See Text]
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.3]  Prove: There exists an integer $n$ such that $n^2 + 3n/2 = 1$. Is
+               this integer unique?
+			
+		\textbf{Proof:} Let $n = -2$. Then we have $(-2)^2 + 3(-2)/2 = 1$, so that
+		the integer $-2$ is a solution to the equation $n^2 + 3n/2 = 1$. We claim
+		that this integer is unique. To show this, suppose that $n' \in \Z$ is
+		also a solution; that is, $n'^2 + 3n'/2 = 1$. Multiplying the latter
+		equation by 2 and factoring will give us $(n' + 2)(n' - 1/2)= 0$, so that
+		$n' = -2$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.4]  Prove: There exists a rational number $x$ such that
+               $x^2 + 3x/2 = 1$. Is this rational number unique?
+			
+		\textbf{Proof:} Let $x = 1/2$. Then we have $(1/2)^2 + 3(1/2)/2 = 1$, so
+		that the rational number $1/2$ is a solution to the equation
+		$n^2 + 3n/2 = 1$. This rational number is not unique since the rational
+		number $-2/1$ also solves the equation. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.5]  Prove: For every real number $x > 3$, there exists a real number
+               $y < 0$ such that $x = 3y/(2 + y)$.
+					
+		\textbf{Proof:} Choose $y = 2x/(3-x)$ for some real number greater $x$
+		than 3. First we must show that $y$ is negative and that $x = 3y/(2 + y)$.
+		Since $x$ is greater than 3, we have that $2x$ is positive and $3 - x$ is
+		negative, so that $y$ is negative. Finally, we have that
+		\begin{align*}
+			\frac{3y}{2 + y} &= \frac{\frac{6x}{3 - x}}{2 + \frac{2x}{3 - x}} \\
+								  &= \frac{6x}{2(3 - x) + 2x} \\
+								  &= \frac{6x}{6 - 2x + 2x} \\
+								  &= x.
+		\end{align*} \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.6]  Prove: For every real number $x > 1$, there exist two distinct
+               positive real numbers $y$ and $z$ such that
+               $$x = \frac{y^2 + 9}{6y} = \frac{z^2 + 9}{6z}.$$
+					
+		\textbf{Proof:} Let $x$ be a real number greater than 1. So choose
+		$$y = 3x - 3\sqrt{x^2 - 1} \text{ and } z = 3x + 3\sqrt{x^2 - 1}.$$
+		It is routine to check that $y$ and $z$ satisfy the required equations.
+		\qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.7] Prove: If $x^2 + x - 6 \ge 0$, then $x \le -3$ or $x \ge 2$.
+	
+		\textbf{Proof:} Suppose that $x^2 + x - 6 \ge 0$ for some real number $x$.
+		Then we have that $x^2 + x - 6 = (x + 3)(x - 2)\ge 0$. Solving this
+		inequality will give us $x \le -3$ or $x \ge 2$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.8] Prove: If $x/(x - 1) \le 2$, then $x < 1$ or $x \ge 2$.
+	
+		\textbf{Proof:} Suppose $x/(x - 1) \le 2$ for some real number $x$.
+		
+		\textbf{Case I:} $x > 1$. \\
+		Multiply the inequality $x/(x - 1) \le 2$ by the positive number $x - 1$
+		to give us $x \le 2(x - 1)$. Solving the latter inequality results in
+		$x \ge 2$.
+		
+		\textbf{Case II:} $x < 1$. \\
+		Multiply the inequality $x/(x - 1) \le 2$ by the negative number $x - 1$
+		to give us $x \ge 2(x - 1)$. Solving the latter inequality results in
+		$x \le 2$. By assumption, $x$ must also satisfy $x < 1$. To satisfy
+		$x < 1$ and $x \le 2$, we must have that $x < 1$.
+		
+		The proof is done. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.9] Prove: $\log_27$ is irrational.
+	
+		\textbf{Proof:} Suppose by way of contradiction that $\log_27$ is
+		rational. We note that the $\log$ function is strictly increasing, and
+		since $\log_22 = 1$, we must have $\log_27 > \log_22 > 1$, so that
+		$\log_27$ is positive. Thus there exist positive integers $p$ and $q$
+		such $\log_27 = p/q$. That is $2^{p/q} = 7$, so that $2^p = 7^q$. By the
+		Fundamental Theorem of Arithmetic, it follows that $2^p$ and $7^q$ have
+		the same prime factors. But this is false, since $2^p$'s only prime factor
+		is 2 and $7^q$'s only prime factor is 7. Thus $\log_27$ is irrational.
+		\qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.10] Prove: If $x$ is a real number, then $|x - 2| \le 3$ implies that
+               $-1 \le x \le 5$.
+					
+		\textbf{Proof:} Let $x$ be a real number. Suppose that $|x - 2| \le 3$.
+		Then by definition we have that $-3 \le x - 2 \le 3$. Adding 2 to these
+		inequalities results in $-1 \le x \le 5$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.11] Consider the following theorem:
+               ``If $m^2$ is odd, then $m$ is odd." Indicate what, if anything, 
+               is wrong with each of the following ``proofs."
+               \begin{enumerate}
+                  \item Suppose $m$ is odd. Then $m = 2k + 1$ for some integer
+                        $k$. Thus $m^2 = (2k + 1)^2 = 4k^2 + 4k + 1 =
+                        2(2k^2 + 2k) + 1$, which is odd. Thus if $m^2$ is odd,
+                        then $m$ is odd.
+                  \item Suppose $m$ is not odd. Then $m$ is even and $m = 2k$ 
+                        for some integer $k$. Thus
+                        $m^2 = (2k)^2 = 4k^2 = 2(2k^2)$, which is even. Thus if
+                        $m$ is not odd, then $m^2$ is not odd. It follows that
+                        if $m^2$ is odd, then $m$ is odd.
+               \end{enumerate}
+					
+		\textbf{Solution:}
+		
+		\begin{enumerate}
+			\item	The proof proved the converse of the original implication,
+					instead of proving the implication; and as we know, the converse
+					of an implication is not necessarily equivalent to the original
+					implication.
+			\item	The proof proved the contrapositive of the original statement,
+					but it did not explicitly state so.
+      \end{enumerate} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.12] Consider the following theorem: ``If $xy = 0$, then $x = 0$ or
+               $y = 0$." Indicate what, if anything, is wrong with each of the
+               following ``proofs."
+               \begin{enumerate}
+                  \item Suppose $xy = 0$ and $x \neq 0$. Then dividing both
+                        sides of the first equation by $x$ we have $y = 0$. Thus
+                        if $xy = 0$, then $x = 0$ or $y = 0$.
+                  \item There are two cases to consider. First suppose that
+                        $x = 0$. Then $x \cdot y = x \cdot 0 = 0$. Similarly,
+                        suppose that $y = 0$. Then $x \cdot y = x \cdot 0 = 0$.
+                        In either case, $x \cdot y = 0$. Thus if $xy = 0$, then
+                        $x = 0$ or $y = 0$.
+               \end{enumerate}
+					
+		\textbf{Solution:}
+		
+		\begin{enumerate}
+			\item	The proof is OK.
+			\item	The proof proved the converse of the original implication,
+					instead of proving the implication.
+      \end{enumerate} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.13] Suppose $x$ and $y$ are real numbers. Recall that a real number
+               $m$ is rational iff $m = p/q$ where $p$ and $q$ are integers and
+               $q \neq 0$. If a real number is not rational, then it is
+               irrational. Prove the following. [You may use the fact that the
+               sum and product of integers is again an integer.]
+               \begin{enumerate}
+                  \item If $x$ is rational and $y$ is rational, then $x + y$ is
+                        rational.
+                  \item If $x$ is rational and $y$ is rational, then $xy$ is 
+                        rational.
+                  \item If $x$ is rational and $y$ is irrational, then $x + y$
+                        is irrational.
+               \end{enumerate}
+					
+		\textbf{Proof:}
+		
+		\begin{enumerate}
+			\item	Let $x$ and $y$ be rational numbers. Then there exist integers
+					$p$ and $r$ and nonzero integers $q$ and $s$ such that $x = p/q$
+					and $y = r/s$. Then it follows that
+					\begin{align*}
+						x + y &= \frac{p}{q} + \frac{r}{s} \\
+								&= \frac{ps + qr}{qs}.
+					\end{align*}
+					
+					Since the sum and product of integers are also integers we have
+					that $x + y$ is also a rational number. \qed
+			\item	Let $x$ and $y$ be rational numbers. Then there exist integers
+					$p$ and $r$ and nonzero integers $q$ and $s$ such that $x = p/q$
+					and $y = r/s$. Then it follows that $xy = pr/qs$. Since the
+					product of integers is also an integer we have that $xy$ is also
+					a rational number. \qed
+			\item	Let $x$ be a rational number and let $y$ be an irrational number.
+					Then we can write $x = p/q$ for some integer $p$ and nonzero
+					integer $q$. Assume by way of contradiction that $x + y$ is
+					rational; hence $x + y = r/s$ for some integers $r$ and $s$, with
+					$s \neq 0$. Thus we have that $y = (r/s) + (-x)$. By (b) it
+					follows that $y$ is a rational number, a contradiction. Thus
+					$x + y$ must be irrational. \qed
+      \end{enumerate} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.14] Suppose $x$ and $y$ are real numbers. Prove or give a 
+               counterexample.
+               \begin{enumerate}
+                  \item If $x$ is irrational and $y$ is irrational, then $x + y$
+                        is irrational.
+                  \item If $x + y$ is irrational, then $x$ is irrational or
+                        $y$ is irrational.
+                  \item If $x$ is irrational and $y$ is irrational, then $xy$
+                        is irrational.
+                  \item If $xy$ is irrational, then $x$ is irrational or $y$ is
+                        irrational.
+               \end{enumerate}
+					
+		\textbf{Proof:}
+		
+		\begin{enumerate}
+			\item	False. Let $x = \sqrt{2}$ and let $y = -\sqrt{2}$. Then
+					$x + y = 0$, a rational number. \qed
+			\item	True. The contrapositive of this statement was proved in
+					4.13(a). \qed
+			\item	False. Let $x = y = \sqrt{2}$. Then $xy = 2$, a rational
+					number. \qed
+			\item	True. The contrapositive of this statement was proved in
+					4.13(b). \qed
+      \end{enumerate} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.15] Consider the following theorem and proof.
+               \begin{quote}
+                  \textbf{Theorem}: If $x$ is rational and $y$ is irrational,
+                  then $xy$ is irrational.
+                  \begin{quote}
+                     \textbf{Proof}: Suppose $x$ is rational and $y$ is
+                     irrational. If $xy$ is rational, then we have $x = p/q$ and
+                     $xy = m/n$ for some integers $p$, $q$, $m$ and $n$, with
+                     $q \neq 0$ and $n \neq 0$. It follows that
+                     $$y = \frac{xy}{x} = \frac{m/n}{p/q} = \frac{mq}{np}.$$
+                     This implies that $y$ is rational, a contradiction. We
+                     conclude that $xy$ must be irrational.
+                  \end{quote}
+               \end{quote}
+               \begin{enumerate}
+                  \item Find a specific counterexample to show that the theorem
+                        is false.
+                  \item Explain what is wrong with the proof.
+                  \item What additional condition on $x$ in the hypothesis would
+                        make the conclusion true?
+               \end{enumerate}
+					
+		\textbf{Solution:}
+		
+		\begin{enumerate}
+			\item	Let $x = 0$ and let $y$ be any irrational number. Then $xy = 0$,
+					a rational number.
+         \item The proof did not take into consideration that $x$ could be 0.
+               If $x$ were zero, then the expression $y = xy/x$ would be
+               illegal.
+         \item In addition to being rational, $x$ must also be nonzero.
+
+      \end{enumerate} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.16] Prove or give a counterexample: If $x$ is irrational, then
+               $\sqrt{x}$ is irrational.
+
+      \textbf{Proof:} Assume by way of contradiction that for some irrational
+      number $x$ that $\sqrt{x}$ is rational. Then we have $\sqrt{x} = p/q$ for
+      some integers $p$ and $q$, with $q \neq 0$. Squaring both sides of this
+      equality results in $x = p^2/q^2$; that is $x$ is rational, a
+      contradiction. Thus $\sqrt{x}$ is irrational. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.17] Prove or give a counterexample: There do not exist three
+               consecutive even integers $a$, $b$, and $c$ such that
+               $a^2 + b^2 = c^2$.
+
+      \textbf{Counterexample:} Consider the triple $(-2, 0, 2)$ or $(6, 8, 10)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.18] Consider the following theorem: There do not exist three
+               consecutive odd integers $a$, $b$, and $c$ such that
+               $a^2 + b^2 = c^2$.
+               \begin{enumerate}
+                  \item Complete the following restatement of the theorem: For
+                        every three consecutive odd integers $a$, $b$, and $c$,
+                        we have that $a^2 + b^2 \neq c^2$.
+                  \item Change the sentence in part (a) into an implication
+                        $p \Rightarrow q$: If $a$, $b$, and $c$ are consecutive
+                        odd integers, then $a^2 + b^2 \neq c^2$.
+                  \item Fill in the blanks in the following proof of the
+                        theorem.
+                        \begin{quote}
+                           \textbf{Proof}: Let $a$, $b$, and $c$ be consecutive
+                           odd integers. Then $a = 2k + 1$, $b = 2k + 3$, and
+                           $c = 2k + 5$ for some integer $k$. Suppose
+                           $a^2 + b^2 = c^2$. Then
+                           $(2k + 1)^2 + (2k + 3)^2 = (2k + 5)^2$.
+
+                           \quad It follows that
+                           $8k^2 + 16k + 10 = 4k^2 + 20k + 25$ and
+                           $4k^2 - 4k - 15 = 0$. Thus $k = 5/2$ or $k = -3/2$.
+                           This contradicts $k$ being an integer. Therefore,
+                           there do not exist three consecutive odd integers
+                           $a$, $b$, and $c$ such that $a^2 + b^2 = c^2$.
+                        \end{quote}
+                  \item Which of the tautologies in Example 3.12 best describes
+                        the structure of the proof? 3.12 (g)
+               \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.19] Prove or give a counterexample: The sum of any five consecutive
+               integers is divisible by five.
+
+      \textbf{Proof:} Let $x$ be the least integer amongst a list of five
+      consecutive integers. Then the integers are: $x$, $x + 1$, $x + 2$,
+      $x + 3$, $x + 4$, and their sum is $5x + 10 = 5(x + 2)$; that is, their
+      sum is divisible by 5. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.20] Prove or give a counterexample: The sum of any four consecutive
+               integers is never divisible by four.
+
+      \textbf{Proof:} Let $x$ be the least integer amongst a list of four
+      consecutive integers. Then the integers are: $x$, $x + 1$, $x + 2$,
+      $x + 3$, and their sum is $4x + 6 = 4(x + 2) + 2$. This says that the
+      sum of any four consecutive integers always a remainder of 2 when divided
+      by 4, so that this sum is not divisible by four. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.21] Prove or give a counterexample: For every positive integer $n$,
+               $n^2 + 3n + 8$ is even.
+
+      \textbf{Proof:} Let $n$ be a positive integer. We shall investigate the
+      following two cases:
+
+      \textbf{Cases I:} \textit{$n$ is even}. Thus we can write $n = 2k$ for
+      some natural number $k$, so that
+      $n^2 + 3n + 8 = 4k^2 + 6k + 8 = 2(2k^2 + 3k + 4)$, an even number.
+
+      \textbf{Cases II:} \textit{$n$ is odd}. Thus we can write $n = 2k + 1$ for
+      some natural number $k$, so that
+      $n^2 + 3n + 8 = 4k^2 + 10k + 12 = 2(2k^2 + 5k + 6)$, an even number.
+
+      Thus if $n$ is a positive integer, then $n^2 + 3n + 8$ is even. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.22] Prove or give a counterexample: For every positive integer $n$,
+               $n^2 + 4n + 8$ is even.
+   
+      \textbf{Counterexample:} If $n = 1$, then $n^2 + 4n + 8 = 13$, an odd
+      number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.23] Prove or give a counterexample: there do not exist irrational
+               numbers $x$ and $y$ such that $x^y$ is rational.
+
+      \textbf{Counterexample:} We do not know whether or not the number
+      $\sqrt{2}^{\sqrt{2}}$ is rational, so we shall investigate the following
+      two possibilities.
+
+      \textbf{Cases I:} \textit{$\sqrt{2}^{\sqrt{2}}$ is irrational}. Then let
+      $x = \sqrt{2}^{\sqrt{2}}$ and $y = \sqrt{2}$. Then we have $x^y = 2$.
+
+      \textbf{Cases II:} \textit{$\sqrt{2}^{\sqrt{2}}$ is rational}. Then let
+      $x = y = \sqrt{2}$, so that $x^y$ is a rational number.       
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.24] Prove or give a counterexample: there do not exist rational
+               numbers $x$ and $y$ such that $x^y$ is a positive integer and
+               $y^x$ is a negative integer.
+
+      \textbf{Counterexample:} Let $x = 1$ and $y = -2$. Then we have
+      $x^y = 1$ and $y^x = -2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob4.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[4.25] Prove or give a counterexample: for all $x > 0$ we have
+               $x^2 + 1 < (x + 1)^2 \le 2(x^2 + 1)$.
+
+      \textbf{Proof:} Let $x$ be a positive real number. First we want to show
+      that $x^2 + 1 < (x + 1)^2$. We assumed that $x > 0$ so that $2x > 0$;
+      that is $-2x < 0$. Adding $(x + 1)^2$ to the inequality $-2x < 0$ results
+      in $(x + 1)^2 - 2x < (x + 1)^2$, so that $x^2 + 1 < (x + 1)^2$. Now we
+      must show that $(x + 1)^2 \le 2(x^2 + 1)$. We know that for any real
+      number $y$ we have that $y^2 \ge 0$; thus we have that
+      $(x - 1)^2 = x^2 - 2x + 1 \ge 0$, so that $-x^2 + 2x - 1 \le 0$. Adding
+      $2x^2 + 2$ to the inequality $-x^2 + 2x - 1 \le 0$ results in
+      $x^2 + 2x + 1 \le 2x^2 + 2$; that is, $(x + 1)^2 \le 2(x^2 + 1)$. The
+      proof is done. \qed
+\end{enumerate}

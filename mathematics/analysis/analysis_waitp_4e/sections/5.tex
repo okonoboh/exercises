@@ -1,0 +1,824 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.1]  Mark each statement True or False. Justify each answer.
+               \begin{enumerate}
+                  \item If $A \subseteq B$ and $A \neq B$, then $A$ is called a
+                        proper subset of $B$.
+                  \item The symbol $\N$ is used to denote the set of all
+                        integers.
+                  \item A slash (/) through a symbol means ``not."
+                  \item The empty set is a subset of every set.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item True. [Definition 5.3]
+         \item False. The symbol $\Z$ is used to denote the set of all integers.
+         \item True. [See Text, Pg. 39]
+         \item True. [Theorem 5.7]
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.2]  Mark each statement True or False. Justify each answer.
+               \begin{enumerate}
+                  \item If $A \cap B = \varnothing$, then either  
+                        $A = \varnothing$ or $B = \varnothing$.
+                  \item If $x \in A \cup B$, then $x \in A$ or $x \in B$.
+                  \item If $x \in A{\backslash}B$, then $x \in A$ or
+                        $x \notin B$.
+                  \item In proving $S \subseteq T$, one should avoid beginning
+                        with ``Let $x \in S$," because this assumes that $S$ is
+                        nonempty.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item False. Let $A = \{1\}$, and $B = \{2\}$. Then we have that
+               $A \cap B = \varnothing$, but $A \neq \varnothing$ and
+               $B \neq \varnothing$.
+         \item True.  [Definition 5.8]
+         \item False. [Definition 5.8]
+         \item False. If $S$ were empty, then the proof is done. So we can
+               assume that $S$ is nonempty and say ''Let $x \in S$."
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.3]  Let $A = \{2, 4, 6, 8\}$, $B = \{3, 4, 5, 6\}$, and
+               $C = \{5, 4\}$. Which of the following statements are true?
+               \begin{enumerate}
+                  \item $\{6, 8\} \subseteq A$.
+                  \item $C \subseteq A \cap B$.
+                  \item $(B{\backslash}C) \cap A = \{6\}$.
+                  \item $(A{\backslash}B) \cap C \subseteq B$.
+                  \item $\varnothing \in A$.
+                  \item $C \subseteq B$.
+                  \item $(A \cup B){\backslash}C = \{2, 3, 6, 8\}$.
+                  \item $A \cap B \cap C = 4$.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item True.
+         \item False.
+         \item True.
+         \item True.
+         \item False.
+         \item True.
+         \item True.
+         \item False.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.4]  Let $A = \{2, 4, 6, 8\}$, $B = \{1, 2, 3, 4\}$, and
+               $C = \{5, 6, 7\}$. Find the following sets.
+               \begin{enumerate}
+                  \item $A \cap B$.
+                  \item $A \cup B$.
+                  \item $A{\backslash}B$.
+                  \item $B \cap C$.
+                  \item $B{\backslash}C$.
+                  \item $(B \cup C){\backslash}A$.
+                  \item $(A \cap C){\backslash}B$.
+                  \item $C{\backslash}(A \cup B)$.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\{2, 4\}$.
+         \item $\{1, 2, 3, 4, 6, 8\}$.
+         \item $\{6, 8\}$.
+         \item $\varnothing$.
+         \item $B$.
+         \item $\{1, 3, 5, 7\}$.
+         \item $\{6\}$.
+         \item $\{5, 7\}$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.5]  Use Venn diagrams with three overlapping circles to illustrate
+               each identity.
+               \begin{enumerate}
+                  \item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$.
+                  \item $A{\backslash}(B \cup C) = (A{\backslash}B) \cap
+                         A{\backslash}C$.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \textbf{ADD NOTE TO FOLDER.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.6]  Let $A$ and $B$ be subsets of a universal set $U$. Simplify each
+               of the following expressions.
+               \begin{enumerate}
+                  \item $(A \cup B) \cup (U{\backslash}A)$.
+                  \item $(A \cap B) \cap (U{\backslash}A)$.
+                  \item $A \cap [B \cup (U{\backslash}A)]$.
+                  \item $A \cup [B \cap (U{\backslash}A)]$.
+                  \item $(A \cup B) \cap [A \cup (U{\backslash}B)]$.
+                  \item $(A \cap B) \cup [A \cap (U{\backslash}B)]$.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item Using the commutativy and associativity of the union operator, we
+               get
+               \begin{align*}
+                  (A \cup B) \cup (U{\backslash}A)
+                     &= (B \cup A) \cup (U{\backslash}A) \\
+                     &= B \cup (A \cup (U{\backslash}A)) \\
+                     &= B \cup U \\
+                     &= U.
+               \end{align*}
+         \item Using the commutativy and associativity of the intersection
+               operator, we get
+               \begin{align*}
+                  (A \cap B) \cap (U{\backslash}A)
+                     &= (B \cap A) \cap (U{\backslash}A) \\
+                     &= B \cap (A \cap (U{\backslash}A)) \\
+                     &= B \cap \varnothing \\
+                     &= \varnothing.
+               \end{align*}
+         \item Using the distributivity of the intersection operator over the
+               union operatior, we get
+               \begin{align*}
+                  A \cap [B \cup (U{\backslash}A)]
+                     &= (A \cap B) \cup (A \cap U{\backslash}A) \\
+                     &= (A \cap B) \cup \varnothing \\
+                     &= A \cap B.
+               \end{align*}
+         \item Using the distributivity of the union operator over the
+               intersection operatior, we get
+               \begin{align*}
+                  A \cup [B \cap (U{\backslash}A)]
+                     &= (A \cup B) \cap (A \cup U{\backslash}A) \\
+                     &= (A \cup B) \cup U \\
+                     &= A \cup B.
+               \end{align*}
+         \item \begin{align*}
+                  (A \cup B) \cap [A \cup (U{\backslash}B)]
+                     &= [(A \cup B) \cap A] \cup
+                        [(A \cup B) \cap U{\backslash}B] \\
+                     &= A \cup [A \cap (U{\backslash}B)] \\
+                     &= A.
+               \end{align*}
+         \item \begin{align*}
+                  (A \cap B) \cup [A \cap (U{\backslash}B)]
+                     &= [(A \cap B) \cup A] \cap
+                        [(A \cap B) \cup U{\backslash}B] \\
+                     &= A \cap [A \cup (U{\backslash}B)] \\
+                     &= A.
+               \end{align*}
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.7]  Let $A$ and $B$ be subsets of a universal set $U$. Define the
+               symmetric difference $A$ $\triangle$ $B$ by
+               $$A\mbox{ }\triangle\mbox{ }B =
+                 (A{\backslash}B) \cup (B{\backslash}A).$$
+               \begin{enumerate}
+                  \item Draw a Venn diagaram for $A$ $\triangle$ $B$.
+                  \item What is $A$ $\triangle$ $A$?
+                  \item What is $A$ $\triangle$ $\varnothing$?
+                  \item What is $A$ $\triangle$ $U$?
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item \textbf{ADD NOTE TO FOLDER}.
+         \item \begin{align*}
+                  A\mbox{ }\triangle\mbox{ }A
+                     &= (A{\backslash}A) \cup (A{\backslash}A) \\
+                     &= \varnothing \cup \varnothing \\
+                     &= \varnothing.
+               \end{align*}
+         \item \begin{align*}
+                  A\mbox{ }\triangle\mbox{ }\varnothing
+                     &= (A{\backslash}\varnothing)\cup
+                        (\varnothing{\backslash}A) \\
+                     &= A \cup \varnothing \\
+                     &= A.
+               \end{align*}
+         \item \begin{align*}
+                  A\mbox{ }\triangle\mbox{ }U
+                     &= (A{\backslash}U) \cup (U{\backslash}A) \\
+                     &= \varnothing \cup (U{\backslash}A) \\
+                     &= U{\backslash}A.
+               \end{align*}
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.8]  Let $S = \{\varnothing, \{\varnothing\}\}$. Determine whether
+               each of the following is True or False. Explain your answers.
+               \begin{enumerate}
+                  \item $\varnothing \subseteq S$.
+                  \item $\varnothing \in S$.
+                  \item $\{\varnothing\} \subseteq S$.
+                  \item $\{\varnothing\} \in S$.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item True. The empty set is a subset of all sets.
+         \item True. The empty set is a member of $S$.
+         \item True. Every element in $\{\varnothing\}$ is also in $S$.
+         \item True. $S$ contains the element $\{\varnothing\}$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.9]  Fill in the blanks in the following proof of Theorem 5.13(a).
+               \begin{quote}
+                  \textbf{THEOREM}: Let $A$ be a subset of $U$. Then
+                  $A \cup (U{\backslash}A) = U$.
+                  \begin{quote}
+                     \textbf{Proof}: If $x \in A \cup (U{\backslash}A)$, then
+                     $x \in A$ or $x \in U{\backslash}A$. Since both $A$ and
+                     $U{\backslash}A$ are subsets of $U$, in either case we have
+                     $x \in U$. Thus $(A \cup (U{\backslash}A)) \subseteq U$.
+
+                     On the other hand, suppose that $x \in U$. Now either
+                     $x \in A$ or $x \notin A$. If $x \notin A$, then
+                     $x \in U{\backslash}A$. In either case
+                     $x \in A \cup U{\backslash}A$. Hence
+                     $U \subseteq A \cup U{\backslash}A$. \qed
+                  \end{quote}
+               \end{quote}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.10] Fill in the blanks in the proof of the following theorem.
+               \begin{quote}
+                  \textbf{THEOREM}: $A \subseteq B$ iff $A \cup B = B$.
+                  \begin{quote}
+                     \textbf{Proof}: Suppose that $A \subseteq B$. If
+                     $x \in A \cup B$, then $x \in A$ or $x \in B$. Since
+                     $A \subseteq B$, in either case we have $x \in B$. Thus
+                     $A \cup B \subseteq B$. On the other hand, if $x \in B$,
+                     then $x \in A \cup B$, so $B \subseteq A \cup B$. Hence
+                     $A \cup B = B$.
+
+                     Conversely, suppose that $A \cup B = B$. If $x \in A$, then
+                     $x \in A \cup B$. But $A \cup B = B$, so $x \in B$. Thus
+                     $A \subseteq B$. \qed
+                  \end{quote}
+               \end{quote}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.11] Fill in the blanks in the proof of the following theorem.
+               \begin{quote}
+                  \textbf{THEOREM}: $A \subseteq B$ iff $A \cap B = A$.
+                  \begin{quote}
+                     \textbf{Proof}: Suppose that $A \subseteq B$. If
+                     $x \in A \cap B$, then clearly $x \in A$. Thus
+                     $A \cap B \subseteq A$. On the other hand, if $x \in A$,
+                     then since $A \subseteq B$, we must have $x \in B$, so
+                     that $x \in A \cap B$. Thus $A \subseteq A \cap B$, and we
+                     conclude that $A \cap B = A$.
+   
+                     Conversely, suppose that $A \cap B = A$. If $x \in A$, then
+                     since $A = A \cap B$, we must have that $x \in A \cap B$.
+                     Particularly, we must have that $x \in B$, so that
+                     $A \subseteq B$. \qed
+                  \end{quote}
+               \end{quote}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.12] Suppose you are to prove that set $A$ is a subset of set $B$.
+               Write a reasonable beginning sentence for the proof, and indicate
+               what you would have to show in order to finish the proof.
+               
+      \textbf{Solution:} If a $A$ is empty, then the proof is done; otherwise we
+      pick some member $a \in A$. To complete the proof, we must show that $a$
+      satisfies membership for the set $B$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.13] Suppose you are to prove that sets $A$ and $B$ are disjoint.
+               Write a reasonable beginning sentence for the proof, and indicate
+               what you would have to show in order to finish the proof.
+               
+      \textbf{Solution:} If a $A$ is empty, then the proof is done; otherwise we
+      pick some member $a \in A$. To complete the proof, we must show that $a$
+      does not satisfy membership for the set $B$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.14] Which statement(s) below would enable one to conclude that
+               $x \in A \cup B$?
+               \begin{enumerate}
+                  \item $x \in A$ and $x \in B$.
+                  \item $x \in A$ or $x \in B$.
+                  \item If $x \in A$, then $x \in B$.
+                  \item If $x \notin A$, then $x \in B$.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item Given $x \in A$ and $x \in B$. Particularly, we must have that
+               $x \in A$, so we can conclude that $x \in A \cup B$.
+         \item Given $x \in A$ or $x \in B$, it immediately follows by
+               definition that $x \in A \cup B$.
+         \item We are only given that $A \subseteq B$, so we can't conclude that 
+               $x \in A \cup B$.
+         \item If $x \in A$, then $x \in A \cup B$. If $x \notin A$, then
+               $x \in B$, so that $x \in A \cup B$. So in either case, we can
+               conclude that $x \in A \cup B$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.15] Which statement(s) below would enable one to conclude that
+               $x \in A \cap B$?
+               \begin{enumerate}
+                  \item $x \in A$ and $x \in B$.
+                  \item $x \in A$ or $x \in B$.
+                  \item $x \in A$ and $x \notin A{\backslash}B$.
+                  \item If $x \in A$, then $x \in B$.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item Given $x \in A$ and $x \in B$, it immediately follows by
+               definition that $x \in A \cap B$.
+         \item We can't conclude that $x \in A \cap B$. For example suppose
+               $A = \{2, 3\}$ and $B = \{2\}$. Certainly the statement
+               $3 \in A$ or $3 \in B$ is true, but we cannot conclude that
+               $3 \in A \cap B = \{2\}$.
+         \item We can conclude that $x \in A \cap B$, so we shall simplify the 
+               statement $x \in A$ and $x \notin A{\backslash}B$. Thus
+               \begin{align*}
+                  x \in A \text{ and } x \notin A{\backslash}B
+                     &\equiv x \in A \land {\sim}(x \in A{\backslash}B) \\
+                     &\equiv x \in A \land {\sim}(x \in A \land x \notin B) \\
+                     &\equiv x \in A \land (x \notin A \lor x \in B) \\
+                     &\equiv (x \in A \land x \notin A) \lor
+                             (x \in A \land x \in B) \\
+                     &\equiv (x \in A \land x \in B) \\
+                     &\equiv x \in A \cap B.
+               \end{align*}
+               So we can conclude that $x \in A \cap B$.
+         \item We are only given that $A \subseteq B$, so we can't conclude that 
+               $x \in A \cup B$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.16] Which statement(s) below would enable one to conclude that
+               $x \in A{\backslash}B$?
+               \begin{enumerate}
+                  \item $x \in A$ and $x \notin B{\backslash}A$.
+                  \item $x \in A \cup B$ and $x \notin B$.
+                  \item $x \in A \cup B$ and $x \notin A \cap B$.
+                  \item $x \in A$ and $x \notin A \cap B$.
+               \end{enumerate}
+               
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item We cannot conclude that $x \in A{\backslash}B$. For example
+               suppose $A = B \neq \varnothing$, then the statement $x \in A$
+               and $x \notin A{\backslash}A$ will hold, so that is $x$ is a
+               member of $A$ and $x$ is not a member of the empty set; however,
+               we cannot conclude that $x \in (A{\backslash}A) = \varnothing$
+               because we will have a contradiction.
+         \item We can conclude that $x \in A{\backslash}B$, so we shall simplify 
+               the statement $x \in A \cup B$ and $x \notin B$. Thus
+               \begin{align*}
+                  x \in A \cup B \text{ and } x \notin B
+                     &\equiv x \notin B \land (x \in A \lor x \in B) \\
+                     &\equiv (x \notin B \land x \in A) \lor
+                             (x \notin B \land x \in B) \\
+                     &\equiv x \notin B \land x \in A \\
+                     &\equiv (x \in A \land x \notin B)\\
+                     &\equiv x \in A{\backslash}B.
+               \end{align*}
+               So we can conclude that $x \in A{\backslash}B$.
+         \item We cannot conclude that $x \in A{\backslash}B$. For example
+               suppose $A = \{2, 7\}$ and $B = \{2, 8\}$, then the statement
+               $8 \in A \cup B$ and $8 \notin A \cap B$ will hold; however, we
+               cannot conclude that $8 \in (A{\backslash}B) = \{7\}$.
+         \item We can conclude that $x \in A{\backslash}B$, so we shall simplify 
+               the statement $x \in A$ and $x \notin A \cap B$. Thus
+               \begin{align*}
+                  x \in A \text{ and } x \notin A \cap B
+                     &\equiv x \in A \land {\sim}(x \in A \cap B) \\
+                     &\equiv x \in A \land {\sim}(x \in A \land x \in B) \\
+                     &\equiv x \in A \land (x \notin A \lor x \notin B) \\
+                     &\equiv (x \in A \land x \notin A) \lor 
+                             (x \in A \land x \notin B) \\
+                     &\equiv (x \in A \land x \notin B) \\
+                     &\equiv x \in A{\backslash}B.
+               \end{align*}
+               So we can conclude that $x \in A{\backslash}B$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.17] Which statement(s) below would enable one to conclude that
+               $x \notin A{\backslash}B$?
+               \begin{enumerate}
+                  \item $x \notin A \cup B$.
+                  \item $x \in B{\backslash}A$.
+                  \item $x \in A \cap B$.
+                  \item $x \in A \cup B$ and $x \notin A$.
+                  \item $x \in A \cup B$ and $x \notin A \cap B$.
+               \end{enumerate}
+               
+      \textbf{Solution:} We observe that that the statement
+      $x \notin A{\backslash}B$ is logically equivalent to the statement
+      $x \notin A \lor x \in B$. So to conclude that $x \notin A{\backslash}B$,
+      it suffices to either show that $x \notin A$ or that $x \in B$.
+      
+      \begin{enumerate}
+         \item We have
+               \begin{align*}
+                  x \notin A \cup B &\equiv {\sim}(x \in A \lor x \in B) \\
+                                    &\equiv (x \notin A \land x \notin B).
+               \end{align*}
+
+               So given $x \notin A \cup B$, we must have particularly that
+               $x \notin A$, so that we can conclude that
+               $x \notin A{\backslash}B$.
+         \item Given $x \in B{\backslash}A$, we must have particularly that
+               $x \in B$, so that we can conclude that $x\notin A{\backslash}B$.
+         \item Given $x \in A \cap B$, we must have particularly that
+               $x \in B$, so that we can conclude that $x\notin A{\backslash}B$.
+         \item We showed in 5.16(b) that
+               $$x \in A \cup B \text{ and } x \notin B \equiv
+                 x \in A{\backslash}B.$$
+               Thus interchanging $A$ and $B$ will show us that
+               $$x \in A \cup B \text{ and } x \notin A \equiv
+                 x \in B{\backslash}A.$$
+               So from 5.17(b), we can conclude that $x\notin A{\backslash}B$.
+         \item We cannot conclude that $x \notin A{\backslash}B$. To see this
+               suppose that $A = \{1\}$ and $B = \{2\}$. Then certainly the
+               statement $1 \in A \cup B$ and $1 \notin A \cap B$ hold, but
+               we cannot conclude that $1 \notin (A{\backslash}B) = \{1\}$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.18] Prove that the empty set is unique. That is, suppose that $A$ and
+               $B$ are empty sets and prove that $A = B$.
+               
+      \textbf{Proof:} Suppose that $A$ and $B$ are empty sets. To show that the
+      empty set is unique, it suffices to show that $A = B$. That is, we must
+      show that the statements $A \subseteq B$ and $B \subseteq A$ hold. But
+      these statements immediately follow from Theorem 5.7, so that $A = B$;
+      i.e, the empty set is unique. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.19] Prove: If $U = A \cup B$ and $A \cap B = \varnothing$, then
+               $A = U{\backslash}B$.
+               
+      \textbf{Proof:} Let $A$, $B$, and $U$ be sets. Assume that
+      $$U = A \cup B \mbox{ and } A \cap B = \varnothing.$$
+      We wish to conclude that $A = U{\backslash}B$. To accomplish this, we must
+      show that $A \subseteq U{\backslash}B$ and $U{\backslash}B \subseteq A$.
+      First, we shall show that $A \subseteq U{\backslash}B$. So let $a \in A$.
+      Since $U$ is the union of $A$ and $B$, it follows that $a \in U$. Now
+      since $A$ and $B$ are disjoint, we must have that $a \notin B$. We have
+      shown that $a \in U$ and $a \notin B$, so that $a \in U{\backslash}B$.
+      Thus $A \subseteq U{\backslash}B$. To complete the proof, we must now show
+      that $U{\backslash}B \subseteq A$. So let $u \in U{\backslash}B$. That is,
+      $u \in U$ and $u \notin B$. By assumption, every element in $U$ must be
+      in at least one of $A$ and $B$; since $u$ is not in $B$, it must be in
+      $A$, so that $U{\backslash}B \subseteq A$. Thus $A= U{\backslash}B$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.20] Prove: $A \cap B$ and $A{\backslash}B$ are disjoint and
+               $A = (A \cap B) \cup (A{\backslash}B)$.
+               
+      \textbf{Proof:} Let $A$ and $B$ be sets. Assume that
+      $$(A \cap B) \cap (A{\backslash}B) = \varnothing.$$
+      We wish to conclude that $A = (A \cap B) \cup (A{\backslash}B)$. So we
+      must show that $A$ is a subset of $(A \cap B) \cup (A{\backslash}B)$, and
+      vice-versa. First, we shall show that
+      $A \subseteq (A \cap B) \cup (A{\backslash}B)$. So let $a \in A$. If
+      $a \in (A \cap B)$, then we are done, so assume that
+      $a \notin (A \cap B)$ holds; that is, $a \notin A$ or $a \notin B$. But
+      we know that $a \in A$, so the only possibility is $a \notin B$. Since
+      $a \in A$ and $a \notin B$, it follows that $a \in A{\backslash}B$. Thus
+      $A \subseteq (A \cap B) \cup (A{\backslash}B)$. Now we want to show that
+      $((A \cap B) \cup (A{\backslash}B)) \subseteq A$. So let
+      $p \in ((A \cap B) \cup (A{\backslash}B))$. Then $p$ is a member of
+      $A \cap B$ or $p$ is a member of $A{\backslash}B$. So let's investigate
+      the following two cases:
+      
+      \textbf{Case 1:} $p \in A \cap B$. It follows that $p \in A$ and
+      $p \in B$; particularly, we have that $p \in A$.
+      
+      \textbf{Case 2:} $p \in A{\backslash}B$. It follows that $p \in A$ and
+      $p \notin B$; particularly, we have that $p \in A$.
+      
+      In either case, we concluded that $p \in A$, so that
+      $((A \cap B) \cup (A{\backslash}B)) \subseteq A$. That is
+      $A = (A \cap B) \cup (A{\backslash}B)$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.21] Prove or give a counterexample:
+               $A{\backslash}(A{\backslash}B) = B{\backslash}(B{\backslash}A)$.
+               
+      \textbf{Proof:} Let $A$ and $B$ be sets. We claim that
+      $$A{\backslash}(A{\backslash}B) = B{\backslash}(B{\backslash}A).$$
+      Let $x \in A{\backslash}(A{\backslash}B)$. Then we have that
+      \begin{align*}
+         x \in A{\backslash}(A{\backslash}B)
+            &\equiv x \in A \land x \notin (A{\backslash}B) \\
+            &\equiv x \in A \land {\sim}(x \in (A{\backslash}B)) \\
+            &\equiv x \in A \land {\sim}(x \in A \land x \notin B) \\
+            &\equiv x \in A \land (x \notin A \lor x \in B) \\
+            &\equiv (x \in A \land x \notin A) \lor (x \in A \land x \in B) \\
+            &\equiv x \in A \land x \in B \\
+            &\equiv x \in A \cap B.
+      \end{align*}
+      
+      We have shown that
+      $$x \in A{\backslash}(A{\backslash}B) \equiv x \in A \cap B.$$
+      Interchanging $A$ and $B$ will also show us that
+      $$x \in B{\backslash}(B{\backslash}A) \equiv x \in A \cap B,$$
+      so that
+      $$x \in A{\backslash}(A{\backslash}B) \equiv
+        x \in B{\backslash}(B{\backslash}A),$$
+      so that $A{\backslash}(A{\backslash}B) = B{\backslash}(B{\backslash}A)$.
+      \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.22] Prove or give a counterexample:
+               $A{\backslash}(B{\backslash}A) = B{\backslash}(A{\backslash}B)$.
+               
+      \textbf{Solution:} Let $A$ and $B$ be sets, we claim that
+      $$A{\backslash}(B{\backslash}A) \neq B{\backslash}(A{\backslash}B).$$
+      
+      \textbf{Counterexample:} Let $A = \{1\}$ and $B = \{2\}$.
+      Then we have that
+      $$(A{\backslash}(B{\backslash}A)) = \{1\} \neq \{2\} =
+        (B{\backslash}(A{\backslash}B)).$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.23] Let $A$ and $B$ be subsets of a universal set $U$. Prove the
+               following.
+               \begin{enumerate}
+                  \item $A{\backslash}B =
+                        (U{\backslash}B){\backslash}(U{\backslash}A)$.
+                  \item $U{\backslash}(A{\backslash}B) =
+                        (U{\backslash}A) \cup B$.
+                  \item $(A{\backslash}B) \cup (B{\backslash}A) =
+                        (A \cup B){\backslash}(A \cap B)$.
+               \end{enumerate}
+               
+      \textbf{Proof:}
+    
+      \begin{enumerate}
+         \item Let $x \in (U{\backslash}B){\backslash}(U{\backslash}A)$. Then
+               \begin{align*}
+                  x \in (U{\backslash}B){\backslash}(U{\backslash}A)
+                     &\equiv x \in U{\backslash}B \land
+                             x \notin U{\backslash}A \\
+                     &\equiv x \in U{\backslash}B \land
+                             {\sim}(x \in U{\backslash}A) \\
+                     &\equiv (x \in U \land x \notin B) \land
+                             {\sim}(x \in U \land x \notin A) \\
+                     &\equiv (x \in U \land x \notin B) \land
+                             (x \notin U \lor x \in A) \\
+                     &\equiv ((x \in U \land x \notin B) \land x \notin U) \lor
+                             ((x \in U \land x \notin B) \land x \in A) \\
+                     &\equiv (x \in U \land x \notin B \land x \notin U) \lor
+                             (x \in U \land x \notin B \land x \in A) \\
+                     &\equiv ((x \in U \land x \notin U) \land x \notin B) \lor
+                             ((x \in A \land x \notin B) \land x \in U) \\
+                     &\equiv (x \in A \land x \notin B) \land x \in U) \\
+                     &\equiv (x \in A \land x \notin B) \\
+                     &\equiv (x \in A{\backslash}B).
+               \end{align*}
+               
+               Thus
+               $$x \in (U{\backslash}B){\backslash}(U{\backslash}A) \equiv
+                 x \in A{\backslash}B,$$
+               so that
+               $A{\backslash}B = (U{\backslash}B){\backslash}(U{\backslash}A)$.
+               \qed
+         \item Let $x \in U{\backslash}(A{\backslash}B)$. Then
+               \begin{align*}
+                  x \in U{\backslash}(A{\backslash}B)
+                     &\equiv x \in U \land x \notin A{\backslash}B \\
+                     &\equiv x \in U \land {\sim}(x \in A{\backslash}B) \\
+                     &\equiv x \in U \land {\sim}(x \in A \land x \notin B) \\
+                     &\equiv x \in U \land (x \notin A \lor x \in B) \\
+                     &\equiv (x \in U \land x \notin A) \lor
+                              (x \in U \land x \in B) \\
+                     &\equiv x \in (U{\backslash}A) \lor x \in U \cap B \\
+                     &\equiv x \in (U{\backslash}A) \lor x \in B \\
+                     &\equiv x \in (U{\backslash}A) \cup B.
+               \end{align*}
+               
+               Thus
+               $$x \in U{\backslash}(A{\backslash}B) \equiv
+                 x \in (U{\backslash}A) \cup B,$$
+               so that
+               $U{\backslash}(A{\backslash}B) = (U{\backslash}A) \cup B$. \qed
+         \item It suffices to first show that
+               $$(A{\backslash}B) \cup (B{\backslash}A) \subseteq
+                 (A \cup B){\backslash}(A \cap B)$$
+               and then show that             
+               $$(A \cup B){\backslash}(A \cap B) \subseteq
+                 (A{\backslash}B) \cup (B{\backslash}A).$$
+
+               So first let $x \in (A{\backslash}B) \cup (B{\backslash}A)$. So
+               it follows that $x \in (A{\backslash}B)$ or
+               $x \in (B{\backslash}A)$. So let's investigate both of these
+               cases:
+
+               \textbf{Case 1:} $x \in (A{\backslash}B)$. That is, $x \in A$
+               and $x \notin B$. Since $x \in A$, it must be the case that
+               $x \in A \cup B$; and since $x \notin B$, it must be the case
+               that $x \notin A \cap B$, so that
+               $x \in (A{\backslash}B) \cup (B{\backslash}A)$.
+
+               \textbf{Case 2:} $x \in (B{\backslash}A)$. If we interchange the 
+               roles of $A$ and $B$ in Case 1, we shall arrive at the conclusion 
+               that $x \in (A{\backslash}B) \cup (B{\backslash}A)$. \\
+
+               In both cases, we showed that
+               $x \in (A{\backslash}B) \cup (B{\backslash}A)$. Thus we have that
+               $$(A{\backslash}B) \cup (B{\backslash}A) \subseteq
+                 (A \cup B){\backslash}(A \cap B).$$
+
+               Conversely let $x \in (A \cup B){\backslash}(A \cap B)$. Then it
+               follows that ($x \in A$ or $x \in B$) and ($x \notin A$ or
+               $x \notin B$). Suppose first that $x \in A$. Then certainly the
+               statement $x \in A$ or $x \in B$ holds. Since the statement
+               $x \notin A$ or $x \notin B$ must also hold and since $x \in A$,
+               we must have that $x \notin B$. Thus $x \in A{\backslash}B$. Now
+               suppose that $x \in B$. Following the same argument, we can
+               conclude that $x \in B{\backslash}A$. In both cases, we have
+               shown that $x \in A{\backslash}B$ or $x \in B{\backslash}A$. That
+               is           
+               $$(A \cup B){\backslash}(A \cap B) \subseteq
+                 (A{\backslash}B) \cup (B{\backslash}A).$$
+               We can now conclude that
+               $$(A{\backslash}B) \cup (B{\backslash}A) =
+                 (A \cup B){\backslash}(A \cap B).$$
+               \qed
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.24] Finish the proof of Theorem 5.13.
+
+      \textbf{Proof:}
+
+      \begin{enumerate}
+         \item We want to show that $A \cup (U{\backslash}A) = U$. This was
+               proved in Exercise 5.9(a), but we shall present another method 
+               here. So let
+               $x \in A \cup (U{\backslash}A)$. Then
+               \begin{align*}
+                  x \in A \cup (U{\backslash}A)
+                     &\equiv x \in A \lor x \in (U{\backslash}A) \\
+                     &\equiv x \in A \lor (x \in U \land x \notin A) \\
+                     &\equiv (x \in A \lor x \in U) \land
+                             (x \in A \lor x \notin A) \\
+                     &\equiv (x \in A \lor x \in U) \\
+                     &\equiv x \in U.
+               \end{align*}
+               Since $x \in A \cup (U{\backslash}A) \equiv x \in U$, it follows
+                     that $A \cup (U{\backslash}A) = U$. \qed
+         \item We want to show that $A \cap (U{\backslash}A) = \varnothing$. Let
+               $x \in A \cap (U{\backslash}A)$. Then
+               \begin{align*}
+                  x \in A \cap (U{\backslash}A)
+                     &\equiv x \in A \land x \in (U{\backslash}A) \\
+                     &\equiv x \in A \land (x \in U \land x \notin A) \\
+                     &\equiv (x \in A \land x \notin A) \land (x \in U) \\
+                     &\equiv c \land x \in U \\
+                     &\equiv c.
+               \end{align*}
+               Since $x \in A \cup (U{\backslash}A) \equiv c$, it must be the
+               case that $x \in A \cup (U{\backslash}A)$ is false so that
+               $A \cup (U{\backslash}A) = \varnothing$. \qed
+         \item We want to show that $U{\backslash}(U{\backslash}A) = A$. Then
+               \begin{align*}
+                  U{\backslash}(U{\backslash}A)
+                     &= (U{\backslash}U) \cup A &[\text{Exercise } 5.23(b)] \\
+                     &= \varnothing \cup A \\
+                     &= A.
+               \end{align*} \qed
+         \item Let $J = \{1, 2\}$ in Exercise 5.26(a).
+         \item Let $J = \{1, 2\}$ in Exercise 5.26(b).
+         \item Let $J = \{1, 2\}$ in Exercise 5.26(c).
+         \item Let $J = \{1, 2\}$ in Exercise 5.26(d).
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.25] Find $\bigcup_{B \in\mathscr{B}}B$ and
+               $\bigcap_{B \in\mathscr{B}}B$ for each collection $\mathscr{B}$.
+               \begin{enumerate}
+                  \item $\displaystyle\mathscr{B} = \left\{\left[1, 1 +
+                         \frac{1}{n}\right] : n \in \N\right\}$.
+                  \item $\displaystyle\mathscr{B} = \left\{\left(1, 1 +
+                         \frac{1}{n}\right) : n \in \N\right\}$.
+                  \item $\mathscr{B} = \{[2, x]: x \in \R \text{ and } x > 2\}$.
+                  \item $\mathscr{B} = \{[0, 3], (1, 5), [2, 4)\}$.
+               \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item $\bigcup_{B \in\mathscr{B}}B = [1, 2]$ and
+               $\bigcap_{B \in\mathscr{B}}B = \{1\}$.
+         \item $\bigcup_{B \in\mathscr{B}}B = (1, 2)$ and
+               $\bigcap_{B \in\mathscr{B}}B = \varnothing$.
+         \item $\bigcup_{B \in\mathscr{B}}B = [2, \infty)$ and
+               $\bigcap_{B \in\mathscr{B}}B = \{2\}$.
+         \item $\bigcup_{B \in\mathscr{B}}B = [0, 5)$ and
+               $\bigcap_{B \in\mathscr{B}}B = [2, 3]$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[5.26] Let $\{A_j : j \in J\}$ be an indexed family of sets and let
+               $B$ be a set. Prove the following generalizations of Theorem
+               5.13.
+               \begin{enumerate}
+                  \item $\displaystyle B \cup \left[\bigcap_{j \in J}A_j\right] 
+                         = \bigcap_{j \in J}(B \cup A_j)$.
+                  \item $\displaystyle B \cap \left[\bigcup_{j \in J}A_j\right] 
+                         = \bigcup_{j \in J}(B \cap A_j)$.
+                  \item $\displaystyle
+                         B{\backslash}\left[\bigcup_{j \in J}A_j\right] 
+                         = \bigcap_{j \in J}(B{\backslash}A_j)$.
+                  \item $\displaystyle
+                         B{\backslash}\left[\bigcap_{j \in J}A_j\right] 
+                         = \bigcup_{j \in J}(B{\backslash}A_j)$.
+               \end{enumerate}
+
+      \textbf{Proof:}
+
+      \begin{enumerate}
+         \item So first we want to show that the set on the LHS is a subset of
+               the set on the RHS. So let
+               $x \in B \cup \left[\bigcap_{j \in J}A_j\right]$. Then it follows
+               that $x \in B$ or $x \in \left[\bigcap_{j \in J}A_j\right]$. So
+               
+               \textbf{Case 1:} $x \in B$. For each $j \in J$, it must be the
+               case that $x \in B \cup A_j$. Thus
+               $x \in \bigcap_{j \in J}(B \cup A_j)$.
+               
+               \textbf{Case 2:} $x \in \left[\bigcap_{j \in J}A_j\right]$. That
+               is for every $j \in J$, we have $x \in A_j$, and thus,
+               $x \in B \cup A_j$. Hence $x \in\bigcap_{j \in J}(B \cup A_j)$.\\
+
+               In both cases, we showed that
+               $x \in \bigcap_{j \in J}(B \cup A_j)$, so that
+               $$B \cup \left[\bigcap_{j \in J}A_j\right] \subseteq
+                 \bigcap_{j \in J}(B \cup A_j).$$
+
+               Conversely let $x \in \bigcap_{j \in J}(B \cup A_j)$. This
+               implies that for every $j \in J$, we must have that
+               $x \in B \cup A_j$, so that $x \in B$ or $x \in A_j$. In either
+               case, it is clear that
+               $x \in B \cup \left[\bigcap_{j \in J}A_j\right]$. We have thus
+               shown that
+               $$\bigcap_{j \in J}(B \cup A_j) \subseteq
+                 B \cup \left[\bigcap_{j \in J}A_j\right].$$
+               That is
+               $$B \cup \left[\bigcap_{j \in J}A_j\right] =
+                 \bigcap_{j \in J}(B \cup A_j).$$ \qed
+         \item We shall proceed as in (a) above. So let
+               $x \in B \cap \left[\bigcup_{j \in J}A_j\right]$. Then it follows
+               that $x \in B$ and $x \in \left[\bigcup_{j \in J}A_j\right]$.
+               Since $x \in \left[\bigcup_{j \in J}A_j\right]$, it follows that
+               $x \in A_k$ for some $k \in J$; and since $x$ is also in $B$, we
+               have that $x \in B \cap A_k$, so that
+               $x \in \bigcup_{j \in J}(B \cap A_j)$. That is,
+               $$B \cap \left[\bigcup_{j \in J}A_j\right] \subseteq
+                 \bigcup_{j \in J}(B \cap A_j).$$
+
+               Conversely let $x \in \bigcup_{j \in J}(B \cap A_j)$. This
+               implies that $x \in B$ and $x \in A_k$ for some $k \in J$, so
+               that $x \in B \cap \left[\bigcup_{j \in J}A_j\right]$. That is,
+               $$\bigcup_{j \in J}(B \cap A_j) \subseteq
+                 B \cap \left[\bigcup_{j \in J}A_j\right].$$
+               Thus
+               $$B \cap \left[\bigcup_{j \in J}A_j\right] =
+                 \bigcup_{j \in J}(B \cap A_j).$$ \qed
+         \item We shall proceed as in (a) above. So let
+               $x \in B{\backslash}\left[\bigcup_{j \in J}A_j\right]$. Then it 
+               follows that $x \in B$ and
+               $x \notin \left[\bigcup_{j \in J}A_j\right]$. Let $k \in J$.
+               Since $x \notin \left[\bigcup_{j \in J}A_j\right]$, it follows 
+               that, $x \notin A_k$; and since $x$ is also in $B$, we have that
+               $x \in B{\backslash}A_k$, so that
+               $x \in \bigcap_{j \in J}(B{\backslash}A_j)$. That is
+               $$B{\backslash}{\left[\bigcup_{j \in J}A_j\right]} \subseteq
+                 \bigcap_{j \in J}(B{\backslash}A_j).$$
+
+               Conversely let $x \in \bigcap_{j \in J}(B{\backslash}A_j)$. This
+               implies that $x \in B{\backslash}A_k$ for every $k \in J$, so
+               that $x \in B$ and $x \notin A_k$ for every $k \in J$; we can
+               then conclude that
+               $x \in B{\backslash}\left[\bigcup_{j \in J}A_j\right]$, so that
+               $$\bigcap_{j \in J}(B{\backslash}A_j) \subseteq
+                 B{\backslash}{\left[\bigcup_{j \in J}A_j\right]}.$$
+               Thus
+               $$B{\backslash}{\left[\bigcup_{j \in J}A_j\right]} =
+                 \bigcap_{j \in J}(B{\backslash}A_j).$$ \qed
+         \item We shall proceed as in (a) above. So let
+               $x \in B{\backslash}\left[\bigcap_{j \in J}A_j\right]$. Then it 
+               follows that $x \in B$ and
+               $x \notin \left[\bigcap_{j \in J}A_j\right]$. Since
+               $x \notin \left[\bigcap_{j \in J}A_j\right]$ it follows that
+               that $x \notin A_k$ for some $k \in J$; and since $x$ is also in 
+               $B$, we have that $x \in B{\backslash}A_k$, so that
+               $x \in \bigcup_{j \in J}(B{\backslash}A_j)$. That is
+               $$B{\backslash}{\left[\bigcap_{j \in J}A_j\right]} \subseteq
+                 \bigcup_{j \in J}(B{\backslash}A_j).$$
+
+               Conversely let $x \in \bigcup_{j \in J}(B{\backslash}A_j)$. This
+               implies that $x \in B{\backslash}A_k$ for some $k \in J$, so
+               that $x \in B$ and $x \notin A_k$; we can
+               then conclude that
+               $x \in B{\backslash}\left[\bigcap_{j \in J}A_j\right]$, so that
+               $$\bigcup_{j \in J}(B{\backslash}A_j) \subseteq
+                 B{\backslash}{\left[\bigcap_{j \in J}A_j\right]}.$$
+               Thus
+               $$B{\backslash}{\left[\bigcap_{j \in J}A_j\right]} =
+                 \bigcup_{j \in J}(B{\backslash}A_j).$$ \qed
+      \end{enumerate}
+\end{enumerate}

@@ -1,0 +1,251 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Problem 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item What are the entries $a_{21}$, and $a_{23}$ of the matrix
+$A = \begin{bmatrix}
+1 & 2 & 5 \\
+2 & 7 & 8 \\
+0 & 9 & 4
+\end{bmatrix}?$
+
+\underline{Solution}
+
+$a_{21} = 2, a_{23} = 8.$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Problem 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Determine the products $AB$ and $BA$ for the following values of $A$ and
+$B$:
+\begin{enumerate}
+\item $A = \begin{bmatrix}
+1 & 2 & 3 \\
+3 & 3 & 1
+\end{bmatrix}, \quad 
+B = \left[
+\begin{array}{rr}
+-8 & -4 \\
+9 & 5 \\
+-3 & -2
+\end{array} \right]$
+
+\item $A = \begin{bmatrix}
+1 & 4 \\
+1 & 2
+\end{bmatrix}, \quad 
+B = \left[
+\begin{array}{rr}
+6 & -4 \\
+3 & 2
+\end{array} \right]$
+\end{enumerate}
+
+\underline{Solution}
+
+\begin{enumerate}
+\item $AB = \left[
+\begin{array}{rr}
+-19 & 0 \\
+0 & 1
+\end{array} \right], \quad
+BA = \left[
+\begin{array}{rrr}
+-20 & -28 & -28\\
+24 & 33 & 32\\
+-9 & -12 & -11
+\end{array} \right]$
+
+\item $AB = \left[
+\begin{array}{rr}
+18 & 4 \\
+12 & 0
+\end{array} \right], \quad
+BA = \left[
+\begin{array}{rr}
+2 & 16 \\
+5 & 16
+\end{array} \right]$
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Problem 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Let $A= [a_1 \cdots a_n]$ be a row vector, and let $B = 
+\begin{bmatrix}
+b_1\\
+\vdots\\
+b_n
+\end{bmatrix}$ be a 
+column vector. Compute the products $AB$ and $BA$.
+
+\underline{Solution}
+
+$AB = [a_1b_1 + \cdots + a_nb_n], BA = \begin{bmatrix}
+b_1a_1 & b_1a_2 & \cdots & b_1a_n \\
+b_2a_1 & b_2a_2 & \cdots & b_2a_n \\
+\vdots & \vdots & \ddots & \vdots \\
+b_na_1 & b_na_2 & \cdots & b_na_n
+\end{bmatrix}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Problem 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Verify the associative law for the matrix product $\begin{bmatrix}
+1 & 2\\
+0 & 1
+\end{bmatrix} \begin{bmatrix}
+0 & 1 & 2\\
+1 & 1 & 3
+\end{bmatrix} \begin{bmatrix}
+1\\
+4\\
+3
+\end{bmatrix}$
+
+\underline{Solution}
+
+$\left(\begin{bmatrix}
+1 & 2\\
+0 & 1
+\end{bmatrix} \begin{bmatrix}
+0 & 1 & 2\\
+1 & 1 & 3
+\end{bmatrix}\right) \begin{bmatrix}
+1\\
+4\\
+3
+\end{bmatrix} = \begin{bmatrix}
+2 & 3 & 8\\
+1 & 1 & 3
+\end{bmatrix} \begin{bmatrix}
+1\\
+4\\
+3
+\end{bmatrix} = \begin{bmatrix}
+38\\
+14
+\end{bmatrix}$
+
+$\begin{bmatrix}
+1 & 2\\
+0 & 1
+\end{bmatrix} \left(\begin{bmatrix}
+0 & 1 & 2\\
+1 & 1 & 3
+\end{bmatrix} \begin{bmatrix}
+1\\
+4\\
+3
+\end{bmatrix}\right) = \begin{bmatrix}
+1 & 2\\
+0 & 1
+\end{bmatrix} \begin{bmatrix}
+10\\
+14
+\end{bmatrix} = \begin{bmatrix}
+38\\
+14
+\end{bmatrix}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Problem 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Let $A$, $B$, and $C$ be matrices of sizes $l \times m$, $m \times n$, 
+and $n \times p$. How many multiplications are required to compute the product
+$AB$? In which order should the triple product $ABC$ be computed, so as to
+minimize the number of multiplications required?
+
+\underline{Solution}
+
+The element $c_{ij}$ of $AB$ is the result of the dot product of row $A_i$
+and column $B_j$. This dot product has $m$ multiplications. Since $AB$ has
+$ln$ elements, it follows that there are $lmn$ multiplications to compute its
+products. Since $(AB)C$ and $A(BC)$ require $ln(m+p)$ and $mp(l+n)$ 
+multiplications respectively, we choose the one with the smaller value.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Problem 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Compute $\begin{bmatrix}
+1 & a\\
+  & 1
+\end{bmatrix} \begin{bmatrix}
+1 & b\\
+  & 1
+\end{bmatrix}$ and $\begin{bmatrix}
+1 & a\\
+  & 1
+\end{bmatrix}^n$
+
+\underline{Solution}
+
+$\begin{bmatrix}
+1 & a\\
+  & 1
+\end{bmatrix} \begin{bmatrix}
+1 & b\\
+  & 1
+\end{bmatrix} = \begin{bmatrix}
+1 & a+b\\
+  & 1
+\end{bmatrix}$
+
+Using the product above and induction, it follows that
+$\begin{bmatrix}
+1 & a\\
+  & 1
+\end{bmatrix}^n = \begin{bmatrix}
+1 & na\\
+  & 1
+\end{bmatrix}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Problem 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Find a formula for $\begin{bmatrix}
+1 & 1 & 1\\
+  & 1 & 1\\
+  &   & 1    
+\end{bmatrix}^n$, and prove it by induction.
+
+\underline{Solution}
+
+By repeated multiplication, we hypothesize that
+\[\begin{bmatrix}
+1 & 1 & 1\\
+  & 1 & 1\\
+  &   & 1    
+\end{bmatrix}^n \stackrel{?}{=} \begin{bmatrix}
+1 & n & \frac{n(n+1)}{2}\\
+  & 1 & n\\
+  &   & 1    
+\end{bmatrix}\]
+
+Let $P(n)$ be the statement that the above equation is true for some postive
+integer $n$. $P(1)$ is trivially true. If $P(n)$ is true for some positive
+integer $k$, then
+\[\begin{bmatrix}
+1 & 1 & 1\\
+  & 1 & 1\\
+  &   & 1    
+\end{bmatrix}^{k+1} = \begin{bmatrix}
+1 & 1 & 1\\
+  & 1 & 1\\
+  &   & 1    
+\end{bmatrix}\begin{bmatrix}
+1 & 1 & 1\\
+  & 1 & 1\\
+  &   & 1    
+\end{bmatrix}^k = \begin{bmatrix}
+1 & 1 & 1\\
+  & 1 & 1\\
+  &   & 1    
+\end{bmatrix}\begin{bmatrix}
+1 & k & \frac{k(k+1)}{2}\\
+  & 1 & k\\
+  &   & 1
+\end{bmatrix} = \begin{bmatrix}
+1 & (k+1) & \frac{(k+1)((k+1)+1)}{2}\\
+  & 1 & (k+1)\\ 
+  &   & 1    
+\end{bmatrix}\]
+that is, $P(k+1)$ is true. Thus $P(n)$ is true for all positive integers.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Problem 8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Compute the following products by block multiplication:
+\[\left[\begin{tabular}{@{} l l|l l @{}} 
+1 & 1 & 1 & 5 \\ 
+0 & 1 & 0 & 1 \\ \hline
+1 & 0 & 0 & 1 \\ 
+0 & 1 & 1 & 0
+\end{tabular}\right]
+\]
+
+\end{enumerate}

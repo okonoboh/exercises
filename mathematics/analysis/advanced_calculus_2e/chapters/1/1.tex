@@ -1,0 +1,598 @@
+\begin{enumerate}
+   \item[]        \textbf{Lemma 1.1.1} Let $a$ and $b$ positive real numbers and
+                  let $n$ be a natural number. If $a^n < b^n$, then we must have 
+                  that $a < b$.
+   
+      \textbf{Proof.} Lemma 1.1.1 trivially holds if $n$ is 1. So assume that
+      $n > 1$. The inequality $a^n < b^n$ holds if and only if $a^n - b^n < 0$. 
+      Thus
+      $$a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b + \cdots + ab^{n-2} + b^{n-1})
+                  < 0.$$
+      Since $a$ and $b$ are positive, we must have that
+      $a^{n-1} + a^{n-2}b + \cdots + ab^{n-2} + b^{n-1}$ is also
+      positive. Now if $a - b$ were positive, then $a^n- b^n$ would be positive,
+      a contradiction; hence $a - b$ must be negative, so that $a < b$. \qed
+
+      If $a = 0$, then the inequality trivially holds.
+
+   \item[]        \textbf{Lemma 1.1.2} Let $a$ and $b$ be real numbers. Then we
+                  have the following:
+                  \begin{enumerate}
+                     \item $-b - a = -(a + b)$.
+                     \item $ab = -(a(-b))$.
+                     \item $-((-a)b) = ab$.
+                     \item $(-a)(-b) = ab$.
+                  \end{enumerate}
+   
+      \textbf{Proof.} 
+      \begin{enumerate}
+         \item By definition, we have that $-b - a = (-b) + (-a)$. So
+               \begin{align*}
+                  (-b - a) + (a + b) &= (-b) + (-a) + a + b \\
+                                 &= (-b) + b + (-a) + a \\
+                                 &= 0.
+               \end{align*}
+               Since $(-b - a) + (a + b) = 0$, it follows that
+               $-b - a = -(a + b)$.
+         \item We have
+               \begin{align*}
+                  ab + a(-b) &= a(b + (-b)) \\
+                             &= a \cdot 0 = 0.
+               \end{align*}
+               Since $ab + a(-b) = 0$, it follows that $ab = -(a(-b))$.
+         \item We have
+               \begin{align*}
+                  ab + (-a)b &= (a + (-a))b \\
+                             &= 0 \cdot b = 0.
+               \end{align*}
+               Since $ab + (-a)b = 0$, it follows that $-((-a)b) = ab$.
+         \item We have
+               \begin{align*}
+                  (-a)(-b) + (-a)b &= (-a)((-b) + b) \\
+                                   &= (-a) \cdot 0 = 0.
+               \end{align*}
+               Since $(-a)(-b) + (-a)b = 0$, it follows that
+               $(-a)(-b) = -((-a)b) = ab$.
+      \end{enumerate} \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.1]   For each of the following statements, determine whether it is 
+                  true or false and justify your answer.
+                  \begin{enumerate}
+                     \item The set of irrational numbers is inductive.
+                     \item The set of squares of rational numbers is inductive.
+                     \item The sum of irrational numbers is irrational.
+                     \item The product of irrational numbers is irrational.
+                     \item If $n$ is a natural number and $n^2$ is odd, then $n$
+                           is odd.
+                  \end{enumerate}
+
+      \textbf{Solution.} 
+
+      \begin{enumerate}
+         \item False. Since 1 = 1/1 is rational, it is not in the set of 
+               irrational numbers.
+         \item False. Although $1 = 1^2/1^2$ is in the set of squares of 
+               rational numbers, $1 + 1 = 2$ is not, since 2 is irrational.
+         \item False. $\sqrt{2}$ and $-\sqrt{2}$ are irrational numbers, but
+               their sum, 0, is a rational number.
+         \item False. $\sqrt{2}$ and $-\sqrt{2}$ are irrational numbers, but
+               their product, $-2$, is a rational number.
+         \item True. The contrapositive of this implication says that if a
+               natural number $n$ is even, then $n^2$ is even. So suppose that
+               $n = 2k$ for some integer $k$, then $n^2 = 2(2k^2 )$, so that
+               $n^2$ is even.
+      \end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.2]   For each of the following statements, determine whether it is 
+                  true or false and justify your answer.
+                  \begin{enumerate}
+                     \item Every nonempty set of real numbers that is bounded 
+                           above has a largest member.
+                     \item If $S$ is a nonempty set of positive real numbers, 
+                           then $0 \le \inf S$.
+                     \item If $S$ is a set of real numbers that is bounded above
+                           and $B$ is a nonempty subset of $S$, then
+                           $\sup B \le \sup S$.
+                  \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item False. The set $[0, 1)$ is bounded above by 1 but has no maximum.
+         \item True. Since $S$ is a set of positive real numbers, it follows 
+               that it is bounded below by $0$. Thus, $0 \le \inf S$.
+         \item True. Let $b \in B$. Since $B \subseteq S$, we have that $b$ is
+               also in $S$, so that $b \le \sup S$. Thus $B$ is bounded above
+               by $\sup S$. By the Completeness Axiom, we must have that
+               $\sup B \le \sup S$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.3]   Use the Principle of Mathematical Induction to prove that for 
+                  a natural number $n$,
+
+                  \begin{equation}
+                     \sum_{j=1}^nj^2 = \frac{n(n+1)(2n+1)}{6}.\label{1_1_3_1}
+                  \end{equation}
+
+      \textbf{Proof.} We shall prove that \eqref{1_1_3_1} holds by Mathematical 
+      Induction. Let $S(n)$ be the statement that \eqref{1_1_3_1} holds. It is 
+      evident that $S(1)$ holds. So suppose that for some natural number $k$ 
+      that $S(k)$ is true.
+
+      Now
+      \begin{align*}
+         S(k+1) &= \sum_{j=1}^{k+1}j^2 \\
+                &= (k + 1)^2 + \sum_{j=1}^kj^2 \\
+                &= (k + 1)^2 + \frac{k(k+1)(2k+1)}{6} \qquad
+                   \text{[Inductive Hypothesis]}\\
+                &= \frac{6(k + 1)^2 + k(k+1)(2k+1)}{6} \\
+                &= \frac{(k + 1)(6(k + 1) + k(2k+1))}{6} \\
+                &= \frac{(k + 1)(2k^2 + 7k + 6)}{6} \\
+                &= \frac{(k + 1)((k + 1) + 1)(2(k + 1) + 1)}{6}.
+      \end{align*}
+
+      That is, $S(k + 1)$ holds. Thus $S(n)$ holds for all natural numbers. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.4]   Let $n$ be a natural number. Find a formula for
+                  $\sum_{j = 1}^n j(j + 1)$.
+
+      \textbf{Proof.} Claim that
+      \begin{equation}
+         \sum_{j=1}^nj(j + 1) = \frac{n(n+1)(n+2)}{3}.\label{1_1_4_1}
+      \end{equation}
+
+      We shall prove Equation \eqref{1_1_4_1} using Mathematical Induction. It
+      is easy to see that Equation \eqref{1_1_4_1} holds when $n$ is 1. So
+      suppose that it also holds for some natural number $k$. Thus
+
+      \begin{align*}
+         \sum_{j=1}^{k+1}j(j + 1) &= (k + 1)(k + 2) + \sum_{j=1}^kj(j + 2) \\
+                &= (k + 1)(k + 2) + \frac{k(k+1)(k+2)}{3}  \qquad
+                   \text{[Inductive Hypothesis]} \\
+                &= \frac{3(k + 1)(k + 2) + k(k+1)(k+2)}{3} \\
+                &= \frac{(k + 1)(3(k + 2) + k(k+2))}{3} \\
+                &= \frac{(k + 1)(k + 2)(k + 3)}{3} \\
+                &= \frac{(k + 1)((k + 1)+1)((k + 1)+2)}{3}, \\
+      \end{align*}
+
+      so that Equation \eqref{1_1_4_1} holds for $k + 1$. Thus, it holds for all
+      natural numbers. \qed      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.5]   Let $n$ be a natural number. Prove that
+                  \begin{equation}
+                     1^3 + 2^3 + \cdots + n^3 = (1 + 2 + \cdots + n)^2.
+                     \label{1_1_5_1}
+                  \end{equation}
+
+      \textbf{Proof.} Equation \eqref{1_1_5_1} trivially holds for when $n$ is
+      1, so assume it holds for some natural number $k$. Then we have that
+
+      \begin{align*}
+         1^3 + 2^3 + \cdots + (k + 1)^3 &=
+         1^3 + 2^3 + \cdots + k^3 + (k + 1)^3 \\
+         &= (1 + 2 + \cdots + k)^2 + (k+1)^3  \qquad
+            &\text{[Inductive Hypothesis]} \\
+         &= \frac{k^2(k+1)^2}{4} + (k+1)^3 \qquad &\text{(Example 1.1)} \\
+         &= \frac{k^2(k+1)^2+4(k+1)^3}{4} \\
+         &= \frac{(k+1)^2(k^2 + 4k+4)}{4} \\
+         &= \left(\frac{(k+1)((k+1)+1)}{2}\right)^2 \\
+         &= (1 + 2 + \cdots + (k+1))^2, \qquad &\text{(Example 1.1)}
+      \end{align*}
+
+      so that Equation \eqref{1_1_5_1} holds for $k + 1$. Thus, it holds for all
+      natural numbers. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.6]   Let $m$ and $n$ be natural numbers.
+                  \begin{enumerate}
+                     \item Prove that the sum, $m + n$, also is a natural 
+                           number.
+                     \item Prove that the product, $mn$, also is a natural 
+                           number.
+                  \end{enumerate}
+
+      \textbf{Proof.} We shall prove both parts by Mathematical Induction on
+      $n$.
+
+      \begin{enumerate}
+         \item Since the set of Natural numbers is an inductive set and since
+               $m$ is a natural, it must be the case that $m + 1$ is a natural
+               number. So assume that for some natural number $k$ that $m + k$ 
+               is also a natural number. As we argued above, $(m + k) + 1$
+               must also be a natural number. Thus $m + n$ is a natural number
+               for all natural numbers $n$. \qed
+         \item We have $m \cdot 1 = m$, a natural number by assumption. So 
+               assume that for some natural number $k$ that $mk$ is a natural 
+               number. Then $m(k+1) = mk + m$. Part (a) tells us that $mk + m$
+               is a natural number. Thus $mk$ is a natural number for all
+               natural numbers $n$. \qed
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.7]   Prove that if $n$ is a natural number greater than 1, then
+                  $n - 1$ is also a natural number.
+
+      \textbf{Proof.} Consider the sets
+      $$B = \{n \in \N \mbox{ and } n - 1 \in \N\} \mbox{ and } 
+        S = B \cup \{1\}.$$
+
+      It suffices to show that $B = \N\backslash\{1\}$. Since
+      $B = S\backslash\{1\}$, it then suffices to show that $S = \N$. We can
+      accomplish this by showing that $S$ is inductive. It is obvious that
+      $1 \in S$. Suppose $k$ is a member of $S$. Then we have that $k \in \N$ 
+      because $S \subseteq \N$; and since $\N$ is an inductive set, we must have
+      that $k + 1 \in \N$. Thus since $k + 1 \in \N$ and $k \in \N$, it follows 
+      that $k + 1 \in S$, so that $S$ is inductive. Hence $S = \N$, by (1.1) 
+      [Textbook Page 6].  \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.8]   Prove that if $n$ and $m$ are natural numbers such that
+                  $n > m$, then $n - m$ is also a natural number.
+
+      \textbf{Proof.} We shall proceed by Mathematical Induction on $m$. By 
+      Problem 1.1.7, the statement of the problem holds for $m = 1$. So assume 
+      it also holds for some natural number $k$. Suppose that $n > k + 1$. 
+      Clearly $n > k$, so by our inductive hypothesis, $n - k$ is a natural 
+      number. Since $n > k + 1$ we must have that $n - k > 1$. It follows by 
+      Problem 1.1.7 that $(n - k) - 1 = n - (k + 1)$ is also a natural number, 
+      so that the statement of the problem holds for $m = k + 1$. Thus it holds
+      for all natural number $m$. That is, if $n > m$, then $n - m$ is also a 
+      natural number. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.9]   Use Exercise 8 to prove that the sum, difference, and product 
+                  of integers also are integers.
+      
+      \textbf{Proof.} We shall be using results from Lemma 1.1.2 in this
+      problem. Let $a$ and $b$ be integers. If either $a$ or $b$ is 0, then it
+      is clear that $a + b$, $a - b$, $ab$ are all integers. So we can assume
+      that $a \neq 0$ and $b \neq 0$. We shall now divide the problem into
+      cases:
+      
+      \textbf{Case 1:} $a$ is positive and $b$ is negative. \\
+      First we want to show that $a + b$ is also an integer. 
+      By the positivity axioms, exactly one of the following is true:
+      $$a + b = 0, \quad a + b > 0, \quad a + b < 0.$$
+      If $a + b = 0$, then we are done. If $a + b > 0$, then we must have that
+      $a > -b$. But since $b$ is negative, it must follow that $-b$ is positive.
+      Thus by Problem 1.1.8, $a - (-b) = a + (-(-b)) = a + b$ is a positive 
+      integer. Now the only remaining possiblity is $a + b < 0$, or, 
+      equivalently, $-b > a$. By Problem 1.1.8, we have that
+      $-b - a = -(b + a) = -(a + b)$ is a positive integer; that is $a + b$ is
+      a negative integer. To show that $a - b$ is an integer, recall that
+      $a - b = a + (-b)$. But $a$ and $-b$ are both positive integers, so that 
+      $a - b$ is a positive integer by Problem 1.1.6(a). It now remains to show
+      $ab$ is an integer. Problem 1.1.6(b) tells us that $a(-b)$ is a positive 
+      integer, so that $-(a(-b)) = ab$ is a negative integer.
+      
+      \textbf{Case 2:} $a$ is negative and $b$ is negative. \\
+      First we want to show that $a + b$ is also an integer. By Problem 1.1.6
+      (a), we have that $(-a) + (-b)$ is a positive integer, so that
+      $-((-a) + (-b)) = a + b$ is a negative integer. To show that $a - b$ is 
+      an integer, we observe that $a - b = a + (-b)$. Since $a$ is negative and 
+      $-b$ is positive, it follows from Case 1 that $a - b$ is an integer. It 
+      now remains to show $ab$ is an integer. This follows from Problem 1.1.6(b)
+      because $(-a)(-b)$ is a multiplication involving positive integers, so
+      that $(-a)(-b) = ab$ is also a positive integer.
+
+      \textbf{Case 3:} $a$ is positive and $b$ is positive. Problem 1.1.6 tells
+      us that $ab$ and $a + b$ are both positive integers. Case 1 tells us that
+      $a - b = a + (-b)$ is an integer.
+
+      In the case where $a$ is negative and $b$ is positive, we can interchange
+      the roles of $a$ and $b$ and use Case 1. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.10]  Use Exercise 9 to prove that the rationals numbers satisfy the
+                  Field Axioms.
+
+      \textbf{Proof.} Let $p$ and $q$ be rational numbers. Then we have
+      $p = a/b$ and $q = c/d$ for some integers $a$, $b$, $c$, and $d$, with
+      $c \neq 0$ and $d \neq 0$. First we want to show that the set of rationals
+      is closed under addition and multiplication. Since
+      $\displaystyle p + q = \frac{ad + bc}{bd}$ and $pq= ac/bd$, it follows by
+      Problem 1.1.9 that $p + q$ and $pq$ are also rational numbers. Now since
+      $\Q$ is a subset of $\R$, then $\Q$ is commutative and associative under 
+      addition and multiplication. The additive inverse of $p$ is $-a/b$; if $p$
+      is not zero, then its multiplicative inverse is $b / a$. The rational
+      numbers $1/1 = 1$ and $0/1 = 0$ serve as the multiplicative and additive
+      inverses for $\Q$. The distributive law also holds in $\Q$ since it holds
+      in $\R$. Thus $\Q$ is a Field. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.11]
+                  \begin{enumerate}
+                     \item Prove that the sum of a rational number and an 
+                           irrational number must be irrational.
+                     \item Prove that the product of two nonzero numbers, one 
+                           rational and one irrational is irrational.
+                  \end{enumerate}
+      
+      \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item Let $a$ be a rational number number, and let $b$ be an irrational
+               number. We shall show by contradiction that $a + b$ is
+               irrational. Suppose that $a + b = p/q$ for some integers $p$ and
+               $q$, where $q$ is nonzero. We then have that $b = (p - qa)/q$.
+               This says that $b$ is rational, contradicting our initial
+               assumption that $b$ was irrational. Thus $a + b$ is irrational.
+         \item Let $a$ be a nonzero rational number and let $b$ be a nonzero
+               irrational number. We shall show by contradiction that $ab$ is
+               irrational. So say that $ab = p/q$ for some integers $p$ and $q$
+               where $q$ is nonzero. We then have that $b = p/aq$. This says
+               that $b$ is rational, contradicting our initial assumption that
+               $b$ was irrational. Thus $ab$ is irrational.
+      \end{enumerate}
+      
+      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.12]  Use Proposition 1.2 to show that there is no rational number 
+                  whose square equals 2/9.
+      
+      \textbf{Proof.} It suffices to show that $\sqrt{2/9}$ is irrational. Since
+      $\sqrt{2/9} = \sqrt{2} * (1/3)$, it follows by Proposition 1.2 and Problem
+      11 (b) that $\sqrt{2} * (1/3)$ is irrational.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.13]  Suppose that $S$ is a nonempty set of real numbers that is
+                  bounded. Prove that $\inf S \le \sup S$.
+              
+      \textbf{Proof.} Since $S$ is nonempty, let $s$ be any member of $S$. We 
+      thus have by the Completeness Axiom that $\inf S \le s \le \sup S$, so
+      that $\inf S \le \sup S$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.14]  Suppose that $S$ is a nonempty set of real numbers that is 
+                  bounded and that $\inf S = \sup S$. Prove that the set $S$ 
+                  consists of exactly one number.
+              
+      \textbf{Proof.} Since $S$ is nonempty, let $s$ be any member of $S$. We 
+      thus have by the Completeness Axiom that $\inf S \le s \le \sup S$. Thus
+      $\inf S \le s \le \inf S$, so that $s = \inf S$. We have shown that if
+      $s \in S$, then $s = \inf S$. Thus $S$ has only one element.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.15]  For a set $S$ of numbers, a member $c$ of $S$ is called the
+                  \textit{maximum} of $S$ provided that it is an upper bound for
+                  $S$. Prove that a set $S$ of numbers has a maximum if and only
+                  if it is bounded above and $\sup S$ belongs to $S$. Give an 
+                  example of a set $S$ of numbers that is nonempty and bounded 
+                  above but has no maximum.
+              
+      \textbf{Proof.} First suppose that $S$ has a maximum, $\max S$. By 
+      definition, $\max S$ is an upper bound for $S$. By the Completeness Axiom,
+      it follows that $\sup S$ exists; since $\max S$ is in $S$, we must have 
+      that $\max S \le \sup S$. But since $\max S$ is also an upper bound for
+      $S$ and since no other upper bound can be less than $\sup S$, we must have
+      that $\max S = \sup S$, so that $\sup S$ is in $S$. Now suppose that $S$
+      is bounded above and that $\sup S$ belongs to $S$. Then it immediately
+      follows that $\sup S$ is the maximum of $S$. The set $[0, 1)$ is nonempty
+      and bounded above, but it has no maximum since
+      $\sup$ $[0, 1) = 1 \notin [0, 1)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.16]  Prove that $\sqrt{3}$ is not a rational number.
+              
+      \textbf{Proof.} We shall prove by contradiction that $\sqrt{3}$ is not a 
+      rational number. So suppose that $\sqrt{3} = p/q$ for integers $p$ and $q$
+      where $q$ is nonzero and $p$ and $q$ have no common positive factor 
+      greater than 1. So we have that $p^2 = 3q^2$. This says that $p^2$ has a  
+      prime factor of 3. Thus $p$ must also have a prime factor of 3, so we can 
+      write $p = 3m$ so that $q^2 = 3m^2$. Similarly, $q$ must also have a prime
+      factor of 3, a contradiction since we assumed that $p$ and $q$ are
+      relatively prime. Thus, $\sqrt{3}$ is irrational. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.17]  (Outline of the proof of Proposition 1.3) Define
+                  $$S \equiv \{x : x \in \R, x \ge 0, x^2 < c\}$$
+                  \begin{enumerate}
+                     \item Show that $c + 1$ is an upper bound for $S$ and
+                           therefore, by the Completeness Axiom, $S$ has a least
+                           upper bound that we denote by $b$.
+                     \item Show that if $b^2 > c$, then we can choose a suitably
+                           small positive number $r$ such that $b - r$ is also 
+                           an upper bound for $S$, thus contradicting the choice
+                           of $b$ as the \textit{least} upper bound of $S$.
+                     \item Show that if $b^2 < c$, then we can choose a suitably
+                           small positive number $r$ such that $b + r$ belongs 
+                           to $S$, thus contradicting the choice of $b$ as an 
+                           upper bound of $S$.
+                     \item Use parts (b) and (c) and the Positivity Axioms for
+                           $\R$ to conclude that $b^2 = c$.
+                  \end{enumerate}
+	  
+	   \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item First notice that $S$ is nonempty because 0 is in $S$. Let $y$
+               be any member of $S$. Then we have
+               $y^2 < c < 2c < 2c + c^2 + 1 = (c + 1)^2$, so that
+               $y^2 < (c + 1)^2$; that is, $y < c + 1$ by Lemma 1.1.1. This says 
+               that $S$ is bounded above by $c + 1$, so that $\sup S$, say $b$, 
+               exists by The Completeness Axiom.
+         \item Suppose that $b^2 > c$. We want to choose a positive number
+               $r < b$ so that $b - r$ is also an upper bound for $S$.
+               Choose $r = (b^2 - c)/4b$. This choice of $r$ is clearly
+               positive. To show that $r < b$, we notice that $3b^2 > -c^2$, so
+               that $4b^2 > b^2 - c^2$. Multiplying the inequality
+               $4b^2 > b^2 - c^2$ by the positive number $\frac{1}{4b}$ results
+               in $b > (b^2 - c^2)/4b = r$, so that $b - r$ is positive. Now
+               we have that
+               \begin{align*}
+                  (b - r)^2 &= b^2 + r^2 - 2br > b^2 - 2br = \\
+                            &= b^2 - 2b \cdot \frac{b^2 - c}{4b} \\
+                            &= \frac{b^2}{2} + \frac{c}{2} >
+                            \frac{c}{2} + \frac{c}{2} = c.
+               \end{align*}
+               
+               So for any $y \in S$, we have $y^2 < c < (b - r)^2$, so that
+               $y < b - r$ by Lemma 1.1.1. Thus $S$ has an upper bound, $b - r$, 
+               that is less than $b$, a contradiction. Thus $b^2$ cannot be 
+               greater than $c$.
+         \item Now suppose that $b^2 < c$. Let $r$ be
+               $$\min\left\{\frac{b}{2}, \frac{c - b^2}{4b}\right\}.$$
+               
+               We observe that, as chosen, $0 < r < b$, so that $r^2 < br$.
+               Thus
+               \begin{align*}
+                  (b + r)^2 = b^2 + r^2 + 2br &< b^2 + 3br \\
+                  &\le b^2 + 3b \cdot \frac{c - b^2}{4b} \\
+                  &= \frac{b^2}{4} + \frac{3c}{4} \\
+                  &< \frac{c}{4} + \frac{3c}{4} = c.
+               \end{align*}
+               
+               Since $b + r$ is positive, and since $(b + r)^2 < c$, it follows
+               by the definition of $S$ that $b + r$ is in $S$, and since
+               $b + r > b$, it must be an upper bound for $S$. Then by Problem
+               1.1.15, it must be the supremum of $S$, a contradiction since
+               $b = \sup S$. Thus $b^2$ cannot be less than $c$.
+         \item In (b) we showed that $b^2 > c$ is not true; that is $b^2 - c$ is
+               not positive. Also, we showed in (c) that $c > b^2$ is also not
+               true; that is $c - b^2 = -(b^2 - c)$ is also not positive. Thus,
+               by the Positivity Axioms, we must have that $b^2 - c = 0$ so that
+               $b^2 = c$.
+                  
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.18]  Prove that there is a positive number $x$ such that $x^3 = 5$.
+ 
+      \textbf{Proof.} We shall proceed as we did in Problem 1.1.17. So define
+      $$S \equiv \{x : x \in \R, x \ge 0, x^3 < 5\}.$$ $S$ is nonempty because
+      $0 \in S$. Now we must find an upper bound for $S$. So let $s \in S$. Then
+      it follows that $0 \le s^3 < 5$. Particularly we must also have that
+      $s^3 < 8$, so that $s < 2$ by Lemma 1.1.1. That is $S$ is bounded above 
+      denote by 2; then by the Completeness Axiom, $S$ has a supremum, which we 
+      shall call $b$. First suppose that $b^3 > 5$. Consider the number $b - r$ 
+      where $r = \frac{b^3 - 5}{3b^2}$. We want to show that $b - r$ is an upper 
+      bound for $S$. Clearly $r$ is positive. Since $b$ is positive, we must
+      have that $2b^3 > -5$ so that $3b^3 > b^3 - 5$; thus
+      $\frac{b^3 - 5}{3b^2} < b$; that is $r < b$, so that $b - r$ is positive. 
+      We see that $5 < (b - r)^3$ because
+      \begin{align*}
+         (b - r)^3 &= (b - r)^2(b - r) \\
+                   &= (b^2 - 2br + r^2)(b - r) \\
+                   &> (b^2 - 2br)(b - r) \\
+                   &= b^3 - 3b^2r + 2br^2 \\
+                   &> b^3 - 3b^2r \\
+                   &= b^3 - 3b^2\frac{b^3 - 5}{3b^2} = 5.
+      \end{align*}
+
+      Now if $y \in S$, then we have $0 \le y^3 < 5 < (b - r)^3$. By
+      Lemma 1.1.1, we have that $y < b - r$. That is $S$ is bounded above by
+      $b - r$, a contradiction because $b = \sup S$. \\
+
+      Now suppose $b^3 < 5$. Let $r$ be
+      $$\min\left\{\frac{b}{2}, \frac{5 - b^3}{7b^2}\right\}.$$
+               
+      We observe that, as chosen, $0 < r < b$, so that $r^2 < br$. Also,
+      multiplying the inequalities $0 < r < b$ by the positive number $3br$ will
+      give us $0 < 3br^2 < 3b^2r$. Armed with this information we have that    
+      \begin{align*}
+         (b + r)^3 &= (b + r)^2(b + r) \\
+                   &= (b^2 + r^2 + 2br)(b + r) \\
+                   &< (b^2 + br + 2br)(b + r) \\
+                   &= b^3 + 4b^2r + 3br^2 \\
+                   &< b^3 + 4b^2r + 3b^2r \\
+                   &= b^3 + 7b^2r \\
+                   &\le b^3 + 7b^2\frac{5 - b^3}{7b^2} = 5.
+      \end{align*}
+               
+      We have thus shown that $0 < (b + r)^3 < 5$. Since $b + r$ is positive, 
+      and since $(b + r)^3 < 5$, it follows by the definition of $S$ that
+      $b + r$ is in $S$, and since $b + r > b$, it must be an upper bound for
+      $S$. Then by Problem 1.1.15, it must be the supremum of $S$, a
+      contradiction since  $b = \sup S$. Thus $b^3$ cannot be less than $c$.
+
+      We have shown above that the statements $b^3 < 5$ and $b^3 > 5$ are false,
+      so by the Positivity Axioms, it must be the case that $b^3 = 5$. \qed     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.19]  Define $S \equiv \{x \in \R : x^2 < x\}$. Prove that
+                  $\sup S = 1$.
+
+      \textbf{Proof.} Define $I = \{x \in \R: 0 < x < 1\}$. We want to first 
+      show that $S = I$. Notice that $S$ is nonempty because $1/2 \in S$. So let
+      $s \in S$. Then we have that $s^2 < s$, so that $s^2 - s < 0$. That is
+      $s(s - 1) < 0$. We notice that $s$ and $s - 1$ can neither both be   
+      positive nor can they both be negative, since that would make
+      $s(s - 1) > 0$, a contradiction. Now if $s$ is negative and $s - 1$ is 
+      positive then we would have $s < 0$ and $s > 1$, another contradiction. So
+      the only possibilility is $0 < s$ and $s < 1$; thus we have shown that if
+      $s \in S$, then $0 < s < 1$, so that $S \subseteq I$. Now let $y \in I$.
+      Then we have that $0 < y < 1$. Particularly we have that $y < 1$. Since
+      $y$ is positive, we can multiply the inequality $y < 1$ by $y$ to get
+      $y^2 < y$. That is, $y \in S$, so that $I \subseteq S$. We have thus
+      shown that $S = I$. We immediately see that $S$ is bounded above by 1 and
+      since it is also nonempty, it follows by the Completeness Axiom that $S$
+      has a least upper bound, say $b$. Since 1 is also an upper bound for $S$,
+      we must have that $b \le 1$. Now suppose that $b < 1$. Then $b$ must
+      be a member of $S$. Then by Problem 1.15, $b$ is the maximum member of
+      $S$, but this is a contradiction since $\frac{b + 1}{2} \in S$ but
+      $\frac{b + 1}{2} > b$. Thus it follows that $b = 1$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob1.1_20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.1.20] 
+                  \begin{enumerate}
+                     \item For real numbers $a$ and $b$, suppose that the number
+                           $x$ is a solution to the equation
+                           $$(x - a)(x - b) = 0.$$
+                           Prove that either $x = a$ or $x = b$.
+                     \item For a positive number $c$, show that if $x$ is any 
+                           number such that $x^2 = c$, then either $x=\sqrt{c}$ 
+                           or $x = -\sqrt{c}$.
+                     \item Let $a$, $b$, and $c$ be real numbers such that
+                           $a \neq 0$, and consider the quadratic equation
+                           $$ax^2 + bx + c = 0.$$
+                           Prove that a number $x$ is a solution of this
+                           equation if and only if
+                           $$(2ax + b)^2 = b^2 - 4ac.$$
+                           Suppose that $b^2 - 4ac > 0$. Prove that the 
+                           quadratic equation has exactly two solutions, given 
+                           by
+                           $$x = \frac{-b  + \sqrt{b^2 - 4ac}}{2a} \mbox{ and }
+                             x = \frac{-b  - \sqrt{b^2 - 4ac}}{2a}.$$
+                     \item In part (c) now suppose that $b^2 - 4ac < 0$. Prove 
+                           that there is no real number that is a solution of 
+                           the quadratic equation.
+                  \end{enumerate}
+	  
+      \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item From the Preliminaries we know that if
+               $$(x - a)(x - b) = 0,$$
+               then either $x - a = 0$ or $x - b = 0$ so that $x = a$ or
+               $x = b$.
+         \item From Problem 17, we know that there exists a unique $b$ such that
+               $b^2 = c$. We denote this $b$ as $\sqrt{c}$. Since $x^2 = c$ if
+               and only if $x^2 - c = 0$, we have that
+               $x^2 - c = (x - \sqrt{c})(x + \sqrt{c}) = 0$, so that
+               $x = \sqrt{c}$ or $x = -\sqrt{c}$ by (a).
+         \item First suppose that $y$ is a solution of the quadratic equation
+               \begin{equation}
+                  ax^2 + bx + c = 0, \label{1_1_20_0}
+               \end{equation}
+               then it follows that
+               \begin{equation}
+                  ay^2 + by + c = 0. \label{1_1_20_1}
+               \end{equation}
+
+               Since $a \neq 0$, we can multiplty \eqref{1_1_20_1} by $a^{-1}$
+               to get
+               $$y^2 + \frac{b}{a}y + \frac{c}{a} = 0.$$
+
+               Then
+               $$y^2 + \frac{b}{a}y + \frac{b^2}{4a^2} = \frac{b^2}{4a^2} - 
+                 \frac{c}{a},$$
+               so that
+               $$4a^2y^2 + 4aby + b^2 = b^2 - 4ac,$$
+               or
+               \begin{equation}
+                  (2ay + b)^2 = b^2 - 4ac. \label{1_1_20_2}
+               \end{equation}
+
+               Now if we assume that \eqref{1_1_20_2} holds, then we can retrace
+               our steps to get $ay^2 + by + c = 0$, so that $y$ is a solution
+               of Equation \eqref{1_1_20_0}.
+
+               Now suppose $b^2 - 4ac > 0$. Thus, $\sqrt{b^2 - 4ac}$ exists.
+               We can rewrite Equation \eqref{1_1_20_2} to get
+               $$(2ay + b + \sqrt{b^2 - 4ac})(2ay + b - \sqrt{b^2 - 4ac}) = 0.$$
+               From (a) it follows that
+               $$y = \frac{-b  + \sqrt{b^2 - 4ac}}{2a} \mbox{ and }
+                 y = \frac{-b  - \sqrt{b^2 - 4ac}}{2a}.$$
+         \item Suppose $b^2 - 4ac < 0$. Let $y$ be any real number. It follows
+               that $(2ay + b)^2 \ge 0 \neq b^2 - 4ac$. Since
+               $(2ay + b)^2 \neq b^2 - 4ac$, it follows by (c) that no real 
+               solution exists.
+      \end{enumerate}      
+\end{enumerate}

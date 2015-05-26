@@ -1,0 +1,679 @@
+\noindent      \textbf{Computations}
+
+\noindent      In Exercises 1 through 4, find the quotient and remainder,
+               according to the division algorithm, when $n$ is divided by $m$.
+
+\noindent      \textbf{Computations}
+
+\noindent      In Exercises 1 through 4, find the quotient and remainder,
+               according to the division algorithm, when $n$ is divided by $m$.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.1]  $n = 42$, $m = 9$.
+   
+      \textbf{Solution:} We have that $42 = 4 \cdot 9 + 6$, so that the
+      quotient and remainder are 4 and 6.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.2]  $n = -42$, $m = 9$.
+   
+      \textbf{Solution:} We have that $-42 = -5 \cdot 9 + 3$, so that the
+      quotient and remainder are $-5$ and 3.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.3]  $n = -50$, $m = 8$.
+   
+      \textbf{Solution:} We have that $-50 = -7 \cdot 8 + 6$, so that the
+      quotient and remainder are $-7$ and 6.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.4]  $n = 50$, $m = 8$.
+   
+      \textbf{Solution:} We have that $50 = 6 \cdot 8 + 2$, so that the
+      quotient and remainder are 6 and 2.
+\end{enumerate}
+
+\noindent      In Exercises 5 through 7, find the greatest common divisor of the
+               two integers.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.5]  32 and 24.
+   
+      \textbf{Solution:} Using the Euclidean Algorithm it follows that
+      \begin{align*}
+         32 &= 1 \cdot 24 + 8. \\
+         24 &= 3 \cdot 8 + 0,
+      \end{align*}
+      so that $\gcd(32, 24) = 8$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.6]  48 and 88.
+   
+      \textbf{Solution:} Using the Euclidean Algorithm it follows that
+      \begin{align*}
+         88 &= 1 \cdot 48 + 40.  \\
+         48 &= 1 \cdot 40 + 8.   \\
+         40 &= 5 \cdot 8 + 0,
+      \end{align*}
+      so that $\gcd(48, 88) = 8$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.7]  360 and 420.
+   
+      \textbf{Solution:} Using the Euclidean Algorithm it follows that
+      \begin{align*}
+         420 &= 1 \cdot 360 + 60.  \\
+         360 &= 6 \cdot 60 + 0,
+      \end{align*}
+      so that $\gcd(360, 420) = 60$.
+\end{enumerate}
+
+\noindent      In Exercises 8 through 11, find the number of generators of a
+               cyclic group having the given order.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.8]  5.
+   
+      \textbf{Solution:} By Theorem 6.14, it follows that the number of
+      generators of a cyclic group of order 5 is the number of positive integers
+      relatively prime to 5; thus our answer is 4.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.9]  8.
+   
+      \textbf{Solution:} By Theorem 6.14, it follows that the number of
+      generators of a cyclic group of order 8 is the number of positive integers
+      relatively prime to 8; thus our answer is 4.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.10] 12.
+   
+      \textbf{Solution:} By Theorem 6.14, it follows that the number of
+      generators of a cyclic group of order 12 is the number of positive
+      integers relatively prime to 12; thus our answer is 4.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.11] 60.
+   
+      \textbf{Solution:} By Theorem 6.14, it follows that the number of
+      generators of a cyclic group of order 60 is the number of positive
+      integers relatively prime to 60; thus our answer is 16.
+\end{enumerate}
+
+\noindent      An isomorphism of a group with itself is an
+               \textbf{automorphism of the group.} In Exercises 12 through 16,
+               find the number of automorphisms of the given group.
+
+\begin{enumerate}
+   \item[\textbf{Note:}]   
+               For Exercises 12-16, we note that an isomorphism between two
+               cyclic groups must map a generator to another generator. By
+               Exercise 6.44, we know this isomorphism is completely determined
+               by the image of the generator. Thus the number of automorphisms
+               of a cyclic group is the number of generators that it has. Let
+               $\text{Aut}(G)$ denote the set of automorphisms of a group $G$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.12] $\Z_2$.
+   
+      \textbf{Solution:} Since $\Z_2$ has only 1 generator, it follows that
+      $|\text{Aut}(\Z_2)| = 1$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.13] $\Z_6$.
+   
+      \textbf{Solution:} Since $\Z_6$ has exactly 2 generators (1 and 6), it
+      follows that $|\text{Aut}(\Z_6)| = 2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.14] $\Z_8$.
+   
+      \textbf{Solution:} Since $\Z_8$ has exactly 4 generators (1, 3, 5, and 7),
+      it  follows that $|\text{Aut}(\Z_8)| = 4$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.15] $\Z$.
+   
+      \textbf{Solution:} Since $\Z$ has exactly 2 generators (1, and $-1$), it
+      follows that $|\text{Aut}(\Z)| = 2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.16] $\Z_{12}$.
+   
+      \textbf{Solution:} Since $\Z_{12}$ has exactly 4 generators
+      (1, 5, 7, and 11), it follows that $|\text{Aut}(\Z_{12})| = 4$.
+\end{enumerate}
+
+\noindent      In Exercise 17 through 21, find the number of elements in the
+               indicated cyclic group.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.17] The cyclic subgroup of $\Z_{30}$ generated by 25.
+
+      \textbf{Solution:} By Theorem 6.14, we have that
+      $$\cyc{25} = \frac{30}{\gcd(30, 25)} = 6.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.18] The cyclic subgroup of $\Z_{42}$ generated by 30.
+
+      \textbf{Solution:} By Theorem 6.14, we have that
+      $$\cyc{42} = \frac{42}{\gcd(42, 30)} = 7.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.19] The cyclic subgroup $\cyc{i}$ of the group $\C^*$ of nonzero
+               complex numbers under multiplication.
+
+      \textbf{Solution:} $\cyc{i} = \{i, -1, -i, 1\}$, so that $|\cyc{i}| = 4$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.20] The cyclic subgroup of the group $\C^*$ of Exercise 6.19
+               generated by $(1 + i)/\sqrt{2}$.
+
+      \textbf{Solution:}
+      $$\left\cyc{\frac{1 + i}{\sqrt{2}}\right} = \left\{\frac{1 + i}{\sqrt{2}},
+        i, \frac{-1 + i}{\sqrt{2}}, -1, \frac{-1 - i}{\sqrt{2}}, -i,
+        \frac{1 - i}{\sqrt{2}}, 1\right\},$$
+      so that
+      $$\left|\left\cyc{\frac{1 + i}{\sqrt{2}}\right}\right| = 8.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.21] The cyclic subgroup of the group $\C^*$ of Exercise 6.19
+               generated by $1 + i$.
+
+      \textbf{Solution:} We have $1 + i = \sqrt{2}e^{\frac{i\pi}{4}}$, so that
+      for every nonzero integer $n$,
+      $$(1 + i)^n = 2^{\frac{n}{2}}e^{\frac{n\pi}{4}i},$$
+      and thus $|(1 + i)^n| = 2^{\frac{n}{2}} \neq 1$. We have thus shown that
+      $|\cyc{1 + i}| = \infty$.
+      
+   
+\end{enumerate}
+
+\noindent      In Exercises 22 through 24, find all subgroups of the given
+               group, and draw the subgroup diagram for the subgroups.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.22] $\Z_{12}$.
+
+      \textbf{Solution:} According to Theorem 6.14, all the subgroups of
+      $\Z_{12}$ are:
+      $$\Z_{12}, \cyc{2}, \cyc{3}, \cyc{4}, \cyc{6}, \text{ and } \{0\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.23] $\Z_{36}$.
+
+      \textbf{Solution:} According to Theorem 6.14, all the subgroups of
+      $\Z_{36}$ are:
+      $$\Z_{36}, \cyc{2}, \cyc{3}, \cyc{4}, \cyc{6}, \cyc{9}, \cyc{12},
+        \cyc{18}, \text{ and } \{0\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.24] $\Z_8$.
+
+      \textbf{Solution:} According to Theorem 6.14, all the subgroups of
+      $\Z_{8}$ are:
+      $$\Z_{8}, \cyc{2}, \cyc{4}, \text{ and } \{0\}.$$
+\end{enumerate}
+
+\noindent      In Exercises 25 through 29, find all orders of subgroups of the
+               given group.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.25] $\Z_6$.
+
+      \textbf{Solution:} Since all the positive divisors of 6 are 1, 2, 3, and
+      6, it follows by Theorem 6.14 that the orders of all the subgroups of
+      $\Z_6$ are 6, 3, 2, and 1.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.26] $\Z_8$.
+
+      \textbf{Solution:} Since all the positive divisors of 8 are 1, 2, 4, and
+      8, it follows by Theorem 6.14 that the orders of all the subgroups of
+      $\Z_8$ are 8, 4, 2, and 1.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.27] $\Z_{12}$.
+
+      \textbf{Solution:} Since all the positive divisors of 12 are 1, 2, 3, 4,
+      6, and 12, it follows by Theorem 6.14 that the orders of all the subgroups 
+      of $\Z_{12}$ are 12, 6, 4, 3, 2, and 1.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.28] $\Z_{20}$.
+
+      \textbf{Solution:} Since all the positive divisors of 20 are 1, 2, 4, 5, 
+      10, and 20, it follows by Theorem 6.14 that the orders of all the 
+      subgroups of $\Z_{20}$ are 20, 10, 5, 4, 2, and 1.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.29] $\Z_{17}$.
+
+      \textbf{Solution:} Since all the positive divisors of 17 are 1 and 17, it 
+      follows by Theorem 6.14 that the orders of all the subgroups of $\Z_{17}$ 
+      are 17 and 1.
+\end{enumerate}
+
+\noindent      \textbf{Concepts}
+
+\noindent      In Exercises 30 and 31, correct the definition of the italicized
+               term without reference to the text, if correction is needed, so
+               that it is in a form acceptable for publication.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.30] An element $a$ of a group $G$ has order $n \in \Z^+$ if and only
+               if $a^n = e$.
+
+      \textbf{Correction:} An element $a$ of a group $G$ has order $n \in \Z^+$ 
+      if and only if $n$ is the smallest positive integer such that $a^n = e$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.31] The greatest common divisor of two positive integers is the
+               largest positive integer that divides both of them.
+
+      \textbf{Correction:} \textit{None needed}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.32] Mark each of the following true or false.
+
+      \textbf{Solution:}
+
+      \begin{tabularx}{\linewidth}{@{}c c X@{}} 
+         T & \textbf{a.} & Every cyclic group is abelian. \\
+         F & \textbf{b.} & Every abelian group is cyclic. \\
+         F & \textbf{c.} & $\Q$ under addition is a cyclic group. \\
+         F & \textbf{d.} & Every element of every cyclic group generates the
+                           group. \\
+         T & \textbf{e.} & There is at least one abelian group of every finite
+                           order $>0$. \\
+         F & \textbf{f.} & Every group of order $\le 4$ is cyclic. \\
+         F & \textbf{g.} & All generators of $\Z_{20}$ are prime. \\
+         F & \textbf{h.} & If $G$ and $G'$ are groups, then $G \cap G'$ is a
+                           group. \\
+         T & \textbf{i.} & If $H$ and $K$ are subgroups of a group $G$, then
+                           $H \cap K$ is a group. \\
+         T & \textbf{j.} & Every cyclic group of order $>2$ has at least two
+                           distinct generators.
+      \end{tabularx}
+\end{enumerate}
+
+\noindent      In Exercises 33 through 37, either give an example of a group
+               with the property described, or explain why no example exists.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.33] A finite group that is not cyclic.
+
+      \textbf{Solution:} The Klein-4 group
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.34] An infinite group that is not cyclic.
+
+      \textbf{Solution:} $\cyc{\R, +}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.35] A cyclic group having only one generator.
+
+      \textbf{Solution:} $\Z_2 = \cyc{1}$. Note that
+      $\cyc{0} = \{0\} \neq \Z_2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.36] An infinite cyclic group having four generators.
+
+      \textbf{Solution:} No example exists because if such a group $G$ exists,
+      then $G$ must be isomorphic to $\Z$; but $\Z$ has exactly two generators
+      so that $G$ must have two generators, a contradiction. Thus $G$ does not
+      exist.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.37%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.37] A finite cyclic group having four generators.
+
+      \textbf{Solution:} Consider the cyclic group $\Z_5$. According to Theorem
+      6.14, $\Z_5$ has exactly four generators.
+\end{enumerate}
+
+\noindent      The generators of the cyclic multiplicative group $U_n$ of all
+               $n$th roots of unity in $\C$ are the \textbf{primitive} $n$th
+               \textbf{roots of unity.} In Exercises 38 through 41, find the
+               primitive $n$th roots of unity for the given value of $n$.
+
+\begin{enumerate}
+   \item[\textbf{Note:}]
+               For a natural number $n$, we shall let $\zeta$ denote the
+               generator of $U_n$, where $\zeta = e^{\frac{2\pi}{n}i}$. Then we
+               shall use Theorem 6.14 to find the remaining generators.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.38%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.38] $n = 4$.
+
+      \textbf{Solution:} The primitive 4th roots of unity are
+      $$\zeta \text{ and } \zeta^3.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.39%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.39] $n = 6$.
+
+      \textbf{Solution:} The primitive 6th roots of unity are
+      $$\zeta \text{ and } \zeta^5.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.40%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.40] $n = 8$.
+
+      \textbf{Solution:} The primitive 8th roots of unity are
+      $$\zeta, \zeta^3, \zeta^5, \text{ and } \zeta^8.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.41%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.41] $n = 12$.
+
+      \textbf{Solution:} The primitive 12th roots of unity are
+      $$\zeta, \zeta^5, \zeta^7, \text{ and } \zeta^{11}.$$
+\end{enumerate}
+
+\noindent      \textbf{Proof Synopsis}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.42%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.42] Give a one-sentence synopsis of the proof of Theorem 6.1.
+
+      \textbf{Solution:} We take two any two members of a cyclic group $G$, use 
+      the fact that they can both be expressed as a power of a generator for
+      $G$, and then show that they commute.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.43%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.43] Give at most a three-sentence synopsis of the proof of Theorem
+               6.6.
+
+      \textbf{Solution:} Suppose $G = \cyc{a}$, and $H \le G$. Use the Well 
+      Ordering Principle to show that there exists a minimum positive integer
+      $d$ such that $a^d \in H$. Then use the Division Algorithm to show that 
+      every element of $H$ can be expressed as a power of $a^d$.
+\end{enumerate}
+
+\noindent      \textbf{Theory}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.44%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.44] Let $G$ be a cyclic group with generator $a$, and let $G'$ be a
+               group isomorphic to $G$. If $\phi : G \rightarrow G'$ is an
+               isomorphism, show that, for every $x \in G$, $\phi(x)$ is
+               completely determined by the value $\phi(a)$. That is, if
+               $\phi : G \rightarrow G'$ and $\psi : G \rightarrow G'$ are two
+               isomorphisms such that $\phi(a) = \psi(a)$, then
+               $\phi(x) = \psi(x)$ for all $x \in G$.
+
+      \textbf{Proof:} Let $G = \cyc{a}$, $G \cong G'$, and
+      $\phi : G \rightarrow G'$ be an isomorphism. We want to show that, for 
+      every $x \in G$, $\phi(x)$ is completely determined by the value
+      $\phi(a)$. So let $\psi :  G \rightarrow G'$ be an isomorphism such that
+      $\phi(a) = \psi(a)$, and consider $y \in G$; it then suffices to show
+      that $\phi(y) = \psi(y)$. Since $G = \cyc{a}$, there exists an integer
+      $r$, such that $y = a^r$. Thus
+      \begin{align*}
+         \phi(y) &= \phi(a^r) \\
+                 &= \phi(a)^r &[\phi \text{ is an isomorphism}] \\
+                 &= \psi(a)^r &[\text{We assumed that }\phi(a) = \psi(a)] \\
+                 &= \psi(a^r) &[\psi \text{ is an isomorphism}] \\
+                 &= \psi(y),
+      \end{align*}
+      which is what we wanted to show. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.45%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.45] Let $r$ and $s$ be positive integers. Show that
+               $\{nr + ms : n, m \in \Z\}$ is a subgroup of $\Z$.
+
+      \textbf{Proof:} Let $r$ and $s$ be positive integers, and let
+      $$H = \{nr + ms : n, m \in \Z\}.$$
+      It is clear that $H$ is nonempty. Let $a, b \in H$. To show that
+      $H \le \Z$, it suffices to show that $a - b \in H$. By definition of $H$
+      there must exist integers $n_1$, $n_2$, $m_1$, and $m_2$ such that
+      $a = n_1r + m_1s$ and $b = n_2r + m_2s$. Thus $a - b = (n_1r + m_1s) - 
+      (n_2r + m_2s) = (n_1 - n_2)r + (m_1 - m_2)s \in H$. Done. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.46%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.46] Let $a$ and $b$ be elements of a group $G$. Show that if $ab$
+               has finite order $n$, then $ba$ also has order $n$.
+
+      \textbf{Proof:} Let $a$ and $b$ be elements of a group $G$, and let $e$ be
+      the identity of $G$. Suppose $|ab| = n$. We want to show that $|ba| = n$.
+      So first we must show that $(ba)^n = e$. We can show by induction that
+      $(ba)^n = b(ab)^{n - 1}a$. Hence $(ba)^{n + 1} = b(ab)^na = ba$. We have
+      shown that $(ba)(ba)^n = ba$, so that $ba = e$ by the Cancellation Law.
+      Now suppose $(ba)^m = e$ for some positive $m < n$. Then we must also have
+      that $(ab)^{m + 1} = a(ba)^mb = ab$, so that $(ab)^m = e$, a
+      contradiction. Thus $|ba| = n$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.47%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.47] Let $r$ and $s$ be positive integers.
+               \begin{enumerate}
+                  \item Define the \textbf{least common multiple} of $r$ and
+                        $s$ as a generator of a certain cyclic group.
+                  \item Under what condition is the least common multiple of $r$
+                        and $s$ their product, $rs$?
+                  \item Generalizing part (b), show that the product of the
+                        greatest common divisor and of the least common multiple
+                        of $r$ and $s$ is $rs$.
+               \end{enumerate}
+
+      \textbf{Recall:} Let $n$ and $m$ be positive integers. The least common
+      multiple of $n$ and $m$ is a positive integer $h$ such that (1) $n \mid h$ 
+      and $m \mid h$, and (2) if there exists a positive integer $t$ such that
+      $n \mid t$ and $m \mid t$, then $h \mid t$.
+
+      Let $l = \text{lcm}(r, s)$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item We claim that $l$ is the generator of $\cyc{r} \cap \cyc{s}$, 
+               where $\cyc{r}$ and $\cyc{s}$ are subgroups of $\Z$.
+
+               \textbf{Proof:} Since $r$ and $s$ both divide $l$, it is clear
+               that $\cyc{l} \subseteq \cyc{r} \cap \cyc{s}$. To complete the
+               proof, we must now show that
+               $\cyc{r} \cap \cyc{s} \subseteq \cyc{l}$. To that end, let
+               $a \in \cyc{r} \cap \cyc{s}$. That is $a = rx = sy$ for some
+               integers $x$ and $y$. This says that $r \mid a$ and $s \mid a$,
+               so that $l \mid a$. Thus $a \in \cyc{l}$, so that
+               $\cyc{r} \cap \cyc{s} \subseteq \cyc{l}$. We can then conclude
+               that $\cyc{r} \cap \cyc{s} = \cyc{l}$. \qed
+         \item We claim $\gcd(r, s) = 1$ if and only if $l = rs$.
+
+               \textbf{Proof}: See 6.47(c) below. \qed
+         \item We claim that $rs = ld$, where $d = \gcd(r, s)$.
+
+               \textbf{Proof:} Let $d = \gcd(r, s)$. It suffices to show that
+               $rs/d$ is the lcm of $r$ and $s$. It is clear that $r$ and $s$
+               each divides $rs/d$. So to complete the proof we must show that
+               if $r$ and $s$ each divides a positive integer $m$, then $rs/d$ 
+               divides $m$. Let $m$ be a positive integer such that $r \mid m$
+               and $s \mid m$. That is $m = ra = sb$ for some positive integers
+               $a$ and $b$. Also since $d \mid r$ and $d \mid s$, we can write
+               $r = dr'$ and $s = ds'$ for some positive integers $r'$ and
+               $s'$. Now divide the equality $ra = sb$ by $d$ to get
+               $r'a = s'b$. Observe that $r'$ and $s'$ are relatively prime, so
+               that $s' \mid a$. That is $rs' \mid ra$. But $(rs/d) = rs'$ and
+               $ra = m$. Hence $(rs/d)\mid m$. It follows that $rs/d$ is the lcm
+               of $r$ and $s$. \qed
+
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.48%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.48] Show that a group that has only a finite number of subgroups must
+               be a finite group.
+
+      \textbf{Proof:} Let $G$ be a group with identity $e$. We want to show that 
+      the statement $P$ is true, where $P$ is:
+      \begin{quote}
+         If $G$ has a finite number of subgroups, then $G$ is a finite group.
+      \end{quote}
+      We shall instead show that the contrapositive of $P$---which is logically 
+      equivalent to $P$---is true. The contrapositive of $P$ is thus:
+      \begin{quote}
+         If $G$ is an infinite group, then $G$ has an infinite number of 
+         subgroups.
+      \end{quote}
+
+      We shall break down the proof into two cases:
+
+      \textbf{Case 1:} \textit{There exists an $x$ in $G$ with infinite order.}
+      Thus $\cyc{x} \cong \Z$. And since $\Z$ has an infinite number of
+      subgroups, it follows that $\cyc{x}$---and hence $G$---has an infinite 
+      number of subgroups.
+
+      \textbf{Case 2:} \textit{Every element in $G$ has finite order.} We wish
+      to construct a sequence of elements $x_1$, $x_2$, $x_3$, $\ldots$, in $G$ 
+      such that each of these elements generates a unique subgroup in $G$. So
+      let $x_1 = e$. For an integer $n \ge 2$, let $P(n)$ be the statement that 
+      we can choose an element $x_n \in G$ such that for all $1 \le i < n$,
+      $x_n \notin \cyc{x_i}$, so that $\cyc{x_n} \neq \cyc{x_i}$. We shall 
+      proceed by induction on $n$. Since $G$ is infinite, and since $\cyc{e}$ is
+      finite, it follows that $G{\backslash}\cyc{e}$ is infinite. So pick any
+      element in $G{\backslash}\cyc{e}$ and denote it $x_2$. It is clear that
+      $x_2 \notin \{e\}$, so that $P(2)$ is true. Now suppose that $P(m)$ holds
+      for some positive integer $m$. Since every element of $G$ has finite
+      order, it follows that every cyclic group generated by every element of
+      $G$ is also finite. Thus the set $\bigcup_{k=1}^{m-1}\cyc{x_k}$ is finite,
+      so that $G{\backslash}\bigcup_{k=1}^{m-1}\cyc{x_k}$ is infinite. So pick
+      any element of $G{\backslash}\bigcup_{k=1}^{m-1}\cyc{x_k}$ and call it
+      $x_{k + 1}$. By construction we see that $x_{k + 1} \notin \cyc{x_i}$ for
+      all $1 \le i \le k$. Thus $P(n)$ holds for all $n$. Thus for each positive
+      integer $n$, $G$ has a subgroup $\cyc{x_n}$, and
+      $\cyc{x_i} \neq \cyc{x_j}$ for any positive integers $i \neq j$. Hence $G$ 
+      has an infinite number of subgroups. \qed      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.49%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.49] Show by a counterexample that the following ``converse" of
+               Theorem 6.6 is not a theorem: ``If a group $G$ is such that
+               every proper subgroup is cyclic then $G$ is cyclic."
+
+      \textbf{Counterexample:} The Klein-4 group is not cyclic but all its
+      proper subgroups, $\{e\}$, $\{e, a\} = \cyc{a}$, $\{e, b\} = \cyc{b}$, 
+      and $\{e, c\} = \cyc{c}$ are cyclic.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.50%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.50] Let $G$ be a group and suppose $a \in G$ generates a cyclic
+               subgroup of order 2 and is the unique such element. Show that
+               $ax = xa$ for all $x \in G$.
+               [\textit{Hint:} Consider $(xax^{-1})^2$.]
+
+      \textbf{Proof:} Consider the element $(xax^{-1})^2$. Thus we have that
+      \begin{align*}
+         (xax^{-1})^2 &= (xax^{-1})(xax^{-1}) \\
+            &= xax^{-1}xax^{-1} \\
+            &= xaeax^{-1} \\
+            &= xa^2x^{-1} \\
+            &= xex^{-1} \\
+            &= xx^{-1} = e, \\
+      \end{align*}
+      so that $|xax^{-1}| \le 2$. Suppose $|xax^{-1}| = 1$. This means that
+      $xax^{-1} = e$. Using the Cancellation Law twice will show us that
+      $a = e$, a contradiction since $|a| = 2$. Thus we must have that
+      $|xax^{-1}| = 2$. But since $a$ is the unique element in $G$ with order 2, 
+      it must follow that $xax^{-1} = a$, so that $xa = ax$ by the Cancellation 
+      Law. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.51%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.51] Let $p$ and $q$ be distinct prime numbers. Find the number of
+               generators of the cyclic group $\Z_{pq}$.
+
+      \textbf{Solution:} The number of generators of $\Z_{pq}$ is the number of
+      positive integers $\le pq$ that are relatively prime to $n$. Thus we
+      require $\varphi(pq)$, where $\varphi$ is the Euler totient function. Thus
+      the number of generators of
+      $\Z_{pq}$ is $\varphi(pq) = \varphi(p)\varphi(q) = (p - 1)(q - 1)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.52%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.52] Let $p$ be a prime number. Find the number of generators of the
+               cyclic group $\Z_{p^r}$, where $r$ is an integer $\ge 1$.
+
+      \textbf{Solution:} The number of generators of
+      $\Z_{p^r}$ is $\varphi(p^r) = p^{r - 1}(p - 1)$, where $\varphi$ is the 
+      Euler totient function.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.53%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.53] Show that in a finite cyclic group $G$ of order $n$, written
+               multiplicatively, the equation $x^m = e$ has exactly $m$
+               solutions $x$ in $G$ for each positive integer $m$ that divides
+               $n$.
+
+      \textbf{Proof:} Let $G = \cyc{a}$ be a finite cyclic group of order $n$,
+      and with identity $e$. Suppose that there exists a positive integer $m$
+      such that $m \mid n$. That is $\gcd(m, n) = m$, so according to Exercise
+      6.57, the equation $x^m = e$, must have exactly $m$ solutions. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.54%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.54] With reference to Exercise 53, what is the situation if
+               $1 < m < n$ and $m$ does not divide $n$?
+               
+      \textbf{Solution:} According to Exercise 6.57, the number of solutions
+      will be $d = \gcd(m, n)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.55%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.55] Show that $\Z_p$ has no proper nontrivial subgroups if $p$ is a
+               prime number.
+               
+      \textbf{Proof:} Let $p$ be a prime number. Then according to Theorem 6.14
+      the subgroups of $\Z_p$ are $\cyc{1}$ and $\cyc{p}$. But $\cyc{1} = \Z_p$
+      and $\cyc{p} = \cyc{e}$ (where $e$ is the identity of $\Z_p$). It follows
+      that $\Z_p$ has no nontrivial proper subgroups.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob5.41%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.56] Let $G$ be an abelian group and let $H$ and $K$ be finite cyclic
+               subgroups with $|H| = r$ and $|K| = s$.
+               \begin{enumerate}
+                  \item Show that if $r$ and $s$ are relatively prime, then $G$
+                        contains a cyclic subgroup of order $rs$.
+                  \item Generalizing part (a), show that $G$ contains a cyclic
+                        subgroup of order the least common multiple of $r$ and
+                        $s$.
+               \end{enumerate}
+
+      \textbf{Proof:} Let $e$ be the identity of $G$.
+
+      \begin{enumerate}
+         \item Suppose that $\gcd(r, s) = 1$. By our hypothesis, we have that
+               $H = \cyc{h}$ and $K = \cyc{k}$ for some $h, k \in G$, such that
+               $|H| = r$ and $|K| = s$, and so that $|h| = r$ and $|k| = s$. We
+               now want to show that $|hk| = rs$. Since $G$ is abelian, we have
+               that $(hk)^{rs} = h^{rs}k^{rs} = (h^r)^s(k^s)^r = e^se^r = e$.
+               Thus $|hk|$ is finite, so let $|hk| = n$. Since $(hk)^{rs} = e$,
+               it follows that $n \mid rs$. Now we have that
+               $e = (hk)^{rn} = (h^r)^nk^{rn} = e^nk^{rn} = k^{rn}$, so that
+               $s \mid rn$; since $s$ and $r$ are relatively prime, we must then
+               have that $s \mid n$. Similarly we have that
+               $e = (hk)^{sn} = h^{sn}$, so that $r \mid sn$; thus $r \mid n$.
+               Since $r \mid n$ and $s \mid n$, it follows that $rs$---the lcm 
+               of $r$ and $s$---must also divide $n$. That is, $rs \mid n$. We
+               previously showed that $n \mid rs$, so we can conclude that
+               $n = rs$. \qed
+         \item Let $d = \gcd(r, s)$. We showed in (a) that the statement of our
+               problem holds if $d = 1$, so assume that $d > 1$. Then by The 
+               Fundamental Theorem of Arithmetic, we can express $d$ as a 
+               product of positive integral powers of unique primes so that
+               $$d = {p_1}^{a_1}{p_2}^{a_2} \cdots {p_n}^{a_n}.$$
+               Let $i \in \{1, 2, \ldots, n\}$. We can see that
+               ${p_i}^{a_i} \mid d$, so that ${p_i}^{a_i} \mid r$ and
+               ${p_i}^{a_i} \mid s$. That is, $r$ and $s$ each has at least
+               $a_i$ factors of $p_i$. Notice that at least one of $r$ and $s$ 
+               must have exactly $a_i$ factors of $p_i$. If this were not the 
+               case, then for some $m \in \Z^+$, we will have that
+               ${p_i}^{a_i + m}$ divides both $r$ and $s$, so that
+               ${p_i}^{a_i + m} \mid d$, a contradiction. With this information 
+               we can now reorder the primes in the factorization of $d$ as thus
+               $$d = ({q_1}^{b_1}{q_2}^{b_2}\cdots {q_j}^{b_j})
+                   ({q_{j+1}}^{b_{j+1}}{q_{j+2}}^{b_{j+2}}\cdots {q_n}^{b_n})$$
+               (where $j \ge 0$, and for each $i$, $q_i$ is a unique prime and 
+               $b_i$ is a positive integer) such that $r$ has exactly $b_k$
+               factors of $q_k$ for $k \in \{1, \ldots, j\}$ and $s$ has exactly
+               $b_k$ factors of $q_k$ for $k \in \{j+1, \ldots, n\}$. Now let
+               $$r_1 = {q_1}^{b_1}{q_2}^{b_2}\cdots {q_j}^{b_j} \text{ and }
+                 s_1 ={q_{j+1}}^{b_{j+1}}{q_{j+2}}^{b_{j+2}}\cdots{q_n}^{b_n}.$$
+               If $j = 0$, then define $r_1 = 1$; if $j = n$, then define
+               $s_1 = 1$. By construction, we see that $r_1 \mid r$ and 
+               $s_1 \mid s$, so let
+               $$r' = \frac{r}{r_1} \text{ and } s' = \frac{s}{s_1}.$$
+               Also we see that, by construction, $r'$ and $s'$ are coprime.
+               Indeed, suppose to the contrary that some prime $p$ divides both
+               $r'$ and $s'$. Then it follows that $p \mid r$ and $p \mid s$;
+               that is, $p \mid d$, so that $p \in \{q_1, \ldots, q_n\}$. If
+               $p \in \{q_1, \ldots, q_j\}$, then since $p \mid r'$, it will
+               imply that $r$ has more than $b_k$ factors of $q_k$ for some
+               $k \in \{1, \ldots, j\}$, a contradiction. Similarly, if
+               $p \in \{q_{j+1}, \ldots, q_n\}$, then since $p \mid s'$, it will
+               imply that $s$ has more than $b_k$ factors of $q_k$ for some
+               $k \in \{j + 1, \ldots, n\}$, another contradiction. Thus
+               $\gcd(r', s') = 1$. By Theorem 6.14 the element
+               $h^{r_1}$ has order $r'$ and the element $k^{s_1}$ has order
+               $s'$. Hence, by (a), the element $h^{r_1}k^{s_1}$ has order
+               $r's' = rs/d$, the lcm of $r$ and $s$. \qed
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob6.57%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[6.57] Show that in a finite cyclic group $G$ of order $n$, written
+               multiplicatively, the equation $x^m = e$ has exactly $d$
+               solutions $x$ in $G$ for each positive integer $m$, where
+               $d = \gcd(m, n)$.
+
+      \textbf{Proof:} Let $G = \cyc{a}$ be a finite cyclic group of order $n$, 
+      let $m$ be a positive integer, and let $d = \gcd(m, n)$. Then there exist
+      positive integers $c$ and $b$ such that $n = dc$ and $m = db$ (note that
+      $\gcd(c, b) = 1$). Let $S \subseteq G$ be the set of solutions of the
+      equation $$x^m = e.$$
+      We claim that $S = \cyc{a^c}$. According to Theorem 6.14
+      $|\cyc{a^c}| = d$. Let $b \in \cyc{a^c}$. Thus $b = (a^{c})^t$ for some 
+      integer $t$. Thus
+      \begin{align*}
+         b^m &= ((a^{c})^t)^m \\
+             &= ((a^{c})^t)^{db} \\
+             &= (a^{dc})^{bt} \\
+             &= (a^n)^{bt} \\
+             &= e^{bt} = e,
+      \end{align*}
+      so that $b \in S$. Thus $\cyc{a^c} \subseteq S$. Now let $s \in S$. Then 
+      $s^m = e$. Since $G$ is cyclic we must have that $s = a^k$ for some
+      integer $k$. Thus $e = s^m = (a^k)^m = a^{km}$. Since $|a| = n$, it
+      follows that $n \mid km$; but $n = dc$ and $m = db$, so $dc \mid kdb$, so
+      that $c \mid bk$. Since $c$ and $b$ are relatively prime, it follows that
+      $c | k$. Thus there exists an integer $k'$ such that $k = ck'$. It
+      follows that $s = a^k = a^{ck'} = (a^c)^{k'}$. That is $s \in \cyc{a^c}$, 
+      so that $S \subseteq \cyc{a^c}$. Hence $S = \cyc{a^c}$. \qed
+\end{enumerate}

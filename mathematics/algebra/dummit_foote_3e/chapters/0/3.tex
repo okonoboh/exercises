@@ -1,0 +1,242 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.1]   Write down explicitly all the elements in the residue classes
+                  of $\Z/18\Z$.
+   
+      \textbf{Solution:}
+      $$\Z/18\Z = \{\overline{0},  \overline{1},  \overline{2},  \overline{3},
+                    \overline{4},  \overline{5},  \overline{6},  \overline{7},
+                    \overline{8},  \overline{9},  \overline{10}, \overline{11},
+                    \overline{12}, \overline{13}, \overline{14}, \overline{15},
+                    \overline{16}, \overline{17}\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.2]   Prove that the distinct equivalence classes in $\Z/n\Z$ are
+                  precisely $\overline{0}$, $\overline{1}$, $\overline{2}$,
+                  $\ldots$, $\overline{n - 1}$.
+                  
+      \textbf{Proof:} Fix $n \in \N$. Let
+      $R_n = \{\overline{r} : 0 \le r < n\}$. We want to show that
+      $R_n = \Z/n\Z$. First we shall show that $R_n$, indeed, contains $n$
+      unique elements. So consider the integers $r_1$ and $r_2$, where
+      $0 \le r_1 < r_2 < n$. Assume by way of contradiction that
+      $\overline{r_1} = \overline{r_2}$. Then it follows that
+      $r_2 - r_1 = nq$ for some integer $q$. Since $r_2 > r_1$, we must have
+      that $q \ge 1$, so that $r_2  - r_1 = nq > n$, a contradiction. Thus
+      $\overline{r_1} \neq \overline{r_2}$, so that $|R_n| = n$. Now we are
+      ready to complete the proof. By definition, we have that
+      $$\Z/n\Z = \{\overline{x} : x \in \Z\}.$$
+      So it is clear that $R_n \subseteq \Z/n\Z$. Now we must show that $\Z/n\Z$
+      is a subset of $R_n$. So let $z \in \Z$. By the Division Algorithm, it
+      follows that there exist unique integers $q_1$ and $r_1$ such that
+      $$z = q_1n + r_1 \quad 0 \le r_1 < n.$$
+      Thus $\overline{z} = \overline{r_1} \in R_n$. It follows that
+      $\Z/n\Z \subseteq R_n$, so that $\Z/n\Z = R_n$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.3]   Prove that if
+                  $a = a_n10^n + a_{n - 1}10^{n - 1} + \cdots + a_110 + a_0$ is
+                  any positive integer then $a \equiv a_n + a_{n - 1} + \cdots +
+                  a_1 + a_0$ (mod 9).
+                  
+      \textbf{Proof:} Fix $n \in \N$. Suppose that $a = a_n10^n +
+      a_{n - 1}10^{n - 1} + \cdots + a_110 + a_0$ is any positive integer. Since
+      $10 \equiv 1$ (mod 9), it follows that $10^m \equiv 1^m = 1$ (mod 9) for
+      any nonnegative integer; now we shall reduce $a$ mod $n$, so
+      \begin{align*}
+         \overline{a} &= \overline{a_n10^n + a_{n - 1}10^{n - 1} + \cdots +
+                         a_110 + a_0} \\
+                      &= \overline{a_n10^n} + \overline{a_{n - 1}10^{n - 1}} +
+                         \cdots + \overline{a_110 + a_0} \\
+                      &= \overline{a_n}\overline{10^n} +
+                         \overline{a_{n - 1}}\overline{10^{n - 1}} + \cdots +
+                         \overline{a_1}\overline{10} + \overline{a_0} \\
+                      &= \overline{a_n} + \overline{a_{n - 1}} + \cdots +
+                         \overline{a_1} + \overline{a_0} \\
+                      &= \overline{a_1 + a_{n - 1} + \cdots + a_1 + a_0},
+      \end{align*}
+      so that $a \equiv a_n + a_{n - 1} + \cdots + a_1 + a_0$ (mod 9). \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.4]   Compute the remainder when $37^{100}$ is divided by 29.
+   
+      \textbf{Solution:} It suffices to reduce $37^{100}$ mod 29. We have that
+      $37 \equiv 8$ (mod 29), so that $37^4 \equiv 8^4 \equiv 7$ (mod 29). Thus
+      $37^{16} = (37^4)^4 \equiv 7^4 \equiv 23$ (mod 29) and
+      $37^{28} = (37^4)^7 \equiv 7^7 \equiv 1$ (mod 29).
+      So $37^{84} = (37^{28})^3 \equiv 1^3 = 1$ (mod 29). It follows that
+      $3^{100} = 3^{16}3^{84} \equiv 23 \cdot 1 = 23$ (mod 29).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.5]   Compute the last two digits of $9^{1500}$.
+   
+      \textbf{Solution:} It suffices to reduce $9^{1500}$ mod 100. So
+       $3^5 = 243 \equiv 43$ (mod 100). We then have that
+       $3^{20} = (3^5)^4 \equiv 43^4 = 3418801 \equiv 1$ (mod 100). It follows
+       that $9^{1500} = 3^{3000} = (3^{20})^{150} \equiv 1^{150} = 1$ (mod 100),
+       so that the final two digits of $9^{1500}$ are 01.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.6]   Prove that the squares of the elements in $\Z/4\Z$ are just
+                  $\overline{0}$ and $\overline{1}$.
+                  
+      \textbf{Proof:} The elements of $\Z/4\Z$ are $\overline{0}$,
+      $\overline{1}$, $\overline{2}$ and $\overline{3}$, and their squares are
+      $\overline{0}^2 = \overline{0}$, $\overline{1}^2 = \overline{1}$,
+      $\overline{2}^2 = \overline{0}$ and $\overline{3}^2 = \overline{1}$, which
+      is what we wanted to prove. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.7]   Prove for any integers $a$ and $b$ that $a^2 + b^2$ never
+                  leaves a remainder of 3 when divided by 4.
+                  
+      \textbf{Proof:} Let $a$ and $b$ be integers. We want to show that
+      $$a^2 + b^2 \not\equiv 3 \,(\text{mod }4).$$
+      From Exercise 0.3.6, we know that $a^2$ and $b^2$ each leaves a remainder
+      of 0 or 1 when divided by 4. Thus $a^2 + b^2$ must leave a remainder of
+      0, 1, or 2 when divided by 4. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.8]   Prove that the equation $a^2 + b^2 = 3c^2$ has no solutions in
+                  nonzero integers $a$, $b$, and $c$.
+                  
+      \textbf{Proof:} Suppose there exists nonzero integers $a$, $b$, and $c$
+      such that $a^2 + b^2 = 3c^2$. Notice that $|a|^2 + |b|^2 = 3|c|^2$, so we
+      can assume that $a$, $b$, and $c$ are all positive. If
+      $\gcd(a, b, c) = r > 1$, then $(a/r)^2 + (b/r)^2 = (c/r)^2$, so we can
+      further assume that $\gcd(a, b, c) = 1$. By Exercise 0.3.6, it follows
+      that $c^2$ must leave a remainder of 0 or 1 (mod 4). If $c^2 \equiv 1$
+      (mod 4) then $a^2 + b^2 = 3c^2 \equiv 3$ (mod 4), a contradiction to
+      Exercise 0.3.7. So $c^2$ and $a^2 + b^2$ must both leave a remainder of
+      0 when divided by 4. If either $a^2 \equiv 1$ (mod 4) or $b^2 \equiv 1$
+      (mod 4), then $a^2 + b^2$ will leave a remainder of 1 or 2 (mod 4), so
+      both $a^2$ and $b^2$ must leave a remainder of 0 (mod 4). That is,
+      $a^2$, $b^2$, and $c^2$ are all divisible by 4, so that they all are
+      divisible by 2. That is, $\gcd(a, b, c) \ge 2$, a contradiction, so that
+      no nonzero integers $a$, $b$, and $c$ exist such that
+      $a^2 + b^2 = 3c^2$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.9]   Prove that the square of any odd integer always leaves a
+                  remainder of 1 when divided by 8.
+                  
+      \textbf{Proof:} Let $x$ be an odd integer. Then we have that $x = 2k + 1$
+      for some integer $k$. So $x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 =
+      4k(k + 1) + 1$. Notice that $k(k + 1)$ is an even number since it is the
+      product of two numbers with different parities. Thus we can write
+      $k(k + 1) = 2m$ for some integer $m$, so that $x^2 = 8m + 1$. It is clear
+      that $x^2 = 8m + 1 \equiv 1$ (mod 8). \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.10]  Prove that the number of elements of $(\Z/n\Z)^\times$ is
+                  $\varphi(n)$ where $\varphi$ denotes the Euler
+                  $\varphi$-function.
+                  
+      \textbf{Proof:} Fix $n \in \N$. Let
+      $$T = \{\overline{a} : (a, n) = 1, 0 < a \le n\}.$$
+      We showed in Exercise 0.3.2 that the residue classes $\overline{1}$,
+      $\overline{2}$, $\ldots$, $\overline{n} = \overline{0}$ are unique; thus, 
+      the elements of $T$ must also unique. By definition, we see that
+      $|T| = \varphi(n)$. We quickly note that if $b \in \overline{a}$ for some
+      $\overline{a} \in T$, then $(b, n) = 1$, so that $T$ is well defined.
+      To complete the proof, it suffices to show that $(\Z/n\Z)^\times = T$. So
+      first let us show that $T$ is a subset of $(\Z/n\Z)^\times$. Let
+      $\overline{r} \in T$. Then we have that $(r, n) = 1$, so that there exist 
+      integers $x$ and $y$ such that $xr + yn = 1$. That is
+      $xr \equiv 1$ (mod $n$), so that $\overline{r} \in (\Z/n\Z)^\times$, and
+      we can conclude that $T \subseteq (\Z/n\Z)^\times$. Conversely let
+      $\overline{z} \in (\Z/n\Z)^\times$. Then there exists
+      $\overline{v} \in \Z/n\Z$, such that
+      $\overline{z}\overline{v} = \overline{1}$. This means that
+      $zv \equiv 1$ (mod $n$), so that $zv + kn = 1$ for some integer $k$. The
+      equation $zv + kn = 1$ tells us that every positive integer that divides 
+      $n$ and $z$ must also divide 1; thus $(z, n) = 1$; i.e.
+      $\overline{z} \in T$, so that $(\Z/n\Z)^\times \subseteq T$, and thus,
+      $(\Z/n\Z)^\times = T$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.11]  Prove that if $\overline{a}$,
+                  $\overline{b} \in (\Z/n\Z)^\times$, then
+                  $\overline{a} \cdot \overline{b} \in (\Z/n\Z)^\times$.
+
+      \textbf{Proof:} Fix $n \in \N$. Let
+      $\overline{a}, \overline{b} \in (\Z/n\Z)^\times$. Then there exist
+      $\overline{c}, \overline{d} \in \Z/n\Z$ such that
+      $\overline{a}\overline{c} = \overline{b}\overline{d} = \overline{1}$. That
+      is $\overline{a}\overline{c}\overline{b}\overline{d} = \overline{1}$, so
+      we can conclude that $\overline{ab}\cdot\overline{cd} = \overline{1}$ and,
+      therefore, $\overline{ab} \in (\Z/n\Z)^\times$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.12]  Let $n \in \Z$, $n > 1$, and let $a \in \Z$ with
+                  $1 \le a \le n$. Prove if $a$ and $n$ are not relatively
+                  prime, there exists an integer $b$ with $1 \le b < n$ such
+                  that $ab \equiv 0$ (mod $n$) and deduce that there cannot be
+                  an integer $c$ such that $ac \equiv 1$ (mod $n$).
+
+      \textbf{Proof:} Let $d = \gcd(a, n)$. Since $a$ and $n$ are not relatively
+      prime, it follows that $d > 1$, so that $1 \le n/d < n$. Thus we must have 
+      that $a \cdot \frac{n}{d} \equiv \frac{a}{d} \cdot n \equiv 0$ (mod $n$).
+      So choose $b = n/d$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.13]  Let $n \in \Z$, $n > 1$, and let $a \in \Z$ with
+                  $1 \le a \le n$. Prove that if $a$ and $n$ are relative prime
+                  then there's an integer $c$ such that $ac \equiv 1$ (mod $n$).
+
+      \textbf{Proof:} Suppose that $\gcd(a, n) = 1$. Then it follows that there
+      exist integers $x$ and $y$ such that $ax + ny = 1$, so that
+      $ax \equiv 1$ (mod $n$). Thus we take $c = x$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.14]  Conclude from the previous two exercises that
+                  $(\Z/n\Z)^\times$ is the set of elements $\overline{a}$ of
+                  $\Z/n\Z$ with $(a, n) = 1$ and hence prove Proposition 4.
+                  Verify this directly in the case $n = 12$.
+
+      \textbf{Proof:} Exercises 0.3.12 and 0.3.13 tell us that
+      $\overline{a} \in (\Z/n\Z)^\times$ if and only if $\gcd(a, n) = 1$; hence
+      Proposition 4 holds. Now let $n = 12$. Since 2, 3, 4, 6, 8, 9, 10, and
+      12 are not relatively prime to 12, it follows that $\overline{2}$,
+      $\overline{3}$, $\overline{4}$, $\overline{6}$, $\overline{8}$,
+      $\overline{9}$, $\overline{10}$, and $\overline{12}$ are not members of
+      $(\Z/12\Z)^\times$. Now we have that
+      \begin{align*}
+         \overline{1} \cdot \overline{1} &= \overline{1} \\
+         \overline{5} \cdot \overline{5} &= \overline{1} \\
+         \overline{7} \cdot \overline{7} &= \overline{1} \\
+         \overline{11} \cdot \overline{11} &= \overline{1},
+      \end{align*}
+      so that $(\Z/12\Z)^\times = \{\overline{1}$, $\overline{5},
+      \overline{7}, \overline{11}\}$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.15]  For each of the following pairs of integers $a$ and $n$, show
+                  that $a$ is relatively prime to $n$ and determine the
+                  multiplicative inverse of $\overline{a}$ in $\Z/n\Z$.
+                  \begin{enumerate}
+                     \item $a = 13$, $n = 20$.
+                     \item $a = 69$, $n = 89$.
+                     \item $a = 1891$, $n = 3797$.
+                     \item $a = 6003722857$, $n = 77695236973$.
+                  \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item From Exercise 0.2.1(a), we have that
+               $$-3 \cdot 13 - 2 \cdot 20 = 1,$$
+               so that the multiplicative inverse of $\overline{13}$ is
+               $\overline{-3} = \overline{17}$.
+         \item Using our computer program from Exercise 0.2.9, we have that
+               $$40 \cdot 69 - 31 \cdot 89 = 1,$$
+               so that the multiplicative inverse of $\overline{69}$ is
+               $\overline{40}$.
+         \item Using our computer program from Exercise 0.2.9, we have that
+               $$253 \cdot 1891 - 126 \cdot 3797 = 1,$$
+               so that the multiplicative inverse of $\overline{1891}$ is
+               $\overline{253}$.
+         \item Using our computer program from Exercise 0.2.9, we have that
+               $$-220 \cdot 6003722857 + 17 \cdot 77695236973 = 1,$$
+               so that the multiplicative inverse of $\overline{6003722857}$ is
+               $\overline{-220} = \overline{77695236753}$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3.16]  Write a computer program to add and multiply mod $n$, for any
+                  $n$, for any $n$ given as input. The output of these
+                  operations should be the least residues of the sums and 
+                  products of two integers. Also include the feature that if
+                  $(a, n) = 1$, an integer $c$ between 1 and $n - 1$ such that
+                  $\overline{a} \cdot \overline{c} = \overline{1}$ may be
+                  printed on request. (Your program should not, of course,
+                  simply quote ``mod" functions already built into many
+                  systems).
+
+      \textbf{Proof:} See \textbf{ex.c}
+\end{enumerate}

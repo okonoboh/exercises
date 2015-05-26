@@ -1,0 +1,468 @@
+In Exercises 1 through 4, describe the set by listing its elements.
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.1] $\{x \in \R : x^2 = 3\}$.
+
+      \textbf{Solution:} $\{x \in \R : x^2 = 3\} = \{-\sqrt{3}, \sqrt{3}\}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.2] $\{m \in \Z : m^2 = 3\}$.
+
+      \textbf{Solution:} $\{m \in \Z : m^2 = 3\} = \emptyset$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.3] $\{m \in \Z : mn = 60 \mbox{ for some } n \in \Z\}$.
+
+      \textbf{Solution:} $\{m \in \Z : mn = 60 \mbox{ for some } n \in \Z\}$ = 
+      $$\{0, \pm1, \pm2, \pm3, \pm4, \pm5, \pm6,
+          \pm10, \pm12, \pm15, \pm20, \pm30, \pm60\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.4] $\{m \in \Z : m^2 - m < 115\}$.
+
+      \textbf{Solution:} $\{m \in \Z : m^2 - m < 115\} =
+      \{-10, -9, \ldots, 11\}$.
+\end{enumerate}
+
+\noindent In Exercises 5 through 10, decide whether the object described is 
+indeed a set (is well defined). Give an alternate description of each set.
+ 
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.5] $\{n \in \Z^+ : n \mbox{ is a large number }\}$.
+
+      \textbf{Solution:} A large number is not well defined.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.6] $\{n \in \Z : n^2 < 0\}$.
+
+      \textbf{Solution:} $\{n \in \Z : n^2 < 0\} = \emptyset$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.7] $\{n \in \Z : 39 < n^3 < 57\}$.
+
+      \textbf{Solution:} $\{n \in \Z : 39 < n^3 < 57\} = \emptyset$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.8] $\{x \in \Q : x \mbox{ is almost an integer}\}$.
+
+      \textbf{Solution:} Almost an integer is not well defined.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.9] $\{x \in \Q : x \mbox{ may be written with denominator greater 
+                 than } 100\}$.
+
+      \textbf{Solution:} Let $a$ be a rational number. We can write $a$ as
+      $p/q$ where $q$ is a positive integer and $p$ is some integer. Since
+      $q \ge 1$ and $200 > 100$, it follows that $200q > 100$. Thus, we have
+      $p/q = 200p/200q$, so that all rational numbers can be written with a
+      denominator greater than 100. It follows that
+      $$\{x \in \Q : x \mbox{ may be written with denominator greater than }
+        100\} = \Q.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.10] $\{x \in \Q : x \mbox{ may be written with positive denominator 
+                 less than } 4\}$.
+
+      \textbf{Solution:} 
+      $$\Z \cup \{a + 1/2 : a \in \Z\} \cup \{a + 1/3 : a \in \Z\} \cup
+        \{a + 2/3 : a \in \Z\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.11] List the elements in $\{a, b, c\} \times \{1, 2,  c\}$.
+
+      \textbf{Solution:}
+
+      $\{\{a, 1\}, \{a, 2\}, \{a, c\}, \{b, 1\}, \{b, 2\},
+       \{b, c\}, \{c, 1\}, \{c, 2\}, \{c, c\}\}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.12] Let $A = \{1, 2, 3\}$ and $B = \{2, 4, 6\}$. For each relation
+               between $A$ and $B$ given as a subset of $A \times B$, decide
+               whether it is a function mapping $A$ into $B$. If it is a 
+               function, decide whether it is one to one and whether it is onto
+               $B$.
+
+               \textbf{a.} $\{(1,4),(2,4),(3,6)\}$
+               \qquad\qquad\qquad\qquad\qquad\qquad\qquad 
+               \textbf{b.} $\{(1,4),(2,6),(3,4)\}$ \\
+               \textbf{c.} $\{(1,6),(1,2),(1,4)\}$
+               \qquad\qquad\qquad\qquad\qquad\qquad\qquad 
+               \textbf{d.} $\{(2,2),(1,6),(3,4)\}$ \\
+               \textbf{e.} $\{(1,6),(2,6),(3,6)\}$
+               \qquad\qquad\qquad\qquad\qquad\qquad\qquad 
+               \textbf{f.} $\{(1,2),(2,6),(2,4)\}$
+
+      \textbf{Solution}
+
+      \begin{tabular}{@{}|c|c|c|c|c|@{}}
+         \hline & Relation & Is a function? & Is 1-1? & Is onto? \\ \hline
+         \textbf{a.} & $\{(1,4),(2,4),(3,6)\}$ & Yes & No & No\\ \hline
+         \textbf{b.} & $\{(1,4),(2,6),(3,4)\}$ & Yes & No & No\\ \hline
+         \textbf{c.} & $\{(1,6),(1,2),(1,4)\}$ & No & $-$ & $-$\\ \hline
+         \textbf{d.} & $\{(2,2),(1,6),(3,4)\}$ & Yes & Yes & Yes\\ \hline
+         \textbf{e.} & $\{(1,6),(2,6),(3,6)\}$ & Yes & No & No\\ \hline
+         \textbf{f.} & $\{(1,2),(2,6),(2,4)\}$ & No & $-$ & $-$\\ \hline
+      \end{tabular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.13] Illustrate geometrically that two line segments $AB$ and $CD$ of
+               different length have the same number of points by indicating in
+               Fig. 0.23 what point $y$ of $CD$ might be paired with point $x$
+               of $AB$.
+
+      \textbf{Solution} [Geometry]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.14] Recall that for $a, b \in \R$ and $a < b$, the \textbf{closed
+               interval} $[a, b]$ in $\R$ is defined by
+               $[a, b] = \{x \in \R : a \le x \le b\}$. Show that the given
+               intervals have the same cardinality by giving a formula for a
+               one-to-one function $f$ mapping the first interval onto the
+               second.
+
+               \textbf{a.} $[0, 1]$ and $[0, 2]$
+               \qquad\qquad\qquad
+               \textbf{b.} $[1, 3]$ and $[5, 25]$
+               \qquad\qquad\qquad
+               \textbf{c.} $[a, b]$ and $[c, d]$
+
+      \textbf{Solution}
+
+      \begin{enumerate}
+         \item $f : [0, 1] \rightarrow [0, 2]$, $f(x) = 2x$.
+         \item $g : [1, 3] \rightarrow [5, 25]$, $g(x) = 10x - 5$.
+         \item $h : [a, b] \rightarrow [c, d]$, $h(x) =
+               \displaystyle\frac{d - c}{b - a}x + \frac{bc - ad}{b - a}$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.15] Show that $S = \{x \in \R : 0 < x < 1\}$ has the same cardinality
+               as $\R$.
+
+      \textbf{Proof:} To show that $S$ and $\R$ have the same cardinality it 
+      suffices to find a   bijective function $f : S \rightarrow \R$. The
+      tangent function
+      $$\tan : \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \rightarrow \R$$
+      is bijective and so is
+      $$h : S \rightarrow \left(-\frac{\pi}{2}, \frac{\pi}{2}\right),$$
+      defined by $h(x) = \pi x - \pi/2$. So define $f(x) = \tan(h(x))$, so that
+      $f$ is bijective since it is a composition of bijective functions. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.16] List the elements of the power set of the given set and give the
+               cardinality of the power set.
+
+               \textbf{a.} $\emptyset$
+               \qquad\qquad
+               \textbf{b.} $\{a\}$
+               \qquad\qquad
+               \textbf{c.} $\{a, b\}$
+               \qquad\qquad
+               \textbf{d.} $\{a, b, c\}$
+
+      \textbf{Solution}
+
+      \begin{enumerate}
+         \item $\{\emptyset\}$.
+         \item $\{\emptyset, \{a\}\}$.
+         \item $\{\emptyset, \{a\}, \{b\}, \{a, b\}\}$.
+         \item $\{\emptyset, \{a\}, \{b\}, \{c\},
+                \{a, b\}, \{b, c\}, \{a, c\}, \{a, b, c\}\}$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.17] Let $A$ be a finite set, and let $|A| = s$. Based on the
+               preceding exercise, make a conjecture about the value of
+               $|\mathscr{P}(A)|$. Then try to prove your conjecture.
+               
+      \textbf{Conjecture:} Let $s$ be some natural number. Claim that if $A$ is
+      a finite set with $|A| = s$, then $|\mathscr{P}(A)| = 2^s$.
+      
+      \textbf{Proof:} Let $P(n)$ be the statement that if a finite set has 
+      cardinality $n$, then the cardinality of its power set is $2^n$. We shall
+      show by Mathematical Induction that $P(n)$ holds for each natural number
+      $n$. For the base case, $n = 1$, consider any set with a single element,
+      say $\{a_1\}$. It follows that $|\mathscr{P}(\{a_1\})| = 2^1$ since
+      $\mathscr{P}(\{a_1\}) = \{\emptyset, \{a_1\}\}$, so that $P(1)$ is true.
+      Now suppose that $P(k)$ is true for some natural number $k$. Consider the
+      sets
+      $$B = \{b_1, b_2, \ldots, b_k\}, C = B \cup \{c_1\},$$
+      where $b_i = b_j$ implies $i = j$ and $c_1 \notin B$. Let $C_{c_1}$ be the
+      set of subsets of $C$ that contain $c_1$, and let $C_{c_1}'$ denote the
+      set of subsets of $C$ that do not contain $c_1$. We note that $C_{c_1}$
+      and $C_{c_1}'$ are disjoint and also that
+      $$\mathscr{P}(C) = C_{c_1} \cup C_{c_1}',$$
+      so that
+      $$|\mathscr{P}(C)| = |C_{c_1}| + |C_{c_1}'|.$$
+      
+      We observe that the subsets of $C$ that do not contain $c_1$ are simply
+      the subsets of $B$. Thus $C_{c_1}' = \mathscr{P}(B)$, and since $|B| = k$,
+      it follows by our Inductive Hypothesis that
+      $|C_{c_1}'| = |\mathscr{P}(B)| = 2^k$.
+      
+      Now consider the function
+      $$f : C_{c_1}' \rightarrow C_{c_1},$$
+      defined by $f(M) = M \cup \{c_1\}$.
+      It is trivial to show that $f$ is bijective, so we have that
+      $|C_{c_1}| = C_{c_1}' = 2^k$. Thus
+      $|\mathscr{P}(C)| = 2^k + 2^k = 2^{k + 1}$, so that $P(k + 1)$ holds. It 
+      follows by the Principle of Mathematical Induction that $P(n)$ holds for 
+      each natural number $n$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.18] For any set $A$, finite or infinite, let $B^A$ be the set of all
+               functions mapping $A$ into the set $B = \{0, 1\}$. Show that the
+               cardinality of $B^A$ is the same as the cardinality of the set
+               $\mathscr{P}(A)$.
+               
+      \textbf{Proof:} It suffices to find a bijective map from $B^A$ to
+      $\mathscr{P}(A)$. If $A$ is nonempty, then our assertion follows, so
+      assume that $A$ is nonempty. Now consider the function
+      $$f : B^A \rightarrow \mathscr{P}(A),$$
+      defined by $f(g) = \{a \in A : g(a) = 1\}$. Suppose that $f(g_1) = f(g_2)$
+      for some functions $g_1 : A \rightarrow \{0, 1\}$ and
+      $g_2 : A \rightarrow \{0, 1\}$. Let $a_1 \in A$. If $g_1(a_1) = 1$, then
+      $a_1 \in f(g_1)$, and since $f(g_1) = f(g_2)$, we must have that
+      $a_1 \in f(g_2)$, so that $g_1(a_1) = g_2(a_1) = 1$. If $g_1(a_1) = 0$,
+      then $a_1 \notin f(g_1)$, so that $a_1 \notin f(g_2)$. That is,
+      $g_2(a_1) = 0$. Thus $g_1 = g_2$. It follows that $f$ is injective.      
+      Let $B \in \mathscr{P}(A)$. Let $g_3$ be a function in $B^A$ such that
+      $g_3(a) = 1$ if and only if $a \in B$. It follows that $f(g_3) = B$, so
+      that $f$ is surjective. Thus $f$ is a bijection and
+      $|B^A| = |\mathscr{P}(A)|$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.19] Show that the power set of a set $A$, finite or infinite, has
+               too many elements to be able to be put in a one-to-one
+               correspondence with $A$. Explain why this intuitively means that
+               there are an infinite number of infinite cardinal numbers. Is
+               \textit{the set of everything} logically acceptable concept? Why
+               or why not?
+               
+      \textbf{Proof:} We already know that $|A| \le |\mathscr{P}(A)|$ since we
+      can map $a \in A$ to $\{a\} \in \mathscr{P}(A)$. We shall show by way of
+      contradiction that $|A| < |\mathscr{P}(A)|$. So suppose that both of these
+      sets are equinumerous; that is, there exists a bijection
+      $$f : A \rightarrow \mathscr{P}(A).$$
+      
+      Now consider a subset of $A$, $S = \{a \in A : a \notin f(a)\}$. Let
+      $b \in A$. If $b \in f(b)$, then $b \notin S$, so that $f(b) \neq S$. Also
+      if $b \notin f(b)$, then $b \in S$, so that $f(b) \neq S$. Thus no element
+      $b$ exists in $A$ such that $f(b) = S$. Thus $|\mathscr{P}(A)| > |A|$.
+      
+      We intuit that there is an infinite number of cardinals because we can
+      define a sequence of strictly increasing cardinals wherein the first
+      cardinal is the size of some nonempty set and subsequent cardinals are
+      the sizes of power sets of their immediate former set. For example, if
+      $A = \{1, 2, 3\}$, then we following:
+      $$|A| < |\mathscr{P}(A)| < |\mathscr{P}(\mathscr{P}(A))| <
+        |\mathscr{P}(\mathscr{P}(\mathscr{P}(A)))| < \cdots$$
+        
+      The set of everything would not make sense because it would have to
+      contain itself, and we would also arrive at a contradiction since the
+      power set of the set of everything would be larger than the set of
+      everything. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.20] Let $A = \{1, 2\}$ and let $B = \{3, 4, 5\}$.
+      \begin{enumerate}
+         \item Illustrate, using $A$ and $B$, why we consider that $2 + 3 = 5$.
+               Use similar reasoning with sets of your choice to decide what you
+               would consider to be the value of
+
+               i. $3 + \aleph_0$
+               \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+               ii. $\aleph_0 + \aleph_0$.
+         \item Illustrate why we consider that $2 \cdot 3 = 6$ by plotting the
+               points of $A \times B$ in the plane $\R \times \R$. Use similar
+               reasoning with a figure in the text to decide what you would
+               consider to be the value of $\aleph_0 \cdot \aleph_0$.
+      \end{enumerate}
+
+      \textbf{Solution:} 
+
+      \begin{enumerate}
+         \item Let $a$ and $b$ be two nonnegative integers. We define $a + b$ 
+               to be the cardinality of the union of any two disjoint sets $A$ 
+               and $B$, where $|A| = a$ and $|B| = b$. Using this definition, we
+               see that 2 + 3 = 5. As per our definition, we see that
+               $3 + \aleph_0 = |\{\pi, e, e^2\} \cup \N| = \aleph_0$, and
+               $\aleph_0 + \aleph_0 = |\N \cup \Z^-| = \aleph_0$.
+         \item Let $a$ and $b$ be two nonnegative integers. We define
+               $a \cdot b$ to be the cardinality of $A \times B$, where $A$ and
+               $B$ are any sets such that $|A| = a$ and $|B| = b$. So if we set
+               $A = B = \N$, it follows that
+               $\aleph_0 \cdot \aleph_0 = |\N \times \N| = \aleph_0$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.21] How many numbers in the interval $0 \le x \le 1$ can be expressed
+               in the form \verb|.##|, where each \verb|#| is a digit
+               0, 1, 2, 3, \ldots, 9? How many are there of the form
+               .\verb|#####|? Following this idea, and Exercise 15, decide what 
+               you would consider to be the value of $10^{\aleph_0}$. How about
+               $12^{\aleph_0}$ and $2^{\aleph_0}$?
+
+      \textbf{Solution:} 
+
+      Since each available decimal position can be occupied by any of the base
+      ten digits, it follows that there are $10 \cdot 10$ (resp. $10^5$) numbers
+      in $[0, 1]$ that can be expressed in the form
+      \verb|##| (resp. \verb|#####|). Now we observe that we can express every
+      number in $[0, 1]$ in the form $.a_1a_2a_3a_4\ldots$, where $a_i$ is a
+      nonnegative less than 10, for each natural number $i$; since each decimal
+      position can be indexed, it follows that the set of positions is
+      countable, so that the number of reals in the interval $[0, 1]$ is
+      $10^{\aleph_0}$. A caveat: there are infinite reals with multiple decimal 
+      representations, but since they are a subset of the rationals, it follows
+      that our ``true answer" will be $10^{\aleph_0} - \aleph_0$. By Exercise
+      0.15, it follows that $|\R| = 10^{\aleph_0} - \aleph_0$. Adding $\aleph_0$
+      to both sides tells us that $|\R| = 10^{\aleph_0}$.
+
+      If we represent the real numbers in bases 2 and 12 and using the same
+      method above, we shall see that $|\R| = 2^{\aleph_0} = 12^{\aleph_0}$.
+      
+      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.22] Continuing the idea in the preceding exercise and using Exercises
+               18 and 19, use exponential notation to fill in the three blanks
+               to give a list of five cardinal numbers, each greater than the
+               preceding one.
+               $$\aleph_0, |\R|, 2^{2^{\aleph_0}}, 2^{2^{2^{\aleph_0}}},
+                 2^{2^{2^{2^{\aleph_0}}}}.$$
+\end{enumerate}
+
+
+\noindent In Exercises 23 through 27, find the number of different partitions of
+a set having the given number of elements.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.23] 1 element.
+
+      \textbf{Solution:} $\mathscr{P}(\{1\}) = \{\emptyset, \{1\}\}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.24] 2 elements.
+
+      \textbf{Solution:} $\mathscr{P}(\{1, 2\}) =
+      \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.25] 3 elements.
+
+      \textbf{Solution:} $\mathscr{P}(\{1, 2, 3\}) = \{\emptyset, \{1\}, \{2\}, 
+      \{3\}, \{1, 2\}, \{2, 3\}, \{1, 3\}, \{1, 2, 3\}\}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.26] 4 elements.
+
+      \textbf{Solution:} $\mathscr{P}(\{1, 2, 3, 4\}) = \{\emptyset, \{1\},
+      \{2\}, \{3\}, \{1, 2\}, \{2, 3\}, \{1, 3\}, \{1, 2, 3\}, \\
+      \{4\}, \{1, 4\}, \{2, 4\}, \{3, 4\}, \{1, 2, 4\}, \{2, 3, 4\},
+      \{1, 3, 4\}, \{1, 2, 3, 4\}\}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.27] 5 elements.
+
+      \textbf{Solution:} $\mathscr{P}(\{1, 2, 3, 4, 5\}) = \{\emptyset, \{1\},
+      \{2\}, \{3\}, \{1, 2\}, \{2, 3\}, \{1, 3\}, \{1, 2, 3\}, \\
+      \{4\}, \{1, 4\}, \{2, 4\}, \{3, 4\}, \{1, 2, 4\}, \{2, 3, 4\},
+      \{1, 3, 4\}, \{1, 2, 3, 4\}, \{5\}, \{1, 5\}, \\
+      \{2, 5\}, \{3, 5\}, \{1, 2, 5\}, \{2, 3, 5\}, \{1, 3, 5\},
+      \{1, 2, 3, 5\}, \{4, 5\}, \{1, 4, 5\}, \{2, 4, 5\}, \\
+      \{3, 4, 5\}, \{1, 2, 4, 5\}, \{2, 3, 4, 5\},
+      \{1, 3, 4, 5\}, \{1, 2, 3, 4, 5\}\}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.28] Consider a partition of a set $S$. The paragraph following
+               Definition 0.18 explained why the relation
+               $$x\mbox{ }\mathscr{R}\mbox{ }y \mbox{ if and only if }x
+                  \mbox{ and }y \mbox{ are in the same cell}$$ 
+               satisifies the symmetric condition for an equivalence relation.
+               Write similar explanations of why the reflexive and transitive
+               properties are also satisfied.
+
+      \textbf{Proof:} If $x$ is in a cell, then $x$ and $x$ are in the same cell
+      since they are the same element, so that $x$ $\mathscr{R}$ $x$. Suppose
+      $x$ and $y$ are in the same cell and $y$ and $z$ are in the same cell; it
+      instantly follows that $x$ and $z$ are in the same cell, so that
+      $x$ $\mathscr{R}$ $z$. Thus the relation is reflexive and transitive. \qed
+\end{enumerate}
+
+\noindent In Exercises 29 through 34, determine whether the given relation is
+an equivalence relation on the set. Describe the partition arising from each
+equivalence relation.
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.29] $n$ $\mathscr{R}$ $m$ in $\Z$ if $nm > 0$.
+
+      \textbf{Proof:} Not an equivalence relation because $\mathscr{R}$ is not
+      reflexive $((0, 0) \notin \mathscr{R})$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.30] $x$ $\mathscr{R}$ $y$ in $\R$ if $x \ge y$.
+
+      \textbf{Proof:} Not an equivalence relation because $\mathscr{R}$ is not
+      symmetric $((1, 4) \notin \mathscr{R}$, but $(4, 1) \in \mathscr{R})$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.31] $x$ $\mathscr{R}$ $y$ in $\R$ if $|x| = |y|$.
+
+      \textbf{Proof:} One can easily check this is an equivalence relation. Each
+      cell of the partition contains exactly a real number and its additive
+      inverse.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.32] $x$ $\mathscr{R}$ $y$ in $\R$ if $|x - y| \le 3$.
+
+      \textbf{Proof:} Not an equivalence relation because $\mathscr{R}$ is not
+      transitive $((1, 4), (4, 7) \in \mathscr{R}$, but
+      $(1, 7) \notin \mathscr{R})$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.33] $n$ $\mathscr{R}$ $m$ in $\Z^+$ if $n$ and $m$ have the same 
+               number of digits in the usual base ten notation.
+
+      \textbf{Proof:} One can easily check this is an equivalence relation. Each
+      cell of the partition contains the integers $10^{i-1}, \ldots, 10^i - 1$,
+      for some positive integer $i$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.34] $n$ $\mathscr{R}$ $m$ in $\Z^+$ if $n$ and $m$ have the same 
+               final digit in the usual base ten notation.
+
+      \textbf{Proof:} One can easily check this is an equivalence relation. Each
+      cell of the partition contains integers with the same unit digit.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.35] Using set notation of the form $\{\#,\#,\#,\cdots\}$ for an
+               infinite set, write the residue classes modulo $n$ in $\Z^+$
+               discussed in Example 0.17 for the indicated value of $n$.
+
+               \textbf{a.} $n = 2$
+               \qquad\qquad\qquad
+               \textbf{b.} $n = 3$
+               \qquad\qquad\qquad
+               \textbf{c.} $n = 5$
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item $\{1, 3, 5, \cdots\}, \{2, 4, 6, \cdots\}$.
+         \item $\{1, 4, 7, \cdots\}, \{2, 5, 8, \cdots\}, \{3, 6, 9, \cdots\}$.
+         \item $\{1, 6, 11, \cdots\}, \{2, 7, 12, \cdots\},
+               \{3, 8, 13, \cdots\}, \{4, 9, 14, \cdots\},
+               \{5, 10, 15, \cdots\}$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[0.36] Let $n \in \Z^+$ and let $\sim$ be defined on $\Z$ by $r \sim s$
+               if and only if $r - s$ is divisible by $n$, that is, if and only
+               if $r - s = nq$ for some $q \in \Z$.
+
+      \begin{enumerate}
+         \item Show that $\sim$ is an equivalence relation on $\Z$.
+         \item Show that, when restricted to the subset $\Z^+$ of $\Z$,
+               this $\sim$ is the equivalence relation,
+               \textit{congruence modulo n}, of Example 0.20.
+         \item The cells of this partition of $\Z$ are
+               \textit{residue classes modulo n} in $\Z$. Repeat Exercise 35 for
+               the residue classes modulo in $\Z^+$ using the notation
+               $\{\cdots, \#, \#, \#, \cdots\}$ for these infinite sets.
+      \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item Let $a \in \Z$. Then $a - a = n \cdot 0$, so that $a \sim a$.
+               Thus $\sim$ is reflexive. Suppose $x \sim y$ for some integers
+               $x$ and $y$. Then we have that $x - y = nq_1$ for some integer
+               $q_1$. So we have $y - x = n(-q_1)$, so that $y \sim x$. Thus
+               $\sim$ is symmetric. Now further suppose that $y \sim z$. That
+               is there exists an integer $q_2$ such that $y - z = nq_2$. 
+               Substituting for $y$, we get $x - z = n(q_1 + q_2)$, so that
+               $x \sim z$. Thus $\sim$ is transitive. It follows that $\sim$ is
+               an equivalence relation.
+         \item Let $a, b \in \Z^+$. Suppose $a \equiv_n b$. Then $a$ and $b$ 
+               both have remainder $0 \le k < n$ when divided by $n$. So we can 
+               write $a = nq_1 + k$ and $b = nq_2 + k$ for some positive 
+               integers $q_1$ and $q_2$. Since $a - b = n(q_1 - q_2)$, it 
+               follows that $a \sim b$. Now if $a \sim b$, then we have
+               $a - b = nq_3$ for some integer $q_3$. Thus $a/n = b/n + q_3$;
+               this says that $a$ and $b$ have the same remainder when divided
+               by $n$, so that $a \equiv_n b$. Hence $\sim$ is the equivalence
+               relation, \textit{congruence modulo n}, of Example 0.20.
+         \item \verb|Routine.|
+      \end{enumerate}
+\end{enumerate}

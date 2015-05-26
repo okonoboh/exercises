@@ -1,0 +1,344 @@
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.1] Mark each statement True or False. Justify each answer.
+      \begin{enumerate}
+         \item The symbol ``$\forall$" means ``for every."
+         \item The negation of a universal statement is another universal
+               statement.
+         \item The symbol ``$\ni$" is read ``such that."
+      \end{enumerate}
+
+      \textbf{Solution:} 
+
+      \begin{enumerate}
+         \item True. Definition.
+         \item False. The negation of a universal statement is an existential
+               statement.
+         \item True. Definition.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.2] Mark each statement True or False. Justify each answer.
+      \begin{enumerate}
+         \item The symbol ``$\exists$" means ``there exist several."
+         \item If a variable is used in the antecedent of an implication without
+               being quantified, then the universal quantifier is assumed to
+               apply.
+         \item The order in which quantifiers are used affects the truth table.
+      \end{enumerate}
+
+      \textbf{Solution:} 
+
+      \begin{enumerate}
+         \item False. It means ``there exists at least one."
+         \item True. [See Text]
+         \item True. [See Text]
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.3] Write the negation of each statement.
+      \begin{enumerate}
+         \item All the roads in Yellowstone are open.
+         \item Some fish are green.
+         \item No even integer is prime.
+         \item $\exists$ $x < 3 \ni x^2 \ge 10.$
+      \end{enumerate}
+
+      \textbf{Solution:} 
+
+      \begin{enumerate}
+         \item There exists a road in Yellowstone that is not open.
+         \item All fishes are not green.
+         \item There exists an even prime integer.
+         \item $\forall$ $x < 3$, $x^2 < 10$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.4] Write the negation of each statement.
+      \begin{enumerate}
+         \item Some basketball players at Central High are short.
+         \item All of the lights are on.
+         \item No bounded interval contains infinite many integers.
+         \item $\exists$ $x$ in $S \ni x \ge 5$.
+         \item $\forall$ $x \ni 0 < x < 1$, $f(x) < 2$ or $f(x) > 5$.
+         \item If $x > 5$, then $\exists$ $y > 0 \ni x^2 > 25 + y$.
+      \end{enumerate}
+
+      \textbf{Solution:} 
+
+      \begin{enumerate}
+         \item All basketball players at Central High are tall.
+         \item At least one of the lights is off.
+         \item There exists a bounded interval that contains infinite many
+               integers.
+         \item $\forall$ $x$ in $S$, $x < 5$.
+         \item $\exists$ $x \ni 0 < x < 1 \ni f(x) \ge 2$ and $f(x) \le 5$.
+         \item $x > 5$ and $\forall$ $y > 0$, $x^2 \le 25 + y$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.5] Determine the truth value of each statement, assuming that $x$,
+              $y$, and $z$ are real numbers.
+      \begin{enumerate}
+         \item $\exists$ $x \ni \forall$ $y$ $\exists$ $z \ni x + y = z$.
+         \item $\exists$ $x \ni \forall$ $y$ and $\forall$ $z, x + y = z$.
+         \item $\forall$ $x$ and $\forall$ $y$, $\exists$ $z \ni y - z = x$.
+         \item $\forall$ $x$ and $\forall$ $y$, $\exists$ $z \ni xz = y$.
+         \item $\exists$ $x \ni \forall$ $y$ and $\forall$ $z, z > y$ implies 
+               that $z > x + y$.
+         \item $\forall$ $x, \exists$ $y$ and $\exists$ $z \ni z > y$ implies 
+               that $z > x + y$.
+      \end{enumerate}
+
+      \textbf{Solution:} 
+
+      \begin{enumerate}
+         \item True. Choose $x = 0$. Let $y$ be any real number and choose
+               $z = y$.
+         \item False. Letting $y = -x$ and $z = 1$ would imply that $1 = 0$.
+         \item True. Let $x$ and $y$ be any real numbers. Choose $z = y - x$.
+         \item False. Letting $x = 0$ and $y = 1$ would imply that $0 = 1$.
+         \item True. Choose $x = -1$. Let $y$ and $z$ be real numbers with
+               $z > y$. We have $0 > x$, so that $y > x + y$. Thus $z > x + y$.
+         \item True.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.6] Determine the truth value of each statement, assuming that $x$,
+              $y$, and $z$ are real numbers.
+      \begin{enumerate}
+         \item $\forall$ $x$ and $\forall$ $y$, $\exists$ $z \ni x + y = z$.
+         \item $\forall$ $x$ $\exists$ $y \ni$  $\forall$ $z, x + y = z$.
+         \item $\exists$ $x \ni$ $\forall$ $y$, $\exists$ $z \ni xz = y$.
+         \item $\forall$ $x$ and $\forall$ $y$, $\exists$ $z \ni yz = x$.
+         \item $\forall$ $x$ $\exists$ $y \ni$ $\forall$ $z, z > y$ implies that
+               $z > x + y$.
+         \item $\forall$ $x$ and $\forall$ $y$, $\exists$ $z \ni z > y$ implies
+               that $z > x + y$.
+      \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item True. Let $x$ and $y$ be any real numbers. Choose $z = x + y$.
+         \item False. Let $x$ be any real number. Choose $z = x + y + 1$.
+         \item True. Choose $x = 1$.
+         \item False. Let $x = 1$ and $y = 0$.
+         \item False. Let $x = 1$. Choose $z = y + 1$.
+         \item True. Choose $z \le y$ to make the antecedent false.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.7] Below are two strategies for determining the truth value of a
+              statement involving a positive number $x$ and another statment
+              $P(x)$.
+
+      \begin{quote}
+         \begin{enumerate}
+            \item[(\textit{i})]  Find some $x > 0$ such that $P(x)$ is true.
+            \item[(\textit{ii})] Let $x$ be the name for any number greater 
+                                 than 0 and show $P(x)$ is true.
+         \end{enumerate}
+      \end{quote}
+
+      For each statement below, indicate which strategy is more appropriate.
+
+      \begin{enumerate}
+         \item $\forall$ $x > 0$, $P(x)$.
+         \item $\exists$ $x > 0 \ni P(x)$.
+         \item $\exists$ $x > 0 \ni$ $\sim$$P(x)$.
+         \item $\forall$ $x > 0$, $\sim$$P(x)$.
+      \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item \textit{ii}.
+         \item \textit{i}.
+         \item \textit{i}.
+         \item \textit{ii}.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.8] Which of the following best identifies $f$ as a constant 
+              function, where $x$ and $y$ are real numbers.
+      \begin{enumerate}
+         \item $\exists$ $x \ni$ $\forall$ $y$, $f(x) = y$.
+         \item $\forall$ $x$ $\exists$ $y \ni$ $f(x) = y$.
+         \item $\exists$ $y \ni$ $\forall$ $x$, $f(x) = y$.
+         \item $\forall$ $y$ $\exists$ $x \ni$ $f(x) = y$.
+      \end{enumerate}
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item $f$ is not a function.
+         \item This just says that the domain of $f$ is the real numbers.
+         \item This says that $f$ is a constant function.
+         \item This says that $f$ is surjective.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.9] Determine the truth value of each statement, assuming $x$ is a 
+              real number.
+      \begin{enumerate}
+         \item $\exists$ $x$ in $[2,4] \ni x < 7$.
+         \item $\forall$ $x$ in $[2,4], x < 7$.
+         \item $\exists$ $x \ni x^2 = 5$.
+         \item $\forall$ $x$, $x^2 = 5$.
+         \item $\exists$ $x \ni x^2 \neq -3$.
+         \item $\forall$ $x$, $x^2 \neq -3$.
+         \item $\exists$ $x \ni x \div x = 1$.
+         \item $\forall$ $x$, $x \div x = 1$.
+      \end{enumerate}
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item True. Choose $x = 2$.
+         \item True, since $2 \le x \le 4$.
+         \item True. Choose $x = \sqrt{5}$.
+         \item False. We have $0^2 = 0 \neq 5$.
+         \item True. We have $0^2 = 0 \neq -3$.
+         \item True, since $x^2 \ge 0 > -3$.
+         \item True. Choose $x = 1$.
+         \item False, since $0 \div 0$ is undefined.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.10] Determine the truth value of each statement, assuming $x$ is a 
+               real number.
+      \begin{enumerate}
+         \item $\exists$ $x$ in $[3,5] \ni x \ge 4$.
+         \item $\forall$ $x$ in $[3,5], x \ge 4$.
+         \item $\exists$ $x \ni x^2 \neq 3$.
+         \item $\forall$ $x$, $x^2 \neq 3$.
+         \item $\exists$ $x \ni x^2 \neq -5$.
+         \item $\forall$ $x$, $x^2 \neq -5$.
+         \item $\exists$ $x \ni x - x = 0$.
+         \item $\forall$ $x$, $x - x = 0$.
+      \end{enumerate}
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item True. Choose $x = 4$.
+         \item False, since $x = 3 < 4$.
+         \item True. Choose $x = 1$.
+         \item False. $\sqrt{3}^2 = 3$.
+         \item True. We have $0^2 = 0 \neq -5$.
+         \item True, since $x^2 \ge 0 > -5$.
+         \item True. Choose $x = 0$.
+         \item True. 
+      \end{enumerate}
+\end{enumerate}
+
+\noindent In exercises 2.11 to 2.19 you are to do two things: (a) rewrite the 
+defining conditions in logical symbolism using $\forall$, $\exists$, $\ni$, and
+$\Rightarrow$, as appropriate; and (b) write the negation of part (a) using the
+same symbolism.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.11] A function $f$ is \textit{even} iff for every $x$,
+               $f(-x) = f(x)$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\forall$ $x$, $f(-x) = f(x)$.
+         \item $\exists$ $x \ni f(-x) \neq f(x)$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.12] A function $f$ is \textit{periodic} iff there exists a $k > 0$
+               such that for every $x$, $f(x + k) = f(x)$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\exists$ $k > 0 \ni$ $\forall$ $x$, $f(x + k) = f(x)$.
+         \item $\forall$ $k > 0$ $\exists$ $x \ni f(x + k) \neq f(x)$. 
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.13] A function $f$ is \textit{increasing} iff for every $x$ and for
+               every $y$, if $x \le y$, then $f(x) \le f(y)$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\forall$ $x$ and $\forall$ $y$, $x \le y \Rightarrow
+               f(x) \le f(y)$.
+         \item $\exists$ $x$ and $\exists$ $y \ni x \le y$ and $f(x) > f(y)$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.14] A function $f$ is \textit{strictly decreasing} iff for every $x$ 
+               and for every $y$, if $x < y$, then $f(x) > f(y)$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\forall$ $x$ and $\forall$ $y$, $x < y \Rightarrow
+               f(x) > f(y)$.
+         \item $\exists$ $x$ and $\exists$ $y \ni x < y$ and $f(x) \le f(y)$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.15] A function $f : A \rightarrow B$ is \textit{injective} iff for 
+               every $x$ and $y$ in $A$, if $f(x) = f(y)$, then $x = y$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\forall$ $x$ and $y$ in $A$, $f(x) = f(y) \Rightarrow x = y$.
+         \item $\exists$ $x$ and $y$ in $A \ni f(x) = f(y)$ and $x \neq y$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.16] A function $f : A \rightarrow B$ is \textit{surjective} iff for 
+               every $y$ in $B$ there exists an $x$ in $A$ such that $f(x) = y$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\forall$ $y$ in $B$ $\exists$ $x$ in $A \ni f(x) = y$.
+         \item $\exists$ $y$ in $B \ni$ $\forall$ $x$ in $A$, $f(x) \neq y$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.17] A function $f : D \rightarrow R$ is \textit{continuous} at
+               $c \in D$ iff for every $\varepsilon > 0$ there is a $\delta > 0$
+               such that $|f(x) - f(c)| < \varepsilon$ whenever
+               $|x - c| < \delta$ and $x \in D$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\forall$ $\varepsilon > 0$, $\exists$ $\delta > 0 \ni$
+               $|x - c| < \delta$ and $x$ in $D$
+               $\Rightarrow |f(x) -f(c)| < \varepsilon$.
+         \item $\exists$ $\varepsilon > 0 \ni$ $\forall$ $\delta > 0$,
+               $|x - c| < \delta$ and $x$ in $D$ and
+               $|f(x) - f(c)| \ge \varepsilon$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.18] A function $f$ is \textit{uniformly continuous on a set} $S$ iff
+               for every $\varepsilon > 0$ there is a $\delta > 0$ such that
+               $|f(x) - f(y)| < \varepsilon$ whenever $x$ and $y$ are in $S$ and
+               $|x - y| < \delta$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\forall$ $\varepsilon > 0$, $\exists$ $\delta > 0 \ni$
+               $|x - y| < \delta$ and $x$ and $y$ are in $D$
+               $\Rightarrow |f(x) - f(y)| < \varepsilon$.
+         \item $\exists$ $\varepsilon > 0 \ni$ $\forall$ $\delta > 0$,
+               $|x - y| < \delta$ and $x$ and $y$ are in $D$ and
+               $|f(x) - f(y)| \ge \varepsilon$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob2.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[2.19] The real number $L$ is the \textit{limit} of the function
+               $f : D \rightarrow R$ at the point $c$ iff for each
+               $\varepsilon > 0$ there exists a $\delta > 0$ such that
+               $|f(x) - L| < \varepsilon$ whenever $x \in D$ and
+               $0 < |x - c| < \delta$.
+
+      \textbf{Solution:}
+      
+      \begin{enumerate}
+         \item $\forall$ $\varepsilon > 0$, $\exists$ $\delta > 0 \ni$
+               $0 < |x - c| < \delta$ and $x$ in $D$
+               $\Rightarrow |f(x) - L| < \varepsilon$.
+         \item $\exists$ $\varepsilon > 0 \ni$ $\forall$ $\delta > 0$,
+               $0 < |x - c| < \delta$ and $x$ in $D$ and
+               $|f(x) - L| \ge \varepsilon$.
+      \end{enumerate}
+\end{enumerate}

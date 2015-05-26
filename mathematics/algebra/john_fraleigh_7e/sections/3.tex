@@ -1,0 +1,536 @@
+\noindent In all the exercises, $+$ is the usual addition on the set where it is
+          specified, and $\cdot$ is the usual multiplication. \\
+
+\noindent \textbf{Computations}
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.1] What three things must we check to determine whether a function
+   $\phi : S \rightarrow S'$ is an isomorphism of a binary structure
+   $\cyc{S, *}$ with $\cyc{S', *'}$?
+
+      \textbf{Solution:}
+
+      \begin{itemize}
+         \item $\phi$ must be injective, and
+         \item $\phi$ must be surjective, and
+         \item $\phi(s * t) = \phi(s) *' \phi(t)$ must hold for all
+               $s, t \in S$.
+      \end{itemize}
+\end{enumerate}
+
+\noindent In Exercises 2 through 10, determine whether the given map $\phi$ is
+          an isomorphism of the first binary structure with the second. If it is
+          not an isomorphism, why not?
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.2] $\cyc{\Z, +}$ with $\cyc{\Z, +}$ where $\phi(n) = -n$ for
+              $n \in \Z$.
+
+      \textbf{Solution:} It is trivial to show that $\phi$ is bijective. We 
+      claim that $\phi$ is an isomorphism because
+      $\phi(z_1 + z_2) = \phi(z_1) + \phi(z_2)$ for any integers $z_1$ and
+      $z_2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.3] $\cyc{\Z, +}$ with $\cyc{\Z, +}$ where $\phi(n) = 2n$ for
+              $n \in \Z$.
+
+      \textbf{Solution:} The map $\phi$ is not an isomorphism because it is not
+      surjective. This follows because an odd integer has no preimage under
+      $\phi$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.4] $\cyc{\Z, +}$ with $\cyc{\Z, +}$ where $\phi(n) = n + 1$ for
+              $n \in \Z$.
+
+      \textbf{Solution:} The map $\phi$ is not an isomorphism because
+      $\phi(0 + 0) = 1 \neq 2 = \phi(0) + \phi(0)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.5] $\cyc{\Q, +}$ with $\cyc{\Q, +}$ where $\phi(x) = x/2$ for
+              $x \in \Q$.
+
+      \textbf{Solution:} It is trivial to show that $\phi$ is bijective. We 
+      claim that $\phi$ is an isomorphism because
+      $\phi(q_1 + q_2) = \phi(q_1) + \phi(q_2)$ for any rationals $q_1$ and
+      $q_2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.6] $\cyc{\Q, \cdot}$ with $\cyc{\Q, \cdot}$ where $\phi(x) = x^2$ for
+              $x \in \Q$.
+
+      \textbf{Solution:} The map $\phi$ is not an isomorphism because it is not
+      injective. This follows because $\phi(1) = \phi(-1) = 1$, but $1 \neq -1$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.7] $\cyc{\R, \cdot}$ with $\cyc{\R, \cdot}$ where $\phi(x) = x^3$ for
+              $x \in \R$.
+
+      \textbf{Solution:} It is trivial to show that $\phi$ is bijective. We 
+      claim that $\phi$ is an isomorphism because
+      $\phi(r_1 \cdot r_2) = \phi(r_1) \cdot \phi(r_2)$ for any reals $r_1$ and
+      $r_2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.8] $\cyc{M_2(\R), \cdot}$ with $\cyc{\R, \cdot}$ where $\phi(A)$ is
+              the determinant of matrix $A$.
+
+      \textbf{Solution:} The map $\phi$ is not an isomorphism because it is not
+      injective. This follows because $\phi\left(\left[
+      \begin{tabular}{@{}l r@{}} 
+         1 & 1 \\ 
+         1 & 1
+      \end{tabular}\right]\right) = \phi\left(\left[
+      \begin{tabular}{@{}l r@{}} 
+         0 & 0 \\ 
+         0 & 0
+      \end{tabular}\right]\right) = 0$, but $\left[
+      \begin{tabular}{@{}l r@{}} 
+         1 & 1 \\ 
+         1 & 1
+      \end{tabular}\right] \neq \left[
+      \begin{tabular}{@{}l r@{}} 
+         0 & 0 \\ 
+         0 & 0
+      \end{tabular}\right]$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.9] $\cyc{M_1(\R), \cdot}$ with $\cyc{\R, \cdot}$ where $\phi(A)$ is
+              the determinant of matrix $A$.
+
+      \textbf{Solution:} It is trivial to show that $\phi$ is bijective. We 
+      claim that $\phi$ is an isomorphism because
+      $\phi([m_1] \cdot [m_2]) = \phi([m_1]) \cdot \phi([m_2])$ for any real
+      1 by 1 matrices $[m_1]$ and $[m_2]$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.10] $\cyc{\R, +}$ with $\cyc{\R^+, \cdot}$ where $\phi(r) = 0.5^r$
+               for $r \in \R$.
+
+      \textbf{Solution:} It is trivial to show that $\phi$ is bijective. We 
+      claim that $\phi$ is an isomorphism because
+      $\phi(r_1 + r_2) = \phi(r_1) \cdot \phi(r_2)$ for any reals $r_1$ and
+      $r_2$.
+\end{enumerate}
+
+\noindent In Exercises 11 through 15, let $F$ be the set of all functions $f$
+          mapping $\R$ into $\R$ that have derivatives of all orders. Follow the
+          instructions for Exercises 2 through 10.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.11] $\cyc{F, +}$ with $\cyc{F, +}$ where $\phi(f) = f'$, the
+               derivative of $f$.
+
+      \textbf{Solution:} The map $\phi$ is not an isomorphism because it is not
+      injective. This follows because $\phi(x^2) = \phi(x^2 + 10) = 2x$, but
+      $x^2 \neq x^2 + 10$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.12] $\cyc{F, +}$ with $\cyc{\R, +}$ where $\phi(f) = f'(0)$.
+
+      \textbf{Solution:} The map $\phi$ is not an isomorphism because it is not
+      injective. This follows because $\phi(x^2) = \phi(x^3) = 0$, but
+      $x^2 \neq x^3$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.13] $\cyc{F, +}$ with $\cyc{F, +}$ where
+               $\phi(f)(x) = \int_0^xf(t)dt$.
+
+      \textbf{Solution:} The map $\phi$ is not an isomorphism because it is not
+      surjective. This follows because for any $f \in F$, we have
+      $\phi(f)(0) = 0$, but $\cos(x) \in F$ and $\cos(0) = 1$. Thus no member
+      of $F$ maps onto $\cos(x)$, so that $\phi$ is not onto.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.14] $\cyc{F, +}$ with $\cyc{F, +}$ where
+               $\phi(f)(x) = \frac{d}{dx}[\int_0^xf(t)dt]$.
+
+      \textbf{Solution:} Using the Fundamental Theorem of Calculus we easily see
+      that this is an isomorphism.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.15] $\cyc{F, \cdot}$ with $\cyc{F, \cdot}$ where
+               $\phi(f)(x) = x \cdot f(x)$.
+
+      \textbf{Solution:} The map $\phi$ is not an isomorphism because it is not
+      surjective. This follows because for any $f \in F$, we have
+      $\phi(f)(0) = 0$, but $\cos(x) \in F$ and $\cos(0) = 1$. Thus no member
+      of $F$ maps onto $\cos(x)$, so that $\phi$ is not onto.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.16] The map $\phi : \Z \rightarrow \Z$ defined by $\phi(n) = n + 1$
+               for $n \in \Z$ is one to one and onto $\Z$. Give the definition
+               of a binary operation $*$ on $\Z$ such that $\phi$ is an
+               isomorphism mapping \\
+               \textbf{a.} $\cyc{\Z, +}$ onto $\cyc{\Z, *}$,
+               \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+               \textbf{b.} $\cyc{\Z, *}$ onto $\cyc{\Z, +}$. \\
+               In each case, give the identity element for $*$ on $\Z$.
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item Let $z_1$ and $z_2$ be integers. We want the following to be
+               true: $\phi(z_1 + z_2) = \phi(z_1) * \phi(z_2)$. That is, we want
+               $z_1 + z_2 + 1 = (z_1 + 1) * (z_2 + 1)$ to hold. Thus if we 
+               define $z_1 * z_2 = z_1 + z_2 - 1$, then the homomorphism 
+               condition will hold. It can be easily checked that $\cyc{\Z, *}$ 
+               is an abelian group. We can see by inspection that the identity 
+               element for $*$ on $\Z$ is 1.
+         \item Let $z_1$ and $z_2$ be integers. We want the following to be
+               true: $\phi(z_1 * z_2) = \phi(z_1) + \phi(z_2)$. That is, we want
+               $(z_1 * z_2) + 1 = z_1 + z_2 + 2$ to hold. Thus if we 
+               define $z_1 * z_2 = z_1 + z_2 + 1$, then the homomorphism 
+               condition will hold. It can be easily checked that $\cyc{\Z, *}$ 
+               is an abelian group. We can see by inspection that the identity 
+               element for $*$ on $\Z$ is $-1$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.17] The map $\phi : \Z \rightarrow \Z$ defined by $\phi(n) = n + 1$
+               for $n \in \Z$ is one to one and onto $\Z$. Give the definition 
+               of a binary operation $*$ on $\Z$ such that $\phi$ is an
+               isomorphism mapping \\
+               \textbf{a.} $\cyc{\Z, \cdot}$ onto $\cyc{\Z, *}$,
+               \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+               \textbf{b.} $\cyc{\Z, *}$ onto $\cyc{\Z, \cdot}$. \\
+               In each case, give the identity element for $*$ on $\Z$.
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item Let $z_1$ and $z_2$ be integers. We want the following to be
+               true: $\phi(z_1 \cdot z_2) = \phi(z_1) * \phi(z_2)$. That is, we 
+               want $z_1z_2 + 1 = (z_1 + 1) * (z_2 + 1)$ to hold. Thus if we 
+               define $z_1 * z_2 = z_1z_2 - z_1 - z_2 + 2$, then the 
+               homomorphism condition will hold. It can be easily checked that
+               $\cyc{\Z, *}$ is an abelian group. A simple calculation will show
+               that the identity element for $*$ on $\Z$ is 2.
+         \item Let $z_1$ and $z_2$ be integers. We want the following to be
+               true: $\phi(z_1 * z_2) = \phi(z_1) \cdot \phi(z_2)$. That is, we 
+               want $(z_1 * z_2) + 1 = z_1z_2 + z_1 + z_2 + 1$ to hold. Thus if 
+               we define $z_1 * z_2 = z_1z_2 + z_1 + z_2$, then the homomorphism
+               condition will hold. It can be easily checked that $\cyc{\Z, *}$ 
+               is an abelian group. A simple calculation will show that the
+               identity element for $*$ on $\Z$ is 0.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.18] The map $\phi : \Q \rightarrow \Q$ defined by $\phi(x) = 3x - 1$
+               for $x \in Q$ is one to one and onto $\Q$. Give the definition
+               of a binary operation $*$ on $\Q$ such that $\phi$ is an
+               isomorphism mapping \\
+               \textbf{a.} $\cyc{\Q, +}$ onto $\cyc{\Q, *}$,
+               \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+               \textbf{b.} $\cyc{\Q, *}$ onto $\cyc{\Q, +}$. \\
+               In each case, give the identity element for $*$ on $\Q$.
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item Let $q_1$ and $q_2$ be rationals. We want the following to be
+               true: $\phi(q_1 + q_2) = \phi(q_1) * \phi(q_2)$. That is, we want
+               $3(q_1 + q_2) - 1 = (3q_1 - 1) * (3q_2 - 1)$ to hold. Thus if we 
+               define $q_1 * q_2 = q_1 + q_2 + 1$, then the homomorphism 
+               condition will hold. It can be easily checked that $\cyc{\Q, *}$ 
+               is an abelian group. We can see by inspection that the identity 
+               element for $*$ on $\Q$ is $-1$.
+         \item Let $q_1$ and $q_2$ be rationals. We want the following to be
+               true: $\phi(q_1 * q_2) = \phi(q_1) + \phi(q_2)$. That is, we want
+               $3(q_1 * q_2) - 1 = 3q_1 + 3q_2 - 2$ to hold. Thus if we 
+               define $q_1 * q_2 = q_1 + q_2 - 1/3$, then the homomorphism 
+               condition will hold. It can be easily checked that $\cyc{\Q, *}$ 
+               is an abelian group. We can see by inspection that the identity 
+               element for $*$ on $\Z$ is $1/3$.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.19] The map $\phi : \Q \rightarrow \Q$ defined by $\phi(x) = 3x - 1$
+               for $x \in Q$ is one to one and onto $\Q$. Give the definition
+               of a binary operation $*$ on $\Q$ such that $\phi$ is an
+               isomorphism mapping \\
+               \textbf{a.} $\cyc{\Q, \cdot}$ onto $\cyc{\Q, *}$,
+               \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+               \textbf{b.} $\cyc{\Q, *}$ onto $\cyc{\Q, \cdot}$. \\
+               In each case, give the identity element for $*$ on $\Q$.
+
+      \textbf{Solution:}
+
+      \begin{enumerate}
+         \item Let $q_1$ and $q_2$ be rationals. We want the following to be
+               true: $\phi(q_1 \cdot q_2) = \phi(q_1) * \phi(q_2)$. That is, we 
+               want $3q_1q_2 - 1 = (3q_1 - 1) * (3q_2 - 1)$ to hold. Thus if we 
+               define $q_1 * q_2 = (q_1q_2 + q_1 + q_2 - 2)/3$, then the 
+               homomorphism condition will hold. It can be easily checked that
+               $\cyc{\Q, *}$ is an abelian group. A simple calculation will show
+               that the identity element for $*$ on $\Q$ is 2.
+         \item Let $q_1$ and $q_2$ be rationals. We want the following to be
+               true: $\phi(q_1 * q_2) = \phi(q_1) \cdot \phi(q_2)$. That is, we 
+               want $3(q_1 * q_2) - 1 = (3q_1 - 1) \cdot (3q_2 - 1)$ to hold. 
+               Thus if we define $q_1 * q_2 = 3q_1q_2 - q_1 - q_2 + 2/3$, then 
+               the homomorphism condition will hold. It can be easily checked 
+               that $\cyc{\Q, *}$ is an abelian group. A simple calculation will
+               show that the identity element for $*$ on $\Q$ is 2/3.
+      \end{enumerate}
+\end{enumerate}
+
+\noindent \textbf{Concepts}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.20] The displayed homomorphism condition for an isomorphism $\phi$ in
+               Definition 3.7 is sometimes summarized by saying, ``$\phi$ must
+               commute with the binary operation(s)." Explain how that condition
+               can be viewed in this manner.
+
+      \textbf{Solution:} [See Manual.]
+\end{enumerate}
+
+\noindent In Exercises 21 and 22, correct the definition of the italicized term
+          without reference to the text, if correction is needed, so that it is
+          in a form acceptable for publication.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.21] A function $\phi : S \rightarrow S'$ is an \textit{isomorphism}
+               if and only if $\phi(a * b) = \phi(a) *' \phi(b)$.
+
+      \textbf{Solution:} A function $\phi : S \rightarrow S'$ is an
+      \textit{isomorphism} if and only if $\phi(a * b) = \phi(a) *' \phi(b)$,
+      for all $a, b \in S$ and where $*$ is a binary operation on $S$ and $*'$
+      is a binary operation on $S'$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.22] Let $*$ be a binary operation on a set $S$. An element $e$ of $S$
+               is an \textit{identity element for} $*$ if and only if
+               $s * e = s = e * s$ for all $s \in S$.
+
+      \textbf{Solution:} [Badly worded]. Let $*$ be a binary operation on a set
+      $S$. An element $e$ of $S$ is an \textit{identity element for} $*$ if and
+      only if $s * e = s = e * s$ for all $s \in S$.
+
+\end{enumerate}
+
+\noindent \textbf{Proof Synopsis}
+
+\noindent A good test of your understanding of a proof is your ability to give
+          a one or two sentence synopsis of it, explaining the idea of the 
+          proof without all the details and computations. Note that we said 
+          ``sentence" and not ``equation." From now on, some of our exercise 
+          sets may contain one or two problems asking for a synopsis of a proof 
+          in the text. It should rarely exceed three sentences. We should
+          illustrate for you what we mean by a synopsis. Here is our
+          one-sentence synopsis of Theorem 3.14. Read the statement of the
+          theorem now, and then our synopsis.
+          \begin{quote}
+             Representing as element of $S'$ ad $\phi(s)$ for some $s \in S$, 
+             use the homomorphism property of $\phi$ to carry the computation of
+             $\phi(e) *' \phi(s)$ back to a computation in $S$.
+          \end{quote}
+
+          That is the kind of explanation that one mathematician might give
+          another if asked,   ``How does the proof go?" We did not make the
+          computation or explain why we could represent an element of $S'$ as
+          $\phi(s)$. To supply every detail would result in a completely written
+          proof. We just gave the guts of the argument in our synopsis.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.23] Give a proof synopsis of Theorem 3.13.
+
+      \textbf{Solution:} Assume two elements $e$ and $e'$ are identities for 
+      some binary operation $*$ on some set. For each of them, use the property 
+      of the element as an identity on the element $e * e'$.
+\end{enumerate}
+         
+
+\noindent \textbf{Theory}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.24] An identity element for a binary operation $*$ as described by
+               Definition 3.12 is sometimes referred to as ``a two-sided 
+               identity element." Using complete sentences, give analogous
+               definitions for \\
+               \textbf{a.} a \textit{left identity element} $e_L$ for $*$, and
+               \qquad\qquad
+               \textbf{b.} a \textit{right identity element} $e_R$ for $*$. \\
+               Theorem 3.13 shows that if a two-sided identity element for $*$
+               exists, it is unique. Is the same true for a one-sided identity
+               element you just defined? If so, prove it. If not, give a
+               counterexample $\cyc{S, *}$ for a finite set $S$ and find the
+               first place where the proof of Theorem 3.13 breaks down.
+
+      \textbf{Solution:} Let $\cyc{S, *}$ be a binary structure.
+
+      \begin{enumerate}
+         \item An element $e_L \in S$ is said to be a left identity for $*$ if
+               and only if $e_L * s = s$ for all $s \in S$.
+         \item An element $e_R \in S$ is said to be a right identity for $*$ if
+               and only if $s * e_R = s$ for all $s \in S$.
+      \end{enumerate}
+
+      Consider the binary structure $\cyc{\{a, b\}, *}$, where
+      $a * a = b * a = a$, and $a * b = b * b = b$. From this definition, we see
+      that $a$ and $b$ are both left identities for $*$, but $a \neq b$. If we
+      tried to prove that a left identity for $*$ is unique, then we would have
+      proceeded like so: Suppose $e_L$ and $e_L'$ are two left identities for
+      $*$. Then we have $e_L * e_L' = e_L'$ by definition of $e_L$. But we can't
+      do the same for $e_L'$ since it is also a left identity. One can't show
+      the aforementioned for a right identity.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.25] Continuing the ideas of Exercise 24 can a binary structure have a
+               left identity element $e_L$ and a right identity element $e_R$ 
+               where $e_L \neq e_R$? If so, give an example, using an operation
+               on a finite set $S$. If not, prove that it is impossible.
+
+      \textbf{Proof:} Let $\cyc{S, *}$ be a binary structure with a left
+      identity, $e_L$, and a right identity, $e_R$. We claim that $e_L = e_R$.
+      By virtue of $e_L$ as a left identity, we have $e_L * e_R = e_R$. Also, by
+      virtue of $e_R$ as a right identity, we have $e_L * e_R = e_L$, so that
+      $e_L = e_R$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.26] Recall that if $f : A \rightarrow B$ is a one-to-one function
+               mapping $A$ onto $B$, then $f^{-1}(b)$ is the unique $a \in A$
+               such that $f(a) = b$. Prove that if $\phi : S \rightarrow S'$ is
+               an isomorphism of $\cyc{S, *}$ with $\cyc{S', *'}$, then
+               $\phi^{-1}$ is an isomorphism of $\cyc{S', *'}$ with
+               $\cyc{S, *}$.
+
+      \textbf{Proof:} Let $s'$ and $t'$ be members of $S'$. In order to show 
+      that $\phi^{-1} : S' \rightarrow S$ is an isomorphism, we must show that
+      $\phi^{-1}(s' *' t') = \phi^{-1}(s') * \phi^{-1}(t')$. There exist unique
+      $s, t \in S$ such that $\phi(s) = s'$ and $\phi(t) = t'$. Since $\phi$ is
+      an isomorphism, we have $\phi(s * t) = \phi(s) *' \phi(t) = s' *' t'$. 
+      Thus $\phi^{-1}(s' *' t') = s * t = \phi^{-1}(s') * \phi^{-1}(t')$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.27] Prove that if $\phi : S \rightarrow S'$ is an isomorphism of
+               $\cyc{S, *}$ with $\cyc{S', *'}$ and $\psi : S' \rightarrow S''$
+               is an isomorphism of $\cyc{S', *'}$ with $\cyc{S'', *''}$, then
+               the composite function $\psi \circ \phi$ is an isomorphism of
+               $\cyc{S, *}$ with $\cyc{S'', *''}$.
+
+      \textbf{Proof:} Let $s, t \in S$. Then \begin{align*}
+         (\psi \circ \phi)(s * t) &= \psi(\phi(s * t)) \\
+         &= \psi(\phi(s) *' \phi(t)) &[\phi\text{ is an isomorphism}] \\
+         &= \psi(\phi(s)) *'' \psi(\phi(t)) &[\psi\text{ is an isomorphism}] \\
+         &= (\psi\circ\phi)(s) *'' (\psi\circ\phi)(t).
+      \end{align*}
+
+      Since $(\psi \circ \phi)(s * t) = (\psi\circ\phi)(s) *''
+      (\psi\circ\phi)(t)$, it follows that $\psi \circ \phi$ is an isomorphism 
+      of  $\cyc{S, *}$ with $\cyc{S'', *''}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.28] Prove that the relation $\simeq$ of being isomorphic, described 
+               in Definition 3.7, is an equivalence relation on any set of 
+               binary structures. You may simply quote the results you were 
+               asked to prove in the preceding two exercises at appropriate 
+               places in your proof.
+
+      \textbf{Proof:} Let $\mathcal{S}$ be a set of binary structures. Consider
+      $S, T, U \in \mathcal{S}$. We have $S \simeq S$, since the map
+      $\phi_1 : S \rightarrow S$, given by $\phi_1(s) = s$ is an isomorphism.
+      Thus $\simeq$ is reflexive. Suppose $S \simeq T$. Then there exists an
+      isomorphic map $\phi_2 : S \rightarrow T$. By Exercise 3.26, we know that
+      the map $\phi_2^{-1} : T \rightarrow S$ is isomorphic, so that
+      $T \simeq S$. That is, $\simeq$ is symmetric. Now suppose that
+      $S \simeq T$ and $T \simeq U$. That is, there exist isomorphic maps
+      $\phi_3 : S \rightarrow T$ and $\phi_4 : T \rightarrow U$. By Exercise 
+      3.27 it follows that the map $\phi_4 \circ \phi_3 : S \rightarrow T$ is
+      isomorphic, so that $S \simeq T$. That is, $\simeq$ is transitive. Since
+      $\simeq$ is reflexive, symmetric, and transitive on $\mathcal{S}$, then it
+      is an equivalence relation. \qed
+\end{enumerate}
+
+\noindent In Exercises 29 through 32, give a careful proof for a skeptic that
+          the indicated property of a binary structure $\cyc{S, *}$ is indeed a
+          structural property.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.29] The operation $*$ is commutative.
+
+      \textbf{Proof:} Suppose $\cyc{S, *} \simeq \cyc{S', *'}$. We want to show
+      that $*'$ is also commutative. We know there exists some isomorphic
+      map $\phi : S \rightarrow S'$. Let $s', t' \in S'$. Then there exist
+      unique $s, t \in S$ such that $\phi(s) = s'$ and $\phi(t) = t'$. So
+      we have \begin{align*}
+         s' *' t' &= \phi(s) *' \phi(t) \\ 
+                  &= \phi(s * t) &[\phi\text{ is an homomorphism}] \\
+                  &= \phi(t * s) &[* \text{ is commutative}] \\
+                  &= \phi(t) *' \phi(s) &[\phi \text{ is an homomorphism}] \\
+                  &= t' *' s'.
+      \end{align*}
+
+      Since $s' *' t' = t' *' s'$, it follows that $*'$ is commutative, so that
+      commutativity is a structural property. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.30] The operation $*$ is associative.
+
+      \textbf{Proof:} Suppose $\cyc{S, *} \simeq \cyc{S', *'}$. We want to show
+      that $*'$ is also associative. We know there exists some isomorphic
+      map $\phi : S \rightarrow S'$. Let $s', t', u' \in S'$. Then there exist
+      unique $s, t, u \in S$ such that $\phi(s) = s'$, $\phi(t) = t'$, and
+      $\phi(u) = u'$. So
+      we have \begin{align*}
+         s' *' (t' *' u') &= \phi(s) *' (\phi(t) *' \phi(u)) \\ 
+                  &= \phi(s) *' \phi(t * u) &[\phi\text{ is an homomorphism}] \\
+                  &= \phi(s * (t * u)) &[\phi\text{ is an homomorphism}] \\
+                  &= \phi((s * t) * u) &[*\text{ is associative}] \\
+                  &= \phi(s * t) *' \phi(u) &[\phi\text{ is an homomorphism}] \\
+                  &= (\phi(s) *' \phi(t)) *' \phi(u)
+                     &[\phi\text{ is an homomorphism}] \\
+                  &= (s' *' t') *' u'.
+      \end{align*}
+
+      Since $s' *' (t' *' u') = (s' *' t') *' u'$, it follows that $*'$ is 
+      associative. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.31] For each $c \in S$, the equation $x * x = c$ has a solution $x$
+               in $S$.
+
+      \textbf{Proof:} Suppose $\cyc{S, *} \simeq \cyc{S', *'}$. Let $c' \in S'$.
+      We want to show that the equation $x' *' x' = c'$ has a solution for some 
+      $x' \in S'$. By our supposition, it follows that there exists some 
+      isomorphic map $\phi : S \rightarrow S'$. Then there exists a unique
+      $c \in S$ such that $\phi(c) = c'$. Also, there  exists $y \in S$ such 
+      that $y * y = c$, so that $\phi(y * y) = \phi(c)$. Since $\phi$ is a
+      homomorphism, we have that $\phi(y) *' \phi(y) = c'$. So we have
+      $x' = \phi(y)$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.32] There exists an element $b$ in $S$ such that $b * b = b$.
+
+      \textbf{Proof:} Suppose $\cyc{S, *} \simeq \cyc{S', *'}$. We want to show
+      that there exists some $b' \in S'$ such that $b' *' b' = b'$. By our 
+      supposition, it follows that there exists some isomorphic map
+      $\phi : S \rightarrow S'$. We also know that there exists $b$ in $S$ such 
+      that $b * b = b$. Hence $\phi(b * b) = \phi(b)$, so that
+      $\phi(b) *' \phi(b) = \phi(b)$. We let $b' = \phi(b)$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.33] Let $H$ be the subset of $M_2(\R)$ consisting of all matrices of
+               the form $\left[
+               \begin{tabular}{@{}l r@{}} 
+                  $a$ & $-b$ \\ 
+                  $b$ & $a$
+               \end{tabular}\right]$
+               for $a, b \in \R$. Exercise 23 of Section 2 shows that $H$ is
+               closed under both matrix addition and matrix multiplication.
+
+               \begin{enumerate}
+                  \item Show that $\cyc{\C, +}$ is isomorphic to $\cyc{H, +}$.
+                  \item Show that $\cyc{\C, \cdot}$ is isomorphic to
+                        $\cyc{H, \cdot}$.
+               \end{enumerate}
+               (We say that $H$ is a \textit{matrix representation} of the
+               complex numbers $\C$.)
+
+      \textbf{Proof:}
+      \begin{enumerate}
+         \item The map $\phi : \cyc{\C, +} \rightarrow \cyc{H, +}$, defined by
+               $\phi(a + bi) = \left[
+               \begin{tabular}{@{}l r@{}} 
+                  $a$ & $-b$ \\ 
+                  $b$ & $a$
+               \end{tabular}\right]$ is a bijection and a homomorphism.
+         \item The map $\phi : \cyc{\C, \cdot} \rightarrow \cyc{H, \cdot}$, 
+               defined by $\phi(a + bi) = \left[
+               \begin{tabular}{@{}l r@{}} 
+                  $a$ & $-b$ \\ 
+                  $b$ & $a$
+               \end{tabular}\right]$ is a bijection and a homomorphism.
+      \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob3.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[3.34] There are 16 possible binary structures on the set $\{a, b\}$ of
+               two elements. How many nonisomorphic structures are there amongst
+               these 16? Phrased more precisely in terms of the isomorphism
+               equivalence relation $\simeq$ on this set of 16 structures, how
+               many equivalence classes are there? Write down one structure from
+               each equivalence class.
+
+      \textbf{Solution:} TODO
+\end{enumerate}
