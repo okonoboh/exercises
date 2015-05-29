@@ -3,12 +3,10 @@ Let $F$ be a field and let $n \in \Z^+$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.1]   Prove that $|GL_2(\F_2)| = 6$.
 
-      \textbf{Solution.} Use Exercise 1.4.7 (set $p = 2$).
+      \textbf{Solution.} Set $p = 2$ in Exercise 1.4.7.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.2]   Write out all the elements of $GL_2(\F_2)$ and compute the
                   order of each element.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[1.4.3]   Show that $GL_2(\F_2)$ is non-abelian.
 
       \textbf{Solution.}
       \begin{center}
@@ -40,6 +38,30 @@ Let $F$ be a field and let $n \in \Z^+$.
             \end{tabular}\right)$            & 3      \\ \hline
          \end{tabular}
       \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[1.4.3]   Show that $GL_2(\F_2)$ is non-abelian.
+
+      \textbf{Proof.} This follows immediately because
+      $$\left(\begin{tabular}{@{}cc@{}}
+            1 & 0 \\
+            1 & 1
+         \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+            0 & 1 \\
+            1 & 1
+         \end{tabular}\right) = \left(\begin{tabular}{@{}cc@{}}
+            0 & 1 \\
+            1 & 0
+         \end{tabular}\right) \neq \left(\begin{tabular}{@{}cc@{}}
+            1 & 1 \\
+            0 & 1
+         \end{tabular}\right) = \left(\begin{tabular}{@{}cc@{}}
+            0 & 1 \\
+            1 & 1
+         \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+            1 & 0 \\
+            1 & 1
+         \end{tabular}\right).$$
+         \qed 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.4]   Show that if $n$ is not prime then $\Z/n\Z$ is not a field.
 
@@ -81,11 +103,11 @@ Let $F$ be a field and let $n \in \Z^+$.
       matrix with entries in a field is invertible if and only if its rows are
       linearly independent. So it suffices to count the number of matrices with
       independent rows. Since $|\F_p| = p$, it follows that there are $p^2$
-      possible row vectors in $GL_2(\F_p)$. To form an invertible matrix, we cannot choose the
-      zero vector, so there are $p^2 - 1$ choices for the first row.  Now two
-      vectors are linearly independent if and only they are not a multiple of
-      each other. Thus there are $p^2 - p$ for the second row. Thus 
-      $|GL_2(\F_p)| = (p^2 - 1)(p^2 - p) = p^4 - p^3 - p^2 + p$. \qed
+      possible row vectors in $GL_2(\F_p)$. To form an invertible matrix, we
+      cannot choose the zero vector, so there are $p^2 - 1$ choices for the
+      first row.  Now two vectors are linearly independent if and only they are
+      not a multiple of each other. Thus there are $p^2 - p$ for the second row.
+      Thus $|GL_2(\F_p)| = (p^2 - 1)(p^2 - p) = p^4 - p^3 - p^2 + p$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.8]   Show that $GL_n(F)$ is non-abelian for any $n \ge 2$ and any
                   $F$.
@@ -118,12 +140,37 @@ Let $F$ be a field and let $n \in \Z^+$.
       be real matrices. Then we have that
       \begin{align*}
          (X_1X_2)X_3 &= \left(\begin{tabular}{@{}cc@{}}
-         $a_1a_2 + b_1c_2$ & $b_1$ \\
-         $c_1$ & $d_1$
-      \end{tabular}\right)
+            $a_1a_2 + b_1c_2$ & $a_1b_2+b_1d_2$ \\
+            $a_2c_1 + c_2d_1$ & $b_2c_1+d_1d_2$
+         \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+            $a_3$ & $b_3$ \\
+            $c_3$ & $d_3$
+         \end{tabular}\right) \\
+         &= \left(\begin{tabular}{@{}cc@{}}
+            $a_1a_2a_3 + a_3b_1c_2 + a_1b_2c_3+b_1c_3d_2$ &
+            $a_1a_2b_3 + b_1b_3c_2 +a_1b_2d_3+b_1d_2d_3$ \\
+            $a_2a_3c_1 + a_3c_2d_1+b_2c_1c_3+c_3d_1d_2$ &
+            $a_2b_3c_1 + b_3c_2d_1+b_2c_1d_3+d_1d_2d_3$
+         \end{tabular}\right) \\
+         &= \left(\begin{tabular}{@{}cc@{}}
+            $a_1(a_2a_3+b_2c_3)+b_1(a_3c_2 + c_3d_2)$ &
+            $a_1(a_2b_3+b_2d_3)+b_1(b_3c_2+d_2d_3)$ \\
+            $c_1(a_2a_3+b_2c_3)+d_1(a_3c_2+c_3d_2)$ &
+            $c_1(a_2b_3+b_2d_3)+d_1(b_3c_2+d_2d_3)$
+         \end{tabular}\right) \\
+         &= \left(\begin{tabular}{@{}cc@{}}
+            $a_1$ & $b_1$ \\
+            $c_1$ & $d_1$
+         \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+            $a_2a_3 + b_2c_3$ & $a_2b_3+b_2d_3$ \\
+            $a_3c_2 + c_3d_2$ & $b_3c_2+d_2d_3$
+         \end{tabular}\right) \\
+         &= X_1(X_2X_3),
       \end{align*}
+      so that the binary operation of matrix multiplication of $2 \times 2$ 
+      matrices with real number entries is associative. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[1.4.10]  Let $\left\{\left(\begin{tabular}{@{}cc@{}}
+   \item[1.4.10]  Let $G = \left\{\left(\begin{tabular}{@{}cc@{}}
                      $a$ & $b$ \\
                       0  & $c$
                   \end{tabular}\right) : a, b, c \in \R, a \neq 0, c \neq 0
@@ -151,6 +198,35 @@ Let $F$ be a field and let $n \in \Z^+$.
                            diagonal entries are equal is also a subgroup of
                            $GL_2(\R)$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item It follows immediately that $G$ is closed under matrix
+               multiplication because
+               $$\left(\begin{tabular}{@{}cc@{}}
+                     $a_1$ & $b_1$ \\
+                     0  & $c_1$
+                  \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+                     $a_2$ & $b_2$ \\
+                     0  & $c_2$
+                  \end{tabular}\right) = \left(\begin{tabular}{@{}cc@{}}
+                     $a_1a_2$ & $a_1b_2+b_1c_2$ \\
+                     0  & $c_1c_2$
+                  \end{tabular}\right) \in G.$$
+         \item Since $a \neq 0$ and $c \neq 0$, it follows that $ac \neq 0$
+               so that $\left(\begin{tabular}{@{}cc@{}}
+                  $a$ & $b$ \\
+                   0  & $c$
+               \end{tabular}\right)^{-1} = \D\frac{1}{ac}
+               \left(\begin{tabular}{@{}cr@{}}
+                  $c$ & $-b$ \\
+                   0  & $a$
+               \end{tabular}\right) \in G$; i.e. $G$ is closed under inverses.
+         \item Since $G$ is nonempty, it follows by (a) and (b) that $G$ is a
+               subgroup of $GL_2(\R)$.
+         \item Proof is identical to what we did in (a)$-$(c).
+      \end{enumerate}
 \end{enumerate}
 
 The next exercise introduces the \textit{Heisenberg group} over the field $F$
@@ -196,4 +272,158 @@ with entries in $\Z$.
                      \item Prove that every nonidentity element of the group
                            $H(\R)$ has infinite order.
                   \end{enumerate}
+
+   \textbf{Solution.}
+
+   \begin{enumerate}
+      \item We have that
+            $$XY = \left(\begin{tabular}{@{}ccc@{}}
+               1 & $a+d$ & $af + b + e$ \\
+               0 & 1 & $c+f$ \\
+               0 & 0 & 1
+            \end{tabular}\right) \in H(F),$$
+            so that $H(F)$ is closed under matrix multiplication. Now $H(F)$ is
+            non-abelian since
+            \begin{align*}
+               \left(\begin{tabular}{@{}ccc@{}}
+                  1 & 0 & 0 \\
+                  0 & 1 & 1 \\
+                  0 & 0 & 1
+               \end{tabular}\right)
+               \left(\begin{tabular}{@{}ccc@{}}
+                  1 & 1 & 0 \\
+                  0 & 1 & 0 \\
+                  0 & 0 & 1
+               \end{tabular}\right) &=
+               \left(\begin{tabular}{@{}ccc@{}}
+                  1 & 1 & 0 \\
+                  0 & 1 & 1 \\
+                  0 & 0 & 1
+               \end{tabular}\right) \\ &\neq
+               \left(\begin{tabular}{@{}ccc@{}}
+                  1 & 1 & 1 \\
+                  0 & 1 & 1 \\
+                  0 & 0 & 1
+               \end{tabular}\right) =
+               \left(\begin{tabular}{@{}ccc@{}}
+                  1 & 1 & 0 \\
+                  0 & 1 & 0 \\
+                  0 & 0 & 1
+               \end{tabular}\right)
+               \left(\begin{tabular}{@{}ccc@{}}
+                  1 & 0 & 0 \\
+                  0 & 1 & 1 \\
+                  0 & 0 & 1
+               \end{tabular}\right).
+            \end{align*}
+      \item Using row reduction we find that
+            $X^{-1} = \left(\begin{tabular}{@{}crr@{}}
+               1 & $-a$ & $ac-b$ \\
+               0 & 1 & $-c$ \\
+               0 & 0 & 1
+            \end{tabular}\right) \in H(F)$, so that $H(F)$ is closed under
+            inverses.
+      \item Let $Z = \left(\begin{tabular}{@{}ccc@{}}
+               1 & $g$ & $h$ \\
+               0 & 1 & $i$ \\
+               0 & 0 & 1
+            \end{tabular}\right)$. Thus we have that
+            \begin{align*}
+               (XY)Z &= \left(\begin{tabular}{@{}ccc@{}}
+                  1 & $a+d$ & $af + b + e$ \\
+                  0 & 1 & $c+f$ \\
+                  0 & 0 & 1
+               \end{tabular}\right)\left(\begin{tabular}{@{}ccc@{}}
+                  1 & $g$ & $h$ \\
+                  0 & 1 & $i$ \\
+                  0 & 0 & 1
+               \end{tabular}\right) \\ &=
+               \left(\begin{tabular}{@{}ccc@{}}
+                  1 & $a+d+g$ & $af+ai+b+di+e+h$ \\
+                  0 & 1 & $c+f+i$ \\
+                  0 & 0 & 1
+            \end{tabular}\right) \\ &=
+            \left(\begin{tabular}{@{}ccc@{}}
+               1 & $a$ & $b$ \\
+               0 & 1 & $c$ \\
+               0 & 0 & 1
+            \end{tabular}\right)\left(\begin{tabular}{@{}ccc@{}}
+               1 & $d+g$ & $di+e+h$ \\
+               0 & 1 & $f+i$ \\
+               0 & 0 & 1
+            \end{tabular}\right) \\ &=
+            X(YZ).
+            \end{align*}
+            Hence $H(F)$ is associative under matrix multiplication. Since
+            $H(F)$ contains the 3 by 3 identity matrix, it follows by (a) and
+            (b) that $H(F)$ is a group. Since we have $|F|$ choices for each of 
+            $a$, $b$, and $c$, it follows that $|H(F)| = |F|^3$.
+      \item \textbf{Solution.}
+            \begin{center}
+               \begin{tabular}{@{}|c|c|@{}} \hline
+                  Matrix in $H(\Z/2\Z)$           & Order  \\ \hline            
+                  $\left(\begin{tabular}{@{}ccc@{}}
+                     1 & 0 & 0 \\
+                     0 & 1 & 0 \\
+                     0 & 0 & 1
+                  \end{tabular}\right)$            & 1      \\ \hline           
+                  $\left(\begin{tabular}{@{}ccc@{}}
+                     1 & 0 & 0 \\
+                     0 & 1 & 1 \\
+                     0 & 0 & 1
+                  \end{tabular}\right)$            & 2      \\ \hline           
+                  $\left(\begin{tabular}{@{}ccc@{}}
+                     1 & 0 & 1 \\
+                     0 & 1 & 0 \\
+                     0 & 0 & 1
+                  \end{tabular}\right)$            & 2      \\ \hline           
+                  $\left(\begin{tabular}{@{}ccc@{}}
+                     1 & 0 & 1 \\
+                     0 & 1 & 1 \\
+                     0 & 0 & 1
+                  \end{tabular}\right)$            & 2      \\ \hline           
+                  $\left(\begin{tabular}{@{}ccc@{}}
+                     1 & 1 & 0 \\
+                     0 & 1 & 0 \\
+                     0 & 0 & 1
+                  \end{tabular}\right)$            & 2      \\ \hline           
+                  $\left(\begin{tabular}{@{}ccc@{}}
+                     1 & 1 & 0 \\
+                     0 & 1 & 1 \\
+                     0 & 0 & 1
+                  \end{tabular}\right)$            & 4      \\ \hline         
+                  $\left(\begin{tabular}{@{}ccc@{}}
+                     1 & 1 & 1 \\
+                     0 & 1 & 0 \\
+                     0 & 0 & 1
+                  \end{tabular}\right)$            & 2      \\ \hline         
+                  $\left(\begin{tabular}{@{}ccc@{}}
+                     1 & 1 & 1 \\
+                     0 & 1 & 1 \\
+                     0 & 0 & 1
+                  \end{tabular}\right)$            & 4      \\ \hline
+               \end{tabular}
+            \end{center}
+      \item \textbf{Proof.} Let $X = \left(\begin{tabular}{@{}ccc@{}}
+               1 & $a$ & $b$ \\
+               0 & 1 & $c$ \\
+               0 & 0 & 1
+            \end{tabular}\right)$ be a nonidentity matrix in $H(\R)$. Also let
+            $P_n(i,j)$ denote the element in the $i$-th row and $j$-th column of
+            $X^n$. So we have the following three cases:
+
+            \textbf{Case 1.} $a \neq 0$. Notice that for every positive integer
+            $n$, $P_n(1,2) = na \neq 0$, so that $X^n$ is not the identity
+            element. Thus $|X| = \infty$.
+
+            \textbf{Case 2.} $c \neq 0$. Similarly $P_n(2,3) = nc \neq 0$, so 
+            that $X^n$ is not the identity element. Thus $|X| = \infty$.
+
+            \textbf{Case 3.} $b \neq 0$ and $a = c = 0$. Also
+            $P_n(1,3) = nb \neq 0$, so that $X^n$ is not the identity element. 
+            Thus $|X| = \infty$.
+
+            As we have shown above, every nonidentity element in $H(\R)$ is of
+            infinite order. \qed
+   \end{enumerate}
 \end{enumerate}
