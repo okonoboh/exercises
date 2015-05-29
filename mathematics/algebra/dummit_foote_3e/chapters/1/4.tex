@@ -67,15 +67,61 @@ Let $F$ be a field and let $n \in \Z^+$.
       also a subset of $GL_n(F)$. Thus $GL_n(F)$ is infinite, as desired. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.6]   If $|F| = q$ is finite prove that $|GL_n(F)| < q^{n^2}$.
+   
+      \textbf{Proof.} Let $M_n(F)$ be the set of all $n \times n$ matrices with
+      entries in $F$. Now we have that $|M_n(F)| = q^{n^2}$. Since $GL_n(F)$ is
+      a subset of $M_n(F)$ and since $GL_n(F)$ does not contain the zero matrix
+      it follows that $GL_n(F)$ is a proper subset of $M_n(F)$ so that
+      $|GL_n(F)| < |M_n(F)| = q^{n^2}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.7]   Let $p$ be a prime. Prove that the order of $GL_2(\F_p)$ is
                   $p^4 - p^3 - p^2 + p$.
+                  
+      \textbf{Proof.} We shall the use following fact from Linear Algebra: a
+      matrix with entries in a field is invertible if and only if its rows are
+      linearly independent. So it suffices to count the number of matrices with
+      independent rows. Since $|\F_p| = p$, it follows that there are $p^2$
+      possible row vectors in $GL_2(\F_p)$. To form an invertible matrix, we cannot choose the
+      zero vector, so there are $p^2 - 1$ choices for the first row.  Now two
+      vectors are linearly independent if and only they are not a multiple of
+      each other. Thus there are $p^2 - p$ for the second row. Thus 
+      $|GL_2(\F_p)| = (p^2 - 1)(p^2 - p) = p^4 - p^3 - p^2 + p$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.8]   Show that $GL_n(F)$ is non-abelian for any $n \ge 2$ and any
                   $F$.
+                  
+      \textbf{Proof.} Let $U_n$ be the $n \times n$ upper triangular matrix with
+      1s on and above the main diagonal; similarly, let $L_n$ be the
+      $n \times n$ lower triangular matrix with 1s on and below the main
+      diagonal. Since $U_n$ and $L_n$ are triangular matrices with 1s on their
+      main diagonals, it follows that $\det(U_n) = \det(L_n) = 1$, so that
+      $U_n, L_n \in G_n(F)$. Let $(a_{ij}) = U_n \cdot L_n$ and
+      $(b_{ij}) = L_n \cdot U_n$. We have that $a_{11} = n \neq 1 = b_{11}$ so
+      that $U_n$ and $L_n$ do not commute. Thus $G_n(F)$ is non-abelian. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.9]   Prove that the binary operation of matrix multiplication of
                   $2 \times 2$ matrices with real number entries is associative.
+                  
+      \textbf{Proof.} Let
+      $$X_1 = \left(\begin{tabular}{@{}cc@{}}
+         $a_1$ & $b_1$ \\
+         $c_1$ & $d_1$
+      \end{tabular}\right),
+      X_2 = \left(\begin{tabular}{@{}cc@{}}
+         $a_2$ & $b_2$ \\
+         $c_2$ & $d_2$
+      \end{tabular}\right), \text{ and }
+      X_3 = \left(\begin{tabular}{@{}cc@{}}
+         $a_3$ & $b_3$ \\
+         $c_3$ & $d_3$
+      \end{tabular}\right)$$
+      be real matrices. Then we have that
+      \begin{align*}
+         (X_1X_2)X_3 &= \left(\begin{tabular}{@{}cc@{}}
+         $a_1a_2 + b_1c_2$ & $b_1$ \\
+         $c_1$ & $d_1$
+      \end{tabular}\right)
+      \end{align*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.10]  Let $\left\{\left(\begin{tabular}{@{}cc@{}}
                      $a$ & $b$ \\
