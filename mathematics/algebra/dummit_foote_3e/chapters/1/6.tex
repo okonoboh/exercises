@@ -110,45 +110,132 @@ Let $G$ and $H$ be groups.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.6]   Prove that the additive groups of $\Z$ and $\Q$ are not
                   isomorphic.
+
+      \textbf{Proof.} First we shall show that $(\Q, +)$ is not cyclic. So
+      suppose that $(\Q, +) = \cyc{c}$. Thus there exists an integer $n$ such 
+      that $nc = \D\frac{c}{2}$, so that $\D n = \frac{1}{2}$, a contradiction. 
+      That is, $(\Q, +)$ is not cyclic. Now suppose to the contrary that
+      $\varphi : \Z \rightarrow \Q$ is a homomorphism from $(\Z, +)$ to
+      $(\Q, +)$. Let $q \in \Q$ and let $z$ be the unique preimage of $q$ under
+      $\varphi$. Thus
+      \begin{align*}
+         q &= \varphi(z) \\
+           &= \varphi(z \cdot 1) \\
+           &= z \cdot \varphi(1),  &[1.6.1(a)]
+      \end{align*}
+      so that $\Q = \cyc{\varphi(1)}$, a contradiction. Thus $(\Z, +)$ and
+      $(\Q, +)$ are not isomorphic. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.7]   Prove that $D_8$ and $Q_8$ are not isomorphic.
+
+      \textbf{Proof.} Since $D_8$ has exactly 5 elements of order 2 and $Q_8$
+      has exactly 1 element of order 2, it follows that these two groups are not
+      isomorphic. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.8]   Prove that if $n \neq m$, $S_n$ and $S_m$ are not isomorphic.
+
+      \textbf{Proof.} Let $n$ and $m$ be unequal positive integers so that
+      $n! \neq m!$; i.e $n! = |S_n| \neq |S_m| = m!$. Thus no bijective map can
+      exist between $S_n$ and $S_m$, so that these two groups are not
+      isomorphic. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.9]   Prove that $D_{24}$ and $S_4$ are not isomorphic.
+
+      \textbf{Proof.} Since $D_{24}$ has exactly 2 elements of order 4 and $S_4$
+      has exactly 6 elements of order 4, it follows that these two groups are
+      not isomorphic. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.10]  Fill in the details of the proof that the symmetric groups
-                  $S_{\triangle}$ and $S_{\Omega}$ are isomorphic if
+                  $S_\triangle$ and $S_\Omega$ are isomorphic if
                   $|\triangle| = |\Omega|$ as follows: let
                   $\theta : \triangle \rightarrow \Omega$ be a bijection. Define
-                  $$\varphi : S_{\triangle} \rightarrow S_{\Omega} \qquad
+                  $$\varphi : S_\triangle \rightarrow S_\Omega \qquad
                     \text{by} \qquad \varphi(\sigma) = \theta \circ \sigma \circ 
-                    \theta^{-1} \text{ for all } \sigma \in S_{\triangle}$$
+                    \theta^{-1} \text{ for all } \sigma \in S_\triangle$$
                   and prove the following:
                   \begin{enumerate}
                      \item $\varphi$ is well defined, that is, if $\sigma$ is a
                            permutation of $\triangle$ then
                            $\theta\circ\sigma\circ\theta^{-1}$ is a permutation
                            of $\Omega$.
-                     \item $\varphi$ is a bijection from $S_{\triangle}$ onto
-                           $S_{\Omega}$. [Find a 2-sided inverse for $\varphi$.]
+                     \item $\varphi$ is a bijection from $S_\triangle$ onto
+                           $S_\Omega$. [Find a 2-sided inverse for $\varphi$.]
                      \item $\varphi$ is a homomorphism, that is,
                            $\varphi(\sigma\circ\tau) =
                             \varphi(\sigma)\circ\varphi(\tau)$.
                   \end{enumerate}
                   Note the similarity to the \textit{change of basis} or
-                  \textit{similarity} transformations for matrices. 
+                  \textit{similarity} transformations for matrices.
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $\sigma \in S_\triangle$. Notice that
+               $\varphi(\sigma) = \theta\circ\sigma\circ\theta^{-1}$ maps
+               $\Omega$ into $\Omega$, and is also a bijecton since it is a
+               composition of bijective maps. Thus
+               $\varphi(\sigma) \in S_\Omega$, so that $\varphi$ is well
+               defined.
+         \item Consider the map
+               $$\alpha : S_\Omega \rightarrow S_\triangle \qquad
+                 \text{by} \qquad \alpha(\sigma) = \theta \circ \sigma^{-1} 
+                 \circ \theta^{-1} \text{ for all } \sigma \in S_\Omega.$$
+               A trivial computation will show us that $\varphi\circ\alpha$ is
+               the identity map on $S_\Omega$ and $\alpha\circ\varphi$ is the
+               identity map on $S_\triangle$. Thus $\varphi$ is a bijection.
+         \item Let $\sigma, \tau \in S_\triangle$. So
+               \begin{align*}
+                  \varphi(\sigma\circ\tau) &=
+                     \theta\circ\sigma\circ\tau\circ\theta^{-1} \\
+                     &= \theta\circ\sigma\circ\theta^{-1}\circ\theta\circ
+                        \tau\circ\theta^{-1} \\
+                     &= \varphi(\sigma) \circ \varphi(\tau),
+               \end{align*}
+               as desired.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.11]  Let $A$ and $B$ be groups. Prove that
                   $A \times B \cong B\times A$.
+
+      \textbf{Proof.} Consider the map $f : A \times B \rightarrow B \times A$,
+      $(a, b) \mapsto (b, a)$. Now define
+      $$g : B \times A\rightarrow A\times B, \quad (b, a) \mapsto (a, b).$$
+      So $f$ is bijective since $g$ is its two-sided inverse. Now $f$ is a
+      homomorphism because
+      \begin{align*}
+         f((a_1, b_1)(a_2, b_2)) &= f((a_1a_2, b_1b_2)) \\
+            &= (b_1b_2, a_1a_2) \\
+            &= (b_1, a_1)(b_2, a_2) \\
+            &= f((a_1, b_1))f((a_2, b_2)).
+      \end{align*} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.12]  Let $A$, $B$, and $C$ be groups and let $G = A \times B$ and
                   $H = B \times C$. Prove that $G \times C \cong A \times H$.
+
+      \textbf{Proof.} Proceed as we did in Exercise 1.6.11 with the following
+      modification:
+      $$f : G \times C \rightarrow A \times H,
+        \quad((a, b), c) \mapsto (a, (b, c))$$ and 
+      $$g : A \times H\rightarrow G\times C,
+        \quad (a, (b, c)) \mapsto ((a, b), c).$$ \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.13]  Let $G$ and $H$ be groups and let $\varphi : G \rightarrow H$
                   be a homomorphism. Prove that the image of $\varphi$,
                   $\varphi(G)$, is a subgroup of $H$. Prove that if $\varphi$ is
                   injective then $G \cong \varphi(G)$.
+
+      \textbf{Proof.} The set $\varphi(G)$ is nonempty since it contains
+      $\varphi(1) = 1$. So let $h_1, h_2 \in \varphi(G)$. Thus there exist
+      $g_1, g_2 \in G$ such that $\varphi(g_1) = h_1$ and $\varphi(g_2) = h_2$. 
+      So
+      $$\varphi(g_1g_2^{-1}) = \varphi(g_1)\varphi(g_2)^{-1} = h_1h_2^{-1} \in
+        \varphi(G).$$
+      That is $\varphi(G)$ is a subgroup of $H$. Now suppose that $\varphi$ is
+      injective and consider the map $\alpha : G \rightarrow \varphi(G)$,
+      $g \mapsto \varphi(g)$. Since $\varphi$ is an injective homomorphism, it
+      follows that $\alpha$ is also an injective homomorphism. Also it is clear
+      that $\alpha$ is onto. Thus $\alpha$ is an isomorphism and we have that
+      $G \cong \varphi(G)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.14]  Let $G$ and $H$ be groups and let $\varphi : G \rightarrow H$
                   be a homomorphism. Define the \text{kernel} of $\varphi$ to be
