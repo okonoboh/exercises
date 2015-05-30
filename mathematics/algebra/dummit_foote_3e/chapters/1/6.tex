@@ -8,24 +8,105 @@ Let $G$ and $H$ be groups.
                      \item Do part (a) for $n = -1$ and deduce that
                            $\varphi(x^n) = \varphi(x)^n$ for all $n \in \Z$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} We shall proceed by induction on $n$. It is clear
+               that $\varphi(x^1) = \varphi(x)^1$. Now suppose that
+               $\varphi(x^k) = \varphi(x)^k$ for some integer $k$. Thus
+               \begin{align*}
+                  \varphi(x^{k+1}) &= \varphi(x^kx) \\
+                     &= \varphi(x^k)\varphi(x)
+                        &[\varphi\text{ is a homomorphism}] \\
+                     &= \varphi(x)^k\varphi(x) &[\text{Inductive hypothesis}] \\
+                     &= \varphi(x)^{k+1},
+               \end{align*}
+               so that, by Mathematical Induction, $\varphi(x^n) = \varphi(x)^n$ 
+               for all $n \in \Z^+$. \qed
+         \item Since
+               $$1 \cdot \varphi(1) = \varphi(1) = \varphi(1 \cdot 1) =
+                 \varphi(1)\cdot\varphi(1),$$
+               it follows by cancellation that $\varphi(1) = 1$. Thus
+               $$\varphi(x)\varphi(x^{-1}) = \varphi(xx^{-1}) =\varphi(1) = 1,$$
+               so that $\varphi(x^{-1}) = \varphi(x)^{-1}$. Now let $n$ be a
+               positive integer. Then it follows that
+               \begin{align*}
+                  \varphi(x^{-n}) &= \varphi((x^{-1})^n) \\
+                     &= \varphi(x^{-1})^n &[\text{1.6.1(a)}] \\
+                     &= (\varphi(x)^{-1})^n \\
+                     &= \varphi(x)^{-n}.
+               \end{align*}
+               Moreover $\varphi(x^0) = 1 = \varphi(x)^0$; thus we can conclude 
+               that $\varphi(x^n) = \varphi(x)^n$ for all $n \in \Z$.
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.2]   If $\varphi : G \rightarrow H$ is an isomorphism, prove that
                   $|\varphi(x)| = |x|$ for all $x \in G$. Deduce that any two
                   isomorphic groups have the same number of elements of order
                   $n$ for each $n \in \Z^+$. Is the result true if $\varphi$ is
                   only assumed to be a homomorphism?
+
+      \textbf{Proof.} Assume that $\varphi : G \rightarrow H$ is a group
+      isomorphism. Let $x \in G$. Suppose $|x| = n$. By the preceding exercise, 
+      we have that $\varphi(x)^n = \varphi(x^n) = \varphi(1) = 1$, so that
+      $|\varphi(x)| \le n$. Now suppose that $|\varphi(x)| = m < n$. Then we
+      must have that $\varphi(1) = 1 = \varphi(x)^m = \varphi(x^m)$. That is,
+      $x^m = 1$ (since $\varphi$ is injective), a contradiction since $|x| = n$.
+      Thus $|\varphi(x)| = |x| = n$. Finally suppose that $|x| = \infty$ and
+      $|\varphi(x)| = r < \infty$. Then, as previously argued, we must have
+      that $x^r = 1$, a contradiction. Thus if $y \in G$, it must follow that
+      $|y| = |\varphi(y)|$. \qed
+
+      For a positive integer $n$, we can now exhibit a bijection (using
+      $\varphi$) between the elements of $G$ of order $n$ and the elements of
+      $H$ of order $n$. Thus any two isomorphic groups must have the same number 
+      of elements of order $n$ for each $n \in \Z^+$. If $\varphi$ is only 
+      assumed to be a homomorphism then the result is not generally true. 
+      Consider the homomorphism
+      $$\alpha : S_3 \rightarrow \{1\}.$$
+      Although $S_3$ has an element of order 2, the trivial group $\{1\}$ has no 
+      element of order 2.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.3]   If $\varphi : G \rightarrow H$ is an isomorphism, prove that
                   $G$ is abelian if and only if $H$ is abelian. If
                   $\varphi : G \rightarrow H$ is a homomorphism, what additional
                   conditions on $\varphi$ (if any) are sufficient to ensure that
                   if $G$ is abelian, then so is $H$?
+
+      \textbf{Proof.} Suppose $\varphi : G \rightarrow H$ is an isomorphism.
+
+      ($\Rightarrow$) Assume $G$ is abelian. Consider $h_1$ and $h_2$ in $H$.
+      Since $\varphi$ is surjective, there exist $g_1$, $g_2 \in G$ such that
+      $\varphi(g_1) = h_1$ and $\varphi(g_2) = h_2$. Since $G$ is abelian, we
+      have that
+      $$h_1h_2 = \varphi(g_1)\varphi(g_2) = \varphi(g_1g_2) = \varphi(g_2g_1) = 
+        \varphi(g_2)\varphi(g_1) = h_2h_1,$$
+      so that $H$ is also abelian.
+
+      ($\Rightarrow$) Now assume that $H$ is abelian. Consider $g_3$ and $g_4$ 
+      in $G$. Since $H$ is abelian, we have that
+      $$\varphi(g_3g_4) = \varphi(g_3)\varphi(g_4) = \varphi(g_4)\varphi(g_3) =
+        \varphi(g_4g_3).$$
+      We thus conclude that $g_3g_4 = g_4g_3$ since $\varphi$ is injective. That
+      is, $G$ is abelian. \qed
+
+      Finally suppose $\varphi$ is an homomorphism and $G$ is abelian. Looking
+      at the first direction of our proof above, we see that restricting
+      $\varphi$ to be surjective is sufficient to make $H$ abelian.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.4]   Prove that the multiplicative groups $\R - \{0\}$ and
                   $\C - \{0\}$ are not isomorphic.
+
+      \textbf{Proof.} Since $\R - \{0\}$ has no element of order 4, and since
+      $\C - \{0\}$ has 2 elements ($i$ and $-i$) of order 4, it follows that
+      these two multiplicative groups are not isomorphic. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.5]   Prove that the additive groups of $\R$ and $\Q$ are not
                   isomorphic.
+
+      \textbf{Proof.} Since $|\R| \neq |\Q|$, it follows that $(\R, +)$ and
+      $(\Q, +)$ are not isomorphic. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.6]   Prove that the additive groups of $\Z$ and $\Q$ are not
                   isomorphic.
