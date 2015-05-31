@@ -243,29 +243,114 @@ Let $G$ and $H$ be groups.
                   $\varphi$ is a subgroup of $G$. Prove that $\varphi$ is
                   injective if and only if the kernel of $\varphi$ is the
                   identity subgroup of $G$.
+
+      \textbf{Proof 1.} Let ker($\varphi$) be the kernel of $\varphi$. The set
+      ker($\varphi$) is not empty because $1_G \in \text{ker}(\varphi)$. Now let
+      $x, y \in \text{ker}(\varphi)$. Then we have that
+      $$\varphi(xy^{-1}) = \varphi(x)\varphi(y)^{-1} = 1_H{1_H}^{-1} = 1_H,$$
+      so that $xy^{-1} \in \text{ker}(\varphi)$. That is ker($\varphi$) is a
+      subgroup of $G$. \qed
+
+      \textbf{Proof 2.} ($\Rightarrow$) Assume that $\varphi$ is injective. Let
+      $x \in \text{ker}(\varphi)$. Thus we have that
+      $\varphi(1_G) = \varphi(x) = 1_H$, so that $x = 1_G$ since $\varphi$ is
+      one to one. That is ker($\varphi$) = $\{1_G\}$, the identity subgroup of
+      $G$.
+
+      ($\Leftarrow$) Assume that ker($\varphi$) = $\{1_G\}$. Suppose that
+      $\varphi(g_1) = \varphi(g_2)$ for some $g_1, g_2 \in G$. Then it follows
+      that $\varphi(g_1)\varphi(g_2)^{-1} = 1_H$, so that
+      $\varphi(g_1{g_2}^{-1}) = 1_H$. Since ker($\varphi$) = $\{1_G\}$, we can
+      conclude that $g_1{g_2}^{-1} = 1_G$, so that $g_1 = g_2$; i.e., $\varphi$
+      is injective. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.15]  Define a map $\pi : \R^2 \rightarrow \R$ by $\pi((x, y)) = x$.
                   Prove that $\pi$ is a homomorphism and find the kernel of
                   $\pi$.
+
+      \textbf{Proof.} Let $(a, b), (c, d) \in \R^2$. Then it follows immediately
+      that $\pi$ is a homomorphism since
+      $$\pi((a, b) + (c, d)) = \pi((a + c, b + d)) =
+         a + c = \pi(a, b) + \pi(c, d).$$
+      The kernel of $\pi$ is the set $\{(0, y) : y \in \R\}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.16]  Let $A$ and $B$ be groups and let $G$ be their direct product,
                   $A \times B$. Prove that the maps $\pi_1 : G \rightarrow A$
                   and $\pi_2 : G \rightarrow B$ defined by $\pi_1((a, b)) = a$
                   and $\pi_2((a, b)) = b$ are homomorphisms and find their
                   kernels.
+
+      \textbf{Proof.} Let $(a_1, b_1), (a_2, b_2) \in G$. Then it follows 
+      immediately that $\pi_1$ and $\pi_2$ are homomorphisms since
+      $$\pi_1((a_1, b_1)(a_2, b_2)) = \pi_1((a_1a_2, b_1b_2)) =
+         a_1a_2 = \pi_1(a_1, b_1)\pi(a_2, b_2)$$
+      and
+      $$\pi_2((a_1, b_1)(a_2, b_2)) = \pi_2((a_1a_2, b_1b_2)) =
+         b_1b_2 = \pi_1(a_1, b_1)\pi(a_2, b_2).$$
+      The kernel of $\pi_1 = \{(1, b) : b \in B\}$ and
+      the kernel of $\pi_2 = \{(a, 1) : a \in A\}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.17]  Let $G$ be any group. Prove that the map from $G$ to itself
                   defined by $g \mapsto g^{-1}$ is a homomorphism if and only if
                   $G$ is abelian.
+
+      \textbf{Proof.} Let $x, y \in G$. Consider the map
+      $\alpha : G \rightarrow G$, $g \mapsto g^{-1}$. 
+
+      ($\Leftarrow$) Assume that $G$ is abelian. Then it
+      follows that
+      \begin{align*}
+         \alpha(xy) &= (xy)^{-1} \\
+            &= y^{-1}x^{-1} \\
+            &= x^{-1}y^{-1} &[G \text{ is abelian}] \\
+            &= \alpha(x)\alpha(y),
+      \end{align*}
+      so that $\alpha$ is a homomorphism.
+
+      ($\Rightarrow$) Assume that $\alpha$ is a homomorphism. Then it
+      follows that
+      \begin{align*}
+         xy &= \alpha(x^{-1})\alpha(y^{-1}) \\
+            &= \alpha(x^{-1}y^{-1}) \\
+            &= \alpha((yx)^{-1}) \\
+            &= yx,
+      \end{align*}
+      so that $G$ is abelian. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.18]  Let $G$ be any group. Prove that the map from $G$ to itself
                   defined by $g \mapsto g^2$ is a homomorphism if and only if
                   $G$ is abelian.
+
+      \textbf{Proof.} Let $x, y \in G$. Consider the map
+      $\alpha : G \rightarrow G$, $g \mapsto g^2$. 
+
+      ($\Leftarrow$) Assume that $G$ is abelian. Then it
+      follows that
+      \begin{align*}
+         \alpha(xy) &= (xy)^2 \\
+            &= x^2y^2 &[G \text{ is abelian}] \\
+            &= \alpha(x)\alpha(y),
+      \end{align*}
+      so that $\alpha$ is a homomorphism.
+
+      ($\Rightarrow$) Assume that $\alpha$ is a homomorphism. Then it
+      follows that
+      \begin{align*}
+         x^2y^2 &= \alpha(x)\alpha(y) \\
+            &= \alpha(xy) \\
+            &= (xy)^2 \\
+            &= xyxy,
+      \end{align*}
+      so that $xxyy = xyxy$. By cancellation we thus have $xy = yx$; i.e, $G$ is
+      abelian. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.19]  Let $G = \{z \in \C : z^n = 1 \text{ for some }n \in \Z^+\}$.
                   Prove that for any fixed integer $k > 1$ the map from $G$ to
                   itself defined by $z \mapsto z^k$ is a surjective homomorphism
                   but is not an isomorphism.
+
+      \textbf{Proof.} Consider an integer $k > 1$ and the map
+      $\alpha : G \rightarrow G$, $g \mapsto g^k$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.20]  Let $G$ be a group and let Aut($G$) be the set of all
                   isomorphisms from $G$ onto $G$. Prove that Aut($G$) is a
