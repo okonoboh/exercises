@@ -350,22 +350,66 @@ Let $G$ and $H$ be groups.
                   but is not an isomorphism.
 
       \textbf{Proof.} Consider an integer $k > 1$ and the map
-      $\alpha : G \rightarrow G$, $g \mapsto g^k$.
+      $\alpha : G \rightarrow G$, $g \mapsto g^k$. Let $x, y \in G$. The map
+      $\alpha$ is a homomorphism since
+      $\alpha(xy) = (xy)^k = x^ky^k = \alpha(x)\alpha(y)$. Since $x \in G$, it
+      follows that $x^m = 1$ for some positive integer $m$. Notice that
+      $x^{1/k} \in G$ since $(x^{1/k})^{km} = 1$. Thus $\alpha$ is onto because
+      $\alpha(x^{1/k}) = x$. Now consider the complex number
+      $e^{2\pi/k} = \cos2\pi/k + i \sin2\pi/k$. Notice that $e^{2\pi/k} \in G$
+      since $(e^{2\pi/k})^k = 1$. Also notice that $e^{2\pi/k} \neq 1$ (since
+      $2\pi/k$ is not a multiple of $2\pi$), but we have that
+      $\alpha(e^{2\pi/k}) = \alpha(1) = 1$, so that $\alpha$ is not injective; 
+      i.e, $\alpha$ is not an isomorphism. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.20]  Let $G$ be a group and let Aut($G$) be the set of all
                   isomorphisms from $G$ onto $G$. Prove that Aut($G$) is a
                   group under function composition (called the
                   \text{automorphism group} of $G$ and the elements of Aut($G$)
                   are called \text{automorphisms} of $G$).
+
+      \textbf{Proof.}
+
+      \textbf{Closure.} Let $\alpha, \gamma \in \text{Aut}(G)$. Since the
+      composition of two bijective functions is also bijective, it follows that
+      $\alpha \circ \gamma$ is bijective. Now let $x, y \in G$. It follows that
+      $$(\alpha\circ\gamma)(xy) = \alpha(\gamma(xy)) =
+         \alpha(\gamma(x)\gamma(y)) = \alpha(\gamma(x))\alpha(\gamma(y)) =
+         ((\alpha\circ\gamma)(x))((\alpha\circ\gamma)(y)),$$
+      so that $\alpha\circ\gamma)$ is also an isomorphism on $G$, and thus,
+      Aut($G$) is closed.
+
+      \textbf{Associativity.} This follows from the associativity of functions.
+
+      \textbf{Identity.} The identity map is the identity of Aut($G$).
+
+      \textbf{Inverse.} Since every map in Aut($G$) is bijective, it follows 
+      that every map has a 2-sided inverse.
+
+      Thus we have shown that Aut($G$) is a group under composition. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.21]  Prove that for each fixed nonzero $k \in \Q$ the map from $\Q$
                   to itself defined by $q \mapsto kq$ is an automorphism of
                   $\Q$.
+
+      \textbf{Proof.} Let $k$ be a nonzero rational number. Consider the map
+      $f : \Q \rightarrow \Q$, $q \mapsto kq$. Let $x, y \in Q$. We have that
+      $f(x + y) = k(x + y) = kx + ky = f(x) + f(y)$, so that $f$ is a 
+      homomorphism. Now suppose $f(x) = f(y)$, so that $kx = ky$. Since
+      $k \neq 0$, we shall multiply the equality $kx = ky$ by $1/k$ to get
+      $x = y$; i.e, $f$ is injective. Since $f(x/k) = x$, it follows that $f$ is
+      onto, so that $f$ is an automorphism of $\Q$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.22]  Let $A$ be an abelian group and fix some $k \in \Z$. Prove
                   that the map $a \mapsto a^k$ is a homomorphism from $A$ to 
                   itself. If $k = -1$ prove that this homomorphism is an
                   isomorphism.
+
+      \textbf{Proof.} Let $k$ be an integer, $x, y \in A$. Consider the map
+      $f : A \rightarrow A$, $a \mapsto a^k$. Since $A$ is abelian we have that
+      have that $f(xy) = (xy)^k = x^ky^k = f(x)f(y)$, so that $f$ is a 
+      homomorphism. Noe assume that $k = -1$. In this case, notice that the
+      map $f$ is also the 2-sided inverse of $f$; thus $f$ is bijective, so that $f$ is an isomorphism. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.23]  Let $G$ be a finite group which possesses an automorphism
                   $\sigma$ such that $\sigma(g) = g$ if and only if $g = 1$. If
@@ -414,7 +458,7 @@ Let $G$ and $H$ be groups.
                         $\sqrt{-1}$ & 0 \\
                         0         &  $-\sqrt{-1}$
                     \end{tabular}\right) \qquad \text{and} \qquad
-                    \varphi(j) = \left(\begin{tabular}{@{}cc@{}}
+                    \varphi(j) = \left(\begin{tabular}{@{}cr@{}}
                         0 & $-1$ \\
                         1 & 0
                     \end{tabular}\right)$$
