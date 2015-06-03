@@ -418,6 +418,19 @@ Let $G$ and $H$ be groups.
                   \text{fixed point free} of order 2). [Hint. Show that every
                   element of $G$ can be written in the form $x^{-1}\sigma(x)$
                   and apply $\sigma$ to such an expression.]
+
+      \textbf{Proof.} Consider the map $\alpha : G \rightarrow G$,
+      $g \mapsto g^{-1}\sigma(g)$. Suppose that for some $x, y \in G$, we have
+      that $\alpha(x) = \alpha(y)$. Then it follows that
+      $x^{-1}\sigma(x) = y^{-1}\sigma(y)$, so that
+      $yx^{-1} =\nobreak \sigma(y)\sigma(x)^{-1} = \sigma(yx^{-1})$. Since
+      $\sigma(g) = g$ if and only if $g = 1$, we must then have that
+      $yx^{-1} = 1$; thus $y = x$, so that $\alpha$ is injective; $\alpha$ is
+      also surjective since $G$ is finite. So let $z \in G$. Then we must have 
+      that $z = h^{-1}\sigma(h)$ for some $h \in G$. So
+      $\sigma(z) = \sigma(h^{-1}\sigma(h)) = \sigma(h)^{-1}\sigma^2(h) =
+       \sigma(h)^{-1}h = z^{-1}$. We can then conclude by Exercise 1.6.17 that
+      $G$ is abelian. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.24]  Let $G$ be a finite group and let $x$ and $y$ be distinct
                   elements of order 2 in $G$ that generate $G$. Prove that
