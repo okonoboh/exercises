@@ -435,6 +435,15 @@ Let $G$ and $H$ be groups.
    \item[1.6.24]  Let $G$ be a finite group and let $x$ and $y$ be distinct
                   elements of order 2 in $G$ that generate $G$. Prove that
                   $G \cong D_{2n}$, where $n = |xy|$. [See Exercise 1.2.6]
+                  
+      \textbf{Proof.} Let $a = xy$. Since $G$ is finite, $|a|$ must also be
+      finite. So write $|a| = n$. By Exercise 1.2.6, we have that
+      $ax = xa^{-1}$. Also note since $y = x^2y = x(xy) = xa$, the elements
+      $a$ and $x$ generate $G$. Thus we have that
+      $$G = \cyc{a, x : a^n = x^2 = 1, ax = xa^{-1}}.$$
+      By the discussion on Page 38-39 of the Textbook, the map
+      $\varphi : D_{2n} \rightarrow G$, given by $\varphi(r) = a$ and
+      $\varphi(s) = x$ is an isomorphism. Hence $G \cong D_{2n}$. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.25]  Let $n \in \Z^+$, let $r$ and $s$ be the usual generators of
                   $D_{2n}$ and let $\theta = 2\pi/n$.
@@ -463,6 +472,33 @@ Let $G$ and $H$ be groups.
                      \item Prove that the homomorphism $\varphi$ in part (b) is
                            injective.
                   \end{enumerate}
+                  
+      \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item Consider $T_\theta : \R^2 \rightarrow \R^2$,
+               $(x, y) \mapsto (x\cos\theta - y\sin\theta,
+               x\sin\theta + y\cos\theta)$, the linear transformation which
+               rotates the cartesian plane about the origin in a
+               counterclockwise direction by $\theta$ radians. Consider the
+               standard basis $\{(1, 0), (0, 1)\}$ for $\R^2$. A simple
+               calculation will show us that the matrix of $T_\theta$ with
+               respect to the standard basis is $\left(\begin{tabular}{@{}cr@{}}
+                  $\cos\theta$ & $-\sin\theta$ \\
+                  $\sin\theta$ & $\cos\theta$
+               \end{tabular}\right)$. 
+         \item It suffices to show that $\varphi(r)$ and $\varphi(s)$ satisfy
+               (in $GL_2(\R)$) the relations satisfied by $r$ and $s$
+               (in $D_{2n}$). It is clear that $\varphi(s)^2$ is the identity
+               matrix. Also $\varphi(r)^n$ is the identity matrix because the
+               least (positive) number of rotations we need to get back to the
+               starting point is $n$. Finally we have that
+               $$\varphi(r)\varphi(s) = \left(\begin{tabular}{@{}rc@{}}
+                  $-\sin\theta$ & $\cos\theta$ \\
+                  $\cos\theta$ & $\sin\theta$
+               \end{tabular}\right) = \varphi(s)\varphi(r)^{-1},$$
+               as desired. 
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.26]  Let $i$ and $j$ be the generators of $Q_8$ described in
                   Section 5. Prove that the map $\varphi$ from $Q_8$ to
