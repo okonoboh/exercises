@@ -409,7 +409,8 @@ Let $G$ and $H$ be groups.
       $f : A \rightarrow A$, $a \mapsto a^k$. Since $A$ is abelian we have that
       have that $f(xy) = (xy)^k = x^ky^k = f(x)f(y)$, so that $f$ is a 
       homomorphism. Noe assume that $k = -1$. In this case, notice that the
-      map $f$ is also the 2-sided inverse of $f$; thus $f$ is bijective, so that $f$ is an isomorphism. \qed
+      map $f$ is also the 2-sided inverse of $f$; thus $f$ is bijective, so that
+      $f$ is an isomorphism. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.23]  Let $G$ be a finite group which possesses an automorphism
                   $\sigma$ such that $\sigma(g) = g$ if and only if $g = 1$. If
@@ -497,7 +498,42 @@ Let $G$ and $H$ be groups.
                   $-\sin\theta$ & $\cos\theta$ \\
                   $\cos\theta$ & $\sin\theta$
                \end{tabular}\right) = \varphi(s)\varphi(r)^{-1},$$
-               as desired. 
+               as desired.
+         \item First note that (using induction)
+               $$\varphi(r^p) = \left(\begin{tabular}{@{}cr@{}}
+                  $\cos p\theta$ & $-\sin p\theta$ \\
+                  $\sin p\theta$ & $\cos p\theta$
+               \end{tabular}\right) \qquad \text{for all } p \in \Z.$$
+               Now suppose that $\varphi(r^is^j) = \varphi(r^xs^y)$. That is,
+               $\varphi(r^i)\varphi(s^j) = \varphi(r^x)\varphi(s^y)$, so that
+               $\varphi(r^{i-x}) = \varphi(s^{y-j})$.
+
+               \textbf{Case 1.} $y - j \equiv 0$ mod 2. That is $s^y = s^j$,
+               so that $$\left(\begin{tabular}{@{}cr@{}}
+                  $\cos [(i-x)\theta]$ & $-\sin[(i-x)\theta]$ \\
+                  $\sin[(i-x)\theta]$ & $\cos[(i-x)\theta]$
+               \end{tabular}\right) = \varphi(r^{i-x}) = \varphi(s^{y-j}) =
+               \varphi(1) = \left(\begin{tabular}{@{}cc@{}}
+                  1 & 0 \\
+                  0 & 1
+               \end{tabular}\right).$$
+               It follows that $(i - x)\theta = 2\pi k$ for some integer $k$.
+               Recall that $\theta = 2\pi/n$; thus $i - x = nk$ and we have that
+               $r^{i-x} = r^{nk} = 1$, so we can conclude that $r^i = r^x$. We
+               have thus shown that $r^is^j = r^xs^y$.
+
+               \textbf{Case 2.} $y - j \equiv 1$ mod 2. Now
+               $$\left(\begin{tabular}{@{}cr@{}}
+                  $\cos [(i-x)\theta]$ & $-\sin[(i-x)\theta]$ \\
+                  $\sin[(i-x)\theta]$ & $\cos[(i-x)\theta]$
+               \end{tabular}\right) = \varphi(r^{i-x}) = \varphi(s^{y-j}) =
+               \varphi(s) = \left(\begin{tabular}{@{}cc@{}}
+                  0 & 1 \\
+                  1 & 0
+               \end{tabular}\right),$$
+               a contradiction because $-1 = \sin[(i-x)\theta] = 1$. Hence the
+               only possibility is Case 1, wherein we showed that
+               $r^is^j = r^xs^y$, so that $\varphi$ is injective.
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.6.26]  Let $i$ and $j$ be the generators of $Q_8$ described in
