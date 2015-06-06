@@ -548,4 +548,17 @@ Let $G$ and $H$ be groups.
                         1 & 0
                     \end{tabular}\right)$$
                   extends to a homomorphism. Prove that $\varphi$ is injective.
+
+      \textbf{Proof.} To show that $\varphi$ extends to an homomorphism, it
+      suffices to show that $\varphi(i)$ and $\varphi(j)$ satisfy
+      (in $GL_2(\C)$) the relations satisfied by $i$ and $j$ (in $Q_8$). Using
+      Exercise 1.5.3, we must then show that $\varphi(i)^2 = \varphi(j)^2$ and
+      $\varphi(i)^4 = 1$. These equalities immediately follow using matrix
+      multiplication. Now suppose that $\varphi(i^xj^y) = \varphi(i^mj^n$). Then
+      it follows that $\varphi(i)^{x-m} = \varphi(j)^{n-y}$. Notice that
+      $|\varphi(i)| = |\varphi(j)| = 4$ and that $\varphi(i)^p = \varphi(j)^q$
+      if and only if $p \equiv q \equiv 2$ (or 0) mod 4. So we must have that
+      $x - m \equiv n - y \equiv 2 $ (or 0) mod 4. In either case, it follows
+      that $i^{x - m} = j^{n - y}$. That is $i^xj^y = i^mj^n$, so that
+      $\varphi$ is injective. \qed
 \end{enumerate}
