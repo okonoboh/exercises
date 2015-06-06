@@ -6,12 +6,41 @@
                   $a \in F$ and $ga$ is the usual product in $F$ of the two
                   field elements (state clearly which axioms in the definition
                   of a field are used).
+
+      \textbf{Proof.} Let $f_1, f_2 \in F^\times$ and $f_3 \in F$. It is clear
+      that $f_1f_3 \in F$ because $F$ is closed under multiplication. Since 1 is
+      is the identity for $(F^\times, \cdot)$, we have that $1 \cdot f_3 = f_3$.
+      By the associativity of multiplication in $F$, it follows that
+      $f_1(f_2f_3) = (f_1f_2)f_3$. Thus $F^\times$ acts on $F$ by
+      multiplication. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.2]   Show that the additive group $\Z$ acts on itself by
                   $z \cdot a = z + a$ for all $z, a \in \Z$.
+
+      \textbf{Proof.} Let $z_1$, $z_2$, and $z_3$ be integers. Clearly
+      $z_1 \cdot z_3 = z_1 + z_3 \in \Z$. Notice that the identity of $(\Z, +)$ 
+      is 0; thus $z_1 \cdot 0 = z_1 + 0 = z_1$. Using the associativity of $\Z$ 
+      under +, we have that
+      $$z_1 \cdot (z_2 \cdot z_3) = z_1 + (z_2 + z_3) = (z_1 + z_2) + z_3 =
+      (z_1 \cdot z_2) \cdot z_3.$$
+      Thus $\Z$ acts on itself by the given operation. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.3]   Show that the additive group $\R$ acts on the $x, y$ plane
                   $\R \times \R$ by $r \cdot (x, y) = (x + ry, y)$.
+
+      \textbf{Proof.} Let $r_1$, $r_2$, $r_3$, and $r_4$ be real numbers. Since
+      $\R$ is closed under addition, we have that
+      $r_1 \cdot (r_2, r_3) = (r_2 + r_1r_3, r_3) \in \R \times \R$. We also
+      have that
+      $$0 \cdot (r_1, r_2) = (r_1 + 0 \cdot r_2, r_2) = (r_1, r_2).$$
+      Finally we have that
+      \begin{align*}
+         r_1 \cdot (r_2 \cdot (r_3, r_4)) &= r_1 \cdot (r_3 + r_2r_4, r_4) \\
+            &= (r_3 + r_2r_4 + r_1r_4, r_4) \\
+            &= (r_3 + (r_2 + r_1)r_4, r_4) \\
+            &= (r_2 + r_1) \cdot (r_3, r_4), \\
+      \end{align*}
+      so that $\R$ acts on the cartesian plane by the given operation. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.4]   Let $G$ be a group acting on a set $A$ and fix some $a \in A$.
                   Show that the following sets are subgroups of $G$.
@@ -20,10 +49,40 @@
                      \item $\{g \in G : ga = a\}$---this subgroup is called the
                            \textit{stablizer} of $a$ in $G$.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $K$ be the kernel of this action. The set $K$ is not empty
+               because $1 \in K$. Now let $g, h \in K$ and $a_1 \in A$. So we
+               have that
+               \begin{align*}
+                  (gh^{-1})a_1 &= g(h^{-1}a_1) \\
+                     &= g(h^{-1}(ha_1)) &[ha_1 = a_1] \\
+                     &= g((h^{-1}h)a_1) \\
+                     & = g(1a_1) = ga_1 = a_1.
+               \end{align*}
+
+               Thus $gh^{-1} \in K$, so that $K$ is a subgroup of $G$.
+
+         \item Let $G_a$ be the stabilizer of $a$. Argue similarly as in (a),
+               replacing $a_1$ with $a$, to conclude that $G_a$ is a subgroup of
+               $G$.
+      \end{enumerate}  \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.5]   Prove that the kernel of an action of the group $G$ on the set
                   $A$ is the same as the kernel of the corresponding permutation
                   representation $G \rightarrow S_A$.
+
+      \textbf{Proof.} Let $K_1$ be the kernel of the action of $G$ on $A$ and
+      let $K_2$ be the kernel of the permutation representation
+      $\varphi : G \rightarrow S_A$. The proof follows since
+      \begin{align*}
+         g \in K_1 &\Longleftrightarrow ga = a \quad\text{ for all } a \in A \\
+            &\Longleftrightarrow \varphi(g)(a)=a\quad\text{ for all } a\in A \\
+            &\Longleftrightarrow \varphi(g) = 1 \\
+            &\Longleftrightarrow g \in K_2.
+      \end{align*} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.6]   Prove that a group $G$ acts faithfully on a set $A$ if and
                   only if the kernel of the action is the set consisting only of
