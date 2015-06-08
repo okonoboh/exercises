@@ -87,9 +87,38 @@
    \item[1.7.6]   Prove that a group $G$ acts faithfully on a set $A$ if and
                   only if the kernel of the action is the set consisting only of
                   the identity.
+
+      \textbf{Proof.} Let $\varphi : G \rightarrow S_A$ be the corresponding 
+      permutation representation.
+
+      ($\Rightarrow$) Assume that $G$ acts faithfully on $A$. Let $g$ be an
+      element of the kernel of this action. Then it follows that
+      $\varphi(g) = 1$; but $\varphi$ is injective (since this action is
+      faithul), so that $g = 1$, and it follows that the kernel of the action is
+      trivial.
+
+      ($\Leftarrow$) Conversely, suppose the kernel of this action is trivial.
+      Then it follows by Exercise 1.7.5 that the kernel of $\varphi$ is also
+      trivial. So suppose that $\varphi(g_2) = \varphi(g_3)$. Then we have
+      that $\varphi(g_2{g_3}^{-1}) = 1$, and since the kernel of $\varphi$ is 
+      trivial, it follows that $g_2{g_3}^{-1} = 1$. Thus $g_2 = g_3$ and we
+      have that $\varphi$ is injective; that is, $G$ acts faithfully on $A$.
+      \qed
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.7]   Prove that in Example 2 in this section the action is
-                  faithful.
+                  faithful when the vector space is nonzero.
+
+      \textbf{Proof.} Consider a nonzero vector space $V$ over $F$. Let
+      $F^\times$ act on $V$ by left multiplication. Suppose to the contrary that
+      two unequal members of $F^\times$---say $f_1$ and $f_2$---induce the same 
+      permutation on $V$. Let $v$ be a nonzero element in $V$. Then we must 
+      particularly have that $f_1v = f_2v$, so that $(f_1 - f_2)v = 0$. Since
+      $f_1 \neq f_2$, it follows that $f_1 - f_2 \neq 0$, so that $f_1 - f_2$
+      has a multiplicative inverse in $F^\times$. Multiply $(f_1 - f_2)v = 0$
+      by this inverse to get $v = 0$, a contradiction. Thus no two members of
+      $F^\times$ induce the same permutation, so that the action of $F^\times$
+      on $V$ is faithful. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.8]   Let $A$ be a nonempty set and let $k$ be a positive integer
                   with $k \le |A|$. The symmetric group $S_A$ acts on the set
@@ -102,6 +131,37 @@
                            (1 2 3) act on the six 2-element subsets of
                            $\{1, 2, 3, 4\}$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+   
+      \begin{enumerate}
+         \item \textbf{Proof.} Let $\sigma, \alpha \in S_A$ and
+               $\{a_1, \ldots, a_k\} \in B$. Since $\sigma$ is injective, it 
+               follows that $\sigma(a_1)$, $\ldots$, $\sigma(a_k)$ are all 
+               distinct, so that $\{\sigma(a_1), \ldots, \sigma(a_k)\} \in B$.
+               Now $1 \cdot\nobreak \{a_1, \ldots, a_k\} = \{a_1, \ldots, a_k\}$
+               and
+               \begin{align*}
+                  \sigma \cdot (\alpha \cdot \{a_1, \ldots, a_k\}) &=
+                     \sigma \cdot \{\alpha(a_1), \ldots, \alpha(a_k)\} \\
+                     &= \{\sigma(\alpha(a_1)), \ldots, \sigma(\alpha(a_k))\} \\
+                     &= \{(\sigma\circ\alpha)(a_1), \ldots,
+                          (\sigma\circ\alpha)(a_k)\} \\
+                     &= (\sigma\circ\alpha) \cdot \{a_1, \ldots, a_k\}.
+               \end{align*}
+               
+               Thus the operation is a group action. \qed
+         \item $$
+               \begin{tabular}{@{}|c|c|c|c|c|c|c|@{}} \hline
+                  $\circ$ & $\{1\;2\}$ & $\{1\;3\}$ & $\{1\;4\}$ & $\{2\;3\}$ &
+                            $\{2\;4\}$ & $\{3\;4\}$ \\ \hline
+                  (1 2)   & $\{1\;2\}$ & $\{2\;3\}$ & $\{2\;4\}$ & $\{1\;3\}$ &
+                            $\{1\;4\}$ & $\{3\;4\}$ \\ \hline
+                  (1 2 3) & $\{2\;3\}$ & $\{1\;2\}$ & $\{2\;4\}$ & $\{1\;3\}$ &
+                            $\{3\;4\}$ & $\{1\;4\}$ \\ \hline
+               \end{tabular}
+               $$
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.9]   Do both parts of the preceding exercise with ``ordered
                   $k$-tuples" in place of ``$k$-element subsets," where the
@@ -110,41 +170,186 @@
                   (1, 2) and (2, 1) are different even though the sets
                   $\{1, 2\}$ and $\{2, 1\}$ are the same, so the sets being
                   acted upon are different).
+
+      \textbf{Solution.}
+   
+      \begin{enumerate}
+         \item The proof is similar to Exercise 1.7.8 (a).
+         \item $$
+               \begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|c|c|c|c|@{}} \hline
+                  $\circ$ & (1 2) & (2 1) & (1 4) & (4 1) &
+                            (2 4) & (4 2) \\ \hline
+                  (1 2)   & (2 1) & (1 2) & (2 4) & (4 2) &
+                            (1 4) & (4 1) \\ \hline
+                  (1 2 3) & (2 3) & (2 1) & (2 4) & (3 1) &
+                            (3 4) & (1 4) \\ \hline
+               \end{tabular}
+               $$
+               and
+               $$
+               \begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|c|c|c|c|@{}} \hline
+                  $\circ$ & (1 3) & (3 1) & (2 3) & (3 2) &
+                            (3 4) & (4 3) \\ \hline
+                  (1 2)   & (2 3) & (3 2) & (1 3) & (3 1) &
+                            (3 4) & (4 3) \\ \hline
+                  (1 2 3) & (2 1) & (1 2) & (3 1) & (1 3) &
+                            (1 4) & (4 1) \\ \hline
+               \end{tabular}
+               $$
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.10]  With reference to the preceding two exercises determine:
                   \begin{enumerate}
                      \item for which values of $k$ the action of $S_n$ on
-                           $k$-element subsets if faithful, and
+                           $k$-element subsets is faithful, and
                      \item for which values of $k$ the action of $S_n$ on
                            ordered $k$-tuples is faithful.
                   \end{enumerate}
+
+      \textbf{Solution.}
+   
+      \begin{enumerate}
+         \item \textit{If $k < n$, then this action is faithful}.
+
+               \textbf{Proof.} By Exercise 1.7.6, it suffices to show that
+               kernel of this action is trivial (Exercise 1.7.6). Let $\sigma$ 
+               be a nonidentity element in $S_n$, so that $\sigma(i) = j$ for 
+               some $i \neq j$. Let $B$ be any $k$-subset such that $i \in B$
+               and $j \neq B$. Notice that $B \neq \sigma B$ since
+               $j \in \sigma B$. Thus $\sigma$ is not in the kernel of this 
+               action. Since $\sigma$ was an arbitrary nonidentity element, it 
+               follows that the kernel of this action is trivial, so that this 
+               action is faithful by Exercise 1.7.6. \qed \\
+   
+               \textit{If $k = n$, then this action is not faithful}.
+
+               \textbf{Proof.} Observe that the set of all $n$-element subsets 
+               contains a single element, $I_n = \{1, \ldots, n\}$. Thus every 
+               element of $S_n$ must map $I_n$ to itself, so that every element 
+               of $S_n$ induces the same permutation. \qed
+         \item \textit{This action is faithful for all $k \le n$}.
+
+               \textbf{Proof.} Let $\sigma$ be a nonidentity element in $S_n$.
+               Then $\sigma(i) = j$ for some $i \neq j$. Let $B$ be any
+               $k$-tuple with $i$ as its first element. Then the first element
+               of $\sigma A$ is $j$; thus $A \neq \sigma A$; that is, the kernel 
+               of this action is trivial, so that this action of $S_n$ on
+               ordered $k$-tuples is faithful. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.11]  Write out the cycle decomposition of the eight permutations in
                   $S_4$ corresponding to the elements of $D_8$ given by the
                   action of $D_8$ on the vertices of a square (where the
                   vertices of the square are labelled as in Section 2).
+
+      \textbf{Solution.}
+
+      $$
+         \begin{tabular}{@{}|c|c|@{}} \hline
+            Element in $D_8$ & Corresponding element in $S_4$ \\ \hline         
+            1      & (1) \\ \hline
+            $r$    & (1 2 3 4) \\ \hline
+            $r^2$  & (1 3)(2 4) \\ \hline
+            $r^3$  & (1 4 3 2) \\ \hline        
+            $s$    & (2 4) \\ \hline
+            $sr$   & (1 4)(2 3) \\ \hline
+            $sr^2$ & (1 3) \\ \hline
+            $sr^3$ & (1 2)(3 4)\\ \hline
+         \end{tabular}
+      $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.12]  Assume $n$ is an even positive integer and show that $D_{2n}$
                   acts on the set consisting of pairs of opposite vertices of a
                   regular $n$-gon. Find the kernel of this action (label
                   vertices as usual).
+
+      \textbf{Proof.} Assume that $n$ is an even integer greater than 3. So
+      write $n = 2k$. Label the vertices of a regular $n$-gon as was done on
+      Page 24 of the text. Let $I_n = \{1, 2, \ldots, n\}$ be the set of
+      vertices of the $n$-gon. Also for the sake of convenience, we shall assume
+      that two vertices $x$ and $y$ are equal if and only if $x \equiv y$ mod
+      $n$; thus, for example, vertex 0 = vertex $n$ = vertex $-n$, and so on.
+      A pair of vertices $\{a, b\}$ is said to be an opposite pair if and only 
+      if $|a - b| = k$ mod $n$. Thus the set of opposite pairs, $P$, is
+      $$\{\{x, x + k\} : 1 \le x \le k\} =
+        \{\{1, 1 + k\}, \{2, 2 + k\}, \ldots, \{k, 2k\}\}.$$
+      Let $r$, $s$ be the usual generators of $D_{2n}$. Viewing these generators
+      as members of $S_n$, it follows that (in cycle notation)
+      \begin{itemize}
+         \item $r =$(1, 2, $\ldots$, $n$) and
+         \item $s = \D\prod_{i=2}^k(i, 2k+2-i) = (2, 2k)(3, 2k-1)\cdots(k, k+2)$.
+      \end{itemize}
+
+      Now consider a pair of vertices $\{x, x + k\} \in P$. It follows that
+      $$r \cdot \{x, x + k\} = \{(x + 1, x + k + 1\} \in P$$
+      because $x + k + 1 - (x + 1) = k$. Assume $x = 1$. Since $s$ fixes 1 and
+      $k + 1$, it must also fix $\{x, x + 1\}$. Now assume $2 \le x \le k$. Thus
+      $$s \cdot \{x, x + k\} = \{2k+2 - x, 2k+2-x-k\} \in P.$$
+      We have thus shown that $r$ and $s$ send every opposite pair to another
+      opposite pair; since $r$ and $s$ generate it follows that every member of
+      $D_{2n}$ maps an opposite pair to another opposite pair. Since we are
+      regarding $r$ and $s$ as permutations in $S_n$, axiom 2 immediately
+      follows by the composition of permutations. The kernel of this action is
+      $\{1, r^k\}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.13]  Find the kernel of the left regular action.
+
+      \textbf{Proof.} Let $(G, *)$ be a group. Recall that the left regular 
+      action of $G$ on itself is defined by $g \cdot a = g * a$ for all
+      $g, a \in G$. Let $x$ be in the kernel of this action. Then we must
+      particularly have that $x = x * 1 = x \cdot 1 = 1$. Thus the kernel of the
+      regular action of a group on itself is its trivial subgroup.
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.14]  Let $G$ be a group and let $A = G$. Show that if $G$ is
                   non-abelian then the maps defined by $g \cdot a = ag$ for all
-                  $g, a \in G$ \textit{do not} satisfy the axions of a (left)
+                  $g, a \in G$ \textit{do not} satisfy the axioms of a (left)
                   group action of $G$ on itself.
+
+      \textbf{Proof.} Assume that $G$ is non-abelian. Suppose to the contrary 
+      that the map defined by $g \cdot a = ag$ for all $g, a \in G$ satisfies
+      the axioms of a (left) group action. Let $x, y, z \in G$. Then it follows
+      by axiom 2 of a group action that $x \cdot (y \cdot z) = (xy) \cdot z$.
+      Now
+      \begin{align*}
+         x \cdot (y \cdot z) &= (xy)\cdot z &\Longleftrightarrow \\
+         x \cdot (zy) &= z(xy) &\Longleftrightarrow \\
+         (zy)x &= z(xy) &\Longleftrightarrow \\
+         z(yx) &= z(xy) &\Longleftrightarrow \\
+         yx &= xy &\Longleftrightarrow,
+      \end{align*}
+      so that $G$ is abelian, a contradiction. Thus this map does not define a
+      group action. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.15]  Let $G$ be any group and let $A = G$. Show that the maps
                   defined by $g \cdot a = ag^{-1}$ for all $g, a \in G$
                   \textit{do} satisfy the axioms of a (left) group action of $G$
                   on itself.
+
+      \textbf{Proof.} We shall only verify the second axiom since the first one
+      is trivial. Let $x, y, z \in G$. It follows that
+      \begin{align*}
+         x \cdot (y \cdot z) &= x \cdot (zy^{-1}) \\
+            &= zy^{-1}x^{-1} \\
+            &= z(xy)^{-1} \\
+            &= (xy) \cdot z,
+      \end{align*}
+      so that axiom 2 holds. Thus this map defines a group action. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.16]  Let $G$ be any group and let $A = G$. Show that the maps
                   defined by $g \cdot a = gag^{-1}$ for all $g, a \in G$
                   \textit{do} satisfy the axioms of a (left) group action(this
                   action of $G$ on itself is called \textit{conjugation}).
+
+      \textbf{Proof.} We shall only verify the second axiom since the first one
+      is trivial. Let $x, y, z \in G$. It follows that
+      \begin{align*}
+         x \cdot (y \cdot z) &= x \cdot (yzy^{-1}) \\
+            &= xyzy^{-1}x^{-1} \\
+            &= xyz(xy)^{-1} \\
+            &= (xy) \cdot z,
+      \end{align*}
+      so that axiom 2 holds. Thus this map defines a group action. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.17]  Let $G$ be a group and let $G$ act on itself by left 
                   conjugation, so each $g \in G$ maps $G$ to $G$ by
@@ -154,6 +359,19 @@
                   $gxg^{-1}$ have the same order for all $x \in G$ and that for
                   any subset $A$ of $G$, $|A| = |gAg^{-1}|$ (here
                   $gAg^{-1} = \{gag^{-1} : a \in A\})$.
+
+      \textbf{Proof.} Let $g \in G$. Define $\sigma_g : G \rightarrow G$ by
+      $x \mapsto gxg^{-1}$. This map is bijective since it has a 2-sided
+      inverse, namely $\sigma_{g^{-1}}$. So it remains to show that $\sigma_g$
+      is a homomorphism. This follows immediately because
+      \begin{align*}
+         \sigma_g(xy) = gxyg^{-1} = gxg^{-1}gyg^{-1} = \sigma_g(x)\sigma_g(y)
+      \end{align*}
+      for all $x, y \in G$. By Exercise 1.6.2, it follows that
+      $|x| = |\sigma_g(x)| = |gxg^{-1}|$ for all $x \in G$. Let $A \subseteq G$.
+      Then the map $\alpha_g : A \rightarrow gAg^{-1}$ defined by
+      $a \mapsto gag^{-1}$ is also bijective (its 2-sided inverse is
+      $\alpha_{g^{-1}}$); thus $|A| = |gAg^{-1}|$. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.18]  Let $H$ be a group acting on a set $A$. Prove that the
                   relation $\sim$ on $A$ defined by
@@ -163,6 +381,22 @@
                   equivalence class of $x$ under $\sim$ is called the
                   \textit{orbit} of $x$ under the action of $H$. The orbits
                   under the action of $H$ partition the set $A$.)
+
+      \textbf{Proof.} Let $a, b, c \in H$.
+
+      \textbf{Reflexivity.} Since $1a = a$, it follows that $a \sim a$, so that
+      $\sim$ is reflexive on $A$.
+
+      \textbf{Symmetry.} Suppose $a \sim b$. Then there exists $h \in H$ such
+      that $a = hb$. Now $h^{-1}a = h^{-1}hb = 1b = b$, so that $b \sim a$; thus
+      $\sim$ is symmetric on $A$.
+
+      \textbf{Transitivity.} Suppose $a \sim b$ and $b \sim c$. Then there exist
+      $h_1, h_2 \in H$ such that $a = h_1b$ and $b = h_2c$. Thus
+      $a = h_1b = h_1(h_2c) = (h_1h_2)c$, so that $a \sim c$; thus $\sim$ is 
+      transitive on $A$.
+
+      We can thus conclude that $\sim$ is an equivalence relation on $A$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.19]  Let $H$ be a subgroup of the finite group $G$ and let $H$ act
                   on $G$ (here $A = G$) by left multiplication. Let $x \in G$
@@ -186,7 +420,7 @@
                   opposite vertices.]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.22]  Show that the group of rigid motions of an octahedron is
-                  isomorphic to a subgroup of $S_4$. [This group acts on the set
+                  isomorphic to $S_4$. [This group acts on the set
                   of four pairs of opposite faces.] Deduce that the groups of
                   rigid motions of a cube and an octahedron are isomorphic.
                   (These groups are isomorphic because these solids are ``dual"
