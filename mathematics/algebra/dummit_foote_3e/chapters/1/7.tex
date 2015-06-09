@@ -411,6 +411,19 @@
                      \textit{if $G$ is a finite group and $H$ is a subgroup of
                      $G$ then $|H|$ divides $|G|$}.
                   \end{center}
+                  
+      \textbf{Proof.} Let $x \in G$ and let $\mathcal{O}$ be the orbit of $x$
+      under the action of $H$ on $G$. Consider the map
+      $\alpha : H \rightarrow \mathcal{O}$, $h \mapsto hx$. Suppose
+      $\alpha(a) = \alpha(b)$. Then it follows that $ax = bx$, so that $a = b$,
+      by cancellation. Thus $\alpha$ is injective. Since $G$ is finite, $H$
+      must also be finite; thus $\alpha$ is necessarily surjective, and we 
+      conclude that $\alpha$ is bijective. That is $|H| = |\mathcal{O}|$. Let
+      $|G| = n$. By Exercise 1.7.18, the action of $H$ on $G$ partitions $G$
+      into $m$ distinct orbits (there is a finite number of orbits because $G$
+      is finite). Since $x$ was arbitrary, it follows that each orbit of this
+      action has size $|H|$, so that $m\cdot|H| = |G|$. That is $|H| \mid |G|$.
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.20]  Show that the group of rigid motions of a tetrahedron is
                   isomorphic to a subgroup of $S_4$.
