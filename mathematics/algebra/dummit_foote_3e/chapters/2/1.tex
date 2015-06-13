@@ -7,14 +7,42 @@
                            $a \in \R$ (under addition)
                      \item the set of complex numbers of absolute value 1 (under
                            multiplication)
-                     \item for fixed $n \in \Z^+$ the set of rational numbers
-                           whose denominators divide $n$ (under addition)
+                     \item for fixed $n \in \Z^+$ the set of rational numbers(in
+                           lowest terms) whose denominators divide $n$
+                           (under addition)
                      \item for fixed $n \in \Z^+$ the set of rational numbers
                            whose denominators are relatively prime to $n$ (under
                            addition)
                      \item the set of nonzero real numbers whose square is a
                            rational number (under multiplication).
                   \end{enumerate}
+                  
+      \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item Let $S = \{a + ai: a \in \R, i^2 = -1\}$. The set $S$ is clearly
+               nonempty, so let $x+xi, y+yi \in S$. We then have that
+               $(x+xi)-(y+yi) = (x-y) + (x-y)i \in S$, so that $S \le \C$.
+         \item Let $S = \{a \in \C: |a| = 1\}$. The set $S$ is clearly nonempty,
+               so let $x, y \in S$. We then have that
+               $|xy| = |x||y| = 1 \cdot 1 = 1$, so that $xy \in S$. Write
+               $x = r + si$, so that $x^{-1} = r - si$. Since
+               $|x| = r^2 + s^2 = |x^{-1}| = 1$, we have that $x^{-1} \in S$.
+               Hence $S$ is closed under inverses and multiplication and we have
+               that $S \le \C$.
+         \item Let $n$ be a positive integer and \
+               $S = \left\{\D\frac{a}{b} \in \Q: b \mid n\right\}$. The set $S$
+               is nonempty since it contains 0. Let $\D\frac{a}{b}$,
+               $\D\frac{c}{d} \in S$. Let $l = \mbox{lcm}(b, d)$. By membership
+               in $S$, we have that $b \mid n$ and $d \mid n$. Thus $l \mid n$.
+               So there exists an integer $m$ such that 
+               $\D\frac{a}{b} - \frac{c}{d} = \frac{m}{l}$. Let
+               $\D\frac{m'}{l'} = \frac{m}{l}$ such that $\gcd(m', l') = 1$.
+               Then $l' \mid l$; since $l \mid n$, it follows that $l' \mid n$,
+               so that
+               $\D\frac{a}{b} - \frac{c}{d} = \frac{m}{l} =\frac{m'}{l'} \in S$.
+               Thus $S$ is an additive group. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.2]   In each of (a) - (e) prove that the specified subset is
                   \textit{not} a subgroup of the given group:
