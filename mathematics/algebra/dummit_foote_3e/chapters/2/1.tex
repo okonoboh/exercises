@@ -22,27 +22,49 @@
       \begin{enumerate}
          \item Let $S = \{a + ai: a \in \R, i^2 = -1\}$. The set $S$ is clearly
                nonempty, so let $x+xi, y+yi \in S$. We then have that
-               $(x+xi)-(y+yi) = (x-y) + (x-y)i \in S$, so that $S \le \C$.
+               $(x+xi)-(y+yi) = (x-y) + (x-y)i \in S$, so that $S < \C$.
          \item Let $S = \{a \in \C: |a| = 1\}$. The set $S$ is clearly nonempty,
                so let $x, y \in S$. We then have that
                $|xy| = |x||y| = 1 \cdot 1 = 1$, so that $xy \in S$. Write
                $x = r + si$, so that $x^{-1} = r - si$. Since
                $|x| = r^2 + s^2 = |x^{-1}| = 1$, we have that $x^{-1} \in S$.
                Hence $S$ is closed under inverses and multiplication and we have
-               that $S \le \C$.
-         \item Let $n$ be a positive integer and \
-               $S = \left\{\D\frac{a}{b} \in \Q: b \mid n\right\}$. The set $S$
-               is nonempty since it contains 0. Let $\D\frac{a}{b}$,
-               $\D\frac{c}{d} \in S$. Let $l = \mbox{lcm}(b, d)$. By membership
-               in $S$, we have that $b \mid n$ and $d \mid n$. Thus $l \mid n$.
-               So there exists an integer $m$ such that 
-               $\D\frac{a}{b} - \frac{c}{d} = \frac{m}{l}$. Let
+               that $S < \C$.
+         \item Let $n$ be a positive integer and
+               $$S = \left\{\frac{a}{b} \in
+               \Q : \text{ if } \frac{a'}{b'} = \frac{a}{b},
+               \text{ with }\gcd(a', b') = 1, \text{ then } b' \mid n\right\}.$$ 
+               The set $S$ is nonempty since it contains 0. Let $\D\frac{a}{b}$,
+               $\D\frac{c}{d} \in S$. Writing these rationals in lowest terms,
+               we have $\D\frac{a}{b} = \frac{a'}{b'}$ and
+               $\D\frac{c}{d} = \frac{c'}{d'}$. Let $l = \mbox{lcm}(b', d')$.
+               By membership in $S$, we have that $b' \mid n$ and $d' \mid n$. 
+               Thus $l \mid n$. Now there exists an integer $m$ such that 
+               $\D\frac{a'}{b'} - \frac{c'}{d'} = \frac{m}{l}$. Let
                $\D\frac{m'}{l'} = \frac{m}{l}$ such that $\gcd(m', l') = 1$.
                Then $l' \mid l$; since $l \mid n$, it follows that $l' \mid n$,
-               so that
-               $\D\frac{a}{b} - \frac{c}{d} = \frac{m}{l} =\frac{m'}{l'} \in S$.
-               Thus $S$ is an additive group. \qed
-      \end{enumerate}
+               so that $\D\frac{a}{b} - \frac{c}{d} = \D\frac{a'}{b'} -
+               \frac{c'}{d'} = \frac{m}{l} =\frac{m'}{l'} \in S$. Thus $S < \Q$.
+         \item Let $n$ be a positive integer and
+               $$S = \left\{\frac{a}{b} \in
+               \Q : \text{ if } \frac{a'}{b'} = \frac{a}{b},
+               \text{ with }\gcd(a',b')=1, \text{ then } \gcd(b',n)=1\right\}.$$ 
+               The set $S$ is nonempty since it contains 0. Let $\D\frac{a}{b}$,
+               $\D\frac{c}{d} \in S$. Writing these rationals in lowest terms,
+               we have $\D\frac{a}{b} = \frac{a'}{b'}$ and
+               $\D\frac{c}{d} = \frac{c'}{d'}$. Let $l = \mbox{lcm}(b', d')$.
+               By membership in $S$, we have that $\gcd(b',n) = \gcd(d',n) = 1$. 
+               Thus $\gcd(l,n)=1$. Now there exists an integer $m$ such that 
+               $\D\frac{a'}{b'} - \frac{c'}{d'} = \frac{m}{l}$. Let
+               $\D\frac{m'}{l'} = \frac{m}{l}$ such that $\gcd(m', l') = 1$.
+               Then $l' \mid l$; since $\gcd(l,n)=1$, it follows that
+               $\gcd(l',n)=1$, so that
+               $$\frac{a}{b}-\frac{c}{d}=\D\frac{a'}{b'}-\frac{c'}{d'} =
+                 \frac{m}{l} =\frac{m'}{l'} \in S.$$ Thus $S < \Q$.
+         \item Let $S = \{x \in \R : x \neq 0, x^2 \in \Q\}$. The set $S$
+               has 1 as its identity. Now let $a, b \in S$. Then we have that
+               $(ab^{-1})^2 = \D\frac{a^2}{b^2} \in \Q$, so that $S < \R$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.2]   In each of (a) - (e) prove that the specified subset is
                   \textit{not} a subgroup of the given group:
@@ -57,6 +79,37 @@
                      \item the set of real numbers whose square is a rational
                            number (under addition).
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $n \ge 3$ and
+               $S = \{\sigma \in S_n : \sigma \text{ is a 2-cycle}\}$. Now we
+               have (1 2), (2, 3) $\in S$, but (1 2)(2 3) = (1 2 3) $\notin S$,
+               so that $S$ is not closed under composition. Thus $S$ is not a
+               subgroup of $S_n$.
+         \item Let $n \ge 3$ and $S=\{\text{The set of reflections in }D_{2n}\}
+               = \{s, sr, \ldots, sr^n\}$. Since $n \ge 3$, we have
+               $sr^2, sr \in S$. But
+               $(sr^2)(sr) = r^{-2}ssr = r^{-2}r = r^{n-1} \notin S$, so that
+               $S$ is not closed under multiplication. Thus $S$ is not a
+               subgroup of $D_{2n}$.
+         \item Let $n = ab$ where $a$ and $b$ are greater than 1, $G$ a group 
+               that has an element of order $n$ and
+               $S = \{x \in G: |x| = n\} \cup \{1_G\}$. Let $y$ be a nonidentity
+               element in $S$. Then $1 = y^n = y^{ab} = (y^a)^b$, so that
+               $|y^a| \le b < n$. Now $y^a \neq 1$ since $1 < a < n$ and
+               $|y| = n$. Since $|y^a| \le b$ and $y^a \neq 1$, it follows that
+               $y^a \notin S$, so that $S$ is not closed under the operation of
+               $G$; thus $S$ is not a subgroup of $G$.
+         \item Let $S = \{2k + 1 : k \in \Z\} \cup \{0\}$. The set $S$ is not
+               closed under addition because $7 \in S$, but
+               $7 + 7 = 14 \notin S$, so that $S$ is not a subgroup of $\Z$.
+         \item Let $S = \{x \in \R : x \neq 0, x^2 \in \Q\}$. The set $S$ is not
+               closed under addition because $1, \sqrt{2} \in S$, but
+               $(1 + \sqrt{2})^2 = 3 + 2\sqrt{2} \notin S$, so that $S$ is not a 
+               subgroup of $\R$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.3]   Show that the following subsets of the dihedral group $D_8$
                   are actually subgroups:
@@ -64,32 +117,103 @@
                      \item $\{1, r^2, s, sr^2\}$,
                      \item $\{1, r^2, sr, sr^3\}$.
                   \end{enumerate}
+
+      \textbf{Proof.} Since these two subsets are finite, we need only show that
+      they are closed under multiplication. The group tables below do just that.
+
+      \begin{enumerate}
+         \item $$
+                  \begin{tabular}{@{}|c|c|c|c|c|@{}} \hline
+                       & 1 & $r^2$ & $s$ & $sr^2$ \\ \hline
+                     1 & 1 & $r^2$ & $s$ & $sr^2$ \\ \hline
+                     $r^2$ & $r^2$ & 1 & $sr^2$ & $s$ \\ \hline
+                     $s$ & $s$ & $sr^2$ & $1$ & $r^2$ \\ \hline
+                     $sr^2$ & $sr^2$ & $s$ & $r^2$ & 1 \\ \hline
+                  \end{tabular}
+               $$
+         \item $$
+                  \begin{tabular}{@{}|c|c|c|c|c|@{}} \hline
+                       & 1 & $r^2$ & $sr$ & $sr^3$ \\ \hline
+                     1 & 1 & $r^2$ & $sr$ & $sr^3$ \\ \hline
+                     $r^2$ & $r^2$ & 1 & $sr^3$ & $sr$ \\ \hline
+                     $sr$ & $sr$ & $sr^3$ & $1$ & $r^2$ \\ \hline
+                     $sr^3$ & $sr^3$ & $sr$ & $r^2$ & 1 \\ \hline
+                  \end{tabular}
+               $$
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.4]   Give an explicit example of a group $G$ and an infinite subset
                   $H$ of $G$ that is closed under the group operation but is not
                   a subgroup of $G$.
+
+      \textbf{Solution.} Let $G = \Z$ (under addition) and $H = \Z^+$. Clearly
+      $H$ is a closed infinite subset of $\Z$, but it has no identity, so it is 
+      not a subgroup of $G$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.5]   Prove that $G$ cannot have a subgroup $H$ with $|H| = n - 1$,
                   where $n = |G| > 2$.
+
+      \textbf{Proof.} Suppose that $G$ is a finite group of order $n > 2$. Now
+      suppose to the contrary that $H < G$, where $|H| = n - 1$. Let $y \in G$
+      be the element not in $H$. Since $|G| \ge 3$, there exists an
+      $x \in H$ such that $x \neq 1$ (and $x \neq y$). Now consider the element
+      $x^{-1}y$. If $x^{-1}y = y$, then $x = 1$, contrary to our assumption. If
+      $x^{-1}y = 1$, then $x = y$, another contradiction. Thus $x^{-1}y$ is
+      neither equal to $y$ nor 1. Particularly we have $x^{-1}y \in H$; thus
+      $y = x(x^{-1}y) \in H$, a contradiction. Thus $H$ cannot have size
+      $n - 1$. \qed
+
+      \textbf{N.B.} Or use Lagrange's Theorem. See Exercise 1.7.19.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.6]   Let $G$ be an abelian group. Prove that
                   $\{g \in G : |g| < \infty\}$ is a subgroup of $G$ (called the
                   \textit{torsion subgroup} of $G$). Give an explicit example
                   where this set is not a subgroup when $G$ is non-abelian.
+
+      \textbf{Proof.} Let $H = \{g \in G : |g| < \infty\}$. Clearly $1 \in H$.
+      Now suppose that $x, y \in H$. Let $|x| = m$ and $|y| = n$. Then we have
+      that $(xy^{-1})^{mn} = x^{mn}(y^{-1})^{mn} = (x^m)^n(y^n)^{-m} = 1$, so 
+      that $|xy^{-1}| \le mn < \infty$; that is $xy^{-1} \in H$, so that
+      $H \le G$.
+
+      \textcolor{red}{\textbf{Example.} Todo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.7]   Fix some $n \in \Z$ with $n > 1$. Find the torsion subgroup
                   of $\Z \times (\Z/n\Z)$. Show that the set of elements of
                   infinite order together with the identity is \textit{not} a
                   subgroup of this direct product.
+
+      \textbf{Proof.} The torsion subgroup of $\Z \times (\Z/n\Z)$ is
+      $\{(0, a) : a \in \Z/n\Z\}$. Let $H$ be the set of elements of infinite 
+      order together with the identity. We have (1, 1), (1, 2) $\in H$, but
+      $(1,\;2) - (1,\;1) = (0,\;1) \notin H$, so that $H$ is not closed under
+      addition; that is, $H$ is not a subgroup of $\Z \times (\Z/n\Z)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.8]   Let $H$ and $K$ be subgroups of $G$. Prove that $H \cup K$ is
                   a subgroup if and only if either $H \subseteq K$ or
                   $K \subseteq H$.
+
+      \textbf{Proof.} Suppose first that $H \cup K \le G$. Now assume to the
+      contrary that neither $H$ nor $K$ is a subset of the other. Thus there
+      exist $h \in H$ and $k \in K$ such that $h \notin K$ and $k \notin H$.
+      Since $h, k \in H \cup K$ and $H \cup K$ is a group, it follows that
+      $hk \in H \cup K$. Assume without loss that $hk \in H$. Then it follows
+      that $k = (h^{-1})hk \in H$, a contradiction. Thus we must have that
+      either $H \subseteq K$ or $K \subseteq H$. The converse of the proof is 
+      trivial. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.9]   Let $G = GL_n(F)$, where $F$ is any field. Define
                   $$SL_n(F) = \{A \in GL_n(F) : \det(A) = 1\}$$
                   (called the \textit{special linear group}). Prove that
-                  $SL_n(F) \le GL_n(F)$,
+                  $SL_n(F) \le GL_n(F)$.
+
+      \textbf{Proof.} The set $SL_n(F)$ is nonempty since it contains the
+      $n \times n$ identity matrix. Let $A, B \in SL_n(F)$. By membership in
+      $SL_n(F)$ we have $\det(A) = 1$, so that $A^{-1}$ exists. Since the
+      determinant of a product is the product of the determinants, it follows
+      that $\det(A)\det(A^{-1}) = 1$, so that $\det(A^{-1}) = 1$; now
+      $\det(AB^{-1}) = \det(A)\det(B^{-1}) = 1$, so that $AB^{-1} \in SL_n(F)$; 
+      that is $SL_n(F) \le GL_n(F)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.10]  \begin{enumerate}
                      \item Prove that if $H$ and $K$ are subgroups of $G$ then
@@ -98,6 +222,19 @@
                            collection of subgroups of $G$ is again a subgroup of
                            $G$ (do not assume the collection is countable).
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item See (b).
+         \item Let $G$ be a group and $S = \D\bigcap_{i \in I}G_i$ be the
+               intersection of an arbitrary collection of subgroups of $G$,
+               where $G_i \le G$, for each $i \in I$, and $I$ is some indexing   
+               set. Since 1 belongs to all $G_i$, it follows that $1 \in S$. Now
+               let $x, y \in S$. Then each $G_i$ must have $x$ and $y$ as
+               elements. Also since each $G_i$ is a group, it must also contain
+               $xy^{-1}$, so that $xy^{-1} \in S$. That is, $S \le G$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.11]  Let $A$ and $B$ be groups. Prove that the following sets are
                   subgroups of the direct product $A \times B$.
