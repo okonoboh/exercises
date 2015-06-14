@@ -89,11 +89,9 @@
                so that $S$ is not closed under composition. Thus $S$ is not a
                subgroup of $S_n$.
          \item Let $n \ge 3$ and $S=\{\text{The set of reflections in }D_{2n}\}
-               = \{s, sr, \ldots, sr^n\}$. Since $n \ge 3$, we have
-               $sr^2, sr \in S$. But
-               $(sr^2)(sr) = r^{-2}ssr = r^{-2}r = r^{n-1} \notin S$, so that
-               $S$ is not closed under multiplication. Thus $S$ is not a
-               subgroup of $D_{2n}$.
+               = \{s, sr, \ldots, sr^n\}$. Since $S$ does not contain the
+               identity, it follows immediately that $S$ is not a subgroup of
+               $D_{2n}$.
          \item Let $n = ab$ where $a$ and $b$ are greater than 1, $G$ a group 
                that has an element of order $n$ and
                $S = \{x \in G: |x| = n\} \cup \{1_G\}$. Let $y$ be a nonidentity
@@ -244,6 +242,23 @@
                      \item $\{(a, a) : a \in A\}$, where here we assume $B = A$
                            (called the \textit{diagonal subgroup}).
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $H = \{(a, 1) : a \in A\}$. We have $(1, 1) \in H$, so that
+               $H$ is nonempty. Now let $(x, 1), (y, 1) \in H$. It follows that
+               $(x, 1)(y, 1)^{-1} = (x, 1)(y^{-1}, 1) = (xy^{-1}, 1) \in H$, so 
+               that $H \le A \times B$.
+         \item Let $H = \{(1, b) : b \in B\}$. We have $(1, 1) \in H$, so that
+               $H$ is nonempty. Now let $(1, x), (1, y) \in H$. It follows that 
+               $(1, x)(1, y)^{-1} = (1, x)(1, y^{-1}) = (1, xy^{-1}) \in H$, so 
+               that $H \le A \times B$.
+         \item Let $H = \{(a, a) : a \in A\}$. We have $(1, 1) \in H$, so that
+               $H$ is nonempty. Now let $(x, x), (y, y) \in H$. It follows that 
+               $(x, x)(y, y)^{-1} = (x, x)(y^{-1}, y^{-1}) = (xy^{-1}, xy^{-1}) 
+               \in H$, so that $H \le A \times A$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.12]  Let $A$ be an abelian group and fix some $n \in \Z$. Prove
                   that the following sets are subgroups of $A$:
@@ -251,23 +266,85 @@
                      \item $\{a^n : a \in A\}$
                      \item $\{a \in A : a^n = 1\}$.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $H = \{a^n : a \in A\}$. Since $1^n = 1$, it follows that
+               $1 \in H$. So let $x^n, y^n \in H$ for some $x, y \in A$. Then we 
+               have that $x^n(y^n)^{-1} = x^n(y^{-1})^n = (xy^{-1})^n$; i.e.,
+               $x^n(y^n)^{-1} \in H$ and thus $H \le A$.
+         \item Let $H = \{a \in A : a^n=1\}$. Since $1^n = 1$, it follows that
+               $1 \in H$. So let $x, y \in H$. Then we have that
+               $(xy^{-1})^n = x^n(y^{-1})^n = x^n(y^n)^{-1} = 1$; i.e.,
+               $xy^{-1} \in H$ and thus $H \le A$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.13]  Let $H$ be a subgroup of the additive group of rational
                   numbers with the property that $1/x \in H$ for every nonzero
                   element $x \in H$. Prove that $H = 0$ or $\Q$.
+
+      \textbf{Proof.} If $H = 0$, then we are done, so assume that $H \neq 0$.
+      First notice that if $h \in H$, then $nh \in H$ for all $n \in \Z$ because
+      $H$ is closed under addition. Now let $a/b$ be a rational number. To 
+      complete the proof, it suffices to show that $a/b \in H$. Since
+      $H \neq 0$, it contains a nonzero rational number, say $p/q$.
+      Thus $q \cdot p/q = p \in H$. Since $p \neq 0$, it follows by our 
+      hypothesis that $1/p \in H$ so that $p \cdot 1/p = 1 \in H$. That is
+      $b \cdot 1 = b \in H$, and since $b \neq 0$, we have must have that
+      $1/b \in H$, so that $a \cdot 1/b = a/b \in H$, as desired. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.14]  Show that $\{x \in D_{2n} : x^2 = 1\}$ is not a subgroup of
                   $D_{2n}$ (here $n \ge 3$).
+
+      \textbf{Proof.} Let $n \ge 3$. Let $H = \{x \in D_{2n} : x^2 = 1\}$. Since
+      $n \ge 3$, we have $sr^2, sr \in D_{2n}$. Also since
+      $(sr^2)^2 = (sr)^2 = 1$, we have that $sr^2, sr \in H$. But
+      $(sr^2)(sr) = r^{-2}ssr = r^{-2}r = r^{n-1} \notin H$ because
+      $(r^{n-1})^2 = r^{2n-2} = r^{-2} = r^{n-2} \neq 1$, so that $H$ is not 
+      closed under multiplication. Thus $H$ is not a subgroup of $D_{2n}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.15]  Let $H_1 \le H_2 \le \cdots$ be an ascending chain of
                   subgroups of $G$. Prove that $\cup_{i=1}^\infty H_i$ is a 
                   subgroup of $G$.
+
+      \textbf{Proof.} Let $S = \cup_{i=1}^\infty H_i$. First observe that we
+      can show by induction that if $x \in H_i$, then $x \in H_{i+n}$ for all
+      $n \ge 0$. Since $H_1 \le G$, it must contain 1, so that $1 \in S$. So
+      let $x, y \in S$. Then $x \in H_k$ and $y \in H_j$ for some
+      $k, j \in \Z^+$. Let us now investigate the following cases:
+
+      \textbf{Case 1.} $k = j$. Thus $H_k = H_j$, so that $x, y \in H_k$. Since
+      $H_k$ is a group, we must have that $xy^{-1} \in H_k$ so that
+      $xy^{-1} \in S$.
+
+      \textbf{Case 2.} $k < j$. Then since $x \in H_k$, we must have
+      $x \in H_j$. Thus $xy^{-1} \in H_j$ so that $xy^{-1} \in S$.
+
+      \textbf{Case 3.} $j < k$. Interchange the roles of $j$ and $k$ and $x$
+      and $y$ in Case 2 to conclude that $yx^{-1} \in S$. \\
+
+      In any case, we have thus shown that $S$ is closed under multiplication
+      and inverses, so that $S \le G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.16]  Let $n \in \Z^+$ and let $F$ be a field. Prove that the set
-                  $$\{(a_{ij}) \in GL_n(F) : (a_{ij}) = 0 \text{ for all }
+                  $$H = \{(a_{ij}) \in GL_n(F) : (a_{ij}) = 0 \text{ for all }
                      i > j\}$$
                   is a subgroup of $GL_n(F)$ (called the group of
                   \textit{upper triangular} matrices).
+
+      \textbf{Proof.} Let $A = (a_{ij})$ and $B = (b_{ij})$ be matrices in $H$. 
+      Let $C = (c_{ij}) = AB$. Recall that
+      $$c_{ij} = \sum_{k=1}^na_{ik}b_{kj}.$$
+      So assume that $i > j$. It follows that
+      \begin{align*}
+         c_{ij} &= \sum_{k=1}^na_{ik}b_{kj} \\
+            &= \sum_{k=i}^na_{ik}b_{kj}
+               &[\text{Since }a_{ik} = 0 \text{ if } i > k] \\
+            &= 0, &[\text{Since }k \ge i > j \text{ so } b_{kj} = 0]
+      \end{align*}
+      so that $C \in H$.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.17]  Let $n \in \Z^+$ and let $F$ be a field. Prove that the set
                   $$\{(a_{ij}) \in GL_n(F) : (a_{ij}) = 0 \text{ for all }
