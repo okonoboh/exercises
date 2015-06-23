@@ -1,16 +1,87 @@
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.1]   Prove that
-                  $C_G(A) = \{g \in G : g^{-1}ag = a \text{ for all } a \in A\}$.
+                  $C_G(A) = \{g \in G : g^{-1}ag = a \text{ for all } a\in A\}$.
+
+      \textbf{Proof.} We have that
+      \begin{align*}
+         g \in C_G(A) &\Longleftrightarrow gag^{-1}=a \text{ for all } a\in A \\
+             &\Longleftrightarrow ga = ag \text{ for all } a\in A \\
+             &\Longleftrightarrow ag = ga \text{ for all } a\in A \\
+             &\Longleftrightarrow g^{-1}ag = a \text{ for all } a\in A \\
+             &\Longleftrightarrow g \in \{h \in G : h^{-1}ah = a
+              \text{ for all } a\in A\},
+      \end{align*}
+      so that $C_G(A) = \{g \in G : g^{-1}ag = a\text{ for all } a\in A\}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.2]   Prove that $C_G(Z(G)) = G$ and deduce that $N_G(Z(G)) = G$.
+
+      \textbf{Proof.} Clearly $C_G(Z(G)) \subseteq G$, so it suffices to show
+      that containment in the other direction. Now let $g \in G$ and
+      $z \in Z(G)$. Since $z$ is in the center of $G$, it follows that
+      $zg = gz$, so that $g$ commutes with every element of $Z(G)$; that is,
+      $g \in C_G(Z(G))$ and we can conclude that $G \subseteq C_G(Z(G))$. Since
+      $$G = C_G(Z(G)) \subseteq N_G(Z(G)) \subseteq G,$$
+      it follows that $N_G(Z(G)) = G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.3]   Prove that if $A$ and $B$ are subsets of $G$ with
                   $A \subseteq B$ then $C_G(B)$ is a subgroup of $C_G(A)$.
+
+      \textbf{Proof.} Suppose that $A \subseteq B \subseteq G$, with
+      $A \neq \emptyset$. By the discussion on Page 49 of the textbook, we know
+      that $C_G(B) \le G$ and $C_G(A) \le G$. Since $A \subseteq B$, it follows
+      that every element $g \in G$ that commutes with all elements in $B$ must
+      necessarily commute with all elements in $A$; thus
+      $C_G(B) \subseteq C_G(A)$, so that $C_G(B) \le C_G(A)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.4]   For each of $S_3$, $D_8$, and $Q_8$ compute the centralizers
                   of each element and find the center of each group. Does
                   Lagrange's Theorem simplify your work?
+
+      \textbf{Solution.}
+      \begin{center}
+         $S_3$
+
+         \begin{tabular}{@{}|c|c|@{}} \hline
+            Element & Centralizer \\ \hline
+            (1) & $S_3$ \\ \hline
+            (1 2) & \{(1), (1 2)\} \\ \hline
+            (1 3) & \{(1), (1 3)\} \\ \hline
+            (2 3) & \{(1), (2 3)\} \\ \hline
+            (1 2 3) & \{(1), (1 2 3), (1 3 2)\} \\ \hline
+            (1 3 2) & \{(1), (1 2 3), (1 3 2)\} \\ \hline
+         \end{tabular}
+      \end{center}
+
+      \begin{center}
+         $D_8$
+
+         \begin{tabular}{@{}|c|c|@{}} \hline
+            Element & Centralizer \\ \hline
+            1 & $D_8$ \\ \hline
+            $r$ & $\{1, r, r^2, r^3\}$ \\ \hline
+            $r^2$ & $D_8$ \\ \hline
+            $r^3$ & $\{1, r, r^2, r^3\}$ \\ \hline
+            $s$ & $\{1, s, r^2, sr^2\}$ \\ \hline
+            $sr$ & $\{1, sr, r^2, sr^3\}$ \\ \hline
+            $sr^2$ & $\{1, s, r^2, sr^2\}$ \\ \hline
+            $sr^3$ & $\{1, sr, r^2, sr^3\}$ \\ \hline
+         \end{tabular}
+      \end{center}
+
+      \begin{center}
+         $Q_8$
+
+         \begin{tabular}{@{}|c|c|@{}} \hline
+            Element & Centralizer \\ \hline
+            $\pm1$ & $Q_8$ \\ \hline
+            $\pm i$ & $\{\pm1, \pm i\}$ \\ \hline
+            $\pm j$ & $\{\pm1, \pm j\}$ \\ \hline
+            $\pm k$ & $\{\pm1, \pm k\}$ \\ \hline
+         \end{tabular}
+      \end{center}
+
+      Now $Z(S_3) = \{(1)\}$, $Z(D_8) = \{1, r^2\}$, and $Z(Q_8) = \{\pm1\}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.5]   In each parts (a) to (c) show that for the specified group $G$
                   and subgroup $A$ of $G$, $C_G(A) = A$ and $N_G(A) = G$.
