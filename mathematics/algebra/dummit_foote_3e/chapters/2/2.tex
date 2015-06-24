@@ -142,12 +142,72 @@
                      \item Show that $H \le C_G(H)$ if and only if $H$ is
                            abelian.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item To show that $H$ is a subgroup of $N_G(H)$, it suffices to show
+               that $H$ is a subset of $N_G(H)$. So let $h_1 \in H$. Clearly
+               $h_1H{h_1}^{-1} \subseteq H$ because $H$ is closed under
+               multiplication. Now let $h_2 \in H$, so that
+               ${h_1}^{-1}h_2h_1 \in H$. Since
+               $$h_1({h_1}^{-1}h_2h_1){h_1}^{-1} = h_2,$$
+               it follows that $h_2 \in h_1H{h_1}^{-1}$; that is,
+               $H \subseteq h_1H{h_1}^{-1}$, and thus, $H = h_1H{h_1}^{-1}$. We
+               have thus shown that $h_1 \in N_G(H)$. Thus $H \le N_G(H)$. \\
+
+               \textbf{Example.} Let $G = D_6$ and $H = \{r, s\}$. Note that
+               $H$ is not a subgroup of $G$ and $H$ is not even a subset of
+               $N_G(H) = \{1\}$.
+         \item ($\Rightarrow$) Suppose that $H \le C_G(H)$. Let $h_1$,
+               $h_2 \in H$. By our supposition, it follows that
+               $h_1 \in C_G(H)$, so that $h_1h_2 = h_2h_1$; since $h_1$ and
+               $h_2$ were arbitrarily chosen, it follows that $H$ is abelian.
+
+               ($\Leftarrow$) Suppose conversely that $H$ is abelian. That is,
+               every element of $H$ commutes with all elements of $H$, so it
+               follows immediately that $H \le C_G(H)$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.7]   Let $n \in \Z$ with $n \ge 3$. Prove the following:
                   \begin{enumerate}
                      \item $Z(D_{2n}) = 1$ if $n$ is odd
                      \item $Z(D_{2n}) = \{1, r^k\}$ if $n = 2k$.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Suppose that $n$ is odd. We claim that $r^{-i} = r^{i}$ if and
+               only if $r^i = 1$. So suppose first that $r^{-i} = r^{i}$; i.e.,
+               $r^{2i} = 1$. Thus it follows by Proposition 2.3 that
+               $n \mid 2i$. Since $(n, 2) = 1$, we must have that $n \mid i$, so
+               that $r^i = 1$. The other direction is trivial. Now let $r^j$ be
+               a nonidentity element in $D_{2n}$ (so that $1 \le j < n$). Since 
+               $r^j \neq r^{-j}$, it follows that
+               $$sr^j \neq sr^{-j} = r^js$$
+               and
+               $$(sr^j)s = r^{-j} \neq r^j = s(sr^j).$$
+               That is $r^j$ and $sr^j$ are not elements of $Z(D_{2n})$. Thus
+               $D_{2n} = \{1\}$.
+         \item Suppose that $n$ is even, so that $n = 2k$ for some positive
+               integer $k$. We claim that $r^{-i} = r^{i}$ if and only if
+               $k \mid i$. So suppose first that $r^{-i} = r^{i}$; i.e.,
+               $r^{2i} = 1$. Thus it follows by Proposition 2.3 that
+               $2k \mid 2i$ so that $k \mid i$. Conversely suppose that
+               $k \mid i$. Then we have that $i = yk$. Now we have
+               $r^{-i} = r^{-yk} = (r^{-k})^y = (r^k)^{y} = r^i$. Let $r^j$ be 
+               an element in $D_{2n}$ such that $k \nmid j$ . That is, 
+               $r^j \neq r^{-j}$, so that
+               $$sr^j \neq sr^{-j} = r^js$$
+               and
+               $$(sr^j)s = r^{-j} \neq r^j = s(sr^j).$$
+               That is $r^j$ and $sr^j$ are not elements of $Z(D_{2n})$.
+               Finally we want to show that $r^k \in Z(D_{2n})$. So let
+               $s^pr^q \in D_{2n}$. It follows that
+               $$r^k(s^pr^q) = s^pr^{-k}r^q = s^pr^kr^q = (s^pr^q)r^k.$$
+               Thus $D_{2n} = \{1, r^k\}$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.8]   Let $G = S_n$, fix an $i \in \{1, 2, \ldots, n\}$ and let
                   $G_i = \{\sigma \in G : \sigma(i) = i\}$ (the stabilizer of
