@@ -213,17 +213,60 @@
                   $G_i = \{\sigma \in G : \sigma(i) = i\}$ (the stabilizer of
                   $i$ in $G$). Use group actions to prove that $G_i$ is a
                   subgroup of $G$. Find $|G_i|$.
+
+      \textbf{Proof.} Let $I_n = \{1, 2, \ldots, n\}$. Now consider the map 
+      $f: G \times I_n \rightarrow I_n$, $(g, a) \mapsto g(a)$. We want to first
+      show that $f$ is a group action of $G$ on $I_n$. Let $\sigma_1$,
+      $\sigma_2 \in G$ and $a \in I_n$. So it follows that $f(1, a) = 1(a) = a$
+      and
+      \begin{align*}
+         f(\sigma_1, f(\sigma_2, a)) &= f(\sigma_1, \sigma_2(a)) \\
+            &= \sigma_1(\sigma_2(a)) \\
+            &= (\sigma_1 \circ \sigma_2)(a) \\
+            &= f(\sigma_1 \circ \sigma_2, a),
+      \end{align*}
+      so that $f$ is a group action. Now $G_i$ is the stabilizer of $i$ in $G$;
+      thus $|G_i| \le G$ by Exercise 1.7.4(b). By counting we have that
+      $|G_i| = (n - 1)!$ \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.9]   For any subgroup $H$ of $G$ and any nonempty subset $A$ of $G$
                   define $N_H(A)$ to be the set $\{h \in H : hAh^{-1} = A\}$.
                   Show that $N_H(A) = N_G(A) \cap H$ and deduce that $N_H(A)$ is
                   a subgroup of $H$ (note that $A$ need not be a subset of $H$).
+
+      \textbf{Proof.} By definition we have that
+      \begin{align*}
+          h \in N_H(A) &\Longleftrightarrow hAh^{-1} = A \text{ and } h \in H \\
+            &\Longleftrightarrow h \in N_G(A) \text{ and } h \in H\\
+            &\Longleftrightarrow h \in N_G(A) \cap H.
+      \end{align*}
+      Hence $N_H(A) = N_G(A) \cap H$. Since $N_G(A)$ and $H$ are both subgroups
+      of $G$, it follows by Exercise 2.1.10(a) that
+      $N_G(A) \cap H = N_H(A) \le G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.10]  Let $H$ be a subgroup of order 2 in $G$. Show that
                   $N_G(H) = C_G(H)$. Deduce that if $N_G(H) = G$ then
                   $H \le Z(G)$.
+
+      \textbf{Proof.} Since $|H| = 2$, there exists a nonidentity $h \in G$ such
+      that $H = \{1, h\}$. From the discussion in the textbook, we know that
+      $C_G(H) \subseteq N_G(H)$, so it suffices to show reverse containment. Now
+      let $g \in N_G(H)$. Then it follows that
+      $$H = gHg^{-1} = \{g1g^{-1}, ghg^{-1}\} = \{1, ghg^{-1}\}.$$
+      That is, $ghg^{-1} = h$ so that $gh = hg$. Thus $g$ commutes with both 1
+      and $h$ so that $g \in C_G(H)$(so that $N_G(H) \subseteq C_G(H)$ and we 
+      have that $N_G(H) = C_G(H)$. Now suppose that $N_G(H) = G$. Then, as we
+      have just shown, we must have that $C_G(H) = G$. That is, every element of
+      $G$ commutes with every element of $H$; in order words, every element of
+      $H$ commutes with every element of $G$, so that $H \le Z(G)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.11]  Prove that $Z(G) \le N_G(A)$ for any subset $A$ of $G$.
+
+      \textbf{Proof.} Let $A$ be a nonempty subset of a group $G$. We know that
+      $C_G(A) \le N_G(A)$. Now if $g \in Z(G)$, then $g$ commutes with all the
+      elements of $G$; particularly, $g$ must commute with all the elements of
+      $A$, so that $g \in C_G(A)$; thus $Z(G) \subseteq C_G(A)$. Since $Z(G)$ is
+      a subgroup of $G$, it follows that $Z(G) \le C_G(A) \le N_G(A)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.12]  Let $R$ be the set of all polynomials with integer
                   coefficients in the independent variables $x_1$, $x_2$, $x_3$,
@@ -280,6 +323,35 @@
                            stabilizes them will play an important role in the
                            study of roots of quartic equations in Section 14.6)
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item We have
+               \begin{align*}
+                  \sigma \cdot p &= 12{x_2}^5{x_3}^7x_1-18{x_3}^3x_4+11{x_2}^6
+                        x_3{x_4}^3{x_1}^{23} \\
+                     &= 12x_1{x_2}^5{x_3}^7-18{x_3}^3x_4+11{x_1}^{23}{x_2}^6
+                        x_3{x_4}^3 \\
+                  \tau \cdot (\sigma \cdot p) &= \tau(12x_1{x_2}^5{x_3}^7-
+                        18{x_3}^3x_4+11{x_1}^{23}{x_2}^6x_3{x_4}^3) \\
+                     &= 12x_2{x_3}^5{x_1}^7-18{x_1}^3x_4+11{x_2}^{23}{x_3}^6
+                        x_1{x_4}^3 \\
+                     &= 12{x_1}^7x_2{x_3}^5-18{x_1}^3x_4+11x_1{x_2}^{23}{x_3}^6
+                        {x_4}^3 \\
+                  (\tau\circ\sigma) \cdot p &= (1\;3\;4\;2) \cdot p \\
+                     &= 12{x_3}^5{x_1}^7x_2 - 18{x_1}^3x_4 +
+                        11{x_3}^6x_1{x_4}^3{x_2}^{23} \\
+                     &= 12{x_1}^7x_2{x_3}^5 - 18{x_1}^3x_4 +
+                        11x_1{x_2}^{23}{x_3}^6{x_4}^3 \\
+                  (\sigma\circ\tau) \cdot p &= (1\;3\;2\;4) \cdot p \\
+                     &= 12{x_3}^5{x_4}^7x_1 - 18{x_4}^3x_2 +
+                        11{x_3}^6x_4{x_2}^3{x_1}^{23} \\
+                     &= 12x_1{x_3}^5{x_4}^7 - 18x_2{x_4}^3 +
+                        11{x_1}^{23}{x_2}^3{x_3}^6x_4.
+               \end{align*}
+
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.13]  Let $n$ be a positive integer and let $R$ be the set of all
                   polynomials with integer coefficients in the independent
