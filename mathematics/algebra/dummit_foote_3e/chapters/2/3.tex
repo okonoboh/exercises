@@ -2,41 +2,175 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.1]   Find all subgroups of $Z_{45} = \cyc{x}$, giving a generator
                   for each. Describe the containments between these subgroups.
+                  
+      \textbf{Solution.} Since the positive divisors of 45 are: 1, 3, 5, 9, 15,
+      and 45, it follows that the subgroups of $Z_{45}$ are
+      $$\cyc{x}, \cyc{x^3}, \cyc{x^5}, \cyc{x^9}, \cyc{x^{15}}, \text{ and }
+        \cyc{x^{45}}.$$
+        
+      We have the following containments:
+      $$
+         \begin{tabular}{>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}}
+            \cyc{x^{45}} & \le & \cyc{x^{15}} & \le & \cyc{x^5} & \le & \cyc{x} \\
+            \cyc{x^{15}} & \le &  \cyc{x^3} & \le & \cyc{x} \\
+            \cyc{x^9} & \le &  \cyc{x^3} & \le & \cyc{x}
+         \end{tabular}
+      $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.2]   If $x$ is an element of the finite group $G$ and $|x| = |G|$,
                   prove that $G = \cyc{x}$. Give an explicit example to show 
                   that this result need not be true if $G$ is an infinite group.
+                  
+      \textbf{Proof.} Let $G$ be a finite group, so that $|G| = n \in \Z^+$.
+      Suppose that there exists $x \in G$ such that $|x| = n$. Clearly
+      $\cyc{x} \subseteq G$. But $|\cyc{x}| = n$ since $|x| = n$; thus
+      $G \subseteq \cyc{x}$ so that $G = \cyc{x}$. Now let $G = \Z$. We have
+      that $|\cyc{2}| = |G|$ but $G \neq \cyc{2}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.3]   Find all generators for $\Z/48\Z$.
+   
+      \textbf{Solution.} The generators for $\Z/48\Z$ are: $\cyc{\overline{1}}$,
+      $\cyc{\overline{5}}$, $\cyc{\overline{7}}$, $\cyc{\overline{11}}$,
+      $\cyc{\overline{13}}$, $\cyc{\overline{17}}$, $\cyc{\overline{19}}$,
+      $\cyc{\overline{23}}$, $\cyc{\overline{25}}$, $\cyc{\overline{29}}$,
+      $\cyc{\overline{31}}$, $\cyc{\overline{35}}$, $\cyc{\overline{37}}$,
+      $\cyc{\overline{41}}$, $\cyc{\overline{43}}$, and $\cyc{\overline{47}}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.4]   Find all generators for $\Z/202\Z$.
+   
+      \textbf{Solution.} Let $S$ be the set of generators for $\Z/202\Z$. Then
+      $|S| = 100$ since
+      $$S = \{\cyc{x} : x \text{ is odd and positive}, x \neq 101, \text{ and } x < 202\}.$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.5]   Find the number of generators for $\Z/49000\Z$.
+   
+      \textbf{Solution.} For a positive integer $n$ let $\varphi(n)$ be the
+      number of positive integers---less than or equal to $n$---that are
+      relatively prime to $n$. Then the number of generators for $\Z/49000\Z$ is
+      $\varphi(49000) = \varphi(2^35^37^2) =
+      \varphi(2^3)\varphi(5^3)\varphi(7^2) = 16800$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.6]   In $\Z/48\Z$ write out all elements of $\cyc{\overline{a}}$
                   for every $\overline{a}$. Find all inclusions between
                   subgroups in $\Z/48\Z$.
+      
+      \textbf{Solution.}
+      $$
+         \begin{tabular}{|c|c|} \hline
+            \textbf{Generators} & \textbf{Subgroups in} $\Z/48\Z$ \\ \hline
+            0 & $\{0\}$ \\ \hline
+            24 & $\{0, 24\}$ \\ \hline
+            16, 32 & $\{0, 16, 32\}$ \\ \hline
+            12, 36 & $\{0, 12, 24, 36\}$ \\ \hline
+            8, 40 & $\{0, 8, 16, 24, 32, 40\}$ \\ \hline
+            6, 18, 30, 42 & $\{0, 6, 12, 18, 24, 30, 36, 42\}$ \\ \hline
+            4,20,28,44 & $\{0,4,8,12,16, 20, 24, 28, 32, 36, 40, 44\}$ \\ \hline
+            3, 9, 15, 21, 27, 33, 39, 45 & $\{0, 3, 6, 9, 12, 15, 18, 21, 24,
+            27, 30, 33, 36, 39, 42, 45\}$ \\ \hline            
+            2, 10, 14, 22, 26, 34, 38, 46 & $\{x : 0 \le x \le 46,
+            x \text{ is even}\}$ \\ \hline
+            \text{See Exercise } 2.3.3 & $\Z/48\Z$ \\ \hline
+         \end{tabular}
+      $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.7]   Let $Z_{48} = \cyc{x}$ and use the isomorphism
                   $\Z/48\Z \cong Z_{48}$ given by $\overline{1} \mapsto x$ to
                   list all subgroups of $Z_{48}$ as computed in the preceding
                   exercise.
+                  
+      \textbf{Solution.}
+      $$
+         \begin{tabular}{|c|} \hline
+            \textbf{Subgroups in} $Z_{48}$ \\ \hline
+            $\{1\}$ \\ \hline
+            $\{1, x^{24}\}$ \\ \hline
+            $\{1, x^{16}, x^{32}\}$ \\ \hline
+            $\{1, x^{12}, x^{24}, x^{36}\}$ \\ \hline
+            $\{1, x^8, x^{16}, x^{24}, x^{32}, x^{40}\}$ \\ \hline
+            $\{1, x^6, x^{12}, x^{18}, x^{24}, x^{30},x^{36},x^{42}\}$ \\ \hline
+            $\{1,x^4,x^8,x^{12},x^{16}, x^{20}, x^{24}, x^{28}, x^{32}, x^{36},
+               x^{40}, x^{44}\}$ \\ \hline
+            $\{1, x^3, x^6, x^9, x^{12}, x^{15}, x^{18}, x^{21}, x^{24},
+            x^{27}, x^{30}, x^{33}, x^{36}, x^{39}, x^{42}, x^{45}\}$ \\ \hline            
+            $\{x^y : 0 \le y \le 46, y \text{ is even}\}$ \\ \hline
+            $Z_{48}$ \\ \hline
+         \end{tabular}
+      $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.8]   Let $Z_{48} = \cyc{x}$. For which integers $a$ does the map
                   $\varphi_a$ defined by $\varphi_a : \overline{1} \mapsto x^a$
                   extend to an \textit{isomorphism} from $\Z/48\Z$ onto
                   $Z_{48}$.
+                  
+      \textbf{Solution.} Suppose that $(a, 48) = 1$. Then it follows that $x^a$
+      generates $Z_{48}$. Thus $\varphi_a$ is an isomorphism by Theorem 4 (Page
+      56). Now suppose that $a$ is not relatively prime to 48. Then $x^a$ does
+      not generate $Z_{48}$, so that the image of $\varphi_a$ is not $Z_{48}$.
+      Hence $\varphi_a$ is an isomorphism if and only if $(a, 48) = 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.9]   Let $Z_{36} = \cyc{x}$. For which integers $a$ does the map
                   $\psi_a$ defined by $\psi_a : \overline{1} \mapsto x^a$ extend
                   to a \textit{well defined homomorphism} from $\Z/48\Z$ into
                   $Z_{36}$. Can $\psi_a$ ever be a surjective homomorphism?
+                  
+      \textbf{Solution.} First we shall find the restriction(s) on $a$ such that
+      $\psi_a$ is well defined. Suppose $b = c$ for some $b, c \in \Z/48\Z$. It
+      suffices to show that $\psi_a(b) = \psi_a(c)$. Since $b = c$, there exists
+      an integer $k$ such that $b = c + 48k$. Thus $\psi_a(b) = \psi_a(c+48k)$,
+      so that
+      $\psi_a(b)=(x^a)^{c+48k}=x^{ac + 48ak}= x^{ac}x^{48ak}=\psi_a(c)x^{12ak}$.
+      So we must require $x^{12ak} = 1$ for all $k \in \Z$. Now $x^{12ak} = 1$
+      for all $k \in \Z$ if and only if $3 \mid a$ if and only if $\psi_a$ is
+      well defined. It follows immediately that
+      $\psi_a$ is an homomorphism since
+      \begin{align*}
+         \psi_a(p + q) &= (x^a)^{p+q} \\
+            &= x^{ap+aq} \\
+            &= x^{ap}x^{aq} \\
+            &= (x^a)^p(x^a)^q \\
+            &= \psi_a(p)\psi_a(q)
+      \end{align*}      
+      for all $p, q \in \Z/48\Z$.
+      
+      \textit{Can $\psi_a$ ever be a surjective homomorphism?} No!
+      
+      \textbf{Proof.} Suppose to the contrary that $\psi_a$ is surjective. Then
+      there exists $y \in \Z/48\Z$ such that $\psi_a(y) = x$. That is
+      $x^{ay} = x$, so that $x^{ay-1} = 1$; thus $ay - 1 = 36m$ for some integer
+      $m$. Rearrange the equality $ay - 1 = 36m$ to get $1 = ay - 36m$. Recall
+      that $3 \mid a$; since $3$ also divides 36, it follows that 3 must divide
+      1, a contradiction. Thus $\psi_a$ can never be surjective. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.10]  What is the order of $\overline{30}$ in $\Z/54\Z$? Write out
                   all the elements and their orders in $\cyc{\overline{30}}$.
+                  
+      \textbf{Solution.} The order of $30$ in $\Z/54\Z$ is
+      $$\frac{54}{(30, 54)} = 9.$$
+      The elements of $\cyc{30}$ and their respective orders are:
+      $$
+         \begin{tabular}{|c|c|} \hline
+            Element of $\cyc{30}$ & Order \\ \hline
+            30 & 9 \\ \hline
+             6 & 9 \\ \hline
+            36 & 3 \\ \hline
+            12 & 9 \\ \hline
+            42 & 9 \\ \hline
+            18 & 3 \\ \hline
+            48 & 9 \\ \hline
+            24 & 9 \\ \hline
+             0 & 1 \\ \hline
+         \end{tabular}
+      $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.11]  Find all cyclic subgroups of $D_8$. Find a proper subgroup of
                   $D_8$ which is not cyclic.
+                  
+      \textbf{Solution.} In $D_8$, only $r$ and $r^4$ have order 4. Thus
+      $\{1, r, r^2, r^3\}$ is the only cyclic subgroup of order 4. The trivial
+      subgroup is the only cyclic subgroup of order 1. Finally there are 5
+      cyclic subgroups of order 2 and they are of the form $\{1, x\}$ where
+      $x \in \{r^2, s, sr, sr^2, sr^3\}$. The set $\{1, s, r^2, sr^2\}$ is a
+      non-cyclic proper subgroup of $D_8$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.12]  Prove that the following groups are \textit{not} cyclic:
                   \begin{enumerate}
@@ -44,6 +178,26 @@
                      \item $Z_2 \times \Z$
                      \item $\Z \times \Z$.
                   \end{enumerate}
+      
+      \textbf{Proof.}
+      \begin{enumerate}
+         \item The order of $Z_2 \times Z_2$ is 4, but no element in this group
+               has order 4; thus $Z_2 \times Z_2$ is not cyclic.
+         \item Let $Z_2 = \cyc{x}$. Observe that $Z_2 \times \Z$ is not finite,
+               so in order for it to be cyclic it must be isomorphic to $\Z$.
+               But this is not the case since $Z_2 \times \Z$ has two elements
+               of finite order(namely $(1, 0)$ and $(x, 0)$) while $\Z$ has
+               exactly 1 element of finite order.
+         \item Suppose to the contrary that $\Z \times \Z$ is cyclic. Then there
+               exist nonzero integers $a$ and $b$ such that
+               $$\Z \times \Z = \cyc{(a,b)} = \{(na, nb) : n \in \Z\}.$$
+               Thus there exists an integer $m$ such that
+               $(ma, mb) = (0, 1)$. That is, $ma = 0$ and $mb = 1$. Since
+               $ma = 0$, we must have $m = 0$ or $a = 0$. If $m$ is 0, then
+               $(ma, mb) = (0, 0) \neq (0, 1)$, a contradiction; thus we must
+               have $a = 0$, contradicting our assumption that $a$ is nonzero.
+               Thus $\Z \times \Z$ is not cyclic.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.13]  Prove that the following pairs of groups are \textit{not}
                   isomorphic:
@@ -51,12 +205,47 @@
                      \item $\Z \times Z_2$ and $\Z$
                      \item $\Q \times Z_2$ and $\Q$.
                   \end{enumerate}
+      
+      \textbf{Proof.}
+      \begin{enumerate}
+         \item By Exercise 1.6.11, we know that $\Z \times Z_2$ is isomorphic to
+               $Z_2 \times \Z$. By Exercise 2.3.12, $Z_2 \times \Z$ is not
+               cyclic; thus $\Z \times Z_2$ is not cyclic. That is,
+               $\Z \times Z_2$ is not isomorphic to $\Z$.
+         \item Let $Z_2 = \cyc{x}$. It immediately follows that
+               $\Q \times Z_2$ and $\Q$ are not isomorphic since $\Q \times Z_2$
+               has two elements of finite order(namely $(0, 1)$ and $(0, x)$)
+               while $\Q$ has exactly 1 element of finite order.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.14]  Let $\sigma =$ (1 2 3 4 5 6 7 8 9 10 11 12). For each of the
                   following integers $a$ compute $\sigma^a$:
                   $$a = 13, 65, 626, 1195, -6, -81, -570,\text{ and } {-1211}.$$
+                  
+      \textbf{Solution.}
+      
+      \begin{alignat*}{4}
+         &\sigma^{13}   &&= \sigma &&\text{ } \\
+         &\sigma^{65}   &&= \sigma^5 &&=
+            (1\;6\;11\;4\;9\;2\;7\;12\;5\;10\;3\;8) \\
+         &\sigma^{626}  &&= \sigma^2 &&= (1\;3\;5\;7\;9\;11) \\
+         &\sigma^{1195} &&= \sigma^7 &&=
+            (1\;8\;3\;10\;5\;12\;7\;2\;9\;4\;11\;6\;13) \\
+         &\sigma^{-6} &&= \sigma^6 &&= (1\;7)
+            (1\;8\;3\;10\;5\;12\;7\;2\;9\;4\;11\;6\;13) \\
+         &\sigma^{-81} &&= \sigma^3 &&= (1\;4\;7\;10) \\
+         &\sigma^{-570} &&= \sigma^6 &&= (1\;7) \\
+         &\sigma^{-1211} &&= \sigma
+      \end{alignat*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.15]  Prove that $\Q \times \Q$ is not cyclic.
+   
+      \textbf{Proof.} Since $\Q$ is infinite and, by Exercise 1.6.6, $\Q$ is not
+      isomorphic to $\Z$, it follows that $\Q$ is not cyclic. We know that the
+      subgroup of every cyclic group is cyclic; since $\Q \times\{1\} \cong \Q$,
+      it follows that $\Q \times \{1\}$ is not cyclic; thus $\Q \times \Q$ is
+      not cyclic because it has a noncyclic subgroup, namely $\Q \times \{1\}$.
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.16]  Assume $|x| = n$ and $|y| = m$. Suppose that $x$ and $y$
                   \textit{commute}: $xy = yx$. Prove that $|xy|$ divides the
@@ -64,12 +253,52 @@
                   and $y$ do \textit{not} commute? Give an example of commuting
                   elements $x$, $y$ such that the order of $xy$ is not equal to
                   the least common multiple of $|x|$ and $|y|$.
+                  
+      \textbf{Proof.} Let $l = \text{lcm}(m, n)$. So there exist integers
+      $m'$ and $n'$ such that $mm' = nn' = l$. So we have that
+      $$(xy)^l = x^ly^l = x^{nn'}y^{mm'} = (x^n)^{n'}(y^m)^{m'} = 1.$$
+      That is $|xy|$ divides $l$ (by Proposition 3, Page 55).
+      
+      \textit{Need this be true if $x$ and $y$ do not commute?} No! Let
+      $$
+         A = \left(\begin{tabular}{cc}
+            0 & 1/2 \\
+            2 & 0
+         \end{tabular}\right) \text{ and }
+         B = \left(\begin{tabular}{cc}
+            0 & 1 \\
+            1 & 0
+         \end{tabular}\right).
+      $$
+      A simple computation will show us that although $|A| = |B| = 2$, we have
+      that $|AB| = \infty$.
+      
+      \textbf{Example.} Consider $\Z/2\Z = \{0, 1\}$. Let $x = y = 1$. Then we
+      have $|x| = |y| = 2$, so that lcm($|x|, |y|) = 2 \neq |x + y| = |0| = 1$.
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.17]  Find a presentation for $Z_n$ with one generator.
+   
+      \textbf{Solution.} $Z_n = \cyc{x : x^n = 1}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.18]  Show that if $H$ is any group and $h$ is an element of $H$
                   with $h^n = 1$, then there is a unique homomorphism from
                   $Z_n = \cyc{x}$ to $H$ such that $x \mapsto h$.
+                  
+      \textbf{Proof.} Let $n \in \Z^+$, $Z_n = \cyc{x}$, $H$ a group, and
+      $h^n  = 1$ for some $h \in H$. First we shall show the existence of a
+      homomorphism from $Z_n$ to $H$ such that $x \mapsto h$. So consider the
+      map $\alpha : \cyc{x} \rightarrow H$ defined by $\alpha(x^a) = h^a$.
+      Clearly $\alpha(x) = h$. Now we will show that $\alpha$ is well defined.
+      Suppose $x^w = x^y$ for some $x^w, x^y \in Z_n$. Thus $w = y + nk$ for
+      some integer $k$. Thus
+      $$\alpha(x^w) = \alpha(x^{y+nk})=h^{y+nk}=h^{y}{h^n}^k =h^y=\alpha(x^y),$$
+      so that $\alpha$ is well defined. Now we have that
+      $$\alpha(x^px^q)=\alpha(x^{p+q})=h^{p+q}=h^ph^q=\alpha(x^p)\alpha(x^q),$$
+      so that $\alpha$ is an homomorphism. Now to show uniqueness, we suppose
+      that $\phi : \cyc{x} \rightarrow H$ is an homommorphism such that
+      $\phi(x) = h$. Since $\phi$ is a homomorphism, it follows that
+      $\phi(x^a) = h^a$. Thus $\phi = \alpha$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.19]  Show that if $H$ is any group and $h$ is an element of $H$,
                   then there is a unique homomorphism from $\Z$ to $H$ such that
@@ -139,6 +368,7 @@
                            automorphism group of $Z_n$ (so Aut($Z_n$) is an
                            abelian group of order $\varphi(n)$).
                   \end{enumerate}
+                  %%%%%MISSING CONTAINMENT%%%%%%%%
 \end{enumerate}
 
 
