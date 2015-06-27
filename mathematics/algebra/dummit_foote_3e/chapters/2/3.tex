@@ -261,11 +261,11 @@
       
       \textit{Need this be true if $x$ and $y$ do not commute?} No! Let
       $$
-         A = \left(\begin{tabular}{cc}
+         A = \left(\begin{tabular}{@{}cc@{}}
             0 & 1/2 \\
             2 & 0
          \end{tabular}\right) \text{ and }
-         B = \left(\begin{tabular}{cc}
+         B = \left(\begin{tabular}{@{}cc@{}}
             0 & 1 \\
             1 & 0
          \end{tabular}\right).
@@ -298,15 +298,32 @@
       so that $\alpha$ is an homomorphism. Now to show uniqueness, we suppose
       that $\phi : \cyc{x} \rightarrow H$ is an homommorphism such that
       $\phi(x) = h$. Since $\phi$ is a homomorphism, it follows that
-      $\phi(x^a) = h^a$. Thus $\phi = \alpha$. \qed
+      $\phi(x^a) = h^a$. Thus $\phi = \alpha$, a desired. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.19]  Show that if $H$ is any group and $h$ is an element of $H$,
                   then there is a unique homomorphism from $\Z$ to $H$ such that
                   $1 \mapsto h$.
+                  
+      \textbf{Proof.} Let $H$ be a group and let $h \in H$. First we shall show
+      that there exists a homomorphism from $\Z$ to $H$ such that $1 \mapsto h$.
+      So consider the map $\alpha : \Z \rightarrow H$ defined by
+      $n \mapsto h^n$. Clearly $\alpha(1) = h$ and
+      $$\alpha(x+y) = h^{x+y} = h^xh^y = \alpha(x)\alpha(y) \text{ for all }
+        x, y \in \Z^+,$$
+      so that $\alpha$ is a homomorphism. To show uniqueness, suppose that
+      $\alpha' : \Z \rightarrow H$ is an homomorphism such that
+      $\alpha'(1) = h$. Then according to Exercise 1.6.1, we have that
+      $\alpha'(n) = \alpha'(n\cdot1) = \alpha'(1)^n = h^n$ for all $n \in \Z$;
+      that is, $\alpha' = \alpha$, as desired. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.20]  Let $p$ be a prime and let $n$ be a positive integer. Show
                   that if $x$ is an element of the group $G$ such that
                   $x^{p^n} = 1$ then $|x| = p^m$ for some $m \le n$.
+                  
+      \textbf{Proof.} Suppose that $x \in G$ such that $x^{p^n} = 1$. Then it
+      follows by Proposition 3 (Page 55) that $|x|$ divides $p^n$. Since $p$ is
+      a prime, its factors are $p^i$, $0 \le i \le n$. Thus $|x| = p^m$ for
+      some nonnegative $m$ not greater than $n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.21]  Let $p$ be an odd prime and let $n$ be a positive integer. Use
                   the Binomial Theorem to show that
