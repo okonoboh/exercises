@@ -91,7 +91,7 @@
             $\{1,x^4,x^8,x^{12},x^{16}, x^{20}, x^{24}, x^{28}, x^{32}, x^{36},
                x^{40}, x^{44}\}$ \\ \hline
             $\{1, x^3, x^6, x^9, x^{12}, x^{15}, x^{18}, x^{21}, x^{24},
-            x^{27}, x^{30}, x^{33}, x^{36}, x^{39}, x^{42}, x^{45}\}$ \\ \hline            
+            x^{27}, x^{30}, x^{33}, x^{36}, x^{39}, x^{42}, x^{45}\}$ \\ \hline
             $\{x^y : 0 \le y \le 46, y \text{ is even}\}$ \\ \hline
             $Z_{48}$ \\ \hline
          \end{tabular}
@@ -298,7 +298,7 @@
       so that $\alpha$ is an homomorphism. Now to show uniqueness, we suppose
       that $\phi : \cyc{x} \rightarrow H$ is an homommorphism such that
       $\phi(x) = h$. Since $\phi$ is a homomorphism, it follows that
-      $\phi(x^a) = h^a$. Thus $\phi = \alpha$, a desired. \qed
+      $\phi(x^a) = h^a$. Thus $\phi = \alpha$, as desired. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.19]  Show that if $H$ is any group and $h$ is an element of $H$,
                   then there is a unique homomorphism from $\Z$ to $H$ such that
@@ -325,18 +325,79 @@
       a prime, its factors are $p^i$, $0 \le i \le n$. Thus $|x| = p^m$ for
       some nonnegative $m$ not greater than $n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[2.3.21]  Let $p$ be an odd prime and let $n$ be a positive integer. Use
-                  the Binomial Theorem to show that
+   \item[2.3.21]  Let $p$ be an odd prime and let $n$ be a positive integer
+                  $\ge 2$. Use the Binomial Theorem to show that
                   $(1+p)^{p^{n-1}} \equiv 1$ (mod $p^n$) but
                   $(1+p)^{p^{n-2}} \not\equiv 1$ (mod $p^n$). Deduce that $1+p$
                   is an element of order $p^{n-1}$ in the multiplicative group
                   $(\Z/p^n\Z)^\times$.
+
+      \textbf{Lemma 2.3.1.} \textit{For an integer $n \ge 2$ and an odd prime
+      $p$, let $f_p(n)$ be the number of $p$ factors of $n!$ (i.e., the greatest
+      nonnegative integer $j$ such that $p^j \mid i!$), then it follows that
+      $f_p(n) < \D\frac{n}{2}$}.
+
+      \textbf{Proof.} Let $n \ge 2$ be an integer and $p$ an odd prime. For a
+      a positive integer $r$, let $g_p(n, r)$ be the number of positive
+      integers, less than or equal to $n$, that have at least $r$ number of $p$ 
+      factors. It follows that $g_p(n, r) = \D\gint{\frac{n}{p^r}}$, where
+      $\gint{x}$ is the greatest integer less than or equal to $x$. Finally let
+      $k_n$ be the maximum nonnegative integer such that $p^{k_n}$ is a multiple
+      of some positive integer not greater than $n$. Thus we have that
+      \begin{align*}
+         f_p(n) &= g_p(n, 1) + g_p(n, 2) + \cdots + g_p(n, k_n) \\
+            &= \sum_{i=1}^{k_n} g_p(n, i)
+            = \sum_{i=1}^{k_n} \gint{\frac{n}{p^i}} \\
+            &\le \sum_{i=1}^{k_n} \frac{n}{p^i}
+            < \sum_{i=1}^\infty \frac{n}{p^i} \\
+            &= \frac{n}{p-1} &[\text{Sum of Geometric Series}] \\
+            &< \frac{n}{2}. &[\text{Since }p \ge 3]
+      \end{align*}
+
+      So we can write $n! = p^{f_p(n)} h_n$ for some $h_n \in \Z^+$, so that
+      $(h_n, p) = 1$.
+
+      Now we are ready to commence the proof of the problem. By the Binomial
+      Theorem, we have that
+      \begin{align*}
+         (1+p)^{p^{n-1}} &= \sum_{i=0}^{p^{n-1}}\binom{p^{n-1}}{i}p^i \\
+            &= \sum_{i=0}^{p^{n-1}}p^i\frac{p^{n-1}(p^{n-1}-1)(p^{n-1}-2)
+               \cdots(p^{n-1}-i+1)}{i!} \\
+            &= \sum_{i=0}^{p^{n-1}}p^i\frac{p^{n-1}(p^{n-1}-1)(p^{n-1}-2)
+               \cdots(p^{n-1}-i+1)}{p^{f_p(i)} h_i} \\
+            &= 1 + p^n + p^n\sum_{i=2}^{p^{n-1}}\frac{p^{i-1}(p^{n-1}-1)
+               (p^{n-1}-2) \cdots(p^{n-1}-i+1)}{p^{f_p(i)} h_i}.
+      \end{align*}
+      Now $f_p(i) < i / 2 \le i - 1$ for $i \ge 2$. Thus $i - 1 - f_p(i) \ge 0$
+      (so that $p^{i - 1 - f_p(i)}$ is an integer) if $i \ge 2$. We then have
+      \begin{equation} \label{2_3_21_1}
+         (1+p)^{p^{n-1}} = 1 + p^n + p^n\sum_{i=2}^{p^{n-1}}\frac{p^{i-1-f_p(i)}
+        (p^{n-1}-1)(p^{n-1}-2) \cdots(p^{n-1}-i+1)}{h_i}
+      \end{equation}
+      Since $(h_i, p) = 1$, it follows that $h_i$ must divide
+      $p^{i-1}(p^{n-1}-1)(p^{n-1}-2) \cdots(p^{n-1}-i+1)$. Hence
+      $$\sum_{i=2}^{p^{n-1}}\frac{p^{i-1-f_p(i)}
+        (p^{n-1}-1)(p^{n-1}-2) \cdots(p^{n-1}-i+1)}{h_i}$$
+      is an integer and we can conclude from \eqref{2_3_21_1} that
+      $(1+p)^{p^{n-1}} \equiv 1$ (mod $p^n$). Now we have that
+      \begin{align*}
+         (1+p)^{p^{n-2}} &= \sum_{i=0}^{p^{n-2}}\binom{p^{n-2}}{i}p^i \\
+            &= \sum_{i=0}^{p^{n-2}}p^i\frac{p^{n-2}(p^{n-2}-1)(p^{n-2}-2)
+               \cdots(p^{n-2}-i+1)}{i!} \\
+            &= 1 + p^{n-1} + p^n\frac{p^{n-2}-1}{2} + p^n\frac{p(p^{n-2}-1)(p^{n-2}-2)}{3!} +\sum_{i=4}^{p^{n-1}}p^i\frac{p^{n-2}(p^{n-2}-1)(p^{n-2}-2)
+               \cdots(p^{n-2}-i+1)}{p^{f_p(i)} h_i} \\
+            &= 1 + p^n + p^n\sum_{i=2}^{p^{n-1}}\frac{p^{i-1}(p^{n-1}-1)
+               (p^{n-1}-2) \cdots(p^{n-1}-i+1)}{p^{f_p(i)} h_i}.
+      \end{align*}
+      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.22]  Let $n$ be an integer $\ge 3$. Use the Binomial Theorem to
                   show that $(1+2^2)^{2^{n-2}} \equiv 1$ (mod $2^n$) but
                   $(1+2^2)^{2^{n-3}} \not\equiv 1$ (mod $2^n$). Deduce that 5 is
                   an element of order $2^{n-2}$ in the multiplicative group
                   $(\Z/2^n\Z)^\times$.
+
+      \textbf{Proof.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.23]  Show that $(\Z/2^n\Z)^\times$ is not cyclic for any $n \ge 3$.
                   [Find two distinct subgroups of order 2.]
