@@ -1,4 +1,5 @@
 \begin{enumerate}
+   \item[2.3.0]  \textcolor{red}{MISSING CONTAINMENT.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.1]   Find all subgroups of $Z_{45} = \cyc{x}$, giving a generator
                   for each. Describe the containments between these subgroups.
@@ -332,33 +333,46 @@
                   is an element of order $p^{n-1}$ in the multiplicative group
                   $(\Z/p^n\Z)^\times$.
 
-      \textbf{Lemma 2.3.1.} \textit{For an integer $n \ge 2$ and an odd prime
-      $p$, let $f_p(n)$ be the number of $p$ factors of $n!$ (i.e., the greatest
-      nonnegative integer $j$ such that $p^j \mid i!$), then it follows that
-      $f_p(n) < \D\frac{n}{2}$}.
+      \textbf{Lemma 2.3.1.} \textit{For a positive integer $t$ and a prime $q$, 
+      let $f_q(t)$ be the number of $q$ factors of $t!$ (i.e., $f_q(t)$ is
+      the greatest nonnegative integer $j$ such that $q^j \mid t!$), then it 
+      follows that $f_q(t) < \D\frac{t}{2}$ if $q > 2$ or $f_q(t) \le t - 1$ if
+      $q = 2$}.
 
-      \textbf{Proof.} Let $n \ge 2$ be an integer and $p$ an odd prime. For a
-      a positive integer $r$, let $g_p(n, r)$ be the number of positive
-      integers, less than or equal to $n$, that have at least $r$ number of $p$ 
-      factors. It follows that $g_p(n, r) = \D\gint{\frac{n}{p^r}}$, where
-      $\gint{x}$ is the greatest integer less than or equal to $x$. Finally let
-      $k_n$ be the maximum nonnegative integer such that $p^{k_n}$ is a multiple
-      of some positive integer not greater than $n$. Thus we have that
+      \textbf{Proof.} Let $t$ be a positive integer and $q$ a prime. For a
+      positive integer $r$, let $g_q(t, r)$ be the number of positive integers,
+      less than or equal to $t$, that have at least $r$ number of $q$ factors.
+      It follows that $g_q(t, r) = \D\gint{\frac{t}{q^r}}$, where $\gint{x}$ is 
+      the greatest integer less than or equal to $x$. Finally let $k_t$ be the 
+      maximum nonnegative integer such that $q^{k_t}$ is a multiple of some 
+      positive integer not greater than $t$. That is
+      $$k_t := \max\{i \in \Z^+ : q^i \mid m, \text{where } m \le t\}.$$
+      Thus we have that
       \begin{align*}
-         f_p(n) &= g_p(n, 1) + g_p(n, 2) + \cdots + g_p(n, k_n) \\
-            &= \sum_{i=1}^{k_n} g_p(n, i)
-            = \sum_{i=1}^{k_n} \gint{\frac{n}{p^i}} \\
-            &\le \sum_{i=1}^{k_n} \frac{n}{p^i}
-            < \sum_{i=1}^\infty \frac{n}{p^i} \\
-            &= \frac{n}{p-1} &[\text{Sum of Geometric Series}] \\
-            &< \frac{n}{2}. &[\text{Since }p \ge 3]
+         f_q(t) &= g_q(t, 1) + g_q(t, 2) + \cdots + g_q(t, k_t) \\
+            &= \sum_{i=1}^{k_t} g_q(t, i)
+            = \sum_{i=1}^{k_t} \gint{\frac{t}{q^i}} \\
+            &\le \sum_{i=1}^{k_t} \frac{t}{q^i}
+            < \sum_{i=1}^\infty \frac{t}{q^i} \\
+            &= \frac{t}{q-1}. &[\text{Sum of Geometric Series}]
       \end{align*}
 
-      So we can write $n! = p^{f_p(n)} h_n$ for some $h_n \in \Z^+$, so that
-      $(h_n, p) = 1$.
+      That is $f_q(t) < \frac{t}{q-1} < \frac{t}{2}$ if $p > 2$ and
+      $f_q(t) < \frac{t}{q-1} = t \le t - 1$ if $p = 2$. Observe that this
+      allows us to write $t! = q^{f_q(t)} h_t$ for some unique $h_t \in \Z^+$, 
+      so that $(h_t, q) = 1$. \qed \\
 
-      Now we are ready to commence the proof of the problem. By the Binomial
-      Theorem, we have that
+      \textit{We now want to show that $(1+p)^{p^{n-1}} \equiv 1$ (mod $p^n$).} 
+      Note that since
+      \begin{align*}
+         \binom{p^{n-1}}{i} &= \frac{p^{n-1}(p^{n-1}-1)(p^{n-1}-2)
+               \cdots(p^{n-1}-i+1)}{i!} \\
+               &= \frac{p^{n-1}(p^{n-1}-1)(p^{n-1}-2)
+               \cdots(p^{n-1}-i+1)}{p^{f_p(i)} h_i}
+      \end{align*}
+      is an integer and since $(h_i,p)=1$, for $0 \le i \le p^{n-1}$, it follows 
+      that $h_i$ must divide $(p^{n-1}-1)(p^{n-1}-2)\cdots(p^{n-1}-i+1)$. By the 
+      Binomial Theorem, we have that
       \begin{align*}
          (1+p)^{p^{n-1}} &= \sum_{i=0}^{p^{n-1}}\binom{p^{n-1}}{i}p^i \\
             &= \sum_{i=0}^{p^{n-1}}p^i\frac{p^{n-1}(p^{n-1}-1)(p^{n-1}-2)
@@ -368,28 +382,51 @@
             &= 1 + p^n + p^n\sum_{i=2}^{p^{n-1}}\frac{p^{i-1}(p^{n-1}-1)
                (p^{n-1}-2) \cdots(p^{n-1}-i+1)}{p^{f_p(i)} h_i}.
       \end{align*}
-      Now $f_p(i) < i / 2 \le i - 1$ for $i \ge 2$. Thus $i - 1 - f_p(i) \ge 0$
-      (so that $p^{i - 1 - f_p(i)}$ is an integer) if $i \ge 2$. We then have
+      By Lemma 2.3.1, $f_p(i) < i / 2$, and $i / 2 \le i - 1$ for $i \ge 2$. 
+      Thus $i - 1 - f_p(i) \ge 0$ (so that $p^{i - 1 - f_p(i)}$ is an integer) 
+      if $i \ge 2$. We then have
       \begin{equation} \label{2_3_21_1}
          (1+p)^{p^{n-1}} = 1 + p^n + p^n\sum_{i=2}^{p^{n-1}}\frac{p^{i-1-f_p(i)}
         (p^{n-1}-1)(p^{n-1}-2) \cdots(p^{n-1}-i+1)}{h_i}
       \end{equation}
-      Since $(h_i, p) = 1$, it follows that $h_i$ must divide
-      $p^{i-1}(p^{n-1}-1)(p^{n-1}-2) \cdots(p^{n-1}-i+1)$. Hence
+      Since $h_i$ divides $(p^{n-1}-1)(p^{n-1}-2) \cdots(p^{n-1}-i+1)$, it
+      follows that
       $$\sum_{i=2}^{p^{n-1}}\frac{p^{i-1-f_p(i)}
         (p^{n-1}-1)(p^{n-1}-2) \cdots(p^{n-1}-i+1)}{h_i}$$
       is an integer and we can conclude from \eqref{2_3_21_1} that
-      $(1+p)^{p^{n-1}} \equiv 1$ (mod $p^n$). Now we have that
-      \begin{align*}
-         (1+p)^{p^{n-2}} &= \sum_{i=0}^{p^{n-2}}\binom{p^{n-2}}{i}p^i \\
-            &= \sum_{i=0}^{p^{n-2}}p^i\frac{p^{n-2}(p^{n-2}-1)(p^{n-2}-2)
-               \cdots(p^{n-2}-i+1)}{i!} \\
-            &= 1 + p^{n-1} + p^n\frac{p^{n-2}-1}{2} + p^n\frac{p(p^{n-2}-1)(p^{n-2}-2)}{3!} +\sum_{i=4}^{p^{n-1}}p^i\frac{p^{n-2}(p^{n-2}-1)(p^{n-2}-2)
-               \cdots(p^{n-2}-i+1)}{p^{f_p(i)} h_i} \\
-            &= 1 + p^n + p^n\sum_{i=2}^{p^{n-1}}\frac{p^{i-1}(p^{n-1}-1)
-               (p^{n-1}-2) \cdots(p^{n-1}-i+1)}{p^{f_p(i)} h_i}.
-      \end{align*}
-      
+      $(1+p)^{p^{n-1}} \equiv 1$ (mod $p^n$).
+
+      \textit{We now want to show that $(1+p)^{p^{n-2}}\not\equiv1$
+      (mod $p^n$)}. So
+      \begin{IEEEeqnarray}{rCl}
+         (1+p)^{p^{n-2}} &=& \sum_{i=0}^{p^{n-2}}\binom{p^{n-2}}{i}p^i
+         \nonumber \\
+            &=& \sum_{i=0}^{p^{n-2}}p^i\frac{p^{n-2}(p^{n-2}-1)(p^{n-2}-2)
+               \cdots(p^{n-2}-i+1)}{i!} \nonumber \\
+            &=& 1 + p^{n-1} + \sum_{i=2}^{p^{n-2}}p^i\frac{p^{n-2}(p^{n-2}-1)
+            (p^{n-2}-2)\cdots(p^{n-2}-i+1)}{p^{f_p(i)} h_i} \nonumber \\
+            &=& 1 + p^{n-1} \nonumber \\
+            && +\: p^n\sum_{i=2}^{p^{n-2}}\frac{p^{i-2-f_p(i)}
+            (p^{n-2}-1)(p^{n-2}-2)\cdots(p^{n-2}-i+1)}{h_i} \label{2_3_21_2}
+      \end{IEEEeqnarray}
+
+      By Lemma 2.3.1, $f_p(i) < i / 2$, and $i / 2 \le i - 2$ for $i \ge 4$. 
+      Thus $i - 1 - f_p(i) \ge 0$ (so that $p^{i - 1 - f_p(i)}$ is an integer) 
+      if $i \ge 4$. Notice that $f_p(2) = 0$ and $f_p(3) \le 1$ (equality holds 
+      if and only if $p = 3$) for all odd primes $p$. Thus
+      $i - 1 - f_p(i) \ge 0$ if $i \ge 2$. Since $h_i$ divides
+      $(p^{n-2}-1)(p^{n-2}-2) \cdots(p^{n-2}-i+1)$, it follows that
+      $$\sum_{i=2}^{p^{n-2}}\frac{p^{i-2-f_p(i)}
+        (p^{n-2}-1)(p^{n-2}-2) \cdots(p^{n-2}-i+1)}{h_i}$$
+      is an integer and we can conclude from \eqref{2_3_21_2} that
+      $(1+p)^{p^{n-2}} \equiv 1 + p^{n-1}$ (mod $p^n$). But since
+      $p^n$ does not divide $p^{n-1}$, it follows that
+      $(1+p)^{p^{n-2}} \not\equiv 1$. By Exercise 2.3.20, we know that
+      $|1+p| = p^m$ for some $m \le n - 1$. Suppose $m < n - 1$, so that
+      $n - 2 - m \ge 0$. Then it follows that
+      $$(1+p)^{n-2} = (1+p)^{p^m \cdot p^{n-2-m}} \equiv 1^{p^{n-2-m}} \equiv
+         1 (\text{ mod } p^n),$$
+      a contradiction. We can thus conclude that $|1 + p| = p^{n-1}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.22]  Let $n$ be an integer $\ge 3$. Use the Binomial Theorem to
                   show that $(1+2^2)^{2^{n-2}} \equiv 1$ (mod $2^n$) but
@@ -397,10 +434,59 @@
                   an element of order $2^{n-2}$ in the multiplicative group
                   $(\Z/2^n\Z)^\times$.
 
-      \textbf{Proof.}
+      \textbf{Proof.} Let $n \ge 3$ be an integer and, for a positive integer
+      $i$, let $f(i)$ be the greatest nonnegative integer $j$ such that
+      $2^j \mid i!$. Then we can write $i! = 2^{f(i)} \cdot h_i$ for some unique
+      $h_i \in \Z^+$, so that $(h_i, 2) = 1$. By the Binomial Theorem, we
+      have that
+      \begin{align}
+         (1+2^2)^{2^{n-2}} &= \sum_{i=0}^{2^{n-2}}\binom{2^{n-2}}{i}2^{2i}
+            \nonumber \\
+            &= \sum_{i=0}^{2^{n-2}}2^{2i}\frac{2^{n-2}(2^{n-2}-1)(2^{n-2}-2)
+               \cdots(2^{n-2}-i+1)}{i!}  \nonumber \\
+            &= \sum_{i=0}^{2^{n-2}}2^{2i}\frac{2^{n-2}(2^{n-2}-1)(2^{n-2}-2)
+               \cdots(2^{n-2}-i+1)}{2^{f(i)}h_i}  \nonumber \\
+            &= 1 + 2^n\sum_{i=1}^{2^{n-2}}\frac{2^{2i-2-f(i)}(2^{n-2}-1)
+               (2^{n-2}-2) \cdots(2^{n-2}-i+1)}{h_i}. \label{2_3_22_1}
+      \end{align}
+      For $i \ge 1$, we have by Lemma 2.3.1 that  $f(i) \le i - 1$, so that 
+      $2i-2-f(i) \ge 0$; that is, $2^{2i-2-f(i)}$ is an integer. Also observe 
+      that since $(h_i, 2) = 1$, $h_i$ must divide
+      $(2^{n-2}-1)\cdots(2^{n-2}-i+1)$. Thus we can conclude from
+      \eqref{2_3_22_1} that $(1+2^2)^{2^{n-2}} \equiv 1$ (mod $2^n$). Similarly
+      we have that
+      \begin{align}
+         (1+2^2)^{2^{n-3}} &= 1 + 2^{n-1} + 2^n\sum_{i=2}^{2^{n-3}}
+            \frac{2^{2i-3-f(i)}(2^{n-3}-1)(2^{n-3}-2) \cdots(2^{n-3}-i+1)}{h_i}. 
+            \label{2_3_22_2}
+      \end{align}
+      For $i \ge 2$, we have that $2i-3-f(i) \ge 0$ (by Lemma 2.3.1); thus we
+      can conclude from \eqref{2_3_22_2} that
+      $(1+2^2)^{2^{n-3}} \equiv 1 + 2^{n-1}$ (mod $2^n$). But since
+      $2^n$ does not divide $2^{n-1}$, it follows that
+      $(1+2^2)^{2^{n-3}} \not\equiv 1$. By Exercise 2.3.20, we know that
+      $|1+2^2| = 2^m$ for some $m \le n - 2$. Suppose $m < n - 2$, so that
+      $n - 3 - m \ge 0$. Then it follows that
+      $$(1+2^2)^{n-3} = (1+2^2)^{p^m \cdot 2^{n-3-m}} \equiv1^{2^{n-3-m}} \equiv
+         1 (\text{ mod } 2^n),$$
+      a contradiction. We can thus conclude that $|1 + 2^2| = 2^{n-2}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.23]  Show that $(\Z/2^n\Z)^\times$ is not cyclic for any $n \ge 3$.
                   [Find two distinct subgroups of order 2.]
+
+      \textbf{Proof.} Let $n \ge 3$ be an integer. Consider
+      $2^{n-1}-1, 2^n-1 \in \Z/2^n\Z$. Note that $2^{n-1}-1 \neq 1$ and
+      $2^n-1 \neq 1$ because $1 < 2^{n-1}-1 < 2^n-1 < 2^n$. Since $2^{n-1}-1$
+      and $2^n-1$ are both odd, it follows that both of them are relatively
+      prime to $2^n$, so that they are both in $(\Z/2^n\Z)^\times$. Now we have
+      that
+      $$(2^{n-1}-1)(2^{n-1}-1) = 2^n2^{n-2}-2^n + 1 \equiv 1\text{ (mod }2^n)$$
+      and
+      $$(2^n-1)(2^n-1) = 2^n2^n-2^n2 + 1 \equiv 1\text{ (mod }2^n).$$
+      Thus both $2^{n-1}-1$ and $2^n-1$ have order 2 in $(\Z/2^n\Z)^\times$.
+      However, since these two elements are not equal, it follows that
+      $(\Z/2^n\Z)^\times$ has two distinct subgroups of order 2, so that
+      $(\Z/2^n\Z)^\times$ is not cyclic. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.24]  Let $G$ be a finite group and let $x \in G$.
                   \begin{enumerate}
@@ -418,6 +504,26 @@
                   Note that this cuts down some of the work in computing
                   normalizers of cyclic subgroups since one does not have to
                   check $ghg^{-1} \in \cyc{x}$ for every $h \in \cyc{x}$.
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $g \in N_G(\cyc{x})$. It follows by definition that
+               $g\cyc{x}g^{-1} = \cyc{x}$. Since $gxg^{-1} \in g\cyc{x}g^{-1}$,
+               it follows that $gxg^{-1} \in \cyc{x}$, so that $gxg^{-1} = x^a$
+               for some $a \in \Z$.
+         \item Suppose $gxg^{-1} = x^a$ for some integer $a$. We can show by
+               induction that $gx^kg^{-1} = (gxg^{-1})^k$ for any integer $k$.
+               Let $gx^ig^{-1} \in g\cyc{x}g^{-1}$. Then it follows that
+               $(gx^ig^{-1}) = (gxg^{-1})^i = x^{ai} \in \cyc{x}$, so that
+               $g\cyc{x}g^{-1} \subseteq \cyc{x}$. Since $G$ is finite, we let
+               $|x| = n$. Now suppose that $gx^rg^{-1} = gx^sg^{-1}$, where
+               $0 \le r < s \le n-1$. By cancellation we get $x^s = x^r$, so
+               that $n \mid s - r$, a contradiction since $s - r < n$. Thus the
+               elements $1, gxg^{-1},, \ldots, gx^{n-1}g^{-1}$ are distinct, so
+               that $|g\cyc{x}g^{-1}| = n = |\cyc{x}|$. That is,
+               $g\cyc{x}g^{-1} = \cyc{x}$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.25]  Let $G$ be a cyclic group of order $n$ and let $k$ be an
                   integer relatively prime to $n$. Prove that the map
@@ -427,6 +533,13 @@
                   $k^{\text{th}}$ root in $G$. It follows from Cauchy's Theorem
                   in Section 3.2 that if $k$ is not relatively prime to the
                   order of $G$ then the map $x \mapsto x^k$ is not surjective.)
+
+      \textbf{Proof.} We will only prove the second part. Let $G$ be a group of
+      order $n$, $(k, n) = 1$, and $x \mapsto x^k$ be a map from $G$ to itself.
+      Let $y \in G$. Since $k$ is relatively prime to $n$, there exist integers 
+      $a$ and $b$ such that $ak+bn=1$. Thus
+      $y = y^{ak+bn} = y^{ak}{y^n}^b = (y^a)^k$. Thus $y^a \mapsto (y^a)^k = y$;
+      that is, the map is surjective. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.26]  Let $Z_n$ be a cyclic group of order $n$ and for each integer
                   $a$ let
@@ -446,7 +559,51 @@
                            automorphism group of $Z_n$ (so Aut($Z_n$) is an
                            abelian group of order $\varphi(n)$).
                   \end{enumerate}
-                  %%%%%MISSING CONTAINMENT%%%%%%%%
+
+      \textbf{Proof.} Let $Z_n = \cyc{y}$. 
+
+      \begin{enumerate}
+         \item Suppose first that $(a, n) = 1$. By Proposition 5, Pg 57, it 
+               follows that $|y^a| = n$, so that $y^a$ generates $Z_n$. That is, 
+               $\cyc{y} =\cyc{y^a}$. Now it follows by definition that
+               $\sigma_a(y^k) = (y^{a})^k$ for each integer $k$; thus
+               $\sigma_a$ is an isomorphism by Theorem 4 (1), Pg 56. Now suppose
+               conversely that $\sigma_a$ is an automorphism. Let $z \in Z_n$. 
+               Since $\sigma_a$ is surjective, it follows that
+               $\sigma_a(y^i) = z$ for some integer $i$. Thus
+               $z = \sigma_a(y^i) = y^{ia} = ({y^a})^i \in \cyc{y^a}$. That is,
+               every element of $Z_n$ is also in $\cyc{y^a}$, so that
+               $Z_n = \cyc{y^a}$ and, thus, $|y^a| = n$. It follows that
+               $(a, n) = 1$ by Proposition 5 (2), Pg 57.
+         \item Suppose that $\sigma_a = \sigma_b$. Then it follows that
+               $\sigma_a(y) = \sigma_b(y)$. Thus $y^a = y^b$, so that
+               $y^{a-b} = 1$. Conclude by Proposition 3, Pg 55, that
+               $n \mid a - b$, so that $a \equiv b$ (mod $n$). Conversely
+               suppose that $a = b + tn$ for some integer $t$. Let $x \in Z_n$.
+               Then we have that
+               $\sigma_a(x) = x^a = x^{b+tn} = x^b = \sigma_b(x)$; i.e,
+               $\sigma_a = \sigma_b$.
+         \item Let $\alpha$ be an automorphism of $Z_n$. Let $z \in Z_n$. Then
+               $z = y^i$ for some integer $i$. By Exercise 1.6.1, it follows
+               that $\alpha(y^i) = \alpha(y)^i$. Since $\alpha(y) \in Z_n$, it
+               follows that $\alpha(y) = y^j$ for some integer $j$. Thus
+               $$\alpha(z) = \alpha(y^i) = \alpha(y)^i = (y^{j})^i = (y^{i})^j
+                           = z^j.$$
+               Thus $\alpha = \sigma_j$, as desired. \qed
+         \item Let $x \in Z_n$. Then we have that
+               $$(\sigma_a\circ\sigma_b)(x) = \sigma_a(\sigma_b(x)) =
+                  \sigma_a(x^b) = (x^b)^a = x^{ab} = \sigma_{ab}(x).$$
+               Thus $\sigma_a \circ \sigma_b = \sigma_{ab}$. Now consider the
+               map $\phi : (\Z/n\Z)^\times \rightarrow \text{Aut}(Z_n)$ defined 
+               by $c \mapsto \sigma_c$. According to Exercise 2.3.26, we notice
+               that $\phi$ is well defined. It follows immediately that $\phi$
+               is a homomorphism because 
+               $$\phi(cd) = \sigma_{cd} = \sigma_c\circ\sigma_d =
+                 \phi(c)\circ\phi(d).$$
+               The map $c \mapsto \sigma_{c^{-1}}$ is a two-sided inverse of
+               $\phi$. Thus $\phi$ is bijective and we conclude that it is an
+               isomorphism.
+      \end{enumerate} \qed
 \end{enumerate}
 
 
