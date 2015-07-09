@@ -352,7 +352,36 @@
                according to Lagrange's Theorem we must have that $|H| \mid 2n$.
                Thus $|H| = n$, so that $H = R$; that is, the group of rotations
                is maximal in $D_{2n}$. \qed
-         \item
+         \item \textbf{Lemma 2.4.1} \textit{If $G = \cyc{x}$ is a finite cyclic 
+               group and $\cyc{x^a} \le \cyc{x^b} \le G$, where $a$ and $b$ both 
+               divide $|G|$, then $b \mid a$}.
+
+               \textbf{Proof.} Let $G = \cyc{x}$ be a finite cyclic group.
+               Suppose $\cyc{x^a}$ and $\cyc{x^b}$ are two subgroups of $G$,
+               such that $a \mid |G|$ and $b \mid |G|$ and
+               $\cyc{x^a} \le \cyc{x^b}$. Since $\cyc{x^a} \le \cyc{x^b}$, there
+               exists an integer $t$ such that $x^a = x^{bt}$, so that
+               $x^{a-bt} = 1$; that is, $a = bt + |G|k$ (Proposition 3, Pg. 55) 
+               for some integer $k$. Since $b \mid bt$ and $b \mid |G|$, it
+               follows that $b \mid a$, as desired. \qed
+
+               Now we are ready to prove the main problem. So let $G = \cyc{x}$
+               be a noncyclic group of order $n$. Suppose first that
+               $H$ is a maximal subgroup of $G$. It follows by Theorem 7 (3),
+               Pg. 58, that $H = \cyc{x^r}$, where $r = n / |H|$ (so that
+               $r \mid n$). Now assume to the contrary that $r$ is composite; 
+               thus $r = ab$ for some integers $1 < a \le b < r$. Thus
+               $x^r = (x^a)^b$ so that $\cyc{x^r} \le \cyc{x^a}$. But
+               $|x^a| = n/a < n$; that is, $\cyc{x^a}$ is a proper subgroup of
+               $G$, contradicting the maximality of $\cyc{x^r}$; we can thus 
+               conclude that $r$ is  prime. Now suppose conversely that
+               $H = \cyc{x^p}$ for some prime $p$ dividing $n$. By Exercise 
+               2.4.16 (a), $\cyc{x^p} \le \cyc{x^s}$, for some maximal subgroup
+               $\cyc{x^s}$ in $G$. We can assume without loss of generality that
+               $s \mid n$ (Theorem 7 (3), Pg. 58). Thus by Lemma 2.4.1, $s$ must
+               divide $p$, so that $s = 1$ or $s = p$; since $\cyc{x^s}$ is a
+               proper subgroup, it follows that $s = p$. That is $\cyc{x^p}$ is
+               maximal. \qed
      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.4.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.4.17]  This is an exercise involving Zorn's Lemma (see Appendix I) to
@@ -360,8 +389,8 @@
                   maximal subgroups. Let $G$ be a finitely generated group, say
                   $G = \cyc{g_1, g_2, \ldots, g_n}$, and let $\mathcal{S}$ be
                   the set of all proper subgroups of $G$. Then $\mathcal{S}$ is
-                  partially ordered by inclusion. Let $\mathcal{C}$ be a chain
-                  in $\mathcal{S}$.
+                  partially ordered by inclusion. Let $\mathcal{C}$ be a
+                  nonempty chain in $\mathcal{S}$.
                   \begin{enumerate}
                      \item Prove that the union, $H$, of all the subgroups in
                            $\mathcal{C}$ is a subgroup of $G$.
@@ -373,6 +402,39 @@
                            maximal element (which is, by definition, a maximal
                            subgroup).
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $H_1 \in \mathcal{C}$. Since $H_1 \le G$ and since
+               $H_1 \subseteq H$, it follows that $1 \in H$. Now let
+               $a, b \in H$. Then $a \in H_2$ and $b \in H_3$ for some $H_2$,
+               $H_3 \in \mathcal{C}$. Since $\mathcal{C}$ is a chain, we have
+               $H_2 \le H_3$ or $H_3 \le H_2$; so assume without loss of 
+               generality that $H_2 \le H_3$, so that $a \in H_3$; since
+               $H_3 \le G$, it follows that $ab^{-1} \in H_3$, so that
+               $ab^{-1} \in H$, and thus, $H \le G$.
+         \item Suppose to the contrary that $H = G$. We now want to show by
+               induction on $n$ that some subgroup in $\mathcal{C}$ contains
+               $g_1, g_2, \ldots, g_n$. Since $H = G$, we have that $g_1 \in H$,
+               so that $g_1 \in H_1$ for some $H_1 \in \mathcal{C}$. So suppose
+               $g_1, g_2, \ldots, g_{n-1} \in H_2$ for some
+               $H_2 \in \mathcal{C}$. Similarly we must have that $g_n \in H_3$ 
+               for some $H_3 \in \mathcal{C}$ because $g_n \in H$. Since
+               $\mathcal{C}$ is a chain, either $H_2 \le H_3$ or $H_3 \le H_2$.
+               If the former is true then $g_1, \ldots, gn \le H_3$; otherwise,
+               $g_1, \ldots, gn \le H_2$; in either case, a member of
+               $\mathcal{C}$ contains all the generators of $G$, so that
+               $G \in \mathcal{C}$, a contradiction because we assumed that
+               every element in $\mathcal{C}$ is a proper subgroup; thus
+               $H \lneq G$.
+         \item Since $H$ a proper subgroup of $G$, it follows that
+               $H \in \mathcal{S}$. Also since $H$ is the union of all the 
+               subgroups in $\mathcal{C}$, it follows that $H' \le H$ for all 
+               $H' \in \mathcal{C}$, so that $H$ is an upper bound for
+               $\mathcal{C}$. Thus it follows by Zorn's Lemma that
+               $\mathcal{S}$.               
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.4.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.4.18]  Let $p$ be a prime and let
                   $Z = \{z \in \C : z^{p^n} = 1 \text{ for some } n \in \Z^+\}$
