@@ -465,10 +465,41 @@
                            $\Q$, is divisible.
                      \item Prove that no finite abelian group is divisible.
                   \end{enumerate}
+                  
+      \textbf{Proof.}
+      
+      \begin{enumerate}
+         \item Let $k$ be a nonzero integer and $a/b \in \Q$, where $a$ and $b$
+               are integers, with $b \neq 0$. Since $b$ and $k$ are both
+               nonzero, it follows that $bk$ is also nonzero, so that
+               $a/bk \in \Q$. Since $k(a/bk) = a/b$, it follows immediately that
+               the additive group $\Q$ is divisible.
+         \item Let $G$ be a nontrivial finite abelian group. Since $G$ is
+               nontrivial, we can select some nonidentity $g \in G$. Now let
+               $k = |G|$ and $x \in G$. By Lagrange's Theorem, we have
+               $k = |x| \cdot y$ for some positive integer $y$. Thus
+               $x^k = x^{|x|y} = (x^{|x|})^y = 1^y = 1 \neq g$, so that $g$
+               does not have a $k^{\text{th}}$ root in $G$; that is, $G$ is not
+               divisible. 
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.4.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.4.20]  Prove that if $A$ and $B$ are nontrivial abelian groups, then
                   $A \times B$ is divisible if and only if both $A$ and $B$ are
                   divisible groups.
+                  
+      \textbf{Proof.} Let $A$ and $B$ be nontrivial abelian groups. Suppose
+      first that $A \times B$ is divisible. Let $a_1 \in A$, $b_1 \in B$, and
+      $k_1$ a nonzero integer. Then there exists $(x_1, y_1) \in A \times B$
+      such that $(x_1, y_1)^{k_1} = ({x_1}^{k_1}, {y_1}^{k_1}) = (a_1, b_1)$;
+      that is ${x_1}^{k_1} = a_1$ and ${y_1}^{k_1} = b_1$; since $x_1 \in A$ and
+      $y_1 \in B$, it follows by definition that $A$ and $B$ are both divisible.
+      Now suppose conversely that $A$ and $B$ are both divisible. Let
+      $(a_2, b_2) \in A \times B$ and $k_2$ a nonzero integer. Since $a_2 \in A$
+      and $b_2 \in B$, it follows that there exist $x_2 \in A$ and $y_2 \in B$
+      such that ${x_2}^{k_2} = a_2$ and ${y_2}^{k_2} = b_2$. Thus
+      $(x_2, y_2)^{k_2} = ({x_2}^{k_2}, {y_2}^{k_2}) = (a_2, b_2)$; since
+      $(x_2, y_2) \in A \times B$, it follows that $A \times B$ is divisible.
+      \qed
 \end{enumerate}
 
 
