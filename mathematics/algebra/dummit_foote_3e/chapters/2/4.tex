@@ -433,7 +433,7 @@
                subgroups in $\mathcal{C}$, it follows that $H' \le H$ for all 
                $H' \in \mathcal{C}$, so that $H$ is an upper bound for
                $\mathcal{C}$. Thus it follows by Zorn's Lemma that
-               $\mathcal{S}$.               
+               $\mathcal{S}$ has a maximal subgroup.
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.4.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.4.18]  Let $p$ be a prime and let
@@ -453,6 +453,77 @@
                            $Z$ is finite and cyclic)
                      \item $Z$ is not finitely generated.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Suppose $k \le m$, where $k$ and $m$ are positive integers. Let
+               $z \in H_k$. That is, $z^{p^k} = 1$. Since $k \le m$, it follows
+               that $p^{m-k}$ is a nonnegative integer, so that
+               $z^{p^m} = (z^{p^k})^{p^{m-k}} = 1^{p^{m-k}} = 1$. That is,
+               $z \in H_m$, and thus, $H_k \le H_m$. Now suppose conversely that
+               $H_r \le H_s$; since the group of all $n^{\text{th}}$ roots of 
+               unity has order $n$, it follows that $|H_r| = p^r$ and
+               $|H_s| = p^s$. Since $H_r \le H_s$, it follows by Lagrange's 
+               Theorem that $p^r \mid p^s$, so that $r \le s$, and the proof is 
+               done.
+         \item It follows immediately that $H_k$ is cyclic since
+               $$
+                  H_k = \left\{e^{\frac{2\pi i}{p^k}t}: t = 0,1,\ldots,
+                        p^k-1\right\} = \CYC{e^{\frac{2\pi i}{p^k}t}}.
+               $$
+         \item \textbf{Lemma 2.4.2} \textit{If $G$ is a finite group, then
+               $x^{|G|} = 1$ for all $x \in G$}.
+
+
+               \textbf{Proof.} Let $G$ be a finite group, so that
+               $|G| = n \in \Z^+$. Now consider $g \in G$. It follows by
+               Lagrange's Theorem that $|G| = |g| \cdot k$ for some positive
+               integer $k$. Thus
+               $$g^{|G|} = g^{|g| \cdot k} = (g^{|g|})^k = 1^k = 1,$$
+               as desired. \qed \\
+         
+               Now let us commence the proof Exercise 2.4.18(c). Let $H$ be a   
+               proper subgroup of $Z$. Let
+               $$\mathcal{H} := \{n \in \Z^+ : H_n \le H\}.$$
+               First we want to show that $\mathcal{H} \neq \emptyset$. So let
+               $h \in H$. Then it follows that $h^{p^r} = 1$ for some positive 
+               integer $r$, so that $|h|$ divides $|p^r|$ by Proposition 3
+               (Pg. 55). That is, $|h| = p^{r'}$, where $r'$ is some positive 
+               integer such that $r' \le r$. Thus, by definition, we have that 
+               $h \in H_{r'}$, and since $|H_{r'}| = p^{r'} = |\cyc{h}|$, it 
+               follows that $\cyc{h} = H_{r'}$. Hence $\mathcal{H}$ is not empty
+               because $H_{r'}=\cyc{h} \le H$, so that $r' \in \mathcal{H}$. Now
+               we claim that $\mathcal{H}$ has a maximum element. Suppose to the
+               contrary that $\mathcal{H}$ has no maximum element. Now we want
+               to show that this implies that $H = Z$. So let $z \in Z$. Then
+               $z^{p^s} = 1$ for some positive integer $s$. Since $\mathcal{H}$
+               has no maximum, there exists some $s' \in \mathcal{H}$ such that
+               $s' > s$. By Exercise 2.4.18(b), it follows that $H_s < H_{s'}$.
+               Since $z^{p^s} = 1$, it follows by definition that $z \in H_s$
+               and since $H_s < H_{s'}$, we must have $z \in H_{s'}$. But
+               $H_{s'} \le H$; that is $z \in H$, so that $Z \le H$. Since we
+               assumed that $H \le Z$, we can conclude that $H = Z$,
+               contradicting our suppostion that $H$ is proper. Thus
+               $\mathcal{H}$ has a maximum, say $m$. Thus $r' \le m$, so that
+               $H_{r'} \le H_{m}$ by Exercise 2.4.18(b). Since $h \in H_{r'}$,
+               it follows that $h \in H_m$. Now recall that $h$ was arbitrarily
+               chosen; thus $H \le H_m$. Note that $|H_m| = p^m$, so that
+               $|H|$ divides $p^m$ by Lagrange's Theorem; that is,
+               $|H| = p^{m'}$, for some positive $m'$, where $m' \le m$. By
+               Lemma 2.4.2, it follows that $x^{p^{m'}} = 1$ for all $x \in H$.
+               Thus $H \le H_{p^{m'}}$. But $|H| = p^{m'} = |H_{p^{m'}}|$. We
+               thus conclude that $H = H_{p^{m'}}$, as desired. \qed
+         \item Suppose to the contrary that $Z$ is finitely generated. Then it
+               follows by Exercise 2.4.17 that $Z$ has a maximal subgroup, say
+               $H$. Since $H$ is proper, it follows by Exercise 2.4.18(c) that
+               $H = H_k$ for some positive integer $k$. By Exercise 2.4.18(b),
+               we have that $H_k \lneq H_{k+1}$. Note that
+               $|H_{k+1}| = p^{k+1}$, so that $H_{k+1} \neq Z$, since $Z$ is
+               infinite. Thus a proper subgroup of $Z$---not equal to
+               $H$---contains $H$, contradicting the maximality of $H$. Thus
+               $Z$ is not finitely generated.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.4.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.4.19]  A nontrivial abelian group $A$ (written multiplicatively) is
                   called \textit{divisible} if for each element $a \in A$ and
@@ -476,11 +547,9 @@
                the additive group $\Q$ is divisible.
          \item Let $G$ be a nontrivial finite abelian group. Since $G$ is
                nontrivial, we can select some nonidentity $g \in G$. Now let
-               $k = |G|$ and $x \in G$. By Lagrange's Theorem, we have
-               $k = |x| \cdot y$ for some positive integer $y$. Thus
-               $x^k = x^{|x|y} = (x^{|x|})^y = 1^y = 1 \neq g$, so that $g$
-               does not have a $k^{\text{th}}$ root in $G$; that is, $G$ is not
-               divisible. 
+               $x \in G$; by Lemma 2.4.2 we have that $x^{|G|} = 1 \neq g$; thus 
+               $g$ does not have a $|G|^{\text{th}}$ root in $G$; that is, $G$ 
+               is not divisible. 
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.4.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.4.20]  Prove that if $A$ and $B$ are nontrivial abelian groups, then
@@ -501,36 +570,3 @@
       $(x_2, y_2) \in A \times B$, it follows that $A \times B$ is divisible.
       \qed
 \end{enumerate}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
