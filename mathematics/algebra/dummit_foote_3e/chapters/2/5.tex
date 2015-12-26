@@ -87,7 +87,7 @@
                $$
          \item $$
                   \begin{tabular}{@{}|c|c|@{}} \hline
-                     Element(s) in $Q_8$ & Centralizer \\ \hline
+                     Element(s) in $S_3$ & Centralizer \\ \hline
                      1 & $S_3$ \\ \hline
                      (1 2) & $\cyc{(1\;2)}$ \\ \hline
                      (1 3) & $\cyc{(1\;3)}$ \\ \hline
@@ -111,21 +111,48 @@
    \item[2.5.7]   Find the center of $D_{16}$.
    
       \textbf{Solution.} From Exercise 2.5.6(d), we see that only 1 and $r^4$
-      are in the all the centralizers of the elements of $D_{16}$. Thus
+      are in all the centralizers of the elements of $D_{16}$. Thus
       $Z(D_{16}) = \cyc{r_4}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.5.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.5.8]   In each of the following groups find the normalizer of each
                   subgroup:
 
                   (a) $S_3$ \qquad (b) $Q_8$.
+
+      \begin{enumerate}
+         \item Clearly $N_{\{1\}}(S_3) = S_3$. Now we know, by Exercise 2.2.6
+               (a), that every subgroup is contained in its normalizer. A simple
+               calculation will show us that (1 3) does not normalize 
+               $\cyc{(1\;2)}$ and $\cyc{(1\;2\;3)}$, and (1 2) does not
+               normalize $\cyc{(1\;3)}$; thus none of the normalizers of the
+               nontrivial proper subgroups of $S_3$ is equal to $S_3$.
+               $$
+                  \begin{tabular}{@{}|c|c|@{}} \hline
+                     Subgroup in $S_3$ & Normalizer \\ \hline
+                     1, $S_3$ & $S_3$ \\ \hline
+                     ($\cyc{(1\;2)}$ & $\cyc{(1\;2)}$ \\ \hline
+                     $\cyc{(1\;3)}$ & $\cyc{(1\;3)}$ \\ \hline
+                     $\cyc{(2\;3)}$ & $\cyc{(2\;3)}$ \\ \hline
+                     $\cyc{(1\;2\;3)}$ & $\cyc{(1\;2\;3)}$ \\ \hline
+                  \end{tabular}
+               $$ 
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.5.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.5.9]   Draw the lattices of subgroups of the following groups:
 
                   (a) $\Z/16\Z$ \qquad (b) $\Z/24\Z$ \qquad
                   (c) $\Z/48\Z$. [See Exercise 6 in Section 3.]
+
+      \textbf{Solution. TODO. TikZ} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.5.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.5.10]  Classify groups of order 4 by proving that if $|G| = 4$ then
                   $G \cong Z_4$ or $G\cong V_4$. [See Exercise 36, Section 1.1.]
+
+      \textbf{Proof.} Let $G$ be a group of order 4. By Lagrange's Theorem, no 
+      element of $G$ has order 3. Now suppose $x \in G$ such that $|x| = 4$.
+      Then $|\cyc{x}| = 4$, so that $G = \cyc{x} \cong Z_4$. Now if no element
+      of $G$ has order 4, then every nonidentity element must have order 2;
+      thus we can conclude by Exercise 1.1.36 that $G \cong V_4$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.5.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.5.11]  Consider the group of order 16 with the following
                   presentation:

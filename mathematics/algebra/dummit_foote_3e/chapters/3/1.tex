@@ -8,6 +8,28 @@ Let $G$ and $H$ be groups.
                   homomorphism is a subgroup). If $E \trianglelefteq H$ prove
                   that $\varphi^{-1}(E) \trianglelefteq G$. Deduce that
                   $\text{ker}\varphi \trianglelefteq G$.
+
+      \textbf{Proof.} Since $\varphi(1) = 1 \in E$ (Proposition 1 (1) (Pg. 75)),
+      it follows that $1 \in \varphi^{-1}(E)$, and hence, $\varphi^{-1}(E)$ is 
+      not empty. Now let $x, y \in \varphi^{-1}(E)$. That is,
+      $\varphi(x), \varphi(y) \in E$. Since $E$ is closed, it follows that
+      $\varphi(x)\varphi(y) \in E$. Thus by the homomorphic property of
+      $\varphi$, it follows that $\varphi(xy) = \varphi(x)\varphi(y) \in E$, so
+      that $xy \in \varphi^{-1}(E)$. Hence $\varphi^{-1}(E) \le G$ by the
+      subgroup criterion. Now suppose that $E$ is a normal subgroup of $H$. Let
+      $g \in G$ and $z \in \varphi^{-1}(E)$. To show that $\varphi^{-1}(E)$ is 
+      normal in $G$, it suffices to show that $gzg^{-1} \in \varphi^{-1}(E)$; 
+      that is, we must show that the image of $gzg^{-1}$ under $\varphi$ lies in 
+      $E$. By (Proposition 1 (2) (Pg. 75)), we know that
+      $\varphi(g^{-1}) = \varphi(g)^{-1}$. Thus
+      $$\varphi(gzg^{-1}) = \varphi(g)\varphi(z)\varphi(g^{-1}) =
+        \varphi(g)\varphi(z)\varphi(g)^{-1}.$$
+      The elements $\varphi(g)$ and $\varphi(g)^{-1}$ are clearly in $H$. Also
+      $\varphi(z) \in E$ because $z \in \varphi^{-1}(E)$. Now since $E$ is
+      normal in $H$, it follows by (Theorem 6 (5) (Pg. 82)) that
+      $\varphi(gzg^{-1}) = \varphi(g)\varphi(z)\varphi(g)^{-1} \in E$; thus
+      $gzg^{-1} \in \varphi^{-1}(E)$, and we use (Theorem 6 (5) (Pg. 82)) to
+      conclude that $\text{ker}\varphi \trianglelefteq G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.2]   Let $\varphi : G \rightarrow H$ be a homomorphism of groups
                   with kernel $K$ and let $a, b \in \varphi(G)$. Let
@@ -39,7 +61,7 @@ Let $G$ and $H$ be groups.
                   homomorphism.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.7]   Define $\pi : \R^2 \rightarrow \R$ by $\pi((x, y)) = x + y$.
-                  Prove that $\pi$ is a surjective homomorphism and descrive the
+                  Prove that $\pi$ is a surjective homomorphism and describe the
                   kernel and fibers of $\pi$ geometrically.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.8]   Let $\varphi : \R^\times \rightarrow \R^\times$ be the map
