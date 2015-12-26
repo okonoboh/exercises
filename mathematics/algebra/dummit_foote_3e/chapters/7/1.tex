@@ -2,16 +2,66 @@ Let $R$ be a ring with 1.
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.1]   Show that $(-1)^2 = 1$ in $R$.
+
+      \textbf{Proof.} We have
+      \begin{align*}
+         (-1)^2 &= (-1)(-1) \\
+                &= 1 \cdot 1 &[\text{Proposition }7.1 (3)] \\
+                &= 1.        &[1 \text{ is the multiplicative identity}]
+      \end{align*} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.2]   Prove that if $u$ is a unit in $R$ then so is $-u$.
+
+      \textbf{Proof.} Suppose that $u \in R$ is a unit. Let $v$ be the 
+      multiplicative inverse of $u$. Since
+      \begin{align*}
+         (-v)(-u) &= vu          &[\text{Proposition }7.1 (3)] \\
+                  &= 1           &[\text{By definition}] \\
+                  &= uv          &[\text{By definition}] \\
+                  &= (-u)(-v),   &[\text{Proposition }7.1 (3)]
+      \end{align*}
+      it follows that $-v$ is the multiplicative inverse of $-u$, so that $-u$
+      is a unit in $R$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.3]   Let $R$ be a ring with identity and let $S$ be a subring of
                   $R$ containing the identity. Prove that if $u$ is a unit in
                   $S$ then $u$ is a unit in $R$. Show by example that the
                   converse is false.
+
+      \textbf{Proof.} Let $1_R$ be the identity of $R$. Let $1_S$ be an identity
+      in $S$ (we were given that $1_R \in S$, so $S$ contains at least one
+      identity). But $1_R \cdot 1_S = 1_S$ because $1_R$ is the identity in
+      $R$; also $1_R = 1_R \cdot 1_S$ because $1_S$ is an identity in $S$. Thus
+      $1_R = 1_R \cdot 1_S = 1_S$. Now suppose that $u \in S$ is a unit. Then
+      there exist $v \in S$ such that
+      $$1_R = 1_S = uv = vu.$$
+      Since $v \in S$ and $S \subseteq R$, it follows that $v \in R$. Thus the
+      equalities above say that $u$ is also a unit in $R$.
+
+      \textbf{Converse.} Let $R = \Q$ and $S = \Z$. The integer 2 is a unit in
+      $\Q$ but not a unit in $\Z$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.4]   Prove that the intersecton of any nonempty collection of
                   subrings of a ring is also a subring.
+
+      \textbf{Proof.} Let $R$ be a ring, $I$ a nonempty set, and
+      $$S = \bigcap_{i \in I} R_i,$$
+      where $R_i$ a subring of $R$ for each $i \in I$. We want to show that $S$
+      is a subring of $R$.
+
+      \textit{S is a subgroup of R}. Since $R_i$ is a subring
+      of $R$, it follows that $R_i$ is a subgroup of $R$, for each $i \in I$. 
+      Thus $S$ is a subgroup of $R$ by Exercise 2.1.10(b).
+
+      \textit{S is closed under multiplication}. The set $S$ contains 0---so
+      that it is nonempty---because each $R_i$ contains 0. So let $a$,
+      $b \in S$. That is, $a, b \in R_i$ for all $i \in I$. Since each $R_i$ is
+      a subring, it is closed under multiplication; thus, $ab \in R_i$ for each
+      $i \in I$, so that $ab \in S$, and we conclude that $S$ is closed under
+      multiplication.
+
+      Now since $S$ is a subgroup of $R$ and is closed under multiplication, it
+      follows by definition that $S$ is a subring of $R$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.5]   Decide which of the following (a)$-$(f) are subrings of $\Q$:
                   \begin{enumerate}
@@ -26,6 +76,70 @@ Let $R$ be a ring with 1.
                      \item the set of all rational numbers with even numerators
                            (when written in lowest terms)
                   \end{enumerate}
+
+      \textbf{Solution.} For convenience, denote each of the sets above as $S$.
+
+      \begin{enumerate}
+         \item We claim that $S$ is subring of $\Q$.
+
+               \textbf{Proof.}
+
+               \textit{S is a subgroup of $\Q$}. This follows from Exercise
+               1.1.6(a). \\
+
+               \textit{S is closed under multiplication}. Let $q_1$,
+               $q_2 \in S$. Then there exist odd integers $s_1$ and $s_2$ and 
+               integers $r_1$ and $r_2$, with
+               $\gcd(r_1, s_1) = \gcd(r_2, s_2) = 1$ such that
+               $$q_1 = \frac{r_1}{s_1} \text{ and } q_2 = \frac{r_2}{s_2}.$$
+               So $q_1q_2 = \frac{r_1r_2}{s_1s_2}$. The integer $s_1s_2$ is odd
+               because $s_1$ and $s_2$ are both odd. Hence, $s_1s_2$ has no
+               factor of 2, so that, in lowest terms, the denominator of
+               $q_1q_2$ will also be odd. That is, $q_1q_2 \in S$, so that $S$
+               is closed under multiplication.
+            
+               Since $S$ is a subgroup of $\Q$ and is closed under
+               multiplication, it follows by definition that $S$ is a subring of 
+               $\Q$. \qed
+         \item $S$ is not a subring of $\Q$ because it is not closed under
+               addition. For example, we have $\frac{3}{2}, \frac{5}{2} \in S$,
+               but their sum $\frac{4}{1} \notin S$.
+         \item $S$ is not a subring of $\Q$ because it is not closed under
+               additive inverses. For example $2 \in S$, but $-2 \notin S$.
+         \item $S$ is not a subring of $\Q$ because it is not closed under
+               addition. For example, we have $\frac{1}{9} \in S$, but
+               $\frac{1}{9} + \frac{1}{9} = \frac{2}{9} \notin S$ because 2 is
+               not a perfect square.
+         \item $S$ is not a subring of $\Q$ because it does not contain 0.
+         \item We claim that $S$ is subring of $\Q$.
+
+               \textbf{Proof.} $S$ is nonempty because it contains $0/1$. So let
+               $q_1$, $q_2 \in S$. Then there exist even integers $r_1$ and
+               $r_2$ and nonzero integers $s_1$ and $s_2$, with
+               $\gcd(r_1, s_1) = \gcd(r_2, s_2) = 1$ such that
+               $$q_1 = \frac{r_1}{s_1} \text{ and } q_2 = \frac{r_2}{s_2}.$$
+               Since $q_1$ and $q_2$ are in lowest terms, it follows that $s_1$
+               and $s_2$ must be odd. 
+
+               \textit{S is a subgroup of $\Q$}. Now
+               $$q_1 - q_2 = \frac{r_1s_2 - r_2s_1}{s_1s_2}.$$
+               Now $r_1s_2$ and $r_2s_1$ are both even so that $r_1s_2 - r_2s_1$
+               is also even. Since $s_1s_2$ is odd, it has no factors of 2, so
+               that the lowest term of $q_1 - q_2$ still has an even numerator.
+               Hence, $q_1 - q_2 \in S$ so that $S$ is a subgroup of $\Q$ by the
+               Subgroup Criterion. \\
+
+               \textit{S is closed under multiplication}. We have that
+               $q_1q_2 = \frac{r_1r_2}{s_1s_2}$, wherein $r_1r_2$ is even and
+               $s_1s_2$ is odd, so that $s_1s_2$ has no factors of 2; hence, in
+               lowest terms, the numerator of $q_1q_2$ will still have at least
+               one factor of 2. That is, $q_1q_2 \in S$, so that $S$ is closed
+               under multiplication.
+            
+               Since $S$ is a subgroup of $\Q$ and is closed under
+               multiplication, it follows by definition that $S$ is a subring of 
+               $\Q$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.6]   Decide which of the following are subrings of the ring of all
                   functions from the closed interval $[0,1]$ to $\R$.
@@ -43,6 +157,154 @@ Let $R$ be a ring with 1.
                            functions $\sin nx$ and $\cos mx$, where
                            $m, n \in \{0, 1, 2, \ldots \}$.
                   \end{enumerate}
+
+      \textbf{Solution.} For convenience, denote each of the sets above as $S$. 
+      Let $F = \{\text{functions from } [0, 1] \text{ to } \R\}$.
+
+      \begin{enumerate}
+         \item We claim that $S$ is subring of $F$.
+
+               \textbf{Proof.}
+
+               \textit{S is a subgroup of $F$}. The additive identity of $F$ is
+               the zero function, 0. Also, $0 \in S$, so that $S$ is nonempty.
+               So let $f, g \in S$. That is, $f(q) = g(q) = 0$ for every
+               rational number $q \in [0, 1]$. Thus $f(q) - g(q) = 0 - 0 = 0$
+               for every rational number $q \in [0, 1]$, so that $f - g \in S$.
+               It follows by the Subgroup Criterion that $S \le F$. \\
+
+               \textit{S is closed under multiplication}. Similarly
+               $f(q)g(q) = 0\cdot0 = 0$ for each $q \in [0, 1] \cap \Q$, so that
+               $fg \in S$. Thus $S$ is closed under multiplication.
+            
+               Since $S$ is a subgroup of $F$ and is closed under
+               multiplication, it follows by definition that $S$ is a subring of 
+               $F$. \qed
+         \item We claim that $S$ is subring of $F$.
+
+               \textbf{Proof.}
+
+               \textit{S is a subgroup of $F$}. The set $S$ is nonempty because
+               it contains 0, the zero polynomial. So let $f, g \in S$. Since
+               $f$ and $g$ are polynomials, it follows that $f - g$ is also a
+               polynomial, so that $f - g \in S$. It follows by the Subgroup 
+               Criterion that $S \le F$. \\
+
+               \textit{S is closed under multiplication}. Similarly
+               $fg \in S$ because the product of two polynomials is also a
+               polynomial. Thus $S$ is closed under multiplication.
+            
+               Since $S$ is a subgroup of $F$ and is closed under
+               multiplication, it follows by definition that $S$ is a subring of 
+               $F$. \qed
+         \item $S$ is not a subring of $F$ because it is not closed under
+               addition. For example, let $i$ be the identity function on
+               $[0, 1]$. The function $i$ has a single zero, namely at 0, so
+               $i \in S$. Now let $g(x) = -x$ for every $x \in (0, 1]$ and
+               $g(0) = 3$. The function $g$ has no zero so $g \in S$. But
+               $g + i$ is not the zero function and $g + i$ has an infinite   
+               number of zeros because $(g + i)(x) = 0$ for every
+               $x \in (0, 1]$. Thus $S$ is not closed under addition.
+         \item $S$ is not a subring of $F$ because it is not closed under
+               addition. For example, consider the functions
+               \begin{equation*}
+                  g(x) = \left\{
+                     \begin{array}{rl}
+                        1 & \text{if } x \in [0, 1] \cap \Q,\\
+                        0 & \text{if } x \in [0, 1] \cap (\R - \Q)
+                     \end{array} \right.
+               \end{equation*}
+               and
+               \begin{equation*}
+                  h(x) = \left\{
+                     \begin{array}{rl}
+                        0 & \text{if } x \in [0, 1] \cap \Q,\\
+                        1 & \text{if } x \in [0, 1] \cap (\R - \Q)
+                     \end{array} \right.
+               \end{equation*}
+               Since there are an infinite number of rational and irrational
+               numbers in $[0, 1]$, it follows that each of $g$ and $h$ has an
+               infinite number of zeros. Now let $x$ be a rational number in
+               $[0, 1]$, then we have that $(g + h)(x) = g(x) + h(x) = 1$; if
+               $x$ were irrational, then we would have
+               $(g + h)(x) = g(x) + h(x) = 1$, so that $g + h$ has no zeroes in
+               $[0, 1]$; that is, $g + h \notin S$, so that $S$ is not closed
+               under addition.
+         \item We claim that $S$ is a subring of $F$.
+
+               \textbf{Proof.}
+
+               \textit{S is a subgroup of $F$}. We have that
+               $\lim_{x\rightarrow1^-}0 = 0$, so that the zero function is in
+               $S$. So let $f, g \in S$. Since the limit of a difference is the
+               difference of the limits (if they exist), we have that
+               $$\lim_{x\rightarrow1^-}(f(x) - g(x)) =
+                 \lim_{x\rightarrow1^-}f(x) - \lim_{x\rightarrow1^-}g(x) =
+                  0 - 0 = 0,$$
+               so that $f - g \in S$. It follows by the Subgroup Criterion that 
+               $S \le F$. \\
+
+               \textit{S is closed under multiplication}. Similarly the limit of 
+               a product is the product of the limits (if they exist), so
+               $$\lim_{x\rightarrow1^-}f(x)g(x) =
+                 \lim_{x\rightarrow1^-}f(x)\lim_{x\rightarrow1^-}g(x) =
+                  0 \cdot 0 = 0,$$
+               so that $fg \in S$. Thus $S$ is closed under multiplication.
+            
+               Since $S$ is a subgroup of $F$ and is closed under
+               multiplication, it follows by definition that $S$ is a subring of 
+               $F$. \qed
+         \item Let $S' = \{\sin (ax) \text{ or } \cos (ax) : a \in \Z^{\ge 0}\}$ 
+               and $S = \text{span}(S')$, where scalars are chosen from $\Q$. We 
+               claim that $S$ is subring of $F$.
+
+               \textbf{Proof.} 
+
+               \textit{S is a subgroup of $F$}. The set $S$ is nonempty because 
+               it contains the zero function (choose all the scalars to be 0). 
+               So let $f$, $g \in S$. Then there exist positive integers $n$ and 
+               $m$, rational scalars $r_1$, $\ldots$, $r_n$, $s_1$, $\ldots$, 
+               $s_m$, functions $f_1$, $\ldots$, $f_n$, $g_1$, $\ldots$,
+               $g_m \in S'$ such that
+               $$f = \sum_{i=1}^n r_if_i \text{ and }g = \sum_{i=1}^m s_ig_i.$$
+               Let $r_{n+i} = -s_i$ and $f_{n+i} = g_i$, $1 \le i \le m$. Thus
+               $$f - g = \sum_{i=1}^{n+m} r_if_i \in S$$
+               because $f - g$ is a rational linear combination of $n + m$
+               elements of $S'$. It follows by the Subgroup Criterion that
+               $S \le F$. \\
+
+               \textit{S is closed under multiplication}. The function $fg$ is a
+               sum of functions of the form $qf'g'$ where $q$ is a rational
+               number and $f', g' \in S'$. So there exist nonnegative integers
+               $a$ and $b$ such that exactly one of the following holds:
+
+               \textbf{Case 1.} $f' = \cos (ax)$ and $g' = \cos (bx)$. So
+               $$qf'g' = q\cos (ax) \cos (bx) = \frac{q}{2}\cos[(a+b)x] +
+                 \frac{q}{2}\cos[(a-b)x] \in S$$
+               because $\cos[(a+b)x], \cos[(a-b)x] \in S'$.
+
+               \textbf{Case 2.} $f' = \sin (ax)$ and $g' = \sin (bx)$. So
+               $$qf'g' = q\sin (ax) \sin (bx) =
+                 \frac{q}{2}\cos[(a-b)x] - \frac{q}{2}
+                 \cos[(a+b)x] \in S$$
+               because $\cos[(a+b)x], \cos[(a-b)x] \in S'$.
+
+               \textbf{Case 3.} $f' = \sin (ax)$ and $g' = \cos (bx)$. So
+               $$qf'g' = q\sin (ax) \cos (bx) =
+                 \frac{q}{2}\sin[(a+b)x] + \frac{q}{2}
+                 \sin[(a-b)x] \in S$$
+               because $\sin[(a+b)x], \sin[(a-b)x] \in S'$.
+
+               \textbf{Case 4.} $f' = \cos (ax)$ and $g' = \sin (bx)$.
+               Interchange the roles of $g'$ and $f'$ in Case 3 to conclude that
+               $qf'g' \in S$.
+
+
+               Thus every every term in the sum of $fg$ is in $S$. Since $S$ is
+               closed under addition, it follows that $fg \in S$. Hence since
+               $S$ is a subgroup of $F$ and is closed under multiplication, it 
+               follows by definition that $S$ is a subring of $F$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.7]   The \textit{center} of a ring $R$ is
                   $\{z \in R : zr = rz \text{ for all } r \in R\}$ (i.e., is the
