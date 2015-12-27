@@ -600,6 +600,12 @@ Let $R$ be a ring with 1.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.16]  Prove that the only Boolean ring that is an integral domain is
                   $\Z/2\Z$.
+
+      \textbf{Proof.} Suppose that $R$ is a Boolean ring that is an integral
+      domain. Let $r \in R$. Thus $r^2 = r$, so that $r^2 - r = 0$; that is,
+      $r(r - 1) = 0$. Since $R$ is an integral domain, it follows that $r = 0$
+      or $r - 1 = 0$, so that $r = 0$ or $r = 1$. Thus $R = \{0, 1\} = \Z/2\Z$.
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.17]  Let $R$ and $S$ be rings. Prove that the direct product
                   $R \times S$ is a ring under componentwise addition and
@@ -607,9 +613,114 @@ Let $R$ be a ring with 1.
                   only if both $R$ and $S$ are commutative. Prove that
                   $R \times S$ has an identity if and only if both $R$ and $S$
                   have identities.
+
+      \textbf{Proof.} Let $a, b, c \in R \times S$. Then $a = (r_1, s_1)$,
+      $b = (r_2, s_2)$, and $c = (r_3, s_3)$ for some $r_1, r_2, r_3 \in R$ and 
+      $s_1, s_2, s_3 \in S$.
+
+      (\textit{$(R \times S, +)$ is an abelian group}.) This follows from
+      Exercises 1.1.28 and 1.1.29.
+
+      (\textit{$R \times S$ is closed under multiplication}.) We have
+      $$ab = (r_1, s_1)(r_2, s_2) = (r_1r_2, s_1s_2) \in R \times S$$
+      because $r_1r_2 \in R$ and $s_1s_2 \in S$ by closure of $R$ and $S$. Thus
+      $R \times S$ is closed under multiplication.
+
+      (\textit{Associativity of multiplication in $R \times S$}.) We have
+      \begin{align*}
+         a(bc) &= (r_1, s_1)[(r_2, s_2)(r_3, s_3)] \\
+            &= (r_1, s_1)(r_2r_3, s_2s_3) \\
+            &= (r_1(r_2r_3), s_1(s_2s_3)) \\
+            &= ((r_1r_2)r_3, (s_1s_2)s_3) \\
+            &= (r_1r_2, s_1s_2)(r_3, s_3) \\
+            &= [(r_1, s_1)(r_2, s_2)](r_3, s_3) \\
+            &= (ab)c,
+      \end{align*}
+      so that componentwise multiplication is associative in $R \times S$.
+
+      (\textit{Left distributivity in $R \times S$}.) We have
+      \begin{align*}
+         a(b + c) &= (r_1, s_1)[(r_2, s_2) + (r_3, s_3)] \\
+            &= (r_1, s_1)(r_2 + r_3, s_2 + s_3) \\
+            &= (r_1(r_2 + r_3), s_1(s_2 + s_3)) \\
+            &= (r_1r_2 + r_1r_3, s_1s_2 + s_1s_3) \\
+            &= (r_1r_2, s_1s_2) + (r_1r_3, s_1s_3) \\
+            &= (r_1, s_1)(r_2, s_2) + (r_1, s_1)(r_3, s_3) \\
+            &= ab + ac.
+      \end{align*}
+
+
+      (\textit{Right distributivity in $R \times S$}.) We have
+      \begin{align*}
+         (b + c)a &= [(r_2, s_2) + (r_3, s_3)](r_1, s_1) \\
+            &= (r_2 + r_3, s_2 + s_3)(r_1, s_1) \\
+            &= ((r_2 + r_3)r_1, (s_2 + s_3)s_1) \\
+            &= (r_2r_1 + r_3r_1, s_2s_1 + s_3s_1) \\
+            &= (r_2r_1, s_2s_1) + (r_3r_1, s_3s_1) \\
+            &= (r_2, s_2)(r_1, s_1) + (r_3, s_3)(r_1, s_1) \\
+            &= ba + ca.
+      \end{align*}
+
+      Thus $R \times S$ is a ring under componentwise addition and
+      multiplication.
+
+      ($\Rightarrow$) Suppose $R \times S$ is commutative. Let $r_4, r_5 \in R$
+      and $s_4, s_5 \in S$. Since $R \times S$ is commutative, it follows that
+      $$(r_4r_5, s_4s_5) = (r_4, s_4)(r_5, s_5) = (r_5, s_5)(r_4, s_4) =
+        (r_5r_4, s_5s_4),$$
+      so that $r_4r_5 = r_5r_4$ and $s_4s_5 = s_5s_4$. Thus $R$ and $S$ are
+      commutative.
+
+      ($\Leftarrow$) Suppose conversely that $R$ and $S$ are commutative. Let
+      $a', b' \in R \times S$. Then $a' = (r_6, s_6)$ and $b' = (r_7, s_7)$ for
+      some $r_6, r_7 \in R$ and $s_6, s_7 \in S$. So
+      \begin{align*}
+         a'b' &= (r_6, s_6)(r_7, s_7) \\
+            &= (r_6r_7, s_6s_7) \\
+            &= (r_7r_6, s_7s_6) &[R \text{ and } S \text{ are commutative}] \\
+            &= (r_7, s_7)(r_6, s_6) \\
+            &= b'a',
+      \end{align*}
+      so that $R \times S$ is commutative.
+
+      ($\Rightarrow$) Suppose $R \times S$ has an identity, say $(r', s')$,
+      where $r' \in R$ and $s' \in S$. Let $r_8 \in R$ and $s_8 \in S$. Thus we
+      have that
+      $$(r_8, s_8) = (r', s')(r_8, s_8) = (r'r_8, s's_8)$$
+      and
+      $$(r_8, s_8) = (r_8, s_8)(r', s') = (r_8r', s_8s').$$
+      That is, $r_8 = r'r_8 = r_8r'$ and $s_8 = s's_8 = s_8s'$. Thus $r'$ is an
+      identity in $R$ and $s'$ is an identity in $S$.
+
+      ($\Leftarrow$) Suppose that $1_R \in R$ and $1_S \in S$ are identities.
+      Let $a'' \in R \times S$. So $a'' = (r_9, s_9)$ for some $r_9 \in R$ and 
+      $s_9 \in S$. Thus
+      $$
+         a''(1_R, 1_S) = (r_9, s_9)(1_R, 1_S) = (r_9 \cdot 1_R, s_9 \cdot 1_S) 
+            = (r_9, s_9) = a''
+      $$
+      and
+      $$
+         (1_R, 1_S)a'' = (1_R, 1_S)(r_9, s_9) = (1_R \cdot r_9, 1_S \cdot s_9) 
+            = (r_9, s_9) = a''.
+      $$
+      Hence $(1_R, 1_S)$ is an identity in $R \times S$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.18]  Prove that $\{(r, r) : r \in R\}$ is a subring of
                   $R \times R$.
+
+      \textbf{Proof.} Let $H = \{(r, r) : r \in R\}$.
+
+      (\textit{H is a subgroup of $R \times R$}.) This follows from Exercise 
+      2.1.11(c).
+
+      (\textit{H is closed under multiplication}.) Let $a, b \in H$. That is,
+      $a = (r, r)$ and $b = (r', r')$ for some $r, r' \in R$. Thus
+      $ab = (r, r)(r', r') = (rr', rr') \in H$ because $rr' \in R$ by closure.
+
+      Since $H$ is a subgroup of $R \times R$ and is closed under
+      multiplication, it follows by definition that $H$ is a subring of
+      $R \times R$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.19]  Let $I$ be any nonempty index set and let $R_i$ be ring for
                   each $i \in I$. Prove that the direct product
