@@ -49,11 +49,11 @@ Let $R$ be a ring with 1.
       where $R_i$ a subring of $R$ for each $i \in I$. We want to show that $S$
       is a subring of $R$.
 
-      \textit{S is a subgroup of R}. Since $R_i$ is a subring
+      (\textit{S is a subgroup of R}.) Since $R_i$ is a subring
       of $R$, it follows that $R_i$ is a subgroup of $R$, for each $i \in I$. 
       Thus $S$ is a subgroup of $R$ by Exercise 2.1.10(b).
 
-      \textit{S is closed under multiplication}. The set $S$ contains 0---so
+      (\textit{S is closed under multiplication}.) The set $S$ contains 0---so
       that it is nonempty---because each $R_i$ contains 0. So let $a$,
       $b \in S$. That is, $a, b \in R_i$ for all $i \in I$. Since each $R_i$ is
       a subring, it is closed under multiplication; thus, $ab \in R_i$ for each
@@ -84,10 +84,10 @@ Let $R$ be a ring with 1.
 
                \textbf{Proof.}
 
-               \textit{S is a subgroup of $\Q$}. This follows from Exercise
+               (\textit{S is a subgroup of $\Q$}.) This follows from Exercise
                1.1.6(a). \\
 
-               \textit{S is closed under multiplication}. Let $q_1$,
+               (\textit{S is closed under multiplication}.) Let $q_1$,
                $q_2 \in S$. Then there exist odd integers $s_1$ and $s_2$ and 
                integers $r_1$ and $r_2$, with
                $\gcd(r_1, s_1) = \gcd(r_2, s_2) = 1$ such that
@@ -121,7 +121,7 @@ Let $R$ be a ring with 1.
                Since $q_1$ and $q_2$ are in lowest terms, it follows that $s_1$
                and $s_2$ must be odd. 
 
-               \textit{S is a subgroup of $\Q$}. Now
+               (\textit{S is a subgroup of $\Q$}.) Now
                $$q_1 - q_2 = \frac{r_1s_2 - r_2s_1}{s_1s_2}.$$
                Now $r_1s_2$ and $r_2s_1$ are both even so that $r_1s_2 - r_2s_1$
                is also even. Since $s_1s_2$ is odd, it has no factors of 2, so
@@ -129,7 +129,7 @@ Let $R$ be a ring with 1.
                Hence, $q_1 - q_2 \in S$ so that $S$ is a subgroup of $\Q$ by the
                Subgroup Criterion. \\
 
-               \textit{S is closed under multiplication}. We have that
+               (\textit{S is closed under multiplication}.) We have that
                $q_1q_2 = \frac{r_1r_2}{s_1s_2}$, wherein $r_1r_2$ is even and
                $s_1s_2$ is odd, so that $s_1s_2$ has no factors of 2; hence, in
                lowest terms, the numerator of $q_1q_2$ will still have at least
@@ -166,14 +166,15 @@ Let $R$ be a ring with 1.
 
                \textbf{Proof.}
 
-               \textit{S is a subgroup of $F$}. The additive identity of $F$ is
-               the zero function, 0. Also, $0 \in S$, so that $S$ is nonempty.
-               So let $f, g \in S$. That is, $f(q) = g(q) = 0$ for every
-               rational number $q \in [0, 1]$. Thus $f(q) - g(q) = 0 - 0 = 0$
-               for every rational number $q \in [0, 1]$, so that $f - g \in S$.
-               It follows by the Subgroup Criterion that $S \le F$. \\
+               (\textit{S is a subgroup of $F$}.) The additive identity of $F$
+               is the zero function, 0. Also, $0 \in S$, so that $S$ is
+               nonempty. So let $f, g \in S$. That is, $f(q) = g(q) = 0$ for 
+               every rational number $q \in [0, 1]$.
+               Thus $f(q) - g(q) = 0 - 0 = 0$ for every rational number
+               $q \in [0, 1]$, so that $f - g \in S$. It follows by the Subgroup 
+               Criterion that $S \le F$. \\
 
-               \textit{S is closed under multiplication}. Similarly
+               (\textit{S is closed under multiplication}.) Similarly
                $f(q)g(q) = 0\cdot0 = 0$ for each $q \in [0, 1] \cap \Q$, so that
                $fg \in S$. Thus $S$ is closed under multiplication.
             
@@ -184,13 +185,13 @@ Let $R$ be a ring with 1.
 
                \textbf{Proof.}
 
-               \textit{S is a subgroup of $F$}. The set $S$ is nonempty because
-               it contains 0, the zero polynomial. So let $f, g \in S$. Since
-               $f$ and $g$ are polynomials, it follows that $f - g$ is also a
-               polynomial, so that $f - g \in S$. It follows by the Subgroup 
-               Criterion that $S \le F$. \\
+               (\textit{S is a subgroup of $F$}.) The set $S$ is nonempty
+               because it contains 0, the zero polynomial. So let $f, g \in S$. 
+               Since $f$ and $g$ are polynomials, it follows that $f - g$ is 
+               also a polynomial, so that $f - g \in S$. It follows by the 
+               Subgroup Criterion that $S \le F$. \\
 
-               \textit{S is closed under multiplication}. Similarly
+               (\textit{S is closed under multiplication}.) Similarly
                $fg \in S$ because the product of two polynomials is also a
                polynomial. Thus $S$ is closed under multiplication.
             
@@ -234,7 +235,7 @@ Let $R$ be a ring with 1.
 
                \textbf{Proof.}
 
-               \textit{S is a subgroup of $F$}. We have that
+               (\textit{S is a subgroup of $F$}.) We have that
                $\lim_{x\rightarrow1^-}0 = 0$, so that the zero function is in
                $S$. So let $f, g \in S$. Since the limit of a difference is the
                difference of the limits (if they exist), we have that
@@ -244,8 +245,8 @@ Let $R$ be a ring with 1.
                so that $f - g \in S$. It follows by the Subgroup Criterion that 
                $S \le F$. \\
 
-               \textit{S is closed under multiplication}. Similarly the limit of 
-               a product is the product of the limits (if they exist), so
+               (\textit{S is closed under multiplication}.) Similarly the limit 
+               of a product is the product of the limits (if they exist), so
                $$\lim_{x\rightarrow1^-}f(x)g(x) =
                  \lim_{x\rightarrow1^-}f(x)\lim_{x\rightarrow1^-}g(x) =
                   0 \cdot 0 = 0,$$
@@ -260,12 +261,12 @@ Let $R$ be a ring with 1.
 
                \textbf{Proof.} 
 
-               \textit{S is a subgroup of $F$}. The set $S$ is nonempty because 
-               it contains the zero function (choose all the scalars to be 0). 
-               So let $f$, $g \in S$. Then there exist positive integers $n$ and 
-               $m$, rational scalars $r_1$, $\ldots$, $r_n$, $s_1$, $\ldots$, 
-               $s_m$, functions $f_1$, $\ldots$, $f_n$, $g_1$, $\ldots$,
-               $g_m \in S'$ such that
+               (\textit{S is a subgroup of $F$}.) The set $S$ is nonempty 
+               because it contains the zero function (choose all the scalars to 
+               be 0). So let $f$, $g \in S$. Then there exist positive integers 
+               $n$ and $m$, rational scalars $r_1$, $\ldots$, $r_n$, $s_1$,
+               $\ldots$, $s_m$, functions $f_1$, $\ldots$, $f_n$, $g_1$,
+               $\ldots$, $g_m \in S'$ such that
                $$f = \sum_{i=1}^n r_if_i \text{ and }g = \sum_{i=1}^m s_ig_i.$$
                Let $r_{n+i} = -s_i$ and $f_{n+i} = g_i$, $1 \le i \le m$. Thus
                $$f - g = \sum_{i=1}^{n+m} r_if_i \in S$$
@@ -273,8 +274,8 @@ Let $R$ be a ring with 1.
                elements of $S'$. It follows by the Subgroup Criterion that
                $S \le F$. \\
 
-               \textit{S is closed under multiplication}. The function $fg$ is a
-               sum of functions of the form $qf'g'$ where $q$ is a rational
+               (\textit{S is closed under multiplication}.) The function $fg$ is 
+               a sum of functions of the form $qf'g'$ where $q$ is a rational
                number and $f', g' \in S'$. So there exist nonnegative integers
                $a$ and $b$ such that exactly one of the following holds:
 
@@ -304,6 +305,14 @@ Let $R$ be a ring with 1.
                closed under addition, it follows that $fg \in S$. Hence since
                $S$ is a subgroup of $F$ and is closed under multiplication, it 
                follows by definition that $S$ is a subring of $F$. \qed
+
+               \textbf{Note.} We used the following trigonometry identities in
+               the cases above:
+               \begin{align*}
+                  \cos(x)\cos(y) &= \frac{1}{2}\cos(x+y)+\frac{1}{2}\cos(x-y) \\
+                  \sin(x)\sin(y) &= \frac{1}{2}\cos(x-y)-\frac{1}{2}\cos(x+y) \\
+                  \sin(x)\cos(y) &= \frac{1}{2}\sin(x+y)+\frac{1}{2}\sin(x-y).
+               \end{align*}
       \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.7]   The \textit{center} of a ring $R$ is
@@ -311,25 +320,147 @@ Let $R$ be a ring with 1.
                   set of all elements which commute with every element of $R$).
                   Prove that the center of a ring is a subring that contains the
                   identity. Prove that the center of a division ring is a field.
+
+      \textbf{Proof.} Denote the center of $R$ by $Z_R$. Since $1 \in R$, it
+      follows that $1 \in Z_R$ since the identity commutes with every element by
+      definition, so let $a, b \in Z_R$ and $r \in R$.
+
+      (\textit{$Z_R$ is a subgroup of $R$}.) We have
+      \begin{align*}
+         (a - b)r &= ar - br \\
+                  &= ra - rb &[a, b \in Z_R] \\
+                  &= r(a - b),
+      \end{align*}
+      so that $a - b$ commutes with every element of $R$. Thus $a - b \in Z_R$.
+      It follows by the Subgroup Criterion that $Z_R \le R$.
+
+      (\textit{$Z_R$ is closed under multiplication}.) We have
+      \begin{align*}
+         (ab)r &= a(br) &[\text{Associativity}] \\
+               &= a(rb) &[b \in Z_R] \\
+               &= (ar)b &[\text{Associativity}] \\
+               &= (ra)b &[a \in Z_R] \\
+               &= r(ab), &[\text{Associativity}]
+      \end{align*}
+      so that $ab$ commutes with every element of $R$. Thus $ab \in Z_R$. Since
+      $Z_R$ is a subgroup of $R$ and is closed under multiplication, it follows
+      by definition that $Z_R$ is a subring of $R$.
+
+      (\textit{$Z_R$ is a field if $R$ is a division ring}.) Now suppose that
+      $R$ is a division ring. By definiton $Z_R$ is commutative, so it suffices 
+      to show that every nonzero element of $Z_R$ is a unit. To that end, let
+      $u$ be a nonzero element in $Z_R$. Since $R$ is a division ring, there 
+      exists $v \in R$ such that $uv = vu = 1$. Thus
+      \begin{align*}
+         vr &= vr \cdot 1 \\
+            & = vr (uv) \\
+            &= v(ru)v \\
+            &= v(ur)v &[u \in Z_R] \\
+            &= (vu)rv \\
+            &= 1 \cdot rv = rv,
+      \end{align*}
+      so that $v \in Z_R$. Thus $Z_R$ is a commutative division ring; that is,
+      $Z_R$ is a field. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.8]   Describe the center of the real Hamilton Quaternions
                   $\mathbb{H}$. Prove that $\{a + bi : a, b \in \R\}$ is a
                   subring of $\mathbb{H}$ which is a field but is not contained
                   in the center of $\mathbb{H}$.
+
+      \textbf{Proof.} Let $Z_\mathbb{H}$ be the center of $\mathbb{H}$. The set
+      $Z_\mathbb{H}$ is nonempty because it contains 1. Let
+      $r \in Z_\mathbb{H}$. Then $r = a + bi + cj + dk$ for some real numbers
+      $a$, $b$, $c$, and $d$. Since $r$ commutes with all the elements of
+      $\mathbb{H}$, it follows particularly that $ri = ir$; this implies that
+      $$ai - b - ck + dj = ai - b + ck - dj,$$
+      so that $2ck = 2dj$, and we conclude that $c = d = 0$. Thus $r = a + bi$.
+      Now we must also have that $rj = jr$; that is $aj + bk = aj - bk$, so that
+      $2bk = 0$, and we conclude that $b = 0$. It is clear that every real
+      number commutes with $\mathbb{H}$. Thus $Z_\mathbb{H} = \R$. The set
+      $\{a + bi : a, b \in \R\}$ is the set of complex number which is a field.
+      Since $\C \subset \mathbb{H}$, it follows that $\C$ is a subring of
+      $\mathbb{H}$. The set $\C$ is not contained in $\R = Z_\mathbb{H}$ since 
+      the latter is a proper subset of the former. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.9]   For a fixed element $a \in R$ define
                   $C(a) = \{r \in R : ra = ar\}$. Prove that $C(a)$ is a subring
                   of $R$ containing $a$. Prove that the center of $R$ is the
                   intersection of the subrings $C(a)$ over all $a \in R$.
+
+      \textbf{Proof.} Let $Z_R$ denote the center of $R$. Fix $a \in R$. Since 
+      $aa = aa$, it follows that $a \in C(a)$, so let $c, d \in C(a)$.
+
+      (\textit{$C(a)$ is a subgroup of $R$}.) We have
+      \begin{align*}
+         (c - d)a &= ca - da \\
+                  &= ac - ad &[c, d \in C(a)] \\
+                  &= a(c - d),
+      \end{align*}
+      so that $c - d \in C(a)$ and we conclude by the Subgroup Criterion that
+      $C(a) \le R$. \\
+
+      (\textit{$C(a)$ is closed under multiplication}.) We have
+      \begin{align*}
+         (cd)a &= c(da) &[\text{Associativity}] \\
+               &= c(ad) &[d \in C(a)] \\
+               &= (ca)d &[\text{Associativity}] \\
+               &= (ac)d &[d \in C(a)] \\
+               &= a(cd), &[\text{Associativity}]
+      \end{align*}
+      so that $cd \in C(a)$; i.e., $C(a)$ is closed under multiplication. \\
+
+      Since $C(a) \le R$ and is closed under multiplication, it follows by 
+      definition that $C(a)$ is a subring of $R$. \\
+
+      Now we want to show that $Z_R = \bigcap_{r \in R}C(r)$.
+
+      ($\subseteq$) Let $s \in Z_R$ (the center is nonempty because it contains 
+      1) and $b \in R$. Then it follows by definition that $sb = bs$, so that
+      $s \in C(b)$. That is, $r \in C(b)$ for every $b \in R$, so that
+      $s \in \bigcap_{r \in R}C(r)$. Thus $Z_R \subseteq \bigcap_{r \in R}C(r)$.
+
+      ($\supseteq$) Let $s \in \bigcap_{r \in R}C(r)$ and $t \in R$. Since
+      $s \in \bigcap_{r \in R}C(r)$, it follows particularly that $s \in C(t)$,
+      so that $st = ts$; i.e., $s$ commutes with every member of $R$ and we have
+      that $s \in Z_R$, so that $Z_R \supseteq \bigcap_{r \in R}C(r)$.
+
+      Conclude that $Z_R = \bigcap_{r \in R}C(r)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.10]  Prove that if $D$ is a division ring then $C(a)$ is a division
                   ring for all $a \in D$ (cf. the preceding exercise).
+
+      \textbf{Proof.} Suppose that $D$ is a division ring. Let $a \in D$. By
+      Exercise 7.1.9 $C(a)$ is a subring of $D$, so it suffices to show that
+      every nonzero element in $C(a)$ is a unit. So let $u$ be a nonzero element 
+      in $C(a)$ ($1 \in C(a)$, so that $C(a)$ has a nonzero element). Since $D$ 
+      is a division ring and $u$ is also in $D$, there exists $v \in D$ such 
+      that $uv = vu = 1$. So
+      \begin{align*}
+         va &= va \cdot 1 \\
+            &= va(uv) \\
+            &= v(au)v \\
+            &= v(ua)v &[u \in C(a)] \\
+            &= (vu)(av) = 1 \cdot av = av,
+      \end{align*}
+      so that $v \in C(a)$. That is, $C(a)$ is a division ring.\qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.11]  Prove that if $R$ is an integral domain and $x^2 = 1$ for some
                   $x \in R$ then $x = \pm1$.
+
+      \textbf{Proof.} Let $R$ be an integral domain. Suppose that $x^2 = 1$ for
+      some $x \in R$. Then it follows that $x^2 - 1 = 0$; that is,
+      $(x + 1)(x - 1) = 0$. Since $R$ is an integral domain, we have that
+      $x + 1 = 0$ or $x - 1 = 0$, so that $x = \pm1$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.12]  Prove that any subring of a field which contains the identity
                   is an integral domain.
+
+      \textbf{Proof.} Let $F$ be a field and suppose that $H$ is a subring of
+      $F$ that contains the identity. Suppose that $gh = 0$ for some
+      $g, h \in H$. If neither $g$ nor $h$ is zero, then $g$ and $h$ are zero
+      divisors in $H$; in particular, they are zero divisors in $F$, a
+      contradiction, since $F$ is an integral domain. Thus at least one of $g$
+      and $h$ is zero, so that $H$ is also an integral domain. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.13]  An element $x$ in $R$ is called \textit{nilpotent} if
                   $x^m = 0$ for some $m \in \Z^+$.
@@ -346,6 +477,77 @@ Let $R$ be a ring with 1.
                            $X$ to a field $F$. Prove that $R$ contains no
                            nonzero nilpotent elements.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} Suppose $n = a^kb$, where $a$ and $b$ are
+               integers and $k$ is a nonnegative integer. Let $\overline{x}$
+               denote the coset $x + n\Z$. Since
+               \begin{align*}
+                  \overline{ab}^{k+1} &= \overline{(ab)^{k+1}} \\
+                     &= \overline{a^kbab^k} \\
+                     &= \overline{a^kb} \cdot \overline{ab^k} \\
+                     &= \overline{0} \cdot \overline{ab^k} = \overline{0}
+               \end{align*}
+               and $k + 1 \in \Z^+$, it follows that $\overline{ab}$ is a
+               nilpotent element of $\Z/n\Z$. \qed
+         \item \textbf{Proof.} Let $a \in \Z$.
+
+               $(\Rightarrow)$ Suppose $\overline{a} \in \Z/n\Z$ is nilpotent.
+               That is, there exists $k \in \Z^+$ such that
+               $\overline{a}^k = \overline{0}$. Thus $a^k = nt$ for some integer
+               $t$. Suppose that some prime $p$ divides $n$. Then since
+               $a^k = nt$, it follows that $p$ divides $a^k$, so that $p$ is a
+               prime factor of $a^k$; but the prime factors of $a^k$ are exactly
+               the prime factors of $a$, so $p \mid a$.
+
+               $(\Leftarrow)$ Suppose that every prime divisor of $n$ divides
+               $a$. Let
+               $${p_1}^{e_1}{p_2}^{e_2}\cdots {p_m}^{e_m}$$
+               be the prime factorization of $n$, where each $p_i$ is a distinct
+               prime and each $e_i$ is a positive integer. By hypothesis, each
+               $p_i$ divides $a$. So there exists some integer $t$ such that
+               $$a = t \cdot {p_1}^{d_1}{p_2}^{d_2}\cdots {p_m}^{d_m},$$
+               where each $d_i$ is a positive integer and $\gcd(t, p_i) = 1$.
+               Let $k$ be the minimum positive integer such that
+               $d_ik - e_i \ge 0$ for every $i = 1, 2, \ldots m$. So it follows
+               that
+               \begin{align*}
+                  \overline{a}^k &= \overline{a^k} \\
+                     &= \overline{t^k{p_1}^{d_1k}{p_2}^{d_2k}\cdots
+                        {p_m}^{d_mk}} \\
+                     &= \overline{t^k} \cdot
+                        \overline{{p_1}^{d_1k-e_1}{p_2}^{d_2k-e_2}\cdots
+                        {p_m}^{d_mk-e_m}} \cdot
+                        \overline{{p_1}^{e_1}{p_2}^{e_2}\cdots {p_m}^{e_m}} \\
+                     &= \overline{t^k} \cdot
+                        \overline{{p_1}^{d_1k-e_1}{p_2}^{d_2k-e_2}\cdots
+                        {p_m}^{d_mk-e_m}} \cdot \overline{n} \\
+                     &= \overline{t^k} \cdot
+                        \overline{{p_1}^{d_1k-e_1}{p_2}^{d_2k-e_2}\cdots
+                        {p_m}^{d_mk-e_m}} \cdot \overline{0} = \overline{0}.
+               \end{align*}
+               That is, $\overline{a} \in \Z/n\Z$ is nilpotent. \qed
+
+               (\textit{The nilpotents of $\Z/72\Z$}.)The only primes dividing
+               72 are 2 and 3, so the nilpotent elements of $\Z/72\Z$ are
+               $\overline{0}$, $\overline{6}$, $\overline{12}$, $\overline{18}$, 
+               $\overline{24}$, $\overline{30}$, $\overline{36}$,
+               $\overline{42}$, $\overline{48}$, $\overline{54}$,
+               $\overline{60}$, and $\overline{66}$.
+         \item \textbf{Proof.} Let $f$ be a nonzero function in $R$. Thus, there
+               exists $x \in R$ such that $f(x) \neq 0$. We want to show that
+               $(f(x))^n \neq 0$ for all $n \in \Z^+$, so we will proceed by 
+               induction on $n$. The base case ($n = 1$) trivially holds. Now 
+               suppose that $(f(x))^k\neq 0$ for some positive integer $k$. Thus
+               $(f(x))^{k+1} = (f(x))^k\cdot f(x) \neq 0$
+               because $(f(x))^k$ and $f(x)$ are nonzero elements of the 
+               integral domain $F$. Thus it follows by induction that
+               $(f(x))^n \neq 0$ (so that $f^n \neq 0$) for all $n \in \Z^+$;
+               in other words, $f$ cannot be nilpotent, and the proof is done. 
+               \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.14]  Let $x$ be a nilpotent element of the commutative ring $R$
                   (cf. the preceding exercise).
@@ -356,9 +558,45 @@ Let $R$ be a ring with 1.
                      \item Deduce that the sum of a nilpotent element and a unit
                            is a unit.
                   \end{enumerate}
+
+      \textbf{Proof.} Let $k$ be the minimum positive integer such that
+      $x^k = 0$.
+
+      \begin{enumerate}
+         \item If $x$ is 0, we are done, so assume that $x \neq 0$. Now $k > 1$ 
+               because $x^1 \neq 0$ by assumption. So $x^k = x^{k-1} \cdot x$. 
+               By minimality of $k$, it follows that $x^{k-1} \neq 0$. Thus the 
+               product of two nonzero elements of $R$, namely $x^{k-1}$ and $x$, 
+               is zero, so that $x$ is a zero divisor.
+         \item Let $r \in R$. So $(rx)^k = r^kx^k = r^k \cdot 0 = 0$; i.e., $rx$
+               is a zero divisor for all $r \in R$.
+         \item For a nonnegative integer $n$, consider the identity
+               $$(1+x)(1-x+x^2-x^3+\cdots+(-1)^nx^n) = 1 - (-1)^{n+1}x^{n+1}.$$
+               Thus
+               \begin{align*}
+                  (1+x)(1-x+x^2-x^3+\cdots+(-1)^{k-1}x^{k-1}) &= 1 - (-1)^kx^k\\
+                     &= 1 - (-1)^k \cdot 0 = 1,
+               \end{align*}
+               so that $1+x$ is a unit in $R$ and its inverse is
+               $\sum_{i=0}^{k-1}(-1)^ix^i$.
+         \item Let $u \in R$ be a unit. It suffices to show that $u + x$ is also
+               a unit. Now we have that $u + x = u(1 + u^{-1}x)$. By (b),
+               $u^{-1}x$ is nilpotent, and thus, $1 + u^{-1}x$ is a unit by
+               (c). Since the product of two units is also a unit, it follows
+               that $u + x = u(1 + u^{-1}x)$ is also a unit.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.15]  A ring $R$ is called a \textit{Boolean ring} if $a^2 = a$ for
                   all $a \in R$. Prove that every Boolean ring is commutative.
+
+      \textbf{Proof.} Suppose that $R$ us a Boolean ring. Let $a, b \in R$. By
+      hypothesis, we have that $(a + b)^2 = (a + b)$; thus
+      $$a^2 + ab + ba + b^2 = a + b.$$
+      Also $a^2 = a$ and $b^2 = b$, so the equality above reduces to
+      $$ab + ba = 0.$$
+      By hypothesis we again have that $ba = (ba)^2 = (-ba)(-ba) = -ba$. Thus
+      $ab + ba = 0$ implies that $ab - ba = 0$ and we conclude that $ab = ba$,
+      so that $R$ is commutative. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.16]  Prove that the only Boolean ring that is an integral domain is
                   $\Z/2\Z$.
