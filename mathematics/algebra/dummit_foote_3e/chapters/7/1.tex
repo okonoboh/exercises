@@ -726,6 +726,59 @@ Let $R$ be a ring with 1.
                   each $i \in I$. Prove that the direct product
                   $\prod_{i\in I} R_i$ is a ring under componentwise addition
                   and multiplication.
+
+      \textbf{Proof.} Let $R = \prod_{i\in I} R_i$; for each $i \in I$ let
+      $+_i$ and $\cdot_i$ be the addition and multplication of $R_i$.
+
+      (\textit{$R$ is an abelian group}.) Exercise 5.1.15 says that $(R, +)$ is 
+      a group; indeed, it is abelian because
+      \begin{align*}
+         \left(\prod_{i\in I}a_i\right) + \left(\prod_{i\in I}b_i\right)
+            &= \prod_{i\in I}(a_i +_i b_i) \\
+            &= \prod_{i\in I}(b_i +_i a_i) &[(R_i, +) \text{ is abelian}] \\
+            &= \left(\prod_{i\in I}b_i\right) + \left(\prod_{i\in I}a_i\right),
+      \end{align*}
+      for all $\prod_{i\in I}a_i$, $\prod_{i\in I}b_i \in R$.
+
+      (\textit{$R$ is closed under multiplication}.) This follows immediately
+      because
+      \begin{align*}
+         \left(\prod_{i\in I}c_i\right)\left(\prod_{i\in I}d_i\right) &=
+            \prod_{i\in I}(c_i \cdot_i d_i) \in R &[c_i \cdot_i d_i \in R_i]
+      \end{align*}
+      for all $\prod_{i\in I}c_i$, $\prod_{i\in I}d_i \in R$.
+
+      (\textit{Distributivity in $R$}.) Distributivity holds in $R$ because
+      \begin{align*}
+         \left(\prod_{i\in I}a_i\right)\left[\left(\prod_{i\in I}b_i\right) +
+            \left(\prod_{i\in I}c_i\right)\right] &=
+         \left(\prod_{i\in I}a_i\right)
+         \left(\prod_{i\in I}(b_i +_i c_i)\right) \\
+         &= \prod_{i\in I}(a_i \cdot_i [b_i +_i c_i]) \\
+         &= \prod_{i\in I}(a_i \cdot_i b_i +_i a_i \cdot_i c_i)
+            &[\text{Left Distributivity in }R_i] \\
+         &= \left(\prod_{i\in I}(a_i \cdot_i b_i)\right) +
+            \left(\prod_{i\in I}(a_i \cdot_i c_i)\right) \\
+         &= \left(\prod_{i\in I}a_i\right)\left(\prod_{i\in I}b_i\right) +
+            \left(\prod_{i\in I}a_i\right)\left(\prod_{i\in I}c_i\right)
+      \end{align*}
+      and
+      \begin{align*}
+         \left[\left(\prod_{i\in I}b_i\right) +
+            \left(\prod_{i\in I}c_i\right)\right]\left(\prod_{i\in I}a_i\right) 
+         &= \left(\prod_{i\in I}(b_i +_i c_i)\right)
+            \left(\prod_{i\in I}a_i\right) \\
+         &= \prod_{i\in I}([b_i +_i c_i] \cdot_i a_i) \\
+         &= \prod_{i\in I}(b_i \cdot_i a_i +_i c_i \cdot_i a_i)
+            &[\text{Right Distributivity in }R_i] \\
+         &= \left(\prod_{i\in I}(b_i \cdot_i a_i)\right) +
+            \left(\prod_{i\in I}(c_i \cdot_i a_i)\right) \\
+         &= \left(\prod_{i\in I}b_i\right)\left(\prod_{i\in I}a_i\right) +
+            \left(\prod_{i\in I}c_i\right)\left(\prod_{i\in I}a_i\right)
+      \end{align*}
+      for all $\prod_{i\in I}a_i$, $\prod_{i\in I}b_i, \prod_{i\in I}c_i \in R$.
+      
+      Thus $(R, +, \cdot)$ is a ring. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.20]  Let $R$ be the collection of sequences
                   $(a_1, a_2, a_3, \ldots)$ of integers $a_1$, $a_2$, $a_3$,  
@@ -733,6 +786,36 @@ Let $R$ be a ring with 1.
                   the \textit{direct sum} of infinitely many copies of $\Z$).
                   Prove that $R$ is a ring under componentwise addition and
                   multiplication which does not have an identity.
+
+      \textbf{Proof.} Let $R'$ be the collection of sequences of integers. By
+      Exercise 7.1.19, $R'$ is a ring ($R'$ is the direct product of countably
+      infinite number of $\Z$). Clearly $R \subseteq R'$, so it suffices to show
+      that $R$ is a subring of $R'$.
+
+      (\textit{$R$ is a subgroup of $R'$}.) The sequence consisting of only
+      zeros is in $R$, so $R$ contains the additive identity. Let
+      $a, b \in R$. So
+      $$a = (a_1, a_2, a_3, \ldots) \text{ and } b = (b_1, b_2, b_3, \ldots),$$
+      where $a_i, b_i \in \Z$ and finitely many $a_i$ and $b_i$ are nonzero. Let
+      $j$ and $k$ be the maximum indices such that $a_j \neq 0$ and
+      $b_k \neq 0$ and let $m = \max\{j, k\}$. Thus $a_{n+m} = b_{n+m} = 0$ for 
+      all $n \in \Z^+$. We now have that
+      $$a - b = (a_1 - b_1, a_2 - b_2, \ldots, a_m - b_m,
+        a_{m+1} - b_{m+1}, \ldots) \in R$$
+      because the first $m$ components of $a - b$ have finite nonzero elements
+      and the remaining components are 0. So it follows by the Subgroup
+      Criterion that $R$ is a subgroup of $R'$.
+
+      (\textit{$R$ is closed under multiplication}.) Let $a$, $b$, and $m$ be as
+      defined above. Similarly, it follows that
+      $$ab = (a_1b_1, a_2b_2, \ldots, a_m b_m, a_{m+1}b_{m+1}, \ldots) \in R$$
+      because the first $m$ components of $ab$ have finite nonzero elements
+      and the remaining components are 0.
+
+      Since $R$ is a subgroup of $R'$ and is closed under multiplication, it 
+      follows by definition that $R$ is a subring of $R'$. The ring $R$ cannot
+      contain the identity $(1, 1, 1, \ldots)$ because the identity has an
+      infinite number of nonzero elements. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.21]  Let $X$ be any nonempty set and let $\mathcal{P}(X)$ be the
                   set of all subsets of $X$ (the \textit{power set} of $X$).
@@ -748,6 +831,74 @@ Let $R$ be a ring with 1.
                      \item Prove that this ring is commutative, has an identity
                            and is a Boolean ring.
                   \end{enumerate}
+
+      \textbf{Proof.} Let $A, B, C \in \mathcal{P}(X)$.
+
+      \begin{enumerate}
+         \item Observe that addition on $\mathcal{P}(X)$ is commutative
+               because the union operator is commutative.
+
+               (\textit{Associativity of }+) $A + (B + C) = (A + B) + C$.
+
+               $(\subseteq)$ Let $r \in A + (B + C)$. Then
+               $r \in A - (B + C)$ or $r \in (B + C) - A$.
+
+               \textbf{Case 1.} $r \in A - (B + C)$. So $r \in A$ and
+               $r \notin B + C$. Now $r \notin B + C$ if and only if
+               $(r \notin B$ and $r \notin C)$ or $(r \in B$ and $r \in C)$. So
+               suppose first that $r \notin B$ and $r \notin C$. Hence the
+               following statements hold:
+               $$r \in A, r \notin B, \text{ and }r \notin C.$$
+               The statements $r \in A$ and $r \notin B$ imply that
+               $r \in A + B$; similarly, $r \in A + B$ and $r \notin C$ imply 
+               that $r \in (A + B) + C$. Now suppose that
+               $r \in B$ and $r \in C$. Hence the
+               following statements hold:
+               $$r \in A, r \in B, \text{ and }r \in C.$$
+               The statements $r \in A$ and $r \in B$ imply that
+               $r \notin A + B$, and consequently, the statements 
+               $r \notin A + B$ and $r \in C$ imply that $r \in (A + B) + C$. \\
+
+               \textbf{Case 2.} $r \in (B + C) - A$. So $r \in B + C$ and
+               $r \notin A$. Now $r \in B + C$ if and only if
+               $(r \in B$ and $r \notin C)$ or $(r \notin B$ and $r \in C)$. So
+               suppose first that $r \in B$ and $r \notin C$. Hence the
+               following statements hold:
+               $$r \notin A, r \in B, \text{ and }r \notin C.$$
+               The statements $r \notin A$ and $r \in B$ imply that
+               $r \in A + B$; similarly, $r \in A + B$ and $r \notin C$ imply 
+               that $r \in (A + B) + C$. Now suppose that
+               $r \notin B$ and $r \in C$. Hence the
+               following statements hold:
+               $$r \notin A, r \notin B, \text{ and }r \in C.$$
+               The statements $r \notin A$ and $r \notin B$ imply that
+               $r \notin A + B$, and consequently, the statements 
+               $r \notin A + B$ and $r \in C$ imply that $r \in (A + B) + C$. \\
+
+               In both cases, we showed that $r \in (A + B) + C$ so
+               we conclude that $$A + (B + C) \subseteq (A + B) + C.$$
+
+               ($\supseteq$) We have
+               \begin{align*}
+                  (A + B) + C &= C + (A + B) &[\text{+ is commutative}] \\
+                     &= C + (B + A) &[\text{+ is commutative}] \\
+                     &\subseteq (C + B) + A &[\text{Recall that }
+                     A + (B + C) \subseteq (A + B) + C] \\
+                     &= (B + C) + A &[\text{+ is commutative}] \\
+                     &= A + (B + C), &[\text{+ is commutative}]
+               \end{align*}
+               so we conclude that $A + (B + C) = (A + B) + C$.
+
+               (\textit{$0$ and inverses under of }+). The empty set is the
+               0 element and every element is its own additive inverse. Thus
+               $\mathcal{P}(X)$ is an abelian group.
+
+               (\textit{Associativity of }$\times$.) This follows because 
+               intersection of sets is associative
+
+               (\textit{Distributivity}.) $A \times (B + C) = (A \times B) +
+               (A \times C)$.
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.22]  Give an example of an infinite Boolean ring.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
