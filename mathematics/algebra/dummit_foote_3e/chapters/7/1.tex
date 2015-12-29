@@ -835,8 +835,16 @@ Let $R$ be a ring with 1.
       \textbf{Proof.} Let $A, B, C \in \mathcal{P}(X)$.
 
       \begin{enumerate}
-         \item Observe that addition on $\mathcal{P}(X)$ is commutative
-               because the union operator is commutative.
+         \item Observe that addition and multiplication on $\mathcal{P}(X)$ are 
+               commutative because
+               \begin{align*}
+                  A + B &= (A - B) \cup (B - A) \\
+                     &= (B - A) \cup (A - B) &[\cup \text{ is commutative}] \\
+                     &= B + A \\ \\
+                  A \times B &= A \cap B \\
+                     &= B \cap A &[\cap \text{ is commutative}] \\
+                     &= B \times A.
+               \end{align*}
 
                (\textit{Associativity of }+) $A + (B + C) = (A + B) + C$.
 
@@ -889,18 +897,66 @@ Let $R$ be a ring with 1.
                \end{align*}
                so we conclude that $A + (B + C) = (A + B) + C$.
 
-               (\textit{$0$ and inverses under of }+). The empty set is the
+               (\textit{$0$ and inverses under }+). The empty set is the
                0 element and every element is its own additive inverse. Thus
                $\mathcal{P}(X)$ is an abelian group.
 
                (\textit{Associativity of }$\times$.) This follows because 
                intersection of sets is associative
 
-               (\textit{Distributivity}.) $A \times (B + C) = (A \times B) +
-               (A \times C)$.
-      \end{enumerate}
+               (\textit{Distributivity}.) Since multiplication is commutative,
+               it suffices to show that left distribution holds; i.e.,
+               $$A \times (B + C) = (A \times B) + (A \times C).$$
+
+               ($\subseteq$) Let $r \in A \times (B + C) = A \cap (B + C)$. So
+               $r \in A$ and $r \in B + C$. Recall that $r \in B + C$ if and
+               only if$(r \in B$ and $r \notin C)$ or $(r \notin B$ and
+               $r \in C)$. So suppose first that $r \in B$ and $r \notin C$.
+               Hence the following statements hold:
+               $$r \in A, r \in B, \text{ and }r \notin C.$$
+               The statements $r \in A$ and $r \in B$ imply that
+               $r \in A \cap B$, so that $r \in A \times B$; also,
+               $r \in A$ and $r \notin C$ imply that $r \notin A \cap C$, so
+               that $r \notin A \times C$. Thus $r \in A \times B$ and
+               $r \notin A \times C$ imply that
+               $r \in (A \times B) + (A \times C)$. Now if $r \notin B$ and
+               $r \in C$, we interchange the roles of $B$ and $C$ in the
+               preceding paragraph to conclude that
+               $$r \in (A \times C) + (A \times B) = (A \times B) +
+                  (A \times C).$$
+               Thus $A \times (B + C) \subseteq (A \times B) + (A \times C)$.
+
+               ($\supseteq$) Let $r \in (A \times B) + (A \times C) =
+               (A \cap B) + (A \cap C)$. We split
+               the possibilities into cases:
+
+               \textbf{Case 1.} $r \in A \cap B$ and $r \notin A \cap C$. The
+               statement $r \in A \cap B$ implies that $r \in A$ and $r \in B$,
+               while $r \notin A \cap C$ implies that $r \notin A$ or
+               $r \notin C$; however, since $r \in A$, we must have
+               $r \notin C$. Hence the following statements hold:
+               $$r \in A, r \in B, \text{ and }r \notin C.$$
+               The statements $r \in B$ and $r \notin C$ imply that
+               $r \in B + C$; since $r \in A$, it follows that
+               $r \in A \times (B + C)$.
+
+               \textbf{Case 2.} $r \in A \cap C$ and $r \notin A \cap B$.
+               Interchange the roles of $B$ and $C$ in case 1 to conclude that
+               $$r \in A \times (C + B) = A \times (B + C).$$
+
+               Thus $A \times (B + C) \supseteq (A \times B) + (A \times C)$, so
+               that equality holds. We then conclude that $\mathcal{P}(X)$ is a
+               ring.
+         \item We already showed that multiplication is commutative. Since
+               $X \times D = X \cap D = D$, and $D \times D = D \cap D = D$ for
+               all $D \in \mathcal{P}(X)$, it follows that $\mathcal{P}(X)$ is a
+               Boolean ring with identity $X$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.22]  Give an example of an infinite Boolean ring.
+
+      \textbf{Example.} The Boolean ring $(\mathcal{P}(\Z), +, \times)$, where
+      addition and multiplication are defined as in Exercise 7.1.21.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.23]  Let $D$ be a squarefree integer, and let $\mathcal{O}$ be the
                   ring of integers in the quadratic field $\Q(\sqrt{D})$. For 
@@ -915,6 +971,95 @@ Let $R$ be a ring with 1.
                   \textit{order of conductor f} in the field $\Q(\sqrt{D})$. The
                   ring of integers $\mathcal{O}$ is called the
                   \textit{maximal order} in $\Q(\sqrt{D}).)$
+
+      \textbf{Proof.} Let $f \in \Z^+$. The set $\mathcal{O}_f$ is nonempty
+      because it contains the additive identity $0 = 0 + 0 \cdot f\omega$; note 
+      that it also contains $1 = 1 + 0 \cdot f\omega$. Let
+      $x,  y \in \mathcal{O}_f$, so that $x = x_1 + x_2f\omega$ and
+      $y = y_1 + y_2f\omega$ for some integers $x_1, x_2, y_1$, and $y_2$.
+
+      (\textit{$\mathcal{O}_f$ is a subgroup of $\mathcal{O}$.})  Since $\Z$ is 
+      closed under subtraction, it follows that
+      $$x - y = (x_1 - y_1) + (x_2 - y_2)f\omega \in \mathcal{O}_f,$$
+      so that  $\mathcal{O}_f \le \mathcal{O}$ by the Subgroup Criterion.
+
+      (\textit{$\mathcal{O}_f$ is closed under multiplication.}) We have
+      \begin{equation*}
+         xy = \left\{
+         \begin{array}{rl}
+            x_1y_1 + x_2y_2f^2D + (x_1y_2 + x_2y_1)f\omega & \text{if }
+               D \equiv 2, 3 \text{ mod } 4, \\
+            \left(x_1y_1 + x_2y_2f^2\frac{D-1}{4}\right) +
+               (x_1y_2f + x_2y_1f +x_2y_2f^2)\omega, & \text{if }
+               D \equiv 1 \text{ mod } 4
+         \end{array} \right.
+      \end{equation*}
+      so that $xy \in \mathcal{O}_f$. Since $\mathcal{O}_f$ is a subgroup of
+      $\mathcal{O}$ that is also closed under multiplication, it follows by 
+      definition that $\mathcal{O}_f$ is a subring of $\mathcal{O}$.
+      
+      ($|\mathcal{O} :\mathcal{O}_f| = f$.) Consider the map
+      $$\alpha : \mathcal{O} \rightarrow \Z/f\Z,$$
+      defined by $a + b\omega \mapsto b + f\Z$. We want to show that $\alpha$ is
+      a surjective (additive) group homomorphism. Let $r,  s \in \mathcal{O}f$, 
+      so that $r = r_1 + r_2\omega$ and $s = s_1 + s_2\omega$ for some integers 
+      $r_1, r_2, s_1$, and $s_2$. It follows that
+      \begin{align*}
+         \alpha(r + s) &= \alpha((r_1 + s_1) + (r_2 + s_2)\omega) \\
+            &= (r_2 + s_2) + f\Z \\
+            &= (r_2 + f\Z) + (s_2 + f\Z) \\
+            &= \alpha(r_1 + r_2\omega) + \alpha(s_1 + s_2\omega) \\
+            &= \alpha(r) + \alpha(s),
+      \end{align*}
+      so that $\alpha$ is a homomorphism. The map $\alpha$ is surjective because
+      if $x$ is a representative of a coset in $\Z/f\Z$, then
+      $\alpha(x\omega) = x + f\Z$. Now
+      \begin{align*}
+         \text{kernel}(\alpha) &= \{b_1 + b_2\omega \in \mathcal{O} :
+            b_2 + f\Z = \alpha(b_1 + b_2\omega) = f\Z\} \\
+            &= \{b_1 + b_2\omega \in \mathcal{O} : b_2 \in f\Z\} \\
+            &= \{b_1 + tf\omega \in \mathcal{O} : t \in \Z\} \\
+            &= \mathcal{O}_f.
+      \end{align*}
+      It follows by the First Isomorphism Theorem for groups that
+      $\mathcal{O}/\mathcal{O}_f \cong \alpha(\mathcal{O}) = \Z/f\Z$. So 
+      conclude that $|\mathcal{O} : \mathcal{O}_f| = |\Z/f\Z| = f$. Now let $F$
+      be a unital subring of $\mathcal{O}$ and suppose that
+      $[\mathcal{O} : F] = n \in \Z^+$. Since $1 \in F$, it follows that
+      $\cyc{1} = \Z \subseteq F$. For $a, b \in \Z$, the cosets $a\omega + \Z$ 
+      and $b\omega + \Z$ are equal if and only if $a\omega - b\omega \in \Z$ if 
+      and only if $a = b$. Thus the following are an infinite number of cosets
+      of $\Z$ in $\mathcal{O}$:
+      $$1\omega + \Z, 2\omega + \Z, 3\omega + \Z, \ldots$$
+      That is, $[\mathcal{O} : \Z]$ is not finite, so that $\Z \neq F$; thus
+      $\Z$ is a proper subset of $F$, so there exists a noninteger
+      $r_1 + r_2\omega\in F$, $r_1, r_2 \in \Z$ and $r_2 \neq 0$. By closure,
+      $-r_1 - r_2\omega \in F$. Since either $-r_2$ or $r_2$ is positive, the
+      set
+      $$S = \{m \in \Z^+ : a' + m\omega \in F, \text{ for some }a' \in \Z\}$$
+      is nonempty. The Well Ordering Principle guarantees that $k = \min(S)$
+      exists. Since $k \in S$, we let $c$ be the integer such that
+      $c + k\omega$. Since $\Z \subseteq F$, we have that $-c \in F$, so that
+      $(c + k\omega) - c = k\omega \in F$. Now we want to show that
+      $F = \mathcal{O}_k$.
+
+      $(\subseteq)$ Let $s \in F$. Then $s = a + b\omega$ for some
+      $a, b \in \Z$. By the Division Algorithm, there exist integers $q'$ and 
+      $r'$ such that $b = q'k + r'$ and $0 \le r' < k$, so that
+      $s = a + q'k\omega + r'\omega$. Now $q'$ is an integer so $q' \in F$; 
+      since $k\omega \in F$, it follows that $q'k\omega$ is in $F$; thus
+      $s - q'k\omega = a + r'w \in F$. By minimality of $k$, it follows that
+      $r' = 0$, so that $s = a + q'k\omega \in \mathcal{O}_k$. Conclude that
+      $F \subseteq \mathcal{O}_k$.
+
+      $(\supseteq)$ Let $p \in \mathcal{O}_k$. So $p = p_1 + p_2k\omega$ for
+      some integers $p_1$ and $p_2$. Recall that $k\omega \in F$ and
+      $\Z \subseteq F$. Thus $p_1 \in F$ and $p_2k\omega \in F$; by closure, it
+      follows by $p = p_1 + p_2k\omega \in F$. Thus $F \supseteq \mathcal{O}_k$.
+
+      We conclude that $F = \mathcal{O}_k$, so that
+      $$n = [\mathcal{O} : F] = [\mathcal{O} : \mathcal{O}_k] = k.$$
+      That is, $F = \mathcal{O}_k = \mathcal{O}_n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.24]  Show that $D = 3, 5, 6$, and 7 that the group of units
                   $\mathcal{O}^\times$ of the quadratic integer ring
