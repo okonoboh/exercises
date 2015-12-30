@@ -12,15 +12,17 @@ Let $R$ be a ring with 1.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.2]   Prove that if $u$ is a unit in $R$ then so is $-u$.
 
-      \textbf{Proof.} Suppose that $u \in R$ is a unit. Let $v$ be the 
-      multiplicative inverse of $u$. Since
+      \textbf{Proof.} Suppose that $u \in R$ is a unit. Then there exists
+      $v \in R$ such that
+      $$vu = uv = 1.$$
+      Since
       \begin{align*}
          (-v)(-u) &= vu          &[\text{Proposition }7.1 (3)] \\
                   &= 1           &[\text{By definition}] \\
                   &= uv          &[\text{By definition}] \\
                   &= (-u)(-v),   &[\text{Proposition }7.1 (3)]
       \end{align*}
-      it follows that $-v$ is the multiplicative inverse of $-u$, so that $-u$
+      it follows that $-v$ is a multiplicative inverse of $-u$, so that $-u$
       is a unit in $R$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.3]   Let $R$ be a ring with identity and let $S$ be a subring of
@@ -46,22 +48,22 @@ Let $R$ be a ring with 1.
 
       \textbf{Proof.} Let $R$ be a ring, $I$ a nonempty set, and
       $$S = \bigcap_{i \in I} R_i,$$
-      where $R_i$ a subring of $R$ for each $i \in I$. We want to show that $S$
+      where $R_i$ is a subring of $R$ for each $i \in I$. We want to show that
+      $S$
       is a subring of $R$.
 
-      (\textit{S is a subgroup of R}.) Since $R_i$ is a subring
-      of $R$, it follows that $R_i$ is a subgroup of $R$, for each $i \in I$. 
-      Thus $S$ is a subgroup of $R$ by Exercise 2.1.10(b).
+      (\textit{S is an additive subgroup of R}.) Since $R_i$ is a subring
+      of $R$, it follows that $R_i$ is an additive subgroup of $R$, for each
+      $i \in I$. Thus $S$ is an additive subgroup of $R$ by Exercise 2.1.10(b).
 
-      (\textit{S is closed under multiplication}.) The set $S$ contains 0---so
-      that it is nonempty---because each $R_i$ contains 0. So let $a$,
-      $b \in S$. That is, $a, b \in R_i$ for all $i \in I$. Since each $R_i$ is
-      a subring, it is closed under multiplication; thus, $ab \in R_i$ for each
-      $i \in I$, so that $ab \in S$, and we conclude that $S$ is closed under
-      multiplication.
+      (\textit{S is closed under multiplication}.) Let $a$, $b \in S$. That is, 
+      $a, b \in R_i$ for all $i \in I$. Since each $R_i$ is a subring, it is 
+      closed under multiplication; thus, $ab \in R_i$ for each $i \in I$, so 
+      that $ab \in S$, and we conclude that $S$ is closed under multiplication.
 
-      Now since $S$ is a subgroup of $R$ and is closed under multiplication, it
-      follows by definition that $S$ is a subring of $R$. \qed
+      Now since $S$ is an additive subgroup of $R$ that is also closed under 
+      multiplication, it follows by definition that $S$ is a subring of $R$.
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.5]   Decide which of the following (a)$-$(f) are subrings of $\Q$:
                   \begin{enumerate}
@@ -84,8 +86,8 @@ Let $R$ be a ring with 1.
 
                \textbf{Proof.}
 
-               (\textit{S is a subgroup of $\Q$}.) This follows from Exercise
-               1.1.6(a). \\
+               (\textit{S is an additive subgroup of $\Q$}.) This follows from 
+               Exercise 1.1.6(a). \\
 
                (\textit{S is closed under multiplication}.) Let $q_1$,
                $q_2 \in S$. Then there exist odd integers $s_1$ and $s_2$ and 
@@ -121,7 +123,7 @@ Let $R$ be a ring with 1.
                Since $q_1$ and $q_2$ are in lowest terms, it follows that $s_1$
                and $s_2$ must be odd. 
 
-               (\textit{S is a subgroup of $\Q$}.) Now
+               (\textit{S is a subgroup of $\Q$}.) We have
                $$q_1 - q_2 = \frac{r_1s_2 - r_2s_1}{s_1s_2}.$$
                Now $r_1s_2$ and $r_2s_1$ are both even so that $r_1s_2 - r_2s_1$
                is also even. Since $s_1s_2$ is odd, it has no factors of 2, so
@@ -1438,7 +1440,9 @@ Let $R$ be a ring with 1.
       0.1 (3); i.e., $\alpha$ is an automorphism of $A$. Conversely, if $\alpha$
       is an automorphism of $A$, then it is bijective, so that it has a left and
       right inverse, and thus, is a unit. Thus the units in $R$ are the
-      automorphisms of $A$. \qed
+      automorphisms of $A$.
+
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.30]  Let $A = \Z \times \Z \times \Z \times \cdots$ be the direct
                   product of copies of $\Z$ indexed by the positive integers (so
