@@ -1358,33 +1358,78 @@ Let $R$ be a ring with 1.
                   with identity. Prove that the units of $R$ are the group
                   automorphisms of $A$ (cf. Exercise 20, Section 1.6).
 
-      \textbf{Proof.}
+      \textbf{Proof.} The set $R$ is nonempty because it contains the zero
+      homomorphism; so let $f, g, h \in R$ and $a_1, a_2, a_3 \in A$.
 
-      \textit{$(R, +)$ is an abelian group}. The additive identity of $R$ is the
-      zero homomorphism. Addition in $R$ is associative and commutative because 
-      addition is associative and commutative in $A$. Now we show that $R$ is
-      closed under addition, so let $f, g \in R$. For every $a_1, a_2 \in A$, we
-      have that
+      \textit{$(R, +)$ is an abelian group}.
+      \begin{itemize}
+         \item (\textit{$R$ is closed and commutative under addition}.) So we 
+               have that
+               \begin{align*}
+                  (f + g)(a_1 + a_2) &= f(a_1 + a_2) + g(a_1 + a_2) \\
+                     &= f(a_1) + f(a_2) + g(a_1) + g(a_2) &[f, g
+                        \text{ are homomorphisms}] \\
+                     &= f(a_1) + g(a_1) + f(a_2) + g(a_2) \\
+                     &= (f + g)(a_1) + (f + g)(a_2),
+               \end{align*}
+               so that $f + g$ is a homomorphism and thus $f + g \in R$. That 
+               is, $R$ is closed under addition. Interchanging the roles of
+               $a_1$ and $a_2$ above and using the commutativity of addition in
+               $A$, we get
+               $$(f + g)(a_2 + a_1) = (f + g)(a_2) + (f + g)(a_1) =
+                (f + g)(a_1) + (f + g)(a_2) = (f + g)(a_1 + a_2),$$
+               so that $R$ is commutative under addition.
+         \item (\textit{$R$ is associative under addition}.) Addition in $R$ is 
+               associative because addition is associative in $A$.
+         \item (\textit{Additive identity of $R$}.) The additive identity of $R$ 
+               is the zero homomorphism.
+         \item (\textit{Additive inverses of $R$}.) Consider
+               $f' : A \rightarrow A$, $a \mapsto -f(a)$. So
+               \begin{align*}
+                  f'(a_1 + a_2) &= -[f(a_1 + a_2)] \\
+                     &= -[f(a_1) + f(a_2)] &[f \text{ is an homomorphism}] \\
+                     &= -f(a_1) + -f(a_2)   &[\text{Distributivity in }A] \\
+                     &= f'(a_1) + f'(a_2)
+               \end{align*}
+               for every $a_1, a_2$ so that $f'$ is a homomorphism and this
+               $f' \in R$. Clearly $f'$ is the additive inverse of $f$, so that 
+               every element of $R$ has an additive inverse.         
+      \end{itemize}
+      We conclude from the arguments above that $R$ is an abelian group.
+
+      (\textit{$R$ is closed under multiplication}.) Because
       \begin{align*}
-         (f + g)(a_1 + a_2) &= f(a_1 + a_2) + g(a_1 + a_2) \\
-            &= f(a_1) + f(a_2) + g(a_1) + g(a_2) &[f, g
-               \text{ are homomorphisms}] \\
-            &= f(a_1) + g(a_1) + f(a_2) + g(a_2) \\
-            &= (f + g)(a_1) + (f + g)(a_2),
+         (fg)(a_1 + a_2) &= f(g(a_1 + a_2)) \\
+                     &=  f(g(a_1) + g(a_2)) &[g \text{ is a homomorphism}] \\
+                     &=  f(g(a_1)) + f(g(a_2)) &[f \text{ is a homomorphism}] \\
+                     &= (fg)(a_1) + (fg)(a_2),
       \end{align*}
-      so that $f + g$ is a homomorphism and thus $f + g \in R$. That is, $R$ is
-      closed under addition. Consider $f' : A \rightarrow A$, $a \mapsto -f(a)$.
-      So
+      $fg$ is a homomorphism, so that $fg \in R$. That is, $R$ is closed under
+      multiplication.
+
+      (\textit{$R$ is associative under multiplication}.) $R$ is associative 
+      under multiplication because function composition is generally 
+      associative.
+
+      (\textit{Distributivity in $R$}.) Left distributivity holds because
       \begin{align*}
-         f'(a_1 + a_2) &= -[f(a_1 + a_2)] \\
-            &= -[f(a_1) + f(a_2)] &[f \text{ is an homomorphism}] \\
-            &= -f(a_1) + -f(a_2)   &[\text{Distributivity in }A] \\
-            &= f'(a_1) + f'(a_2)
+         (f(g + h))(a_1) &= f((g + h)(a_1)) \\
+            &= f(g(a_1) + h(a_1)) \\
+            &= f(g(a_1)) + f(h(a_1)) &[f \text{ is a homomorphism}] \\
+            &= (fg)(a_1) + (fh)(a_1),
       \end{align*}
-      for every $a_1, a_2$ so that $f'$ is a homomorphism and this $f' \in R$.
-      Clearly $f'$ is the additive inverse of $f$, so that $R$ is closed under
-      additive inverses. Thus, we have shown that $R$ is an abelian group.
-      
+      so that $f(g + h) = fg + fh$; similarly, Left distributivity holds because
+      \begin{align*}
+         ((g + h)f)(a_1) &= (g + h)(f(a_1)) \\
+            &= g(f(a_1)) + g(f(a_1)) \\
+            &= (gf)(a_1) + (gf)(a_1),
+      \end{align*}
+      so that $(g + h)f = gf + hf$. Thus distributivity holds in $R$.
+
+      (\textit{The multiplicative identity of $R$}.) The multiplicative identity 
+      of $R$ is the identity homomorphism.
+
+      We conclude from the above that $R$ is a unital ring.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.30]  Let $A = \Z \times \Z \times \Z \times \cdots$ be the direct
                   product of copies of $\Z$ indexed by the positive integers (so
