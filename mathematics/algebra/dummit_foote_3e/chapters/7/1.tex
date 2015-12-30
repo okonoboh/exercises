@@ -1061,10 +1061,15 @@ Let $R$ be a ring with 1.
       $$n = [\mathcal{O} : F] = [\mathcal{O} : \mathcal{O}_k] = k.$$
       That is, $F = \mathcal{O}_k = \mathcal{O}_n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.1.24]  Show that $D = 3, 5, 6$, and 7 that the group of units
+   \item[7.1.24]  Show for $D = 3, 5, 6$, and 7 that the group of units
                   $\mathcal{O}^\times$ of the quadratic integer ring
                   $\mathcal{O}$  is infinite by exhibiting an explicit unit of
                   infinite (multiplicative) order in each ring.
+
+      \textbf{Solution.} The elements $2 + \sqrt{3} \in \Z[\sqrt{3}]$,
+      $1 + \frac{1 + \sqrt{5}}{2} \in \Z\left[\frac{1 + \sqrt{5}}{2}\right]$,
+      $5 + 2\sqrt{6} \in \Z[\sqrt{6}]$, and $8 + 3\sqrt{7} \in \Z[\sqrt{7}]$ all
+      have inifinite multiplicative order.      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.25]  Let $I$ be the ring of integral Hamilton Quaternions and
                   define
@@ -1084,6 +1089,64 @@ Let $R$ be a ring with 1.
                            the ring of rational quaternions of a nonzero element
                            $\alpha$ is $\frac{\overline{\alpha}}{N(\alpha)}$.]
                   \end{enumerate}
+
+      \textbf{Proof.} Let $\alpha, \beta \in I$. Then
+      $\alpha = a + bi + cj + dk$ and $\beta = e + fi + gj + hk$ for some
+      integers $a$, $b$, $c$, $d$, $e$, $f$, $g$, and $h$.
+
+      \begin{enumerate}
+         \item We have
+               \begin{align*}
+                  \alpha\overline{\alpha} &=
+                     (a + bi + cj + dk)(a - bi - cj - dk) \\
+                     &= [a + (bi + cj + dk)][a - (bi + cj + dk)] \\
+                     &= a^2 - (bi + cj + dk)^2 \\
+                     &= a^2 - [bi(bi + cj + dk) + cj(bi + cj + dk) +
+                        dk(bi + cj + dk)] \\
+                     &= a^2 - (-b^2 + bck - bdj - bck - c^2 + cdi +
+                        bdj - cdi - d^2) \\
+                     &= a^2 + b^2 + c^2 + d^2 = N(\alpha).
+               \end{align*}
+         \item We have
+               \begin{IEEEeqnarray*}{rCl}
+                  N(\alpha\beta) &=& N([a + bi + cj + dk][e + fi + gj + hk]) \\
+                     &=& N(ae - bf - cg - dh + [af + be + ch - dg]i \\
+                        && + \: [ag - bh + ce + df]j + [ah + bg - cf + de]k) \\
+                     &=& (ae - bf - cg - dh)^2 + (af + be + ch - dg)^2 \\
+                        && + \: (ag - bh + ce + df)^2 + (ah + bg - cf + de)^2 \\
+                     &=& (a^2e^2 +b^2f^2 + c^2g^2 + d^2h^2 \\
+                        && - \: 2abef - 2aceg - 2adeh +2bcfg+2bdfh + 2cdgh) + \\
+                     && (a^2f^2 + b^2e^2 + c^2h^2 + d^2g^2 \\
+                        && + \: 2abef + 2acfh - 2adfg + 2bceh -2bdeg-2cdgh) + \\
+                     && (a^2g^2 + b^2h^2 + c^2e^2 + d^2f^2 \\
+                        && - \: 2abgh + 2aceg + 2adfg - 2bceh -2bdfh+2cdef) + \\
+                     && (a^2h^2 + b^2g^2 + c^2f^2 + d^2e^2 \\
+                        && + \: 2abgh - 2acfh + 2adeh - 2bcfg +2bdeg-2cdef) \\
+                     &=& a^2e^2 +b^2f^2 + c^2g^2 + d^2h^2 +
+                        a^2f^2 + b^2e^2 + c^2h^2 + d^2g^2 + \\
+                        && a^2g^2 + b^2h^2 + c^2e^2 + d^2f^2 +
+                        a^2h^2 + b^2g^2 + c^2f^2 + d^2e^2 \\
+                     &=& a^2(e^2 + f^2 + g^2 + h^2) + b^2(e^2 + f^2 +g^2+h^2) \\
+                        && c^2(e^2 + f^2 + g^2 + h^2)+d^2(e^2 + f^2+g^2 +h^2) \\
+                     &=& (a^2 + b^2 + c^2 + d^2)(e^2 + f^2 + g^2 + h^2) \\
+                     &=& N(\alpha)N(\beta).
+               \end{IEEEeqnarray*}
+         \item ($\Rightarrow$) Suppose that $\alpha$ is a unit. Then we have
+               that
+               $$N(\alpha)N(\alpha^{-1}) = N(\alpha\alpha^{-1}) = N(1) =
+                 N(1 + 0i + 0j + 0k) = 1^2 + 0^2 + 0^2 + 0^2 = 1.$$
+               By definition $N(t)$ is nonnegative for all $t \in I$. Thus since
+               $N(\alpha)N(\alpha^{-1}) = 1$, it follows that $N(\alpha) = 1$.
+
+               ($\Leftarrow$) Suppose conversely that $N(\alpha) = 1$. It
+               follows that
+               $1 = N(\alpha) = a^2 + b^2 + c^2 + d^2$. That is, exactly one of
+               $a$, $b$, $c$, and $d$ has absolute value of 1 while the rest are
+               0. So $\alpha \in \{\pm1, \pm i, \pm j, \pm k\}$. This says that
+               $I^\times = \{\pm1, \pm i, \pm j, \pm k\}$. The identity function
+               gives an isomorphism from $I^\times$ to the quaternion group of
+               order 8.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.26]  Let $K$ be a field. A \textit{discrete valuation} on $K$ is a
                   function $\nu : K^\times \rightarrow \Z$ satisfying
@@ -1105,9 +1168,77 @@ Let $R$ be a ring with 1.
                            such that $R$ is the valuation ring of $\nu$.)
                      \item Prove that for each nonzero element $x \in K$ either
                            $x$ or $x^{-1}$ is in $R$.
-                     \item Prove tha an element $x$ is a unit of $R$ if and only
+                     \item Prove that an element $x$ is a unit of $R$ if and only
                            if $\nu(x) = 0$.
                   \end{enumerate}
+
+      \textbf{Solution.} Observation: since $\nu$ is a homomorphism, we have
+      $\nu(1) = 0$; thus,
+      $$0 = \nu(1) = \nu(-1 \cdot -1) = \nu(-1) + \nu(-1),$$
+      so that $\nu(-1) = 0$. That is
+      $$\nu(-z) = \nu(-1 \cdot z) = \nu(-1) + \nu(z) = \nu(z)$$
+      for every $z \in K^\times$.
+
+      \begin{enumerate}
+         \item \textbf{Proof.} The set $R$ is nonempty because it contains 0, so 
+               let $x, y \in R$.
+
+               (\textit{$R$ is closed under subtraction}.) Let us investigate 
+               the following cases.
+
+               \textbf{Case 1.} $x = y = 0$. It follows that $x - y = 0 \in R$.
+
+               \textbf{Case 2.} $x = 0$ and $y \neq 0$. Thus $y \in K^\times$,
+               so that $-y$ is also a unit in $K$. So $\nu(-y) = \nu(y) \ge 0$.
+               That is, $x - y = -y \in R$.
+
+               \textbf{Case 3.} $x \neq 0$ and $y = 0$. So $x - y = x \in R$.
+
+               \textbf{Case 4.} $x \neq 0$ and $y \neq 0$. Thus $x$ and $y$ are
+               units in $K$. If $x = y$, then $x - y = 0 \in R$, so suppose that
+               $x - y \neq 0$. By the 3rd property of $\nu$, we have that
+               $$\nu(x + (-y)) \ge \min\{\nu(x), \nu(-y)\} =
+                 \min\{\nu(x), \nu(y)\} \ge 0.$$
+               The last inequality holds because $\nu(x)$ and $\nu(y)$ are both
+               nonnegative integers. Thus $x + (-y) = x - y \in R$. \\
+      
+               In all cases, we showed that $R$ is closed under subtraction; so 
+               since $R$ is nonempty and closed under subtraction, it follows by
+               the Subgroup Criterion that $R \le K$.
+
+               (\textit{$R$ is closed under multiplication}.) If either $x$ or
+               $y$ is 0, then $xy = 0 \in R$, so assume that both $x$ and $y$
+               are units in $K$. Thus
+               \begin{align*}
+                  \nu(xy) &= \nu(x) + \nu(y) &[\nu\text{ is a homomorphism}] \\
+                     &\ge 0 + 0 = 0, &[\nu(x) \ge 0 \text{ and }\nu(y) \ge 0]
+               \end{align*}
+               so that $xy \in R$. Thus $R$ is closed under multiplication.
+               Since $R$ is a subgroup of $K$ that is also closed under
+               multiplication, it follows that $R$ is a subring of $K$. Indeed,
+               $R$ is a unital subring because since $\nu(1) = 0$, we have that
+               $1 \in R$. \qed
+         \item \textbf{Proof.} Let $z$ be a nonzero element in $K$ and suppose 
+               that $z \neq R$. It suffices to show that $z^{-1} \in R$. Since 
+               $z \notin R$, it follows by definition of $R$ that $\nu(z) < 0$, 
+               so that $-\nu(z) > 0$. But $-\nu(z) = \nu(z^{-1})$ because $\nu$ 
+               is a homomorphism. Thus $\nu(z^{-1}) > 0$, so that
+               $\nu(z^{-1}) \in R$. \qed
+         \item \textbf{Proof.}
+
+               ($\Rightarrow$) Suppose that $x$ is a unit of $R$. That is
+               $x^{-1} \in R$. So we have that
+               $$0 = \nu(1) = \nu(xx^{-1}) = \nu(x) + \nu(x^{-1}).$$
+               But both $\nu(x)$ and $\nu(x^{-1})$ are nonnegative integers 
+               because $x$ and $x^{-1}$ are units of $K$ that are in $R$. So
+               conclude that $\nu(x) = 0$.
+
+               ($\Leftarrow$) Suppose conversely that $\nu(x) = 0$ for some
+               unit $x$ in $F$. It suffices to show that $x^{-1} \in R$. This
+               follows immediately because $\nu(x^{-1}) = -\nu(x) = -0 = 0$, so 
+               that $x^{-1} \in R$. \qed
+
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.27]  A specific example of a discrete valuation ring (cf. the
                   preceding exercise) is obtained when $p$ is a prime, $K = \Q$
@@ -1119,6 +1250,39 @@ Let $R$ be a ring with 1.
                   Prove that the corresponding valuation ring $R$ is the ring of
                   all rational numbers whose denominators are relatively prime
                   to $p$. Describe the units of this valuation ring.
+
+      \textbf{Proof.} Let $R' = \left\{\frac{a}{b} \in \Q^\times : a, b \in \Z, 
+      \gcd(b, p) = 1, a \neq 0, \text{ and } b \neq 0\right\} \cup \{0\}$. We 
+      want to show that $R' = R$.
+
+      $(\subseteq)$ Let $s_1 \in R'$. Then $s_1 = q_1/r_1$ for some integers
+      $q_1$ and $r_1$ that satisfy the requirements in the definition of $R'$. 
+      Since $p$ and $r_1$ are relatively prime, it follows that $p \nmid r_1$. 
+      Let $\alpha_1$ be the largest integer such that $p^{\alpha_1}$ divides
+      $q_1$. Observe that $\alpha_1 \ge 0$ because, for every negative integer
+      $t$, $p^t$ is not an integer. Thus $s_1 = p^{\alpha_1}\frac{q_1'}{r_1}$, 
+      where $q_1 = p^{\alpha_1}q_1'$ and $p \nmid q_1'$. Thus
+      $\nu_p(s_1) = \alpha_1 \ge 0$, so that $s_1 \in R$ and we conclude that
+      $R' \subseteq R$.
+   
+      $(\supseteq)$ Let $s_2 \in R$. Then $s_2 = q_2/r_2$, where $q_2$ and $r_2$
+      are nonzero integers. Let $\alpha_2$ and $\beta_2$ be the largest integers
+      such that $p^{\alpha_2} \mid q_2$ and $p^{\beta_2} \mid r_2$. Thus
+      $s_2 = p^{\alpha_2-\beta_2}\frac{q_2'}{r_2'}$, where
+      $q_2 = p^{\alpha_2}q_2'$, $r_2 = p^{\beta_2}r_2'$, $p \nmid q_2'$, and
+      $p \nmid r_2'$. Since $s_2 \in R$, it follows that
+      $\nu_p(s_2) = \alpha_2 - \beta_2 \ge 0$; i.e., $\alpha_2 \ge \beta_2$ and
+      thus $p^{\alpha_2-\beta_2}$ is an integer. This says that
+      $$s_2 = \frac{p^{\alpha_2-\beta_2}q_2'}{r_2'} \in R',$$
+      so that $R' \supseteq R$.
+
+      Since $R' \subseteq R$ and $R' \supseteq R$, we conclude that $R' = R$.
+
+      (\textit{Units of $R$}.) By Exercise 7.1.26 (c), an element $x \in R$ is
+      a unit in $R$ if and only if $\nu_p(x) = 0$ if and only if the numerator
+      and denominator of $x$ are relatively prime to $p$.
+
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.28]  Let $R$ be a ring with $1 \neq 0$. A nonzero element $a$ is
                   called a \textit{left zero divisor} in $R$ if there is a
