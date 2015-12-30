@@ -1305,6 +1305,50 @@ Let $R$ be a ring with 1.
                            that has a right inverse is a unit (i.e., has a
                            two-sided inverse).
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.}
+
+               ($\Rightarrow$) Suppose that $u \in R$ is a unit. Then it follows
+               that $uu^{-1} = u^{-1}u = 1$, so that $u^{-1}$ is a both a right
+               and left inverse of $u$.
+
+               ($\Leftarrow$) Suppose conversely that $v$ is a left inverse and 
+               $t$ is a right inverse of $u$. So we have that
+               $$v = v \cdot 1 = v (ut) = (vu)t = 1 \cdot t = t.$$
+               Thus $v$ is a left and right inverse of $u$, so that $u$ is a
+               unit. \qed
+         \item \textbf{Proof.} Suppose that $u \in R$ has a right inverse, say
+               $x$. Now suppose to the contrary that $u$ is a right zero
+               divisor. That is, there exists nonzero $y \in R$ such that
+               $yu = 0$. So
+               $$y = y \cdot 1 = y (ux) = (yu)x = 0 \cdot x = 0,$$
+               a contradiction since $y \neq 0$. So $u$ is not a right zero
+               divisor. \qed
+         \item \textbf{Proof.} Suppose that for some $u \in R$, there exist two 
+               nonequal elements in $R$, say $u'$ and $u''$ such that
+               $uu' = uu'' = 1$. So $uu' - uu'' = 0$; that is,
+               $u(u' - u'') = 0$. Now $u$ is nonzero because $0$ has no right 
+               inverses and since $u' \neq u''$, it follows that
+               $u' - u'' \neq 0$. Thus $u(u' - u'') = 0$ implies that $u$ is a 
+               zero divisor. \qed
+         \item Suppose that $R$ is finite. Let $x \in R$ be an element that has
+               a right inverse (at least one exists, namely 1). Consider the map 
+               $\alpha_x : R \rightarrow R$, defined by $r \mapsto rx$. We want
+               to show that $\alpha_x$ is a bijection. Since $R$ is finite, it
+               suffices to show that $\alpha_x$ is injective. So suppose that
+               $\alpha_x(r_1) = \alpha_x(r_2)$ for some $r_1, r_2 \in R$. Thus
+               $r_1x = r_2x$. Right multiply both sides of the equality
+               $r_1x = r_2x$ by a right inverse of $x$ to conclude that
+               $r_1 = r_2$. That is, $\alpha_x$ is injective, and thus, as we
+               explained above, it is also bijective. So there exists $y \in R$
+               such that $\alpha_x(y) = 1$. This says that $yx = 1$, so that
+               $y$ is a left inverse of $x$. Since $x$ has left and right
+               inverses, we conclude by (a) that $x$ is a unit. Thus every
+               element in $R$ that has a right inverse is a unit. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.29]  Let $A$ be any commutative ring with identity $1 \neq 0$. Let
                   $R$ be the set of all group homomorphisms of the additive
@@ -1313,6 +1357,34 @@ Let $R$ be a ring with 1.
                   composition. Prove that these operations make $R$ into a ring
                   with identity. Prove that the units of $R$ are the group
                   automorphisms of $A$ (cf. Exercise 20, Section 1.6).
+
+      \textbf{Proof.}
+
+      \textit{$(R, +)$ is an abelian group}. The additive identity of $R$ is the
+      zero homomorphism. Addition in $R$ is associative and commutative because 
+      addition is associative and commutative in $A$. Now we show that $R$ is
+      closed under addition, so let $f, g \in R$. For every $a_1, a_2 \in A$, we
+      have that
+      \begin{align*}
+         (f + g)(a_1 + a_2) &= f(a_1 + a_2) + g(a_1 + a_2) \\
+            &= f(a_1) + f(a_2) + g(a_1) + g(a_2) &[f, g
+               \text{ are homomorphisms}] \\
+            &= f(a_1) + g(a_1) + f(a_2) + g(a_2) \\
+            &= (f + g)(a_1) + (f + g)(a_2),
+      \end{align*}
+      so that $f + g$ is a homomorphism and thus $f + g \in R$. That is, $R$ is
+      closed under addition. Consider $f' : A \rightarrow A$, $a \mapsto -f(a)$.
+      So
+      \begin{align*}
+         f'(a_1 + a_2) &= -[f(a_1 + a_2)] \\
+            &= -[f(a_1) + f(a_2)] &[f \text{ is an homomorphism}] \\
+            &= -f(a_1) + -f(a_2)   &[\text{Distributivity in }A] \\
+            &= f'(a_1) + f'(a_2)
+      \end{align*}
+      for every $a_1, a_2$ so that $f'$ is a homomorphism and this $f' \in R$.
+      Clearly $f'$ is the additive inverse of $f$, so that $R$ is closed under
+      additive inverses. Thus, we have shown that $R$ is an abelian group.
+      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.1.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.1.30]  Let $A = \Z \times \Z \times \Z \times \cdots$ be the direct
                   product of copies of $\Z$ indexed by the positive integers (so
@@ -1336,4 +1408,75 @@ Let $R$ be a ring with 1.
                            $\varphi$ is a left zero divisor but not a right zero
                            divisor).
                   \end{enumerate}
+
+      \textbf{Solution.} Let $a = (a_1, a_2, a_3, \ldots)$ and
+      $b = (b_1, b_2, b_3, \ldots)$ be sequences of integers in $A$.
+
+      \begin{enumerate}
+         \item \textbf{Proof.} We have
+               \begin{align*}
+                  (\varphi\psi)(a) &= \varphi(\psi(a)) \\
+                     &= \varphi(0, a_1, a_2, a_3, \ldots) \\
+                     &= (a_1, a_2, a_3, \ldots) \\
+                     &= a.
+               \end{align*}
+               That is, $\varphi\psi$ is the identity of $R$. But $\psi\varphi$
+               is not the identity of $R$ because
+               \begin{align*}
+                  (\psi\varphi)(1, 0, 0, \ldots) &=
+                     \psi(\varphi(1, 0, 0, \ldots)) \\
+                     &= \psi(0, 0, 0, \ldots) \\
+                     &= (0, 0, 0, \ldots) \\
+                     &\neq (1, 0, 0, \ldots).
+               \end{align*} \qed
+         \item \textbf{Proof.} For every $z \in \Z^+$, let
+               $\psi_z(a_1, a_2, a_3, \ldots) = (a_z, a_1, a_2, a_3, \ldots)$.
+               The map $\psi_z$ is a homomorphism because
+               \begin{align*}
+                  \psi_z(a + b) &= \psi(a_1 +b_1, a_2+b_2, a_3 + b_3, \ldots) \\
+                     &= (a_z + b_z, a_1 + b_1, a_2 + b_2, a_3 + b_3, \ldots) \\
+                     &= (a_z, a_1, a_2, a_3, \ldots) +
+                        (b_z, b_1, b_2, b_3, \ldots) \\
+                     &= \psi_z(a_1, a_2, a_3, \ldots) +
+                        \psi_z(b_1, b_2, b_3, \ldots) \\
+                     &= \psi_z(a) + \psi_z(b).
+               \end{align*}
+
+               Now follow the procedure in (a) to conclude that $\psi_z$ is a 
+               right inverse for $\varphi$ for each positive integer $z$. Let
+               $x$ and $y$ be different positive integers and
+               $c = (c_1, c_2, c_3, \ldots)$ the sequence of 
+               integers such that $c_x = x$ and $c_y = y$; then the element in
+               the 1st slot of $\psi_x(c)$ is $x$ while the first element of
+               $\psi_y(c) = y$, so that $\psi_x \neq \psi_y$. Thus there are an
+               infinite number of right inverses $\psi_z$. \qed
+         \item \textbf{Proof.} Let $\pi = \psi_2 - \psi_1$. The function $\pi$ 
+               is nonzero because it maps $(1, 0, 0, \ldots)$ to
+               $(-1, 0, 0, \ldots)$. So we have that
+               \begin{align*}
+                  (\varphi\pi)(a_1, a_2, a_3, \ldots) &=
+                     \varphi(\pi(a_1, a_2, a_3, \ldots)) \\
+                     &= \varphi((\psi_2 - \psi_1)(a_1, a_2, a_3, \ldots)) \\
+                     &= \varphi(\psi_2(a_1, a_2, a_3, \ldots) -
+                        \psi_1(a_1, a_2, a_3, \ldots)) \\
+                     &= \varphi((a_2, a_1, a_2, a_3, \ldots) -
+                           (a_1, a_1, a_2, a_3, \ldots)) \\
+                     &= \varphi(a_2-a_1, 0, 0, 0, \ldots) \\
+                     &= 0.
+               \end{align*}
+               But $\pi\varphi$ is not 0 because
+               \begin{align*}
+                  (\pi\varphi)(0, 1, 0, 0, 0, \ldots) &=
+                     \pi(\varphi(0, 1, 0, 0, 0 \ldots)) \\
+                     &= \pi(1, 0, 0, 0, \ldots) \\
+                     &= (\psi_2 - \psi_1)(1, 0, 0, 0, \ldots) \\
+                     &= \psi_2(1, 0, 0, 0, \ldots)-\psi_1(1, 0, 0, 0, \ldots) \\
+                     &= (0, 1, 0, 0, 0, \ldots) - (1, 1, 0, 0, 0, \ldots) \\
+                     &= (-1, 0, 0, 0, 0, \ldots) \\
+                     &\neq (0, 0, 0, \ldots).
+               \end{align*} \qed
+         \item \textbf{Proof.} By Exercise 7.1.28 (b), $\varphi$ is not a right 
+               zero divisor; thus no nonzero $\lambda \in R$ exists such that
+               $\lambda\varphi = 0$. \qed
+      \end{enumerate}
 \end{enumerate}
