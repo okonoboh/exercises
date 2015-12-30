@@ -1,0 +1,148 @@
+Let $R$ be a commutative ring with 1.
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.1]   Let $p(x) = 2x^3 - 3x^2 + 4x - 5$ and let
+                  $q(x) = 7x^3 + 33x - 4$. In each of parts (a), (b), and (c)
+                  compute $p(x) + q(x)$ and $p(x)q(x)$ under the assumption that
+                  the coefficients of the two given polynomials are taken from
+                  the specified ring (where the integer coefficients are taken
+                  mod $n$ in parts (b) and (c)):
+                  
+                  (\textbf{a}) $R = \Z$, \quad (\textbf{b}) $R = \Z/2\Z$, \quad
+                  (\textbf{c}) $R = \Z/3\Z$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.2]   Let $p(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots+a_1x+a_0$ be an
+                  element of the polynomial ring $R[x]$. Prove that $p(x)$ is a
+                  zero divisor in $R[x]$ if and only if there is a nonzero 
+                  $b \in R$ such that $bp(x) = 0$. [Let $g(x) = b_mx^m +
+                  b_{m-1}x^{m-1} + \cdots + b_0$ be a nonzero polynomial of
+                  minimal degree such that $g(x)p(x) = 0$. Show that
+                  $b_ma_n = 0$ and so $a_ng(x)$ is a polynomial of degree less
+                  than $m$ that also gives 0 when multiplied by $p(x)$. Conclude
+                  that $a_ng(x) = 0$. Apply a similar argument to show by
+                  induction on $i$ that $a_{n-1}g(x) = 0$ for
+                  $i = 0, 1, \ldots, n$, and show that this implies
+                  $b_mp(x) = 0$.]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.3]   Define the set $R[[x]]$ of \textit{formal power series} in the
+                  indeterminate $x$ with coefficients from $R$ to be all formal
+                  infinite sums
+                  $$\sum_{n=0}^\infty a_nx^n = a_0 + a_1x +
+                       a_2x^2 + a_3x^3 + \cdots.$$
+                  Define addition and multiplication of power series in the same
+                  way as for power series with real or complex coefficients
+                  i.e., extend polynomial addition and multiplication to power
+                  series as though they were ``polynomials of infinite degree":
+                  \begin{align*}
+                     \sum_{n=0}^\infty a_nx^n + \sum_{n=0}^\infty b_nx^n &=
+                        \sum_{n=0}^\infty (a_n + b_n)x^n \\
+                     \sum_{n=0}^\infty a_nx^n \times \sum_{n=0}^\infty b_nx^n &=
+                        \sum_{n=0}^\infty\left(\sum_{k=0}^na_kb_{n-k}\right)x^n. 
+                  \end{align*}
+                  (The term ``formal" is used here to indicate that convergence
+                  is not considered, so that formal power series need not
+                  represent functions on $R$.)
+                  \begin{enumerate}
+                     \item Prove that $R[[x]]$ is a commutative ring with 1.
+                     \item Show that $1- x$ is a unit in $R[[x]]$ with inverse
+                           $1 + x + x^2 + \cdots$.
+                     \item Prove that $\sum_{n=0}^\infty a_nx^n$ is a unit in
+                           $R[[x]]$ if and only if $a_0$ is a unit in $R$.
+                  \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.4]   Prove that if $R$ is an integral domain then the ring of
+                  formal power series $R[[x]]$ is also an integral domain.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.5]   Let $F$ be a field and define the ring $F((x))$ of
+                  \textit{formal Laurent series} with coefficients from $F$ by
+                  $$F((x)) = \left\{\sum_{n \ge N}^\infty a_nx^n : a_n \in F
+                    \text{ and } N \in \Z\right\}.$$
+                  (Every element of $F((x))$ is a power series in $x$ plus
+                  polynomial in $1/x$, i.e., each element of $F((x))$ has only a
+                  finite number of terms with negative powers of $x$.)
+                  \begin{enumerate}
+                     \item Prove that $F((x))$ is a field.
+                     \item Define the map
+                           $$\nu : F((x))^\times \rightarrow \Z \quad\text{ by }
+                             \quad\nu\left(\sum_{n \ge N}^\infty
+                              a_nx^n\right) = N$$
+                           where $a_N$ is the first nonzero coefficient of the
+                           series (i.e., $N$ is the ``order of zero or pole of
+                           the series at 0"). Prove that $\nu$ is a discrete
+                           valuation on $F((x))$ whose discrete valuation ring
+                           is $F[[x]]$, the ring of formal power series
+                           (cf. Exercise 7.1.26).
+                  \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.6]   Let $S$ be a ring with identity $1 \neq 0$. Let $n \in \Z^+$ 
+                  and let $A$ be an $n \times n$ matrix with entries from $S$
+                  whose $i, j$ entry is $a_{ij}$. Let $E_{ij}$ be the element of
+                  $M_n(S)$ whose $i, j$ entry is 1 and whose other entries are
+                  all 0.
+                  \begin{enumerate}
+                     \item Prove that $E_{ij}A$ is the matrix whose
+                           $i^{\text{th}}$ row equals the $j^{\text{th}}$ row of
+                           $A$ and all other rows are zero.
+                     \item Prove that $AE_{ij}$ is the matrix whose
+                           $j^{\text{th}}$ column equals the $i^{\text{th}}$
+                           column of $A$ and all other columns are zero.
+                     \item Deduce that $E_{pq}AE_{rs}$ is the matrix whose
+                           $p, s$ entry is $a_{qr}$ and all other entries are
+                           zero.
+                  \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.7]   Prove that the center of the ring $M_n(R)$ is the set of
+                  scalar matrices (cf. Exercise 7.1.7). [Use the preceding
+                  exercise.]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.8]   Let $S$ be any ring and let $n \ge 2$ be an integer. Prove
+                  that if $A$ is any strictly upper triangular matrix in
+                  $M_n(S)$ then $A^n = 0$ (a strictly upper triangular matrix is
+                  one whose entries on and below the main diagonal are all
+                  zero).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.9]   Let $\alpha = r + r^2 - 2s$ and $\beta = -3r^2 + rs$ be the
+                  two elements of the integral group ring $\Z D_8$ described in
+                  this section. Compute the following elements of $\Z D_8$:
+                  
+                  (\textbf{a}) $\beta\alpha$, \quad (\textbf{b}) $\alpha^2$,
+                  \quad (\textbf{c}) $\alpha\beta - \beta\alpha$, \quad
+                  (\textbf{d}) $\beta\alpha\beta$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.10]  Consider the following elements of the integral group ring
+                  $\Z S_3$:
+                  $$\alpha = 3(1\;2) - 5(2\;3) + 14(1\;2\;3) \text{ and }
+                    \beta = 6(1) + 2(2\;3) - 7(1\;3\;2)$$
+                  (where (1) is the identity of $S_3$). Compute the following
+                  elements:
+            
+                  (\textbf{a}) $\alpha + \beta$, \quad
+                  (\textbf{b}) $2\alpha - 3\beta$, \quad
+                  (\textbf{c}) $\alpha\beta$, \quad
+                  (\textbf{d}) $\beta\alpha$,
+                  (\textbf{e}) $\alpha^2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.11]  Repeat the preceding exercise under the assumption that the
+                  coefficients of $\alpha$ and $\beta$ are in $\Z/3\Z$ (i.e.,
+                  $\alpha$, $\beta \in \Z/3\Z S_3$).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.12]  Let $G = \{g_1, \ldots, g_n\}$ be a finite group. Prove that
+                  the element $N = g_1 + g_2 + \cdots + g_n$ is in the center of
+                  the group ring $RG$ (cf. Exercs=ise 7, Section 1).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.2.13]  Let $\mathcal{K} = \{k_1, \ldots, k_m\}$ be a conjugacy class
+                  in the finite group $G$.
+                  \begin{enumerate}
+                     \item Prove that the element $K = k_1 + \cdots + k_m$ is in
+                           the center of the group ring $RG$
+                           (cf. Exercise 7.1.7). [Check that $g^{-1}Kg = K$ for
+                           all $g \in G$.]
+                     \item Let $\mathcal{K}_1, \ldots, \mathcal{K}_r$ be the
+                           conjugacy classes of $G$ and for each $\mathcal{K}_i$
+                           let $K_i$ be the element of $RG$ that is the sum of
+                           the members of $\mathcal{K}_i$. Prove that an element
+                           $\alpha \in RG$ is in the center of $RG$ if and only
+                           if $\alpha = a_1K_1 + a_2K_2 + \cdots + a_rK_r$ for
+                           some $a_1, a_2, \ldots, a_r \in R$.
+                  \end{enumerate}
+\end{enumerate}
