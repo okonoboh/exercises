@@ -14,8 +14,7 @@ Let $R$ be a commutative ring with 1.
       \textbf{Solution.}
    
       \begin{enumerate} 
-         \item \setlength{\abovedisplayskip}{-12pt}
-               \begin{IEEEeqnarray*}{lCl}
+         \item\begin{IEEEeqnarray*}{lCl} 
                   p(x) + q(x) &=& (2x^3 - 3x^2 + 4x - 5) + (7x^3 + 33x - 4)  \\
                               &=& 9x^3 - 3x^2 + 37x - 9, \text{ and } \\
                   p(x)q(x)    &=& (2x^3 - 3x^2 + 4x - 5)(7x^3 + 33x - 4) \\
@@ -60,10 +59,10 @@ Let $R$ be a commutative ring with 1.
                   $i = 0, 1, \ldots, n$, and show that this implies
                   $b_mp(x) = 0$.]
 
-      \textbf{Proof.} Let $S$ be the set of degrees of nonzero polynomials
-      $h(x) \in R[x]$ such that $p(x)h(x) = 0$. The set $S$ is nonempty because
-      $p(x)$ is a zero divisor; thus $S$ has a minimum element by the Well
-      Ordering Principle. Let
+      \textbf{Proof.} ($\Rightarrow$) Let $S$ be the set of degrees of nonzero
+      polynomials $h(x) \in R[x]$ such that $p(x)h(x) = 0$. The set $S$ is
+      nonempty because $p(x)$ is a zero divisor; thus $S$ has a minimum element
+      by the Well Ordering Principle. Let
       $$g(x) = b_mx^m + b_{m-1}x^{m-1} + \cdots + b_0 \in R[x]$$
       such that degree$(g(x)) = m = \min(S)$. We now want to show by induction
       on $i$ that $a_{n-i}g(x) = 0$ for each nonnegative integer $i$, where
@@ -106,9 +105,9 @@ Let $R$ be a commutative ring with 1.
       $$a_{n}b_m = a_{n-1}b_m = \cdots = a_{0}b_m = 0,$$
       and thus
       $b_mp(x) = 0$. Since $\text{degree}(g(x)) = m$, it follows that
-      $b_m \neq 0$. The proof is done. \qed
+      $b_m \neq 0$.
 
-      
+      $(\Leftarrow)$ This follows from the definition of a zero divisor. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.3]   Define the set $R[[x]]$ of \textit{formal power series} in the
                   indeterminate $x$ with coefficients from $R$ to be all formal
@@ -135,9 +134,93 @@ Let $R$ be a commutative ring with 1.
                      \item Prove that $\sum_{n=0}^\infty a_nx^n$ is a unit in
                            $R[[x]]$ if and only if $a_0$ is a unit in $R$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} Let $a = \sum_{n=0}^\infty a_nx^n$,
+               $b = \sum_{n=0}^\infty b_nx^n$, and
+               $c = \sum_{n=0}^\infty c_nx^n \in R[[x]]$.
+
+               ($R[[x]]$ is an additive abelian group.) Closure and asociativity
+               of addition follows because $R$ is closed and associative under
+               addition. The 0 of $R$ is also the 0 of $R[[x]]$; the additive
+               inverse of a sum is the resulting sum wherein the coefficients of
+               the original sum have been replaced with their additive inverses
+               in $R$. Thus $(R[[x]], +)$ is an additive abelian group.
+
+               ($R[[x]]$ is closed under multiplication.) This follows from the
+               closure of $R$ under multiplication.
+
+               ($R[[x]]$ is commutative.) We have that
+               \begin{align*}
+                  a \times b &= \sum_{n=0}^\infty a_nx^n \times
+                     \sum_{n=0}^\infty b_nx^n \\
+                    &= \sum_{n=0}^\infty\left(
+                       \sum_{k=0}^na_kb_{n-k}\right)x^n \\
+                    &= \sum_{n=0}^\infty\left(\sum_{k=0}^nb_{n-k}a_k\right)x^n
+                       &[R \text{ is commutative}] \\
+                    &= \sum_{n=0}^\infty\left(\sum_{i=n}^0b_ia_{n-i}\right)x^n\\
+                    &= \sum_{n=0}^\infty\left(\sum_{i=0}^nb_ia_{n-i}\right)x^n\\
+                    &= \sum_{n=0}^\infty b_nx^n\times\sum_{n=0}^\infty a_nx^n\\
+                    &= b \times a.
+               \end{align*}
+
+               ($R[[x]]$ is associative under $\times$.) We have that
+               \begin{align*}
+                  (a \times b) \times c &= \left(\sum_{n=0}^\infty a_nx^n \times
+                     \sum_{n=0}^\infty b_nx^n\right) \times
+                     \sum_{n=0}^\infty c_nx^n \\
+                    &= \sum_{n=0}^\infty\left(
+                       \sum_{k=0}^na_kb_{n-k}\right)x^n \times
+                       \sum_{n=0}^\infty c_nx^n \\
+                    &= \sum_{n=0}^\infty\left(\sum_{k=0}^n\left(\sum_{i=0}^k
+                        a_ib_{k-i}\right)c_{n-k}\right)x^n \\
+                    &= \sum_{n=0}^\infty\left(\sum_{k=0}^n\left(\sum_{i=0}^k
+                        a_{k-i}b_i\right)c_{n-k}\right)x^n \\
+               \end{align*}
+         \item \textbf{Proof.} Let $a = \sum_{n = 1}^\infty x^n \in R[[x]]$. The
+               polynomial $1 - x$ is a unit in $R[[x]]$ because
+               \begin{align*}
+                  (1 - x)(1 + x + x^2 + \cdots) &= 1(1 + x + x^2 + \cdots) -
+                     x(1 + x + x^2 + \cdots) \\
+                     &= (1 + x + x^2 + \cdots) - (x + x^2 + x^3 + \cdots) \\
+                     &= (1 + a) - a = 1.
+               \end{align*} \qed
+         \item \textbf{Proof.} Let $a = \sum_{n = 0}^\infty a_nx^n \in R[[x]]$.
+
+               $(\Leftarrow)$ Suppose $a_0$ is a unit in $R$. Consider the
+               element $b = \sum_{n = 0}^\infty b_nx^n \in R[[x]]$, where
+               $b_0 = a_0^{-1}$ and $b_i = -(a_ib_0 + a_{i-1}b_1 + \cdots +
+                a_1b_{i-1})a_0^{-1}$ for each $i \ge 1$. Thus the coefficient of
+               $x^i$ in $ab$ is 0 for each $i \ge 1$ and the constant term in
+               $ab$ is $a_0b_0 = 1$, so that $ab = 1$. Thus $a$ is a unit with
+               inverse $b$.
+
+               $(\Rightarrow)$ Now suppose conversely that $a$ is a unit in
+               $R[[x]]$. Thus there exists
+               $c = \sum_{n = 0}^\infty c_nx^n \in R[[x]]$ such that $ac = 1$.
+               Particularly we have that $a_0c_0 = 1$, so that $a_0$ is a unit
+               in $R$.\qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.4]   Prove that if $R$ is an integral domain then the ring of
                   formal power series $R[[x]]$ is also an integral domain.
+
+      \textbf{Proof.} Suppose $R$ is an integral domain. Let
+      $$a = a_0 + a_1x + a_2x^2 + \cdots \text{ and }
+        b = b_0 + b_1x + b_2x^2 + \cdots$$
+      be nonzero elements in $R[[x]]$. Let $a_i$ and $b_j$ be the smallest
+      nonnegative integers $i$ and $j$ such that $a_i$ and $b_j$ are both
+      nonzero. The coefficient of $x^{i + j}$ in the product $ab$ is
+      $$a_{i + j}b_0 + a_{i + j- 1}b_1 + \cdots + a_{i + 1}b_{j - 1} + a_ib_j +
+        a_{i - 1}b_{j + 1} + \cdots + a_0b_{i + j}.$$
+      By minimality of $a_i$ and $a_j$, it follows that
+      $$b_0 = b_1 = \cdots = b_{j - 1} = a_{i - 1} = \cdots = a_0 = 0,$$
+      so that the coefficient of $x^{i + j}$ in $ab$ is $a_ib_j$. Since $a_i$
+      and $b_j$ are both nonzero elements of the integral domain $R$, it follows
+      that $a_ib_j \neq 0$, so that $ab \neq 0$; thus $R[[x]]$ is an integral
+      domain. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.5]   Let $F$ be a field and define the ring $F((x))$ of
                   \textit{formal Laurent series} with coefficients from $F$ by
@@ -159,6 +242,19 @@ Let $R$ be a commutative ring with 1.
                            is $F[[x]]$, the ring of formal power series
                            (cf. Exercise 7.1.26).
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} Let $a \in F((x))$ be a nonzero element; thus,
+               there exists an integer $M$ such that
+               $a = \sum_{n \ge M}^\infty a_nx^n$, where $M$ is the smallest
+               integer such that $a_M \neq 0$. That is, $a_M$ is a unit in $F$,
+               so that $b = \sum_{n=0}^\infty a_{M+n}x^n$ is a unit by Exercise
+               7.2.3(c). But $a = x^Mb$, so that $x^{-M}b^{-1}$ is the inverse
+               of $a$, and thus, $a$ is a unit in $F((x))$. We conclude that
+               $F((x))$ is a field. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.6]   Let $S$ be a ring with identity $1 \neq 0$. Let $n \in \Z^+$ 
                   and let $A$ be an $n \times n$ matrix with entries from $S$
