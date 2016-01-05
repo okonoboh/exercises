@@ -254,6 +254,53 @@ Let $R$ be a commutative ring with 1.
                7.2.3(c). But $a = x^Mb$, so that $x^{-M}b^{-1}$ is the inverse
                of $a$, and thus, $a$ is a unit in $F((x))$. We conclude that
                $F((x))$ is a field. \qed
+         \item \textbf{Proof.}
+
+               \textit{$\nu$ is a discrete valuation}.
+
+               \begin{itemize}
+                  \item \textit{$\nu$ is a homomorphism}. Let
+                        $a = \sum_{n \ge M}^\infty a_nx^n,
+                         b = \sum_{n \ge N}^\infty b_nx^n \in F((x))^\times$,
+                        where $N$ and $M$ are the order of zero of $a$ and $b$.
+                        The coefficient of $x^{M+N}$ in $ab$ is $a_Mb_N$, a
+                        nonzero element of $F$ because $a_M \neq 0$ and
+                        $b_N \neq 0$. Consider an integer $i < M + N$.
+                        The coefficient of $x^i$ in $ab$ is
+                        $$\sum_{r+s=i}a_rb_s = \sum_{r\in\Z}a_rb_{i-r} =
+                          \sum_{r=M}^\infty a_rb_{i-r}.$$
+                        Now consider $b_{i - r}$ for some $r \ge M$. The
+                        inequality $r \ge M$ implies that $i - r \le i - M$, and
+                        since $i < M + N$ by assumption, it follows that
+                        $i - r \le i - M < N$. Thus $b_{i - r} = 0$ since
+                        $b_j = 0$ for all $j < N$. It follows that the
+                        coefficient of $x^i$ is 0 for all $i < M + N$. Thus the
+                        order of zero of $ab$ is $N + M$. Hence
+                        $$\nu(ab) = M + N = \nu(a) + \nu(b),$$
+                        so that $\nu$ is a homorphism.
+                  \item \textit{$\nu$ is surjective}. For $z \in Z$, we have
+                        that
+                        $$\nu\left(\sum_{n \ge z}^\infty x^n\right) = z,$$
+                        so that $\nu$ is onto.
+                  \item $\nu(a + b) \ge \min\{\nu(a), \nu(b)$\}, $a + b \neq 0$,
+                        \textit{ and } $a, b \in F((x))$. Let
+                        $$a = \sum_{n \ge M}^\infty a_nx^n \text{ and }
+                         b = \sum_{n \ge N}^\infty b_nx^n \in F((x))^\times,$$
+                        where $a + b \neq 0$. We have $\nu(a) = N$ and
+                        $\nu(b) = M$. Assume without loss of generality that
+                        $M \le N$, so that $a_i = b_i$ for every $i < M$; i.e.,
+                        $a_i + b_i = 0$ for every $i < M$, so that the order of
+                        zero of $a + b$ is at least $M$; in order words
+                        $$\nu(a + b) \ge M = \{\nu(a), \nu(b)\}.$$
+               \end{itemize}
+               The above shows that $\nu$ is a discrete valuation on $F((x))$.
+               Let $R$ be the discrete valuation ring of $\nu$. Since the order
+               of zero of every nonzero formal power series in $F[[x]]$ is at
+               least 0 and since $0 \in F[[x]]$, it follows that
+               $F[[x]] \subseteq R$. Conversely, the order of zero of every
+               nonzero formal Laurent series in $R$ is at least 0, so that every
+               nonzero Laurent series in $R$ is a power series. It follows that
+               $F[[x]] \supseteq R$ and we conclude that $R = F[[x]]$. \qed
       \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.6]   Let $S$ be a ring with identity $1 \neq 0$. Let $n \in \Z^+$ 
@@ -290,6 +337,41 @@ Let $R$ be a commutative ring with 1.
                   (\textbf{a}) $\beta\alpha$, \quad (\textbf{b}) $\alpha^2$,
                   \quad (\textbf{c}) $\alpha\beta - \beta\alpha$, \quad
                   (\textbf{d}) $\beta\alpha\beta$.
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \begin{align*}
+                  \beta\alpha &= (-3r^2 + rs)(r + r^2 - 2s) \\
+                     &= -3r^2(r + r^2 - 2s) + rs(r + r^2 - 2s) \\
+                     &= -3r^3 - 3 + 6r^2s + s + r^3s - 2r.
+               \end{align*}
+         \item \begin{align*}
+                  \alpha^2 &= (r + r^2 - 2s)(r + r^2 - 2s) \\
+                     &= r(r + r^2 - 2s) + r^2(r + r^2 -2s) - 2s(r + r^2 - 2s) \\
+                     &= r^2 + r^3 - 2rs + r^3 + 1 - 2r^2s - 2r^3s - 2r^2s + 4 \\
+                     &= 2r^3 + r^2 - 2rs - 4r^2s - 2r^3s + 5
+               \end{align*}
+         \item \begin{align*}
+                  \alpha\beta &= (r + r^2 - 2s)(-3r^2 + rs) \\
+                     &= r(-3r^2 + rs) + r^2(-3r^2 + rs) - 2s(-3r^2 + rs) \\
+                     &= -3r^3 + r^2s - 3 + r^3s + 6r^2s - 2r^3 \\
+                     &= -5r^3 + 7r^2s + r^3s - 3,
+               \end{align*}
+               so
+               \begin{align*}
+                  \alpha\beta - \beta\alpha &= (-5r^3 + 7r^2s + r^3s - 3) -
+                     (-3r^3 - 3 + 6r^2s + s + r^3s - 2r) \\
+                     &= -2r^3 + 2r + r^2s - s.
+               \end{align*}
+         \item \begin{align*}
+                  \beta\alpha\beta &= (-3r^2 + rs)(-5r^3 + 7r^2s + r^3s - 3) \\
+                     &= -3r^2(-5r^3 + 7r^2s + r^3s - 3) +
+                           rs(-5r^3 + 7r^2s + r^3s - 3) \\
+                     &= 15r - 21s - 3rs + 9r^2 - 5r^2s + 7r^3 + r^2 - 3rs \\
+                     &= 7r^3 + 10r^2 + 15r - 5r^2s -6rs - 21s.
+               \end{align*}
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.10]  Consider the following elements of the integral group ring
                   $\Z S_3$:
@@ -303,14 +385,61 @@ Let $R$ be a commutative ring with 1.
                   (\textbf{c}) $\alpha\beta$, \quad
                   (\textbf{d}) $\beta\alpha$,
                   (\textbf{e}) $\alpha^2$.
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \begin{align*}
+                  \alpha + \beta &= 3(1\;2) - 5(2\;3) + 14(1\;2\;3) +
+                     6(1) + 2(2\;3) - 7(1\;3\;2) \\
+                     &= 6(1) + 3(1\;2) - 3(2\;3) + 14(1\;2\;3) - 7(1\;3\;2).
+               \end{align*}
+         \item \begin{align*}
+                  2\alpha - 3\beta &= 6(1\;2) - 10(2\;3) + 28(1\;2\;3) -
+                     18(1) - 6(2\;3) + 21(1\;3\;2) \\
+                     &= -18(1) + 6(1\;2) - 16(2\;3) + 28(1\;2\;3) + 21(1\;3\;2).
+               \end{align*}
+         \item \begin{IEEEeqnarray*}{rCl}
+                  \alpha\beta &=& (3(1\;2) - 5(2\;3) + 14(1\;2\;3))(6(1) +
+                     2(2\;3) - 7(1\;3\;2)) \\
+                  &=& 18(1\;2) + 6(1\;2\;3) - 21(1\;3) - 30(2\;3) - 10(1) + \\
+                     && 35(1\;2) + 84(1\;2\;3) + 28(1\;2) - 98(1) \\
+                  &=& -108(1) + 81(1\;2) - 21(1\;3) - 30(2\;3) + 90(1\;2\;3).
+               \end{IEEEeqnarray*}
+         \item \begin{IEEEeqnarray*}{rCl}
+                  \beta\alpha &=& (6(1) + 2(2\;3) - 7(1\;3\;2))(3(1\;2) -
+                     5(2\;3) + 14(1\;2\;3)) \\
+                  &=& 18(1\;2) - 30(2\;3) + 84(1\;2\;3) + 6(1\;3\;2) - 10(1)+ \\
+                     && 28(1\;3) - 21(2\;3) + 35(1\;3) - 98(1) \\
+                  &=& -108(1) + 18(1\;2) + 63(1\;3) - 51(2\;3) + 84(1\;2\;3) +
+                     6(1\;3\;2)
+               \end{IEEEeqnarray*}
+         \item \begin{IEEEeqnarray*}{rCl}
+                  \alpha^2 &=& (3(1\;2) - 5(2\;3) + 14(1\;2\;3))(3(1\;2) -
+                     5(2\;3) + 14(1\;2\;3)) \\
+                  &=& 9(1) - 15(1\;2\;3) + 42(2\;3) - 15(1\;3\;2) + 25(1) - \\
+                     && 70(1\;3) + 42(1\;3) - 70(1\;2\;3) + 196(1) \\
+                  &=& 230(1) + 112(1\;3) + 42(2\;3) - 85(1\;2\;3) - 15(1\;3\;2).
+               \end{IEEEeqnarray*}
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.11]  Repeat the preceding exercise under the assumption that the
                   coefficients of $\alpha$ and $\beta$ are in $\Z/3\Z$ (i.e.,
                   $\alpha$, $\beta \in \Z/3\Z S_3$).
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item $\alpha + \beta = 2(1\;2\;3) + 2(1\;3\;2)$.
+         \item $2\alpha - 3\beta = 2(2\;3) + 1(1\;2\;3)$.
+         \item $\alpha\beta = 0$.
+         \item $\beta\alpha = 0$.
+         \item $\alpha^2 = 2(1) + 1(1\;3) + 2(1\;2\;3)$.
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.12]  Let $G = \{g_1, \ldots, g_n\}$ be a finite group. Prove that
                   the element $N = g_1 + g_2 + \cdots + g_n$ is in the center of
-                  the group ring $RG$ (cf. Exercs=ise 7, Section 1).
+                  the group ring $RG$ (cf. Exercise 7, Section 1).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.13]  Let $\mathcal{K} = \{k_1, \ldots, k_m\}$ be a conjugacy class
                   in the finite group $G$.
