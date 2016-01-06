@@ -440,6 +440,37 @@ Let $R$ be a commutative ring with 1.
    \item[7.2.12]  Let $G = \{g_1, \ldots, g_n\}$ be a finite group. Prove that
                   the element $N = g_1 + g_2 + \cdots + g_n$ is in the center of
                   the group ring $RG$ (cf. Exercise 7, Section 1).
+
+      \textbf{Proof.} Assume without loss of generality that $g_1$ the identity
+      of $G$. Let $I_n = \{1, 2, \ldots, n\}$. Consider the element $g_i$ for
+      some $i \in I_n$. Recall that in the left (or right) action of $G$ on $G$
+      by left (or right) multiplication, every element of $g \in G$ induces a
+      permutation of $G$. Since the terms in $N$ are precisely the elements of
+      $G$, it follows that premultiplying $N$ or postmultiplying $N$ by $g_i$
+      has the effect of permuting(i.e., rearranging) the terms in $N$. Thus
+      $g_iN = Ng_i = N$. Let $r \in R$. First observe that
+      $$rg_i = (1r)(g_ig_1) = (1g_i)(rg_1) = g_ir,$$
+      so that elements of $R$ in $RG$ commute with elements of $G$ in $RG$. Thus
+      \begin{align*}
+         (rg_i)N &= r(g_iN) \\
+            &= r(Ng_i) \\
+            &= (rN)g_i \\
+            &= (r(g_1 + g_2 + \cdots + g_n))g_i \\
+            &= (rg_1 + rg_2 + \cdots + rg_n)g_i \\
+            &= (g_1r + g_2r + \cdots + g_nr)g_i \\
+            &= (g_1 + g_2 + \cdots + g_n)rg_i = N(rg_i).
+      \end{align*}
+      That is, for each $i \in I_n$ and $r \in R$, $rg_i$ commutes with $N$. Now
+      let $A \in RG$, so that $A = r_1g_1 + r_2g_2 + \cdots + r_ng_n$, where
+      $r_j \in R$, for each $j \in I_n$. Since
+      \begin{align*}
+         AN &= (r_1g_1 + r_2g_2 + \cdots + r_ng_n)N \\
+            &= (r_1g_1)N + (r_2g_2)N + \cdots + (r_ng_n)N \\
+            &= N(r_1g_1) + N(r_2g_2) + \cdots + N(r_ng_n) \\
+            &= N(r_1g_1 + r_2g_2 + \cdots + r_ng_n) \\
+            &= NA,
+      \end{align*}
+      it follows that $N$ is in the center of $RG$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.13]  Let $\mathcal{K} = \{k_1, \ldots, k_m\}$ be a conjugacy class
                   in the finite group $G$.
@@ -456,4 +487,38 @@ Let $R$ be a commutative ring with 1.
                            if $\alpha = a_1K_1 + a_2K_2 + \cdots + a_rK_r$ for
                            some $a_1, a_2, \ldots, a_r \in R$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} Let $G = \{g_1, \ldots, g_n\}$, where $g_1$ is
+               the identity. Consider the action of $G$ on $\mathcal{K}$ by
+               conjugation. Thus each element of $G$ induces a permutation of
+               $\mathcal{K}$. Since the terms in $K$ are precisely the elements
+               of $\mathcal{K}$, it follows that conjugating $K$ by $g \in G$
+               (i.e., $gKg^{-1}$) has the effect of permuting(i.e., rearranging)
+               the terms in $K$. Thus $gKg^{-1} = K$, (that is, $gK = Kg$), so
+               that $g$ commutes with $K$ for every $g \in G$. Let $A \in RG$,
+               so that $A = r_1g_1 + \cdots + r_ng_n$, for some
+               $r_1, \ldots, r_n \in R$. We shall use the fact that
+               $r_jK = Kr_j$ for each $j = 1, 2, \ldots, n$ because, as proved
+               in Exercise 7.2.12, each element of $R$ in $RG$ commutes with
+               each element of $G$ in $RG$. So
+               \begin{align*}
+                  AK &= (r_1g_1 + \cdots + r_ng_n)K \\
+                     &= r_1(g_1K) + \cdots + r_n(g_nK) \\
+                     &= r_1(Kg_1) + \cdots + r_n(Kg_n) \\
+                     &= (r_1K)g_1 + \cdots + (r_nK)g_n \\
+                     &= (Kr_1)g_1 + \cdots + (Kr_n)g_n \\
+                     &= K(r_1g_1) + \cdots + K(r_ng_n) \\
+                     &= K(r_1g_1 + \cdots + r_ng_n) \\
+                     &= KA,
+               \end{align*}
+               so that $K$ is in the center of $RG$. \qed
+         \item \textbf{Proof.}
+
+               ($\Leftarrow$) Suppose $\alpha = a_1K_1 + \cdots + a_rK_r$ for
+               some $a_1, \ldots, a_r \in R$. Let $A \in RG$, so that
+               $A = r_1g_1 + \cdots +r_ng_n$, for some $r_1, \ldots, r_n \in R$.
+      \end{enumerate}
 \end{enumerate}
