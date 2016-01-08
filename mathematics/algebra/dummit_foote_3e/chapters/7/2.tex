@@ -488,11 +488,11 @@ Let $R$ be a commutative ring with 1.
                            some $a_1, a_2, \ldots, a_r \in R$.
                   \end{enumerate}
 
-      \textbf{Solution.}
+      \textbf{Solution.} Let $G = \{g_1, \ldots, g_n\}$, where $g_1$ is the
+      identity.
 
       \begin{enumerate}
-         \item \textbf{Proof.} Let $G = \{g_1, \ldots, g_n\}$, where $g_1$ is
-               the identity. Consider the action of $G$ on $\mathcal{K}$ by
+         \item \textbf{Proof.} Consider the action of $G$ on $\mathcal{K}$ by
                conjugation. Thus each element of $G$ induces a permutation of
                $\mathcal{K}$. Since the terms in $K$ are precisely the elements
                of $\mathcal{K}$, it follows that conjugating $K$ by $g \in G$
@@ -520,5 +520,44 @@ Let $R$ be a commutative ring with 1.
                ($\Leftarrow$) Suppose $\alpha = a_1K_1 + \cdots + a_rK_r$ for
                some $a_1, \ldots, a_r \in R$. Let $A \in RG$, so that
                $A = r_1g_1 + \cdots +r_ng_n$, for some $r_1, \ldots, r_n \in R$.
+               By definition of multiplication in $RG$ and comutativity in $R$,
+               it follows that $A$ commutes with $a_i$ for each
+               $i = 1, 2, \ldots, r$. Thus $\alpha$ is in the center of $RG$
+               because
+               \begin{align*}
+                  A\alpha &= A(a_1K_1 + \cdots + a_rK_r) \\
+                     &= (Aa_1)K_1 + \cdots + (Aa_r)K_r \\
+                     &= (a_1A)K_1 + \cdots + (a_rA)K_r \\
+                     &= a_1(AK_1) + \cdots + a_r(AK_r) \\
+                     &= a_1(K_1A) + \cdots + a_r(K_rA) &[\text{7.2.13(a)}]\\
+                     &= (a_1K_1 + \cdots + a_rK_r)A \\
+                     &= \alpha A,
+               \end{align*}
+               for every $A \in RG$.
+
+               ($\Rightarrow$) Let
+               $S = \{b_1K_1 + \cdots + b_rK_r : b_1, \ldots, b_r \in R\}$ and
+               $\alpha \in RG$. Then
+               $$\alpha = c_1g_1 + \cdots + c_ng_n, \text{ for some }
+                  c_1, \ldots, c_n \in R.$$
+               We shall instead prove the contrapositive of the forward
+               direction. So suppose that $\alpha \notin S$. It suffices to show
+               that $\alpha$ is not in the center of $RG$. Now if $G$ were
+               abelian, then the conjugacy classes would be singletons so that
+               $S = RG$; i.e., $\alpha \in S$, a contradiction. Thus $G$ must
+               necesarily be nonabelian. Since $\alpha \notin S$, there exists
+               two members of the same conjugacy class of $G$, say $g_2$ and
+               $g_3$, such that their coefficients for $\alpha$ (taken from $R$)
+               are unequal (i.e., $c_2 \neq c_3$). Note that we have used the
+               fact that since $G$ is nonabelian, it has at least six elements
+               and it has a conjugacy class with at least two elements. Since
+               $g_2$ and $g_3$ are conjugates, it follows that
+               $hg_2h^{-1} = g_3$ for some $h \in G$. Now recall that, under
+               conjugation, $h$ induces a permutation of $G$; thus,
+               $h\alpha h^{-1}$ has the effect of permuting the elements of $G$
+               in $\alpha$. Now the coefficient of $g_3$ in $h\alpha h^{-1}$ is
+               $c_2$; thus since $c_2 \neq c_3$, it follows that
+               $h\alpha h^{-1} \neq \alpha$, so that $\alpha$ does not commute
+               with $h$, and thus $\alpha$ is not in the center of $RG$. \qed
       \end{enumerate}
 \end{enumerate}
