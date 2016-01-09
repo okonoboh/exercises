@@ -1,3 +1,5 @@
+% Haven't Finished 7.2.3(a)
+
 Let $R$ be a commutative ring with 1.
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -319,16 +321,150 @@ Let $R$ be a commutative ring with 1.
                            $p, s$ entry is $a_{qr}$ and all other entries are
                            zero.
                   \end{enumerate}
+
+      \textbf{Proof.} Fix positive integers $i$, $j$, $p$, $q$, $r$, and $s$.
+      Now let $e_{lm}$ be the $l$, $m$ entry of $E_{ij}$.
+      \begin{enumerate}
+         \item Let $c_{lm}$ be the $l$, $m$ entry of $C = E_{ij}A$. To show that 
+               the $i^{\text{th}}$ row of $C$ equals the $j^{\text{th}}$ row of
+               $A$, it suffices to show that $c_{ik} = a_{jk}$ for
+               $k = 1, 2, \ldots, n$, so consider $c_{ik}$,
+               where $1 \le k \le n$. By definition of matrix multiplication, it 
+               follows that
+               \begin{align*}
+                  c_{ik} &= \sum_{t=1}^ne_{it}a_{tk} \\
+                         &= e_{ij}a_{jk} &[e_{it} = 0 \text{ if } t \neq j] \\
+                         &= 1 \cdot a_{jk} = a_{jk}.
+               \end{align*}
+               That is, the $i^{\text{th}}$ row of $C$ equals the
+               $j^{\text{th}}$ row of $A$. Now consider $c_{lk}$, where
+               $l, k \in \{1, 2, \ldots, n\}$ and $l \neq i$. Then it follows
+               that
+               \begin{align*}
+                  c_{lk} &= \sum_{t=1}^ne_{lt}a_{tk} \\
+                         &= \sum_{t=1}^n0 \cdot a_{tk} &[\text{Since }e_{lk} = 0
+                            \text{ if } l \neq i] \\
+                         &= 0.
+               \end{align*}
+               Our last result says that every entry of $C$ not in the
+               $i^{\text{th}}$ row is 0; thus every other row of $C$ save for
+               the $i^{\text{th}}$ row is 0.
+         \item Let $d_{lm}$ be the $l$, $m$ entry of $D = AE_{ij}$. To show that 
+               the $j^{\text{th}}$ column of $D$ equals the $i^{\text{th}}$
+               column of $A$, it suffices to show that $d_{kj} = a_{ki}$ for
+               $k = 1, 2, \ldots, n$, so consider $d_{kj}$,
+               where $1 \le k \le n$. By definition of matrix multiplication, it 
+               follows that
+               \begin{align*}
+                  d_{kj} &= \sum_{t=1}^na_{kt}e_{tj} \\
+                         &= a_{ki}e_{ij} &[e_{tj} = 0 \text{ if } t \neq i] \\
+                         &= a_{ki} \cdot 1 = a_{ki}.
+               \end{align*}
+               That is, the $j^{\text{th}}$ column of $D$ equals the
+               $i^{\text{th}}$ column of $A$. Now consider $d_{kl}$, where
+               $l, k \in \{1, 2, \ldots, n\}$ and $l \neq j$. Then it follows
+               that
+               \begin{align*}
+                  d_{kl} &= \sum_{t=1}^na_{kt}e_{tl} \\
+                         &= \sum_{t=1}^na_{kt} \cdot 0 &[e_{tl} = 0
+                            \text{ if } l \neq j] \\
+                         &= 0.
+               \end{align*}
+               Our last result says that every entry of $D$ not in the
+               $j^{\text{th}}$ column is 0; thus every other column of $D$ save 
+               for the $j^{\text{th}}$ column is 0.
+         \item Let $X = E_{pq}A$, $Y = XE_{rs}$, $y_{lm}$ and $x_{lm}$ the $l$, 
+               $m$ entries of $Y$ and $X$ respectively. By definition of 
+               matrix multiplication, it follows that
+               \begin{align*}
+                  y_{ps} &= \sum_{t=1}^nx_{pt}e_{ts} \\
+                     &= \sum_{t=1}^na_{qt}e_{ts} &[\text{By }(a)] \\
+                     &= a_{qr}e_{rs} &[e_{ts} = 0 \text{ if } t \neq r] \\
+                     &= a_{qr} \cdot 1 = a_{qr}. 
+               \end{align*}
+               Now consider $y_{lk}$, where $l, k \in \{1, 2, \cdots, n\}$ and
+               $l \neq p$. It follows that
+               \begin{align*}
+                  y_{lk} &= \sum_{t=1}^nx_{lt}e_{tk} \\
+                     &= \sum_{t=1}^n0 \cdot e_{tk} &[\text{By }(a)] \\
+                     &= 0.
+               \end{align*}
+               If no restriction is placed on $l$ and $k \neq s$, it follows
+               that
+               \begin{align*}
+                  y_{lk} &= \sum_{t=1}^nx_{lt}e_{tk} \\
+                     &= \sum_{t=1}^nx_{lt} \cdot 0 &[e_{tk} = 0 \text{ if }
+                        k \neq s] \\
+                     &= 0,
+               \end{align*}
+               so that if $y_{lk}$ is an entry of $Y$, where $l \neq p$ or
+               $k \neq s$, then $y_{lk} = 0$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.7]   Prove that the center of the ring $M_n(R)$ is the set of
                   scalar matrices (cf. Exercise 7.1.7). [Use the preceding
                   exercise.]
+
+      \textbf{Proof.} Let $A = (a_{ij}), B \in M_n(R)$, where $A$ is a scalar
+      matrix. Thus $A = aI_n$ for some $a \in A$ and $I_n$ the $n \times n$
+      identity. It follows immediately that every scalar matrix in $M_n(R)$ is
+      in the center of $M_n(R)$ because
+      $$AB = (aI_n)B = aB = B(aI_n) = BA.$$
+      Now suppose that $A$ is not a scalar matrix, so that $n \ge 2$. Let
+      $E_{rs}$ be the element of $M_n(S)$ whose $r, s$ entry is 1 and whose
+      other entries are all 0. Let us now investigate the following cases:
+
+      \textbf{Case 1.} \textit{$A$ has a nonzero entry not on the diagonal}.
+      Thus there exist unequal indices $p$ and $q$ such that $a_{pq} \neq 0$. By
+      Exercise 7.2.6, the $q, q$ entry of $E_{qp}A$ is $a_{pq}$ while the $q, q$
+      entry of $AE_{qp}$ is 0; since $a_{pq} \neq 0$, it follows that
+      $E_{qp}A \neq AE_{qp}A$, so that $A$ is not in the center of $M_n(R)$.
+
+      \textbf{Case 2.} \textit{$A$ has two unequal entries on its main
+      diagonal}. So $a_{pp} \neq a_{qq}$ for some unequal indices $p$ and $q$.
+      The $p, q$ entry of $E_{pq}A$ is $a_{qq}$ while the $p, q$ entry of
+      $AE_{pq}$ is $a_{pp}$ and since $a_{pp} \neq a_{qq}$, it follows that
+      $A$ does not commute with $E_{pq}$, so that $A$ is not in the center of
+      $M_n(R)$.
+
+      Thus it follows from above that the center of $M_n(R)$ is the set of all
+      scalar matrices. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.8]   Let $S$ be any ring and let $n \ge 2$ be an integer. Prove
                   that if $A$ is any strictly upper triangular matrix in
                   $M_n(S)$ then $A^n = 0$ (a strictly upper triangular matrix is
                   one whose entries on and below the main diagonal are all
                   zero).
+
+      \textbf{Proof.} Let $P(n)$ be the statement that the $n^{\text{th}}$ power
+      of any strictly upper triangular matrix in $M_n(S)$ equals 0. We shall
+      proceed by induction on $n$ to show for each $n \ge 2$, $P(n)$ holds.
+
+      \textbf{Base Case.} $n = 2$. Let $A$ be any strictly upper triangular
+      matrix in $M_2(S)$. That is, the $1, 2$ entry of $A$ is an arbitrary
+      member of $S$ while every other entry is 0; thus $A^2 = 0$. So $P(2)$
+      holds.
+
+      \textbf{Inductive Hypothesis.} Suppose that $P(k)$ holds, where $k$ is
+      some integer that is at least 2. Now let $B$ be any strictly upper
+      triangular matrix in $M_{k+1}(S)$. Using block matrix notation, we can
+      write
+      $$B = \left(\begin{tabular}{@{}cc@{}}
+         $B_1$ & $B_2$ \\
+         0 & 0
+      \end{tabular}\right),$$
+      where $B_1$ is a $k \times k$ strictly upper triangular matrix, $B_2$ is a
+      $k \times 1$ matrix, and (by abuse of notation) the bottom left 0 is the
+      $1 \times k$ zero matrix while the bottom right 0 is the $1 \times 1$ zero
+      matrix. Thus it follows that
+      $$B^{k+1} = \left(\begin{tabular}{@{}cc@{}}
+         $B_1^{k+1}$ & $B_1^kB_2$ \\
+         0 & 0
+      \end{tabular}\right).$$
+      By the inductive hypothesis, we have that $B_1^k = 0$, so that
+      $B_1^{k+1} = B_1^k \cdot B_1 = 0$. Thus $B^{k+1} = 0$, so that $P(k+1)$
+      holds. Thus, it holds by Mathematical Induction that $P(n)$ holds for
+      every integer $n \ge 2$. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.2.9]   Let $\alpha = r + r^2 - 2s$ and $\beta = -3r^2 + rs$ be the
                   two elements of the integral group ring $\Z D_8$ described in
