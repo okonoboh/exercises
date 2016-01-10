@@ -3,16 +3,192 @@ Let $R$ be a ring with identity $1 \neq 0$.
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.1]   Prove that the rings $2\Z$ and $3\Z$ are not isomorphic.
+
+      \textbf{Proof.} Suppose to the contrary that $2\Z$ and $3\Z$ are
+      isomorphic. Thus there exists a ring isomorphism
+      $\alpha : 2\Z \rightarrow 3\Z$. Let $a \in 2\Z$, so that $a = 2a'$ for
+      some integer $a'$. Since $\alpha$ is also an additive group homomorphism,
+      it follows by Exercise 1.6.1(b) that
+      $\alpha(a) = \alpha(a' \cdot 2) = a' \cdot \alpha(2)$. If $\alpha(2) = 0$,
+      then $\alpha$ is the zero homomorphism so that $\alpha$ is not surjective,
+      a contradiction; thus $\alpha(2) \neq 0$. Now we have that
+      $$\alpha(4) = \alpha(2 \cdot 2) = \alpha(2) \cdot
+        \alpha(2) = \alpha(2)^2$$
+      and
+      $$\alpha(4) = \alpha(2 \cdot 2) = 2 \cdot \alpha(2)$$
+      so that $\alpha(2)^2 = 2\cdot\alpha(2)$, and thus, $\alpha(2) = 2$, a
+      contradiction because $2 \notin 3\Z$. So no such isomorphism exists, and
+      we conclude that $2\Z \not\cong 3\Z$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.2]   Prove that the rings $\Z[x]$ and $\Q[x]$ are not isomorphic.
+
+      \textbf{Proof.} Suppose to the contrary that $\Z[x]$ and $\Q[x]$ are
+      isomorphic. Thus there exists a ring isomorphism
+      $\alpha : \Z[x] \rightarrow \Q[x]$. Since $\Q$ is an integral domain, it
+      follows by Proposition 7.4(3) that $\Q[x]$ is an integral domain, so that
+      $\alpha(1) = 1$ by Exercise 7.3.17(a). Let $z$ be an integer. Since
+      $\alpha$ is also an additive group homomorphism, it follows by Exercise
+      1.6.1(b) that $\alpha(z) = \alpha(z \cdot 1) = z \cdot \alpha(1) = z$. Let
+      $q$ be an arbitrary nonintegral rational constant polynomial in $\Q[x]$.
+      Since $\alpha$ is surjective, there exists a polynomial of degree $n$, say
+      $y = y_0 + y_1x + \cdots + y_nx^n \in \Z[x]$ such that $\alpha(y) = q$.
+      Observe that $n \ge 1$, for if $n = 0$, then $\alpha(y_0) = y_0 \neq q$
+      because $y_0$ is an integer. Since $\alpha$ is a ring homomorphism, it 
+      follows that
+      \begin{align*}
+         \alpha(y) &= \alpha(y_0 + y_1x + \cdots + y_nx^n) \\
+            &= \alpha(y_0) + \alpha(y_1x) + \cdots + \alpha(y_nx^n) \\
+            &= \alpha(y_0) + \alpha(y_1)\alpha(x) + \cdots +
+               \alpha(y_n)\alpha(x^n) \\
+            &= y_0 + y_1\alpha(x) + \cdots + y_n\alpha(x)^n.
+      \end{align*}
+      If $\alpha(x) = 0$, then $\alpha(y) = y_0$, a contradiction since $y_0$ is
+      an integer. So $\alpha(x) \neq 0$; now let $m$ be the degree of
+      $\alpha(x)$. Thus, the degree of $\alpha(y)$ is $mn$. But since the degree
+      of $q$ is 0, it follows that $mn = 0$. Hence $m = 0$ because $n \neq 0$.
+      That is, the degree of $\alpha(x)$ is 0, so that $\alpha(x)$ is a nonzero
+      rational number. Thus $\alpha(\Z[x]) \subseteq \Q$, so that $\alpha$ is
+      not surjective, a contradition. We thus conclude that
+      $\Z[x]\not\cong \Q[x]$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.3]   Find all homomorphic images of $\Z$.
+
+      \textbf{Solution.} Let $S$ be a ring and let $\alpha : \Z \rightarrow S$
+      be an homomorphism of rings. Let $K$ be the kernel of $\Z$. Then it
+      follows by Example 3 (Page 243) that $K = n\Z$ for some nonnegative
+      integer $n$. By The First Isomorphism Theorem for Rings, we have that
+      $\Z/n\Z \cong \alpha(\Z)$. Thus the image of every ring homomorphism from
+      $\Z$ to another ring is isomorphic to $\Z/n\Z$ for some nonnegative
+      integer $n$. For a nonnegative integer $m$, let $S = \Z/m\Z$, so that
+      $\alpha(\Z) \cong \Z/m\Z$ by Theorem 7.7.2. That is, the set of the
+      homomorphic images of $\Z$ is:
+      $\{\Z/x\Z : x \text{ is a nonnegative integer}\}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.4]   Find all ring homomorphisms from $\Z$ to $\Z/30\Z$. In each
                   case describe the kernel and the image.
+
+      \textbf{Solution.} There exist at least two ring homomorphisms from $\Z$
+      to $\Z/30\Z$, namely the zero ring homomorphism and natural projection, so
+      let $\alpha : \Z \rightarrow \Z/30\Z$ be a ring homomorphism. Let
+      $a, b \in \Z$. Exercise 1.6.1(b) tells us that
+      $\alpha(n) = \alpha(n \cdot 1) = \overline{n} \cdot \alpha(1)$ for every 
+      integer $n$. So $\alpha$ is completely determined by $\alpha(1)$. Observe 
+      that $\alpha$ is a group homomorphism for any value of $\alpha(1)$ because
+      \begin{align*}
+         \alpha(a + b) &= (\overline{a + b}) \cdot \alpha(1) \\
+            &= (\overline{a} + \overline{b}) \cdot \alpha(1) \\
+            &= \overline{a} \cdot \alpha(1) + \overline{b} \cdot \alpha(1) \\
+            &= \alpha(a) + \alpha(b).            
+      \end{align*}
+      Now we must also have that
+      \begin{align*}
+         \overline{ab} \cdot \alpha(1) &= \alpha(ab) \\
+            &= \alpha(a)\alpha(b) \\
+            &= \overline{a}\cdot\alpha(1)\cdot\overline{b}\cdot\alpha(1) \\ 
+            &= \overline{ab}\cdot\alpha(1)^2,           
+      \end{align*}
+      so that $\overline{ab}(\alpha(1)^2 - \alpha(1)) = \overline{0}$ for all
+      $\overline{a}, \overline{b} \in \Z/30\Z$. That is,
+      $\alpha(1)^2 - \alpha(1) = \overline{0}$, and we conclude that $\alpha$ is
+      a ring homomorphism if and only if $\alpha(1)$ is idempotent under
+      multiplication. The idempotents in $\Z/30\Z$ are:
+      $$0, 1, 6, 10, 15, 16, 21, \text{ and } 25,$$
+      so that there are 8 homomorphisms from $\Z$ to $\Z/30$. We summarize our
+      findings below:
+      $$
+      \begin{tabular}{@{}|c|c|@{}} \hline
+         $\alpha(1)$ & Kernel \\ \hline
+         0 & $\Z$ \\ \hline
+         1 & $30\Z$ \\ \hline
+         6 & $5\Z$ \\ \hline
+         10 & $3\Z$ \\ \hline
+         15 & $2\Z$ \\ \hline
+         16 & $15\Z$ \\ \hline
+         21 & $10\Z$ \\ \hline
+         25 & $6\Z$ \\ \hline
+      \end{tabular}
+      $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.5]   Describe all ring homomorphisms from the ring $\Z \times \Z$
                   to $\Z$. In each case describe the kernel and the image.
+
+      \textbf{Solution.} We want to find a nonzero ring homomorphism from
+      $\Z\times\Z$ to $\Z$. Suppose one exists and call it $\alpha$. Let
+      $a, b \in \Z\times\Z$, so that $a = (a_1, a_2)$ and $b = (b_1, b_2)$ for
+      some integers $a_1, a_2, b_1$, and $b_2$. So we have that
+      \begin{align*}
+         \alpha(a) &= \alpha(a_1, a_2) \\
+            &= \alpha((a_1, 0) + (0, a_2)) \\
+            &= \alpha(a_1, 0) + \alpha(0, a_2) &[\alpha
+                  \text{ is a group homomorphism}] \\
+            &= \alpha(a_1 \cdot( 1, 0)) + \alpha(a_2 \cdot (0, 1))  \\
+            &= a_1 \cdot \alpha(1, 0) + a_2 \cdot \alpha(0, 1),
+                  &[\text{Exercise 1.6.1(b)}]
+      \end{align*}
+      so that $\alpha$ is completely determined by $\alpha(1, 0)$ and
+      $\alpha(0, 1)$. Now observe that $\alpha$ is a group homomorphism
+      independent of the values of $\alpha(1, 0)$ and $\alpha(0, 1)$ because
+      \begin{align*}
+         \alpha(a + b) &= \alpha((a_1, a_2) + (b_1, b_2)) \\
+            &= \alpha(a_1 + b_1, a_2 + b_2) \\
+            &= (a_1 + b_1) \cdot \alpha(1, 0) + (a_2 + b_2) \cdot\alpha(0, 1) \\
+            &= a_1 \cdot \alpha(1, 0) + b_1 \cdot \alpha(1, 0) +
+               a_2 \cdot \alpha(0, 1) + b_2 \cdot \alpha(0, 1) \\
+            &= \alpha(a_1, 0) +\alpha(b_1, 0) +\alpha(0, a_2) +\alpha(0, b_2) \\
+            &= \alpha(a_1, 0) +\alpha(0, a_2) +\alpha(b_1, 0) +\alpha(0, b_2) \\
+            &= \alpha(a_1, a_2) + \alpha(b_1, b_2) \\
+            &= \alpha(a) + \alpha(b).
+      \end{align*}
+   
+      Since $\Z$ is an integral domain an $\alpha$ is nonzero, it follows by
+      Exercise 7.3.17(a) that $\alpha(1, 1) = 1$. So
+      $1 = \alpha(1, 1) = \alpha(1, 0) + \alpha(0, 1)$. Also
+      \begin{align*}
+         \alpha(1, 0) &= \alpha((1, 0) \cdot (1, 0)) \\
+            &= \alpha(1, 0) \cdot \alpha(1, 0)
+                  &[\alpha \text{ is a ring homomorphism}] \\
+            &= \alpha(1, 0)^2,
+      \end{align*}
+      so that $\alpha(1, 0)^2 - \alpha(1, 0) = 0$; i.e.,
+      $\alpha(1, 0) \cdot (\alpha(1, 0) - 1) = 0$. Since $\Z$ is an integral
+      domain, it follows that $\alpha(1, 0) = 0$ or $\alpha(1, 0) = 1$.
+      Replace $(1, 0)$ with $(0, 1)$ in the procedure above to conclude
+      similarly that  $\alpha(0, 1) = 0$ or $\alpha(0, 1) = 1$. Recall that
+      $\alpha(1, 0) + \alpha(0, 1) = 1$, so it follows that
+      $$\alpha(1, 0) = 1 \text{ and } \alpha(0, 1) = 0$$
+      or
+      $$\alpha(1, 0) = 0 \text{ and } \alpha(0, 1) = 1.$$
+
+      Suppose first that the former holds. So we have that
+      \begin{align*}
+         \alpha(ab) &= \alpha((a_1, a_2)(b_1, b_2)) \\
+            &= \alpha(a_1b_1, a_2b_2) \\
+            &= a_1b_1 \cdot \alpha(1, 0) + a_2b_2 \cdot \alpha(0, 1) \\
+            &= a_1b_1 \cdot 1 + a_2b_2 \cdot 0 \\
+            &= a_1b_1 \\
+            &= (a_1 \cdot 1 + a_2 \cdot 0)(b_1 \cdot 1 + b_2 \cdot 0) \\
+            &= (a_1 \cdot \alpha(1, 0) + a_2 \cdot \alpha(0, 1))
+               (b_1 \cdot \alpha(1, 0) + b_2 \cdot \alpha(0, 1)) \\
+            &= (\alpha(a_1, 0) + \alpha(0, a_2))
+               (\alpha(b_1, 0) + \alpha(0, b_2)) \\
+            &= (\alpha(a_1, a_2))(\alpha(b_1, b_2)) \\
+            &= \alpha(a)\alpha(b).
+      \end{align*}
+      However, if the latter holds, use the same procedure above to conclude
+      that $\alpha(ab) = \alpha(a)\alpha(b)$. Thus we have shown that $\alpha$
+      is a nonzero ring homomorphism if and only if exactly one of
+      $\alpha(1, 0)$ and $\alpha(0, 1)$ is 0 while the other is 1. So there are
+      two such nonzero ring homomorphisms for a total of three ring
+      homomorphisms (if we include the zero homomorphism). We tabulate our
+      results:
+      $$
+      \begin{tabular}{@{}|c|c|c|@{}} \hline
+         $\alpha(1, 0)$ & $\alpha(0, 1)$ & Kernel \\ \hline
+         0 & 0 & $\Z\times\Z$ \\ \hline
+         1 & 0 & $\{0\}\times\Z$ \\ \hline
+         0 & 1 & $\Z\times\{0\}$ \\ \hline
+      \end{tabular}
+      $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.6]   Decide which of the following are ring homomorphisms from
                   $M_2(\Z)$ to $\Z$:
@@ -33,6 +209,29 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            \end{tabular}\right) \mapsto ad - bc$ (the
                            \textit{determinant} of the matrix).
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item Consider the map $\alpha : M_2(\Z) \rightarrow \Z$, defined by
+               $(a_{ij}) \mapsto a_{11}$. Let $A \in M_2(\Z)$, such that every
+               entry of $A$ is 1. It follows immediately that $\alpha$ is not a
+               ring homomorphism because
+               $$\alpha(A^2) = 2 \neq 1 = \alpha(A) \cdot \alpha(A).$$
+         \item Consider the map $\alpha : M_2(\Z) \rightarrow \Z$, defined by
+               $(a_{ij}) \mapsto a_{11} + a_{22}$. Let $A, B \in M_2(\Z)$, such 
+               that the only nonzero entry of $A$ is the 2, 1 entry which is 1
+               and the only nonzero entry of $B$ is the 1, 2 entry which is also
+               1. It follows immediately that $\alpha$ is not a ring
+               homomorphism because
+               $$\alpha(AB) = 1 \neq 0 = \alpha(A) \cdot \alpha(B).$$
+         \item Consider the map $\alpha : M_2(\Z) \rightarrow \Z$, defined by
+               $(a_{ij}) \mapsto a_{11}a_{22} - a_{12}a_{21}$. Let
+               $A \in M_2(\Z)$, such that every entry of $A$ is 1, except the
+               2, 1 entry which is 0. It follows immediately that $\alpha$ is
+               not a ring homomorphism because
+               $$\alpha(A + A) = 4 \neq 2 = \alpha(A) + \alpha(A).$$
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.7]   Let $R = \left\{\left(\begin{tabular}{@{}cc@{}}
                      $a$ & $b$ \\
@@ -174,7 +373,7 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            respectively the right and left \textit{annihilators}
                            of $a$ in $R$).
                      \item Prove that if $L$ is a left ideal of $R$ then
-                           $\{x \in R : xa = 0 \text{ for all} a \in L\}$ is a
+                           $\{x \in R : xa = 0 \text{ for all } a \in L\}$ is a
                            two-sided ideal (called the left \textit{annihilator}
                            of $L$ in $R$).
                   \end{enumerate}
@@ -207,9 +406,9 @@ Let $R$ be a ring with identity $1 \neq 0$.
    \item[7.3.26]  The \textit{characteristic} of a ring $R$ is the smallest
                   positive integer $n$ such that $1 + 1 + \cdots + 1 = 0$
                   ($n$ times) in $R$; if no such integer exists the 
-                  characteristic of $R$ is said to be 0. For example $\Z/n\Z$ is
-                  a ring of characteristic $n$ for each positive integer $n$ and
-                  $\Z$ is a ring of characteristic 0.
+                  characteristic of $R$ is said to be 0. For example,
+                  $\Z/n\Z$ is a ring of characteristic $n$ for each positive 
+                  integer $n$ and $\Z$ is a ring of characteristic 0.
                   \begin{enumerate}
                      \item Prove that the map $\Z \rightarrow R$ defined by
                            \begin{equation*}
@@ -240,12 +439,12 @@ Let $R$ be a ring with identity $1 \neq 0$.
    \item[7.3.28]  Prove that an integral domain has characteristic $p$, where
                   $p$ is either a prine or 0 (cf Exercise 7.3.26).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.3.29]  Let $R$ be a commutative ring. Recall (cf. Exercise 13,
-                  Section 1) that an element $x \in R$ is nilpotent if $x^n = 0$
-                  for some $n \in \Z^+$. Prove that the set of nilpotent
-                  elements form an ideal---called the \textit{nilradical} of $R$
-                  and denoted by $\mathfrak{N}(R)$. [Use the Binomial Theorem to
-                  show $\mathfrak{N}(R)$ is closed under addition.]
+   \item[7.3.29]  Let $R$ be a commutative ring. Recall (cf. Exercise 7.1.13)
+                  that an element $x \in R$ is nilpotent if $x^n = 0$ for some
+                  $n \in \Z^+$. Prove that the set of nilpotent elements form an 
+                  ideal---called the \textit{nilradical} of $R$ and denoted by
+                  $\mathfrak{N}(R)$. [Use the Binomial Theorem to show
+                  $\mathfrak{N}(R)$ is closed under addition.]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.30]  Prove that if $R$ is a commutative ring and $\mathfrak{N}(R)$
                   is its nilradical (cf. the preceding exercise) then zero is
@@ -265,7 +464,7 @@ Let $R$ be a ring with identity $1 \neq 0$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.32]  Let $\varphi : R \rightarrow S$ be a homomorphism of rings.
                   Prove that if $x$ is a nilpotent element of $R$ then
-                  $\varphi(x)$ id nilpotent in $S$.
+                  $\varphi(x)$ is nilpotent in $S$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.33]  Assume $R$ is commutative. Let
                   $p(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ be an
