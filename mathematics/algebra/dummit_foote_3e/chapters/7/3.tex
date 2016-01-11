@@ -227,9 +227,9 @@ Let $R$ be a ring with identity $1 \neq 0$.
                $$\alpha(AB) = 1 \neq 0 = \alpha(A) \cdot \alpha(B).$$
          \item Consider the map $\alpha : M_2(\Z) \rightarrow \Z$, defined by
                $(a_{ij}) \mapsto a_{11}a_{22} - a_{12}a_{21}$. Let
-               $A \in M_2(\Z)$, such that every entry of $A$ is 1, except the
-               2, 1 entry which is 0. It follows immediately that $\alpha$ is
-               not a ring homomorphism because
+               $A \in M_2(\Z)$ be an upper triangular matrix such that every
+               entry on and above the main diagonal is 1. It follows immediately 
+               that $\alpha$ is not a ring homomorphism because
                $$\alpha(A + A) = 4 \neq 2 = \alpha(A) + \alpha(A).$$
       \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -244,6 +244,60 @@ Let $R$ be a ring with identity $1 \neq 0$.
                       0  & $d$
                   \end{tabular}\right) \rightarrow (a, d)$$
                   is a surjective homomorphism and describe its kernel.
+
+      \textbf{Proof.} Let $A = \left(\begin{tabular}{@{}cc@{}}
+         $a_{11}$ & $a_{12}$ \\
+         0  & $a_{22}$
+      \end{tabular}\right) \text{ and } B =  \left(\begin{tabular}{@{}cc@{}}
+         $b_{11}$ & $b_{12}$ \\
+         0  & $b_{22}$
+      \end{tabular}\right)$ be elements of $R$. It follows that $\varphi$ is a
+      surjective ring homomorphism because
+      
+      \textbf{additive:}
+      \begin{align*}
+         \varphi(A + B) &= \varphi\left(\begin{tabular}{@{}cc@{}}
+            $a_{11} + b_{11}$ & $a_{12} + b_{12}$ \\
+            0  & $a_{22} + b_{22}$
+         \end{tabular}\right) \\
+         &= (a_{11} + b_{11}, a_{22} + b_{22}) \\
+         &= (a_{11}, a_{22}) + (b_{11}, b_{22}) \\
+         &= \varphi\left(\begin{tabular}{@{}cc@{}}
+            $a_{11}$ & $a_{12}$ \\
+            0 & $a_{22}$
+         \end{tabular}\right) + \varphi\left(\begin{tabular}{@{}cc@{}}
+            $b_{11}$ & $b_{12}$ \\
+            0 & $b_{22}$
+         \end{tabular}\right) \\
+         &= \varphi(A) + \varphi(B)
+      \end{align*}
+      
+      \textbf{multiplicative:}
+      \begin{align*}
+         \varphi(AB) &= \varphi\left(\begin{tabular}{@{}cc@{}}
+            $a_{11}b_{11}$ & $a_{11}b_{12} + a_{12}b_{22}$  \\
+            0  & $a_{22}b_{22}$
+         \end{tabular}\right) \\
+         &= (a_{11}b_{11}, a_{22}b_{22}) \\
+         &= (a_{11}, a_{22}) \cdot (b_{11}, b_{22}) \\
+         &= \varphi\left(\begin{tabular}{@{}cc@{}}
+            $a_{11}$ & $a_{12}$ \\
+            0 & $a_{22}$
+         \end{tabular}\right)\varphi\left(\begin{tabular}{@{}cc@{}}
+            $b_{11}$ & $b_{12}$ \\
+            0 & $b_{22}$
+         \end{tabular}\right) \\
+         &= \varphi(A)\varphi(B)
+      \end{align*}
+      
+      \textbf{surjective:} for $(x, y) \in \Z\times\Z$, we have that
+      $\varphi\left(\begin{tabular}{@{}cc@{}}
+            $x$ & 0 \\
+            0 & $y$
+      \end{tabular}\right) = (x, y)$.
+
+      The kernel of $\varphi$ is the set of strictly upper triangular matrices
+      in $R$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.8]   Decide which of the following are ideals of the ring
                   $\Z \times \Z$:
@@ -253,9 +307,94 @@ Let $R$ be a ring with identity $1 \neq 0$.
                      \item $\{(2a, 0) : a \in \Z\}$
                      \item $\{(a, -a) : a \in \Z\}$.
                   \end{enumerate}
+
+      \begin{enumerate}
+         \item The set $I = \{(a, a) : a \in \Z\}$ is not an ideal of
+               $\Z\times\Z$ because $(1, 1) \in I$ but
+               $(1, 0) \cdot (1, 1) = (1, 0) \notin I$.
+         \item We claim that $I = \{(2a, 2b) : a, b \in \Z\}$ is an ideal of
+               $\Z\times\Z$.
+
+               \textbf{Proof.} Let $x, y \in I$, so that $x = (2c, 2d)$ and
+               $y = (2s, 2t)$ for some integers $c, d, s$, and $t$.
+
+               \textbf{nonempty:} $(0, 0) \in I$.
+
+               \textbf{closure under addition:} We have that
+               $$x + y = (2c, 2d) + (2s, 2t) = (2c', 2d') \in I,$$
+               where $c' = c + s$ and $d' = d + t$.
+
+               \textbf{closure under multiplication by elements of
+               $\Z\times\S$:} Since $\Z\times\Z$ is commutative, we shall only
+               show closure by left multiplication; so let $r \in \Z\times\Z$.
+               Then $r = (2p, 2q)$ for some integers $p$ and $q$. It follows
+               that
+               $$r\cdot x = (2p, 2q)(2c, 2d) = (2p', 2q') \in I,$$
+               where $p' = 2pc$ and $q' = 2dq$. Thus $I$ is an ideal of
+               $\Z\times\Z$. \qed
+         \item We claim that $I = \{(2a, 0) : a \in \Z\}$ is an ideal of
+               $\Z\times\Z$.
+
+               \textbf{Proof.}
+
+               \textbf{nonempty:} $(0, 0) \in I$, so let $x, y \in I$, so that
+               $x = (2b, 0)$ and $y = (2c, 0)$ for some integers $b$ and $c$.
+
+               \textbf{closure under addition:} We have that
+               $$x + y = (2b, 0) + (2c, 0) = (2b', 0) \in I,$$
+               where $b' = b + c$.
+
+               \textbf{closure under multiplication by elements of
+               $\Z\times\Z$:} Since $\Z\times\Z$ is commutative, we shall only
+               show closure by left multiplication; so let $r \in \Z\times\Z$.
+               Then $r = (2d, 0)$ for some integer $d$. It follows that
+               $$r\cdot x = (2d, 0)(2b, 0) = (2t, 0) \in I,$$
+               where $t = 2bd$. Thus $I$ is an ideal of $\Z\times\Z$. \qed
+         \item The set $I = \{(a, -a) : a \in \Z\}$ is not an ideal of
+               $\Z\times\Z$ because $(1, -1) \in I$ but
+               $(1, 0) \cdot (1, -1) = (1, 0) \notin I$.
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.9]   Decide which of the sets in Exercise 6 of Section 1 are ideals
                   of the ring of all functions from $[0, 1]$ to $\R$.
+
+      \textbf{Solution.} We shall let $S$ denote each of the sets (as we did in
+      Exercise 7.1.6) and let $R$ denote the ring of all functions from $[0, 1]$
+      to $\R$.
+
+      \begin{enumerate}
+         \item We claim that $S$ is an ideal $R$.
+
+               \textbf{Proof.}
+
+               \textbf{nonempty and closure under addition:} This follows from 
+               Exercise 7.1.6(a).
+
+               \textbf{closure under multiplication by elements of $R$:} Let
+               $f \in R$ and $g \in S$. Let $q$ be a rational number in
+               $[0, 1]$. Since $\R$ is commutative and $g(q) = 0$, it follows
+               that $(fg)(q) = f(q)g(q) = 0 = g(q)f(q) = (gf)(q)$, so that
+               $fg, gf \in S$. We conclude that $S$ is an ideal of $R$. \qed
+         \item The set $S$ is not an ideal of $R$ because the function
+               $f(x) = x \in S$, but $\sin(x)f(x)$ is not a member of $S$.
+         \item Exercise 7.1.6(c) says that $S$ is not closed under addition, so
+               it is not an ideal of $R$.
+         \item Exercise 7.1.6(d) says that $S$ is not closed under addition, so
+               it is not an ideal of $R$.
+         \item Consider the function
+               \begin{equation*}
+                  g(x) = \left\{
+                     \begin{array}{cl}
+                        0 & \text{if } x = 1,\\ \\
+                        \frac{1}{x-1} & \text{if } x \in [0, 1)
+                     \end{array} \right.
+               \end{equation*}
+               Clearly, $g \in R$ and $f(x) = x - 1 \in S$, but $gf \notin S$ 
+               because $\lim_{x\rightarrow1^-}g(x)f(x) = 1 \neq 0$. Thus $S$ is
+               not an ideal of $R$.
+         \item The set $S$ is not an ideal of $R$ because $\sin(x) \in S$ but
+               $x \cdot \sin(x) \notin S$.
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.10]  Decide which of the following are ideals of the ring $\Z[x]$:
                   \begin{enumerate}
@@ -273,6 +412,72 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            where $p'(x)$ is the usual first derivative of $p(x)$
                            with respect to $x$.
                   \end{enumerate}
+
+      \textbf{Solution.} For convenience, we shall let $S$ denote each of the
+      sets. Let
+      $$p(x) = \sum_{k=0}^tp_kx^k \in \Z[x]$$
+      be a polynomial of degree $t$.
+
+      \begin{enumerate}
+         \item We claim that $S$ is an ideal of $\Z[x]$.
+
+               \textbf{Proof.} 
+
+               \textbf{nonempty:} $S$ contains the constant polynomial 3, so let
+               $q, r \in S$, where $q_0$ and $r_0$ are the constant terms of $q$
+               and $r$. 
+
+               \textbf{closure under addition:} The constant
+               term of $q + r$ is $q_0 + r_0$, a multiple of 3 since $q_0$ and
+               $r_0$ are both multiples of 3; thus $q + r \in S$.
+
+               \textbf{closure under multiplication by elements of $R$:} The
+               constant term of $p \cdot q$ is $p_0q_0$, a multiple of 3 since
+               $q_0$ is a multiple of 3. Thus $pq \in S$. We conclude that $S$
+               is an ideal of $\Z[x]$. \qed
+         \item The set $S$ is not an ideal because it is not closed under
+               muliplication.
+
+               \textbf{counterexample:} $x \in S$, but
+               $x \cdot x = x^2 \notin S$.
+         \item The set $S$ is not an ideal because it is not closed under
+               addition.
+
+               \textbf{counterexample:} $x^3, -x^3 \in S$, but
+               $x^3 + (-x^3) = 0 \notin S$.
+         \item The set $S$ is not an ideal because it is not closed under
+               multiplication by elements of $\Z[x]$.
+
+               \textbf{counterexample:} For $x \in \Z[x]$ and $x^2 \in S$, we
+               have $x \cdot x^2 = x^3 \notin S$.
+         \item We claim that $S$ is an ideal of $\Z[x]$.
+
+               \textbf{Proof.} 
+
+               \textbf{nonempty:} $S$ contains 0; so let
+               $$q = q_0 + \cdots + q_nx^n, r = r_0 + \cdots + r_mx^m \in S$$
+               be polynomials of degree $n$ and $m$ in $S$, where $n \le m$;
+               i.e., $q_0 + \cdots + q_n = r_0 + \cdots + r_m = 0$.
+
+               \textbf{closure under addition:} Assume without loss of
+               generality that $n \le m$. It follows immediately that
+               $q + r \in S$ because its coefficient is 0; that is,
+               $$(q_0 + r_0) + \cdots + (q_m + r_m) = 0.$$
+
+               \textbf{closure under multiplication by elements of $R$:} The
+               sum of the coefficients of $p \cdot q$ is
+               $(p_0 + \cdots + p_t)(q_0 + \cdots + q_n)$ and this product
+               equals 0 because the sum of the coefficients of $q$ is 0. Thus
+               $p \cdot q \in S$. Thus $S$ is an ideal of $\Z[x]$. \qed
+         \item The set $S$ is not an ideal because it is not closed under
+               multiplication by elements of $\Z[x]$.
+
+               \textbf{counterexample:} Let $q(x) = x^2 + 1$ and $r(x) = 7x$ be
+               polynomials in $\Z[x]$. Since $q'(0) = 0$, it follows that
+               $q(x) \in S$; using the chain rule, we have that
+               $$(rq)'(0) = r'(0)q(0) + r(0)q'(0) = 7 \neq 0,$$
+               so that $r \cdot q \notin S$.
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.11]  Let $R$ be the ring of all continuous real valued functions on
                   the closed interval $[0, 1]$. Prove that the map
