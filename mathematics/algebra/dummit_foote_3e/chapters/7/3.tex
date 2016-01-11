@@ -1,5 +1,8 @@
 Let $R$ be a ring with identity $1 \neq 0$.
 
+%%%%%%%%%%%%%%%%%%10c is wrong%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%counterexample of 20%%%%%%%%%%%%%%
+
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.1]   Prove that the rings $2\Z$ and $3\Z$ are not isomorphic.
@@ -416,7 +419,9 @@ Let $R$ be a ring with identity $1 \neq 0$.
       \textbf{Solution.} For convenience, we shall let $S$ denote each of the
       sets. Let
       $$p(x) = \sum_{k=0}^tp_kx^k \in \Z[x]$$
-      be a polynomial of degree $t$.
+      be a polynomial of degree $t$. For those that are ideals, we shall only
+      show closure under left multiplication by elements of $\Z[x]$ because
+      $\Z[x]$ is commutative.
 
       \begin{enumerate}
          \item We claim that $S$ is an ideal of $\Z[x]$.
@@ -484,11 +489,22 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   $\varphi : R \rightarrow \R$ defined by
                   $\varphi(f) = \int_0^1f(t)dt$ is a homomorphism of additive
                   groups but not a ring homomorphism.
+
+      \textbf{Proof.} Let $f, g \in R$. Since $f$ and $g$ are continuous real
+      valued functions on $[0, 1]$, it follows by the Linearity Property of the
+      integral that
+      $$\int_0^1f(t)\,dt + \int_0^1g(t)\,dt = \int_0^1[f(t) + g(t)]\,dt,$$
+      so that $\varphi(f) + \varphi(g) = \varphi(f + g)$. Thus $\varphi$ is a
+      homomorphism of additive groups; however $\varphi$ is not a ring
+      homomorphism because for $h \in \R$, where $h(x) = x$, we have
+      $$\varphi(h\cdot h) = \int_0^1 t^2\,dt = \frac{1}{3} \neq \frac{1}{4} =
+        \int_0^1 t\,dt \cdot \int_0^1 t\,dt = \varphi(h) \cdot \varphi(h).$$
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.12]  Let $D$ be an integer that is not a perfect square in $\Z$ and
                   let $S = \left\{\left(\begin{tabular}{@{}cc@{}}
                      $a$ & $b$ \\
-                     $Db$  & $d$
+                     $Db$  & $a$
                   \end{tabular}\right) : a, b \in \Z\right\}$.
                   \begin{enumerate}
                      \item Prove that $S$ is a subring of $M_2(\Z)$.
@@ -497,7 +513,7 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            $\varphi(a + b\sqrt{D}) =
                             \left(\begin{tabular}{@{}cc@{}}
                                $a$ & $b$ \\
-                               $Db$  & $d$
+                               $Db$  & $a$
                            \end{tabular}\right)$ is a ring isomorphism.
                      \item If $D \equiv 1$ mod 4 is squarefree, prove that the
                            set $\left\{\left(\begin{tabular}{@{}cc@{}}
@@ -507,12 +523,270 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            subring of $M_2(\Z)$ and is isomorphic to the 
                            quadratic integer ring $\mathcal{O}$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} $S$ contains the zero matrix so it is nonempty;
+               so let $A, B \in S$. Thus there exist integers
+               $a_1, a_2, b_1$, and $b_2$ such that
+               $$A = \left(\begin{tabular}{@{}cc@{}}
+                  $a_1$ & $a_2$ \\
+                  $Da_2$ & $a_1$
+               \end{tabular}\right) \text{ and }
+                 B = \left(\begin{tabular}{@{}cc@{}}
+                  $b_1$ & $b_2$ \\
+                  $Db_2$ & $b_1$
+               \end{tabular}\right).$$
+
+               \textbf{closure under subtraction:} We have that
+               $$A - B = \left(\begin{tabular}{@{}cc@{}}
+                  $a_1 - b_1$ & $a_2 - b_2$ \\
+                  $D(a_2 - b_2)$ & $a_1 - b_1$
+               \end{tabular}\right) \in S.$$
+         
+               Thus $(S, +)$ is an abelian subgroup by the Subgroup Criterion. 
+
+               \textbf{closure under multiplication:} We have that
+               $$AB = \left(\begin{tabular}{@{}cc@{}}
+                  $a_1b_1 + Da_2b_2$ & $a_1b_2 + a_2b_1$ \\
+                  $D(a_1b_2 + a_2b_1)$ & $a_1b_1 + Da_2b_2$
+               \end{tabular}\right) \in S.$$
+               So conclude that $S$ is a subring of $M_2(\Z)$. \qed
+         \item \textbf{Proof.} Let $x, y \in \Z[\sqrt{D}]$. So
+               $x = x_1 + x_2\sqrt{D}$ and $y = y_1 + y_2\sqrt{D}$ for some 
+               integers $x_1, x_2, y_1$, and $y_2$. First we show that
+               $\varphi$ is a ring homomorphism.
+
+               \textbf{additivity of $\varphi$:} We have that
+               \begin{align*}
+                  \varphi(x + y)&=\varphi((x_1+x_2\sqrt{D})+(y_1+y_2\sqrt{D}))\\
+                     &= \varphi((x_1 + y_1) +(x_2 + y_2)\sqrt{D}) \\
+                     &= \left(\begin{tabular}{@{}cc@{}}
+                           $x_1 + y_1$ & $x_2 + y_2$ \\
+                           $D(x_2 + y_2)$ & $x_1 + y_1$
+                     \end{tabular}\right) \\
+                     &= \left(\begin{tabular}{@{}cc@{}}
+                           $x_1$ & $x_2$ \\
+                           $Dx_2$ & $x_1$
+                     \end{tabular}\right) + \left(\begin{tabular}{@{}cc@{}}
+                           $y_1$ & $y_2$ \\
+                           $Dy_2$ & $y_1$
+                     \end{tabular}\right) \\
+                     &= \varphi(x_1 + x_2\sqrt{D})+\varphi(y_1 + y_2\sqrt{D}) \\
+                     &= \varphi(x) + \varphi(y).
+               \end{align*}
+
+               \textbf{multiplicativity of $\varphi$:} We have that
+               \begin{align*}
+                  \varphi(xy) &= \varphi((x_1+x_2\sqrt{D})(y_1+y_2\sqrt{D})) \\
+                     &= \varphi((x_1y_1 + Dx_2y_2)+(x_1y_2 + x_2y_1)\sqrt{D}) \\
+                     &= \left(\begin{tabular}{@{}cc@{}}
+                           $x_1y_1 + Dx_2y_2$ & $x_1y_2 + x_2y_1$ \\
+                           $D(x_1y_2 + x_2y_1)$ & $x_1y_1 + Dx_2y_2$
+                     \end{tabular}\right) \\
+                     &= \left(\begin{tabular}{@{}cc@{}}
+                           $x_1$ & $x_2$ \\
+                           $Dx_2$ & $x_1$
+                     \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+                           $y_1$ & $y_2$ \\
+                           $Dy_2$ & $y_1$
+                     \end{tabular}\right) \\
+                     &= \varphi(x_1 + x_2\sqrt{D})\varphi(y_1 + y_2\sqrt{D}) \\
+                     &= \varphi(x)\varphi(y).
+               \end{align*}
+
+               Thus $\varphi$ is a ring homomorphism, so it remains to show that 
+               $\varphi$ is bijective. \\
+
+               \textbf{injectivity of $\varphi$:} Suppose that
+               $\varphi(x) = \varphi(y)$. By equating the entries of the
+               matrices $\varphi(x)$ and $\varphi(y)$, we conclude that
+               $x_1 = y_1$ and $x_2 = y_2$, so that $x = y$. Thus $\varphi$ is
+               injective. \\
+
+               \textbf{surjectivity of $\varphi$:} Consider the matrix $A$ from
+               (a). Since $A$ is an arbitary matrix in $S$ and since
+               $\varphi(a_1 + a_2\sqrt{D}) = A$, it follows that $\varphi$ is
+               onto. So conclude that $\varphi$ is an isomorphism. \qed
+         \item Let $D$ be a squarefree integer such that $D \equiv 1$ mod 4 and
+               let
+               $$T = \left\{\left(\begin{tabular}{@{}cc@{}}
+                  $a$ & $b$ \\
+                  $(D-1)b/4$  & $a+b$
+               \end{tabular}\right) : a, b \in \Z\right\}.$$
+               We want to show that $\mathcal{O}$ is isomorphic to $T$, where
+               $\mathcal{O} = \Z\left[\frac{1 + \sqrt{D}}{2}\right]$. Consider
+               the map $\beta : \mathcal{O} \rightarrow T$, defined by
+               $a + b \frac{1 + \sqrt{D}}{2} \mapsto
+               \left(\begin{tabular}{@{}cc@{}}
+                  $a$ & $b$ \\
+                  $(D-1)b/4$  & $a+b$
+               \end{tabular}\right)$. First we will show that $\beta$ is a ring
+               homomorphism. To that end, we let $x, y \in \mathcal{O}$, so that
+               $$x = a + b\frac{1 + \sqrt{D}}{2} \text{ and }
+                 y = c + d \frac{1 + \sqrt{D}}{2}$$
+               for some integers $a$, $b$, $c$, and $d$. \\
+
+               \textbf{additivity of $\varphi$:} It follows that
+               \begin{align*}
+                  \beta(x + y) &= \beta\left(\left(a + b
+                     \frac{1 + \sqrt{D}}{2}\right) +
+                     \left(c + d\frac{1 + \sqrt{D}}{2}\right)\right) \\
+                     &= \beta\left((a + c) + (b + d)
+                     \frac{1 + \sqrt{D}}{2}\right) \\
+                     &= \left(\begin{tabular}{@{}cc@{}}
+                        $a + c$ & $b + d$ \\
+                        $(D-1)(b + d)/4$  & $(a + c)+(b + d)$
+                     \end{tabular}\right) \\
+                     &= \left(\begin{tabular}{@{}cc@{}}
+                        $a$ & $b$ \\
+                        $(D-1)b/4$  & $a + b$
+                     \end{tabular}\right) + \left(\begin{tabular}{@{}cc@{}}
+                        $c$ & $d$ \\
+                        $(D-1)d/4$  & $c + d$
+                     \end{tabular}\right) \\
+                     &= \beta\left(a + b\frac{1 + \sqrt{D}}{2}\right) +
+                        \beta\left(c + d\frac{1 + \sqrt{D}}{2}\right) \\
+                     &= \beta(x) + \beta(y).
+               \end{align*}
+
+               \textbf{multiplicativity of $\varphi$:} It follows that
+               \begin{align*}
+                  \beta(xy) &= \beta\left(\left(a + b
+                     \frac{1 + \sqrt{D}}{2}\right)
+                     \left(c + d \frac{1 + \sqrt{D}}{2}\right)\right) \\
+                     &= \beta\left((ac + (D-1)\frac{bd}{4}) + (ad + bc + bd)
+                     \frac{1 + \sqrt{D}}{2}\right) \\
+                     &= \left(\begin{tabular}{@{}cc@{}}
+                        $ac + (D-1)bd/4$ & $ad + bc + bd$ \\
+                        $(D-1)(ad + bc + bd)/4$  & $(ac + (D-1)bd/4)+
+                         (ad + bc + bd)$
+                     \end{tabular}\right) \\
+                     &= \left(\begin{tabular}{@{}cc@{}}
+                        $a$ & $b$ \\
+                        $(D-1)b/4$  & $a + b$
+                     \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+                        $c$ & $d$ \\
+                        $(D-1)d/4$  & $c+d$
+                     \end{tabular}\right) \\
+                     &= \beta\left(x_1 + x_2\frac{1 + \sqrt{D}}{2}\right)
+                        \beta\left(y_1 + y_2\frac{1 + \sqrt{D}}{2}\right) \\
+                     &= \beta(x)\beta(y).
+               \end{align*}
+
+               It remains to show that $\beta$ is one-to-one and onto. So \\
+
+               \textbf{injectivity of $\beta$:} Suppose that
+               $\beta(x) = \beta(y)$. By equating corresponding entries in the
+               matrices $\beta(x)$ and $\beta(y)$, we shall get that $a = c$ and
+               $b = d$, so that $x = y$, and thus, $\beta$ is one-to-one. \\
+
+               \textbf{surjectivity of $\beta$:} Let $C \in T$. Then
+               $$C =  \left(\begin{tabular}{@{}cc@{}}
+                  $c_1$ & $c_2$ \\
+                  $(D-1)c_2/4$  & $c_1+c_2$
+               \end{tabular}\right)$$
+               for some $c_1$ and $c_2$ in $\Z$. It follows immediately that
+               $\beta$ is onto because
+               $$\beta(c_1 + c_2\sqrt{D}) = C.$$
+               Thus $\mathcal{O} \cong T$.
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.13]  Prove that the ring $M_2(\R)$ contains a subring that is
                   isomorphic to $\C$.
+
+      \textbf{Proof.} The map
+      $$\alpha : \C \rightarrow M_2(\R) \text{ defined by } a + bi \mapsto
+      \left(\begin{tabular}{@{}rc@{}}
+         $a$ & $b$ \\
+         $-b$  & $a$
+      \end{tabular}\right)$$
+      is an injective homomorphism of rings (use procedure in Exercise
+      7.3.12(b) by setting $D = -1$), so by Corollary 3.17, we have that the
+      kernel of $\alpha$ is $\{0\}$, and, by the First Isomorphism
+      Theorem, that $\C \cong \C/\{0\} \cong \alpha(\C)$; thus $\C$ is 
+      isomorphic to a subring of $M_2(\R)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.14]  Prove that the ring $M_4(\R)$ contains a subring that is
                   isomorphic to the real Hamilton Quaternions, $\mathbb{H}$.
+
+      \textbf{Proof.} We will proceed as in Exercise 7.3.13; so it suffices to
+      find an injective ring homomorphism from $\mathbb{H}$ into $M_4(\R)$.
+      Consider the map:
+      $$\varphi : \mathbb{H} \rightarrow M_4(\R) \text{ defined by }
+         a + bi + cj + dk \mapsto \left(\begin{tabular}{@{}rrrr@{}}
+         $a$  & $b$  & $c$  & $d$ \\
+         $-b$ & $a$  & $-d$ & $c$ \\
+         $-c$ & $d$  & $a$  & $-b$ \\
+         $-d$ & $-c$ & $b$  & $a$
+      \end{tabular}\right).$$
+
+      Let $x, y \in \mathbb{H}$. Then
+      $$x = a + bi + cj + dk \text{ and } y = e + fi + gj + hk,$$
+      for some real numbers $a, b, c, d, e, f, g$, and $h$. Now we will show
+      that $\varphi$ is a ring homomorphism. \\
+
+      \textbf{additivity of $\varphi$:} It follows that
+      \begin{align*}
+         \varphi(x + y) &= \varphi((a + bi + cj + dk) + (e + fi + gj + hk)) \\
+            &= \varphi((a + e) + (b + f)i + (c + g)j + (d + h)k) \\
+            &= \left(\begin{tabular}{@{}rrrr@{}}
+               $a + e$  & $b + f$  & $c + g$  & $d + h$ \\
+               $-b - f$ & $a + e$  & $-d - h$ & $c + g$ \\
+               $-c - g$ & $d + h$  & $a + e$  & $-b - f$ \\
+               $-d - h$ & $-c - g$ & $b + f$  & $a + e$
+            \end{tabular}\right) \\
+            &= \left(\begin{tabular}{@{}rrrr@{}}
+               $a$  & $b$  & $c$  & $d$ \\
+               $-b$ & $a$  & $-d$ & $c$ \\
+               $-c$ & $d$  & $a$  & $-b$ \\
+               $-d$ & $-c$ & $b$  & $a$
+            \end{tabular}\right) + \left(\begin{tabular}{@{}rrrr@{}}
+               $e$  & $f$  & $g$  & $h$ \\
+               $-f$ & $e$  & $-h$ & $g$ \\
+               $-g$ & $h$  & $e$  & $-f$ \\
+               $-h$ & $-g$ & $f$  & $e$
+            \end{tabular}\right) \\
+            &= \varphi(a + bi + cj + dk) + \varphi(e + fi + gj + hk) \\
+            &= \varphi(x) + \varphi(y).
+      \end{align*}
+
+      Let $p = ae - bf - cg - dh$, $q = af + be + ch - dg$,
+      $r = ag - bh + ce + df$, and $s = ah + bg - cf + de$.
+
+      \textbf{multiplicativity of $\varphi$:} It follows that
+      \begin{align*}
+         \varphi(xy) &= \varphi((a + bi + cj + dk)(e + fi + gj + hk)) \\
+            &= \varphi(p + qi + rj + sk) \\
+            &= \left(\begin{tabular}{@{}rrrr@{}}
+               $p$  & $q$  & $r$  & $s$ \\
+               $-q$ & $p$  & $-s$ & $r$ \\
+               $-r$ & $s$  & $p$  & $-q$ \\
+               $-s$ & $-r$ & $q$  & $p$
+            \end{tabular}\right) \\
+            &= \left(\begin{tabular}{@{}rrrr@{}}
+               $a$  & $b$  & $c$  & $d$ \\
+               $-b$ & $a$  & $-d$ & $c$ \\
+               $-c$ & $d$  & $a$  & $-b$ \\
+               $-d$ & $-c$ & $b$  & $a$
+            \end{tabular}\right)\left(\begin{tabular}{@{}rrrr@{}}
+               $e$  & $f$  & $g$  & $h$ \\
+               $-f$ & $e$  & $-h$ & $g$ \\
+               $-g$ & $h$  & $e$  & $-f$ \\
+               $-h$ & $-g$ & $f$  & $e$
+            \end{tabular}\right) \\
+            &= \varphi(a + bi + cj + dk)\varphi(e + fi + gj + hk) \\
+            &= \varphi(x)\varphi(y).
+      \end{align*}
+
+      \textbf{injectivity of $\varphi$:} Suppose $\varphi(x) = \varphi(y)$. By 
+      equating corresponding entries in the matrices $\varphi(x)$ and
+      $\varphi(y)$, we shall get that $a = e$, $b = f$, $c = g$, and $d = f$, so 
+      that $x = y$, and thus, $\varphi$ is one-to-one. Conclude that $M_4(\R)$
+      has a subring that is isomorphic to $\mathbb{H}$.
+
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.15]  Let $X$ be a nonempty set and let $\mathcal{P}(X)$ be the
                   Boolean ring of all subsets of $X$ defined in Exercise 7.1.21.
@@ -529,10 +803,93 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   $A$ with values in $\Z/2\Z$). Prove that the map
                   $\mathcal{P}(X) \rightarrow R$ defined by $A \mapsto \chi_A$
                   is a ring isomorphism.
+
+      \textbf{Proof.} Consider $\varphi : \mathcal{P}(X) \rightarrow R$, defined 
+      by $A \mapsto \chi_A$. First we will show that $\varphi$ is a ring
+      homomorphism. So let $A$ and $B$ be subsets of $X$.
+
+      \textbf{additivity of $\varphi$:} Observe that
+      $\varphi(A + B) = \varphi(A) + \varphi(B)$ if and only if
+      $\chi_{A+B} = \chi_A + \chi_B$ if and only if
+      $\chi_{A+B}(x) = \chi_A(x) + \chi_B(x)$ for every $x \in X$. So let
+      $x \in X$.
+
+      \textbf{Case 1.} $x \in A$ and $x \in B$. Thus $x \notin A + B$, and we
+      have that
+      $$\chi_{A+B}(x) = 0 = 1 + 1 = \chi_A(x) + \chi_B(x).$$
+
+      \textbf{Case 2.} $x \in A$ and $x \notin B$. Thus $x \in A + B$, and we
+      have that
+      $$\chi_{A+B}(x) = 1 = 1 + 0 = \chi_A(x) + \chi_B(x).$$
+
+      \textbf{Case 3.} $x \notin A$ and $x \in B$. Thus $x \in A + B$, and we
+      have that
+      $$\chi_{A+B}(x) = 1 = 0 + 1 = \chi_A(x) + \chi_B(x).$$
+
+      \textbf{Case 4.} $x \notin A$ and $x \notin B$. Thus $x \notin A + B$, and 
+      we have that
+      $$\chi_{A+B}(x) = 0 = 0 + 0 = \chi_A(x) + \chi_B(x).$$
+
+      Thus $\chi_{A+B}(x) = \chi_A(x) + \chi_B(x)$ for every $x \in X$ so that
+      $\varphi(A + B) = \varphi(A) + \varphi(B)$. \\
+
+      \textbf{multiplicativity of $\varphi$:} Observe that
+      $\varphi(AB) = \varphi(A)\varphi(B)$ if and only if
+      $\chi_{AB} = \chi_A\chi_B$ if and only if
+      $\chi_{AB}(x) = \chi_A(x)\chi_B(x)$ for every $x \in X$. So let
+      $x \in X$.
+
+      \textbf{Case 1.} $x \in A$ and $x \in B$. Thus $x \in AB$, and we
+      have that
+      $$\chi_{AB}(x) = 1 = 1 \cdot 1 = \chi_A(x)\chi_B(x).$$
+
+      \textbf{Case 2.} $x \in A$ and $x \notin B$. Thus $x \notin AB$, and we
+      have that
+      $$\chi_{AB}(x) = 0 = 1 \cdot 0 = \chi_A(x)\chi_B(x).$$
+
+      \textbf{Case 3.} $x \notin A$ and $x \in B$. Thus $x \notin AB$, and we
+      have that
+      $$\chi_{AB}(x) = 0 = 0 \cdot 1 = \chi_A(x)\chi_B(x).$$
+
+      \textbf{Case 4.} $x \notin A$ and $x \notin B$. Thus $x \notin AB$, and 
+      we have that
+      $$\chi_{AB}(x) = 0 = 0 \cdot 0 = \chi_A(x)\chi_B(x).$$
+
+      Thus $\chi_{AB}(x) = \chi_A(x)\chi_B(x)$ for every $x \in X$ so that
+      $\varphi(AB) = \varphi(A)\varphi(B)$. We conclude that $\varphi$ is a ring
+      homomorphism. Now we must show that $\varphi$ is a bijection.
+
+      \textbf{injectivity of $\varphi$:} Suppose that $\varphi(A) = \varphi(B)$.
+      That is $\chi_A(x) = \chi_B(x)$ for every $x \in X$. Now if $y \in A$ we
+      have that $\chi_A(y) = 1$; since $\chi_A = \chi_B$, it follows that
+      $\chi_B(y) = 1$, so that $y \in B$, and we conclude that $A \subseteq B$.
+      Similarly, by symmetry, we have that $B \subseteq A$, so that $A = B$, and
+      hence $\varphi$ is injective. 
+
+      \textbf{surjectivity of $\varphi$:} Let $f \in R$. Let
+      $C = \{w \in X : f(w) = 1\}$. It follows that $\varphi$ is onto because
+      $\varphi(C) = f$.
+   
+      Conclude that $\mathcal{P}(X) \cong R$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.16]  Let $\varphi : R \rightarrow S$ be a surjective homomorphism
                   of rings. Prove that the image of the center of $R$ is
                   contained in the center of $S$ (cf. Exercise 7.1.7).
+
+      \textbf{Proof.} Let $Z_R$ be the center of $R$. We want to show that
+      $\varphi(Z_R)$ is in the center of $S$; i.e., every element in the image 
+      of $\varphi$ commutes with every element of $S$. So let $s \in S$ and
+      $y \in \varphi(Z_R)$; thus $y = \varphi(r)$ for some $r \in Z_R$ and since
+      $\varphi$ is onto, there exists $x \in R$ such that $s = \varphi(x)$. So
+      \begin{align*}
+         ys &= \varphi(r)\varphi(x) \\
+            &= \varphi(rx) &[\varphi \text{ is a ring homomorphism}] \\
+            &= \varphi(xr) &[r \in Z_R] \\
+            &= \varphi(x)\varphi(r) &[\varphi \text{ is a ring homomorphism}] \\
+            &= sy,
+      \end{align*}
+      so that every element in the image of $\varphi$ commutes with every
+      element of $S$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.17]  Let $R$ and $S$ be nonzero rings with identity and denote
                   their respective identities by $1_R$ and $1_S$. Let
@@ -549,6 +906,38 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            $\varphi(u^{-1}) = \varphi(u)^{-1}$ for each unit $u$ 
                            of $R$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} Suppose that $\varphi(1_R) \neq 1_S$. Now we have
+               that $$\varphi(1_R) = \varphi(1_R \cdot 1_R) =
+                     \varphi(1_R)\varphi(1_R),$$
+               so that $\varphi(1_R)(\varphi(1_R) - 1_S) = 0$. If
+               $\varphi(1_R) = 0$, then since
+               $$\varphi(r) = \varphi(r \cdot 1_R) = \varphi(x)\varphi(1_R) =0$$ 
+               for every $r \in R$, it follows that $\varphi$ is the zero 
+               homomorphism, a contradiction. Thus $\varphi(1_R) \neq 0$. We
+               thus conclude from the equality
+               $\varphi(1_R)(\varphi(1_R) - 1_S) = 0$ that $\varphi(1_R)$ is a
+               zero divisor. Now suppose $S$ is an integral domain; in this
+               case, it follows that $\varphi(1_R) = 0$ or
+               $\varphi(1_R) - 1_S = 0$. That is, either $\varphi$ is the zero
+               homomorphism or $\varphi$ maps $1_R$ to $1_S$. Since $\varphi$ is
+               nonzero, we are forced to conclude that $\varphi(1_R) = 1_S$.
+               \qed
+         \item \textbf{Proof.} Suppose $\varphi(1_R) = 1_S$ and let $u$ be a
+               unit in $R$. It follows that
+               \begin{align*}
+                  \varphi(u)\varphi(u^{-1}) &= \varphi(uu^{-1}) \\
+                     &= \varphi(1_R) \\
+                     &= 1_S \\
+                     &= \varphi(1_R) \\
+                     &= \varphi(u^{-1}u) \\
+                     &= \varphi(u^{-1})\varphi(u),
+               \end{align*}
+               so that $\varphi(u^{-1}) = \varphi(u)^{-1}$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.18]  \begin{enumerate}
                      \item If $I$ and $J$ are ideals of $R$ prove that their
@@ -557,14 +946,61 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            collection of ideals is again an ideal (do not assume
                            that the collection is countable).
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} Let $M = \{1, 2\}$, $R_1 = I$, $R_2 = J$. It
+               follows by (b) that $I \cap J = R_1 \cap R_2$ is an ideal of $R$. 
+               \qed
+         \item \textbf{Proof.} Let $M$ be a nonempty indexing set such that
+               $R_m$ is an ideal of $R$ for every $m \in M$. Let
+               $X = \bigcap_{m\in M}R_m$. We claim that $M$ is an ideal of $R$.
+
+               \textbf{nonempty and closure under addition:} This follows from
+               Exercise 2.1.10(b) \\
+
+               \textbf{closure under multiplication by elements of $R$:} Let
+               $r \in R$ and $n \in M$, so that $n \in R_m$ for every $m \in M$.
+               Since each $R_m$ is an ideal of $R$, it follows that
+               $rn, nr \in R_m$ for each $m \in M$, so that $rn, rn \in M$, and
+               thus, $M$ is closed under multiplication by elements of $R$. \\
+
+               Conclude that $M$ is an ideal of $R$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.19]  Prove that if $I_1 \subseteq I_2 \subseteq \cdots$ are ideals
                   of $R$ then $\cup_{n=1}^\infty I_n$ is an ideal of $R$.
+
+      \textbf{Proof.} Suppose that $I_1 \subseteq I_2 \subseteq \cdots$ are 
+      ideals of $R$. Let $I = \cup_{n=1}^\infty I_n$. We want to show that $I$
+      is an ideal of $R$. The set $I$ is nonempty because $I_1$ is nonempty and
+      is a subset of $I$. So let $x, y \in I$. It follows that $x = I_i$ and
+      $y = I_j$ for some positive integers $i$ and $j$. Assume without loss of 
+      generality that $i \le j$.
+
+      \textbf{closure under addition:} Since $i \le j$, we have that
+      $I_i \subseteq I_j$, so that $x \in I_j$. Since $I_j$ is an ideal, it 
+      follows that $x + y \in I_j$; thus $x+y \in I$ because $I_j \subseteq I$.
+
+      \textbf{closure under multiplication by elements of $R$:} Let $r \in R$.
+      Since $I_i$ is an ideal, it follows that $rx, xr \in I_i$, so that
+      $rx, xr \in I$. \\
+
+      It follows that $I$ is an ideal of $R$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.20]  Let $I$ be an ideal of $R$ and let $S$ be a subring of $R$.
                   Prove that $I \cap S$ is an ideal of $S$. Show by example that
                   not every ideal of a subring $S$ of a ring $R$ need be of the
                   form $I \cap S$ for some ideal $I$ of $R$.
+
+      \textbf{Proof.} By Exercise 2.1.10(a), it follows that $I \cap S$ is
+      nonempty and closed under addition. So it remains to show that $I \cap S$
+      is closed under multiplication by elements of $S$. Let $s \in S$ and
+      $x \in I \cap S$. Now $x \in S$, so $xs, sx \in S$ by closure of $S$ under
+      multiplication. Since $I$ is an ideal of $R$, $x \in I$ and $s \in S$ 
+      imply that $sx, xs \in I$; thus $xs, sx \in I \cap S$, so that $I \cap S$ 
+      is an ideal of $S$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.21]  Prove that every (two-sided) ideal of $M_n(R)$ is equal to
                   $M_n(J)$ for some (two-sided) ideal $J$ of $R$. [Use Exercise
