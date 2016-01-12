@@ -1,7 +1,7 @@
 Let $R$ be a ring with identity $1 \neq 0$.
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.1]   Let $L_{ij}$ be the left ideal of $M_n(R)$ consisting of
+   \item[7.4.1]   Let $L_j$ be the left ideal of $M_n(R)$ consisting of
                   arbitrary entries in the $j^{\text{th}}$ column and zero in
                   all other entries and let $E_{ij}$ be the element of $M_n(R)$
                   whose $i, j$ entry is 1 and whose other entries are all 0. 
@@ -16,8 +16,8 @@ Let $R$ be a ring with identity $1 \neq 0$.
    \item[7.4.3]   \begin{enumerate}
                      \item Let $p$ be a prime and let $G$ be an abelian group of
                            order $p^n$. Prove that the nilradical of the group
-                           $\F_pG$ is the augmentation ideal
-                           (cf. Exercise 7.3..29). [Use the preceding exercise.]
+                           ring $\F_pG$ is the augmentation ideal
+                           (cf. Exercise 7.3.29). [Use the preceding exercise.]
                      \item Let $G = \{g_1, \ldots, g_n\}$ be the finite group
                            and assume $R$ is commutative. Prove that if $r$ is
                            any element of the augmentation ideal of $RG$ then
@@ -29,7 +29,7 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   only if 0 is a maximal ideal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.5]   Prove that if $M$ is an ideal such that $R/M$ is a field then
-                  $M$ is a maximal ideal (do not asssume $R$ is commutative)
+                  $M$ is a maximal ideal (do not asssume $R$ is commutative).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.6]   Prove that $R$ is a division ring if and only if its only left
                   ideals are (0) and $R$. (The analogous result holds when
@@ -71,12 +71,12 @@ Let $R$ be a ring with identity $1 \neq 0$.
                      \item Prove that if $P$ is a prime ideal of $S$ then either
                            $\varphi^{-1}(P) = R$ or $\varphi^{-1}(P)$ is a prime
                            ideal of $R$. Apply this to the special case when $R$
-                           is a subring of $S$ and $\varphi$ is the includsion
+                           is a subring of $S$ and $\varphi$ is the inclusion
                            homomorphism to deduce that if $P$ is a prime ideal
                            of $S$ then $P \cap R$ is either $R$ or a prime ideal
                            of $R$.
                      \item Prove that if $M$ is a maximal ideal of $S$ and
-                           $\varphi$ is surjective then $\varphi{-1}(M)$ is a
+                           $\varphi$ is surjective then $\varphi^{-1}(M)$ is a
                            maximal ideal of $R$. Give an example to show that 
                            this need not be the case if $\varphi$ is not
                            surjective.
@@ -93,9 +93,16 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            $$R[x]/(f(x)) = \{\overline{a_0} + \overline{a_1x}
                              + \cdots + \overline{a_{n-1}x^{n-1}} : a_0, a_1, 
                              \ldots, a_{n-1} \in R\}.$$
+                           [If $f(x) = x^n + b_{n-1}x^{n-1} + \cdots + b_0$ then
+                           $\overline{x^n}$ =
+                           $\overline{-(b_{n-1}x^{n-1} + \cdots + b_0)}$. Use
+                           this to reduce powers of $\overline{x}$ in the
+                           quotient ring.]
                      \item Prove that if $p(x)$ and $q(x)$ are distinct
                            polynomials in $R[x]$ which are both of degree less
                            than $n$, then $\overline{p(x)} \neq\overline{q(x)}$.
+                           [Otherwise $p(x) - q(x)$ is an $R[x]$-multiple of the
+                           monic polynomial $f(x)$.]
                      \item If $f(x) = a(x)b(x)$ where both $a(x)$ and $b(x)$
                            have degree less than $n$, prove that
                            $\overline{a(x)}$ is a zero divisor in $R[x]/(f(x))$.
@@ -104,12 +111,13 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            $R[x]/(f(x))$.
                      \item Let $p$ be a prime, assume $R = \F_p$ and
                            $f(x) = x^p - a$ for some $a \in \F_p$. Prove that
-                           $\overline{x-a}$ is nilpotent in $R[x]/(f(x))$.
+                           $\overline{x-a}$ is nilpotent in $R[x]/(f(x))$. [Use
+                           7.3.26(c).]
                   \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.15]  Let $x^2 + x + 1$ be an element of the polynomial ring
                   $E = \F_2[x]$ and use the bar notation to denote passage to 
-                  the quotient ring $F_2[x]/(x^2 + x + 1)$.
+                  the quotient ring $\F_2[x]/(x^2 + x + 1)$.
                   \begin{enumerate}
                      \item Prove that $\overline{E}$ has 4 elements:
                            $\overline{0}$, $\overline{1}$, $\overline{x}$, and
@@ -131,11 +139,11 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            to $7x^{13} - 11x^9 + 5x^5 - 2x^3 + 3$ modulo
                            $(x^4 - 16)$.
                      \item Prove that $\overline{x - 2}$ and $\overline{x + 2}$
-                           are zero divisors in $\overline{E}$/
+                           are zero divisors in $\overline{E}$.
                   \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.17]  Let $x^3 - 2x + 1$ be an element of the polynomial ring
-                  $E = \Z[x}$ and use the bar notation to denote passage to the
+                  $E = \Z[x]$ and use the bar notation to denote passage to the
                   quotient ring $\Z[x]/(x^3 - 2x + 1)$. Let
                   $p(x) = 2x^7 - 7x^5 + 4x^3 - 9x + 1$ and let
                   $q(x) = (x - 1)^4$.
@@ -143,9 +151,9 @@ Let $R$ be a ring with identity $1 \neq 0$.
                      \item Express each of the following elements of
                            $\overline{E}$ in the form $\overline{f(x)}$ for some
                            polynomial $f(x)$ of degree $\le 2$:
-                           $$\overline{p(x)}, \overline{q(x)},
+                           $\overline{p(x)}, \overline{q(x)},
                              \overline{p(x) + q(x)}, \text{ and }
-                             \overline{p(x)q(x)}.$$
+                             \overline{p(x)q(x)}$.
                      \item Prove that $\overline{E}$ is not an integral domain.
                      \item Prove that $\overline{x}$ is a unit in
                            $\overline{E}$.
@@ -154,7 +162,7 @@ Let $R$ be a ring with identity $1 \neq 0$.
    \item[7.4.18]  Prove that if $R$ is an integral domain and $R[[x]]$ is the
                   ring of formal power series in the indeterminate $x$ then the
                   principal ideal generated by $x$ is a prime ideal
-                  (cf Exercise 7.2.3). Prove that the principal ideal generated
+                  (cf. Exercise 7.2.3). Prove that the principal ideal generated
                   by $x$ is a maximal ideal if and only if $R$ is a field.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.19]  Let $R$ be a finite commutative ring with identity. Prove that
@@ -165,7 +173,7 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   Corollary 3, so do not assume the ring has a 1).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.21]  Prove that a finite ring with identity $1 \neq 0$ that has no
-                  zero divisors is a field (you may qupte Wedderburn's Theorem).
+                  zero divisors is a field (you may quote Wedderburn's Theorem).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.22]  Let $p \in \Z^+$ be a prime and let the $\F_p$ Quaternions be
                   defined by
@@ -184,127 +192,173 @@ Let $R$ be a ring with identity $1 \neq 0$.
    \item[7.4.23]  Prove that in a Boolean ring (cf. Exercise 7.1.15) every prime
                   ideal is a maximal ideal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.24]  Let $\varphi : R \rightarrow S$ be a ring homomorphism.
-                  \begin{enumerate}
-                     \item Prove that if $J$ is an ideal of $S$ then
-                           $\varphi^{-1}(J)$ is an ideal of $R$. Apply this to
-                           the special case when $R$ is a subring of $S$ and
-                           $\varphi$ is the inclusion homomorphism to deduce
-                           that if $J$ is an ideal of $S$ then $J \cap R$ is an
-                           ideal of $R$.
-                     \item Prove that if $\varphi$ is surjective and $I$ is an
-                           ideal of $R$ then $\varphi(I)$ is an ideal of $S$.
-                           Give an example where this fails if $\varphi$ is not
-                           surjective.
-                  \end{enumerate}
+   \item[7.4.24]  Prove that in a Boolean ring every finitely generated ideal is
+                  principal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.25]  Assume $R$ is a commutative ring with 1. Prove that the
-                  Binomial Theorem
-                  $$(a + b)^n = \sum_{k=0}^n\binom{n}{k}a^kb^{n-k}$$
-                  holds in $R$, where the binomial coefficient $\binom{n}{k}$ is
-                  interpreted in $R$ as the sum $1 + 1 + \cdots + 1$ of the
-                  identity 1 in $R$ taken $\binom{n}{k}$ times.
+   \item[7.4.25]  Assume $R$ is commutative and for each $a \in R$ there is an
+                  integer $n > 1$ (depending on $a$) such that $a^n = a$. Prove
+                  that every prime ideal of $R$ is a maximal ideal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.26]  The \textit{characteristic} of a ring $R$ is the smallest
-                  positive integer $n$ such that $1 + 1 + \cdots + 1 = 0$
-                  ($n$ times) in $R$; if no such integer exists the 
-                  characteristic of $R$ is said to be 0. For example,
-                  $\Z/n\Z$ is a ring of characteristic $n$ for each positive 
-                  integer $n$ and $\Z$ is a ring of characteristic 0.
-                  \begin{enumerate}
-                     \item Prove that the map $\Z \rightarrow R$ defined by
-                           \begin{equation*}
-                              k \mapsto \left\{
-                                 \begin{array}{ll}
-                                    1 + 1 + \cdots + 1 (k \text{ times}) &
-                                       \text{if } k > 0 \\
-                                    0 & \text{if } k = 0 \\
-                                    -1 - 1 - \cdots - 1 (-k \text{ times}) &
-                                       \text{if } k < 0
-                                 \end{array} \right.
-                           \end{equation*}
-                           is a ring homomorphism whose kernel is $n\Z$, where
-                           $n$ is the characteristic of $R$ (this explains the
-                           use of the terminology ``characteristic 0" instead of
-                           the archaic phrase ``characteristic $\infty$" for
-                           rings in which no sum of 1's is zero).
-                     \item Determine the characteristics of the rings $\Q$,
-                           $\Z[x]$, $\Z/n\Z[x]$.
-                     \item Prove that if $p$ is a prime and if $R$ is a
-                           commutative ring of characteristic $p$, then
-                           $(a + b)^p = a^p + b^p$ for all $a, b \in R$.
-                  \end{enumerate}
+   \item[7.4.26]  Prove that a prime ideal in a commutative ring $R$ contains
+                  every nilpotent element (cf. Exercise 7.1.13). Deduce that the
+                  nilradical of $R$ (cf. Exercise 7.3.29) is contained in the
+                  intersection of all the prime ideals of $R$. (It is shown in
+                  Section 15.2 that the nilradical of $R$ is equal to the
+                  intersection of all prime ideals of $R$.)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.27]  Prove that a nonzero Boolean ring has characteristic 2
-                  (cf. Exericse 7.1.15).
+   \item[7.4.27]  Let $R$ be a commutative ring with $1 \neq 0$. Prove that if
+                  $a$ is a nilpotent element of $R$ then $1 - ab$ is a unit for
+                  all $b \in R$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.28]  Prove that an integral domain has characteristic $p$, where
-                  $p$ is either a prine or 0 (cf Exercise 7.4.26).
+   \item[7.4.28]  Prove that if $R$ is a commutative ring and
+                  $N = (a_1, a_2, \ldots, a_m)$ where each $a_i$ is a nilpotent
+                  element, then $N$ is a nilpotent ideal (cf. Exercise 7.3.37).
+                  Deduce that if the nilradical of $R$ is finitely generated
+                  then it is a nilpotent ideal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.29]  Let $R$ be a commutative ring. Recall (cf. Exercise 7.1.13)
-                  that an element $x \in R$ is nilpotent if $x^n = 0$ for some
-                  $n \in \Z^+$. Prove that the set of nilpotent elements form an 
-                  ideal---called the \textit{nilradical} of $R$ and denoted by
-                  $\mathfrak{N}(R)$. [Use the Binomial Theorem to show
-                  $\mathfrak{N}(R)$ is closed under addition.]
+   \item[7.4.29]  Let $p$ be a prime and let $G$ be a finite group of order a
+                  power of $p$ (i.e., a $p$-group). Prove that the augmentation
+                  ideal in the group ring $\Z/p\Z G$ is a nilpotent ideal. (Note
+                  that this ring may be noncommutative.) [Use Exercise 7.4.2]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.30]  Prove that if $R$ is a commutative ring and $\mathfrak{N}(R)$
-                  is its nilradical (cf. the preceding exercise) then zero is
-                  the only nilpotent element of $R/\mathfrak{N}(R)$ i.e., prove
-                  that $\mathfrak{N}(R/\mathfrak{N}(R)) = 0$.
+   \item[7.4.30]  Let $I$ be an ideal of the commutative ring $R$ and define
+                  $$\text{rad }I = \{r \in R : r^n \in I
+                    \text{ for some }n \in \Z^+\}$$
+                  called the \textit{radical} of $I$. Prove that rad $I$ is an
+                  ideal containing $I$ and that $(\text{rad }I)/I$ is the
+                  nilradical of the quotient ring $R/I$, i.e.,
+                  $(\text{rad} I)/I = \mathfrak{N}(R/I)$ (cf. Exercise 7.3.29).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.31]  Prove that the elements $\left(\begin{tabular}{@{}cc@{}}
-                     0 & 1 \\
-                     0 & 0
-                  \end{tabular}\right)$ and $\left(\begin{tabular}{@{}cc@{}}
-                     0 & 0 \\
-                     1 & 0
-                  \end{tabular}\right)$ are nilpotent elements of $M_2(\Z)$
-                  whose sum is not nilpotent (note that these two matrices do
-                  not commute). Deduce that the set of nilpotent elements in the
-                  noncommutative ring $M_2(\Z)$ is not an ideal.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.32]  Let $\varphi : R \rightarrow S$ be a homomorphism of rings.
-                  Prove that if $x$ is a nilpotent element of $R$ then
-                  $\varphi(x)$ is nilpotent in $S$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.33]  Assume $R$ is commutative. Let
-                  $p(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ be an
-                  element of the polynomial ring $R[x]$.
+   \item[7.4.31]  An ideal $I$ of the commutative ring $R$ is called a
+                  \textit{radical ideal} if rad $I = I$.
                   \begin{enumerate}
-                     \item Prove that $p(x)$ is unit in $R[x]$ if and only if
-                           $a_0$ is a unit and $a_1, a_2, \ldots, a_n$ are
-                           nilpotent in $R$. [See Exercise 7.1.14]
-                     \item Prove that $p(x)$ is nilpotent in $R[x]$ if and only
-                           if $a_0, a_1, \ldots, a_n$ are nilpotent elements of
-                           $R$.
+                     \item Prove that every prime ideal of $R$ is a radical
+                           ideal.
+                     \item Let $n > 1$ be an integer. Prove that 0 is a radical
+                           ideal in $\Z/n\Z$ if and only if $n$ is a product of
+                           distinct primes to the first power (i.e., $n$ is
+                           square free). Deduce that $(n)$ is a radical ideal of
+                           $\Z$ if and only if $n$ is a product of distinct
+                           primes in $\Z$.
                   \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.34]  Let $I$ and $J$ be ideals of $R$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.4.32]  Let $I$ be an ideal of the commutative ring $R$ and define
+                  $$\text{Jac $I$ to be the intersection of all maximal ideals
+                     of $R$ that contain $I$}$$
+                  where the convention is that Jac $R = R$. (If $I$ is the zero
+                  ideal, Jac 0 is called the \textit{Jacobson radical} of the
+                  ring $R$, so Jac $I$ is the preimage in $R$ of the Jacobson
+                  radical of $R/I$.)
                   \begin{enumerate}
-                     \item Prove that $I + J$ is the smallest ideal of $R$
-                           containing both $I$ and $J$.
-                     \item Prove that $IJ$ is an ideal contained in $I \cap J$.
-                     \item Give an example where $IJ \neq I \cap J$.
-                     \item Prove that if $R$ is commutative and if $I + J = R$
-                           then $IJ = I \cap J$.
+                     \item Prove that Jac $I$ is an ideal of $R$ containing $I$.
+                     \item Prove that $\text{rad } I \subseteq \text{Jac }I$,
+                           where rad $I$ is the radical of $I$ defined in
+                           Exercise 7.4.30.
+                     \item Let $n > 1$ be an integer. Describe Jac $n\Z$ in
+                           terms of the prime factorization of $n$.
+                  \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.4.33]  Let $R$ be the ring of all continuous functions from the
+                  closed interval $[0, 1]$ to $\R$ and for each $c \in [0, 1]$
+                  let $M_c = \{f \in R : f(c) = 0\}$ (recall that $M_c$ was
+                  shown to be a maximal ideal of $R$).
+                  \begin{enumerate}
+                     \item Prove that if $M$ is \textit{any} maximal ideal of
+                           $R$ then there is a real number $c \in [0, 1]$ such
+                           that $M = M_c$.
+                     \item Prove that if $b$ and $c$ are distinct points in
+                           $[0, 1]$ then $M_b \neq M_c$.
+                     \item Prove that $M_c$ is not equal to the principal ideal
+                           generated by $x - c$.
+                     \item Prove that $M_c$ is not a finitely generated ideal.
+                  \end{enumerate}
+\end{enumerate}
+
+\noindent The preceding exercise shows that there is a bijection between the
+\textit{points} of the closed interval $[0, 1]$ and the set of
+\textit{maximal ideals} in the ring $R$ of all continuous functions on $[0, 1]$
+given by $c \leftrightarrow M_c$. For any subset $X$ of $\R$ or, more generally,
+for any completely regular topological space $X$, the map $c \mapsto M_c$ is an
+\textit{injection} from $X$ to the set of maximal ideals of $R$, where $R$ is
+the ring of all bounded continuous real valued functions on $X$ and $M_c$ is the 
+maximal ideal of functions that vanish at $c$. Let $\beta(X)$ be the set of
+maximal ideals of $R$. One can put a topology on $\beta(X)$ in such a way that
+if we identity $X$ with its image in $\beta(X)$ then $X$ (in its given topology)
+becomes a subspace of $\beta(X)$. Moreover, $\beta(X)$ is a compact space under
+this topology and is called the \textit{Stone-$\check{C}$ech compactification}
+of $X$.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.4.34]  Let $R$ be the ring of all continuous functions from $\R$ to
+                  $\R$ and for each $c \in \R$ let $M_c$ be the maximal ideal
+                  $\{f \in R : f(c) = 0\}$.
+                  \begin{enumerate}
+                     \item Let $I$ be the collection of functions $f(x)$ in $R$
+                           with \textit{compact support} (i.e., $f(x) = 0$ for
+                           $|x|$ sufficiently large). Prove that $I$ is an ideal
+                           of $R$ that is not a prime ideal.
+                     \item Let $M$ be a maximal ideal of $R$ containing $I$
+                           (properly, by (a)). Prove that $M \neq M_c$ for any
+                           $c \in \R$ (cf. the preceding exercise).
                   \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.35]  Let $I, J, K$ be ideals of $R$.
-                  \begin{enumerate}
-                     \item Prove that $I(J + K) = IJ + IK$ and
-                           $(I + J)K = IK + JK$.
-                     \item Prove that if $J \subseteq I$ then
-                           $I \cap (J + K) = J + (I \cap K)$.
-                  \end{enumerate}
+   \item[7.4.35]  Let $A = (a_1, a_2, \ldots, a_n)$ be a nonzero finitely
+                  generated ideal of $R$. Prove that there is an ideal $B$ which
+                  is maximal with respect to the property that it does not
+                  contained $A$. [Use Zorn's Lemma.]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.4.36]  Assume $R$ is commutative. Prove that the set of prime ideals
+                  in $R$ has a minimal element with respect to inclusion
+                  (possibly the zero ideal). [Use Zorn's Lemma.]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.36]  Show that if $I$ is the ideal of all polynomials in $\Z[x]$
-                  with zero constant term then $I^n = \{a_nx^n + a_{n+1}x^{n+1} 
-                  + \cdots + a_{n+m}x^{n+m} : a_i \in \Z, m \ge 0\}$ is the set
-                  of polynomials whose first nonzero term has degree at least
-                  $n$.
+   \item[7.4.37]  A commutative ring $R$ is called a \textit{local ring} if it
+                  has a unique maximal ideal. Prove that if $R$ is a local ring
+                  with maximal ideal $M$ then every element of $R - M$ is a
+                  unit. Prove conversely that if $R$ is a commutative ring with
+                  1 in which the set of nonunits forms an ideal of $M$, then $R$
+                  is a local ring with unique maximal ideal $M$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.37%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[7.4.37]  An ideal $N$ is called $\textit{nilpotent}$ if $N^n$ is the
-                  zero ideal for some $n \ge 1$. Prove that the ideal
-                  $p\Z/p^m\Z$ is a nilpotent ideal in the ring $\Z/p^m\Z$.
+   \item[7.4.38]  Prove that the ring of all rational numbers whose denominators
+                  is odd is a local ring whose unique maximal ideal is the
+                  principal ideal generated by 2.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.39%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.4.39]  Following the notation of Exercise 7.1.26, ket $K$ be a field,
+                  let $\nu$ be a discrete valuation on $K$ and let $R$ be the
+                  valuation ring of $\nu$. For each integer $k \ge 0$ define
+                  $A_k = \{r \in R : \nu(r) \ge k\} \cup \{0\}$.
+                  \begin{enumerate}
+                     \item Prove that $A_k$ is a principal ideal and that
+                           $A_0 \supseteq A_1 \supseteq A_2 \supseteq \cdots$.
+                     \item Prove that if $I$ is any nonzero ideal of $R$, then
+                           $I = A_k$ for some $k \ge 0$. Deduce that $R$ is a
+                           local ring with unique maximal ideal $A_1$.
+                  \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.40%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.4.40]  Assume $R$ is commutative. Prove that the following are
+                  equivalent: (see also Exercises 7.1.13 and 7.1.14)
+                  \begin{enumerate}\renewcommand{\labelenumii}{(\roman{enumii})}
+                     \item $R$ has exactly one prime ideal
+                     \item every element of $R$ is either nilpotent or a unit
+                     \item $R/\mathfrak{N}(R)$ is a field (cf. Exercise 7.3.29).
+                  \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.41%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \item[7.4.41]  A proper ideal $Q$ of the commutative ring $R$ is called
+                  \textit{primary} if whenever $ab \in Q$ and $a \notin Q$ then
+                  $b^n \in Q$ for some positive integer $n$. (Note the symmetry
+                  between $a$ and $b$ in this definition implies that if $Q$ is
+                  a primary ideal and $ab \in Q$ with \textit{neither} $a$ nor
+                  $b$ in $Q$, then a positive power of $a$ and a positive power
+                  of $b$ both lie in $Q$.) Establish the following facts about
+                  primary ideals.
+                  \begin{enumerate}
+                     \item The primary ideals of $\Z$ are 0 and $(p^n)$, where
+                           $p$ is a prime and $n$ is a positive integer.
+                     \item Every prime ideal of $R$ is a primary ideal.
+                     \item An ideal $Q$ of $R$ is primary if and only if every
+                           zero divisor in $R/Q$ is a nilpotent element of
+                           $R/Q$.
+                     \item If $Q$ is a primary ideal then rad($Q$) is a prime
+                           ideal (cf. Exercise 7.4.30).
+                  \end{enumerate}
 \end{enumerate}
