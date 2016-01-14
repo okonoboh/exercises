@@ -1,7 +1,6 @@
 Let $R$ be a ring with identity $1 \neq 0$.
 
 %%%%%%%%%%%%%%%%%%10c is wrong%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%counterexample of 20%%%%%%%%%%%%%%
 
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1001,11 +1000,42 @@ Let $R$ be a ring with identity $1 \neq 0$.
       multiplication. Since $I$ is an ideal of $R$, $x \in I$ and $s \in S$ 
       imply that $sx, xs \in I$; thus $xs, sx \in I \cap S$, so that $I \cap S$ 
       is an ideal of $S$. \qed
+
+      \textbf{Counterexample.} Let $R = \Q$ and $S = \Z$. By Proposition 7.9(2),
+      the ideals of $R$ are $\{0\}$ and $R$. Thus, for every ideal $I$ of $R$,
+      $I \cap S \in \{\{0\}, S\}$; observe that $3S$ is an ideal in $S$ and
+      $3S$ is equal to neither $\{0\}$ nor $S$.
+      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.21]  Prove that every (two-sided) ideal of $M_n(R)$ is equal to
                   $M_n(J)$ for some (two-sided) ideal $J$ of $R$. [Use Exercise
                   6(c) of Section 2 to show first that the set of entries of
                   matrices in an ideal of $M_n(R)$ form an ideal in $R$.]
+
+      \textbf{Proof.} Let $I$ be an ideal of $M_n(R)$ and let
+      $$J = \{a \in R : a \text{ is an entry in }A, \text{ where }A \in I\}.$$
+      We want to show that $J$ is an ideal of $R$. The set $J$ is nonempty
+      because $I$ is nonempty, so let $b, c \in J$.
+
+      \textbf{Closure under subtraction.} By definition of $J$, there exist
+      indices $i, j, k, l$, and matrices $B, C \in I$ such that the $i, j$
+      entry of $B$ is $b$ and the $k, l$ entry of $C$ is c. Let $E_{ps}$ be the
+      matrix in $M_n(R)$ such that its $p, s$ entry is 1 while every other entry 
+      is 0. Since $I$ is an ideal of $M_n(R)$, it follows that
+      $B' = E_{1i}\cdot B\cdot E_{j1}$ and $C' = E_{1k}\cdot C \cdot E_{l1}$
+      are matrices in $I$, so that $B'-C' \in I$. Now conclude that $b-c \in J$
+      because $b-c$ is the 1, 1 entry of $B' - C'$. Thus $J$ is closed under
+      subtraction.
+
+      \textbf{Closure under multiplication by elements of $R$.} Let $r \in R$
+      and let $D$ be the matrix in $M_n(R)$ such that its 1, 1 entry is $r$ and
+      every other entry is 0. Since $I$ is an ideal and $B' \in I$, it follows
+      that $D \cdot B'$ and $B' \cdot D$ are both matrices in $I$. But since the
+      1, 1 entry of the former is $rb$ and that of the latter is $br$, it
+      follows that $rb, br \in J$, so that $J$ is closed by multiplication by
+      elements of $R$.
+
+      Conclude that $J$ is an ideal of $R$. Indeed, $I = M_n(J)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.22]  Let $a$ be an element of the ring $R$.
                   \begin{enumerate}
@@ -1018,10 +1048,70 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            two-sided ideal (called the left \textit{annihilator}
                            of $L$ in $R$).
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item Let $R' = \{x \in R : ax = 0\}$ and $L' = \{y \in R : ya = 0\}$.
+               We claim that $R'$ is a right ideal of $R$. \\
+
+               \textbf{Proof.} We have $a \cdot 0 = 0$, so that $0 \in R'$; that 
+               is, $R'$ is nonempty, so let $x, y \in R'$(i.e., $ax = ay = 0$), 
+               and let $r \in R$.
+
+               \begin{itemize}
+                  \item \textbf{Closure under subtraction.} Since
+                        $$0 = 0 - 0 = ax - ay = a(x - y),$$
+                        it follows that $x - y \in R'$, so that $R'$ is closed 
+                        under subtraction.
+
+                  \item \textbf{Closure under right multiplication by $R$.} 
+                        Because
+                        $$a(xr) = (ax)r = 0 \cdot r = 0,$$
+                        it follows that $xr \in R$, so that $R'$ is closed under 
+                        right multiplication by $R$.
+               \end{itemize}
+
+               We then conclude that $R'$ is a right ideal of $R$, and, by
+               symmetry of arguments, that $L'$ is a left ideal of $R$. \qed
+         \item Let $L$ be a left ideal of $R$ and claim that
+               $I = \{x \in R : xa = 0 \text{ for all } a \in L\}$ is an ideal
+               of $R$. \\
+
+               \textbf{Proof.} We have $0 \cdot a = 0$ for all $a \in L$, so
+               that $0 \in I$; that is, $I$ is nonempty, so let
+               $x, y \in I$(i.e., $xa = ya = 0$ for all $a \in L$), and let
+               $r \in R$.
+
+               \begin{itemize}
+                  \item \textbf{Closure under subtraction.} Since
+                        $$0 = 0 - 0 = xa - ya = (x - y)a,$$
+                        for all $a \in L$, it follows that $x - y \in R'$, so 
+                        that $I$ is closed under subtraction.
+                  \item \textbf{Closure under multiplication by $R$.} Let
+                        $l \in L$, so that $xl = 0$. It follows that
+                        $rx \in I$ because $(rx)l = r(xl) = r \cdot 0 = 0$. Now
+                        $rl \in L$ because $L$ is an ideal of $R$; thus
+                        $0 = x(rl) = (xr)l$, so that $xr \in I$. Thus $I$ is 
+                        closed under multiplication by $R$.
+               \end{itemize}
+
+               We then conclude that $I$ is an ideal of $R$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.23]  Let $S$ be a subring of $R$ and let $I$ be an ideal of $R$.
                   Prove that if $S \cap I = 0$ then $\overline{S} \cong S$,
                   where the bar denotes passage to $R/I$.
+
+      \textbf{Proof.} Suppose that $S \cap I = 0$ and consider the surjective 
+      homomorphism
+      $\pi : S \rightarrow \overline{S}$, defined by $s \mapsto s + I$. It
+      suffices to show that $\pi$ is injective. So suppose that
+      $\pi(x) = \pi(y)$ for some $x, y \in S$. That is, $x + I = y + I$, so that
+      $x - y \in I$. Since $S$ is a ring, it closed under subtraction, so that
+      $x - y \in S$. But the intersection of $I$ and $S$ is trivial; thus,
+      $x - y = 0$, so that $x = y$; that is, $\pi$ is injective. So conclude
+      that $\pi$ is an isomorphism and thus $S \cong \overline{S}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.24]  Let $\varphi : R \rightarrow S$ be a ring homomorphism.
                   \begin{enumerate}
@@ -1036,6 +1126,69 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            Give an example where this fails if $\varphi$ is not
                            surjective.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item Let $J$ be an ideal of $S$. We want to show that
+               $\varphi^{-1}(J)$ is an ideal of $R$.
+
+               \textbf{Proof.} Since $\varphi(0) = 0 \in J$, it follows that
+               $0 \in \varphi^{-1}(J)$, so that $\varphi^{-1}(J)$ is nonempty. 
+               Let $x, y \in \varphi^{-1}(J)$. That is,
+               $\varphi(x), \varphi(y) \in J$.
+               \begin{itemize}
+                  \item \textbf{Closure under subtraction.} Since $J$ is an
+                        ideal, it is closed under subtraction so that 
+                        $\varphi(x - y) = \varphi(x) - \varphi(y) \in J$, and
+                        thus, $x - y \in \varphi^{-1}(J)$. This says that
+                        $\varphi^{-1}(J)$ is closed under subtraction.
+                  \item \textbf{Closure under multiplication by $R$.} Let
+                        $r \in R$. Since $J$ is an ideal of $S$, it follows that
+                        $\varphi(rx) = \varphi(r)\varphi(x) \in J$ and
+                        $\varphi(xr) = \varphi(x)\varphi(r) \in J$, so that
+                        $rx, xr \in \varphi^{-1}(J)$. Thus $\varphi^{-1}(J)$ is
+                        closed under multiplication by $R$.
+               \end{itemize}
+               Conclude that $\varphi^{-1}(J)$ is an ideal of $R$.
+
+               \textbf{Special Case.} Now suppose that $R \subseteq S$ and
+               $\varphi$ is the inclusion homomorphism; that is,
+               $\varphi(t) = t$ for every $t \in R$. In this case, if
+               $x \in \varphi^{-1}(J)$, then $x = \varphi(x) \in J$; since $x$
+               is also in $R$, it follows that $x \in J \cap R$, so that
+               $\varphi^{-1}(J) \subseteq J \cap R$. Now if $j \in J \cap R$,
+               then we particularly have that $j \in R$, so that
+               $\varphi(j) = j$. But $j \in J$; thus $\varphi(j) \in J$, so that
+               $j \in \varphi^{-1}(J)$. Thus
+               $\varphi^{-1}(J) \supseteq J \cap R$. Conclude by main proof that
+               $\varphi^{-1}(J) = J \cap R$ is an ideal of $R$. \qed
+         \item Suppose that $\varphi$ is surjective and let $I$ be an ideal of
+               $R$. We claim that $\varphi(I)$ is an ideal of $S$.
+
+               \textbf{Proof.} Let $x, y \in \varphi(I)$. So $x = \varphi(i_1)$
+               and $y = \varphi(i_2)$ for some $i_1, i_2 \in I$.
+               \begin{itemize}
+                  \item \textbf{Closure under subtraction.} By closure, we have
+                        $i_1 - i_2 \in I$, so that
+                        $$x - y = \varphi(i_1)-\varphi(i_2) =
+                          \varphi(i_1 - i_2)\in \varphi(I).$$
+                        That is, $\varphi(I)$ is closed under subtraction.
+                  \item \textbf{Closure under multiplication by $S$.} Let
+                        $s \in S$. Since $\varphi$ is onto, there exists $r$ in
+                        $R$ such that $\varphi(r) = s$. Now $ri_1 \in I$
+                        because $I$ is an ideal of $R$. Thus
+                        $$sx = \varphi(r)\varphi(i_1) =
+                          \varphi(ri_1) \in \varphi(I).$$
+                        Thus $\varphi(I)$ is closed under multiplication by $S$.
+               \end{itemize}
+
+               Conclude that $\varphi(I)$ is an ideal of $S$.
+
+               \textbf{Example.} Let $R = \Z$, $S = \Q$, and let $\varphi$ be
+               the inclusion homomorphism. Although $2\Z$ is an ideal of $\Z$,
+               $\varphi(2\Z) = 2\Z$ is not an ideal of $\Q$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.25]  Assume $R$ is a commutative ring with 1. Prove that the
                   Binomial Theorem
@@ -1078,7 +1231,7 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   (cf. Exericse 7.1.15).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.28]  Prove that an integral domain has characteristic $p$, where
-                  $p$ is either a prine or 0 (cf Exercise 7.3.26).
+                  $p$ is either a prime or 0 (cf Exercise 7.3.26).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.29]  Let $R$ be a commutative ring. Recall (cf. Exercise 7.1.13)
                   that an element $x \in R$ is nilpotent if $x^n = 0$ for some
