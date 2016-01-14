@@ -1196,6 +1196,44 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   holds in $R$, where the binomial coefficient $\binom{n}{k}$ is
                   interpreted in $R$ as the sum $1 + 1 + \cdots + 1$ of the
                   identity 1 in $R$ taken $\binom{n}{k}$ times.
+
+      \textbf{Proof.} Let $a, b \in R$. We shall proceed by induction on $n$.
+
+      \textbf{Base Case.} $n = 1$.  We have that
+      $$
+         \sum_{k=0}^1\binom{1}{k}a^kb^{1-k} = \binom{1}{0}a^0b^1 +
+            \binom{1}{1}a^1b^0 = b + a = a + b,
+      $$
+      where the last equality follows from the commutativity of $R$. So the
+      Binomial Theorem holds whenever $n = 1$.
+
+      \textbf{Inductive Hypothesis.} Suppose that the Binomial Theorem holds for
+      some positive integer $m$. We must now show that it also holds for $m+1$.
+      Recall this identity from probability:
+      $$\binom{a + 1}{b} = \binom{a}{b} + \binom{a}{b - 1},$$
+      for integers $a$ and $b$; let $\binom{a}{b} = 0$ if $b < 0$ or $b > a$.
+      It follows that
+      \begin{align*}
+         \sum_{k=0}^{m+1}\binom{m+1}{k}a^kb^{m+1-k} &=
+            \sum_{k=0}^{m+1}\left[\binom{m}{k} +
+            \binom{n}{k - 1}\right]a^kb^{m+1-k} \\
+            &= \sum_{k=0}^{m+1}\binom{m}{k}a^kb^{m+1-k} +
+               \sum_{k=0}^{m+1}\binom{m}{k-1}a^kb^{m+1-k} \\
+            &= \binom{m}{m+1}a^{m+1} + \sum_{k=0}^{m}\binom{m}{k}a^kb^{m+1-k} +
+               \sum_{k=0}^{m+1}\binom{m}{k-1}a^kb^{m+1-k} \\
+            &= \sum_{k=0}^{m}\binom{m}{k}a^kb^{m+1-k} + \binom{m}{-1}b^{m+1} + 
+               \sum_{k=1}^{m+1}\binom{m}{k-1}a^kb^{m+1-k} \\
+            &= b\sum_{k=0}^{m}\binom{m}{k}a^kb^{m-k} + 
+               a\sum_{k=1}^{m+1}\binom{m}{k-1}a^{k-1}b^{m+1-k} \\
+            &= b\sum_{k=0}^{m}\binom{m}{k}a^kb^{m-k} + 
+               a\sum_{k=0}^{m}\binom{m}{k}a^{k}b^{m-k} \\
+            &= b(a + b)^m + a(a + b)^m \qquad\qquad
+                  \text[\text{Inductive Hypothesis}] \\
+            &= (a + b)^m(b + a) = (a + b)^{m+1},
+      \end{align*}
+      where the last equality follows from the commutativity of $R$. Thus the
+      Binomial Theorem holds for $m + 1$. We conclude by Induction that it holds
+      for every postive integer $n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.26]  The \textit{characteristic} of a ring $R$ is the smallest
                   positive integer $n$ such that $1 + 1 + \cdots + 1 = 0$
