@@ -1264,12 +1264,142 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            commutative ring of characteristic $p$, then
                            $(a + b)^p = a^p + b^p$ for all $a, b \in R$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} Let $\varphi$ be the map and $1_R$ the identity
+               of $R$. Recall that if $G$ is an additive group, then, according 
+               to Exercise 1.1.19(c)
+               $$(a + b)g = ag + bg$$
+               for every $g \in G$ and integers $a$ and $b$ (see first paragraph
+               on Page 20 for definition of $ag$, where $a \in \Z$ and
+               $g \in G$). Thus it follows that $\varphi(k) = k1_R$ for each 
+               integer $k$. To avoid confusion, we will write $k \cdot r$, 
+               instead of $kr$, where $k \in \Z$ and $r \in R$, and we will use
+               $\times$ to denote the multiplication in $R$ and $S$. We will now
+               show that $\varphi$ is a ring homomorphism.
+               \begin{itemize}
+                  \item \textbf{Additivity of $\varphi$.} For integers $x$ and
+                        $y$, it follows by the definition of $\varphi$ and 
+                        Exercise 1.1.19(c) that
+                        $$\varphi(x + y) = (x + y)\cdot1_R = (x\cdot1_R) +
+                           (y\cdot1_R) = \varphi(x) + \varphi(y);$$
+                        thus $\varphi$ is an additive homomorphism. 
+                  \item \textbf{Multiplicativity of $\varphi$.} For an integer
+                        $n$, let $P(n)$ be the statement that
+                        $\varphi(m \times n) = \varphi(m)\times\varphi(n)$ for
+                        every integer $m$. Now we will first show by induction 
+                        on $n$ that $P(n)$ holds for all $n \ge 1$. So let
+                        $m \in \Z$.
+         
+                        \textbf{Base Case.} $n = 1$. It follows that
+                        $$\varphi(m \times 1) = \varphi(m) = m \cdot 1_R =
+                          (m\cdot1_R) \times 1_R = \varphi(m)\times\varphi(1).$$
+                        So $P(1)$ holds.
+         
+                        \textbf{Inductive Hypothesis.} Suppose $P(k)$ holds for 
+                        some for some positive integer $k$. Now it follows that
+                        \begin{align*}
+                           \varphi(m \times (k+1)) &= \varphi(m \times k + m) \\
+                              &= \varphi(m \times k) + \varphi(m)
+                                 &[\varphi\text{ is an additive homomorphism}]\\
+                              &= \varphi(m) \times \varphi(k) + \varphi(m)
+                                 &[\text{Inductive Hypothesis}] \\
+                              &= \varphi(m) \times (\varphi(k) + 1_R) \\
+                              &= \varphi(m) \times (\varphi(k) + \varphi(1)) \\
+                              &= \varphi(m) \times \varphi(k + 1),
+                              &[\varphi \text{ is an additive homomorphism}] 
+                        \end{align*}
+                        and thus, $P(k + 1)$ holds. It follows by induction that 
+                        $P(n)$ holds for every positive integer $n$; if $n$ is 
+                        0, it follows that
+                        $$\varphi(m \times 0) = \varphi(0) = 0 =
+                          (m \cdot 1_R) \times 0 = \varphi(m)\times\varphi(0),$$
+                        so that $P(0)$ holds. Now suppose that $n < 0$, so that 
+                        $n = -t$ for some positive integer $t$. It follows that
+                        \begin{align*}
+                           \varphi(m \times n) &= \varphi(m \times -t) \\
+                              &= \varphi(-(m \times t)) \\
+                              &= -\varphi(m \times t)
+                                 &[\text{Exercise 1.6.1(b)}] \\
+                              &= -[\varphi(m)\times\varphi(t)]
+                                 &[P(t) \text{ holds}] \\
+                              &= \varphi(m) \times -\varphi(t) \\
+                              &= \varphi(m) \times \varphi(-t)
+                                 &[\text{Exercise 1.6.1(b)}] \\
+                              &= \varphi(m) \times \varphi(n).
+                        \end{align*}
+                        It follows that $P(n)$ holds for every integer $n$, and 
+                        we conclude that $\varphi$ is a ring homomorphism.
+               \end{itemize}
+
+               \textbf{Kernel of $\varphi$.} Let $K$ be the kernel of $\varphi$.
+               If the characteristic of $R$ is 0, then no finite sum of $1_R$
+               equals 0; thus the only integer that maps to $0 \in R$ is
+               $0 \in \Z$, so that $K = 0\Z$; if, however, the characteristic of
+               $R$ is $w \in \Z^+$. Then $w \in K$; indeed, by minimality, $w$
+               is the smallest positive integer in $K$, so that $K = w\Z$. \qed
+         \item The characteristics of the rings $\Q$, $\Z[x]$, and $\Z/n\Z[x]$ 
+               are 0, 0, and $n$ respectively.
+         \item \textbf{Proof.} Suppose $R$ is commutative with a prime 
+               characteristic $p$. Let $a, b \in R$. Let $r$ be a positive 
+               integer that is less than $p$. Since
+               $$\binom{p}{r} = \frac{p(p-1)(p-2)\cdots(p-r+1)}{r!}$$
+               is an integer, it follows that $r!$ divides
+               $p(p-1)(p-2)\cdots(p-r+1)$. Now $\gcd(x, p) = 1$ for every
+               positive integer $x \le r$ because $r < p$. Thus
+               $\gcd(r!, p) = 1$, so that $r! \mid (p-1)(p-2)\cdots(p-r+1)$.
+               Thus $p \mid \binom{p}{r}$, so that $\binom{p}{r} = pt$ for some
+               integer $t$. Hence, using the notations from (a), we have
+               \begin{align*}
+                  \binom{p}{r} &= \underbrace{1_R + \cdots +
+                        1_R}_{p \times t \text{ times}}
+                           &[\text{Definition from Exercise 7.3.25}] \\
+                     &= (p \times t) \cdot 1_R \\
+                     &= \varphi(p \times t) =
+                        \varphi(p)\times\varphi(t) = 0 \times t = 0.
+               \end{align*}
+
+               It follows by the Binomial Theorem (Exercise 7.3.25) that
+               \begin{align*}
+                  (a + b)^p &= \sum_{k=0}^p\binom{p}{k}a^kb^{p-k} \\
+                     &= \binom{p}{0}a^0b^p + \binom{p}{1}ab^{p-1} + \cdots +
+                        \binom{p}{p-1}a^{p-1}b + \binom{p}{p}a^pb^0 \\
+                     &= a^p + b^p + \binom{p}{1}ab^{p-1} +
+                        \binom{p}{2}a^2b^{p-2}\cdots +
+                        \binom{p}{p-1}a^{p-1}b \\
+                     &= a^p + b^p + 0 \times ab^{p-1} + 0 \times a^2b^{p-2}+ 
+                        \cdots + 0 \times a^{p-1}b\\
+                     &= a^p + b^p.
+               \end{align*} \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.27]  Prove that a nonzero Boolean ring has characteristic 2
                   (cf. Exericse 7.1.15).
+
+      \textbf{Proof.} Let $R$ be a nonzero Boolean ring (i.e., the square of 
+      every element in $R$ equals itself). Since $R$ is nonzero,
+      it follows that $1 \neq 0$; thus
+      $$1 + 1 = (1 + 1)(1 + 1) = 1(1 + 1) + 1(1 + 1) = 1 + 1 + 1 + 1,$$
+      so that $1 + 1 = 0$. Thus the characteristic of $R$ is 2. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.28]  Prove that an integral domain has characteristic $p$, where
                   $p$ is either a prime or 0 (cf Exercise 7.3.26).
+
+      \textbf{Proof.} Let $R$ be an integral domain with characteristic $p$ and
+      suppose that $p \neq 0$. It suffices to show that $p$ is prime. Suppose to
+      the contrary that $p$ is not prime. Then $p = rs$ for some positive 
+      integers $r$ and $s$ such that $r < p$ and $s < p$. Consider the map
+      $\varphi : \Z \rightarrow R$, where, for each $z \in \Z$, $\varphi$ is 
+      defined as in Exercise 7.3.25. Thus $\varphi$ is a ring homomorphism by
+      the same Exercise. Since $p$ is the characteristic of $R$, it 
+      follows that
+      $$0 = \varphi(p) = \varphi(rs) = \varphi(r)\varphi(s).$$
+      But since $R$ is an integral we must then have that $\varphi(r) = 0$ or
+      $\varphi(s) = 0$, both of which are contradictions because either
+      statement says that the characteristic of $R$ is less than $p$. Hence $p$
+      is a prime. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.29]  Let $R$ be a commutative ring. Recall (cf. Exercise 7.1.13)
                   that an element $x \in R$ is nilpotent if $x^n = 0$ for some
@@ -1277,6 +1407,33 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   ideal---called the \textit{nilradical} of $R$ and denoted by
                   $\mathfrak{N}(R)$. [Use the Binomial Theorem to show
                   $\mathfrak{N}(R)$ is closed under addition.]
+
+      \textbf{Proof.} First let us make the following observation: if $x \in R$
+      is nilpotent, so that $x^r = 0$ for some $r \in \Z^+$, then $x^j = 0$ for
+      all $j \ge r$; this is so because if $j \ge r$, then
+      $$x^j = x^rx^{j-r} = 0 \cdot x^{j-r} = 0.$$
+      Since $0^1 = 0$, it follows that $0 \in \mathfrak{N}(R)$. That is,
+      $\mathfrak{N}(R)$ is nonempty. So let $a, b \in \mathfrak{N}(R)$. Thus
+      $a^m = b^n = 0$ for some $m, n \in \Z^+$.
+      \begin{itemize}
+         \item \textbf{Closure under subtraction.} Let $c = -b$, so that
+               $c^n = (-1 \cdot b)^n = (-1)^n \cdot b^n = 0$. By the Binomial 
+               Theorem (Exercise 7.3.25), it follows that
+               $$(a - b)^{m+n} = (a + c)^{m+n} =
+                 \sum_{i=0}^{m+n}B(i)a^ic^{m+n-i},$$
+               where $B(i) = \binom{m+n}{i}$. If $i \ge m$, then $a^i = 0$; if,
+               however, $i < m$ then $m + n - i$ is greater than $n$, so that
+               $c^{m+n-i} = 0$. In either case we have $B(i)a^ic^{m+n-i} = 0$
+               for $0 \le i \le m + n$. Hence $(a - b)^{m+n} = 0$, so that
+               $a - b \in \mathfrak{N}(R)$, and thus, $\mathfrak{N}(R)$ is
+               closed under subtraction.
+         \item \textbf{Closure under multiplication by $R$.} Let $r \in R$.
+               Using the commutativity of $R$, we get
+               $$(ra)^m = r^ma^m = r^m \cdot 0 = 0,$$
+               so that $ra \in \mathfrak{N}(R)$, and thus, $\mathfrak{N}(R)$ is
+               closed under multiplication by $R$.
+      \end{itemize}
+      Thus $\mathfrak{N}(R)$ is an ideal of $R$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.30]  Prove that if $R$ is a commutative ring and $\mathfrak{N}(R)$
                   is its nilradical (cf. the preceding exercise) then zero is
