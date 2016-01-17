@@ -1439,6 +1439,15 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   is its nilradical (cf. the preceding exercise) then zero is
                   the only nilpotent element of $R/\mathfrak{N}(R)$ i.e., prove
                   that $\mathfrak{N}(R/\mathfrak{N}(R)) = 0$.
+
+      \textbf{Proof.} Suppose $R$ is a commutative ring. Let
+      $\overline{r} \in R/\mathfrak{N}(R)$ be nilpotent. Then there exists
+      $m \in \Z^+$, so that
+      $\overline{r^m} = \overline{r}^m = 0 = \mathfrak{N}(R)$. Thus
+      $r^m \in \mathfrak{N}(R)$, so that $(r^m)^n = r^{mn} = 0$ for some
+      $n \in \Z^+$; that is, $r \in \mathfrak{N}(R)$, so that
+      $\overline{r} = 0$. It follows that $\mathfrak{N}(R/\mathfrak{N}(R)) = 0$.
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.31]  Prove that the elements $\left(\begin{tabular}{@{}cc@{}}
                      0 & 1 \\
@@ -1450,10 +1459,27 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   whose sum is not nilpotent (note that these two matrices do
                   not commute). Deduce that the set of nilpotent elements in the
                   noncommutative ring $M_2(\Z)$ is not an ideal.
+
+      \textbf{Proof.} Let $A$ denote the first matrix and let $B$ denote the
+      second matrix. It immediately follows that $A$ and $B$ are nilpotent
+      elements of $M_2(\Z)$ because $A^2 = B^2 = 0$. The matrix $A + B$ is not
+      nilpotent because $(A + B)^n$ is itself if $n$ is odd and the identity
+      matrix if $n$ is even. Thus the set of nilpotent elements in $M_2(\Z)$ is
+      not closed under addition, so that this set is not an ideal of $M_2(\Z)$.
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.32]  Let $\varphi : R \rightarrow S$ be a homomorphism of rings.
                   Prove that if $x$ is a nilpotent element of $R$ then
                   $\varphi(x)$ is nilpotent in $S$.
+
+      \textbf{Proof.} Let $x$ be a nilpotent element of $R$. Thus $x^n = 0$ for
+      some positive integer $n$. It follows immediately that $\varphi(x)$ is a
+      nilpotent element of $S$ because
+      $$\varphi(x)^n = \underbrace{\varphi(x) \cdots
+        \varphi(x)}_{n\text{ times}} =
+        \varphi(\underbrace{x \cdots x}_{n \text{ times}}) = \varphi(x^n) =
+        \varphi(0) = 0.$$
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.33]  Assume $R$ is commutative. Let
                   $p(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ be an
@@ -1466,6 +1492,101 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            if $a_0, a_1, \ldots, a_n$ are nilpotent elements of
                            $R$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.}
+
+               ($\Leftarrow$) Suppose $a_0$ is a unit and
+               $a_1, a_2, \ldots, a_n$ are nilpotent in $R$. Observe that if
+               $b \in R$ is nilpotent (so that $b^m = 0$ for some $m \in \Z^+$)
+               then $bx^i \in R[x]$ is nilpotent for all $i \ge 0$; this is so
+               because $(bx^i)^m = b^mx^{im} = 0 \cdot x^{im} = 0$ for all
+               $i \ge 0$. Thus $a_1x, a_2x^2, \ldots, a_nx^n$ are all nilpotents 
+               in $R[x]$. By Exercise 7.3.29, it follows that
+               $a_1x+a_2x^2+\cdots+a_nx^n$ is also a nilopent element of $R[x]$. 
+               Conclude by Exercise 7.1.14 that
+               $p(x) = a_0 + (a_1x+a_2x^2+\cdots+a_nx^n)$ is a unit in $R[x]$.
+
+               ($\Rightarrow$) Suppose that $p(x)$ is a unit in $R[x]$; let
+               $P(i)$ be the statement: if $r(x) = \sum_{j=0}^ir_jx^j \in R[x]$ 
+               is a unit, then $r_0$ is a unit and $r_1, \ldots, r_i$ are 
+               nilpotent in $R$. Now we will show by induction on $i$ that
+               $P(i)$ holds for $i \ge 0$.
+               
+               \begin{itemize}
+                  \item \textbf{base case:} $i = 0$. Suppose that $r(x)$ is a
+                        unit in $R[x]$ of degree 0; i.e., $r(x) = r_0$
+                        for some unit $r_0 \in R$, so that $P(0)$ holds.
+                  \item \textbf{inductive hypothesis:} For some nonnegative $k$
+                        suppose that $P(i)$ holds for $0 \le i \le k$.
+               \end{itemize}
+               Now suppose that $r(x) = \sum_{j=0}^{k+1}r_jx^j \in R[x]$ is a
+               unit in $R[x]$ of degree $k+1$. Let
+               $q(x) = \sum_{j=0}^{m}q_jx^j \in R[x]$ be the inverse of $r(x)$.
+               It follows by the definition of multiplication that
+               $$1 = r(x)q(x) = \sum_{w=0}^{k+1+m}\left(
+                 \sum_{t=0}^wr_tq_{w-t}\right)x^w.$$
+               Use the equation above to equate corresponding  coefficients; \\
+
+               coefficient of $x^{k+1+m}$:
+               $$r_{k+1}q_m = 0;$$
+
+               coefficient of $x^{k+m}$:              
+               $$r_kq_m + r_{k+1}q_{m-1} = 0;$$
+               multiply the preceding equation by $r_{k+1}$ and use the first
+               equation to conclude that ${r_{k+1}}^2q_{m-1} = 0$; \\
+
+               coefficient of $x^{k+m-1}$:
+               $$r_{k-1}q_m + r_kq_{m-1} + r_{k+1}q_{m-2} = 0;$$
+               multiply the preceding equation by ${r_{k+1}}^2$ and use the
+               first two equations to conclude that ${r_{k+1}}^3q_{m-2} = 0$;
+               inductively, it follows that ${r_{k+1}}^{m+1}q_{0} = 0$. Since
+               $r_0q_0 = 1$, it follows that $r_0$ and $q_0$ are units in $R$;
+               thus ${r_{k+1}}^{m+1}q_{0} = 0$ implies that
+               ${r_{k+1}}^{m+1} = 0$, so that $r_{k+1}$ is a nilpotent in $R$,
+               and thus, $r_{k+1}x^{k+1}$ is nilpotent in $R[x]$. It follows by
+               Exercise 7.1.14(d) that
+               $$r(x) - r_{k+1}x^{k+1} = r_kx^k + \cdots + r_1x + r_0$$
+               is a unit in $R[x]$; thus the inductive hypothesis says that
+               $r_k, r_{k-1}, \ldots, r_1$ are nilpotents in $R$. That is,
+               $P(k+1)$ holds and we conclude that $P(i)$ holds for all
+               $i \ge 0$. Particularly $P(n)$ holds; thus $a_0$ is a unit and
+               $a_1, \ldots, a_n$ are nilpotent in $R$. \qed
+         \item \textbf{Proof.}
+
+               ($\Leftarrow$) Suppose that $p(x)$ is a unit in $R[x]$. Let
+               $P(i)$ be the statement:
+               \begin{quote}
+                  if $r(x) = \sum_{j=0}^ir_jx^j$ is nilpotent in $R[x]$, then 
+                  $r_0, \ldots, r_n$ are nilpotent in $R$.
+               \end{quote}
+               Now we will show by induction on $i$ that $P(i)$ holds for
+               $i \ge 0$.
+               
+               \begin{itemize}
+                  \item \textbf{base case:} $i = 0$. This follows trivially, so
+                        $P(0)$ holds.
+                  \item \textbf{inductive hypothesis:} For some nonnegative $k$
+                        suppose that $P(i)$ holds for $0 \le i \le k$.
+               \end{itemize}
+               Now suppose that $r(x) = \sum_{j=0}^{k+1}r_jx^j$ is nilpotent in 
+               $R[x]$. Thus $(r(x))^m = 0$ for some $m \in \Z^+$; that is,
+               ${r_{k+1}}^m = 0$, so that $r_{k+1}$ (resp. $r_{k+1}x^{k+1}$) is
+               nilpotent in $R$ (resp. $R[x]$). Exercise 7.3.29 says that
+               $$r(x) - r_{k+1}x^{k+1} = r_kx^k + \cdots + r_1x + r_0$$
+               is nilpotent. Thus $r_k, \ldots, r_1, r_0$ are nilpoent in $R$ by
+               the inductive hypothesis. That is, $P(k+1)$ holds, and we
+               conclude by induction that $P(i)$ holds for every $i \ge 0$.
+               Particularly $P(n)$ holds; i.e., $a_0, \ldots, a_n$ are nilpotent
+               in $R$.
+
+               ($\Rightarrow$) If $a_0, \ldots, a_n$ are nilpotent in $R$, then
+               $a_0, a_1x, \ldots, a_nx^n$ are nilpotent in $R[x]$; Exercise 
+               7.3.29 says that the sum of nilpotent elements is also nilpotent.
+               Thus $p(x)$ is nilpotent in $R[x]$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.34]  Let $I$ and $J$ be ideals of $R$.
                   \begin{enumerate}
