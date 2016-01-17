@@ -1597,6 +1597,64 @@ Let $R$ be a ring with identity $1 \neq 0$.
                      \item Prove that if $R$ is commutative and if $I + J = R$
                            then $IJ = I \cap J$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} Let $K$ be an ideal of $R$ containing $I$ and
+               $J$ (there is at least one, namely $R$). Let $a \in I + J$. Then
+               $a = i + j$ for some $i \in I$ and $j \in J$. Since
+               $I \subseteq K$ and $J \subseteq K$, we have $i, j \in K$.
+               Conclude by the closure of $K$ that $a = i + j \in K$. Thus
+               $I + J \subseteq K$, so that $I + J$ is contained in every ideal
+               of $R$ that contains $I$ and $J$. That is, $I + J$ is the 
+               smallest ideal of $R$ containing both $I$ and $J$. \qed
+         \item \textbf{Proof.} The set $IJ$ is nonempty because $0 \in I$ and
+               $0 \in J$, so that $0 \cdot 0 = 0 \in IJ$. So let $a, b \in IJ$. 
+               Then there exist $m, n \in \Z^+$ such that
+               $$a = i_1j_1 + \cdots + i_nj_n \text{ and }
+                 b = i_1'j_1' + \cdots + i_m'j_m'$$
+               where $i_k \in I, j_k \in J$, with $1 \le k \le n$ and
+               $i_k' \in I, j_k' \in J$, with $1 \le k \le m$. First we will
+               show that $IJ$ is an ideal of $R$.
+
+               \begin{itemize}
+                  \item \textbf{closure under subtraction.} Since $I$ is
+                        closed under additive inverses, we have that
+                        $-i_k' \in I$ for $1 \le k \le m$. It follows that
+                        $$a - b = i_1j_1 + \cdots + i_nj_n +
+                          (-i_1')j_1' + \cdots + (-i_m')j_m' \in IJ$$
+                        by the definition of $IJ$. Thus $IJ$ is closed under
+                        subtraction.
+                  \item \textbf{closure under multiplication by $R$.} Let
+                        $r \in R$. Since $I$ is closed under left multiplication
+                        and $J$ is closed under right multiplication by $R$, it
+                        follows that
+                        $$ra = (ri_1)j_1 + \cdots + (ri_n)j_n \in IJ
+                          \text{ and } ar = i_1(j_1r) + \cdots +
+                          i_n(j_nr) \in IJ,$$
+                        so that $IJ$ is closed under multiplication by $R$.
+               \end{itemize}
+               Thus $IJ$ is an ideal of $R$. Now since $I$ is closed under
+               addition and right multiplication by $R$, it follows that
+               $a \in I$; similarly, $a \in J$ because $J$ is closed under
+               addition and left multiplication by $R$. Thus $a \in I \cap J$,
+               and we conclude that $IJ \subseteq I \cap J$. \qed
+         \item \textbf{Example.} Let $R = \Z$ and $I = J = 2\Z$. We have
+               $$4\Z = IJ \neq 2\Z = I \cap J.$$
+         \item Suppose that $R$ is commutative. We already showed in (b) that
+               $IJ \subseteq I \cap J$, so it suffices to show containment in
+               the other direction. So let $x \in I cap J$. Since $I + J = R$
+               and $1 \in R$, it follows that $i + j = 1$ for some $i \in I$ and
+               $j \in J$. Thus $x(i + j) = x \cdot $ so that $xi + xj = x$.
+               Since $R$ is commutative, it follows that $ix + xj = x$. Now
+               $ix \in IJ$ because $i \in I$ and $x \in J$; similarly,
+               $xj \in IJ$ because $x \in I$ and $j \in J$. Thus
+               $x = ix + xj \in IJ$ so that $I \cap J \subseteq IJ$. That is,
+               $I \cap J = IJ$.
+
+               \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.35]  Let $I, J, K$ be ideals of $R$.
                   \begin{enumerate}
