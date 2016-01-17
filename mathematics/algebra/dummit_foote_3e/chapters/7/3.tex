@@ -1642,14 +1642,14 @@ Let $R$ be a ring with identity $1 \neq 0$.
                and we conclude that $IJ \subseteq I \cap J$. \qed
          \item \textbf{Example.} Let $R = \Z$ and $I = J = 2\Z$. We have
                $$4\Z = IJ \neq 2\Z = I \cap J.$$
-         \item Suppose that $R$ is commutative. We already showed in (b) that
-               $IJ \subseteq I \cap J$, so it suffices to show containment in
-               the other direction. So let $x \in I cap J$. Since $I + J = R$
-               and $1 \in R$, it follows that $i + j = 1$ for some $i \in I$ and
-               $j \in J$. Thus $x(i + j) = x \cdot $ so that $xi + xj = x$.
-               Since $R$ is commutative, it follows that $ix + xj = x$. Now
-               $ix \in IJ$ because $i \in I$ and $x \in J$; similarly,
-               $xj \in IJ$ because $x \in I$ and $j \in J$. Thus
+         \item \textbf{Proof.} Suppose that $R$ is commutative. We already 
+               showed in (b) that $IJ \subseteq I \cap J$, so it suffices to 
+               show containment in the other direction. So let $x \in I cap J$. 
+               Since $I + J = R$ and $1 \in R$, it follows that $i + j = 1$ for 
+               some $i \in I$ and $j \in J$. Thus $x(i + j) = x \cdot $ so that 
+               $xi + xj = x$. Since $R$ is commutative, it follows that
+               $ix + xj = x$. Now $ix \in IJ$ because $i \in I$ and $x \in J$; 
+               similarly, $xj \in IJ$ because $x \in I$ and $j \in J$. Thus
                $x = ix + xj \in IJ$ so that $I \cap J \subseteq IJ$. That is,
                $I \cap J = IJ$.
 
@@ -1663,6 +1663,65 @@ Let $R$ be a ring with identity $1 \neq 0$.
                      \item Prove that if $J \subseteq I$ then
                            $I \cap (J + K) = J + (I \cap K)$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item \textbf{Proof.} First we will show that $I(J + K) = IJ + IK$.
+   
+               ($\subseteq$) Let $a \in I(J + K)$. There exists $n \in \Z^+$ 
+               such that
+               $$a = i_1(j_1 + k_1) + \cdots + i_n(j_n + k_n)$$
+               where $i_r \in I, j_r \in J$, $k_r \in K$, with $1 \le r \le n$.
+               Thus
+               $$a = (i_1j_1 + \cdots + i_nj_n) +
+                     (i_1k_1 + \cdots + i_nk_n) \in IJ + IK;$$
+               i.e., $I(J + K) \subseteq IJ + IK$. \\
+   
+               ($\supseteq$) Let $a \in IJ + IK$. By Exercise 7.3.34(b), it
+               follows that $IJ$ and $IK$ are contained in $I$ so that
+               $IJ + IK \subseteq I$. Thus $a \in I$, and it follows that
+               $a = a(0 + 0) \in I(J + K)$; i.e., $I(J + K) \supseteq IJ + IK$.
+               \\
+
+               Conclude that that $I(J + K) = IJ + IK$. \\
+
+               Now we will show that $(I + J)K = IK + JK$.
+   
+               ($\subseteq$) Let $a \in (I + J)K$. There exists $n \in \Z^+$ 
+               such that
+               $$a = (i_1 + j_1)k_1 + \cdots + (i_n + j_n)k_n$$
+               where $i_r \in I, j_r \in J$, $k_r \in K$, with $1 \le r \le n$.
+               Thus
+               $$a = (i_1k_1 + \cdots + i_nk_n) +
+                     (j_1k_1 + \cdots + j_nk_n) \in IK + JK;$$
+               i.e., $(I + J)K \subseteq IK + JK$. \\
+   
+               ($\supseteq$) Let $a \in IK + JK$. By Exercise 7.3.34(b), it
+               follows that $IK$ and $JK$ are contained in $K$ so that
+               $IK + JK \subseteq K$. Thus $a \in K$, and it follows that
+               $a = (0 + 0)k \in (I + J)K$; i.e., $(I + J)K \supseteq IJ + IK$.
+               \\
+
+               Conclude that that $(I + J)K = IK + JK$. \qed
+         \item \textbf{Proof.} Suppose that $J \subseteq I$. 
+   
+               ($\subseteq$) Let $a \in I \cap (J + K)$. Then $a = i$ and
+               $a = j + k$ for some $i \in I, j \in J$, and $k \in K$. Thus
+               $k = i - j$. Since $J$ is contained in $I$, it follows that
+               $k = i - j \in I$, so that $k \in I \cap K$. It follows that
+               $a = j + k \in J + (I \cap K)$, so that
+               $I \cap (J + K) \subseteq J + (I \cap K)$.
+   
+               ($\supseteq$) Let $a \in J + (I \cap K)$. Then $a = j + t$ where
+               $j \in J$, $t \in I$, and $t \in K$.
+               $I \cap (J + K) \subseteq J + (I \cap K)$. Since $J \subset I$,
+               it follows that $a = j + t \in I$; also, $a = j + t \in J + K$,
+               so that $a \in I \cap (J + K)$. Thus
+               $I \cap (J + K) \supseteq J + (I \cap K)$. \\
+
+               Conclude that $I \cap (J + K) = J + (I \cap K)$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.36]  Show that if $I$ is the ideal of all polynomials in $\Z[x]$
                   with zero constant term then $I^n = \{a_nx^n + a_{n+1}x^{n+1} 
