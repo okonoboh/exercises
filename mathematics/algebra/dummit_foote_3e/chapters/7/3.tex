@@ -1,7 +1,5 @@
 Let $R$ be a ring with identity $1 \neq 0$.
 
-%%%%%%%%%%%%%%%%%%10c is wrong%%%%%%%%%%%%%%%%%%
-
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.1]   Prove that the rings $2\Z$ and $3\Z$ are not isomorphic.
@@ -444,11 +442,29 @@ Let $R$ be a ring with identity $1 \neq 0$.
 
                \textbf{counterexample:} $x \in S$, but
                $x \cdot x = x^2 \notin S$.
-         \item The set $S$ is not an ideal because it is not closed under
-               addition.
+         \item We claim that $S$ is an ideal of $\Z[x]$.
 
-               \textbf{counterexample:} $x^3, -x^3 \in S$, but
-               $x^3 + (-x^3) = 0 \notin S$.
+               \textbf{Proof.} All the coefficients of the zero polynomial are
+               zero, so $0 \in S$. Now let
+               $$a(x) = \sum_{i=0}^na_ix^i, b(x) = \sum_{i=0}^mb_ix^i \in S.$$
+               That is, $a_0 = a_1 = a_2 = b_0 = b_1 = b_2 = 0$.
+               and $r$. 
+
+               \textbf{closure under subtraction:} It follows immediately that
+               $a(x) - b(x) \in S$ because
+               $$(a_0 - b_0) = (a_1 - b_1) = (a_2 - b_2) = 0.$$
+               Thus $S$ is closed under subtraction.
+
+               \textbf{closure under multiplication by $\Z[x]$:} Let
+               $r(x) = \sum_{i=0}^wr_ix^i \in \Z[x]$. By the definition of
+               multiplication in $\Z[x]$, it follows that the constant term of
+               $r(x)a(x)$ is $r_0a_0 = 0$; the coefficient of $x$ in $r(x)a(x)$ 
+               is $r_0a_1 + r_1a_0 = 0$; and the coefficient of $x^2$ in
+               $r(x)a(x)$ is $r_0a_2 + r_1a_1 + r_2a_0 = 0$. Thus
+               $r(x)a(x) = a(x)r(x) \in \Z[x]$, so that $S$ is closed under
+               multiplication by $\Z[x]$.
+
+               Conclude that $S$ is an ideal of $\Z[x]$. \qed
          \item The set $S$ is not an ideal because it is not closed under
                multiplication by elements of $\Z[x]$.
 
@@ -1678,32 +1694,22 @@ Let $R$ be a ring with identity $1 \neq 0$.
                      (i_1k_1 + \cdots + i_nk_n) \in IJ + IK;$$
                i.e., $I(J + K) \subseteq IJ + IK$. \\
    
-               ($\supseteq$) Let $a \in IJ + IK$. By Exercise 7.3.34(b), it
-               follows that $IJ$ and $IK$ are contained in $I$ so that
-               $IJ + IK \subseteq I$. Thus $a \in I$, and it follows that
-               $a = a(0 + 0) \in I(J + K)$; i.e., $I(J + K) \supseteq IJ + IK$.
-               \\
+               ($\supseteq$) Let $a \in IJ + IK$. There exist $m, n \in \Z^+$ 
+               such that
+               $$a = (i_1j_1 + \cdots + i_mj_m) + (i_1'k_1 + \cdots + i_n'k_n)$$
+               where $i_r \in I, j_r \in J$, with $1 \le r \le m$, and
+               $i_r' \in I, k_r \in K$, with $1 \le r \le n$. Since
+               $$(i_1j_1 + \cdots + i_mj_m) = i_1(j_1 + 0) +\cdots +i_m(j_m+0)
+                 \in I(J + K)$$
+               and
+               $$(i_1'k_1 + \cdots + i_n'k_n) = i_1'(0+k_1) +\cdots +i_n(0+k_n)
+                 \in I(J + K),$$
+               it follows that $a \in I(J + K)$; i.e.,
+               $I(J + K) \supseteq IJ + IK$. \\
 
                Conclude that that $I(J + K) = IJ + IK$. \\
 
-               Now we will show that $(I + J)K = IK + JK$.
-   
-               ($\subseteq$) Let $a \in (I + J)K$. There exists $n \in \Z^+$ 
-               such that
-               $$a = (i_1 + j_1)k_1 + \cdots + (i_n + j_n)k_n$$
-               where $i_r \in I, j_r \in J$, $k_r \in K$, with $1 \le r \le n$.
-               Thus
-               $$a = (i_1k_1 + \cdots + i_nk_n) +
-                     (j_1k_1 + \cdots + j_nk_n) \in IK + JK;$$
-               i.e., $(I + J)K \subseteq IK + JK$. \\
-   
-               ($\supseteq$) Let $a \in IK + JK$. By Exercise 7.3.34(b), it
-               follows that $IK$ and $JK$ are contained in $K$ so that
-               $IK + JK \subseteq K$. Thus $a \in K$, and it follows that
-               $a = (0 + 0)k \in (I + J)K$; i.e., $(I + J)K \supseteq IJ + IK$.
-               \\
-
-               Conclude that that $(I + J)K = IK + JK$. \qed
+               Proceed as we did above to show that $(I + J)K = IK + JK$. \qed
          \item \textbf{Proof.} Suppose that $J \subseteq I$. 
    
                ($\subseteq$) Let $a \in I \cap (J + K)$. Then $a = i$ and
@@ -1715,7 +1721,7 @@ Let $R$ be a ring with identity $1 \neq 0$.
    
                ($\supseteq$) Let $a \in J + (I \cap K)$. Then $a = j + t$ where
                $j \in J$, $t \in I$, and $t \in K$.
-               $I \cap (J + K) \subseteq J + (I \cap K)$. Since $J \subset I$,
+               $I \cap (J + K) \subseteq J + (I \cap K)$. Since $J \subseteq I$,
                it follows that $a = j + t \in I$; also, $a = j + t \in J + K$,
                so that $a \in I \cap (J + K)$. Thus
                $I \cap (J + K) \supseteq J + (I \cap K)$. \\
@@ -1728,8 +1734,55 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   + \cdots + a_{n+m}x^{n+m} : a_i \in \Z, m \ge 0\}$ is the set
                   of polynomials whose first nonzero term has degree at least
                   $n$.
+
+      \textbf{Proof.} Let $I$ be the ideal of all polynomials in $\Z[x]$ with 
+      zero constant term. Let us proceed by induction on $n$:
+
+      \begin{itemize}
+         \item \textbf{base case:} $n = 1$. By definition of $I$, the first 
+               nonzero term of every polynomial in $I$ has degree at least 
+               degree 1 (observe that for all $m \ge 1$, it follows vacuously 
+               that the first nonzero term of the zero polynomial has degree at 
+               least $m$).
+
+         \item \textbf{inductive hypothesis:} Suppose that, for some
+               $k \in \Z^+$, $I^k$ is the set of polynomials whose first nonzero 
+               term has degree at least $k$.
+         \item \textbf{assertion holds for $k+1$:} By definition, we have that
+               $I^{k+1} = I^kI$. Let $a(x) \in I^kI$. Then
+               $a(x) = r_1(x)s_1(x) + \cdots + r_m(x)s_m(x)$ for some
+               $m \in \Z^+$, where $r_i \in I^k$ such that(by the inductive
+               hpothesis) its first nonzero term has degree at least $k$ and 
+               $s_i \in I$ such that its first nonzero term has degree at least 
+               1, $1\le i \le m$. It follows by the definition of multiplication 
+               that $r_i(x)s_i(x)$ is a polynomial in $I^{k+1}$ whose first
+               nonzero term has degree at least $k + 1$. Thus the first nonzero
+               term of $a(x)$ has degree at least $k + 1$.            
+      \end{itemize}
+      It follows by induction that, for each $n \ge 1$, $I^n$is the set of
+      polynomials whose first nonzero term has degree at least $n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.3.37%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.3.37]  An ideal $N$ is called $\textit{nilpotent}$ if $N^n$ is the
                   zero ideal for some $n \ge 1$. Prove that the ideal
                   $p\Z/p^m\Z$ is a nilpotent ideal in the ring $\Z/p^m\Z$.
+
+      \textbf{Proof.} Let $N = p\Z/p^m\Z$. It suffices to show that $N^m = 0$.
+      Let $a \in N^m$. Thus there exists $r \in \Z^+$ such that
+      \begin{align*} a &= (\overline{a_{11}}\times\overline{a_{12}}
+            \times\cdots\times\overline{a_{1m}}) +
+            (\overline{a_{21}}\times\overline{a_{22}}
+            \times\cdots\times\overline{a_{2m}}) + \cdots +
+            (\overline{a_{r1}}\times\overline{a_{r2}}
+            \times\cdots\times\overline{a_{rm}}) \\
+         &= \overline{a_{11}{a_{12}}\cdots a_{1m}} +
+            \overline{a_{21}{a_{22}}\cdots a_{2m}} + \cdots +
+            \overline{a_{r1}{a_{r2}}\cdots a_{rm}}
+      \end{align*}
+      where $a_{ij} \in p\Z$, with $1 \le i \le r$ and $1 \le j \le m$, and the
+      bar means mod $p^m\Z$. Thus, there exist $t_1, \ldots, t_r \in \Z$ such
+      that
+      $$a = \overline{p^mt_1} + \overline{p^mt_2} + \cdots +
+            \overline{p^mt_r}.$$
+      Conclude that $a = 0$ because $\overline{p^m} = 0$. Thus $N^m = 0$, so
+      that $p\Z/p^m\Z$ is a nilpotent ideal in the ring $\Z/p^m\Z$. \qed
 \end{enumerate}
