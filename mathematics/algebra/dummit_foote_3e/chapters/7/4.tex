@@ -89,20 +89,75 @@ Let $R$ be a ring with identity $1 \neq 0$.
    \item[7.4.8]   Let $R$ be an integral domain. Prove that $(a) = (b)$ for some
                   elements $a, b \in R$, if and only if $a = ub$ for some unit
                   $u$ of $R$.
+                  
+      \textbf{Proof.}
+      
+      $(\Rightarrow)$ Suppose $(a) = (b)$ for some elements $a, b \in R$. If
+      $a = 0$, then $b = 0$, so $a = 1 \cdot b$; now assume that $a$ and $b$ are
+      nonzero. Particularly, we have that $a \in (b)$ and $b \in (a)$. Thus
+      $a = bx$ and $b = ay$ for some $x, y \in R$. So $a = bx = ayx$, so that
+      $a(1 - yx) = 0$. Since $R$ is an integral domain and since $a \neq 0$, it
+      follows that $1 - yx = 0$; that is, $xy = 1$, or equivalently, $x$ and
+      $y$ are units in $R$.
+      
+      $(\Leftarrow)$ Suppose that $a = bu$ for some $a, b, u \in R$, where $u$
+      is a unit. Now we want to show that $(a) = (b)$.
+      \begin{itemize}
+         \item ($\subseteq$) Let $x \in (a)$. Then $x = at$ for some $t \in R$,
+               so that $x = at = (bu)t = b(ut) \in (b)$, and thus,
+               $(a) \subseteq (b)$.
+         \item ($\supseteq$) Let $y \in (b)$. Then $y = bs$ for some $s \in R$,
+               so that $y = bs = (au^{-1})s = a(u^{-1}s) \in (a)$, and thus,
+               $(a) \supseteq (b)$.
+      \end{itemize}
+      So we have that $(a) = (b)$.  \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.9]   Let $R$ be the ring of all continuous functions on $[0, 1]$
                   and let $I$ be the collection of functions $f(x)$ in $R$ with
                   $f(1/3) = f(1/2) = 0$. Prove that $I$ is an ideal of $R$ but
                   is not a prime ideal.
+                  
+      \textbf{Proof.} $I$ is nonempty because it contains the zero function, so
+      let $f, g \in I$. First we will show that $I$ is an ideal of $R$.
+      
+      \begin{itemize}
+         \item \textbf{closure under subtraction:} Since
+               $$(f - g)(1/3) = f(1/3) - g(1/3) = 0 =
+                 f(1/2) - g(1/2) = (f - g)(1/2),$$
+               it follows that $f - g \in I$, so that $I$ is closed under
+               subtraction.
+         \item \textbf{closure under multiplication $R$:} Let $h \in R$. The
+               function $h \cdot f$ is in $I$ because
+               $$(h\cdot f)(1/3) = h(1/3)f(1/3) = 0 =
+                  h(1/2)f(1/2) = (h\cdot f)(1/2).$$
+                  
+               Thus  $I$ is closed under multiplication by $R$.
+      \end{itemize}
+     
+      Conclude that $I$ is an ideal of $R$. Now let $p(x) = 3x - 1$ and
+      $r(x) = 2x - 1$ be functions in $R$. We have that $p(x)r(x) \in I$, but
+      neither $p$ nor $r$ is in $I$; thus $I$ is not a prime ideal of $I$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.10]  Assume $R$ is commutative. Prove that if $P$ is a prime ideal
                   of $R$ and $P$ contains no zero divisors then $R$ is an
                   integral domain.
+                  
+      \textbf{Proof.} Assume that $P$ has no zero divisors and is a prime ideal
+      of $R$. Suppose $ab = 0$ for some $a, b \in R$. Then since $0 \in P$, it
+      follows that $ab \in P$, so that $a = 0$ or $b = 0$ since $P$ has no zero
+      divisors. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.11]  Assume $R$ is commutative. Let $I$ and $J$ be ideals of $R$
                   and assume $P$ is a prime ideal of $R$ that contains $IJ$ (for
                   example, if $P$ contains $I \cap J$). Prove either $I$ or $J$
                   is contained in $P$.
+                  
+      \textbf{Proof.} Suppose that $I$ is not contained in $P$. It suffices to
+      show that $J \subseteq P$. Since $I \not\subseteq P$, there exists
+      $i \in I$ such that $i \notin P$. Let $j \in J$. Since $P$ contains $IJ$,
+      it follows that $ij\in P$. Since $P$ is a prime ideal of $R$, we have that
+      $i \in P$ or $j \in P$; but $i \notin P$, so we conclude that $j \in P$.
+      Thus, $P \supseteq J$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.12]  Assume $R$ is commutative and suppose
                   $I = (a_1, a_2, \ldots, a_n)$ and
