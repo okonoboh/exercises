@@ -1,6 +1,7 @@
 Let $R$ be a ring with identity $1 \neq 0$.
 
 %---7.4.3
+%---Finish 7.4.22(a)
 \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.1]   Let $L_j$ be the left ideal of $M_n(R)$ consisting of
@@ -273,6 +274,37 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            this need not be the case if $\varphi$ is not
                            surjective.
                   \end{enumerate}
+                  
+      \textbf{Solution.}
+      
+      \begin{enumerate}
+         \item \textbf{Proof.} Assume that $P$ is a prime ideal of $S$.
+               Exercise 7.3.24(a) says that $\varphi^{-1}(P)$ is an ideal of
+               $R$. If $\varphi^{-1}(P) = R$, we are done, so suppose otherwise.
+               Now suppose that $xy \in \varphi^{-1}(P)$ for some $x, y \in R$.
+               Then $\varphi(xy) \in P$;  that is, $\varphi(x)\varphi(y) \in P$.
+               Since $P$ is a prime ideal, it follows that $\varphi(x) \in P$ or
+               $\varphi(y) \in P$; equivalently, it follows that
+               $x \in \varphi^{-1}(P)$ or $y \in \varphi^{-1}(P)$, so that
+               $\varphi^{-1}(P)$ is prime in $R$. If $\varphi$ is the inclusion
+               homomorphism, then Exercise 7.3.24(b) says that
+               $\varphi^{-1}(P) = P \cap R$ and we are done. \qed
+         \item \textbf{Proof.} Assume that $M$ is a maximal ideal of $S$ and
+               $\varphi$ is onto. That is, $M \neq S$ and
+               $\varphi^{-1}(M) \neq R$. Now suppose that $\varphi^{-1}(M)$ is
+               contained in an ideal $I$ of $R$. Since
+               $\varphi^{-1}(M) \subseteq I$, it follows that $M$ is contained
+               in the ideal $\varphi(I)$ of $S$. Hence, by the maximality of
+               $M$, we conclude that $\varphi(I) = M$ or $\varphi(I) = S$.
+               That is, $I = \varphi^{-1}(M)$ or $I = \varphi^{-1}(S) = R$,
+               where the last equality follows from the surjectivity of
+               $\varphi$. Thus $\varphi^{-1}(M)$ is maximal in $R$.
+               
+               \textbf{Example.} Let $R = \Z$, $S = \Q$, and $\varphi$ the
+               inclusion homomorphism. By Exercise 7.4.4, $\{0\}$ is a maximal
+               ideal in $\Q$. However, $\varphi^{-1}(\{0\}) = \{0\}$ is not
+               maximal in $\Z$ because $\Z/\{0\} \cong \Z$ is not a field. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.14]  Assume $R$ is commutative. Let $x$ be an indeterminate, let
                   $f(x)$ be a monic polynomial in $R[x]$ of degree $n \ge 1$ and
@@ -359,13 +391,43 @@ Let $R$ be a ring with identity $1 \neq 0$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.19]  Let $R$ be a finite commutative ring with identity. Prove that
                   every prime ideal of $R$ is a maximal ideal.
+                  
+      \textbf{Proof.} Let $P$ be a prime ideal of $R$. It follows by Proposition
+      7.13 that $R/P$ is an integral domain. Since $R$ is finite and $R/P$ is a
+      partition of $R$, then $R/P$ must be finite. Thus, by Corollary 7.3,
+      $R/P$ is a field, so that $P$ is a maximal ideal of $R$ by
+      Proposition 7.12. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.20]  Prove that a nonzero finite commutative ring that has no zero
                   divisors is a field (if the ring has an identity, this is
                   Corollary 3, so do not assume the ring has a 1).
+                  
+      \textbf{Proof.} Suppose that $R$ is a nonzero finite commutative ring that
+      has no zero divisors. Let $a$ be a nonzero element in $R$. Consider the
+      map $\alpha : R \rightarrow R$, defined by $x \mapsto ax$. If
+      $\alpha(x) = \alpha(y)$ for some $x, y \in R$, then $ax = ay$, so that
+      $a(x - y) = 0$, and since $R$ has no zero divisors, it follows that
+      $x = y$ (since $a \neq 0$). Hence $\alpha$ is injective, and thus,
+      bijective since $R$ is finite. So there exists $r \in R$ such that
+      $\alpha(r) = a$; i.e., $ar = a$. Let $b \in R$, then there exists
+      $r' \in R$ such that $\alpha(r') = b$, so that $ar' = b$. Thus
+      $$br = (ar')r = (r'a)r = r'(ar) = r'a = ar' = b.$$
+      That is, $r$ is the identity of $R$, so that $R$ is an integral domain. It
+      follows by Corollary 7.3 that $R$ is a field. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.21]  Prove that a finite ring with identity $1 \neq 0$ that has no
                   zero divisors is a field (you may quote Wedderburn's Theorem).
+                  
+      \textbf{Proof.} Assume that $R$ is a finite ring with identity $1 \neq 0$
+      that has no zero divisors. Let $a$ be a nonzero element in $R$. Using
+      similar arguments as we did for the map in Exercise 7.4.21, it follows
+      that the maps $\alpha_1 : R \rightarrow R$, defined by $r \mapsto ar$ and
+      $\alpha_2 : R \rightarrow R$, defined by $r \mapsto ra$ are injective, and
+      thus, bijective, since $R$ is finite. Thus there exist $x$ and $y$ in $R$
+      such that $\alpha_1(x) = \alpha_2(y) = 1$. That is, $ax = ya = 1$. We now
+      have that $y = y \cdot 1 = y(ax) = (ya)x = 1 \cdot x = x$. Thus $a$ is a
+      unit in $R$. That is, $R$ is a division ring. Conclude by Wedderburn's
+      Theorem that $R$ is a field. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.22]  Let $p \in \Z^+$ be a prime and let the $\F_p$ Quaternions be
                   defined by
@@ -380,6 +442,19 @@ Let $R$ be a ring with identity $1 \neq 0$.
                            divisors (and so they cannot be a division ring).
                            [Use the preceding exercise.]
                   \end{enumerate}
+                  
+      \textbf{Solution.}
+      
+      \begin{enumerate}
+         \item \textbf{Proof.} Let $Z$ and $R$ denote the integral and $\F_p$
+               Quaternions respectively. Consider the map
+               $\varphi : Z \rightarrow R$ defined by
+               $a + bi + cj + dk \mapsto \overline{a} + \overline{b}i +
+                \overline{c}j +\overline{d}k$. It is clear that $\varphi$ is
+                surjective. Now let us show that it is onto. Let
+                $z_1, z_2 \in Z$. Then $z_1 = a + bi + cj + dk$ and
+                $z_2 = e + fi + gj + hk$. 
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.23]  Prove that in a Boolean ring (cf. Exercise 7.1.15) every prime
                   ideal is a maximal ideal.
