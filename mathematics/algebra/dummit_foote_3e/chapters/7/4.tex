@@ -570,14 +570,51 @@ Let $R$ be a ring with identity $1 \neq 0$.
                   called the \textit{radical} of $I$. Prove that rad $I$ is an
                   ideal containing $I$ and that $(\text{rad }I)/I$ is the
                   nilradical of the quotient ring $R/I$, i.e.,
-                  $(\text{rad} I)/I = \mathfrak{N}(R/I)$ (cf. Exercise 7.3.29).
+                  $(\text{rad } I)/I = \mathfrak{N}(R/I)$ (cf. Exercise 7.3.29).
                   
-      \textbf{Proof.} Since $r \in I$ if and only if $r^1 \in I$, it follows
-      that $I \subseteq \text{rad }I$. So now we will show that rad $I$ is an
-      ideal of $R$. Let $x, y \in \text{rad }I$.
+      \textbf{Proof.} If $r \in I$ then $r^1 \in I$, so that
+      $r \in \text{rad }I$; that is, $I \subseteq \text{rad }I$. We will now
+      show that rad $I$ is an ideal of $R$. Let $x, y \in \text{rad }I$. That
+      is, $x^m, y^n \in I$ for some $m, n \in \Z^+$. Observe that if $j \ge n$, 
+      then $y^j = (y^{j-n})y^n \in I$ (since $I$ is an ideal of $R$).
       \begin{itemize}
-         \item \textbf{closure under subtraction.}
+         \item \textbf{closure under addition.} The Binomial Theorem tells us
+               that
+               $$(x + y)^{m + n} = \sum_{i=0}^{m+n}\binom{m+n}{i}x^iy^{m+n-i}.$$
+               If $m \le i \le m + n$, then $x^i \in I$; however, if
+               $0 \le i < m$, so that $m + n - i > n$, then $y^{m+n-i} \in I$.
+               Thus, if $0  \le i \le m + n$, then
+               $\binom{m+n}{i}x^iy^{m+n-i} \in I$ because $I$ is an ideal of
+               $R$. Conclude by the closure of $I$ under addition that
+               $$(x + y)^{m + n} =
+                 \sum_{i=0}^{m+n}\binom{m+n}{i}x^iy^{m+n-i} \in I.$$
+               That is, $x + y \in \text{rad }I$, and we conclude that rad $I$
+               is closed under addition.
+         \item \textbf{closure under additive inverse.} We have that
+               $(-y)^n = y^n$ (if $n$ is even) or $(-y)^n = -y^n$ (if $n$ is 
+               odd). In either case, it follows that $(-y)^n \in I$, so that
+               $-y \in \text{rad } I$; i.e., rad $I$ is closed under additive 
+               inverses.
+         \item \textbf{closure under multiplication by $R$.} Let $r \in R$. It
+               follows immediately that $(ry)^n = (r^n)y^n \in I$ because $I$ is 
+               closed under multiplication by $R$. Thus $ry \in \text{rad } I$, 
+               so that rad $I$ is closed under multiplication by $R$.
       \end{itemize}
+      Conclude that rad $I$ is an ideal of $R$ containing $I$. Finally, let us
+      now show that $(\text{rad } I)/I = \mathfrak{N}(R/I)$.
+      \begin{itemize}
+         \item $(\subseteq)$ Let $\overline{s} \in (\text{rad } I)/I$, where
+               $s \in \text{rad } I$. That is, $s^p \in I$ for some
+               $p \in \Z^+$. Thus $\overline{s}^p = \overline{s^p} = I =
+               \overline{0}$, so that $\overline{s} \in \mathfrak{N}(R/I)$. It
+               follows that $(\text{rad } I)/I \subseteq \mathfrak{N}(R/I)$.
+         \item $(\supseteq)$ Now let $\overline{a} \in \mathfrak{N}(R/I)$. That 
+               is, there exists a positive integer $r$ such that
+               $\overline{a}^r = \overline{a^r} = \overline{0}$; it follows that
+               $a^r \in I$, so that $a \in \text{rad }I$. Thus
+                $(\text{rad } I)/I \supseteq \mathfrak{N}(R/I)$.
+      \end{itemize}
+      Conclude that  $(\text{rad } I)/I = \mathfrak{N}(R/I)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7.4.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[7.4.31]  An ideal $I$ of the commutative ring $R$ is called a
                   \textit{radical ideal} if rad $I = I$.
