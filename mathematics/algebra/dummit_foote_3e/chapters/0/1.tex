@@ -8,7 +8,7 @@ Let
 and let
    $$\mathcal{B} = \{X \in \mathcal{A} : MX = XM\}.$$
 \begin{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.1.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.1.1] Determine which of the following elements of $\mathcal{A}$ lie
                 in $\mathcal{B}$:
 
@@ -37,29 +37,50 @@ and let
                       0 & 1 \\ 
                       1 & 1
                    \end{tabular}\right).$$
-      \textbf{Solution:} A quick computation will show us only these matrices
-      lie in $\mathcal{B}$.
+      \textbf{Solution.} Let $A_1$, $A_2$, $A_3$, $A_4$, $A_5$, and $A_6$ denote
+                         the matrices above, as listed from left to right,
+                         respectively. The matrices $A_1$, $A_3$, and $A_5$ lie
+                         in $\mathcal{B}$ because they commute with $M$.
+                         However, $A_2$, $A_4$, and $A_6$ are not in
+                         $\mathcal{B}$ because
 
-                $$\left(
-                   \begin{tabular}{@{}l r@{}} 
-                      1 & 1 \\ 
-                      0 & 1
-                   \end{tabular}\right), \left(
-                   \begin{tabular}{@{}l r@{}} 
-                      0 & 0 \\ 
-                      0 & 0
-                   \end{tabular}\right), \left(
-                   \begin{tabular}{@{}l r@{}} 
-                      1 & 0 \\ 
-                      0 & 1
-                   \end{tabular}\right).$$
+         
+         \begin{align*}
+            A_2M &= \left(
+               \begin{tabular}{@{}l r@{}} 
+                  1 & 2 \\ 
+                  1 & 2
+               \end{tabular}\right)\neq \left(
+               \begin{tabular}{@{}l r@{}} 
+                      2 & 2 \\ 
+                      1 & 1
+               \end{tabular}\right) = MA_2, \\
+            A_4M &= \left(
+               \begin{tabular}{@{}l r@{}} 
+                  1 & 2 \\ 
+                  1 & 1
+               \end{tabular}\right)\neq \left(
+               \begin{tabular}{@{}l r@{}} 
+                      2 & 1 \\ 
+                      1 & 0
+               \end{tabular}\right) = MA_4, \\
+            A_6M &= \left(
+               \begin{tabular}{@{}l r@{}} 
+                  0 & 1 \\ 
+                  1 & 2
+               \end{tabular}\right)\neq \left(
+               \begin{tabular}{@{}l r@{}} 
+                      1 & 2 \\ 
+                      1 & 1
+               \end{tabular}\right) = MA_6.
+         \end{align*} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.1.2] Prove that if $P, Q \in \mathcal{B}$, then
                 $P + Q \in \mathcal{B}$.
 
-      \textbf{Proof:} Suppose that $P, Q \in \mathcal{B}$. We want to show that
-      $P + Q \in \mathcal{B}$. That is, we must show that $M(P + Q) = (P + Q)M$.
-      Thus
+      \textbf{Proof.} Let $P, Q \in \mathcal{B}$. To show that
+      $P + Q \in \mathcal{B}$, we must show that $P + Q$ commutes with $M$. This
+      follows since
       \begin{align*}
          M(P + Q) &= MP + MQ   &[\text{Distributive Law}]\\
                   &= PM + QM   &[P, Q \in \mathcal{B}] \\
@@ -69,16 +90,16 @@ and let
    \item[0.1.3] Prove that if $P, Q \in \mathcal{B}$, then
                 $P \cdot Q \in \mathcal{B}$.
 
-      \textbf{Proof:} Suppose that $P, Q \in \mathcal{B}$. We want to show that
-      $PQ \in \mathcal{B}$. That is, we must show that $M(PQ) = (PQ)M$.
-      Then
+      \textbf{Proof.} Let $P, Q \in \mathcal{B}$. The matrix $PQ$ commutes with
+      $M$ because
       \begin{align*}
          M(PQ) &= (MP)Q  &[\text{Associative Law}]\\
                &= (PM)Q  &[P \in \mathcal{B}] \\
                &= P(MQ)  &[\text{Associative Law}] \\
                &= P(QM)  &[Q \in \mathcal{B}] \\
                &= (PQ)M.  &[\text{Associative Law}]
-      \end{align*} \qed
+      \end{align*}
+      That is, $PQ \in \mathcal{B}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.1.4] Find conditions on $p, q, r, s$ which determine precisely when
                 $$\left(
@@ -87,7 +108,7 @@ and let
                         $r$ & $s$
                      \end{tabular}\right) \in \mathcal{B}.$$
 
-      \textbf{Proof:} Suppose $A = \left(\begin{tabular}{@{}l r@{}} 
+      \textbf{Proof.} Suppose $A = \left(\begin{tabular}{@{}l r@{}} 
       $p$ & $q$ \\ 
       $r$ & $s$
       \end{tabular}\right) \in \mathcal{B}$. Then it must be the case that
@@ -143,7 +164,7 @@ and let
                   $f(4/1) = 4 \neq 8 = f(8/2)$.
             \item We claim that $f$ is well defined.
 
-                  \textbf{Proof:} We want to show that all representatives for 
+                  \textbf{Proof.} We want to show that all representatives for 
                   an element in $\Q$ have the same output under $f$. So let
                   $a/b \in \Q$ with $\gcd(a, b) = 1$. Suppose $m \in \Q$ such 
                   that $m = a/b$. Then we must have that $m = ka/kb$ where $k$ 
@@ -155,7 +176,7 @@ and let
                 by mapping a real number $r$ to the first digit to the right of
                 the decimal point in a decimal expansion of $r$ is well defined.
 
-      \textbf{Proof:} The map $f$ is not well defined because we have
+      \textbf{Proof.} The map $f$ is not well defined because we have
       $0.\overline{9} = 1.\overline{0}$, but
       $f(0.\overline{9}) = 9 \neq 0 = f(1.\overline{0})$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -165,7 +186,7 @@ and let
                 is an equivalence relation whose equivalence classes are the
                 fibers of $f$.
 
-      \textbf{Proof:} We want to show that the relation $\sim$ is an equivalence
+      \textbf{Proof.} We want to show that the relation $\sim$ is an equivalence
       relation on $A$. That is, we want to show that $\sim$ is reflexive,
       symmetric, and transitive on $A$. Thus
       \begin{enumerate}
@@ -218,7 +239,7 @@ and let
                          surjective.
                 \end{enumerate}
 
-      \textbf{Proof:}
+      \textbf{Proof.}
       \begin{enumerate}
          \item ($\Leftarrow$) Suppose first that the map $f : A \rightarrow B$ 
                has a left inverse, say $g : B \rightarrow A$. We want to show 
