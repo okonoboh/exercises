@@ -37,42 +37,53 @@ and let
                       0 & 1 \\ 
                       1 & 1
                    \end{tabular}\right).$$
-      \textbf{Solution.} Let $A_1$, $A_2$, $A_3$, $A_4$, $A_5$, and $A_6$ denote
-                         the matrices above, as listed from left to right,
-                         respectively. The matrices $A_1$, $A_3$, and $A_5$ lie
-                         in $\mathcal{B}$ because they commute with $M$.
-                         However, $A_2$, $A_4$, and $A_6$ are not in
-                         $\mathcal{B}$ because
-
+      \textbf{Solution.} The matrices $\left(\begin{tabular}{@{}l r@{}} 
+         1 & 1 \\ 
+         0 & 1
+      \end{tabular}\right)$, $\left(\begin{tabular}{@{}l r@{}} 
+         0 & 0 \\ 
+         0 & 0
+      \end{tabular}\right)$, and $\left(\begin{tabular}{@{}l r@{}} 
+         1 & 0 \\ 
+         0 & 1
+      \end{tabular}\right)$ lie in $\mathcal{B}$ because they commute with $M$.
+      However, the remaining matrices do not lie in $\mathcal{B}$ because they
+      do not commute with $M$ (see below).
          
-         \begin{align*}
-            A_2M &= \left(
-               \begin{tabular}{@{}l r@{}} 
-                  1 & 2 \\ 
-                  1 & 2
-               \end{tabular}\right)\neq \left(
-               \begin{tabular}{@{}l r@{}} 
-                      2 & 2 \\ 
-                      1 & 1
-               \end{tabular}\right) = MA_2, \\
-            A_4M &= \left(
-               \begin{tabular}{@{}l r@{}} 
-                  1 & 2 \\ 
-                  1 & 1
-               \end{tabular}\right)\neq \left(
-               \begin{tabular}{@{}l r@{}} 
-                      2 & 1 \\ 
-                      1 & 0
-               \end{tabular}\right) = MA_4, \\
-            A_6M &= \left(
-               \begin{tabular}{@{}l r@{}} 
-                  0 & 1 \\ 
-                  1 & 2
-               \end{tabular}\right)\neq \left(
-               \begin{tabular}{@{}l r@{}} 
-                      1 & 2 \\ 
-                      1 & 1
-               \end{tabular}\right) = MA_6.
+      \begin{align*}
+         \left(\begin{tabular}{@{}l r@{}} 1 & 1 \\ 1 & 1\end{tabular}\right)M 
+            &= \left(
+            \begin{tabular}{@{}l r@{}} 
+               1 & 2 \\ 
+               1 & 2
+            \end{tabular}\right)\neq \left(
+            \begin{tabular}{@{}l r@{}} 
+                2 & 2 \\ 
+                1 & 1
+            \end{tabular}\right) = M
+         \left(\begin{tabular}{@{}l r@{}} 1 & 1 \\ 1 & 1\end{tabular}\right), \\
+         \left(\begin{tabular}{@{}l r@{}} 1 & 1 \\ 1 & 0\end{tabular}\right)M 
+            &= \left(
+            \begin{tabular}{@{}l r@{}} 
+               1 & 2 \\ 
+               1 & 1
+            \end{tabular}\right)\neq \left(
+            \begin{tabular}{@{}l r@{}} 
+                2 & 1 \\ 
+                1 & 0
+            \end{tabular}\right) = M
+         \left(\begin{tabular}{@{}l r@{}} 1 & 1 \\ 1 & 0\end{tabular}\right), \\
+         \left(\begin{tabular}{@{}l r@{}} 0 & 1 \\ 1 & 1\end{tabular}\right)M 
+            &= \left(
+            \begin{tabular}{@{}l r@{}} 
+               0 & 1 \\ 
+               1 & 2
+            \end{tabular}\right)\neq \left(
+            \begin{tabular}{@{}l r@{}} 
+               1 & 2 \\ 
+               1 & 1
+            \end{tabular}\right) = M
+         \left(\begin{tabular}{@{}l r@{}} 0 & 1 \\ 1 & 1\end{tabular}\right).
          \end{align*} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.1.2] Prove that if $P, Q \in \mathcal{B}$, then
@@ -108,11 +119,13 @@ and let
                         $r$ & $s$
                      \end{tabular}\right) \in \mathcal{B}.$$
 
-      \textbf{Proof.} Suppose $A = \left(\begin{tabular}{@{}l r@{}} 
-      $p$ & $q$ \\ 
-      $r$ & $s$
-      \end{tabular}\right) \in \mathcal{B}$. Then it must be the case that
-      $AM = MA$, so that
+      \textbf{Proof.} Since $\mathcal{B}$ is nonempty (it contains $M$), we let
+      $A = \left(\begin{tabular}{@{}l r@{}} 
+         $p$ & $q$ \\ 
+         $r$ & $s$
+      \end{tabular}\right)$ be an arbitrary element of $\mathcal{B}$, wherein
+      the entries are real numbers. It follows by definition that $AM = MA$, so 
+      that
       $$ \left(
          \begin{tabular}{@{}l r@{}} 
             $p$ & $q$ \\ 
@@ -150,7 +163,7 @@ and let
          \begin{tabular}{@{}l r@{}} 
             $p$ & $q$ \\ 
             $0$ & $p$
-         \end{tabular}\right) \in \mathcal{A}\right\}.$$
+         \end{tabular}\right) : p, q \in \R\right\}.$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.1.5] Determine whether the following functions $f$ are well defined:
                 \begin{enumerate}
@@ -165,20 +178,22 @@ and let
             \item We claim that $f$ is well defined.
 
                   \textbf{Proof.} We want to show that all representatives for 
-                  an element in $\Q$ have the same output under $f$. So let
-                  $a/b \in \Q$ with $\gcd(a, b) = 1$. Suppose $m \in \Q$ such 
-                  that $m = a/b$. Then we must have that $m = ka/kb$ where $k$ 
-                  is some nonzero integer. It follows that
-                  $f(ka/kb) = k^2a^2/k^2b^2 = a^2/b^2 = f(a/b)$. \qed
+                  an element in $\Q$ have the same output under $f$. So suppose
+                  that $q$ and $r$ are equal rational numbers. That is,
+                  $$q = \frac{a}{b} \text{ and } r = \frac{c}{d},$$
+                  where $a$, $b$, $c$, $d \in \Z$ ($b$ and $d$ nonzero). Well
+                  definedness of $f$ follows because
+                  $$f(q) = \frac{a^2}{b^2} = \left(\frac{a}{b}\right)^2 =
+                    \left(\frac{c}{d}\right)^2 = \frac{c^2}{d^2} = f(r).$$ \qed
          \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.1.6] Determine whether the function $f: \R^+ \rightarrow \Z$ defined
                 by mapping a real number $r$ to the first digit to the right of
                 the decimal point in a decimal expansion of $r$ is well defined.
 
-      \textbf{Proof.} The map $f$ is not well defined because we have
+      \textbf{Proof.} The map $f$ is not well defined because
       $0.\overline{9} = 1.\overline{0}$, but
-      $f(0.\overline{9}) = 9 \neq 0 = f(1.\overline{0})$. \qed
+      $f(0.\overline{9}) = 9 \neq 0 = f(1.\overline{0})$. \\ \mbox{ } \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.1.7] Let $f : A \rightarrow B$ be a surjective map of sets. Prove
                 that the relation
@@ -189,39 +204,25 @@ and let
       \textbf{Proof.} We want to show that the relation $\sim$ is an equivalence
       relation on $A$. That is, we want to show that $\sim$ is reflexive,
       symmetric, and transitive on $A$. Thus
-      \begin{enumerate}
-         \item[\textit{Reflexivity}:]  Let $a \in A$. Since $f(a) = f(a)$, it
-                                       follows that $a \sim a$, so that $\sim$ 
-                                       is reflexive on $A$.
-         \item[\textit{Symmetry}:]     Let $a, b \in A$ with $a \sim b$. Since
-                                       $a \sim b$, we must have that
-                                       $f(a) = f(b)$; it immediately follows    
-                                       that $f(b) = f(a)$, so that $b \sim a$;
-                                       that is, $\sim$ is symmetric on $A$.
-         \item[\textit{Transitivity}:] Let $a, b, c \in A$ with $a \sim b$ and
-                                       $b \sim c$. Thus by definition, we have
-                                       that $f(a) = f(b)$ and $f(b) = f(a)$. By
-                                       transitivity of the equality relation it
-                                       follows that $f(a) = f(c)$, so that
-                                       $a \sim c$. Thus $\sim$ is transitive on
-                                       $A$.
-      \end{enumerate}
 
-      Now we must show that the fibers of $f$ are the equivalence classes of
-      $\sim$. So let $\mathcal{C}$ be the set of equivalence classes of $\sim$ 
-      and let  $\mathcal{F}$ be the set of fibers of $f$. First we want to show
-      that $\mathcal{F} \subseteq \mathcal{C}$. So consider
-      $F \in \mathcal{F}$. Let $h \in F$. Then we see that $\overline{h} = F$
-      (because if $h' \in \overline{h}$ then $f(h') = f(h)$, so that $h' \in F$,
-      and $\overline{h} \subseteq F$. Also if $g \in F$, then $f(h) = f(g)$ so  
-      that $f \in \overline{h}$ and $F \subseteq \overline{h}$), so that $F \in
-      \mathcal{C}$ and $\mathcal{F} \subseteq \mathcal{C}$. Now we want to show
-      that $\mathcal{C} \subseteq \mathcal{F}$ to complete the proof. Suppose
-      $C \in \mathcal{C}$. Let $c \in C$. Then $C$ is the fiber of $f(c)$. Thus
-      $C \in \mathcal{F}$ so that $\mathcal{C} \subseteq \mathcal{F}$. Since
-      $\mathcal{F} \subseteq \mathcal{C}$ and
-      $\mathcal{C} \subseteq \mathcal{F}$, we must have that
-      $\mathcal{C} = \mathcal{F}$. \qed
+      \textbf{Reflexivity.} Let $a \in A$. Since $f(a) = f(a)$, it follows that 
+      $a \sim a$, so that $\sim$ is reflexive on $A$.
+
+      \textbf{Symmetry.} Let $a, b \in A$ with $a \sim b$. Since $a \sim b$, we 
+      must have that $f(a) = f(b)$; it immediately follows that $f(b) = f(a)$, 
+      so that $b \sim a$; that is, $\sim$ is symmetric on $A$.
+
+      \textbf{Transitivity.} Let $a, b, c \in A$ with $a \sim b$ and $b \sim c$.
+      Thus by definition, we have that $f(a) = f(b)$ and $f(b) = f(a)$. By
+      transitivity of the equality relation it follows that $f(a) = f(c)$, so 
+      that $a \sim c$. Thus $\sim$ is transitive on $A$.
+
+
+      An equivalence class of $\sim$, say $\overline{a}$, where $a \in A$, is,
+      by definition, the fiber of $f$ over $f(a)$. Also, if $X$ is a fiber of
+      $f$, then every member of $X$ maps to the same element of $B$, so that $X$
+      is an equivalence class of $\sim$. Thus the equivalence classes are the 
+      fibers of $f$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.1.8] \textbf{Proposition 1:}
                 \begin{enumerate}
@@ -250,14 +251,14 @@ and let
                ($\Rightarrow$) Now suppose that $f$ is injective. Then we must 
                show that $f$ has	a left inverse. Notice that since $f$ is 
                injective, it must be the case that for every $b'' \in f(A)$ 
-               there exists a unique $a'' \in A$ such that $f(a'') = b''$. Let 
-               $a'$ be any member of $A$ and consider the map
+               there exists a unique $a'' \in A$ such that $f(a'') = b''$. Fix 
+               $a' \in A$ and consider the map
 	            $$g : B \rightarrow A,$$
-	            where for every $b \in B$, we have
+               defined by
 	            \begin{equation*}
-		            g(b) = \left\{
+		            b \mapsto \left\{
 			            \begin{array}{ll}
-				            a & \text{if } b \in f(A) \text{ and where } f(a) = b,\\
+				            a & \text{if } f(a) = b,\\
                         a' & \text{if } b \in B\setminus f(A).
                      \end{array} \right.
                \end{equation*}
@@ -273,25 +274,24 @@ and let
                so that $f$ is onto.
    
                $(\Rightarrow)$ Now suppose that $f$ is surjective. We now want 
-               to show that $f$ has a right inverse. Let $b \in B$. Since the 
-               surjectivity of $f$ guarantees that the fiber of $\{b\}$ over $f$
-               is not empty, we let $h : B \rightarrow A$ be a function that 
-               maps an element $b \in B$ to some element in the fiber of $\{b\}$
-               over $f$. Clearly if $c \in B$, then $f(h(c)) = c$, so that $h$ 
-               is a right inverse of $f$.
+               to show that $f$ has a right inverse. Consider
+               $h : B \rightarrow A$, such that $h(b) \in f^{-1}(\{b\})$. 
+               Observe that $f^{-1}(\{b\})$ is nonempty for all $b \in B$, 
+               since $f$ is surjective. Now if $c \in B$, then $f(h(c)) = c$, 
+               so that $h$ is a right inverse of $f$.
          \item $(\Leftarrow)$ Suppose that $g$ is a left and right inverse of
                $f$. Then by 1 and 2, $f$ is an injection and a surjection, so 
                that $f$ is a bijection.
    
                $(\Rightarrow)$ Now suppose that $f$ is a bijection. Let
-               $b \in B$. We notice that the fiber of $\{b\}$ under $f$ is not 
-               empty since $f$ is surjecitive, and this fiber contains exactly 
+               $b \in B$. We notice that the fiber of $f$ over $b$ is not 
+               empty since $f$ is surjective, and this fiber contains exactly 
                one element of $A$. The latter is so since if $a_1, a_2$ are in 
-               the fiber of $\{b\}$ over $f$, then $f(a_1) = f(a_2)$ so that 
+               the fiber of $f$ over $b$, then $f(a_1) = f(a_2)$ so that 
                $a_1 = a_2$ by the injectivity of $f$. So let $g$ be the map
                $g : B \rightarrow A$ that maps $c \in B$ to the only element in 
-               the fiber of $\{c\}$ over $f$. It is trivial to show that $g$ is 
-               both a left and right inverse of $f$.
+               the fiber of $f$ over $c$. It follows that $f \circ g$ is the
+               identity on $B$ and $g \circ f$ is the identity on $A$.
 
          \item Let $|A| = |B| = n \in \Z^+$. First we shall assume that $f$ is
                bijective. It immediately follows that $f$ is injective. Now 
