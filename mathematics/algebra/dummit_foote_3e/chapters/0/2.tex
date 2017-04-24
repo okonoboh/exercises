@@ -13,7 +13,7 @@
                      \item $a = 507885$, $b = 60808$.
                   \end{enumerate}
 
-      \textbf{Solution:}
+      \textbf{Solution.}
 
       \begin{enumerate}
          \item Using the Euclidean Algorithm we have
@@ -114,7 +114,7 @@
                   then $k$ divides $as + bt$ for every pair of integers $s$ and
                   $t$.
 
-      \textbf{Proof:} Let $a$ and $b$ be integers. Assume that $k$ divides
+      \textbf{Proof.} Let $a$ and $b$ be integers. Assume that $k$ divides
       $a$ and $b$. Consider any pair of integers $s$ and $t$. We want to show
       that $k$ also divides $as + bt$; that is, we must show that there exists
       some integer $m_1$ such that $as + bt = km_1$. Since $k$ divides $a$ and
@@ -131,21 +131,10 @@
                   $b$ such that $n$ divides $ab$ but $n$ does not divide either
                   $a$ or $b$.
 
-      \textbf{Proof:} Let $n > 1$ be a composite integer. We shall 
-      investigate the following two cases:
-
-      \textbf{Case I:} \textit{n has more than 1 prime factor}. Then by The 
-      Fundamental Theorem of Arithmetic, we have that
-      $$n = p_1^{a_1}p_2^{a_2} \cdots p_m^{a_m},$$
-      for some integer $m \ge 2$, positive integer exponents $a_i$, and distinct
-      primes $p_i$, $1 \le i \le m$. So let $a = p_1^{a_1}$ and
-      $b = p_2^{a_2} \cdots p_m^{a_m}$. Then $n = ab$ so that $n$ divides $ab$.
-      Clearly $n$ does not divide $a$ and $b$.
-
-      \textbf{Case II:} \textit{n has exactly 1 prime factor}. Then we must
-      have that $n = p^{k}$ for some prime $p$ and integer $k \ge 2$. So choose
-      $a = p$ and $b = p^{k - 1}$. Similarly as in the first case, we have that
-      $n$ divides $ab$, but $n$ divides neither $a$ nor $b$.
+      \textbf{Proof.} Let $n > 1$ be a composite integer. Then $n = cd$, where
+      $c$ and $d$ are integers greater than 1. Clearly, $n \mid cd$ because
+      $n = cd$, but $n$ divides neither $c$ nor $d$, since they are both less
+      than $n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.4]   Let $a$, $b$ and $N$ be fixed integers with $a$ and $b$ 
                   nonzero and let $d = (a, b)$ be the greatest common divisor of
@@ -154,7 +143,7 @@
                   $$x = x_0 + \frac{b}{d}t \qquad y = y_0 - \frac{a}{d}t$$
                   are also solutions to $ax + by = N$.
 
-      \textbf{Proof:} Let $t$ be an integer, and let
+      \textbf{Proof.} Let $t$ be an integer, and let
 		$$x = x_0 + \frac{b}{d}t \text{ and } y = y_0 - \frac{a}{d}t.$$
 		Then we have
 		\begin{align*}
@@ -169,7 +158,7 @@
    \item[0.2.5]   Determine the value $\varphi(n)$ for each integer $n \le 30$
                   where $\varphi$ denotes the Euler $\varphi-$function.  
 
-      \textbf{Solution:}
+      \textbf{Solution.}
 
       We shall be making use of the multiplicative property of the Euler
 		$\varphi-$function. So 
@@ -211,7 +200,7 @@
    \item[0.2.6]   Prove the Well Ordering Principle of $\Z$ by induction and
                   prove the minimal element is unique.
 
-      \textbf{Proof:} Let $P$ be a nonempty subset of $\Z^+$. We want to show 
+      \textbf{Proof.} Let $P$ be a nonempty subset of $\Z^+$. We want to show 
       that $P$ has a minimal element. So suppose by way of contradiction that
       $P$ does not have a minimal element. For a natural number $n$, let $S(n)$ 
       be the statement that $n$ is not a member of $P$. We now want to show that
@@ -234,7 +223,7 @@
    \item[0.2.7]   If $p$ is a prime prove that there do not exist nonzero
                   integers $a$ and $b$ such that $a^2 = pb^2$.
 
-      \textbf{Proof:} Let $p$ be a prime number. Suppose by contradiction that 
+      \textbf{Proof.} Let $p$ be a prime number. Suppose by contradiction that 
       there exist nonzero integers $a$ and $b$ such that $a^2 = pb^2$. We can
       further suppose that $a$ and $b$ are relatively prime. Since $a^2 = pb^2$,
       it follows that $a^2$ has $p$ as one of its prime factors, so that $a$
@@ -250,7 +239,7 @@
                   $n! = n(n - 1)(n - 2)\cdots2 \cdot 1$ (it involves the
                   greatest integer function).
 
-      \textbf{Proof:} Let $p$ be a prime and let $n$ be a positive integer. The
+      \textbf{Proof.} Let $p$ be a prime and let $n$ be a positive integer. The
       largest power of $p$ that divides $n!$, say $k$, is simply the number of 
       multiples of $p$ in the set $\{1, 2, \ldots, n\}$. Thus
       $k = \lfloor{n/p}\rfloor$, where $\lfloor{x}\rfloor$ is the greatest
@@ -286,7 +275,16 @@ def gcd(a, b, x1 = 1, y1 = 0, x2 = 0, y2 = 1):
                   particular that $\varphi(n)$ tends to infinity as $n$ tends to
                   infinity.
 
-      \textbf{Proof:} Let $M$ be a positive integer. We shall denote a 
+      \textbf{Proof.} For $n \in \N$, define
+      $$ P_n := \{({p_1}^{c_1}, {p_2}^{c_2}, \ldots, {p_m}^{c_m}) :
+         p_i \text{ distinct primes }, c_i, m \ge 0, \text{ and }
+         \prod_{i=1}^m {p_i}^{c_i}(p_i-1) = n\},$$
+      where the tuples above are equal up to ordering of the primes.
+
+      For example $P_1 = \{(2^0)\}$, $P_3 = \emptyset$, $P_2 = \{(2^1)\}$, $P_{12} = \{(13^0),
+      (3^0, 7^0), (2^0, 13^0), (2^1, 7^0), (2^0, 3^0, 7^0)\}$
+
+      \textbf{Proof.} Let $M$ be a positive integer. We shall denote a 
       factorization of $M$ as a tuple $(a_1, a_2, \ldots, a_m)$, where
       $m \in \Z^+$, each $a_i$---called a factor of $M$---is a positive integer,
       and $\prod_{i=1}^m a_i = M$. If we remove all the 1s in a tuple $h$ to get
@@ -368,7 +366,7 @@ def gcd(a, b, x1 = 1, y1 = 0, x2 = 0, y2 = 1):
                   $\varphi(n)$ where $\varphi$ denotes Euler's
                   $\varphi-$function.
 
-      \textbf{Proof:} Let $d$ and $n$ be positive integers such that $d \mid n$.
+      \textbf{Proof.} Let $d$ and $n$ be positive integers such that $d \mid n$.
       We want to show that $\varphi(d) \mid \varphi(n)$. Let
       ${d_1}^{a_1}{d_2}^{a_2}\cdots{d_k}^{a_k}$ be the prime factorization of
       $d$, where each $a_i$ is a positive integer and each $d_i$ is a unique
