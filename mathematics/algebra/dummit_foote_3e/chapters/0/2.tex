@@ -281,30 +281,48 @@ def gcd(a, b, x1 = 1, y1 = 0, x2 = 0, y2 = 1):
       We want to show that $S_N$ is finite. So it suffices to show that $S_N$ is
       bounded; i.e., there exists a positive integer $K$ such that $n < K$ for
       all $n \in S_N$. If $S_N$ is empty, then we are done, so assume that $S_N$
-      is nonempty. Let $m \in S_N$. By the Fundamental Theorem of Arithmetic, it
-      follows that
+      is nonempty. Let $m \in S_N$. To avoid the case where $m = 1$, we  further
+      asume that $N > 1$. Note that $S_1 = \{1\}$ is finite. By the Fundamental 
+      Theorem of Arithmetic, it follows that
       $$m = {p_1}^{c_1}{p_2}^{c_2}\cdots{p_s}^{c_s},$$
       where the $p_i$s are mutually distinct primes, $s$, and the $c_i$s are
-      positive integers. Suppose one of the $p_i$s greater than $N + 1$, say
-      $p_1$. Then
-      \begin{align*}
-         \varphi(m) &= \varphi({p_1}^{c_1}{p_2}^{c_2}\cdots{p_s}^{c_s}) \\
+      positive integers. Applying $\varphi$ to $m$ gives us 
+      \begin{align}
+         \varphi(m) &= \varphi({p_1}^{c_1}{p_2}^{c_2}
+            \cdots{p_s}^{c_s}) \nonumber \\
             &= \varphi({p_1}^{c_1})\varphi({p_2}^{c_2})\cdots
-               \varphi({p_s}^{c_s}) \\
+               \varphi({p_s}^{c_s})  \nonumber \\
             &= (p_1 - 1)(p_2 - 1)\cdots(p_s-1){p_1}^{c_1-1}{p_2}^{c_2-1}
-               \cdots{p_s}^{c_s-1} \\
-            &> N,
-      \end{align*}
-      a contradiction since $\varphi(m) = N$. So $p_i \le N + 1$, for 
-      $1 \le i \le s$.
-      Let $\varepsilon$ be a positive 
-      number. To show that $\varphi(n)$ tends to infinity, we must find a
-      natural number $K$ such that $\varphi(n) > \varepsilon$ for all $n \ge K$.
-      Choose $K = \max\{M_1, M_2, \ldots, M_{\lceil\varepsilon \rceil}\}$,
+               \cdots{p_s}^{c_s-1} \label{0_2_1} \\
+            &= N. \nonumber
+      \end{align}
+
+      Now if one of the $p_i$s is greater than $N + 1$, then \eqref{0_2_1}
+      says that $\varphi(m) > N$, a contradiction since $\varphi(m) = N$. So 
+      each $p_i \le N + 1$. Similarly, since ${p_i}^{N} > N$, it must be the
+      case that each $c_i < N + 1$. Now let $T = \{q_1, q_2, \ldots, q_t\}$ be 
+      the set of all primes not greater than $N + 1$, where
+      $q_1 < q_2 < \cdots < q_t$. It follows that each $p_i \in T$ and thus
+      $s \le t$; that is,
+      $$m = {p_1}^{c_1}{p_2}^{c_2}\cdots{p_s}^{c_s} <
+        \underbrace{{q_t}^{N+1}{q_t}^{N+1}\cdots{q_t}^{N+1}}_{t \text{ times}} 
+        = {q_t}^{(N+1)t}.$$
+      Above, we used the fact that every element of $S_N$ can have at most
+      $t$ primes in its factorization. Thus every element of $S_N$ is less than
+      ${q_t}^{(N+1)t}$ and it follows that
+      $$S_N \subsetneq \{1, 2, \ldots, {q_t}^{N+1}\},$$ 
+      so that $S_N$ is finite. Let $\varepsilon$ be a positive number. To show 
+      that $\varphi(n)$ tends to infinity, we must find a natural number $K$
+      such that $\varphi(n) > \varepsilon$ for all $n > K$. Define
+      $M_j := \max(S_j)$ for all $j \in \N$. Choose
+      $K = \max\{M_1, M_2, \ldots, M_{\lceil\varepsilon \rceil}\}$,
       ($\lceil\varepsilon\rceil$ is the least integer greater than
-      $\varepsilon$). So if $n \ge K$, we know that $\varphi(n)$ cannot be a
-      member of $\{1, 2, \ldots, \lceil\varepsilon\rceil\}$; in particular, we
-      have that $\varphi(n) > \lceil\varepsilon\rceil \ge \varepsilon$. \qed
+      $\varepsilon$). Consider $n > K$ and assume that
+      $\varphi(n) = l \in \{1, 2, \ldots, \lceil\varepsilon\rceil\}$; that is,
+      $n \in S_l$, so that $M_l \ge n$. By definition, $K \ge M_l$, and thus,
+      $K \ge n$, a contradiction. Hence $\varphi(n) \notin \{1, 2, \ldots, 
+      \lceil\varepsilon\rceil\}$; that is,
+      $\varphi(n)  > \lceil\varepsilon\rceil \ge \varepsilon$. \qed
       
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.11]  Prove that if $d$ divides $n$ then $\varphi(d)$ divides
