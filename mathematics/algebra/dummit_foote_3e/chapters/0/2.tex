@@ -275,84 +275,29 @@ def gcd(a, b, x1 = 1, y1 = 0, x2 = 0, y2 = 1):
                   particular that $\varphi(n)$ tends to infinity as $n$ tends to
                   infinity.
 
-      \textbf{Proof.} For $n \in \N$, define
-      $$ P_n := \{({p_1}^{c_1}, {p_2}^{c_2}, \ldots, {p_m}^{c_m}) :
-         p_i \text{ distinct primes }, c_i, m \ge 0, \text{ and }
-         \prod_{i=1}^m {p_i}^{c_i}(p_i-1) = n\},$$
-      where the tuples above are equal up to ordering of the primes.
-
-      For example $P_1 = \{(2^0)\}$, $P_3 = \emptyset$, $P_2 = \{(2^1)\}$, $P_{12} = \{(13^0),
-      (3^0, 7^0), (2^0, 13^0), (2^1, 7^0), (2^0, 3^0, 7^0)\}$
-
-      \textbf{Proof.} Let $M$ be a positive integer. We shall denote a 
-      factorization of $M$ as a tuple $(a_1, a_2, \ldots, a_m)$, where
-      $m \in \Z^+$, each $a_i$---called a factor of $M$---is a positive integer,
-      and $\prod_{i=1}^m a_i = M$. If we remove all the 1s in a tuple $h$ to get
-      a tuple $t$, then $h = t$, so we can further assume that all the factors 
-      in a tuple are greater than 1. Also if we permute the factors in a tuple 
-      $h$ to get a tuple $t$, then $h = t$; that is, the order of factors in a 
-      tuple is irrelevant. We shall denote a tuple that contains only 1s as (1).
-      So let $F_M$ denote the set of all factorizations of $M$. For example,
-      $$F_1 = \{(1)\} \text{ and }
-        F_{20} = \{(2, 10), (5, 4), (20), (5, 2, 2)\}.$$
-
-      Since there is a finite number of factors of $M$, and since each factor is
-      at least 2 (except if $M$ is 1), it follows that $|F_M|$ is finite. Let 
-      $P_M$ be the set of all factorizations of $M$ of the form
-      $({p_1}^{c_1}, p_1 - 1, {p_2}^{c_2}, p_2 - 1, \ldots,
-      {p_k}^{c_k}, p_k - 1)$ where each $p_i$ is a unique prime, each $c_i$ is a
-      nonnegative integer, and $k$ is a positive integer. Note that
-      $P_M \subseteq F_M$. We are now ready to complete the proof. Let $N$ be a 
-      positive integer. Let $B_N$ be the set of positive integers $n$ such that 
-      $\varphi(n) = N$. If $|B_N| = 0$, then there exists a finite
-      number---exactly zero---of integers $n$ such that $\varphi(n) = N$. So 
-      assume that $|B_N| \ge 1$. Now consider the map
-      $$\phi : P_N \rightarrow B_N,$$
-      defined by
-      $$\phi(t) = {p_1}^{c_1 + 1}{p_2}^{c_2 + 1}\cdots{p_k}^{c_k + 1}$$
-      where $t \in P_N$ and $t = ({p_1}^{c_1}, p_1 - 1, {p_2}^{c_2}, p_2 - 1, 
-      \ldots, {p_k}^{c_k}, p_k - 1)$. Notice that $\phi$ is well 
-      defined since if $t = ({p_1}^{c_1}, p_1 - 1, {p_2}^{c_2}, p_2 - 1, \ldots,
-      {p_k}^{c_k}, p_k - 1)$ then
+      \textbf{Proof.} Let $N \in \N$ and define
+      $$S_N = \{n \in \N : \varphi(n) = N\}.$$
+      
+      We want to show that $S_N$ is finite. So it suffices to show that $S_N$ is
+      bounded; i.e., there exists a positive integer $K$ such that $n < K$ for
+      all $n \in S_N$. If $S_N$ is empty, then we are done, so assume that $S_N$
+      is nonempty. Let $m \in S_N$. By the Fundamental Theorem of Arithmetic, it
+      follows that
+      $$m = {p_1}^{c_1}{p_2}^{c_2}\cdots{p_s}^{c_s},$$
+      where the $p_i$s are mutually distinct primes, $s$, and the $c_i$s are
+      positive integers. Suppose one of the $p_i$s greater than $N + 1$, say
+      $p_1$. Then
       \begin{align*}
-         \varphi(\phi(t)) &= \varphi({p_1}^{c_1 + 1}{p_2}^{c_2 + 1}\cdots
-                             {p_k}^{c_k + 1}) \\
-                          &= {p_1}^{c_1}(p_1 - 1){p_2}^{c_2}(p_2 - 1) \cdots
-                             {p_k}^{c_k}(p_k - 1) \\
-                    &= N,
+         \varphi(m) &= \varphi({p_1}^{c_1}{p_2}^{c_2}\cdots{p_s}^{c_s}) \\
+            &= \varphi({p_1}^{c_1})\varphi({p_2}^{c_2})\cdots
+               \varphi({p_s}^{c_s}) \\
+            &= (p_1 - 1)(p_2 - 1)\cdots(p_s-1){p_1}^{c_1-1}{p_2}^{c_2-1}
+               \cdots{p_s}^{c_s-1} \\
+            &> N,
       \end{align*}
-      so that $\phi(t)$, indeed, is a member of $B_N$. Since $|P_N|$ is finite, 
-      it suffices to show that $\phi$ is a bijection. First we want to show that
-      $\phi$ is onto. So let $d \in B_N$. By the Fundamental Theorem of
-      Arithmetic, we have
-      $$d = {d_1}^{a_1}{d_2}^{a_2}\cdots{d_j}^{a_j}$$
-      where each $a_i$ is a positive integer and each $d_i$ is a unique prime.
-      That is
-      $$\phi(({d_1}^{a_1 - 1}, d_1 - 1, {d_2}^{a_2 - 1}, d_2 - 1, \ldots,
-      {d_j}^{a_j - 1}, d_j - 1)) = d,$$
-      so that $\phi$ is onto. Finally, we must now show that $\phi$ is
-      one-to-one. That is, suppose that $\phi(s) = \phi(t)$ for some tuples
-      $s, t \in P_N$; we must prove that $s = t$. Since $s$ and $t$ are tuples
-      in $P_N$, we must have that
-      $$s = ({s_1}^{a_1}, s_1 - 1, {s_2}^{a_2}, s_2 - 1, \ldots, {s_j}^{a_j}, 
-            s_j - 1),$$
-      and
-      $$t = ({t_1}^{b_1}, t_1 - 1, {t_2}^{b_2}, t_2 - 1, \ldots, {t_k}^{b_k}, 
-      t_k - 1).$$
-
-      Since $\phi(s) = \phi(t)$, it follows that
-      $${s_1}^{a_1 + 1}{s_2}^{a_2 + 1}\cdots{s_j}^{a_j + 1} = 
-        {t_1}^{b_1 + 1}{t_2}^{b_2 + 1}\cdots{t_k}^{b_k + 1} $$
-      Since all the exponents in the equation above are positive and since
-      the primes $s_i$ are unique and $t_i$ are unique, it follows by the
-      Fundamental Theorem of Arithmetic that $j = k$ and each prime $s_i$ is
-      equal to some prime $t_r$ (with exponents $a_i + 1 = b_r + 1$, so that 
-      $a_i = b_r$). Thus $s = t$, so that $\phi$ is 1-1. Thus $|B_N| = |P_N|$. 
-      Hence there exist only finitely many integers $n$ with $\varphi(n) = N$.
-      Now we have shown that there exists a maximum positive integer $M$ such 
-      that $\varphi(M) = N$. For each natural number $n$, let $M_n$ denote the
-      maximum positive integer such that $\varphi(M_n) = n$. Thus
-      $\varphi(m) \neq n$ for all $m > M_n$. Let $\varepsilon$ be a positive 
+      a contradiction since $\varphi(m) = N$. So $p_i \le N + 1$, for 
+      $1 \le i \le s$.
+      Let $\varepsilon$ be a positive 
       number. To show that $\varphi(n)$ tends to infinity, we must find a
       natural number $K$ such that $\varphi(n) > \varepsilon$ for all $n \ge K$.
       Choose $K = \max\{M_1, M_2, \ldots, M_{\lceil\varepsilon \rceil}\}$,
