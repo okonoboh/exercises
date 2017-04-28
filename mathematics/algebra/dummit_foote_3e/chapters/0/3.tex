@@ -93,18 +93,19 @@
    \item[0.3.8]   Prove that the equation $a^2 + b^2 = 3c^2$ has no solutions in
                   nonzero integers $a$, $b$, and $c$.
                   
-      \textbf{Proof.} Suppose there exists nonzero integers $a$, $b$, and $c$
+      \textbf{Proof.} Suppose there exist nonzero integers $a$, $b$, and $c$
       such that $a^2 + b^2 = 3c^2$. Notice that $|a|^2 + |b|^2 = 3|c|^2$, so we
       can assume that $a$, $b$, and $c$ are all positive. If
       $\gcd(a, b, c) = r > 1$, then $(a/r)^2 + (b/r)^2 = (c/r)^2$, so we can
-      further assume that $\gcd(a, b, c) = 1$. By Exercise 0.3.6, it follows
-      that $c^2$ must leave a remainder of 0 or 1 (mod 4). If $c^2 \equiv 1$
-      (mod 4) then $a^2 + b^2 = 3c^2 \equiv 3$ (mod 4), a contradiction to
-      Exercise 0.3.7. So $c^2$ and $a^2 + b^2$ must both leave a remainder of
-      0 when divided by 4. If either $a^2 \equiv 1$ (mod 4) or $b^2 \equiv 1$
-      (mod 4), then $a^2 + b^2$ will leave a remainder of 1 or 2 (mod 4), so
-      both $a^2$ and $b^2$ must leave a remainder of 0 (mod 4). That is,
-      $a^2$, $b^2$, and $c^2$ are all divisible by 4, so that they all are
+      further assume that $\gcd(a, b, c) = 1$. Now consider
+      $\overline{a^2+b^2}, \overline{c^2} \in \Z/4\Z$. By Exercise 0.3.6,
+      $\overline{c^2} = \overline{0}$ or $\overline{1}$. If
+      $\overline{c^2} = \overline{1}$, then
+      $\overline{a^2 + b^2} = \overline{3c^2} = \overline{3}$, a contradiction
+      to Exercise 0.3.7. So $\overline{c^2} = \overline{0}$, and thus
+      $\overline{a^2 + b^2} = \overline{0}$. By Exercise 0.3.6, it follows that
+      $\overline{a^2} = \overline{b^2} = \overline{0}$. That is, $a^2$, $b^2$, 
+      and $c^2$ are all divisible by 4, so that $a$, $b$, and $c$ all are
       divisible by 2. That is, $\gcd(a, b, c) \ge 2$, a contradiction, so that
       no nonzero integers $a$, $b$, and $c$ exist such that
       $a^2 + b^2 = 3c^2$. \qed
@@ -124,13 +125,16 @@
                   $\varphi$-function.
                   
       \textbf{Proof.} Fix $n \in \N$. Let
-      $$T = \{\overline{a} : (a, n) = 1, 0 < a \le n\}.$$
-      We showed in Exercise 0.3.2 that the residue classes $\overline{1}$,
-      $\overline{2}$, $\ldots$, $\overline{n} = \overline{0}$ are unique; thus, 
-      the elements of $T$ must also unique. By definition, we see that
-      $|T| = \varphi(n)$. We quickly note that if $b \in \overline{a}$ for some
-      $\overline{a} \in T$, then $(b, n) = 1$, so that $T$ is well defined.
-      To complete the proof, it suffices to show that $(\Z/n\Z)^\times = T$. So
+      $$T = \{\overline{a} \in \Z/n\Z : (a, n) = 1, 0 < a \le n\}.$$
+
+      Let $b \in \overline{a}$ for some $\overline{a} \in T$. Thus $b = a + kn$,
+      for some integer $k$. The equality $b = a + kn$ says that the divisors of
+      $a$ and $n$ are exactly the divisors of $b$ and $n$, and since
+      $(a, n) = 1$, it follows that $(b, n) = 1$. So $T$ is well-defined. We
+      showed in Exercise 0.3.2 that the residue classes $\overline{1}$,
+      $\overline{2}$, $\ldots$, $\overline{n}$ of $\Z/n\Z$ are distinct; thus, 
+      the elements of $T$ must also be distinct, so that $|T| = \varphi(n)$. To
+      complete the proof, it suffices to show that $(\Z/n\Z)^\times = T$. So
       first let us show that $T$ is a subset of $(\Z/n\Z)^\times$. Let
       $\overline{r} \in T$. Then we have that $(r, n) = 1$, so that there exist 
       integers $x$ and $y$ such that $xr + yn = 1$. That is
@@ -139,8 +143,8 @@
       $\overline{z} \in (\Z/n\Z)^\times$. Then there exists
       $\overline{v} \in \Z/n\Z$, such that
       $\overline{z}\overline{v} = \overline{1}$. This means that
-      $zv \equiv 1$ (mod $n$), so that $zv + kn = 1$ for some integer $k$. The
-      equation $zv + kn = 1$ tells us that every positive integer that divides 
+      $zv \equiv 1$ (mod $n$), so that $zv + tn = 1$ for some integer $t$. The
+      equality $zv + tn = 1$ tells us that every positive integer that divides 
       $n$ and $z$ must also divide 1; thus $(z, n) = 1$; i.e.
       $\overline{z} \in T$, so that $(\Z/n\Z)^\times \subseteq T$, and thus,
       $(\Z/n\Z)^\times = T$. \qed
@@ -166,7 +170,11 @@
       \textbf{Proof.} Let $d = \gcd(a, n)$. Since $a$ and $n$ are not relatively
       prime, it follows that $d > 1$, so that $1 \le n/d < n$. Thus we must have 
       that $a \cdot \frac{n}{d} \equiv \frac{a}{d} \cdot n \equiv 0$ (mod $n$).
-      So choose $b = n/d$. \qed
+      So choose $b = n/d$. Now assume to the contrary that $ac \equiv 1$
+      (mod $n$), for some integer $c$. Then
+      $$0 \equiv 0 \cdot c \equiv ab \cdot c \equiv (ac)b \equiv 1 \cdot b
+        \equiv b \text{ (mod } n),$$
+      a contradiction since $b$ is not divisible by $n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.3.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.3.13]  Let $n \in \Z$, $n > 1$, and let $a \in \Z$ with
                   $1 \le a \le n$. Prove that if $a$ and $n$ are relative prime
