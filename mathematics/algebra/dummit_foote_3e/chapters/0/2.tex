@@ -1,5 +1,5 @@
 \begin{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.1]   For each of the following pairs of integers $a$ and $b$,
                   determine their greatest common divisor, ther least common
                   multiple, and write their greatest common divisor in the form
@@ -47,7 +47,7 @@
                      &= 27 \cdot 69 - 5 \cdot 372.
                \end{align*}
 
-               Thus $\gcd(69, 372) = 1$ and we have $x = 27$ and $y = -5$.
+               Thus $\gcd(69, 372) = 3$ and we have $x = 27$ and $y = -5$.
          \item Using the Euclidean Algorithm we have
                \begin{align*}
                   792 &= 2 \cdot 275 + 242 \\
@@ -109,7 +109,7 @@
                Thus $\gcd(507885, 60808) = 691$ and we have $x = -17$ and
                $y = 142$.
       \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.2]   Prove that if the integer $k$ divides the integers $a$ and $b$
                   then $k$ divides $as + bt$ for every pair of integers $s$ and
                   $t$.
@@ -126,7 +126,7 @@
       \end{align*}
 
       So take $m_1 = m_2s + m_3t$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.3]   Prove that if $n$ is composite then there are integers $a$ and
                   $b$ such that $n$ divides $ab$ but $n$ does not divide either
                   $a$ or $b$.
@@ -135,7 +135,7 @@
       $c$ and $d$ are integers greater than 1. Clearly, $n \mid cd$ because
       $n = cd$, but $n$ divides neither $c$ nor $d$, since they are both less
       than $n$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.4]   Let $a$, $b$ and $N$ be fixed integers with $a$ and $b$ 
                   nonzero and let $d = (a, b)$ be the greatest common divisor of
                   $a$ and $b$. Suppose $x_0$ and $y_0$ are particular solutions
@@ -154,7 +154,7 @@
 		\end{align*}
 		so that $x = x_0 + \frac{b}{d}t$ and $y = y_0 - \frac{a}{d}t$ are
 		solutions to the equation $ax + by = N$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.5]   Determine the value $\varphi(n)$ for each integer $n \le 30$
                   where $\varphi$ denotes the Euler $\varphi-$function.  
 
@@ -196,7 +196,7 @@
             $\varphi(30)$ & = & $\varphi(2)\varphi(15)$ & = & 8. \\
          \end{tabular}
       \end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.6]   Prove the Well Ordering Principle of $\Z$ by induction and
                   prove the minimal element is unique.
 
@@ -219,7 +219,7 @@
       have $p \le q$ and, by virtue of $q$ as a minimal element of $P$, we have
       $q \le p$, so that $p = q$. Hence the minimal element of $P$ is
       unique. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.7]   If $p$ is a prime prove that there do not exist nonzero
                   integers $a$ and $b$ such that $a^2 = pb^2$.
 
@@ -233,7 +233,7 @@
       $b$ has $p$ as one of its prime factors, so that $\gcd(a, b) \ge p$, a
       contradiction. Thus there do not exist nonzero integers $a$ and $b$ such 
       that $a^2 = pb^2$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.8]   Let $p$ be a prime, $n \in \Z^+$. Find a formula for the
                   largest power of $p$ which divides
                   $n! = n(n - 1)(n - 2)\cdots2 \cdot 1$ (it involves the
@@ -244,7 +244,7 @@
       multiples of $p$ in the set $\{1, 2, \ldots, n\}$. Thus
       $k = \lfloor{n/p}\rfloor$, where $\lfloor{x}\rfloor$ is the greatest
       integer less than the real number $x$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.9]   Write a computer program to determine the greatest common
                   divisor $(a, b)$ of two integers $a$ and $b$ and to express
                   $(a, b)$ in the form $ax + by$ for some integers $x$ and $y$.
@@ -268,7 +268,7 @@ def gcd(a, b, x1 = 1, y1 = 0, x2 = 0, y2 = 1):
 
    return gcd(b, r, x2, y2, x1, y1)
    \end{verbatim}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.10]  Prove for any given positive integer $N$ there exist only
                   finitely many integers $n$ with $\varphi(n) = N$ where
                   $\varphi$ denotes Euler's $\varphi$-function. Conclude in 
@@ -281,12 +281,14 @@ def gcd(a, b, x1 = 1, y1 = 0, x2 = 0, y2 = 1):
       We want to show that $S_N$ is finite. So it suffices to show that $S_N$ is
       bounded; i.e., there exists a positive integer $K$ such that $n < K$ for
       all $n \in S_N$. If $S_N$ is empty, then we are done, so assume that $S_N$
-      is nonempty. Let $m \in S_N$. To avoid the case where $m = 1$, we  further
-      asume that $N > 1$. Note that $S_1 = \{1\}$ is finite. By the Fundamental 
+      is nonempty. Let $m \in S_N$. If $m = 1$, then $N = 1$, and thus
+      $S_1 = \{1, 2\}$ is finite. So assume $m > 1$. By the Fundamental 
       Theorem of Arithmetic, it follows that
       $$m = {p_1}^{c_1}{p_2}^{c_2}\cdots{p_s}^{c_s},$$
-      where the $p_i$s are mutually distinct primes, $s$, and the $c_i$s are
-      positive integers. Applying $\varphi$ to $m$ gives us 
+      where the $p_i$s are mutually distinct primes, $s$ and the $c_i$s are
+      positive integers, and $s < N$ (the number of distinct prime factors a
+      positive integer has is less than the integer). Applying $\varphi$ to $m$ 
+      gives us 
       \begin{align}
          \varphi(m) &= \varphi({p_1}^{c_1}{p_2}^{c_2}
             \cdots{p_s}^{c_s}) \nonumber \\
@@ -297,34 +299,27 @@ def gcd(a, b, x1 = 1, y1 = 0, x2 = 0, y2 = 1):
             &= N. \nonumber
       \end{align}
 
-      Now if one of the $p_i$s is greater than $N + 1$, then \eqref{0_2_1}
-      says that $\varphi(m) > N$, a contradiction since $\varphi(m) = N$. So 
-      each $p_i \le N + 1$. Similarly, since ${p_i}^{N} > N$, it must be the
-      case that each $c_i < N + 1$. Now let $T = \{q_1, q_2, \ldots, q_t\}$ be 
-      the set of all primes not greater than $N + 1$, where
-      $q_1 < q_2 < \cdots < q_t$. It follows that each $p_i \in T$ and thus
-      $s \le t$; that is,
+      Let $q$ be the least prime greater than $N + 1$. Thus each $p_i - 1 < q$,
+      for otherwise $\varphi(m) > N$ by $\eqref{0_2_1}$. Similarly, since
+      ${p_i}^{N} > N$, it must be the case that each $c_i < N + 1$. So
       $$m = {p_1}^{c_1}{p_2}^{c_2}\cdots{p_s}^{c_s} <
-        \underbrace{{q_t}^{N+1}{q_t}^{N+1}\cdots{q_t}^{N+1}}_{t \text{ times}} 
-        = {q_t}^{(N+1)t}.$$
-      Above, we used the fact that every element of $S_N$ can have at most
-      $t$ primes in its factorization. Thus every element of $S_N$ is less than
-      ${q_t}^{(N+1)t}$ and it follows that
-      $$S_N \subsetneq \{1, 2, \ldots, {q_t}^{N+1}\},$$ 
+        \underbrace{q^{N+1}q^{N+1}\cdots q^{N+1}}_{N \text{ times}} 
+        = q^{(N+1)N}.$$
+      Thus
+      $$S_N \subset \{1, 2, \ldots, q^{(N+1)N}\},$$ 
       so that $S_N$ is finite. Let $\varepsilon$ be a positive number. To show 
       that $\varphi(n)$ tends to infinity, we must find a natural number $K$
       such that $\varphi(n) > \varepsilon$ for all $n > K$. Define
       $M_j := \max(S_j)$ for all $j \in \N$. Choose
       $K = \max\{M_1, M_2, \ldots, M_{\lceil\varepsilon \rceil}\}$,
       ($\lceil\varepsilon\rceil$ is the least integer greater than
-      $\varepsilon$). Consider $n > K$ and assume that
+      $\varepsilon$). Consider $n > K$ and assume to the contrary that
       $\varphi(n) = l \in \{1, 2, \ldots, \lceil\varepsilon\rceil\}$; that is,
       $n \in S_l$, so that $M_l \ge n$. By definition, $K \ge M_l$, and thus,
       $K \ge n$, a contradiction. Hence $\varphi(n) \notin \{1, 2, \ldots, 
       \lceil\varepsilon\rceil\}$; that is,
       $\varphi(n)  > \lceil\varepsilon\rceil \ge \varepsilon$. \qed
-      
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Prob0.2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%0.2.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[0.2.11]  Prove that if $d$ divides $n$ then $\varphi(d)$ divides
                   $\varphi(n)$ where $\varphi$ denotes Euler's
                   $\varphi-$function.
