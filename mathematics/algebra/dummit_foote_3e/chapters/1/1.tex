@@ -162,7 +162,7 @@
                because
                $$1 * 2 = \frac{1}{2} \neq \frac{2}{1} = 2 * 1.$$
       \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.3]   Prove that addition of residue classes in $\Z/n\Z$ is
                   associative (you may assume it is well defined).
                   
@@ -176,7 +176,7 @@
             &= (\overline{a} + \overline{b}) + \overline{c},
       \end{align*}
       so that addition of residue classes in $\Z/n\Z$ is associative. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.4]   Prove that multiplication of residue classes in $\Z/n\Z$ is
                   associative (you may assume it is well defined).
                   
@@ -190,14 +190,14 @@
             &= (\overline{a} \cdot \overline{b}) \cdot \overline{c},
       \end{align*}
       so that multiplication of residue classes in $\Z/n\Z$ is associative. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.5]   Prove that for all $n > 1$ that $\Z/n\Z$ is not a group under
                   multiplication of residue classes.
                   
       \textbf{Proof.} Let $n$ be positive integer greater than 1. It follows
       that $\Z/n\Z$ is not a group under multiplication because $\overline{0}$
       has no multiplicative inverse. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.6]   Determine which of the following sets are groups under
                   addition:
                   \begin{enumerate}
@@ -226,9 +226,8 @@
                addition. Notice that $S$ is nonempty since it contains 7/5, so 
                let $r, s \in S$. By definition of $S$, we have that
                $r = a_1/b_1$ and $s = a_2/b_2$ for some integers $a_1$ and
-               $a_2$, and nonzero integers $b_1$ and $b_2$, where $b_1$ and
-               $b_2$ are odd and $\gcd(a_1, b_1) = \gcd(a_2, b_2) = 1$.
-               It follows that
+               $a_2$, and odd integers $b_1$ and $b_2$, such that
+               $\gcd(a_1, b_1) = \gcd(a_2, b_2) = 1$. It follows that
                \begin{align*}
                   r + s &= \frac{a_1}{b_1} + \frac{a_2}{b_2} \\
                         &= \frac{a_1b_2 + a_2b_1}{b_1b_2}.
@@ -280,10 +279,10 @@
                is not a group under addition because it is not closed. Indeed,
                for $1/2, 1/3 \in S$, we have $1/2 + 1/3 = 5/6 \notin S$.
       \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.7]   Let $G = \{x \in \R : 0 \le x < 1\}$ and for $x, y \in G$ let
                   $x * y$ be the fractional part of $x + y$ (i.e.,
-                  $x * y = x + y = [x + y]$ where $[a]$ is the greatest integer
+                  $x * y = x + y - [x + y]$ where $[a]$ is the greatest integer
                   less than or equal to $a$). Prove that $*$ is a well defined
                   binary operation on $G$ and that $G$ is an abelian group under
                   $*$ (called the \textit{real numbers mod }1).
@@ -293,71 +292,63 @@
       is well defined, associative, has an identity, and is closed under taking
       inverses.
 
-      \textbf{Well Defined:} To show that $*$ is well defined is tantamount to
-      showing that $G$ is closed under $*$.  By definition, we have that
-      $0 \le x < 1$ and $0 \le y < 1$, so that $0 \le x + y < 2$. If
-      $0 \le x + y < 1$, so that $[x + y] = 0$, then we have that
-      $$0 \le x + y = x + y - [x + y] = x * y = x + y < 1.$$
-      However if $1 \le x + y < 2$, so that $[x + y] = 1$ and
-      $0 \le x + y - 1 < 1$, we must have that
-      $$0 \le x + y - 1 = x + y - [x + y] = x * y = x + y - 1 < 1.$$
-      In either case, we have $0 \le x * y < 1$; i.e. $x * y \in G$, so that $G$ 
+      \textbf{Well Defined.} To show that $*$ is well defined is tantamount to
+      showing that $G$ is closed under $*$.  First we want to show that
+      $0 \le r - [r] < 1$ for each nonnegative real number $r$. If $r$ is an
+      integer, then $r - [r] = 0$, so our claim follows. Now suppose $r$ is not
+      an integer and write it as a decimal expansion: $r = r_0.r_1r_2r_3\ldots$,
+      where $r_i$ is a nonnegative integer for all $i \ge 0$
+      ($r \neq r_0.\overline{9}$ because $r_0.\overline{9} = r_0 + 1$ is an 
+      integer). Then
+      $$r - [r] = r_0.r_1r_2r_3\ldots - r_0 = 0.r_1r_2r_3\ldots,$$
+      so that $0 \le r - [r] < 1$. By definition, we have that
+      $0 \le x < 1$ and $0 \le y < 1$, so that $0 \le x + y < 2$. Thus if we
+      substitute $x + y$ for $r$ above, we get
+      $0 \le x + y  - [x + y] = x * y < 1$; i.e. $x * y \in G$, so that $G$ 
       is closed under $*$. Also we have that
       $$x * y = x + y - [x + y] = y + x - [y + x],$$
       so that $G$ is abelian.
 
-      \textbf{Associativity:} We have that
+      \begin{lemma} \label{1_1_7_1} Let $r \in \R$ and $a \in \Z$ such that
+      $0 \le a \le r$. Then
+         $$[r - a] = [r] - a.$$
+      \end{lemma}
+
+      \textbf{Proof.} The result is clear if $r$ is an integer. So suppose $r$ 
+      is not an integer. Now write $r$ as a decimal expansion:
+      $r = r_0.r_1r_2r_3\ldots$, (note that $r \neq r_0.\overline{9}$ because
+      $r_0.\overline{9}$ is an integer). Since $r \ge a$, it follows that
+      $r_0 \ge a$, so that
+      $$[r - a] = [(r_0 - a).r_1r_2r_3\ldots] = r_0 - a =
+      [r_0.r_1r_2r_3\ldots] - a = [r] - a.$$ \qed
+
+      \textbf{Associativity.} We have that 
       \begin{align*}
          x * (y * z) &= x * (y + z - [y + z]) \\
-              &= x + y + z - [y + z] - [x + y + z - [y + z]], \text{ and} \\ \\
-         (x * y) * z &= (x + y - [x + y]) * z \\
-                     &=  x + y + z - [x + y] - [x + y + z - [x + y]].
+              &= x + y + z - [y + z] - [x + y + z - [y + z]] \\
+              &= x + y + z - [y + z] - ([x + y + z] - [y + z])
+                 \quad \text{Lemma }\ref{1_1_7_1} \\
+              &= x + y + z - [x + y + z] \\
+              &= x + y + z - [x + y] - ([x + y + z] - [x + y]) \\
+              &= x + y + z - [x + y] - [x + y + z - [x + y]]
+                 \quad \text{  Lemma }\ref{1_1_7_1} \\
+          &= (x + y - [x + y]) * z \\
+                     &=  (x * y) * z,
       \end{align*}
-      By definition, we have that $0 \le x < 1$, $0 \le y < 1$, and
-      $0 \le z < 1$, so that $0 \le x + y < 2$ and $0 \le y + z < 2$. Let us 
-      now investigate the following possible cases:
-
-      \textit{Case 1:} \textit{$0 \le x + y  < 1$ and $0 \le y + z < 1$}. That
-      is $[x + y] = [y + z] = 0$. It then follows that
-      $$x * (y * z) = (x * y) * z = x + y + z - [x + y + z].$$
-
-      \textit{Case 2:} \textit{$1 \le x + y  < 2$ and $1 \le y + z < 2$}. That
-      is $[x + y] = [y + z] = 1$. It then follows that
-      $$x * (y * z) = (x * y) * z = x + y + z - 1 - [x + y + z - 1].$$
-
-      \textit{Case 3:} \textit{$0 \le x + y  < 1$ and $1 \le y + z < 2$}. That
-      is $[x + y] = 0$, and $[y + z] = 1$. It then follows that
-      $$(x * y) * z = x + y + z - [x + y + z].$$
-      Since $0 \le x + y < 1$ and $0 \le z < 1$, we must have that
-      $0 \le x + y + z < 2$. Similarly, since $1 \le y + z < 2$ and
-      $0 \le x < 1$, we must have that $1 \le x + y + z < 3$, and since we 
-      already showed that $0 \le x + y + z < 2$, it follows that
-      $1 \le x + y + z < 2$. Hence $[x + y + z] = 1$. We can then conclude that 
-      $(x * y) * z = x +y + z - 1$. Now we have that
-      $$x * (y * z) = x + y + z - 1 - [x + y + z - 1].$$
-      We already showed that $1 \le x + y + z < 2$; thus,
-      $0 \le x + y + z - 1 < 1$, so that $[x + y + z - 1] = 0$; that is,
-      $$x * (y * z) = x + y + z - 1 = (x * y) * z.$$
-   
-      \textit{Case 4:} \textit{$1 \le x + y  < 2$ and $0 \le y + z < 1$}. Apply
-      Case 3, with the roles of $x + y$ and $y + z$ interchanged.
-
-      We have thus shown that in all possible cases, we have
-      $$x * (y * z) = (x * y) * z,$$
       so that $G$ is associative under $*$.
 
 
-      \textbf{Identity:} We observe that $0 \in G$ is the identity element since
+      \textbf{Identity.} We observe that $0 \in G$ is the identity element since
       $$x * 0 = x + 0 - [x + 0] = x - [x] = x - 0 = x.$$
 
-      \textbf{Inverse:} Suppose $x \neq 0$, so that $0 < x < 1$, and thus
+      \textbf{Inverse.} Suppose $x \neq 0$, so that $0 < x < 1$, and thus
       $0 < 1 - x < 1$; that is $1 - x \in G$. It follows that
       $$x * (1 - x) = x + (1 - x) + [x + (1 - x)] = 1 - 1 = 0,$$
       so that $1 - x$ is the inverse of $x \in G$, with $x \neq 0$. Clearly, the 
       inverse of 0 is 0. \\
 
-      We can now conclude that $(G, *)$ is a group. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      We can now conclude that $(G, *)$ is a group. \qed 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.8]   Let $G = \{z \in \C : z^n = 1 \text{ for some } n \in \Z^+\}$.
                   \begin{enumerate}
                      \item Prove that $G$ is a group under multiplication
@@ -369,22 +360,23 @@
       \textbf{Proof.}
       
       \begin{enumerate}
-         \item We observe that 1 is the identity element of $G$, so that $G$ is
-               not empty. So let $x, y, z \in G$.
+         \item Since $1^1 = 1$, it follows that $1 \in G$, so that $G$ is
+               nonempty. So let $x, y\in G$. 
                
-               \textbf{Closure:} By definition, there exist positive integers
+               \textbf{Closure.} By definition, there exist positive integers
                $m$ and $n$ such that $x^m = y^n = 1$. Thus
                $(xy)^{mn} = (x^m)^n(y^n)^m = 1^n1^m = 1$. This says that $G$ is
                closed under multiplication.
                
-               \textbf{Associativity:} Since $\C$ is associative under
+               \textbf{Associativity.} Since $\C$ is associative under
                multiplication and since $G \subseteq \C$, it follows that $G$ is
                associative under multiplication.
                
-               \textbf{Identity:} As state above, the identity of $G$ is clearly
-               1.
+               \textbf{Identity.} Since
+               $$1 \cdot x = x \cdot 1 = x,$$
+               it follows that $1$ is the identity of $G$.
                
-               \textbf{Inverse:} Notice that since
+               \textbf{Inverse.} Notice that since
                $(x^{m - 1})^m = (x^m)^{m - 1} = 1$, we must have that
                $x^{m - 1} \in G$. Thus we have $x^{m - 1}x = x^m = 1$; i.e., the
                inverse of $x$ is $x^{m - 1}$.
@@ -395,7 +387,7 @@
                $1 + 1 = 2 \notin G$ because $2^n \neq 1$ for any positive
                integer.
       \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.9]   Let $G = \{a + b\sqrt{2} \in \R : a, b \in \Q\}$.
                   \begin{enumerate}
                      \item Prove that $G$ is a group under addition.
@@ -407,42 +399,46 @@
       \textbf{Proof.}
       
       \begin{enumerate}
-         \item \textbf{Closure:} $G$ is clearly nonempty, so let $x, y \in G$.
+         \item \textbf{Closure.} $G$ is clearly nonempty, so let $x, y \in G$.
                By definition of $G$, it follows that $x = a_1 + b_1\sqrt{2}$ and
                $y = a_2 + b_2\sqrt{2}$ for some rational numbers $a_1$, $b_1$,
                $a_2$, and $b_2$. Thus
                $$x + y = (a_1 + a_2) + (b_1 + b_2)\sqrt{2} \in G,$$
-               so that $G$ is closed under addition.
+               because $\Q$ is closed under addition; thus $G$ is also closed 
+               under addition.
                
-               \textbf{Associativity:} Since $\R$ is associative under addition
+               \textbf{Associativity.} Since $\R$ is associative under addition
                and since $G \subseteq \R$, it follows that $G$ is associative
                under addition.
                
-               \textbf{Identity:} The identity of $G$ is 0.
+               \textbf{Identity.} The identity of $G$ is 0.
                
-               \textbf{Inverse:} For an element $x = a_1 + b_1\sqrt{2} \in G$,
+               \textbf{Inverse.} For an element $x = a_1 + b_1\sqrt{2} \in G$,
                the additive inverse of $x$ is $-a_1 - b_1\sqrt{2} \in G$.
                
                We have thus shown that $G$ is a group under addition. \qed
          \item Let $G^{\times}$ denote the set of nonzero elements of $G$.
          
-               \textbf{Closure:} Let $x, y \in G^{\times}$. By definition of
+               \textbf{Closure.} Let $x, y \in G^{\times}$. By definition of
                $G$, it follows that $x = a_1 + b_1\sqrt{2}$ and
                $y = a_2 + b_2\sqrt{2}$ for some rational numbers $a_1$, $b_1$,
                $a_2$, and $b_2$, with $a_1$ and $b_1$ not both zero and $a_2$
                and $b_2$ not both zero. Thus
-               $$xy = (a_1a_2 + 2b_1b_2) + (a_1b_2 + a_2b_1)\sqrt{2}.$$
-               Since neither $x$ nor $y$ is zero, it must be the case that $xy$
-               is not zero, so that $G^{\times}$ is closed under multiplication.
+               $$xy = (a_1a_2 + 2b_1b_2) + (a_1b_2 + a_2b_1)\sqrt{2} \in G,$$
+               by the closure of $\Q$ under addition and multiplication. Now
+               since $xy$ is a real number and neither $x$ nor $y$ is zero, it 
+               must be the case that $xy \neq 0$; that is,
+               $xy \in  G^{\times}$. Conclude that $G^{\times}$ is closed under 
+               multiplication.
                
-               \textbf{Associativity:} Since $\R$ is associative under
+               \textbf{Associativity.} Since $\R$ is associative under
                multiplication and since $G^{\times} \subseteq \R$, it follows
                that $G^{\times}$ is associative under multiplication.
                
-               \textbf{Identity:} The element $1 = 1 + 0\sqrt{2} \in G^{\times}$
+               \textbf{Identity.} The element $1 = 1 + 0\sqrt{2} \in G^{\times}$
                is the identity of $G^{\times}$.
                
-               \textbf{Inverse:} Let $x = a_1 + b_1\sqrt{2} \in G^{\times}$.
+               \textbf{Inverse.} Let $x = a_1 + b_1\sqrt{2} \in G^{\times}$.
                Since $x \neq 0$, the real number $1/x$ exists, and we have that
                $$\frac{1}{x} = \frac{1}{a_1 + b_1\sqrt{2}}
                  \frac{a_1 - b_1\sqrt{2}}{a_1 - b_1\sqrt{2}} =
@@ -456,7 +452,7 @@
                We have thus shown that $G^{\times}$ is a group under
                multiplication. \qed
       \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.10]  Prove that a finite group is abelian if and only if its group
                   table is a symmetric matrix.
                   
@@ -474,8 +470,8 @@
       $(\Rightarrow)$ Now suppose that $G$ is abelian. Consider
       $a_{rs} \in (a_{ij})$. It follows that
       $$a_{rs} = g_rg_s = g_sg_r = a_{sr},$$
-      so that $(a_{ij})$ is symmetric. \qed      
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      so that $(a_{ij})$ is symmetric. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.11]  Find the orders of each element of the additive group
                   $\Z/12\Z$.
                   
@@ -484,7 +480,7 @@
       $\overline{5}$, $\overline{6}$, $\overline{7}$, $\overline{8}$,
       $\overline{9}$, $\overline{10}$, and $\overline{11}$ in $\Z/12\Z$ are
       1, 12, 6, 4, 3, 12, 2, 12, 3, 4, 6, and 12.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.12]  Find the orders of the following elements of the
                   multiplicative group $(\Z/12\Z)^\times: \overline{1},
                   \overline{-1}, \overline{5}, \overline{7}, \overline{-7}, 
@@ -492,8 +488,8 @@
                   
       \textbf{Solution.} The orders of the elements $\overline{1}$,
       $\overline{-1}$, $\overline{5}$, $\overline{7}$, $\overline{-7}$,
-      $\overline{13}$ in $(\Z/12\Z)^\times$ are 1, 11, 5, 7, 5, and 13.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      $\overline{13}$ in $(\Z/12\Z)^\times$ are 1, 2, 2, 2, 2, and 1.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.13]  Find the orders of the following elements of the additive
                   group $\Z/36\Z: \overline{1}, \overline{2}, \overline{6}, 
                   \overline{9}, \overline{10}, \overline{12}, \overline{-1}, 
@@ -503,7 +499,7 @@
       $\overline{2}$, $\overline{6}$, $\overline{9}$, $\overline{10}$,
       $\overline{12}$, $\overline{-1}$, $\overline{-10}$, and $\overline{-18}$
       in $\Z/36\Z$ are 1, 18, 6, 4, 18, 3, 36, 18, and 2.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.14]  Find the orders of the following elements of the
                   multiplicative group $(\Z/36\Z)^\times: \overline{1},
                   \overline{-1}, \overline{5}, \overline{13}, \overline{-13},
@@ -511,8 +507,8 @@
                   
       \textbf{Solution.} The orders of the elements $\overline{1}$,
       $\overline{-1}$, $\overline{5}$, $\overline{13}$, $\overline{-13}$,
-      $\overline{17}$ in $(\Z/36\Z)^\times$ are 1, 35, 29, 25, 11, and 17.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      $\overline{17}$ in $(\Z/36\Z)^\times$ are 1, 2, 6, 3, 6, and 2.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.15]  Prove that $(a_1a_2\cdots a_n)^{-1} =
                   {a_n}^{-1}{a_{n-1}}^{-1}\cdots {a_1}^{-1}$ for all
                   $a_1, a_2, \ldots, a_n \in G$.
@@ -528,26 +524,25 @@
       \end{align*}
       That is, our statement holds for $k + 1$, so that, by the Principle of
       Mathematical Induction, it holds for each positive integer $n$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.16]  Let $x$ be an element of $G$. Prove that $x^2 = 1$ if and only
                   if $|x|$ is either 1 or 2.
                   
       \textbf{Proof.}
       
-      $(\Leftarrow)$ Suppose that $x^2 = 1$. Now if $|x| > 2$, then by
-      definition, $x^2 \neq 1$. The only remaining possibilities are $|x| = 1$
-      or $|x| = 2$.
+      $(\Leftarrow)$ Suppose that $x^2 = 1$. Then by definition,
+      $|x| \le 2$. That is, $|x| = 1$ or $|x| = 2$.
       
-      $(\Rightarrow)$ Suppose that $|x| = 1$ or $|x| = 2$. It immediately
-      follows that $x^2 = 1$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      $(\Rightarrow)$ If $|x| = 1$, then $x = 1$, so that $x^2 = 1^2 = 1$; now
+      if $|x| = 2$, then $x^2 = 1$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.17]  Let $x$ be an element of $G$. Prove that if $|x| = n$ for some
                   positive integer $n$ then $x^{-1} = x^{n-1}$.
                   
-      \textbf{Proof.} Suppose that $|x| = n \in \Z^+$. By Exercise 1.1.18, it
+      \textbf{Proof.} Suppose that $|x| = n \in \Z^+$. By Exercise 1.1.19(d), it
       follows that $x^{n-1}x^1 = x^{n-1+1} = x^n = 1$, so that
-      $x^{-1} = x^{n-1}$. \qed      
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      $x^{-1} = x^{n-1}$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.18]  Let $x$ and $y$ be elements of $G$. Prove that $xy = yx$ if
                   and only if $y^{-1}xy =x$ if and only if $x^{-1}y^{-1}xy = 1$.
                   
@@ -558,7 +553,7 @@
       $1 = x^{-1}y^{-1}xy$ by left cancellation. Finally assume that
       $x^{-1}y^{-1}xy = 1$. Multiplying on the left by $yx$ will yield the
       equation $xy = yx$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.19]  Let $x \in G$ and let $a, b \in \Z^+$.
                   \begin{enumerate}
                      \item Prove that $x^{a+b} = x^ax^b$.
@@ -570,64 +565,93 @@
                            (positive, negative or zero).
                   \end{enumerate}
                
-      \textbf{Proof.}
+      \textbf{Proof.} We recursively define $x^0 = 1$, $x^1 = x$,
+      $x^{n+1} = x^nx$, and $x^{-n} = (x^{-1})^n$, for $n \in \Z^+$.
       
       \begin{enumerate}
-         \item We have that
+         \item It suffices to show that $x^{a+n} = x^ax^n$ for each
+               $n \in \Z^+$. Proceed by induction on $n$. The base case,
+               $n = 1$, follows by definition. So asssume $x^{a+k} = x^ax^k$,for 
+               some positive integer $k$. Thus
                \begin{align*}
-                  x^{a+b} &= \underbrace{xx\cdot x}_{a+b \text{ factors}} \\
-                          &= \underbrace{xx\cdot x}_{a \text{ factors}}\mbox{ }
-                             \underbrace{xx\cdot x}_{b \text{ factors}} \\
-                          &= x^ax^b.
-               \end{align*} \qed
-         \item We have that
+                  x^{a+(k+1)} &= x^{(a+k)+1} \\
+                          &= x^{a+k}x &\text{[Definition]} \\
+                          &= (x^ax^k)x &\text{[Inductive Hypothesis]} \\
+                          &= x^a(x^kx) &\text{[Associativity]}\\
+                          &= x^ax^{k+1}. &\text{[Definition]}
+               \end{align*}
+               Our statement follows by induction. Particularly,
+               $x^{a+b} = x^ax^b$. \qed
+         \item Similarly, we will show that $(x^a)^n = x^{an}$ for each
+               $n \in \Z^+$ by induction on $n$. The base case ($n=1$) holds
+               because $(x^a)^1 = x^a = x^{a1}$. So asssume
+               $(x^a)^k = x^{ak}$ for some positive integer $k$. Thus
                \begin{align*}
-                  (x^a)^b &= (\underbrace{xx\cdot x}_{a \text{ factors}})^b \\
-                          &= \underbrace{xx\cdot x}_{ab \text{ factors}} \\
-                          &= x^{ab}.
-               \end{align*} \qed
-         \item We have
+                  (x^a)^{k+1} &= (x^a)^k(x^a) &\text{[Definition]} \\
+                          &= x^{ak}x^a &\text{[Inductive Hypothesis]} \\
+                          &= x^{ak+a} &\text{[(a)]} \\
+                          &= x^{a(k+1)}.
+               \end{align*} 
+               Our statement follows by induction. Particularly,
+               $(x^a)^b = x^{ab}$. \qed
+         \item We will use induction on $n$ to show that $x^{-n} = (x^n)^{-1}$.
+               The base case($n = 1$) follows because $x^{-1} = (x^1)^{-1}$, so
+               asssume $x^{-k} = (x^k)^{-1}$ for some positive integer $k$. Now
                \begin{align*}
-                  (x^a)^{-1}
-                     &= (\underbrace{xx\cdot x}_{a \text{ factors}})^{-1} \\
-                     &= \underbrace{x^{-1}x^{-1}\cdot x^{-1}}_{
-                           a \text{ factors}} &[\text{Exercise 1.1.15}] \\
-                     &= x^{-a}.
+                  x^{-(k+1)} &= (x^{-1})^{k+1} &\text{[Definition]} \\
+                          &= (x^{-1})^kx^{-1} &\text{[Definition]} \\
+                          &= (x^k)^{-1}x^{-1} &\text{[Inductive Hypothesis]} \\
+                          &= (xx^k)^{-1} &\text{[Proposition 1(4)]}\\
+                          &= (x^{k+1})^{-1}. &\text{[(a)]}
                \end{align*} \qed
-         \item Now suppose that $a$ is an integer and $b$ is a positive integer.
-               We shall induct on $b$ to show that
-               \begin{equation}
-                  x^{a+b} = x^ax^b. \label{1_1_19_1}
+         \item We now want to prove that
+               \begin{equation} \label{1_1_19_1}
+                  x^{a+b} = x^ax^b,
                \end{equation}
-               By Lemma 1.1.1, \eqref{1_1_19_1} holds if $b$ equals 1. So assume
-               that it also holds for some positive integer $k$. We now have
-               that
+               for all $a, b \in \Z$. So let $a$ and $b$ be arbitrary integers.
+               We showed in (a) that \eqref{1_1_19_1} holds for $a, b \in \Z^+$.
+               Now suppose $a = 0$ or $b = 0$. Further suppose without loss that
+               $a = 0$, so that
+               $$x^{a+b} = x^{0+b} = x^b = 1x^b = x^0x^b = x^ax^b.$$
+               The other possibilities can be proven if we assume that $b$ is
+               negative and place no restriction on $a$. (for the case where
+               $b > 0$ and $a < 0$, we swap the roles of $a$ and $b$ in the
+               proof below.) So assume without loss
+               that $b$ is negative. First, we want to show that
+               \begin{equation} \label{1_1_19_2}
+                  x^{m-1} = x^mx^{-1},
+               \end{equation}
+               for each integer $m$. From our recursive definition, we have that
+               $$x^m = x^{(m-1) + 1} = x^{m-1}x,$$
+               so that $x^{m-1} = x^mx^{-1}$ if $m \ge 2$. The equality in
+               \eqref{1_1_19_2} trivially holds when $m = 0$ and $m = 1$, so
+               that it holds for $m \ge 0$. Now if $m$ is negative, so that
+               $m = -r$ for some positive integer $r$, it follows that
                \begin{align*}
-                  x^ax^{k+1} &= x^ax^kx^1 &[\text{Lemma 1.1.1}] \\
-                             &= (x^ax^k)x^1 \\
-                             &= x^{a+k}x^1 &[\text{Inductive hypothesis}] \\
-                             &= x^{(a+k)+1} &[\text{Lemma 1.3.2}] \\
-                             &= x^{a+(k+1)}, &[\text{Associativity of addition}]
+                  x^{m-1} = x^{-r-1} &= x^{-(r+1)} \\
+                          &= (x^{-1})^{r+1} &\text{[Definition]} \\
+                          &= (x^{-1})^rx^{-1} &\text{[Definition]} \\
+                          &= x^{-r}x^{-1} &\text{[Definition]} \\
+                          &= x^mx^{-1}.
                \end{align*}
-               so that \eqref{1_1_19_1} holds for $k + 1$, and hence, by the 
-               Principle of Mathematical Induction, it holds for each positive
-               integer $n$. \\
 
-               If $a$ is 0 or $b$ is 0, then Lemma 1.1.1 tells us that
-               \eqref{1_1_19_1} holds, so the only remaining possibility is $a$ 
-               and $b$ are negative.\footnote{If $a$ is positive and $b$ is
-               negative, then interchange the roles of $a$ and $b$ in the 
-               induction proof.} Now suppose that $a$ and $b$ are negative.
-               Hence
+               Thus \eqref{1_1_19_2} holds for each integer $m$. Finally, we
+               will show by induction on $n$ that
+               $x^{a - n} = x^ax^{-n}$. Equality \eqref{1_1_19_2} says that our 
+               statement holds for $n = 1$. So assume that
+               $x^{a - k} = x^ax^{-k}$ for some positive integer $k$. Thus
                \begin{align*}
-                  x^ax^b &= x^{-(-a)}x^{-(-b)} \\
-                     &= (x^{-1})^{-a}(x^{-1})^{-b} &[\text{Definition}] \\
-                     &= (x^{-1})^{(-a + (-b))} &[\text{Part (a)}] \\
-                     &= x^{-(-a + (-b))} &[\text{Definition}] \\
-                     &= x^{a+b}.
+                  x^{a - (k+1)} &= x^{(a - k) - 1}  \\
+                             &= x^{a-k}x^{-1} &\text{[\eqref{1_1_19_2}]} \\
+                             &= x^ax^{-k}x^{-1} &\text{[Inductive Hypothesis]}\\
+                             &= x^a(x^{-1})^kx^{-1}&\text{[Definition]} \\
+                             &= x^a(x^{-1})^{k+1} &\text{[Definition]} \\
+                             &= x^ax^{-(k+1)}, &\text{[Definition]} \\
                \end{align*}
-
-               Combining this result with part (a), we thus shown that
+               so that $x^{a - n} = x^ax^{-n}$ holds for each positive integer
+               $n$ by induction; particularly,
+               $$x^{a + b} = x^{a - s} = x^ax^{-s} = x^ax^b,$$
+               where $s = -b$ (i.e., $s$ is positive). We have thus shown that
                \eqref{1_1_19_1} holds for all integers $a$ and $b$. \qed
          \item It is clear that part (b) holds if $a$ is 0 or $b$ is 0, so let
                us complete the proof for arbritrary integers $a$ and $b$.
@@ -667,51 +691,51 @@
                $(x^a)^b = x^{ab}$ holds for all integers $a$ and $b$ and
                $x \in G$. \qed
       \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.20]  For $x$ an element in $G$ show that $x$ and $x^{-1}$ have the
                   same order.
 
       \textbf{Proof.}
 
-      \textbf{Case 1:} \textit{$|x| = n \in \Z^+$}. Since
+      \textbf{Case 1.} \textit{$|x| = n \in \Z^+$}. Since
       $(x^{-1})^n = (x^n)^{-1} = 1^{-1} = 1$, it follows that $|x^{-1}| \le n$,
       so suppose to the contrary that $|x^{-1}| = m < n$. Then we have that
       $$x^m = [(x^{-1})^{-1}]^m = [(x^{-1})^m]^{-1} = 1^{-1} = 1,$$
       a contradiction, so that $|x^{-1}| = n = |x|$.
 
-      \textbf{Case 2:} \textit{$|x| = +\infty$}. Suppose to the contrary that
+      \textbf{Case 2.} \textit{$|x| = \infty$}. Suppose to the contrary that
       $|x^{-1}| = n \in \Z^+$. As we argued in Case 1, it must be the case that
-      $x^n = 1$, a contradiction. Thus $|x| = +\infty = |x^{-1}|$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      $x^n = 1$, a contradiction. Thus $|x| = \infty = |x^{-1}|$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.21]  Let $G$ be a finite group and let $x$ be an element of $G$ of
                   order $n$. Prove that if $n$ is odd, then $x = (x^2)^k$ for
                   some $k$.
 
       \textbf{Proof.} Suppose that $n$ is odd. We can then write $n = 2k + 1$
-      for some nonnegative integer $k$. By supposition, we have that
+      for some nonnegative integer $k$. Since $|x| = n$, we have that
       $xx^{2k} = x^{2k+1} = 1 = x^{-2k}x^{2k}$, so that by right cancellation,
       we can conclude that $x = x^{-2k} = (x^2)^{-k}$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.22]  If $x$ and $g$ are elements of the group $G$, prove that
                   $|x| = |g^{-1}xg|$. Deduce that $|ab| = |ba|$ for all
                   $a, b \in G$.
 
       \textbf{Proof.} Let $x, g \in G$.
 
-      \textbf{Case 1:} \textit{$|x| = n \in \Z^+$}. By Lemma 1.1.2, it follows
+      \textbf{Case 1.} \textit{$|x| = n \in \Z^+$}. By Lemma 1.1.2, it follows
       that $(g^{-1}xg)^n = g^{-1}x^ng = g^{-1}g =1$, so that $|g^{-1}xg| \le n$,
       so suppose to the contrary that $|g^{-1}xg| = m < n$. Then we have that
       $$g^{-1}1g = 1 = (g^{-1}xg)^m = g^{-1}x^mg,$$
       so that $x^m = 1$ by left and right cancellations, a contradiction; thus,  
       $|g^{-1}xg| = n = |x|$.
 
-      \textbf{Case 2:} \textit{$|x| = +\infty$}. Suppose to the contrary that
+      \textbf{Case 2.} \textit{$|x| = +\infty$}. Suppose to the contrary that
       $|g^{-1}xg| = n \in \Z^+$. As we argued in Case 1, it must then be the 
       case that $x^n = 1$, a contradiction. Thus $|x| = +\infty = |g^{-1}xg|$.
 
       Now consider $a, b \in G$. Set $x = ab$ and $g = a$. Since 
       $|x| = |g^{-1}xg|$, it follows that $|ab| = |a^{-1}aba| = |ba|$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.23]  Suppose $x \in G$ and $|x| = n < \infty$. If $n = st$ for some
                   positive integers $s$ and $t$, prove that $|x^s| = t$.
 
@@ -722,7 +746,7 @@
       $0 < sm < st = n$. However $|x| = n$ and we just showed that $x^{sm} = 1$, 
       so that we have a contradiction. Hence we can conclude that $|x^s| = |t|$.
       \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.24]  If $a$ and $b$ are \textit{commuting} elements of $G$, prove 
                   that $(ab)^n = a^nb^n$ for all $n \in \Z$. [Do this by 
                   induction for positive $n$ first.]
@@ -761,7 +785,7 @@
                 &= a^mb^m,
       \end{align*}
       as desired. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.25]  Prove that if $x^2 = 1$ for all $x \in G$ then $G$ is abelian.
 
       \textbf{Proof.} Let $G$ be a group. Suppose that $x^2 = 1$ for all
@@ -776,7 +800,7 @@
             &= yx.
       \end{align*}
       Thus $G$ is abelian. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.26]  Assume $H$ is a nonempty subset of $(G, *)$ which is closed 
                   under the binary operation on $G$ and is closed under
                   inverses, i.e., for all $h$ and
@@ -791,8 +815,8 @@
       we pick an $h \in H$. Then by hypothesis, we have that
       $1 = hh^{-1} \in H$, so that $H$ contains the identity. (Note that
       $hh^{-1} = h^{-1}h = 1$ and $h1 = 1h = h$ because these equalities hold in
-      $G$.) \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      $G$.) Thus $H$ is a subgroup of $G$. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.27%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.27]  Prove that if $x$ is an element of the group $G$ then
                   $\{x^n : n \in \Z\}$ is a subgroup of $G$ (called the
                   \textit{cyclic subgroup} of $G$ generated by $x$).
@@ -805,7 +829,7 @@
       under the operation of $G$. Since $h_1^{-1} = (x^a)^{-1} = x^{-a} \in H$, 
       it follows that $H$ is also closed under inverses, so that $H$ is a
       subgroup of $G$ by Exercise 1.1.26.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.28%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.28]  Let $(A, *)$ and $(B, \diamond)$ be groups and let
                   $A \times B$ be their direct product (as defined in Example
                   6). Verify all the group axioms for $A \times B$.
@@ -852,7 +876,7 @@
                \end{align*}
                so that $(a^{-1}, b^{-1})$ is the inverse of $(a, b)$.
       \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.29]  Prove that $A \times B$ is an abelian group if and only if
                   both $A$ and $B$ are abelian.
 
@@ -871,14 +895,14 @@
       $a_2$ be members of $A$ and let $b_1$ and $b_2$ be members of $B$. Then
       we have that
       \begin{align*}
-         (a_1a_2, b_1b_2) = (a_1, b_1)(a_2, b_2) \\
+         (a_1a_2, b_1b_2) &= (a_1, b_1)(a_2, b_2) \\
             &= (a_2, b_2)(a_1, b_1) &[\text{$A \times B$ is abelian}] \\
             &= (a_2a_1, b_2b_1),
       \end{align*}
       so that $(a_1a_2, b_1b_2) = (a_2a_1, b_2b_1)$; i.e., $a_1a_2 = a_2a_1$ and
       $b_1b_2 = b_2b_1$. We can now conclude that $A$ and $B$ are both abelian.
       \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.30]  Prove that the elements $(a, 1)$ and $(1, b)$ of $A \times B$
                   commute and deduce that the order of $(a, b)$ is the least 
                   common multiple of $|a|$ and $|b|$.
@@ -898,20 +922,24 @@
       $s = \text{lcm}(m, n)$. Thus we can write $s = mx = ny$ for positive 
       integers $x$ and $y$. Thus we have that
       \begin{align*}
-         (a, b)^s &= (a^s, b^s) &[\text{Lemma 1.1.4}] \\
+         (a, b)^s &= ((a, 1)(1, b))^s \\
+                  &= (a, 1)^s(1, b)^s &[\text{Exercise 1.1.24}] \\
+                  &= (a^s, 1^s)(1^s, b^s) \\
+                  &= (a^s, b^s) \\
                   &= (a^{mx}, a^{ny}) \\
-                  &= [(a^m)^x, (a^n)^y] \\
+                  &= ((a^m)^x, (a^n)^y) \\
                   &= (1^x, 1^y) \\
                   &= (1, 1).
       \end{align*}
       This say that $|(a, b)| \le s$, so there exists a positive integer $q$ 
-      such that $|(a, b)| = q$. By Lemma 1.1.4, we have that
-      $(a, b)^q = (a^q, b^q) = (1, 1)$, so that $a^q = 1$ and $b^q = 1$. Thus by 
-      Lemma 1.1.3, it follows that $m \mid q$ and $n \mid q$, so that $s \mid q$ 
-      by definition of the lcm. Since $s \mid q$, we must have that $s \le q$.
-      But we previously showed that $q \le s$. Thus we can conclude that
-      $s = q$, as desired. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      such that $|(a, b)| = q$. That is, $q \le s$ and
+      $1 = (1, 1) = (a, b)^q = (a^q, b^q)$. If $q < s$, then both $m$
+      and $n$ cannot divide $q$, so suppose without loss that $m$ does not
+      divide $q$. So use the Division Algorithm to write
+      $q = q'm + r$, with $0 < r < m$. Thus
+      $$1 = a^q = a^{q'm + r} = (a^m)^{q'}a^r = 1a^r = a^r,$$
+      a contradiction because $|a| = m$. Thus $q = s$, as desired. \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.31]  Prove that any finite group $G$ of even order contains an
                   element of order 2. [Let $t(G)$ be the set
                   $\{g \in G : g \neq g^{-1}\}$. Show that $t(G)$ has an even 
@@ -919,20 +947,19 @@
                   has order 2.]
 
       \textbf{Proof.} Let $G$ be a finite group of even order. We wish to show
-      that there exists some $g \in G$ such that $|g| = 2$. Consider this subset
-      of $G$:
-      $$S = \{g \in G: g \neq g^{-1}\}.$$
+      that there exists some $g \in G$ such that $|g| = 2$. Consider the sets:
+      $$S = \{g \in G: g \neq g^{-1}\} \text{ and }
+        S' = \{\{g, g^{-1}\} : g \in S\}.$$
 
-      If $|S| = 0$, then the proof is done, so assume that $|S| > 0$. Now $|S|$ 
-      is even, for if this were not the case, then if we pair up every element
-      of $S$ with its inverse, then one element must be without an inverse, a 
-      contradiction. Now let $S' = G\backslash S$. It follows that
-      $|G| = |S| + |S'|$. Notice that $S'$ is not empty because $e \in S'$. 
-      Since $G$ and $S$ are both even, it follows that $|S'|$ must also be even. 
-      Since we already showed that $|S'| \ge 1$, we can conclude that
-      $|S'| \ge 2$, so that $S'$ contains a non-identity $a$, where
+      Since every element of $S$ is not equal to its inverse, it follows that
+      each set in $S'$ contains exactly two elements. Also observe that $S'$ is
+      a partition of $S$; so $|S|$ is even because each set in $S'$ has 2 
+      elements. Now let $S'' = G - S$. It follows that $|G| = |S| + |S''|$. 
+      Notice that $S''$ is not empty because $1 \in S''$. Since $|G|$ and $|S|$ 
+      are both even, it follows that $|S''|$ must also be even. That is,
+      $|S''| \ge 2$, so that $S''$ contains a non-identity $a$, where
       $a = a^{-1}$. That is, $|a| = 2$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.32]  If $x$ is an element of finite order $n$ in $G$, prove that
                   the elements 1, $x$, $x^2$, $\ldots$, $x^{n-1}$ are all 
                   distinct. Deduce that $|x| \le |G|$.
@@ -945,7 +972,7 @@
       follows that the elements $x^0$, $x$, $x^2$, $\ldots$, $x^{n-1}$ are all 
       distinct. Since there are clearly $n$ of these elements and since they are
       all members of $G$, we can conclude that $|x| = n \le |G|$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.33]  Let $x$ be an element of finite order $n$ in $G$.
                   \begin{enumerate}
                      \item Prove that if $n$ is odd then $x^i \neq x^{-i}$ for
@@ -957,12 +984,19 @@
       \textbf{Proof.}
 
       \begin{enumerate}
-         \item Suppose that $n$ is odd. Now we shall suppose to the contrary
+         \item Suppose that $n$ is odd, $n \ge 3$ (Result holds vacuously if
+               $n = 1$). Now we shall suppose to the contrary
                that $x^i = x^{-i}$ for some integer $1 \le i \le n - 1$. Since
-               $x^i = x^{-i}$, it follows that $x^{2i} = 1$. By Lemma 1.1.3, we
-               must have that $n \mid 2i$, a contradiction because an odd
-               number cannot divide a positive even number, so we conclude that
-               $x^i \neq x^{-i}$ for all $i = 1, 2, \ldots, n - 1$. \qed
+               $x^i = x^{-i}$, it follows that $x^{2i} = 1$. Since
+               $i \in \{1, 2, \ldots, n - 1\}$, it follows that
+               $2i \in \{2, 4, \ldots, n - 1, n + 1, \ldots, 2n - 2\}$. If
+               $2i \le n - 1$, then $x^{2i} \neq 1$ because $|x| = n$. Thus
+               $n + 1 \le 2i \le 2n - 2$; particularly, since $2i \ge n + 1$,
+               write $2i = n + t$, for some positive integer $t$. Now
+               $n + 1 \le n + t \le 2n - 2$, so that $1 \le t \le n - 2$. Thus
+               $$x^{2i} = x^{n+t} = x^nx^t = 1x^t = x^t \neq 1,$$
+               because $t < n$. Thus $x^{2i} \neq 1$ and we conclude that
+               $x^i \neq x^{-i}$ for all $1 \le i \le n - 1$. \qed
          \item Suppose that $n$ is even and $1 \le i < n$. Write $n = 2k$ for
                some positive integer $k$.
 
@@ -970,13 +1004,16 @@
                $1 = x^{2k} = x^{2i} = x^ix^i$, so that $x^i = x^{-i}$.
 
                $(\Rightarrow)$ Conversely suppose that $x^i = x^{-i}$, so that
-               $x^{2i} =1$. Thus, by Lemma 1.1.3, $2k \mid 2i$, or equivalently,
-               $k \mid i$, so that $i = mk$ for some positive integer $m$. 
-               Recall that $i < n = 2k$ by hypothesis, so that $mk < 2k$. That 
-               is $m < 2$. But $m$ is a positive integer and so the only
-               possibility is therefore $m = 1$, so that $i = k$. \qed
+               $x^{2i} =1$; that is, $2k = |x| \le 2i$. Now since $i < 2k$, we
+               have that $2i \le 4k - 2$, and hence, $2k \le 2i \le 4k - 2$.
+               Particularly, since $2i \ge 2k$, write $2i = 2k + t$, for some
+               nonnegative integer $t$. Now $2k \le 2k + t \le 4k - 2$ implies 
+               that $0 \le t \le 2k - 2$. We then have that
+               $$1 = x^{2i} = x^{2k+t} = x^{2k}x^t = 1x^t = x^t.$$
+               Since $0 \le t \le 2k - 2 < 2k$, $x^t = 1$, and $|x| = 2k$, it 
+               follows that $t = 0$. Thus $2i = 2k$, so that $i = k$. \qed
       \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.34]  If $x$ is an element of infinite order in $G$, prove that the
                   elements $x^n$, $n \in \Z$ are all distinct.
 
@@ -986,7 +1023,7 @@
       $i < j$. Thus $x^{j-i} = 1$, a contradiction because this says that
       $|x| \le j - i$. It follows that distinct integral powers of $x$ yield 
       distinct elements of $G$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.35]  If $x$ is an element of finite order $n$ in $G$, use the 
                   Division Algorithm to show that any integral power of $x$ 
                   equals one of the elements in the set
@@ -1000,14 +1037,14 @@
       $$x^z = x^{qn+r} = x^{qn}x^r = (x^n)^qx^r = 1^qx^r = x^r.$$
       Since $r \in \{0, 1, \ldots, n - 1\}$ and since $x^z = x^r$, it follows
       that $x^z \in \{x^0, x^1, \ldots, x^{n-1}\}$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.36]  Assume $G = \{1, a, b, c\}$ is a group of order 4 with
                   identity 1. Assume also that $G$ has no elements of order 4
                   (so by Exercise 32, every element has order $\le$ 3). Use the
                   cancellation laws to show that there is a unique group table
                   for $G$. Deduce that $G$ is abelian.
 
-      \textbf{Proof.} Assume $G = \{1, a, b, c\}$. We can tentatively fill out 
+      \textbf{Proof.} Assume $G = \{1, a, b, c\}$. We can immediately fill out 
       the group table for $G$ like so:      
       $$
          \begin{tabular}{@{}c | c | c | c | c@{}} 
@@ -1018,13 +1055,16 @@
             $c$ & $c$ & $ $ & $ $ & $ $
          \end{tabular}
       $$
-      By the left cancellation law, the equality $ab = a$ will result in $b = e$
-      and the equality $ab = b$ will result in $a = e$, both of which are
-      contradictions. The only remaining possiblities are $ab = c$ or $ab = 1$.
+      We observe that the cancellation laws imply that no two elements in a 
+      column(or row) are the same; that is, each column and each row is a 
+      permutation of $G$. The equality $ab = a$ implies $b = 1$ and the equality 
+      $ab = b$ implies $a = 1$, both of which are contradictions. The only 
+      remaining possiblities are $ab = c$ or $ab = 1$.
 
-      \textbf{Case 1:} $ab = c$. For the same reason as above, we cannot have
-      $ac = a$ or $ac = c$, so that $ac = 1$ or $ac = b$. So suppose first that
-      $ac = b$. Then our table will now look like so:
+      \textbf{Case 1.} $ab = c$. Now $ac \neq a$ and $ac \neq c$; otherwise,
+      we would have $c = 1$ or $a = 1$, both contradictions. Thus $ac = 1$ or
+      $ac = b$. So suppose first that $ac = b$. Then our table will now look
+      like so:
       $$
          \begin{tabular}{@{}c | c | c | c | c@{}} 
                 & $1$ & $a$ & $b$ & $c$ \\ \hline
@@ -1035,9 +1075,8 @@
          \end{tabular}
       $$
       From the table above, we see that $aa$ must be equal to 1, since that is
-      the only remaining possibility. The cancellation laws tell us that every
-      element in a column and row of a group table must be unique, so we must
-      have that:
+      the only remaining possibility. Also $ba$ is forced to equal $c$ and $ca$
+      is forced to equal $b$.
       $$
          \begin{tabular}{@{}c | c | c | c | c@{}} 
                 & $1$ & $a$ & $b$ & $c$ \\ \hline
@@ -1074,9 +1113,10 @@
       Since $a^2 = b$ and $a^3 = c$, we have that $|a| > 3$, contradicting our
       hypothesis, so this is a dead end.
 
-      \textbf{Case 2:} $ab = 1$. For the same reason as above, we cannot have
-      $ac = a$ or $ac = c$, so that $ac = 1$ or $ac = b$. So suppose first that
-      $ac = b$. Then our table will now look like so:
+      \textbf{Case 2.} $ab = 1$. We already know that $ac \neq a$ and
+      $ac \neq c$. Now $ac = 1$ implies that $ac = ab$, so that $c = b$, a
+      contradiction. Thus $ac = b$; and all the other positions are completely
+      determined, so that our table looks like so:
       $$
          \begin{tabular}{@{}c | c | c | c | c@{}} 
                 & $1$ & $a$ & $b$ & $c$ \\ \hline

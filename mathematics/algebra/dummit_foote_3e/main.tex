@@ -1,21 +1,32 @@
 \documentclass[9pt]{book}
 
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{cancel}
 \usepackage{comment}
 \usepackage{fancyhdr}
 \usepackage{mathrsfs}
-\usepackage{color}
+\usepackage{xcolor}
 
 \usepackage{array}
 \usepackage[retainorgcmds]{IEEEtrantools}
 
 
 \usepackage[utf8]{inputenc}
+%\usepackage{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 
+%\crefname{lemma}{Lemma}{Lemmas}
 %\usepackage{hyperref}
+%\hypersetup{
+%    colorlinks,
+%    linkcolor={red!50!black},
+%    citecolor={blue!50!black},
+%    urlcolor={blue!80!black}
+%}
 %\hypersetup{
 %    colorlinks=true,
 %    linkcolor=blue,
@@ -33,7 +44,7 @@
 \addtolength{\oddsidemargin}{-30pt}
 %\setlength{\headheight}{44pt}
 
-\newcommand{\qed}{\hfill \ensuremath{\Box}}
+%\newcommand{\qed}{\hfill \ensuremath{\Box}}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
