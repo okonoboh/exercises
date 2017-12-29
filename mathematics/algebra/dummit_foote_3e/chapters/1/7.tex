@@ -9,7 +9,7 @@
 
       \textbf{Proof.} Let $a, b \in F^\times$ and $c \in F$. It is clear
       that $ab \in F$ because $F$ is closed under multiplication. Since 1 is
-      is the identity for $(F^\times, \cdot)$, we have that $1 \cdot c = f_3$.
+      is the identity for $(F^\times, \cdot)$, we have that $1 \cdot c = c$.
       By the associativity of multiplication in $F$, it follows that
       $a(bc) = (ab)c$. Thus $F^\times$ acts on $F$ by multiplication. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -213,13 +213,14 @@
 
                \textbf{Proof.} By Exercise 1.7.6, it suffices to show that
                kernel of this action is trivial (Exercise 1.7.6). Let $\sigma$ 
-               be a nonidentity element in $S_n$, so that $\sigma(i) = j$ for 
-               some $i \neq j$. Let $B$ be any $k$-subset such that $i \in B$
-               and $j \neq B$. Notice that $B \neq \sigma B$ since
-               $j \in \sigma B$. Thus $\sigma$ is not in the kernel of this 
-               action. Since $\sigma$ was an arbitrary nonidentity element, it 
-               follows that the kernel of this action is trivial, so that this 
-               action is faithful by Exercise 1.7.6. \qed \\
+               be a nonidentity element in $S_n$, so that $\sigma(i) = j$, for 
+               some $i, j \in \{1, 2, \ldots, n\}$, $i \neq j$. Let $B$ be a
+               $k$-subset such that $i \in B$ and $j \neq B$. Notice that
+               $B \neq \sigma \cdot B$ since $j \in \sigma \cdot B$. Thus
+               $\sigma$ is not in the kernel of this action. Since $\sigma$ was 
+               an arbitrary nonidentity element, it follows that the kernel of 
+               this action is trivial, so that this action is faithful by 
+               Exercise 1.7.6.\qed\\
    
                \textit{If $k = n$, then this action is not faithful}.
 
@@ -230,11 +231,11 @@
          \item \textit{This action is faithful for all $k \le n$}.
 
                \textbf{Proof.} Let $\sigma$ be a nonidentity element in $S_n$.
-               Then $\sigma(i) = j$ for some $i \neq j$. Let $B$ be any
-               $k$-tuple with $i$ as its first element. Then the first element
-               of $\sigma A$ is $j$; thus $A \neq \sigma A$; that is, the kernel 
-               of this action is trivial, so that this action of $S_n$ on
-               ordered $k$-tuples is faithful. \qed
+               Then $\sigma(i) = j$ for some $i \neq j$. Let $A$ be a $k$-tuple 
+               with $i$ as its first element. Then the first element of
+               $\sigma \cdot A$ is $j$; thus $A \neq \sigma \cdot A$; that is, 
+               the kernel of this action is trivial, so that this action of
+               $S_n$ on ordered $k$-tuples is faithful. \qed
       \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.11]  Write out the cycle decomposition of the eight permutations in
@@ -474,7 +475,7 @@
       $\alpha \in G$. Now let $B$ be the set of pairs of opposite vertices of
       the cube whose vertices are given above, so that
       $B = \{\{1, 7\}, \{2, 8\}, \{3, 5\}, \{4, 6\}\}$. Consider the map
-      $f : G \times B \rightarrow A$,
+      $G \times B \rightarrow B$,
       $(\alpha, \{u, v\}) \mapsto \{\sigma_\alpha(u), \sigma_\alpha(v)\}$. This
       map is a group action because for $\alpha, \beta \in G$, $\{u, v\} \in B$,
       we have
@@ -524,7 +525,7 @@
          \end{tabular}
       \end{center}
       That is, $\varphi$ is an isomorphism. Thus $G \cong S_B \cong S_4$.
- \qed      
+ \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.22]  Show that the group of rigid motions of an octahedron is
                   isomorphic to $S_4$. [This group acts on the set
@@ -536,7 +537,95 @@
                   the dodecahedron and icosahedron are isomorphic as well---
                   these solids are also dual.)
 
-      \textbf{Proof.} 
+      \textbf{Proof.} Let $G$ be the group of rigid motions of an octahedron. We 
+      showed in Exercise 1.2.11 that $|G| = 24$. Using a right-handed coordinate
+      system, let the vertices of the octahedron be at the following points:
+      \begin{align*}
+         \text{vertex 1} &= (0, 0, 1) \\
+         \text{vertex 2} &= (0, 0, -1) \\
+         \text{vertex 3} &= (1, 0, 0) \\
+         \text{vertex 4} &= (-1, 0, 0) \\
+         \text{vertex 5} &= (0, 1, 0) \\
+         \text{vertex 6} &= (0, -1, 0)
+      \end{align*}
+
+      Let
+      $$F = \{\{f_1, f_5\}, \{f_2, f_6\}, \{f_3, f_7\}, \{f_4, f_8\}\},$$
+      be the set of pairs of opposite faces of the octahedron, where
+      $f_1 = \{1, 3, 5\}$, $f_2 = \{1, 4, 5\}$, $f_3 = \{1, 4, 6\}$,
+      $f_4 = \{1, 3, 6\}$, $f_5 = \{2, 4, 6\}$, $f_6 = \{2, 3, 6\}$,
+      $f_7 = \{2, 3, 5\}$, and $f_8 = \{2, 4, 5\}$ are sets of vertices.
+
+      Let $\alpha_i$ be the rigid motions that rotate (counterclockwise) the 
+      octahedron around the $z$-axis by an angle of $(\pi/2)i$, where
+      $0 \le i \le 3$; let $\beta$ be rotation (counterclockwise) by $\pi$
+      around the $x$-axis. Finally let $\gamma_i$ be rotation (counterclockwise) 
+      around the line $l = \{(t, t, t) : t \in \R\}$ by an angle of $(2\pi/3)i$, 
+      for $0 \le i \le 2$. Line $l$ is the line that passes through the
+      centroids of faces 1 and 5. For $0 \le i \le 3$, $0 \le j \le 2$, define
+      $\alpha_{ij} = \gamma_j\alpha_i$; and for $4 \le i \le 7$,
+      $0 \le j \le 2$, define $\alpha_{ij} = \gamma_j\alpha_i\beta$. Note, for 
+      example, that $\gamma_1\alpha_1\beta$ is the rigid motion that results
+      from first applying $\beta$ to the octahedron, then $\alpha_1$, and then
+      $\gamma_1$. It follows that
+      $G = \{\alpha_{ij} : 0 \le i \le 7, 0 \le j \le 2\}$, with identity
+      $\alpha_{00}$. An element of $G$ induces a permutation of the 6 vertices
+      of the octahedron; denote this permutation as $\sigma_\alpha$, for each
+      $\alpha \in G$. Consider the map $G \times F \rightarrow F$,
+      $(\alpha, \{u, v, w\}) \mapsto \{\sigma_\alpha(u), \sigma_\alpha(v),
+      \sigma_\alpha(w)\}$. This
+      map is a group action because for $\alpha, \beta \in G$,
+      $\{u, v, w\} \in F$, we have
+      $$\alpha_{00} \cdot \{u, v, w\} = \{1u, 1v, 1w\} = \{u, v, w\},$$
+      and
+      \begin{align*}
+         \alpha \cdot (\beta \cdot \{u, v, w\}) &=
+         \alpha \cdot \{\sigma_\beta(u), \sigma_\beta(v), \sigma_\beta(w)\} \\
+         &= \{\sigma_\alpha(\sigma_\beta(u)), \sigma_\alpha(\sigma_\beta(v)),
+              \sigma_\alpha(\sigma_\beta(w))\} \\
+         &= \{(\sigma_\alpha\circ\sigma_\beta)(u),
+              (\sigma_\alpha\circ\sigma_\beta)(v),
+              (\sigma_\alpha\circ\sigma_\beta)(w)\} \\
+                     &= (\sigma_\alpha\circ\sigma_\beta) \cdot \{u, v, w\} \\
+                     &= (\alpha\circ\beta) \cdot \{u, v, w\}.
+      \end{align*}
+
+      For ease of computation, let us rename the elements of $F$ (as listed in
+      the set, from left to right) as 1, 2, 3, and 4. Let
+      $\varphi : G \rightarrow S_F$ be the permutation representation of this
+      action. It follows that      
+
+      \begin{center}
+         \begin{tabular}{@{}l c r c l c r c l c r@{}}
+            $\varphi(\alpha_{00})$ & = & 1, & &
+            $\varphi(\alpha_{01})$ & = & (2\;4\;3), & &
+            $\varphi(\alpha_{02})$ & = & (2\;3\;4), \\
+            $\varphi(\alpha_{10})$ & = & (1\;2\;3\;4), & &
+            $\varphi(\alpha_{11})$ & = & (1\;4),  & &
+            $\varphi(\alpha_{12})$ & = & (1\;3\;2\;4), \\
+            $\varphi(\alpha_{20})$ & = & (1\;3)(2\;4), & & 
+            $\varphi(\alpha_{21})$ & = & (1\;2\;3),  & &
+            $\varphi(\alpha_{22})$ & = & (1\;4\;3), \\
+            $\varphi(\alpha_{30})$ & = & (1\;4\;3\;2), & & 
+            $\varphi(\alpha_{31})$ & = & (1\;3\;4\;2),  & &
+            $\varphi(\alpha_{32})$ & = & (1\;2), \\
+            $\varphi(\alpha_{40})$ & = & (1\;4)(2\;3), & &
+            $\varphi(\alpha_{41})$ & = & (1\;3\;4), & &
+            $\varphi(\alpha_{42})$ & = & (1\;2\;4), \\
+            $\varphi(\alpha_{50})$ & = & (2\;4), & &
+            $\varphi(\alpha_{51})$ & = & (2\;3),  & &
+            $\varphi(\alpha_{52})$ & = & (3\;4), \\
+            $\varphi(\alpha_{60})$ & = & (1\;2)(3\;4), & & 
+            $\varphi(\alpha_{61})$ & = & (1\;4\;2),  & &
+            $\varphi(\alpha_{62})$ & = & (1\;3\;2), \\
+            $\varphi(\alpha_{70})$ & = & (1\;3), & & 
+            $\varphi(\alpha_{71})$ & = & (1\;2\;4\;3),  & &
+            $\varphi(\alpha_{72})$ & = & (1\;4\;2\;3).
+         \end{tabular}
+      \end{center}
+      That is, $\varphi$ is an isomorphism. Thus $G \cong S_F \cong S_4$.
+      Conclude from this result and Exercise 1.7.21 that the groups of rigid 
+      motions of a cube and octahedron are isomorphic. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.23]  Explain why the action of the group of rigid motions of a cube
                   on the set of three pairs of opposite faces is not faithful.
