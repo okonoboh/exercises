@@ -1,90 +1,5 @@
 \begin{enumerate}
    \item[]        Let $G$ be a group.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Lemm1.1.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[]        \textbf{Lemma 1.1.1} Let $x \in G$ and let $m$ be an integer.
-                  Then we have that
-                  $$x^{m+1} = x^mx^1.$$
-
-      \textbf{Proof.}  Consider the following cases:
-
-      \textbf{Case 1:} \textit{$m = 0$}. It follows that
-      $$x^{m+1} = x^{0+1} = x^1 = 1x^1 = x^0x^1 = x^mx^1.$$
-
-      \textbf{Case 2:} \textit{$m$ is positive.} Then it follows that $m + 1$ is 
-      positive, so that
-      \begin{align*}
-         x^{m + 1} &= \underbrace{x \cdot x \cdots x}_{m+1\text{ factors}} \\
-            &= \underbrace{x \cdot x \cdots x}_{m\text{ factors}} \cdot x^1 \\
-            &= x^mx^1.
-      \end{align*}
-
-      \textbf{Case 3:} \textit{$m$ is negative.} If $m = -1$, then we have that
-      $$x^{m+1} = x^{-1+1} = x^0 = 1 = x^{-1}x^1 = x^mx^1.$$
-      If $m < -1$, then $m + 1$ is negative, so that $-(m + 1) = -m - 1$ is 
-      positive. Thus
-      \begin{align*}
-         x^mx^1 &= x^{-(-m)}x^1 \\
-                &= \underbrace{x^{-1} \cdot x^{-1} \cdots x^{-1}}_{
-                   -m\text{ factors}} \cdot x^1 \\
-                &= \underbrace{x^{-1} \cdot x^{-1} \cdots x^{-1}}_{
-                   -m-1\text{ factors}} \cdot (x^{-1} \cdot x^1) \\
-                &= \underbrace{x^{-1} \cdot x^{-1} \cdots x^{-1}}_{
-                   -m-1\text{ factors}} \\
-                &= x^{-(-m-1)} \\
-                &= x^{m+1}.
-      \end{align*}
-
-      In all cases, we can see that our assertion holds. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Lemm1.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[]        \textbf{Lemma 1.1.2} \textit{Let $x$ and $g$ be members of a 
-                  group $G$, and let $n$ be a positive integer, then it follows 
-                  that $(g^{-1}xg)^n = g^{-1}x^ng$.}
-
-      \textbf{Proof.} We shall show by induction that the equation
-      \begin{equation}
-         (g^{-1}xg)^n = g^{-1}x^ng \label{l1_1_2_1}
-      \end{equation}
-      holds for every positive integer $n$. It is clear that equation
-      \ref{l1_1_2_1} holds for $n = 1$. So assume that it also holds for some
-      positive integer $k$. So we must now show that the equation also holds for 
-      $k + 1$. Thus
-      \begin{align*}
-         (g^{-1}xg)^{k+1} &= (g^{-1}xg)^kg^{-1}xg &[\text{Execise 1.1.19}] \\
-                     &= g^{-1}x^kgg^{-1}xg &[\text{Inductive hypothesis}] \\
-                     &= g^{-1}x^kxg \\
-                     &= g^{-1}x^{k+1}g,
-      \end{align*}
-      so that equation \eqref{l1_1_2_1} holds for $k+1$. Hence by the Principle 
-      of Mathematical Induction, equation \eqref{l1_1_2_1} holds for every 
-      positive integer $n$. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Lemm1.1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[]        \textbf{Lemma 1.1.3} \textit{Let $x$ be an element of finite
-                  order $n$ in $G$. If $x^m = 1$, then it follows that
-                  $n \mid m$.}
-
-      \textbf{Proof.} Suppose that $x^m = 1$. By the Division Algorithm, there
-      exist unique integers $q$ and $r$ such that $m = qn + r$ and
-      $0 \le r < n$. Now we have that
-      $$1 = x^m = x^{qn+r} = x^{qn}x^r = (x^n)^qx^r = 1^qx^r = x^r.$$
-      Since $|x| = n$, we cannot have $0 < r < n$; thus the only remaining
-      possibility is $r = 0$, so that $n = qm$, as desired. \qed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Lemm1.1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \item[]        \textbf{Lemma 1.1.4} \textit{Let $(x, y)$ be an element of
-                  $A \times B$ where $A$ and $B$ are groups. For any positive
-                  integer $n$, we then have that $(x, y)^n = (x^n, y^n)$.}
-
-      \textbf{Proof.} We shall induct on $n$. Our assertion clearly holds if
-      $n$ is 1, so assume that it holds for some positive integer $k$. Thus we
-      have that
-      \begin{align*}
-         (x, y)^{k+1} &= (x, y)(x, y)^k &[\text{Exercise 1.1.19}] \\
-                      &= (x, y)(x^k, y^k) &[\text{Inductive hypothesis}] \\
-                      &= (xx^k, yy^k) \\
-                      &= (x^{k+1}, y^{k+1}). &[\text{Exercise 1.1.19}]
-      \end{align*}
-      The above shows that our assertion also holds for $k + 1$, so that by
-      the Principle of Mathematical Induction it must holds for every integer
-      $n$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.1]   Determine which of the following binary operations are
                   associative:
@@ -107,32 +22,29 @@
                $$(0 * 0) * 1 = -1 \neq 1 = 0 * (0 * 1).$$
          \item We claim that $*$ is associative on $\R$.
       
-               \textbf{Proof.} Let $r_1, r_2, r_3 \in \R$. Then it follows that
+               \textbf{Proof.} Let $a, b, c \in \R$. Then it follows that
                \begin{align*}
-                  (r_1 * r_2) * r_3 &= (r_1 + r_2 + r_1r_2) * r_3 \\
-                     &= (r_1 + r_2 + r_1r_2 + r_3) +
-                        (r_1r_3 + r_2r_3 + r_1r_2r_3) \\
-                     &= r_1 + r_2 + r_3 + r_1r_2 + r_2r_3 +
-                        r_1r_3 + r_1r_2r_3 \\
-                     &= (r_1 + r_2 + r_3 + r_2r_3) + r_1(r_2 + r_3 + r_2r_3) \\
-                     &= r_1 + (r_2 * r_3) + r_1(r_2 * r_3) \\
-                     &= r_1 * (r_2 * r_3),
+                  (a * b) * c &= (a + b + ab) * c \\
+                     &= (a + b + ab + c) + (ac + bc + abc) \\
+                     &= a + b + c + ab + bc + ac + abc \\
+                     &= (a + b + c + bc) + a(b + c + bc) \\
+                     &= a + (b * c) + a(b * c) \\
+                     &= a * (b * c),
                \end{align*}
                so that our claim holds. \qed
          \item The binary operation $*$ on $\Q$ is not associative because
                $$(0 * 0) * 25 = 5 \neq 1 = 0 * (0 * 25).$$
          \item We claim that $*$ is associative on $\Z \times \Z$.
       
-               \textbf{Proof.} Let $(z_1, z_2)$, $(z_3, z_4)$,
-               $(z_5, z_6) \in \Z \times \Z$. Then it follows that
+               \textbf{Proof.} Let $(a, b)$, $(c, d)$,
+               $(r, s) \in \Z \times \Z$. Then it follows that
                \begin{align*}
-                  (z_1, z_2) * [(z_3, z_4) * (z_5, z_6)] 
-                     &= (z_1, z_2) * [(z_3z_6 + z_4z_5, z_4z_6)] \\
-                     &= (z_1z_4z_6 + z_2z_3z_6 + z_2z_4z_5, z_2z_4z_6) \\
-                     &= ((z_1z_4 + z_2z_3) \cdot z_6 + z_2z_4 \cdot z_5,
-                          z_2z_4 \cdot z_6) \\
-                     &= (z_1z_4 + z_2z_3, z_2z_4) * (z_5, z_6) \\
-                     &= [(z_1, z_2) * (z_3, z_4)] * (z_5, z_6),
+                  (a, b) * ((c, d) * (r, s)) 
+                     &= (a, b) * (cs + dr, ds) \\
+                     &= (ads + bcs + bdr, bds) \\
+                     &= ((ad + bc) \cdot s + bd \cdot r, bd \cdot s) \\
+                     &= (ad + bc, bd) * (r, s) \\
+                     &= ((a, b) * (c, d)) * (r, s),
                \end{align*}
                so that our claim holds. \qed
          \item The binary operation $*$ on $\Q - \{0\}$ is not associative
@@ -151,12 +63,12 @@
          \item The binary operation $*$ on $\Q$ is commutative because addition
                is commutative on $\Q$.
          \item A quick check will show us that $*$ is commutative on
-               $\Z \times \Z$. That is, for all $(z_1, z_2)$, $(z_3, z_4)$
+               $\Z \times \Z$. That is, for all $(a, b)$, $(c, d)$
                $\in \Z \times \Z$, we must have that
                \begin{align*}
-                  (z_1, z_2) * (z_3, z_4) &= (z_1z_4 + z_2z_3, z_2z_4) \\
-                                          &= (z_3z_2 + z_4z_1, z_4z_2) \\
-                                          &= (z_3, z_4) * (z_1, z_2).
+                  (a, b) * (c, d) &= (ad + bc, bd) \\
+                                          &= (cb + da, db) \\
+                                          &= (c, d) * (a, b).
                \end{align*}
          \item The binary operation $*$ on $\Q - \{0\}$ is not commutative
                because
@@ -225,18 +137,18 @@
                \textbf{Proof.} First we must show that $S$ is closed under 
                addition. Notice that $S$ is nonempty since it contains 7/5, so 
                let $r, s \in S$. By definition of $S$, we have that
-               $r = a_1/b_1$ and $s = a_2/b_2$ for some integers $a_1$ and
-               $a_2$, and odd integers $b_1$ and $b_2$, such that
-               $\gcd(a_1, b_1) = \gcd(a_2, b_2) = 1$. It follows that
+               $r = a/b$ and $s = c/d$ for some integers $a$ and $c$, and odd 
+               integers $b$ and $d$, such that
+               $\gcd(a, b) = \gcd(c, d) = 1$. It follows that
                \begin{align*}
-                  r + s &= \frac{a_1}{b_1} + \frac{a_2}{b_2} \\
-                        &= \frac{a_1b_2 + a_2b_1}{b_1b_2}.
+                  r + s &= \frac{a}{b} + \frac{c}{d} \\
+                        &= \frac{ad + bc}{bd}.
                \end{align*}
 
-               Since $b_1$ and $b_2$ are both odd, it must necessarily be the 
-               case that $b_1b_2$ is also odd. In order words, $b_1b_2$ contains 
-               no factor of 2, so that if we reduce $r + s$ to its lowest term, 
-               the denominator of this lowest term will still be odd. Hence
+               Since $b$ and $d$ are both odd, it must necessarily be the case 
+               that $bd$ is also odd. In order words, $bd$ contains no factor of 
+               2, so that if we reduce $r + s$ to its lowest term, the 
+               denominator of this lowest term will still be odd. Hence
                $r + s \in S$, so that $S$ is closed under addition. To complete 
                the proof we must now show that $S$ satisfies the group axioms. 
                We observe that $0/1$ is the identity element in $S$. Also, it is 
@@ -271,9 +183,9 @@
                $S \subset \Q$ and $\Q$ is associative under addition, and that
                the inverse of an element in $S$ is its additive inverse in $\Q$.
                So to complete the proof, we need only show that $S$ is closed
-               under addition. Let $a_1/b_1, a_2/b_2 \in \Q$. By observation, we
-               note that $a_1/b_1 + a_2/b_2$ must have a denominator of 1 or 2,
-               so that it is in $S$. Thus $S$ is closed under addition. \qed
+               under addition. Let $a/b, c/d \in \Q$. By observation, we note
+               that $a/b + c/d$ must have a denominator of 1 or 2, so that it is
+               in $S$. Thus $S$ is closed under addition. \qed
          \item The set
                $$S = \left\{\frac{a}{b} \in \Q : b \in {1, 2, 3} \right\},$$
                is not a group under addition because it is not closed. Indeed,
@@ -327,11 +239,11 @@
          x * (y * z) &= x * (y + z - [y + z]) \\
               &= x + y + z - [y + z] - [x + y + z - [y + z]] \\
               &= x + y + z - [y + z] - ([x + y + z] - [y + z])
-                 \quad \text{Lemma }\ref{1_1_7_1} \\
+                 & \text{[Lemma }\ref{1_1_7_1}] \\
               &= x + y + z - [x + y + z] \\
               &= x + y + z - [x + y] - ([x + y + z] - [x + y]) \\
               &= x + y + z - [x + y] - [x + y + z - [x + y]]
-                 \quad \text{  Lemma }\ref{1_1_7_1} \\
+                 & \text{[Lemma }\ref{1_1_7_1}] \\
           &= (x + y - [x + y]) * z \\
                      &=  (x * y) * z,
       \end{align*}
@@ -343,7 +255,7 @@
 
       \textbf{Inverse.} Suppose $x \neq 0$, so that $0 < x < 1$, and thus
       $0 < 1 - x < 1$; that is $1 - x \in G$. It follows that
-      $$x * (1 - x) = x + (1 - x) + [x + (1 - x)] = 1 - 1 = 0,$$
+      $$x * (1 - x) = x + (1 - x) + [(x + (1 - x))] = 1 - 1 = 0,$$
       so that $1 - x$ is the inverse of $x \in G$, with $x \neq 0$. Clearly, the 
       inverse of 0 is 0. \\
 
@@ -656,36 +568,45 @@
          \item It is clear that part (b) holds if $a$ is 0 or $b$ is 0, so let
                us complete the proof for arbritrary integers $a$ and $b$.
 
-               \textbf{Case 1:} \textit{$a$ is positive and $b$ is negative}. 
-               Hence
+               \textbf{Case 1.} \textit{$a$ is positive and $b$ is negative}. 
+               Let $m = -b$ be a positive integer. Hence
                \begin{align*}
-                  (x^a)^b &= (x^a)^{-(-b)} \\
-                          &= [(x^a)^{-1}]^{-b} &[\text{Definition}] \\
-                          &= (x^{-a})^{-b} &[\text{Part (c)}] \\
-                          &= [(x^{-1})^a]^{-b} &[\text{Definition}] \\
-                          &= (x^{-1})^{-ab} &[\text{Part (b)}] \\
-                          &= x^{-(-ab)} &[\text{Definition}] \\
+                  (x^a)^b &= (x^a)^{-m} \\
+                          &= ((x^a)^{-1})^m &[\text{Definition}] \\
+                          &= (x^{-a})^m &[\text{Part (c)}] \\
+                          &= ((x^{-1})^a)^m &[\text{Definition}] \\
+                          &= (x^{-1})^{am} &[\text{Part (b)}] \\
+                          &= x^{-am} &[\text{Definition}] \\
                           &= x^{ab}.
                \end{align*}
 
-               \textbf{Case 2:} \textit{$a$ and $b$ are negative}. Thus
+               \textbf{Case 2.} \textit{$a$ and $b$ are negative}. Let $s = -a$ 
+               be a positive integer. Thus
                \begin{align*}
-                  (x^a)^b &= [x^{-(-a)}]^b \\
-                          &= [(x^{-1})^{-a}]^b &[\text{Definition}] \\
-                          &= (x^{-1})^{-ab} &[\text{Case 1}] \\
-                          &= [(x^{-1})^{-1}]^{ab}. &[\text{Definition}] \\
+                  (x^a)^b &= (x^{-s})^b \\
+                          &= ((x^{-1})^s)^b &[\text{Definition}] \\
+                          &= (x^{-1})^{sb} &[\text{Case 1}] \\
+                          &= (x^{-1})^{-(ab)}  \\
+                          &= ((x^{-1})^{-1})^{ab}. &[\text{Definition}] \\
                           &= x^{ab}. &[\text{Proposition 1 (3)}]
                \end{align*}
 
-               \textbf{Case 3:} \textit{$a$ is negative and $b$ is positive}. 
+               \textbf{Case 3.} \textit{$a$ is negative and $b$ is positive}. 
+               Let $s = -a$ be a positive integer. Thus
                Thus
                \begin{align*}
-                  (x^a)^b &= [x^{-(-a)}]^b \\
-                          &= [(x^{-1})^{-a}]^b &[\text{Definition}] \\
-                          &= (x^{-1})^{-ab} &[\text{Case 1}] \\
-                          &= x^{-(-ab)} &[\text{Definition}] \\
+                  (x^a)^b &= (x^{-s})^b \\
+                          &= ((x^{-1})^s)^b &[\text{Definition}] \\
+                          &= (x^{-1})^{sb} &[\text{Case 1}] \\
+                          &= x^{-sb} &[\text{Definition}] \\
                           &= x^{ab}.
-               \end{align*}
+               \end{align*}               
+
+               \textbf{Case 4.} $b = 0$. It follows immediately that
+               $$(x^a)^b = (x^a)^0 = 1 = x^0 = x^{a\cdot 0} = x^{ab}.$$
+
+               \textbf{Case 5.} $a = 0$. It follows immediately that
+               $$(x^a)^b = (x^0)^b = 1^b = 1 = x^0 = x^{0\cdot b} = x^{ab}.$$
 
                Combining these results with part (a), we can conclude that
                $(x^a)^b = x^{ab}$ holds for all integers $a$ and $b$ and
@@ -700,7 +621,7 @@
       \textbf{Case 1.} \textit{$|x| = n \in \Z^+$}. Since
       $(x^{-1})^n = (x^n)^{-1} = 1^{-1} = 1$, it follows that $|x^{-1}| \le n$,
       so suppose to the contrary that $|x^{-1}| = m < n$. Then we have that
-      $$x^m = [(x^{-1})^{-1}]^m = [(x^{-1})^m]^{-1} = 1^{-1} = 1,$$
+      $$x^m = ((x^{-1})^{-1})^m = ((x^{-1})^m)^{-1} = 1^{-1} = 1,$$
       a contradiction, so that $|x^{-1}| = n = |x|$.
 
       \textbf{Case 2.} \textit{$|x| = \infty$}. Suppose to the contrary that
@@ -720,18 +641,40 @@
                   $|x| = |g^{-1}xg|$. Deduce that $|ab| = |ba|$ for all
                   $a, b \in G$.
 
-      \textbf{Proof.} Let $x, g \in G$.
+      \begin{lemma} \label{1_1_22_1} \textit{Let $x$ and $g$ be members of a 
+                  group $G$, and let $n$ be a positive integer, then it follows 
+                  that $(g^{-1}xg)^n = g^{-1}x^ng$.}
+      \end{lemma}
 
-      \textbf{Case 1.} \textit{$|x| = n \in \Z^+$}. By Lemma 1.1.2, it follows
-      that $(g^{-1}xg)^n = g^{-1}x^ng = g^{-1}g =1$, so that $|g^{-1}xg| \le n$,
-      so suppose to the contrary that $|g^{-1}xg| = m < n$. Then we have that
+      \textbf{Proof.} Let $x, g \in G$. We shall show by induction that the 
+      equation
+      \begin{equation}
+         (g^{-1}xg)^n = g^{-1}x^ng \label{1_1_22_2}
+      \end{equation}
+      holds for every positive integer $n$. It is clear that \eqref{1_1_22_2} 
+      holds for $n = 1$. So assume that it also holds for some positive integer 
+      $k$. So we must now show that the equation also holds for $k + 1$. Thus
+      \begin{align*}
+         (g^{-1}xg)^{k+1} &= (g^{-1}xg)^kg^{-1}xg &[\text{Execise 1.1.19}] \\
+                     &= g^{-1}x^kgg^{-1}xg &[\text{Inductive hypothesis}] \\
+                     &= g^{-1}x^kxg \\
+                     &= g^{-1}x^{k+1}g,
+      \end{align*}
+      so that \eqref{1_1_22_2} holds for $k+1$. Hence by the Principle 
+      of Mathematical Induction, equation \eqref{1_1_22_1} holds for every 
+      positive integer $n$. Now we show $|x| = |g^{-1}xg|$.
+
+      \textbf{Case 1.} \textit{$|x| = n \in \Z^+$}. By Lemma \ref{1_1_22_1}, it 
+      follows that $(g^{-1}xg)^n = g^{-1}x^ng = g^{-1}g =1$, so that
+      $|g^{-1}xg| \le n$, so suppose to the contrary that $|g^{-1}xg| = m < n$. 
+      Then we have that
       $$g^{-1}1g = 1 = (g^{-1}xg)^m = g^{-1}x^mg,$$
       so that $x^m = 1$ by left and right cancellations, a contradiction; thus,  
       $|g^{-1}xg| = n = |x|$.
 
-      \textbf{Case 2.} \textit{$|x| = +\infty$}. Suppose to the contrary that
+      \textbf{Case 2.} \textit{$|x| = \infty$}. Suppose to the contrary that
       $|g^{-1}xg| = n \in \Z^+$. As we argued in Case 1, it must then be the 
-      case that $x^n = 1$, a contradiction. Thus $|x| = +\infty = |g^{-1}xg|$.
+      case that $x^n = 1$, a contradiction. Thus $|x| = \infty = |g^{-1}xg|$.
 
       Now consider $a, b \in G$. Set $x = ab$ and $g = a$. Since 
       $|x| = |g^{-1}xg|$, it follows that $|ab| = |a^{-1}aba| = |ba|$. \qed
@@ -776,12 +719,14 @@
          a^{-1}b^{-1} = (ba)^{-1} = (ab)^{-1} = b^{-1}a^{-1},
          \label{1_1_24_1}
       \end{equation}
-      so that $a^{-1}$ and $b^{-1}$ are commuting elements. Thus it follows that
+      so that $a^{-1}$ and $b^{-1}$ are commuting elements. Now let $r = -m$ be
+      a positive integer; thus
       \begin{align*}
-         (ab)^m &= (ab)^{-(-m)} \\
-                &= [(ab)^{-1}]^{-m} &[\text{Definition}] \\
-                &= (a^{-1}b^{-1})^{-m} &[\eqref{1_1_24_1}] \\
-                &= (a^{-1})^{-m}(b^{-1})^{-m} &[\text{$R(-m)$ holds}] \\
+         (ab)^m &= (ab)^{-r} \\
+                &= ((ab)^{-1})^r &[\text{Definition}] \\
+                &= (a^{-1}b^{-1})^r &[\eqref{1_1_24_1}] \\
+                &= (a^{-1})^r(b^{-1})^r &[\text{$R(r)$ holds}] \\
+                &= a^{-r}b^{-r} \\
                 &= a^mb^m,
       \end{align*}
       as desired. \qed

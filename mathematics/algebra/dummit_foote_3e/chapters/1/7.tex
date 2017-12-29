@@ -7,38 +7,35 @@
                   field elements (state clearly which axioms in the definition
                   of a field are used).
 
-      \textbf{Proof.} Let $f_1, f_2 \in F^\times$ and $f_3 \in F$. It is clear
-      that $f_1f_3 \in F$ because $F$ is closed under multiplication. Since 1 is
-      is the identity for $(F^\times, \cdot)$, we have that $1 \cdot f_3 = f_3$.
+      \textbf{Proof.} Let $a, b \in F^\times$ and $c \in F$. It is clear
+      that $ab \in F$ because $F$ is closed under multiplication. Since 1 is
+      is the identity for $(F^\times, \cdot)$, we have that $1 \cdot c = f_3$.
       By the associativity of multiplication in $F$, it follows that
-      $f_1(f_2f_3) = (f_1f_2)f_3$. Thus $F^\times$ acts on $F$ by
-      multiplication. \qed
+      $a(bc) = (ab)c$. Thus $F^\times$ acts on $F$ by multiplication. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.2]   Show that the additive group $\Z$ acts on itself by
                   $z \cdot a = z + a$ for all $z, a \in \Z$.
 
-      \textbf{Proof.} Let $z_1$, $z_2$, and $z_3$ be integers. Clearly
-      $z_1 \cdot z_3 = z_1 + z_3 \in \Z$. Notice that the identity of $(\Z, +)$ 
-      is 0; thus $z_1 \cdot 0 = z_1 + 0 = z_1$. Using the associativity of $\Z$ 
-      under +, we have that
-      $$z_1 \cdot (z_2 \cdot z_3) = z_1 + (z_2 + z_3) = (z_1 + z_2) + z_3 =
-      (z_1 \cdot z_2) \cdot z_3.$$
+      \textbf{Proof.} Let $a$, $b$, and $c$ be integers. Since $\Z$ is closed
+      under addition, we have that $a \cdot b = a + b \in \Z$. Notice that the 
+      identity of $(\Z, +)$ is 0; thus $a \cdot 0 = a + 0 = a$. Using the 
+      associativity of $\Z$ under +, we have that
+      $$a \cdot (b \cdot c) = a + (b + c) = (a + b) + c = (a \cdot b) \cdot c.$$
       Thus $\Z$ acts on itself by the given operation. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.3]   Show that the additive group $\R$ acts on the $x, y$ plane
                   $\R \times \R$ by $r \cdot (x, y) = (x + ry, y)$.
 
-      \textbf{Proof.} Let $r_1$, $r_2$, $r_3$, and $r_4$ be real numbers. Since
-      $\R$ is closed under addition, we have that
-      $r_1 \cdot (r_2, r_3) = (r_2 + r_1r_3, r_3) \in \R \times \R$. We also
-      have that
-      $$0 \cdot (r_1, r_2) = (r_1 + 0 \cdot r_2, r_2) = (r_1, r_2).$$
+      \textbf{Proof.} Let $a$, $b$, $c$, and $d$ be real numbers. Since $\R$ is
+      closed under addition, we have that
+      $a \cdot (b, c) = (b + ac, c) \in \R \times \R$. We also have that
+      $$0 \cdot (a, b) = (a + 0 \cdot b, b) = (a, b).$$
       Finally we have that
       \begin{align*}
-         r_1 \cdot (r_2 \cdot (r_3, r_4)) &= r_1 \cdot (r_3 + r_2r_4, r_4) \\
-            &= (r_3 + r_2r_4 + r_1r_4, r_4) \\
-            &= (r_3 + (r_2 + r_1)r_4, r_4) \\
-            &= (r_2 + r_1) \cdot (r_3, r_4), \\
+         a \cdot (b \cdot (c, d)) &= a \cdot (c + bd, d) \\
+            &= (c + bd + ad, d) \\
+            &= (c + (a + b)d, d) \\
+            &= (a + b) \cdot (c, d), \\
       \end{align*}
       so that $\R$ acts on the cartesian plane by the given operation. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,34 +51,36 @@
 
       \begin{enumerate}
          \item Let $K$ be the kernel of this action. The set $K$ is not empty
-               because $1 \in K$. Now let $g, h \in K$ and $a_1 \in A$. So we
+               because $1 \in K$. Now let $g, h \in K$ and $x \in A$. So we
                have that
                \begin{align*}
-                  (gh^{-1})a_1 &= g(h^{-1}a_1) \\
-                     &= g(h^{-1}(ha_1)) &[ha_1 = a_1] \\
-                     &= g((h^{-1}h)a_1) \\
-                     & = g(1a_1) = ga_1 = a_1.
+                  (gh)x &= g(hx) \\
+                     &= gx &[hx = x \text{ since } h \in K] \\
+                     &= x; &[gx = x \text{ since } g \in K]
                \end{align*}
-
-               Thus $gh^{-1} \in K$, so that $K$ is a subgroup of $G$.
+               thus $gh \in K$. Finally
+               $$h^{-1}x = h^{-1}(hx) = (h^{-1}h)x = 1x = x,$$
+               so that $h^{-1} \in K$. Thus, $K$ is a subgroup of $G$ by
+               Exercise 1.1.26.
 
          \item Let $G_a$ be the stabilizer of $a$. Argue similarly as in (a),
-               replacing $a_1$ with $a$, to conclude that $G_a$ is a subgroup of
-               $G$.
+               replacing $x$ with $a$ and $K$ with $G_a$ to conclude that $G_a$ 
+               is a subgroup of $G$.
       \end{enumerate}  \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.5]   Prove that the kernel of an action of the group $G$ on the set
                   $A$ is the same as the kernel of the corresponding permutation
                   representation $G \rightarrow S_A$.
 
-      \textbf{Proof.} Let $K_1$ be the kernel of the action of $G$ on $A$ and
-      let $K_2$ be the kernel of the permutation representation
+      \textbf{Proof.} Let $K$ be the kernel of the action of $G$ on $A$ and let
+      $K'$ be the kernel of the permutation representation
       $\varphi : G \rightarrow S_A$. The proof follows since
       \begin{align*}
-         g \in K_1 &\Longleftrightarrow ga = a \quad\text{ for all } a \in A \\
-            &\Longleftrightarrow \varphi(g)(a)=a\quad\text{ for all } a\in A \\
-            &\Longleftrightarrow \varphi(g) = 1 \\
-            &\Longleftrightarrow g \in K_2.
+         g \in K &\Longleftrightarrow ga = a &\quad\text{ for each } a \in A \\
+            &\Longleftrightarrow (\varphi(g))(a)= a
+               &\quad\text{ for each } a\in A \\
+            &\Longleftrightarrow\varphi(g)\text{ is the identity permutation} \\
+            &\Longleftrightarrow g \in K'.
       \end{align*} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.6]   Prove that a group $G$ acts faithfully on a set $A$ if and
@@ -91,33 +90,35 @@
       \textbf{Proof.} Let $\varphi : G \rightarrow S_A$ be the corresponding 
       permutation representation.
 
-      ($\Rightarrow$) Assume that $G$ acts faithfully on $A$. Let $g$ be an
-      element of the kernel of this action. Then it follows that
-      $\varphi(g) = 1$; but $\varphi$ is injective (since this action is
-      faithul), so that $g = 1$, and it follows that the kernel of the action is
-      trivial.
+      ($\Rightarrow$) Assume that $G$ acts faithfully on $A$. That is, if
+      $g, h \in G$, with $g \neq h$, then $\varphi(g) \neq \varphi(h)$, or
+      equivalently $\varphi$ is injective. So let $g$ be an element of the
+      kernel of this action. Then it follows that
+      $\varphi(g) = 1 = \varphi(1)$, so that $g = 1$, and it follows that the 
+      kernel of the action is trivial.
 
       ($\Leftarrow$) Conversely, suppose the kernel of this action is trivial.
-      Then it follows by Exercise 1.7.5 that the kernel of $\varphi$ is also
-      trivial. So suppose that $\varphi(g_2) = \varphi(g_3)$. Then we have
-      that $\varphi(g_2{g_3}^{-1}) = 1$, and since the kernel of $\varphi$ is 
-      trivial, it follows that $g_2{g_3}^{-1} = 1$. Thus $g_2 = g_3$ and we
-      have that $\varphi$ is injective; that is, $G$ acts faithfully on $A$.
-      \qed
+      Suppose $xa = ya$ for some $x, y \in G$ and for each $a \in A$. Then
+      $$(y^{-1}x)a = y^{-1}(xa) = y^{-1}(ya) = (y^{-1}y)a = 1a = a,$$
+      for each $a \in A$. That is, $y^{-1}x$ is in the kernel of the action;
+      but this kernel is trivial, so that $y^{-1}x = 1$, and thus $x = y$. It
+      follows that distinct elements in $G$ induce distinct permutations of $A$.
+      Conclude that $G$ acts faithfully on $A$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.7]   Prove that in Example 2 in this section the action is
                   faithful when the vector space is nonzero.
 
       \textbf{Proof.} Consider a nonzero vector space $V$ over $F$. Let
       $F^\times$ act on $V$ by left multiplication. Suppose to the contrary that
-      two unequal members of $F^\times$---say $f_1$ and $f_2$---induce the same 
-      permutation on $V$. Let $v$ be a nonzero element in $V$. Then we must 
-      particularly have that $f_1v = f_2v$, so that $(f_1 - f_2)v = 0$. Since
-      $f_1 \neq f_2$, it follows that $f_1 - f_2 \neq 0$, so that $f_1 - f_2$
-      has a multiplicative inverse in $F^\times$. Multiply $(f_1 - f_2)v = 0$
-      by this inverse to get $v = 0$, a contradiction. Thus no two members of
-      $F^\times$ induce the same permutation, so that the action of $F^\times$
-      on $V$ is faithful. \qed
+      two unequal members of $F^\times$---say $\alpha$ and $\beta$---induce the 
+      same permutation of $V$. Let $v$ be a nonzero element in $V$. Then we must 
+      particularly have that $\alpha v = \beta v$, so that
+      $(\alpha - \beta)v = 0$. Since $\alpha \neq \beta$, it follows that
+      $\alpha - \beta \neq 0$, so that $\alpha - \beta$ has a multiplicative 
+      inverse in $F^\times$. Multiply the equality $(\alpha - \beta)v = 0$ (on
+      the left) by this inverse to get $v = 0$, a contradiction. Thus no two 
+      members of $F^\times$ induce the same permutation, so that the action of
+      $F^\times$ on $V$ is faithful. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.8]   Let $A$ be a nonempty set and let $k$ be a positive integer
                   with $k \le |A|$. The symmetric group $S_A$ acts on the set
@@ -152,7 +153,7 @@
                Thus the operation is a group action. \qed
          \item $$
                \begin{tabular}{@{}|c|c|c|c|c|c|c|@{}} \hline
-                  $\circ$ & $\{1\;2\}$ & $\{1\;3\}$ & $\{1\;4\}$ & $\{2\;3\}$ &
+                  $\cdot$ & $\{1\;2\}$ & $\{1\;3\}$ & $\{1\;4\}$ & $\{2\;3\}$ &
                             $\{2\;4\}$ & $\{3\;4\}$ \\ \hline
                   (1 2)   & $\{1\;2\}$ & $\{2\;3\}$ & $\{2\;4\}$ & $\{1\;3\}$ &
                             $\{1\;4\}$ & $\{3\;4\}$ \\ \hline
@@ -176,7 +177,7 @@
          \item The proof is similar to Exercise 1.7.8 (a).
          \item $$
                \begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|c|c|c|c|@{}} \hline
-                  $\circ$ & (1 2) & (2 1) & (1 4) & (4 1) &
+                  $\cdot$ & (1 2) & (2 1) & (1 4) & (4 1) &
                             (2 4) & (4 2) \\ \hline
                   (1 2)   & (2 1) & (1 2) & (2 4) & (4 2) &
                             (1 4) & (4 1) \\ \hline
@@ -187,7 +188,7 @@
                and
                $$
                \begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|c|c|c|c|@{}} \hline
-                  $\circ$ & (1 3) & (3 1) & (2 3) & (3 2) &
+                  $\cdot$ & (1 3) & (3 1) & (2 3) & (3 2) &
                             (3 4) & (4 3) \\ \hline
                   (1 2)   & (2 3) & (3 2) & (1 3) & (3 1) &
                             (3 4) & (4 3) \\ \hline
@@ -315,7 +316,7 @@
          x \cdot (zy) &= z(xy) &\Longleftrightarrow \\
          (zy)x &= z(xy) &\Longleftrightarrow \\
          z(yx) &= z(xy) &\Longleftrightarrow \\
-         yx &= xy &\Longleftrightarrow,
+         yx &= xy, &\Longleftrightarrow
       \end{align*}
       so that $G$ is abelian, a contradiction. Thus this map does not define a
       group action. \qed
@@ -387,15 +388,14 @@
       $\sim$ is reflexive on $A$.
 
       \textbf{Symmetry.} Suppose $a \sim b$. Then there exists $h \in H$ such
-      that $a = hb$. Now $h^{-1}a = h^{-1}hb = 1b = b$, so that $b \sim a$; thus
-      $\sim$ is symmetric on $A$.
+      that $a = hb$. Now $h^{-1}a = h^{-1}(hb) = (h^{-1}h)b = 1b = b$, so that
+      $b \sim a$; thus $\sim$ is symmetric on $A$.
 
       \textbf{Transitivity.} Suppose $a \sim b$ and $b \sim c$. Then there exist
-      $h_1, h_2 \in H$ such that $a = h_1b$ and $b = h_2c$. Thus
-      $a = h_1b = h_1(h_2c) = (h_1h_2)c$, so that $a \sim c$; thus $\sim$ is 
-      transitive on $A$.
-
-      We can thus conclude that $\sim$ is an equivalence relation on $A$. \qed
+      $x, y \in H$ such that $a = xb$ and $b = yc$. Thus
+      $a = xb = x(yc) = (xy)c$, so that $a \sim c$; thus $\sim$ is transitive on 
+      $A$. We can thus conclude that $\sim$ is an equivalence relation on $A$. 
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.19]  Let $H$ be a subgroup of the finite group $G$ and let $H$ act
                   on $G$ (here $A = G$) by left multiplication. Let $x \in G$
@@ -421,15 +421,110 @@
       $|G| = n$. By Exercise 1.7.18, the action of $H$ on $G$ partitions $G$
       into $m$ distinct orbits (there is a finite number of orbits because $G$
       is finite). Since $x$ was arbitrary, it follows that each orbit of this
-      action has size $|H|$, so that $m\cdot|H| = |G|$. That is $|H| \mid |G|$.
+      action has size $|H|$, so that $m\cdot|H| = |G|$. That is, $|H| \mid |G|$.
       \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \textcolor{red}{\item[1.7.20]  Show that the group of rigid motions of a tetrahedron is
+   \item[1.7.20]  Show that the group of rigid motions of a tetrahedron is
                   isomorphic to a subgroup of $S_4$.
+   
+      \textbf{Proof.} Let $G$ be the group of rigid motions of a tetrahedron.
+      Let $A = \{1, 2, 3, 4\}$ be the vertices of the tetrahedron. Each rigid
+      motion in $G$ permutes the vertices of the tetrahedron, so let
+      $\sigma_\alpha$ denote the permutation of $A$ by $\alpha \in G$. Now
+      consider the action of $G$ on $A$ given by
+      $\alpha \cdot a = \sigma_\alpha(a)$ for each $\alpha \in G$ and for each
+      $a \in A$. And let $\varphi : G \rightarrow S_4$ be the permutation 
+      representation of this action. Distinct rigid motions in $G$ induce 
+      distinct permutations in $S_4$ because $\sigma_\alpha$(for each
+      $\alpha \in G$) is a bijection. Thus $\varphi$ is injective. By Exercise 
+      1.6.13, $G \cong \varphi(G)$ and $\varphi(G)$ is a subgroup of $S_4$. \qed
+      %$$G = \{1, (2\;3\;4), (2\;4\;3), (1\;2\;3), (1\;3)(2\;4), (1\;4\;3),
+      %        (1\;4\;2), (1\;2)(3\;4), (1\;3\;2), (1\;3\;4), (1\;4)(2\;3), 
+      %        (1\;2\;4)\}$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.21]  Show that the group of rigid motions of a cube is isomorphic
                   to $S_4$. [This group acts on the set of four pairs of
                   opposite vertices.]
+
+      \textbf{Proof.} Let $G$ be the group of rigid motions of a cube. We showed
+      in Exercise 1.2.10 that $|G| = 24$. Using a right-handed coordinate
+      system, let the vertices of the cube be at the following points:
+      \begin{align*}
+         \text{vertex 1} &= (-1, 1, 1) \\
+         \text{vertex 2} &= (1, 1, 1) \\
+         \text{vertex 3} &= (1, -1, 1) \\
+         \text{vertex 4} &= (-1, -1, 1) \\
+         \text{vertex 5} &= (-1, 1, -1) \\
+         \text{vertex 6} &= (1, 1, -1) \\
+         \text{vertex 7} &= (1, -1, -1) \\
+         \text{vertex 8} &= (-1, -1, -1) \\
+      \end{align*} 
+
+      Let $\alpha_i$, $\beta_i$, $\gamma_i$ be the rigid motions that rotate 
+      (counterclockwisely) the cube around the $z$-axis, $x$-axis, and $y$-axis,
+      respectively, by an angle of $(\pi/2)i$, where $0 \le i \le 3$; for
+      $i, j \in \{0, 1, 2, 3\}$, define $\alpha_{ij} = \alpha_{j}\beta_i$; and
+      for $j \in \{0, 1, 2, 3\}$ define $\alpha_{4j} = \alpha_{j}\gamma_1$ and
+      $\alpha_{5j} = \alpha_{j}\gamma_3$. Note, for example, that
+      $\alpha_1\gamma_1$ is the rigid motion that results from first applying
+      $\gamma_1$ to the cube and then applying $\alpha_1$. It follows that
+      $G = \{\alpha_{ij} : 0 \le i \le 5, 0 \le j \le 3\}$, with identity
+      $\alpha_{00}$. An element of $G$ induces a permutation of the 8 vertices
+      of the cube; denote this permutation as $\sigma_\alpha$, for each
+      $\alpha \in G$. Now let $B$ be the set of pairs of opposite vertices of
+      the cube whose vertices are given above, so that
+      $B = \{\{1, 7\}, \{2, 8\}, \{3, 5\}, \{4, 6\}\}$. Consider the map
+      $f : G \times B \rightarrow A$,
+      $(\alpha, \{u, v\}) \mapsto \{\sigma_\alpha(u), \sigma_\alpha(v)\}$. This
+      map is a group action because for $\alpha, \beta \in G$, $\{u, v\} \in B$,
+      we have
+      $$\alpha_{00} \cdot \{u, v\} = \{1u, 1v\} = \{u, v\},$$
+      and
+      \begin{align*}
+         \alpha \cdot (\beta \cdot \{u, v\}) &=
+         \alpha \cdot \{\sigma_\beta(u), \sigma_\beta(v)\} \\
+         &= \{\sigma_\alpha(\sigma_\beta(u)), \sigma_\alpha(\sigma_\beta(v))\}\\
+         &= \{(\sigma_\alpha\circ\sigma_\beta)(u),
+              (\sigma_\alpha\circ\sigma_\beta)(v)\} \\
+                     &= (\sigma_\alpha\circ\sigma_\beta) \cdot \{u, v\} \\
+                     &= (\alpha\circ\beta) \cdot \{u, v\}.
+      \end{align*}
+
+      For ease of computation, let us rename the elements of $B$ (as listed in
+      the set, from left to right) as 1, 2, 3, and 4. Let
+      $\varphi : G \rightarrow S_B$ be the permutation representation of this
+      action. It follows that
+
+      \begin{center}
+         \begin{tabular}{@{}l c r c l c r c l c r@{}}
+            $\varphi(\alpha_{00})$ & = & 1, & &
+            $\varphi(\alpha_{20})$ & = & (1\;2)(3\;4), & &
+            $\varphi(\alpha_{40})$ & = & (1\;2\;4\;3), \\
+            $\varphi(\alpha_{01})$ & = & (1\;4\;3\;2), & &
+            $\varphi(\alpha_{21})$ & = & (2\;4),  & &
+            $\varphi(\alpha_{41})$ & = & (2\;3\;4), \\
+            $\varphi(\alpha_{02})$ & = & (1\;3)(2\;4), & & 
+            $\varphi(\alpha_{22})$ & = & (1\;4)(2\;3),  & &
+            $\varphi(\alpha_{42})$ & = & (1\;4), \\
+            $\varphi(\alpha_{03})$ & = & (1\;2\;3\;4), & & 
+            $\varphi(\alpha_{23})$ & = & (1\;3),  & &
+            $\varphi(\alpha_{43})$ & = & (1\;3\;2), \\
+            $\varphi(\alpha_{10})$ & = & (1\;4\;2\;3), & &
+            $\varphi(\alpha_{30})$ & = & (1\;3\;2\;4), & &
+            $\varphi(\alpha_{50})$ & = & (1\;3\;4\;2), \\
+            $\varphi(\alpha_{11})$ & = & (1\;3\;4), & &
+            $\varphi(\alpha_{31})$ & = & (1\;2\;3),  & &
+            $\varphi(\alpha_{51})$ & = & (1\;2\;4), \\
+            $\varphi(\alpha_{12})$ & = & (1\;2), & & 
+            $\varphi(\alpha_{32})$ & = & (3\;4),  & &
+            $\varphi(\alpha_{52})$ & = & (2\;3), \\
+            $\varphi(\alpha_{13})$ & = & (2\;4\;3), & & 
+            $\varphi(\alpha_{33})$ & = & (1\;4\;2),  & &
+            $\varphi(\alpha_{53})$ & = & (1\;4\;3).
+         \end{tabular}
+      \end{center}
+      That is, $\varphi$ is an isomorphism. Thus $G \cong S_B \cong S_4$.
+ \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.22]  Show that the group of rigid motions of an octahedron is
                   isomorphic to $S_4$. [This group acts on the set
@@ -440,8 +535,21 @@
                   1961. We shall see later that the groups of rigid motions of
                   the dodecahedron and icosahedron are isomorphic as well---
                   these solids are also dual.)
+
+      \textbf{Proof.} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.7.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.7.23]  Explain why the action of the group of rigid motions of a cube
                   on the set of three pairs of opposite faces is not faithful.
-                  Find the kernel of this action.}
+                  Find the kernel of this action.
+
+      \textbf{Solution.} We will be using the cube (and symbols) from Exercise
+      1.7.21. Let $\varphi : G \rightarrow S_F$, be the permutation
+      representation of the action of $G$ on $F$, where the $F$ is the set of
+      the pair of faces of the cube. Now $|G| = 24 > 6 = 3! = |S_F|$; that is,
+      $\varphi$ is not injective, and it follows that some two elements of $G$
+      must induce the same permutation of $F$. Hence, this action is not
+      faithful. The kernel of the action is:
+      $$\{\alpha_{00}, \alpha_{02}, \alpha_{20}, \alpha_{22}\}.$$
+
+      
 \end{enumerate}

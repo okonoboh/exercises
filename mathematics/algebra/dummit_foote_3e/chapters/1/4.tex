@@ -81,12 +81,12 @@ Let $F$ be a field and let $n \in \Z^+$.
       $GL_n(F)$ is finite.
 
       ($\Rightarrow$) We shall instead prove the contrapositive in this
-      direction. So suppose $F$ is infinite, so that $F^\times$ is also
-      infinite. Then the set $\left\{\left(\begin{tabular}{@{}cc@{}}
-         $a$ & 0 \\
-         0 & 1
-      \end{tabular}\right) : a \in F^\times\right\}$ is not only infinite but 
-      also a subset of $GL_n(F)$. Thus $GL_n(F)$ is infinite, as desired. \qed
+      direction. Let $M(a) = (a_{ij})$ denote the $n \times n$ diagonal matrix 
+      where $a_{11} = a$ and $a_{ii} = 1$, for $1 < i \le n$. Hence
+      det$(M(a)) = a$. So suppose $F$ is infinite (so that $F^\times$ is also
+      infinite), then the set $\left\{M(a) : a \in F^\times\right\}$ is not only 
+      infinite but also a subset of $GL_n(F)$. Thus $GL_n(F)$ is infinite, as 
+      desired. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.4.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.4.6]   If $|F| = q$ is finite prove that $|GL_n(F)| < q^{n^2}$.
    
