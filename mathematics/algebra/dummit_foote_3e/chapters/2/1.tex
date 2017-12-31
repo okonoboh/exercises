@@ -20,51 +20,56 @@
       \textbf{Proof.}
       
       \begin{enumerate}
-         \item Let $S = \{a + ai: a \in \R, i^2 = -1\}$. The set $S$ is clearly
-               nonempty, so let $x+xi, y+yi \in S$. We then have that
-               $(x+xi)-(y+yi) = (x-y) + (x-y)i \in S$, so that $S < \C$.
-         \item Let $S = \{a \in \C: |a| = 1\}$. The set $S$ is clearly nonempty,
-               so let $x, y \in S$. We then have that
-               $|xy| = |x||y| = 1 \cdot 1 = 1$, so that $xy \in S$. Write
-               $x = r + si$, so that $x^{-1} = r - si$. Since
-               $|x| = r^2 + s^2 = |x^{-1}| = 1$, we have that $x^{-1} \in S$.
-               Hence $S$ is closed under inverses and multiplication and we have
-               that $S < \C$.
+         \item Let $S = \{a + ai: a \in \R, i^2 = -1\}$. The set $S$ is nonempty
+               because $0 = 0 + 0i \in S$. Now let $a, b \in S$, so that
+               $a = x + xi$ and $b = y + yi$ for some $x, y \in \R$. Since $\R$
+               is closed under subtraction, it follows that $x - y \in \R$, and
+               thus
+               $$a - b = (x + xi) - (y + yi) = (x - y) + (x - y)i \in S.$$
+               Conclude by the Subgroup Criterion that $S \le \C$.
+         \item Let $S = \{a \in \C: |a| = 1\}$. The set $S$ is nonempty because
+               $1 \in S$. So let $x, y \in S$. Since $|x| = |y| = 1$, it
+               follows that $x = e^{i\alpha}$ and  $y = e^{i\beta}$, for some
+               $\alpha, \beta \in \R$ (recall that $e^{i\theta} = \cos\theta +
+               i\sin\theta$). We then have that
+               \begin{align*}
+                  |xy^{-1}| &= |e^{i\alpha}e^{-(i\beta)}| =
+                  |e^{i\alpha}e^{i(-\beta)}| \\
+                  &= |e^{i(\alpha-\beta)}| \\
+                  &= |\cos(\alpha-\beta) + i\sin(\alpha-\beta)| \\
+                  &= \cos^2(\alpha-\beta) + \sin^2(\alpha-\beta) = 1,
+               \end{align*}
+               so that $xy^{-1} \in S$. 
+               Conclude by the Subgroup Criterion that $S \le \C$.
          \item Let $n$ be a positive integer and
                $$S = \left\{\frac{a}{b} \in
-               \Q : \text{ if } \frac{a'}{b'} = \frac{a}{b},
-               \text{ with }\gcd(a', b') = 1, \text{ then } b' \mid n\right\}.$$ 
-               The set $S$ is nonempty since it contains 0. Let $\D\frac{a}{b}$,
-               $\D\frac{c}{d} \in S$. Writing these rationals in lowest terms,
-               we have $\D\frac{a}{b} = \frac{a'}{b'}$ and
-               $\D\frac{c}{d} = \frac{c'}{d'}$. Let $l = \mbox{lcm}(b', d')$.
-               By membership in $S$, we have that $b' \mid n$ and $d' \mid n$. 
-               Thus $l \mid n$. Now there exists an integer $m$ such that 
-               $\D\frac{a'}{b'} - \frac{c'}{d'} = \frac{m}{l}$. Let
-               $\D\frac{m'}{l'} = \frac{m}{l}$ such that $\gcd(m', l') = 1$.
-               Then $l' \mid l$; since $l \mid n$, it follows that $l' \mid n$,
-               so that $\D\frac{a}{b} - \frac{c}{d} = \D\frac{a'}{b'} -
-               \frac{c'}{d'} = \frac{m}{l} =\frac{m'}{l'} \in S$. Thus $S < \Q$.
+               \Q : \gcd(a, b) = 1, \text{ and } b \mid n\right\}.$$ 
+               The set $S$ is nonempty since it contains 0/1. Let
+               $\D\frac{a}{b}$, $\D\frac{c}{d} \in S$. Let
+               $l = \mbox{lcm}(b, d)$. By membership in $S$, we have that
+               $b \mid n$ and $d \mid n$. Thus $l \mid n$. Now there exist
+               integers $m$ and $l'$ such that
+               $\D\frac{a}{b} - \frac{c}{d} = \frac{m}{l'}$, where
+               $\gcd(m, l') = 1$. Now $l' \mid l$; since $l \mid n$, it follows 
+               that $l' \mid n$, so that
+               $\D\frac{a}{b} - \frac{c}{d} = \frac{m}{l'} \in S$. Thus
+               $S \le \Q$ by the Subgroup Criterion.
          \item Let $n$ be a positive integer and
-               $$S = \left\{\frac{a}{b} \in
-               \Q : \text{ if } \frac{a'}{b'} = \frac{a}{b},
-               \text{ with }\gcd(a',b')=1, \text{ then } \gcd(b',n)=1\right\}.$$ 
-               The set $S$ is nonempty since it contains 0. Let $\D\frac{a}{b}$,
-               $\D\frac{c}{d} \in S$. Writing these rationals in lowest terms,
-               we have $\D\frac{a}{b} = \frac{a'}{b'}$ and
-               $\D\frac{c}{d} = \frac{c'}{d'}$. Let $l = \mbox{lcm}(b', d')$.
-               By membership in $S$, we have that $\gcd(b',n) = \gcd(d',n) = 1$. 
-               Thus $\gcd(l,n)=1$. Now there exists an integer $m$ such that 
-               $\D\frac{a'}{b'} - \frac{c'}{d'} = \frac{m}{l}$. Let
-               $\D\frac{m'}{l'} = \frac{m}{l}$ such that $\gcd(m', l') = 1$.
-               Then $l' \mid l$; since $\gcd(l,n)=1$, it follows that
-               $\gcd(l',n)=1$, so that
-               $$\frac{a}{b}-\frac{c}{d}=\D\frac{a'}{b'}-\frac{c'}{d'} =
-                 \frac{m}{l} =\frac{m'}{l'} \in S.$$ Thus $S < \Q$.
-         \item Let $S = \{x \in \R : x \neq 0, x^2 \in \Q\}$. The set $S$
-               has 1 as its identity. Now let $a, b \in S$. Then we have that
-               $(ab^{-1})^2 = \D\frac{a^2}{b^2} \in \Q$, so that $S < \R$.
-      \end{enumerate} \qed
+               $$S = \left\{\frac{a}{b} \in \Q:\gcd(a, b)=\gcd(b,n)=1\right\}.$$ 
+               The set $S$ is nonempty since it contains 0/1. Let
+               $\D\frac{a}{b}$, $\D\frac{c}{d} \in S$. Now there exist integers
+               $m$ and $l$ such that 
+               $\D\frac{a}{b} - \frac{c}{d} = \frac{m}{l}$. Since $b$ and $d$
+               are relatively prime to $n$ and since the prime factors of $l$
+               are those of $b$ or $d$, it follows that $l$ is also relatively
+               prime to $n$. Thus $m/l \in S$. Conclude by the Subgroup
+               Criterion that $S \le \R$.
+         \item Let $S = \{x \in \R : x \neq 0, x^2 \in \Q\}$. Because
+               $1^2 = 1 \in \Q$, we have $1 \in S$. So let $a, b \in S$.
+               Since $b \neq 0$, $b^{-1}$ is defined. Then we have that
+               $(ab^{-1})^2 = \D\frac{a^2}{b^2} \in \Q$, so that $S \le \R$ by
+               the Subgroup Criterion. \qed
+      \end{enumerate} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.2]   In each of (a) - (e) prove that the specified subset is
                   \textit{not} a subgroup of the given group:
@@ -152,7 +157,7 @@
                   where $n = |G| > 2$.
 
       \textbf{Proof.} Suppose that $G$ is a finite group of order $n > 2$. Now
-      suppose to the contrary that $H < G$, where $|H| = n - 1$. Let $y \in G$
+      suppose to the contrary that $H \le G$, where $|H| = n - 1$. Let $y \in G$
       be the element not in $H$. Since $|G| \ge 3$, there exists an
       $x \in H$ such that $x \neq 1$ (and $x \neq y$). Now consider the element
       $x^{-1}y$. If $x^{-1}y = y$, then $x = 1$, contrary to our assumption. If
@@ -174,7 +179,18 @@
       that $|xy^{-1}| \le mn < \infty$; that is $xy^{-1} \in H$, so that
       $H \le G$.
 
-      \textcolor{red}{\textbf{Example.} Todo}
+      \textbf{Example.} Let
+      $$A = \left(\begin{tabular}{@{}rr@{}}
+         0 & 1 \\ $-1$ & $-1$
+        \end{tabular}\right),
+        B = \left(\begin{tabular}{@{}cr@{}}
+         0 & $-1$ \\ 1 & 0
+        \end{tabular}\right) \in GL_2(\R).$$
+      The order of $A$ is 3, and the order of $B$ is 4, but $AB$ is not of
+      finite order; indeed, we have that
+      $$(AB)^n = \left(\begin{tabular}{@{}cc@{}}
+         1 & $n$ \\ 0 & 1
+        \end{tabular}\right), \qquad \text{for each }n \in \Z.$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.7]   Fix some $n \in \Z$ with $n > 1$. Find the torsion subgroup
                   of $\Z \times (\Z/n\Z)$. Show that the set of elements of
@@ -183,8 +199,8 @@
 
       \textbf{Proof.} The torsion subgroup of $\Z \times (\Z/n\Z)$ is
       $\{(0, a) : a \in \Z/n\Z\}$. Let $H$ be the set of elements of infinite 
-      order together with the identity. We have (1, 1), (1, 2) $\in H$, but
-      $(1,\;2) - (1,\;1) = (0,\;1) \notin H$, so that $H$ is not closed under
+      order together with the identity. We have (1, 0), ($-1$, 0) $\in H$, but
+      $(1,\;0) + (-1,\;0) = (0,\;0) \notin H$, so that $H$ is not closed under
       addition; that is, $H$ is not a subgroup of $\Z \times (\Z/n\Z)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.8]   Let $H$ and $K$ be subgroups of $G$. Prove that $H \cup K$ is
@@ -209,9 +225,9 @@
       $n \times n$ identity matrix. Let $A, B \in SL_n(F)$. By membership in
       $SL_n(F)$ we have $\det(A) = 1$, so that $A^{-1}$ exists. Since the
       determinant of a product is the product of the determinants, it follows
-      that $\det(A)\det(A^{-1}) = 1$, so that $\det(A^{-1}) = 1$; now
-      $\det(AB^{-1}) = \det(A)\det(B^{-1}) = 1$, so that $AB^{-1} \in SL_n(F)$; 
-      that is $SL_n(F) \le GL_n(F)$. \qed
+      that $\det(A)\det(A^{-1}) = 1$, so that $\det(A^{-1}) = 1$, and thus,
+      $A^{-1} \in SL_n(F)$; now $\det(AB) = \det(A)\det(B) = 1$, so that
+      $AB \in SL_n(F)$; that is $SL_n(F) \le GL_n(F)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.10]  \begin{enumerate}
                      \item Prove that if $H$ and $K$ are subgroups of $G$ then
@@ -224,14 +240,16 @@
       \textbf{Proof.}
 
       \begin{enumerate}
-         \item See (b).
+         \item Let the indexing set in (b) be $I = \{1, 2\}$, so that $G_1 = H$
+               and $G_2 = K$.
          \item Let $G$ be a group and $S = \D\bigcap_{i \in I}G_i$ be the
                intersection of an arbitrary collection of subgroups of $G$,
                where $G_i \le G$, for each $i \in I$, and $I$ is some indexing   
                set. Since 1 belongs to all $G_i$, it follows that $1 \in S$. Now
                let $x, y \in S$. Then each $G_i$ must have $x$ and $y$ as
                elements. Also since each $G_i$ is a group, it must also contain
-               $xy^{-1}$, so that $xy^{-1} \in S$. That is, $S \le G$.
+               $xy^{-1}$, so that $xy^{-1} \in S$. That is, $S \le G$, by the
+               Subgroup Criterion.
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.11]  Let $A$ and $B$ be groups. Prove that the following sets are
@@ -258,7 +276,8 @@
                $H$ is nonempty. Now let $(x, x), (y, y) \in H$. It follows that 
                $(x, x)(y, y)^{-1} = (x, x)(y^{-1}, y^{-1}) = (xy^{-1}, xy^{-1}) 
                \in H$, so that $H \le A \times A$.
-      \end{enumerate} \qed
+      \end{enumerate}
+      All conclusions followed from the Subgroup Criterion. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.12]  Let $A$ be an abelian group and fix some $n \in \Z$. Prove
                   that the following sets are subgroups of $A$:
@@ -273,11 +292,12 @@
          \item Let $H = \{a^n : a \in A\}$. Since $1^n = 1$, it follows that
                $1 \in H$. So let $x^n, y^n \in H$ for some $x, y \in A$. Then we 
                have that $x^n(y^n)^{-1} = x^n(y^{-1})^n = (xy^{-1})^n$; i.e.,
-               $x^n(y^n)^{-1} \in H$ and thus $H \le A$.
+               $x^n(y^n)^{-1} \in H$ and thus $H \le A$ by the Subgroup
+               Criterion.
          \item Let $H = \{a \in A : a^n=1\}$. Since $1^n = 1$, it follows that
                $1 \in H$. So let $x, y \in H$. Then we have that
                $(xy^{-1})^n = x^n(y^{-1})^n = x^n(y^n)^{-1} = 1$; i.e.,
-               $xy^{-1} \in H$ and thus $H \le A$.
+               $xy^{-1} \in H$ and thus $H \le A$ by the Subgroup Criterion.
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.13]  Let $H$ be a subgroup of the additive group of rational
@@ -286,8 +306,8 @@
 
       \textbf{Proof.} If $H = 0$, then we are done, so assume that $H \neq 0$.
       First notice that if $h \in H$, then $nh \in H$ for all $n \in \Z$ because
-      $H$ is closed under addition. Now let $a/b$ be a rational number. To 
-      complete the proof, it suffices to show that $a/b \in H$. Since
+      $H$ is closed under addition and inverses. Now let $a/b$ be a rational 
+      number. To complete the proof, it suffices to show that $a/b \in H$. Since
       $H \neq 0$, it contains a nonzero rational number, say $p/q$.
       Thus $q \cdot p/q = p \in H$. Since $p \neq 0$, it follows by our 
       hypothesis that $1/p \in H$ so that $p \cdot 1/p = 1 \in H$. That is
@@ -301,8 +321,9 @@
       $n \ge 3$, we have $sr^2, sr \in D_{2n}$. Also since
       $(sr^2)^2 = (sr)^2 = 1$, we have that $sr^2, sr \in H$. But
       $(sr^2)(sr) = r^{-2}ssr = r^{-2}r = r^{n-1} \notin H$ because
-      $(r^{n-1})^2 = r^{2n-2} = r^{-2} = r^{n-2} \neq 1$, so that $H$ is not 
-      closed under multiplication. Thus $H$ is not a subgroup of $D_{2n}$. \qed
+      $(r^{n-1})^2 = r^{2n-2} = r^{-2} = r^{n-2} \neq 1$ (because
+      $|r| = n > n - 2$), so that $H$ is not closed under multiplication. Thus
+      $H$ is not a subgroup of $D_{2n}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.1.15]  Let $H_1 \le H_2 \le \cdots$ be an ascending chain of
                   subgroups of $G$. Prove that $\cup_{i=1}^\infty H_i$ is a 
@@ -318,8 +339,8 @@
       $H_k$ is a group, we must have that $xy^{-1} \in H_k$ so that
       $xy^{-1} \in S$.
 
-      \textbf{Case 2.} $k < j$. Then since $x \in H_k$, we must have
-      $x \in H_j$. Thus $xy^{-1} \in H_j$ so that $xy^{-1} \in S$.
+      \textbf{Case 2.} $k < j$. Thus $H_k \subseteq H_j$. Since $x \in H_k$, we 
+      must have $x \in H_j$. Thus $xy^{-1} \in H_j$ so that $xy^{-1} \in S$.
 
       \textbf{Case 3.} $j < k$. Interchange the roles of $j$ and $k$ and $x$
       and $y$ in Case 2 to conclude that $yx^{-1} \in S$. \\
@@ -327,15 +348,15 @@
       In any case, we have thus shown that $S$ is closed under multiplication
       and inverses, so that $S \le G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \textcolor{red}{\item[2.1.16]  Let $n \in \Z^+$ and let $F$ be a field. Prove 
-               that the set
+   \item[2.1.16]  Let $n \in \Z^+$ and let $F$ be a field. Prove 
+                  that the set
                   $$H = \{(a_{ij}) \in GL_n(F) : (a_{ij}) = 0 \text{ for all }
                      i > j\}$$
                   is a subgroup of $GL_n(F)$ (called the group of
-                  \textit{upper triangular} matrices).}
+                  \textit{upper triangular} matrices).
 
-      \textcolor{red}{\textbf{Proof.} Let $A = (a_{ij})$ and $B = (b_{ij})$ be matrices in $H$. 
-      Let $C = (c_{ij}) = AB$. Recall that
+      \textbf{Proof.} The identity matrix is in $H$, so let $A = (a_{ij})$ and
+      $B = (b_{ij})$ be matrices in $H$. Let $C = (c_{ij}) = AB$. Recall that
       $$c_{ij} = \sum_{k=1}^na_{ik}b_{kj}.$$
       So assume that $i > j$. It follows that
       \begin{align*}
@@ -344,10 +365,54 @@
                &[\text{Since }a_{ik} = 0 \text{ if } i > k] \\
             &= 0, &[\text{Since }k \ge i > j \text{ so } b_{kj} = 0]
       \end{align*}
-      so that $C \in H$.}
+      so that $C$ is an upper triangular matrix. Also $C$ is invertible because
+      $GL_n(F)$ is closed under multiplication, so $C \in H$. The matrix $A$ is
+      invertible because $GL_n(F)$ is closed under inverses. It remains to show
+      that $A^{-1} = (d_{ij})$ is an upper triangular matrix. Suppose to the
+      contrary that $A^{-1}$ is not upper triangular. Then $d_{pq} \neq 0$ for
+      some $p > q$. Let $k$ be the minimum integer such that $d_{pk} \neq 0$
+      (note that $k \le q$, so that $p > k$). Denote the identity matrix by
+      $(e_{ij})$. Since $I = A^{-1}A$, it follows by definition of matrix 
+      multiplication that
+      \begin{align*}
+         e_{pk} &= \sum_{i=1}^nd_{pi}a_{ik} \\
+           &= \sum_{i=k}^nd_{pi}a_{ik}
+               &[\text{Since }d_{pi} = 0 \text{ if } i < k] \\
+            &= d_{pk}a_{kk}. &[\text{Since } a_{ik} = 0 \text{ if } i > k]
+      \end{align*}
+      Since $p > k$, it follows that $e_{pk} = 0$. Recall that the determinant
+      of an upper triangular matrix is the product of the elements on its main
+      diagonal. Since $\det(A) \neq 0$, it follows that $a_{kk} \neq 0$. But
+      $d_{pk}$ is also nonzero, a contradiction. So conclude that $A^{-1}$ is
+      upper triangular, and thus is a member of $H$. It follows that
+      $H \le GL_n(F)$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.1.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \textcolor{red}{\item[2.1.17]  Let $n \in \Z^+$ and let $F$ be a field. Prove that the set
-                  $$\{(a_{ij}) \in GL_n(F) : (a_{ij}) = 0 \text{ for all }
+   \item[2.1.17]  Let $n \in \Z^+$ and let $F$ be a field. Prove that the set
+                  $$H = \{(a_{ij}) \in GL_n(F) : (a_{ij}) = 0 \text{ for all }
                       i > j, \text{ and } a_{ii} = 1 \text{ for all }i\}$$
-                  is a subgroup of $GL_n(F)$.}
+                  is a subgroup of $GL_n(F)$.
+
+      \textbf{Proof.} The set $H$ is nonempty because it contains the identity
+      matrix, so let $A = (a_{ij})$, $B = (b_{ij}) \in H$. By our discussion in
+      the previous exercise, it follows that $C = (c_{ij}) = AB$ and
+      $A^{-1} = (d_{ij})$ are invertible upper triangular matrices. To complete
+      the proof, it suffices to show that $c_{ii} = d_{ii} = 1$ for all $i$. By
+      definition, we have that
+      \begin{align*}
+         c_{ii} &= \sum_{j=1}^na_{ij}b_{ji} \\
+           &= \sum_{j=i}^na_{ij}b_{ji}
+               &[\text{Since }a_{ij} = 0 \text{ if } i > j] \\
+            &= a_{ii}b_{ii} &[\text{Since } b_{ji} = 0 \text{ if } j > i] \\
+            &= 1,
+      \end{align*}
+      so that $C \in H$. Now let $(e_{ij})$ be the identity matrix; since
+      $(e_{ij}) = AA^{-1}$, it follows that
+      \begin{align*}
+         e_{ii} &= \sum_{j=1}^na_{ij}d_{ji} \\
+         1  &= \sum_{j=i}^na_{ij}d_{ji}
+               &[\text{Since }a_{ij} = 0 \text{ if } i > j] \\
+            &= a_{ii}d_{ii} &[\text{Since } d_{ji} = 0 \text{ if } j > i] \\
+            &= 1 \cdot d_{ii} = d_{ii},
+      \end{align*}
+      so that $A^{-1} \in H$. Conclude that $H \le GL_n(F)$. \qed  
 \end{enumerate}
