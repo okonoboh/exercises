@@ -5,10 +5,10 @@
       \textbf{Proof.} Suppose $H$ is a subgroup of some group $G$. Let
       $h \in H$. By definition of $\cyc{H}$, we have that $h^1 \in \cyc{H}$, so
       that $H \subseteq \cyc{H}$. Now let $h' \in \cyc{H}$. Then it follows that
-      $h' = {h_1}^{a_1}{h_2}^{a_2}\cdots {h_n}^{a_n}$, where $h^i \in H$ and
+      $h' = {h_1}^{a_1}{h_2}^{a_2}\cdots {h_n}^{a_n}$, where $h_i \in H$ and
       $a_i$ is an integer for all $1 \le i \le n$. Since $H$ is closed under
       multiplication, it follows that
-      $h' = h_1^{a_1}h_2^{a_2}\cdots h_n^{a_n} \in H$. That is, 
+      $h' = {h_1}^{a_1}{h_2}^{a_2}\cdots {h_n}^{a_n} \in H$. That is, 
       $\cyc{H} \subseteq H$, and we can conclude that $\cyc{H} = H$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.4.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.4.2]   Prove that if $A$ is a subset of $B$ then
@@ -19,10 +19,13 @@
       $A = \emptyset$, then $\cyc{A} = \{1\} \le \cyc{B}$. So suppose that
       $A \neq \emptyset$. Let $a \in \cyc{A}$. Then it follows by definition
       that $a = {a_1}^{\varepsilon_1}{a_2}^{\varepsilon_2}\cdots
-      {a_n}^{\varepsilon_n}$ for some $a_i \in A$ and integers $\varepsilon_i$
-      for all $1 \le i \le n$. But since $a_i \in A$ and $A \subseteq B$, it
+      {a_n}^{\varepsilon_n}$ for $a_i \in A$ and integers $\varepsilon_i$ for
+      each $1 \le i \le n$. But since $a_i \in A$ and $A \subseteq B$, it
       follows that $a_i \in B$; thus $a \in B$, and we conclude that
-      $\cyc{A} \subseteq \cyc{B}$, so that $\cyc{A} \le \cyc{B}$. \qed
+      $\cyc{A} \subseteq \cyc{B}$, so that $\cyc{A} \le \cyc{B}$.
+
+      \textbf{Example.} Let $B = D_6$ and $A = \{r, s\}$. It follows that
+      $A \subseteq B$, with $A \neq B$ but $\cyc{A} = \cyc{B}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.4.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.4.3]   Prove that if $H$ is an abelian subgroup of a group $G$ then
                   $\cyc{H, Z(G)}$ is abelian. Give an explicit example of an

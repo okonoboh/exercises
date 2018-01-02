@@ -17,10 +17,10 @@
    \item[2.2.2]   Prove that $C_G(Z(G)) = G$ and deduce that $N_G(Z(G)) = G$.
 
       \textbf{Proof.} Clearly $C_G(Z(G)) \subseteq G$, so it suffices to show
-      that containment in the other direction. Now let $g \in G$ and
-      $z \in Z(G)$. Since $z$ is in the center of $G$, it follows that
-      $zg = gz$, so that $g$ commutes with every element of $Z(G)$; that is,
-      $g \in C_G(Z(G))$ and we can conclude that $G \subseteq C_G(Z(G))$. Since
+      containment in the other direction. Now let $g \in G$ and $z \in Z(G)$. 
+      Since $z$ is in the center of $G$, it follows that $zg = gz$, so that $g$ 
+      commutes with every element of $Z(G)$; that is, $g \in C_G(Z(G))$, so that
+      $G \subseteq C_G(Z(G))$. Conclude $G = C_G(Z(G))$. Since
       $$G = C_G(Z(G)) \subseteq N_G(Z(G)) \subseteq G,$$
       it follows that $N_G(Z(G)) = G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,22 +147,22 @@
 
       \begin{enumerate}
          \item To show that $H$ is a subgroup of $N_G(H)$, it suffices to show
-               that $H$ is a subset of $N_G(H)$. So let $h_1 \in H$. Clearly
-               $h_1H{h_1}^{-1} \subseteq H$ because $H$ is closed under
-               multiplication. Now let $h_2 \in H$, so that
-               ${h_1}^{-1}h_2h_1 \in H$. Since
-               $$h_1({h_1}^{-1}h_2h_1){h_1}^{-1} = h_2,$$
-               it follows that $h_2 \in h_1H{h_1}^{-1}$; that is,
-               $H \subseteq h_1H{h_1}^{-1}$, and thus, $H = h_1H{h_1}^{-1}$. We
-               have thus shown that $h_1 \in N_G(H)$. Thus $H \le N_G(H)$. \\
+               that $H$ is a subset of $N_G(H)$. So let $x \in H$. Clearly
+               $xHx^{-1} \subseteq H$ because $H$ is closed under
+               multiplication. Now let $y \in H$, so that
+               $x^{-1}yx \in H$. Since
+               $$x(x^{-1}yx)x^{-1} = y,$$
+               it follows that $y \in xHx^{-1}$; that is,
+               $H \subseteq xHx^{-1}$, and thus, $H = xHx^{-1}$. We
+               have thus shown that $x \in N_G(H)$. Thus $H \le N_G(H)$. \\
 
                \textbf{Example.} Let $G = D_6$ and $H = \{r, s\}$. Note that
-               $H$ is not a subgroup of $G$ and $H$ is not even a subset of
+               $H$ is not a subgroup of $G$ and $H$ is not a subset of
                $N_G(H) = \{1\}$.
-         \item ($\Rightarrow$) Suppose that $H \le C_G(H)$. Let $h_1$,
-               $h_2 \in H$. By our supposition, it follows that
-               $h_1 \in C_G(H)$, so that $h_1h_2 = h_2h_1$; since $h_1$ and
-               $h_2$ were arbitrarily chosen, it follows that $H$ is abelian.
+         \item ($\Rightarrow$) Suppose that $H \le C_G(H)$. Let $x$, $y \in H$. 
+               By our supposition, it follows that $x \in C_G(H)$, so that
+               $xy = yx$; since $x$ and $y$ were arbitrarily chosen, it follows 
+               that $H$ is abelian.
 
                ($\Leftarrow$) Suppose conversely that $H$ is abelian. That is,
                every element of $H$ commutes with all elements of $H$, so it
@@ -178,35 +178,8 @@
       \textbf{Proof.}
 
       \begin{enumerate}
-         \item Suppose that $n$ is odd. We claim that $r^{-i} = r^{i}$ if and
-               only if $r^i = 1$. So suppose first that $r^{-i} = r^{i}$; i.e.,
-               $r^{2i} = 1$. Thus it follows by Proposition 2.3 that
-               $n \mid 2i$. Since $(n, 2) = 1$, we must have that $n \mid i$, so
-               that $r^i = 1$. The other direction is trivial. Now let $r^j$ be
-               a nonidentity element in $D_{2n}$ (so that $1 \le j < n$). Since 
-               $r^j \neq r^{-j}$, it follows that
-               $$sr^j \neq sr^{-j} = r^js$$
-               and
-               $$(sr^j)s = r^{-j} \neq r^j = s(sr^j).$$
-               That is $r^j$ and $sr^j$ are not elements of $Z(D_{2n})$. Thus
-               $D_{2n} = \{1\}$.
-         \item Suppose that $n$ is even, so that $n = 2k$ for some positive
-               integer $k$. We claim that $r^{-i} = r^{i}$ if and only if
-               $k \mid i$. So suppose first that $r^{-i} = r^{i}$; i.e.,
-               $r^{2i} = 1$. Thus it follows by Proposition 2.3 that
-               $2k \mid 2i$ so that $k \mid i$. Conversely suppose that
-               $k \mid i$. Then we have that $i = yk$. Now we have
-               $r^{-i} = r^{-yk} = (r^{-k})^y = (r^k)^{y} = r^i$. Let $r^j$ be 
-               an element in $D_{2n}$ such that $k \nmid j$ . That is, 
-               $r^j \neq r^{-j}$, so that
-               $$sr^j \neq sr^{-j} = r^js$$
-               and
-               $$(sr^j)s = r^{-j} \neq r^j = s(sr^j).$$
-               That is $r^j$ and $sr^j$ are not elements of $Z(D_{2n})$.
-               Finally we want to show that $r^k \in Z(D_{2n})$. So let
-               $s^pr^q \in D_{2n}$. It follows that
-               $$r^k(s^pr^q) = s^pr^{-k}r^q = s^pr^kr^q = (s^pr^q)r^k.$$
-               Thus $D_{2n} = \{1, r^k\}$.
+         \item This follows from Exercise 1.2.5.
+         \item This follows from Exercise 1.2.4.
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.8]   Let $G = S_n$, fix an $i \in \{1, 2, \ldots, n\}$ and let
@@ -214,20 +187,15 @@
                   $i$ in $G$). Use group actions to prove that $G_i$ is a
                   subgroup of $G$. Find $|G_i|$.
 
-      \textbf{Proof.} Let $I_n = \{1, 2, \ldots, n\}$. Now consider the map 
-      $f: G \times I_n \rightarrow I_n$, $(g, a) \mapsto g(a)$. We want to first
-      show that $f$ is a group action of $G$ on $I_n$. Let $\sigma_1$,
-      $\sigma_2 \in G$ and $a \in I_n$. So it follows that $f(1, a) = 1(a) = a$
-      and
-      \begin{align*}
-         f(\sigma_1, f(\sigma_2, a)) &= f(\sigma_1, \sigma_2(a)) \\
-            &= \sigma_1(\sigma_2(a)) \\
-            &= (\sigma_1 \circ \sigma_2)(a) \\
-            &= f(\sigma_1 \circ \sigma_2, a),
-      \end{align*}
-      so that $f$ is a group action. Now $G_i$ is the stabilizer of $i$ in $G$;
-      thus $|G_i| \le G$ by Exercise 1.7.4(b). By counting we have that
-      $|G_i| = (n - 1)!$ \qed
+      \textbf{Proof.} Let $I_n = \{1, 2, \ldots, n\}$. Consider the action of
+      $G$ on $I_n$, given by $\sigma \cdot a = \sigma(a)$, for each $\sigma \in
+      G$ and $a \in I_n$. Since $1(i) = i$, it follows that $1 \in G_i$. So let
+      $\alpha, \sigma \in G_i$. Since $\alpha(i) = \sigma(i) = i$ and since
+      $\alpha$ and $\sigma$ are bijections, it follows that
+      $\alpha^{-1}(i) = \sigma^{-1}(i) = i$.  Now we have that
+      $$(\alpha\sigma^{-1})(i) = \alpha(\sigma^{-1}(i)) = \alpha(i) = i,$$
+      so that $\alpha\sigma^{-1} \in G_i$. Conclude by the Subgroup Criterion
+      that $G_i \le G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.9]   For any subgroup $H$ of $G$ and any nonempty subset $A$ of $G$
                   define $N_H(A)$ to be the set $\{h \in H : hAh^{-1} = A\}$.
@@ -242,7 +210,7 @@
       \end{align*}
       Hence $N_H(A) = N_G(A) \cap H$. Since $N_G(A)$ and $H$ are both subgroups
       of $G$, it follows by Exercise 2.1.10(a) that
-      $N_G(A) \cap H = N_H(A) \le G$. \qed
+      $N_H(A) = N_G(A) \cap H \le H$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.2.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.2.10]  Let $H$ be a subgroup of order 2 in $G$. Show that
                   $N_G(H) = C_G(H)$. Deduce that if $N_G(H) = G$ then

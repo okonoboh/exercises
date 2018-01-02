@@ -1,5 +1,4 @@
 \begin{enumerate}
-   \item[2.3.0]  \textcolor{red}{MISSING CONTAINMENT.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.1]   Find all subgroups of $Z_{45} = \cyc{x}$, giving a generator
                   for each. Describe the containments between these subgroups.
@@ -15,7 +14,7 @@
                           {$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}}
             \cyc{x^{45}} & \le & \cyc{x^{15}} & \le & \cyc{x^5} & \le & \cyc{x} \\
             \cyc{x^{15}} & \le &  \cyc{x^3} & \le & \cyc{x} \\
-            \cyc{x^9} & \le &  \cyc{x^3} & \le & \cyc{x}
+            \cyc{x^{45}} & \le & \cyc{x^9} & \le &  \cyc{x^3} & \le & \cyc{x}
          \end{tabular}
       $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,7 +41,7 @@
    
       \textbf{Solution.} Let $S$ be the set of generators for $\Z/202\Z$. Then
       $|S| = 100$ since
-      $$S = \{\cyc{x} : x \text{ is odd and positive}, x \neq 101, \text{ and }
+      $$S = \{\cyc{\overline{x}} : x \text{ is odd and positive}, x \neq 101, \text{ and }
         x < 202\}.$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.5]   Find the number of generators for $\Z/49000\Z$.
@@ -59,20 +58,37 @@
       
       \textbf{Solution.}
       $$
-         \begin{tabular}{|c|c|} \hline
-            \textbf{Generators} & \textbf{Subgroups in} $\Z/48\Z$ \\ \hline
-            0 & $\{0\}$ \\ \hline
-            24 & $\{0, 24\}$ \\ \hline
-            16, 32 & $\{0, 16, 32\}$ \\ \hline
-            12, 36 & $\{0, 12, 24, 36\}$ \\ \hline
-            8, 40 & $\{0, 8, 16, 24, 32, 40\}$ \\ \hline
-            6, 18, 30, 42 & $\{0, 6, 12, 18, 24, 30, 36, 42\}$ \\ \hline
-            4,20,28,44 & $\{0,4,8,12,16, 20, 24, 28, 32, 36, 40, 44\}$ \\ \hline
-            3, 9, 15, 21, 27, 33, 39, 45 & $\{0, 3, 6, 9, 12, 15, 18, 21, 24,
-            27, 30, 33, 36, 39, 42, 45\}$ \\ \hline            
-            2, 10, 14, 22, 26, 34, 38, 46 & $\{x : 0 \le x \le 46,
-            x \text{ is even}\}$ \\ \hline
-            \text{See Exercise } 2.3.3 & $\Z/48\Z$ \\ \hline
+         \begin{tabular}{|>{$}l<{$}|>{$}l<{$}|} \hline
+            \textbf{Generators} & \textbf{Subgroups in} \Z/48\Z \\ \hline
+            \overline{0} & \{\overline{0}\} \\ \hline
+            \overline{24} & \{\overline{0}, \overline{24}\} \\ \hline
+            \overline{16}, \overline{32} & \{\overline{0},
+               \overline{16}, \overline{32}\} \\ \hline
+            \overline{12}, \overline{36} & \{\overline{0}, \overline{12}, 
+               \overline{24}, \overline{36}\} \\ \hline
+            \overline{8}, \overline{40} & \{\overline{0}, \overline{8},
+               \overline{16}, \overline{24}, \overline{32},
+               \overline{40}\} \\ \hline
+            \overline{6}, \overline{18}, \overline{30}, \overline{42} &
+               \{\overline{0}, \overline{6}, \overline{12}, \overline{18},
+                 \overline{24}, \overline{30}, \overline{36},
+                 \overline{42}\} \\ \hline
+            \overline{4},\overline{20},\overline{28},\overline{44} & 
+               \{\overline{0},\overline{4},\overline{8},\overline{12}
+                 \overline{16}, \overline{20}, \overline{24}, \overline{28},
+                 \overline{32}, \overline{36}, \overline{40},
+                 \overline{44}\} \\ \hline
+            \overline{3}, \overline{9}, \overline{15}, \overline{21},
+               \overline{27}, \overline{33}, \overline{39}, \overline{45} &
+               \{\overline{0}, \overline{3}, \overline{6}, \overline{9},
+                 \overline{12}, \overline{15}, \overline{18}, \overline{21},
+                 \overline{24}, \overline{27}, \overline{30}, \overline{33},
+                 \overline{36}, \overline{39}, \overline{42},
+                 \overline{45}\} \\ \hline            
+            \overline{2}, \overline{10}, \overline{14}, \overline{22},
+               \overline{26}, \overline{34}, \overline{38}, \overline{46} &
+               \{\overline{x} : 0 \le x \le 46, x \text{ is even}\} \\ \hline
+            \text{See Exercise } 2.3.3 & \Z/48\Z \\ \hline
          \end{tabular}
       $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,8 +99,8 @@
                   
       \textbf{Solution.}
       $$
-         \begin{tabular}{|c|} \hline
-            \textbf{Subgroups in} $Z_{48}$ \\ \hline
+         \begin{tabular}{|l|} \hline
+            \multicolumn{1}{|c|}{\textbf{Subgroups in} $Z_{48}$} \\ \hline
             $\{1\}$ \\ \hline
             $\{1, x^{24}\}$ \\ \hline
             $\{1, x^{16}, x^{32}\}$ \\ \hline
@@ -95,7 +111,7 @@
                x^{40}, x^{44}\}$ \\ \hline
             $\{1, x^3, x^6, x^9, x^{12}, x^{15}, x^{18}, x^{21}, x^{24},
             x^{27}, x^{30}, x^{33}, x^{36}, x^{39}, x^{42}, x^{45}\}$ \\ \hline
-            $\{x^y : 0 \le y \le 46, y \text{ is even}\}$ \\ \hline
+            $\{x^i : 0 \le i \le 46, i \text{ is even}\}$ \\ \hline
             $Z_{48}$ \\ \hline
          \end{tabular}
       $$
@@ -117,32 +133,37 @@
                   $Z_{36}$. Can $\psi_a$ ever be a surjective homomorphism?
                   
       \textbf{Solution.} First we shall find the restriction(s) on $a$ such that
-      $\psi_a$ is well defined. Suppose $b = c$ for some $b, c \in \Z/48\Z$. It
-      suffices to show that $\psi_a(b) = \psi_a(c)$. Since $b = c$, there exists
-      an integer $k$ such that $b = c + 48k$. Thus $\psi_a(b) = \psi_a(c+48k)$,
-      so that
-      $\psi_a(b)=(x^a)^{c+48k}=x^{ac + 48ak}= x^{ac}x^{48ak}=\psi_a(c)x^{12ak}$.
-      So we must require $x^{12ak} = 1$ for all $k \in \Z$. Now $x^{12ak} = 1$
-      for all $k \in \Z$ if and only if $3 \mid a$ if and only if $\psi_a$ is
-      well defined. It follows immediately that
-      $\psi_a$ is an homomorphism since
+      $\psi_a$ is well defined. Suppose $\overline{b} = \overline{c}$ for some
+      $\overline{b}, \overline{c} \in \Z/48\Z$. It suffices to show that
+      $\psi_a(\overline{b}) = \psi_a(\overline{c})$. Since
+      $\overline{b} = \overline{c}$, there exists an integer $k$ such that
+      $b = c + 48k$. Now
       \begin{align*}
-         \psi_a(p + q) &= (x^a)^{p+q} \\
+         \psi_a(\overline{b}) &= \psi_a(\overline{c}) &\Longleftrightarrow \\
+         x^{ab} &= x^{ac} &\Longleftrightarrow \\
+         x^{a(b-c)} &= 1 &\Longleftrightarrow \\
+         x^{48ak} &= 1 &\Longleftrightarrow \\
+         36 \mid (48ak) & \qquad(\text{Proposition 3}) &\Longleftrightarrow \\
+         3 \mid (4ak) &  &\Longleftrightarrow \\
+      \end{align*}
+      Observe that $k$ can be any integer; thus $3 \mid 4ak$ iff $3 \mid a$, so
+      that the map is well defined if and only if $3 \mid a$. Finally, we see
+      that $\psi_a$ is a homorphism because
+      \begin{align*}
+         \psi_a(\overline{p} + \overline{q}) &=
+            \psi_a(\overline{p + q}) \\
+            &= (x^a)^{p+q} \\
             &= x^{ap+aq} \\
             &= x^{ap}x^{aq} \\
             &= (x^a)^p(x^a)^q \\
-            &= \psi_a(p)\psi_a(q)
+            &= \psi_a(\overline{p})\psi_a(\overline{q})
       \end{align*}      
-      for all $p, q \in \Z/48\Z$.
+      for all $\overline{p}, \overline{q} \in \Z/48\Z$.
       
-      \textit{Can $\psi_a$ ever be a surjective homomorphism?} No!
-      
-      \textbf{Proof.} Suppose to the contrary that $\psi_a$ is surjective. Then
-      there exists $y \in \Z/48\Z$ such that $\psi_a(y) = x$. That is
-      $x^{ay} = x$, so that $x^{ay-1} = 1$; thus $ay - 1 = 36m$ for some integer
-      $m$. Rearrange the equality $ay - 1 = 36m$ to get $1 = ay - 36m$. Recall
-      that $3 \mid a$; since $3$ also divides 36, it follows that 3 must divide
-      1, a contradiction. Thus $\psi_a$ can never be surjective. \qed
+      \textit{Can $\psi_a$ ever be a surjective homomorphism?} No! The image
+      of $\psi_a$ is $\{(x^a)^k : k \in \Z\} = \cyc{x^a} \neq Z_{36}$ because
+      $a$ is not relatively prime to 36 (since $a \mid 36$). Thus, the map
+      cannot be onto. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.10]  What is the order of $\overline{30}$ in $\Z/54\Z$? Write out
                   all the elements and their orders in $\cyc{\overline{30}}$.
@@ -168,7 +189,7 @@
    \item[2.3.11]  Find all cyclic subgroups of $D_8$. Find a proper subgroup of
                   $D_8$ which is not cyclic.
                   
-      \textbf{Solution.} In $D_8$, only $r$ and $r^4$ have order 4. Thus
+      \textbf{Solution.} In $D_8$, only $r$ and $r^3$ have order 4. Thus
       $\{1, r, r^2, r^3\}$ is the only cyclic subgroup of order 4. The trivial
       subgroup is the only cyclic subgroup of order 1. Finally there are 5
       cyclic subgroups of order 2 and they are of the form $\{1, x\}$ where
@@ -196,10 +217,9 @@
                $$\Z \times \Z = \cyc{(a,b)} = \{(na, nb) : n \in \Z\}.$$
                Thus there exists an integer $m$ such that
                $(ma, mb) = (0, 1)$. That is, $ma = 0$ and $mb = 1$. Since
-               $ma = 0$, we must have $m = 0$ or $a = 0$. If $m$ is 0, then
-               $(ma, mb) = (0, 0) \neq (0, 1)$, a contradiction; thus we must
-               have $a = 0$, contradicting our assumption that $a$ is nonzero.
-               Thus $\Z \times \Z$ is not cyclic.
+               $ma = 0$, we must have $m = 0$ because $a \neq 0$. Thus
+               $(ma, mb) = (0, 0) \neq (0, 1)$, a contradiction; conclude that
+               $\Z \times \Z$ is not cyclic.
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.13]  Prove that the following pairs of groups are \textit{not}
@@ -291,17 +311,22 @@
       \textbf{Proof.} Let $n \in \Z^+$, $Z_n = \cyc{x}$, $H$ a group, and
       $h^n  = 1$ for some $h \in H$. First we shall show the existence of a
       homomorphism from $Z_n$ to $H$ such that $x \mapsto h$. So consider the
-      map $\alpha : \cyc{x} \rightarrow H$ defined by $\alpha(x^a) = h^a$.
-      Clearly $\alpha(x) = h$. Now we will show that $\alpha$ is well defined.
-      Suppose $x^w = x^y$ for some $x^w, x^y \in Z_n$. Thus $w = y + nk$ for
-      some integer $k$. Thus
-      $$\alpha(x^w) = \alpha(x^{y+nk})=h^{y+nk}=h^{y}{h^n}^k =h^y=\alpha(x^y),$$
+      map $\alpha : Z_n \rightarrow H$ defined by $\alpha(x^i) = h^i$ (so that
+      $\alpha(x) = h$) for each integer $i$. Let $a, b \in Z_n$. Then $a = x^w$ 
+      and $b = x^y$ for some integers $w$ and $y$. Now we will show that
+      $\alpha$ is well defined: if $a = b$, then $x^{w-y} = 1$, so that
+      $n \mid (w - y)$ (Proposition 3), and thus $w = y + nk$ for some integer. 
+      It follows that
+      $$\alpha(a) = \alpha(x^w) = \alpha(x^{y+nk})=h^{y+nk}=h^{y}{h^n}^k =h^y=
+        \alpha(x^y) = \alpha(b),$$
       so that $\alpha$ is well defined. Now we have that
-      $$\alpha(x^px^q)=\alpha(x^{p+q})=h^{p+q}=h^ph^q=\alpha(x^p)\alpha(x^q),$$
+      $$\alpha(ab) = \alpha(x^{w+y})=h^{w+y}=h^wh^y=\alpha(x^w)\alpha(x^y)=
+        \alpha(a)\alpha(b),$$
       so that $\alpha$ is an homomorphism. Now to show uniqueness, we suppose
-      that $\phi : \cyc{x} \rightarrow H$ is an homommorphism such that
-      $\phi(x) = h$. Since $\phi$ is a homomorphism, it follows that
-      $\phi(x^a) = h^a$. Thus $\phi = \alpha$, as desired. \qed
+      that $\phi : \cyc{x} \rightarrow H$ is an homomorphism such that
+      $\phi(x) = h$. Since $\phi$ is a homomorphism, it follows by Exercise
+      1.6.1 that $\phi(x^i) = h^i$ for each integer $i$. Thus $\phi = \alpha$,
+      as desired. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.19]  Show that if $H$ is any group and $h$ is an element of $H$,
                   then there is a unique homomorphism from $\Z$ to $H$ such that
@@ -312,7 +337,7 @@
       So consider the map $\alpha : \Z \rightarrow H$ defined by
       $n \mapsto h^n$. Clearly $\alpha(1) = h$ and
       $$\alpha(x+y) = h^{x+y} = h^xh^y = \alpha(x)\alpha(y) \text{ for all }
-        x, y \in \Z^+,$$
+        x, y \in \Z,$$
       so that $\alpha$ is a homomorphism. To show uniqueness, suppose that
       $\alpha' : \Z \rightarrow H$ is an homomorphism such that
       $\alpha'(1) = h$. Then according to Exercise 1.6.1, we have that
@@ -514,17 +539,17 @@
                $g\cyc{x}g^{-1} = \cyc{x}$. Since $gxg^{-1} \in g\cyc{x}g^{-1}$,
                it follows that $gxg^{-1} \in \cyc{x}$, so that $gxg^{-1} = x^a$
                for some $a \in \Z$.
-         \item Suppose $gxg^{-1} = x^a$ for some integer $a$. We can show by
-               induction that $gx^kg^{-1} = (gxg^{-1})^k$ for any integer $k$.
-               Let $gx^ig^{-1} \in g\cyc{x}g^{-1}$. Then it follows that
+         \item Suppose $gxg^{-1} = x^a$ for some integer $a$. Let
+               $y \in g\cyc{x}g^{-1}$, so that $y = gx^ig^{-1}$ for some integer
+               $i$. By Lemma \ref{1_1_22_1}, we have that
                $(gx^ig^{-1}) = (gxg^{-1})^i = x^{ai} \in \cyc{x}$, so that
                $g\cyc{x}g^{-1} \subseteq \cyc{x}$. Since $G$ is finite, we let
-               $|x| = n$. Now suppose that $gx^rg^{-1} = gx^sg^{-1}$, where
-               $0 \le r < s \le n-1$. By cancellation we get $x^s = x^r$, so
-               that $n \mid s - r$, a contradiction since $s - r < n$. Thus the
-               elements $1, gxg^{-1},, \ldots, gx^{n-1}g^{-1}$ are distinct, so
-               that $|g\cyc{x}g^{-1}| = n = |\cyc{x}|$. That is,
-               $g\cyc{x}g^{-1} = \cyc{x}$.
+               $|x| = n$. Exercise 1.1.22 says that
+               $|gxg^{-1}| = |x| = n$; that is,
+               $$n = |x| = |\cyc{x}| = |gxg^{-1}| = |\cyc{gxg^{-1}}| =
+                 |g\cyc{x}g^{-1}|.$$
+               Conclude that $g\cyc{x}g^{-1} = \cyc{x}$, and thus,
+               $g \in N_G(\cyc{x})$.
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.25]  Let $G$ be a cyclic group of order $n$ and let $k$ be an
@@ -539,9 +564,17 @@
       \textbf{Proof.} We will only prove the second part. Let $G$ be a group of
       order $n$, $(k, n) = 1$, and $x \mapsto x^k$ be a map from $G$ to itself.
       Let $y \in G$. Since $k$ is relatively prime to $n$, there exist integers 
-      $a$ and $b$ such that $ak+bn=1$. Thus
-      $y = y^{ak+bn} = y^{ak}{y^n}^b = (y^a)^k$. Thus $y^a \mapsto (y^a)^k = y$;
-      that is, the map is surjective. \qed
+      $a$ and $b$ such that $ak+bn=1$. By Lagrange's Theorem, $|\cyc{y}|$
+      divides $n$. Since $|y| = |\cyc{y}|$ (Proposition 2), write $n = j|y|$ for
+      some integer $j$. Using our map, we get
+      \begin{align*}
+         y^a &\mapsto (y^a)^k = y^{ak} \\
+           &= y^{ak}\cdot 1^{jb} \\
+           &= y^{ak}(y^{|y|})^{jb} \\
+           &= y^{ak}(y^{nb}) \\
+           &= y^{ak+nb} = y^1 = y,
+      \end{align*}
+      so that the map is surjective. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2.3.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[2.3.26]  Let $Z_n$ be a cyclic group of order $n$ and for each integer
                   $a$ let
@@ -597,13 +630,14 @@
                   \sigma_a(x^b) = (x^b)^a = x^{ab} = \sigma_{ab}(x).$$
                Thus $\sigma_a \circ \sigma_b = \sigma_{ab}$. Now consider the
                map $\phi : (\Z/n\Z)^\times \rightarrow \text{Aut}(Z_n)$ defined 
-               by $c \mapsto \sigma_c$. According to Exercise 2.3.26, we notice
-               that $\phi$ is well defined. It follows immediately that $\phi$
-               is a homomorphism because 
-               $$\phi(cd) = \sigma_{cd} = \sigma_c\circ\sigma_d =
-                 \phi(c)\circ\phi(d).$$
-               The map $c \mapsto \sigma_{c^{-1}}$ is a two-sided inverse of
-               $\phi$. Thus $\phi$ is bijective and we conclude that it is an
-               isomorphism.
+               by $\overline{c} \mapsto \sigma_c$. According to (c), $\phi$ is 
+               well defined. It follows immediately that $\phi$ is a homomorphism 
+               because 
+               $$\phi(\overline{c}\cdot\overline{d}) = \phi(\overline{cd}) = 
+                 \sigma_{cd} = \sigma_c\circ\sigma_d =
+                 \phi(\overline{c})\circ\phi(\overline{d}).$$
+               The map $\overline{c} \mapsto \sigma_{c^{-1}}$ is a two-sided 
+               inverse of $\phi$. Thus $\phi$ is bijective and we conclude that 
+               it is an isomorphism.
       \end{enumerate} \qed
 \end{enumerate}
