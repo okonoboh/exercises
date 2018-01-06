@@ -9,27 +9,30 @@ Let $G$ and $H$ be groups.
                   that $\varphi^{-1}(E) \trianglelefteq G$. Deduce that
                   $\text{ker}\varphi \trianglelefteq G$.
 
-      \textbf{Proof.} Since $\varphi(1) = 1 \in E$ (Proposition 1 (1) (Pg. 75)),
-      it follows that $1 \in \varphi^{-1}(E)$, and hence, $\varphi^{-1}(E)$ is 
-      not empty. Now let $x, y \in \varphi^{-1}(E)$. That is,
-      $\varphi(x), \varphi(y) \in E$. Since $E$ is closed, it follows that
-      $\varphi(x)\varphi(y) \in E$. Thus by the homomorphic property of
-      $\varphi$, it follows that $\varphi(xy) = \varphi(x)\varphi(y) \in E$, so
-      that $xy \in \varphi^{-1}(E)$. Hence $\varphi^{-1}(E) \le G$ by the
-      subgroup criterion. Now suppose that $E$ is a normal subgroup of $H$. Let
-      $g \in G$ and $z \in \varphi^{-1}(E)$. To show that $\varphi^{-1}(E)$ is 
+      \textbf{Proof.} Since $\varphi(1) = 1 \in E$ (Proposition 1), it follows 
+      that $1 \in \varphi^{-1}(E)$, and hence, $\varphi^{-1}(E)$ is not empty. 
+      Now let $x, y \in \varphi^{-1}(E)$. That is, $\varphi(x),\varphi(y)\in E$. 
+      Since $E$ is a group, it follows that $\varphi(x)\varphi(y)^{-1} \in E$. 
+      Thus by the homomorphic property of $\varphi$ and Proposition 1, it
+      follows that $\varphi(xy^{-1}) = \varphi(x)\varphi(y^{-1}) = \varphi(x)
+      \varphi(y)^{-1} \in E$, so that $xy^{-1} \in \varphi^{-1}(E)$. Hence
+      $\varphi^{-1}(E) \le G$ by the Subgroup Criterion. Now suppose that $E$ is 
+      a normal subgroup of $H$. Let $g \in G$ and $z \in \varphi^{-1}(E)$. To 
+      show that $\varphi^{-1}(E)$ is 
       normal in $G$, it suffices to show that $gzg^{-1} \in \varphi^{-1}(E)$; 
       that is, we must show that the image of $gzg^{-1}$ under $\varphi$ lies in 
-      $E$. By (Proposition 1 (2) (Pg. 75)), we know that
-      $\varphi(g^{-1}) = \varphi(g)^{-1}$. Thus
+      $E$. By Proposition 1, we know that $\varphi(g^{-1}) = \varphi(g)^{-1}$. 
+      Thus
       $$\varphi(gzg^{-1}) = \varphi(g)\varphi(z)\varphi(g^{-1}) =
         \varphi(g)\varphi(z)\varphi(g)^{-1}.$$
       The elements $\varphi(g)$ and $\varphi(g)^{-1}$ are clearly in $H$. Also
       $\varphi(z) \in E$ because $z \in \varphi^{-1}(E)$. Now since $E$ is
-      normal in $H$, it follows by (Theorem 6 (5) (Pg. 82)) that
-      $\varphi(gzg^{-1}) = \varphi(g)\varphi(z)\varphi(g)^{-1} \in E$; thus
-      $gzg^{-1} \in \varphi^{-1}(E)$, and we use (Theorem 6 (5) (Pg. 82)) to
-      conclude that $\text{ker}\varphi \trianglelefteq G$. \qed
+      normal in $H$, it follows by Theorem 6 that
+      $\varphi(gzg^{-1}) = \varphi(g)\varphi(z)\varphi(g)^{-1} \in E$, so that
+      $gzg^{-1} \in \varphi^{-1}(E)$; conclude that
+      $\varphi^{-1}(E) \trianglelefteq G$. If $E$ is the trivial subgroup, then
+      $1 \trianglelefteq H$, so that
+      $\varphi^{-1}(1) = \text{ker}\varphi \trianglelefteq G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.2]   Let $\varphi : G \rightarrow H$ be a homomorphism of groups
                   with kernel $K$ and let $a, b \in \varphi(G)$. Let
@@ -39,14 +42,57 @@ Let $G$ and $H$ be groups.
                   $XY = Z$ in the quotient group $G/K$ and $w$ is any member of
                   $Z$, then there is some $v \in Y$ such that $uv = w$. [Show
                   that $u^{-1}w \in Y$.]
+
+      \textbf{Proof.} Let $Z = XY$ (i.e., $Z$ is the fiber over $ab$) and fix
+      $w \in Z$. We have that
+      \begin{align*}
+         \varphi(u^{-1}w) &= \varphi(u^{-1})\varphi(w) \\
+            &= \varphi(u)^{-1}\varphi(w) &[\text{Proposition 1}] \\
+            &= a^{-1}(ab) = (a^{-1}a)b = b,
+      \end{align*}
+      so that $u^{-1}w \in Y$. Since $u(u^{-1}w) = w$, we let $v = u^{-1}w$.\qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.3]   Let $A$ be an abelian group and let $B$ be a subgroup of $A$.
                   Prove that $A/B$ is abelian. Give an example of a non-abelian
                   group $G$ containing a proper normal subgroup $N$ such that
                   $G/N$ is abelian.
+
+      \textbf{Proof.} Let $X, Y \in A/B$. Then $X = aB$ and $Y = dB$ for some
+      $a, d \in A$. It follows immediately that $A/B$ is abelian because
+      \begin{align*}
+         XY &= (aB)(dB) \\
+            &= (ad)B = (da)B &[A\text{ is abelian}] \\
+            &= (dB)(aB) \\
+            &= YX,
+      \end{align*}
+      so that $A/B$ is abelian.
+
+      \textbf{Example.} Let $G = D_8$ and $N = \cyc{r}$. By Example 2.2.3, $N$
+      is normal in $D_8$. By computation, we get $G/N = \{sN, N\}$, so that
+      $G/N \cong Z_2$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.4]   Prove that in the quotient group $G/N$,
                   $(gN)^\alpha = g^\alpha N$ for all $\alpha \in \Z$.
+
+      \textbf{Proof.} Proceed by induction on $\alpha$. The statement is clearly
+      true for $\alpha = 1$, so suppose $(gN)^k = g^kN$ for some positive
+      integer $k$. So
+      \begin{align*}
+         (gN)^{k+1} &= (gN)^kgN &[\text{Exercise 1.1.19}] \\
+            &= g^kNgN &[\text{Inductive Hypothesis}] \\
+            &= (g^kg)N \\
+            &= g^{k+1}N. &[\text{Exercise 1.1.19}]
+      \end{align*}
+      Thus our statement holds for all positive integer $\alpha$. For a postive
+      integer $n$, we have that
+      \begin{align*}
+         (gN)^{-n} &= ((gN)^{-1})^n &[\text{Definition}] \\
+            &= (g^{-1}N)^n &[\text{Proposition 5}] \\
+            &= (g^{-1})^nN &[\text{From Inductive Proof Above}] \\
+            &= g^{-n}N. &[\text{Definition}] 
+      \end{align*}
+      Finally $(gN)^0 = 1 = N = 1N = g^0N$, so that our statement holds for each
+      integer $\alpha$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.5]   Use the preceding exercise to prove that the order of the
                   element $gN$ in $G/N$ is $n$, where $n$ is the smallest
@@ -54,33 +100,102 @@ Let $G$ and $H$ be groups.
                   order if no such positive integer exists). Give an example to
                   show that the order of $gN$ in $G/N$ may be strictly smaller
                   than the order of $g$ in $G$.
+
+      \textbf{Proof.} Suppose first that $|gN| = n \in \Z^+$. That is, $n$ is\
+      the smallest positive integer such that $(gN)^n = g^nN = N$, where the
+      last equality follows from Exercise 4. By Proposition 4, it follows that
+      $g^n \in N$.
+
+      \textbf{Example.} Let $G = D_8$ and $N = \cyc{r}$. By Example 2.2.3, $N$
+      is normal in $D_8$. Since $G/N = \{N, sN\}$, we have $|rN| = 1 < 4 = |r|$. 
+      \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.6]   Define $\varphi : \R^\times \rightarrow \{\pm1\}$ by letting
                   $\varphi(x)$ be $x$ divided by the absolute value of $x$.
                   Describe the fibers of $\varphi$ and prove that $\varphi$ is a
                   homomorphism.
+   
+      \textbf{Proof.} By inspection, we see that $\varphi$ maps the positive
+      reals to 1 and the negative reals to $-1$. Thus the fibers of $\varphi$
+      are the set of positive real numbers and the set of negative real numbers.
+      The map $\varphi$ is a homomorphism because
+      $$\varphi(ab) = \frac{ab}{|ab|} = \frac{ab}{|a||b|} = \frac{a}{|a|}
+        \frac{b}{|b|} = \varphi(a)\varphi(b),$$
+      for every nonzero real numbers $a$ and $b$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.7]   Define $\pi : \R^2 \rightarrow \R$ by $\pi((x, y)) = x + y$.
                   Prove that $\pi$ is a surjective homomorphism and describe the
                   kernel and fibers of $\pi$ geometrically.
+
+      \textbf{Proof.} The map $\pi$ is surjective because if $r \in \R$, then
+      $(r, 0) \in \R^2$, so that $\pi(r, 0) = r + 0 = r$; it is also an
+      homomorphism because, for $(a, b), (c, d) \in \R^2$, we have that
+      $$\pi((a, b) + (c, d)) = \pi(a + c, b + d) = a + c + b + d =
+        a + b + c + d =\pi(a, b) + \pi(c, d).$$
+      The kernel of $\pi$ is the $y$-axis and the fibers are lines parallel to
+      the $y$-axis. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.8]   Let $\varphi : \R^\times \rightarrow \R^\times$ be the map
                   sending $x$ to the absolute value of $x$. Prove that $\varphi$
                   is a homomorphism and find the image of $\varphi$. Describe
                   the kernel and the fibers of $\varphi$.
+
+      \textbf{Proof.} For $a, b \in \R^\times$, we have that
+      $$\varphi(ab) = |ab| = |a| \cdot |b| = \varphi(a)\varphi(b),$$
+      so that $\varphi$ is a homomorphism. The image of $\varphi$ is the set of
+      all positive real numbers. The kernel of $\varphi$ is $\{\pm 1\}$ and the
+      fibers of $\varphi$ are all sets of the form
+      $\{\pm a : a \in \R^+\}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.9]   Define $\varphi : \C^\times \rightarrow \R^\times$ by
                   $\varphi(a + bi) = a^2 + b^2$. Prove that $\varphi$ is a
                   homomorphism and find the image of $\varphi$. Describe the
                   kernel and the fibers of $\varphi$ geometrically (as subsets
                   of the plane).
+
+      \textbf{Proof.}  Let $z$ and $w$ be nonzero complex numbers. Then we have
+      $z = a + bi$ and $w = c + di$, for some real numbers $a$, $b$, $c$, and
+      $d$. So
+      \begin{align*}
+         \varphi(zw) &= \varphi((a + bi)(c + di)) \\
+            &= \varphi(ac - bd + (ad + bc)i) \\
+            &= (ac - bd)^2 + (ad + bc)^2 \\
+            &= (ac)^2 + (bd)^2 - 2abcd + (ad)^2 + (bc)^2 + 2abcd \\
+            &= (ac)^2 + (bd)^2 + (ad)^2 + (bc)^2 \\
+            &= a^2(c^2 + d^2) + b^2(c^2 + d^2) \\
+            &= (a^2 + b^2)(c^2 + d^2) \\
+            &= \varphi(a + bi)\varphi(c + di) \\
+            &= \varphi(z)\varphi(w).
+      \end{align*}
+      Thus $\varphi$ is a homomorphism. The kernel of $\varphi$ is the unit
+      circle centered at the origin. The fibers of $\varphi$ are the circles of
+      (nonzero radius) centered at the origin. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.10]  Let $\varphi : \Z/8\Z \rightarrow \Z/4\Z$ by
-                  $\varphi(\overline{a}) = \overline{a}$. Show that this is a
-                  well defined, surjective homomorphism and describe its fibers
-                  and kernel explicitly (showing that $\varphi$ is well defined
-                  involves the fact that $\overline{a}$ has a different meaning
-                  in the domain and range of $\varphi$).
+                  $\varphi(\m{a}) = \m{a}$. Show that this is a well defined, 
+                  surjective homomorphism and describe its fibers and kernel 
+                  explicitly (showing that $\varphi$ is well defined involves
+                  the fact that $\m{a}$ has a different meaning in the domain
+                  and range of $\varphi$).
+
+      \textbf{Proof.} Suppose $\m{a} = \m{b}$ in $\Z/8\Z$, it follows that
+      $a = b + 8k$ for some integer $k$. We thus have that
+      \begin{align*}
+         \varphi(\m{a}) &= \varphi(a + 8\Z) \\
+            &= a + 4\Z \\
+            &= b + 4\Z &[a - b = 4(2k) \in 4\Z] \\
+            &= \varphi(b + 8\Z) = \varphi(\m{b});
+      \end{align*}
+      i.e., $\varphi$ is well defined. The map $\varphi$ is an homomorphism
+      because
+      $$\varphi(\m{a} + \m{b}) = \varphi(\m{a + b}) = \m{a + b} =
+        \m{a} + \m{b}.$$
+      Surjectivity of $\varphi$ is immediate because if $a + 4\Z \in \Z/4\Z$,
+      then $\varphi(a + 8\Z) = a + 4\Z$. Now $\varphi(a + 8\Z) = 4\Z$ if and
+      only if $a +4\Z = 4\Z$ if and only if $a$ is a multiple of $4$. Thus
+      kernel of $\varphi = \{\m{0}, \m{4}\}$, and the fibers of $\varphi$ are
+      $\{\{\m{0}, \m{4}\}, \{\m{1}, \m{5}\}, \{\m{2}, \m{6}\},
+       \{\m{3}, \m{7}\}\}$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.11]  Let $F$ be a field and let
                   $G = \left\{\left(\begin{tabular}{@{}cc@{}}
@@ -143,90 +258,81 @@ Let $G$ and $H$ be groups.
                   divisible.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.16]  Let $G$ be a group, let $N$ be a normal subgroup of $G$, and
-                  let $\overline{G} = G/N$. Prove that if $G = \cyc{x, y}$ then
-                  $\overline{G} = \cyc{\overline{x}, \overline{y}}$. Prove more 
-                  generally that if $G =\cyc{S}$ for any subset $S$ of $G$, then
-                  $\overline{G} = \cyc{\overline{S}}$.
+                  let $\m{G} = G/N$. Prove that if $G = \cyc{x, y}$ then
+                  $\m{G} = \cyc{\m{x}, \m{y}}$. Prove more generally that if
+                  $G =\cyc{S}$ for any subset $S$ of $G$, then
+                  $\m{G} = \cyc{\m{S}}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.17%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.17]  Let $G$ be the dihedral group of order 16 (whose lattice
                   appears in Section 2.5):
                   $$G = \cyc{r, s : r^8 = s^2 = 1, rs = sr^{-1}}$$
-                  and let $\overline{G} = G/\cyc{r^4}$ be the quotient of $G$ by
+                  and let $\m{G} = G/\cyc{r^4}$ be the quotient of $G$ by
                   the subgroup generated by $r^4$ (this subgroup is the center
                   of $G$, hence is normal).
                   \begin{enumerate}
-                     \item Show that the order of $\overline{G}$ is 8.
-                     \item Exhibit each element of $\overline{G}$ in the form
-                           $\overline{s}^a\overline{r}^b$, for some integers $a$
-                           and $b$.
+                     \item Show that the order of $\m{G}$ is 8.
+                     \item Exhibit each element of $\m{G}$ in the form
+                           $\m{s}^a\m{r}^b$, for some integers $a$ and $b$.
                      \item Find the order of each of the elements of
-                           $\overline{G}$ exhibited in (b).
-                     \item Write each of the following elements of
-                           $\overline{G}$ in the form
-                           $\overline{s}^a\overline{r}^b$, for some integers $a$
-                           and $b$ as in (b): \quad $\overline{rs}$, \quad
-                           $\overline{sr^{-2}s}$, \quad
-                           $\overline{s^{-1}r^{-1}sr}$.
-                     \item Prove that $\overline{H} = \cyc{\overline{s},
-                           \overline{r}^2}$ is a normal subgroup of
-                           $\overline{G}$ and $\overline{H}$ is isomorphic to
-                           the Klein 4-group. Describe the isomorphism type of
-                           the complete preimage of $\overline{H}$ in $G$.
-                     \item Find the center of $\overline{G}$ and describe the
-                           isomorphism type of $\overline{G}/Z(\overline{G})$.
+                           $\m{G}$ exhibited in (b).
+                     \item Write each of the following elements of $\m{G}$ in
+                           the form $\m{s}^a\m{r}^b$, for some integers $a$ and
+                           $b$ as in (b): \quad $\m{rs}$, \quad $\m{sr^{-2}s}$,
+                           \quad $\m{s^{-1}r^{-1}sr}$.
+                     \item Prove that $\m{H} = \cyc{\m{s}, \m{r}^2}$ is a normal
+                           subgroup of $\m{G}$ and $\m{H}$ is isomorphic to the
+                           Klein 4-group. Describe the isomorphism type of the
+                           complete preimage of $\m{H}$ in $G$.
+                     \item Find the center of $\m{G}$ and describe the
+                           isomorphism type of $\m{G}/Z(\m{G})$.
                   \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.18]  Let $G$ be the quasidihedral group of order 16 (whose lattice
                   was computed in Exercise 2.5.11):
                   $$G = \cyc{\sigma, \tau : \sigma^8 = \tau^2 = 1,
                              \sigma\tau = \tau\sigma^3}$$
-                  and let $\overline{G} = G/\cyc{\sigma^4}$ be the quotient of
-                  $G$ by the subgroup generated by $\sigma^4$ (this subgroup is 
-                  the center of $G$, hence is normal).
+                  and let $\m{G} = G/\cyc{\sigma^4}$ be the quotient of $G$ by
+                  the subgroup generated by $\sigma^4$ (this subgroup is the
+                  center of $G$, hence is normal).
                   \begin{enumerate}
-                     \item Show that the order of $\overline{G}$ is 8.
-                     \item Exhibit each element of $\overline{G}$ in the form
-                           $\overline{\tau}^a\overline{\sigma}^b$, for some 
-                           integers $a$ and $b$.
-                     \item Find the order of each of the elements of
-                           $\overline{G}$ exhibited in (b).
-                     \item Write each of the following elements of
-                           $\overline{G}$ in the form
-                           $\overline{\tau}^a\overline{\sigma}^b$, for some 
-                           integers $a$ and $b$ as in (b): \quad
-                           $\overline{\sigma\tau}$, \quad
-                           $\overline{\tau\sigma^{-2}\tau}$, \quad
-                           $\overline{\tau^{-1}\sigma^{-1}\tau\sigma}$.
-                     \item Prove that $\overline{G} \cong D_8$.
+                     \item Show that the order of $\m{G}$ is 8.
+                     \item Exhibit each element of $\m{G}$ in the form
+                           $\m{\tau}^a\m{\sigma}^b$, for some integers $a$ and
+                           $b$.
+                     \item Find the order of each of the elements of $\m{G}$
+                           exhibited in (b).
+                     \item Write each of the following elements of $\m{G}$ in
+                           the form $\m{\tau}^a\m{\sigma}^b$, for some integers
+                           $a$ and $b$ as in (b): \quad $\m{\sigma\tau}$, \quad
+                           $\m{\tau\sigma^{-2}\tau}$, \quad
+                           $\m{\tau^{-1}\sigma^{-1}\tau\sigma}$.
+                     \item Prove that $\m{G} \cong D_8$.
                   \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.19]  Let $G$ be the modular group of order 16 (whose lattice was
                   computed in Exercise 2.5.14):
                   $$G = \cyc{u, v : u^2 = v^8 = 1, vu = uv^5}$$
-                  and let $\overline{G} = G/\cyc{v^4}$ be the quotient of $G$ by
+                  and let $\m{G} = G/\cyc{v^4}$ be the quotient of $G$ by
                   the subgroup generated by $v^4$ (this subgroup is contained in
                   the center of $G$, hence is normal).
                   \begin{enumerate}
-                     \item Show that the order of $\overline{G}$ is 8.
-                     \item Exhibit each element of $\overline{G}$ in the form
-                           $\overline{u}^a\overline{v}^b$, for some integers $a$
-                           and $b$.
-                     \item Find the order of each of the elements of
-                           $\overline{G}$ exhibited in (b).
-                     \item Write each of the following elements of
-                           $\overline{G}$ in the form
-                           $\overline{u}^a\overline{v}^b$, for some integers $a$
-                           and $b$ as in (b): \quad $\overline{vu}$, \quad
-                           $\overline{uv^{-2}u}$, \quad
-                           $\overline{u^{-1}v^{-1}uv}$.
-                     \item Prove that $\overline{G}$ is abelian and is
-                           isomorphic to $Z_2 \times Z_4$.
+                     \item Show that the order of $\m{G}$ is 8.
+                     \item Exhibit each element of $\m{G}$ in the form
+                           $\m{u}^a\m{v}^b$, for some integers $a$ and $b$.
+                     \item Find the order of each of the elements of $\m{G}$
+                           exhibited in (b).
+                     \item Write each of the following elements of $\m{G}$ in
+                           the form $\m{u}^a\m{v}^b$, for some integers $a$ and
+                           $b$ as in (b): \quad $\m{vu}$, \quad $\m{uv^{-2}u}$,
+                           \quad $\m{u^{-1}v^{-1}uv}$.
+                     \item Prove that $\m{G}$ is abelian and is isomorphic to
+                           $Z_2 \times Z_4$.
                   \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.20]  Let $G = \Z/24\Z$ and let
-                  $\widetilde{G} = G/\cyc{\overline{12}}$,
-                  where for each integer $a$ we simplify notation by writing
-                  $\widetilde{\overline{a}}$ as $\widetilde{a}$.
+                  $\widetilde{G} = G/\cyc{\m{12}}$, where for each integer $a$
+                  we simplify notation by writing $\widetilde{\m{a}}$ as
+                  $\widetilde{a}$.
                   \begin{enumerate}
                      \item Show that $\widetilde{G} = \{\widetilde{0},
                            \widetilde{1}, \ldots, \widetilde{11}\}$.
@@ -239,16 +345,15 @@ Let $G$ and $H$ be groups.
    \item[3.1.21]  Let $G = Z_4 \times Z_4$ be given in terms of the following
                   generators and relations:
                   $$G = \cyc{x, y : x^4 = y^4 = 1, xy = yx}$$.
-                  Let $\overline{G} = G/\cyc{x^2y^2}$ (note that every subgroup
-                  of the abelian group $G$ is normal).
+                  Let $\m{G} = G/\cyc{x^2y^2}$ (note that every subgroup of the
+                  abelian group $G$ is normal).
                   \begin{enumerate}
-                     \item Show that the order of $\overline{G}$ is 8.
-                     \item Exhibit each element of $\overline{G}$ in the form
-                           $\overline{x}^a\overline{y}^b$, for some integers $a$
-                           and $b$.
-                     \item Find the order of each of the elements of
-                           $\overline{G}$ exhibited in (b).
-                     \item Prove that $\overline{G} \cong Z_4 \times Z_2$.
+                     \item Show that the order of $\m{G}$ is 8.
+                     \item Exhibit each element of $\m{G}$ in the form
+                           $\m{x}^a\m{y}^b$, for some integers $a$ and $b$.
+                     \item Find the order of each of the elements of $\m{G}$
+                           exhibited in (b).
+                     \item Prove that $\m{G} \cong Z_4 \times Z_2$.
                   \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.22]  \begin{enumerate}
@@ -358,11 +463,10 @@ Let $G$ and $H$ be groups.
                   Prove that $D$ is not normal in $A \times A$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.40%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.40]  Let $G$ be a group, let $N$ be a normal subgroup of $G$ and
-                  let $\overline{G} = G/N$. Prove that $\overline{x}$ and
-                  $\overline{y}$ commute in $\overline{G}$ if and only if
-                  $x^{-1}y^{-1}xy \in N$. (The element $x^{-1}y^{-1}xy$ is
-                  called the \textit{commutator} of $x$ and $y$ and is denoted
-                  by $[x, y]$.)
+                  let $\m{G} = G/N$. Prove that $\m{x}$ and $\m{y}$ commute in
+                  $\m{G}$ if and only if $x^{-1}y^{-1}xy \in N$. (The element
+                  $x^{-1}y^{-1}xy$ is called the \textit{commutator} of $x$ and
+                  $y$ and is denoted by $[x, y]$.)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.41%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.41]  Let $G$ be a group. Prove that
                   $N = \cyc{x^{-1}y^{-1}xy : x, y \in G}$ is a normal sugroup of
