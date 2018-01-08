@@ -224,6 +224,96 @@ Let $G$ and $H$ be groups.
                            \end{tabular}\right) : b \in F\right\}$. Prove that
                            $H$ is isomorphic to the additive group $F$.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $a \in \F^\times$. It follows immediately that $\varphi$ is
+               onto because $\varphi\left(\begin{tabular}{@{}cc@{}}
+                  $a$ & 0 \\
+                  0   & 1
+               \end{tabular}\right) = a$. Now let
+               $A = \left(\begin{tabular}{@{}cc@{}}
+                  $a$ & $b$ \\
+                  0   & $c$
+               \end{tabular}\right)$ and $B = \left(\begin{tabular}{@{}cc@{}}
+                  $p$ & $q$ \\
+                  0   & $r$
+               \end{tabular}\right)$ be arbitrary members of $G$; we have that
+               \begin{align*}
+                  \varphi(AB) &= \varphi\left(\left(\begin{tabular}{@{}cc@{}}
+                  $a$ & $b$ \\
+                  0   & $c$
+               \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+                  $p$ & $q$ \\
+                  0   & $r$
+               \end{tabular}\right)\right) \\
+                  &= \varphi\left(\begin{tabular}{@{}cc@{}}
+                  $ap$ & $aq + br$ \\
+                  0    & $cr$
+               \end{tabular}\right) \\
+                  &= ap = \varphi(A)\varphi(B),
+               \end{align*}
+               so that $\varphi$ is a homomorphism. The kernel of $\varphi$ is
+               the set of all matrices in $G$ where the first column is a unit
+               vector (i.e., $a_{11} = 1$). Hence a fiber $X$ of $\varphi$ is
+               the set of all matrices in $G$ such that if
+               $(a_{ij}), (b_{ij}) \in X$, then $a_{11} = b_{11}$.
+         \item Let $a, c \in \F^\times \times \F^\times$. It follows immediately 
+               that $\varphi$ is onto because
+               $\varphi\left(\begin{tabular}{@{}cc@{}}
+                  $a$ & 0 \\
+                  0   & $c$
+               \end{tabular}\right) = (a, c)$. Now let
+               $A = \left(\begin{tabular}{@{}cc@{}}
+                  $a$ & $b$ \\
+                  0   & $c$
+               \end{tabular}\right)$ and $B = \left(\begin{tabular}{@{}cc@{}}
+                  $p$ & $q$ \\
+                  0   & $r$
+               \end{tabular}\right)$ be arbitrary members of $G$; we have that
+               \begin{align*}
+                  \varphi(AB) &= \varphi\left(\left(\begin{tabular}{@{}cc@{}}
+                  $a$ & $b$ \\
+                  0   & $c$
+               \end{tabular}\right)\left(\begin{tabular}{@{}cc@{}}
+                  $p$ & $q$ \\
+                  0   & $r$
+               \end{tabular}\right)\right) \\
+                  &= \varphi\left(\begin{tabular}{@{}cc@{}}
+                  $ap$ & $aq + br$ \\
+                  0    & $cr$
+               \end{tabular}\right) \\
+                  &= (ap, cr) = (a, c)(p, r) = \varphi(A)\varphi(B),
+               \end{align*}
+               so that $\varphi$ is a homomorphism. The kernel of $\varphi$ is
+               the set of all matrices in $G$ with $1$s on the main diagonal. 
+               Hence a fiber $X$ of $\varphi$ is the set of all matrices in $G$ 
+               such that if $(a_{ij}), (b_{ij}) \in X$, then $a_{11} = b_{11}$
+               and $a_{22} = b_{22}$.
+         \item The map $\varphi : G \rightarrow F$,
+               $\left(\begin{tabular}{@{}cc@{}}
+                  $ap$ & $aq + br$ \\
+                  0    & $cr$
+               \end{tabular}\right) \mapsto b$ is a homomorphism because, for
+               $A = \left(\begin{tabular}{@{}cc@{}}
+                  1   & $a$ \\
+                  0   & 1
+               \end{tabular}\right), B = \left(\begin{tabular}{@{}cc@{}}
+                  1   & $b$ \\
+                  0   & 1
+               \end{tabular}\right) \in H$, we have
+               \begin{align*}
+                  \varphi(AB) &= \varphi\left(\begin{tabular}{@{}cc@{}}
+                  1   & $a + b$ \\
+                  0   & 1
+               \end{tabular}\right) \\
+               &= a + b = \varphi(A) + \varphi(B).
+               \end{align*}              
+               The kernel of $\varphi$ is trivial, so it follows by Exercise
+               1.6.14 that $\varphi$ is injective; clearly, $\varphi$ is onto;
+               thus, it is an isomorphism. Conclude that $H \cong F$. \qed
+      \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.12]  Let $G$ be the additive group of real numbers, let $H$ be the
                   multiplicative group of complex numbers of absolute value 1
@@ -235,9 +325,20 @@ Let $G$ and $H$ be groups.
                   $i$, and $e^{4\pi i/3}$ of $H$. (Figure 1 of the text for this
                   homomorphism $\varphi$ is usually depicted using the following
                   diagram.)
+
+      \textbf{Solution.} Kernel($\varphi) = \Z$; fibers above $-1$, $i$, and
+      $e^{4\pi i/3}$ are the cosets $\frac{1}{2} + \Z$, $\frac{1}{4} + \Z$, and
+      $\frac{2}{3} + \Z$, respectively.
+
+      \textcolor{red}{TODO: Draw line in Tikz}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.13]  Repeat the preceding exercise with the map $\varphi$ replaced
                   by the map $\varphi : r \mapsto e^{4\pi ir}$.
+
+      \textbf{Solution.} Kernel($\varphi) = \frac{1}{2}\Z$; fibers above $-1$,
+      $i$, and $e^{4\pi i/3}$ are the cosets
+      $\frac{1}{4} + \frac{1}{2}\Z$, $\frac{1}{8} + \frac{1}{2}\Z$, and
+      $\frac{1}{3} + \frac{1}{2}\Z$, respectively.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.14%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.14]  Consider the additive quotient group $\Q/\Z$.
                   \begin{enumerate}
@@ -252,6 +353,64 @@ Let $G$ and $H$ be groups.
                            multiplicative group of roots of unity in
                            $\C^\times$.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item First we will show that each coset contains such a
+               representative. So let $a + \Z$ be a coset in $\Q/\Z$. Assume 
+               without loss that $a = c/d$ for some integer $c$ and positive 
+               integer $d$. By the Division Algorithm, it follows that
+               $c = nd + r$, where $n$ and $r$ are integers, with $0 \le r < d$. 
+               The equality $c = nd + r$ implies that $c/d = n + r/d$; i.e.,
+               $c/d - r/d = n \in \Z$. Thus $a + \Z = r/d + \Z$ by Proposition
+               4. Now since $0 \le r < d$, conclude that $0 \le r/d < 1$.
+               Suppose $r/d + \Z$ has another representation $a'$ such that
+               $0 \le a' < 1$. Hence $a' = r/d + m$ for some integer $m$. That
+               is, if we add $m$ to the inequality $0 \le r/d < 1$, we will get 
+               $m \le r/d + m < 1 + m$, so that $a'$ is in the half-closed
+               interval $[m,  m + 1)$. But since $0 \le a' < 1$, it follows that
+               $m = 0$, so that $a' = r/d$. Thus $r/d$ is unique.
+         \item Let $q + \Z$ be a coset in $\Q/\Z$, where $q = a/b$ for 
+               appropriate integers $a$ and $b$. Then it follows by Exercise
+               4 that
+               $$(q + \Z)^{|b|} = (|b|\cdot q) + \Z = \pm a + \Z = \Z
+                  \quad(\text{since } \pm a \in \Z).$$
+               Thus $|q + \Z| \le |b|$, so that $q + \Z$ has finite order. If
+               $n$ is a positive integer, observe that $m \cdot 1/n$ is not an
+               integer for each integer $m$ where $1 \le m < n$. Thus the coset
+               $1/n + \Z$ has order $n$.
+         \item Let $r + \Z$ be a coset in $\R/\Z$, for some real number $r$. We
+               already showed that if $r$ is rational, then $r + \Z$ has finite
+               order. So assume that $r$ is not rational. Now suppose to the
+               contrary that $r + \Z$ also has finite order. Then 
+               $(r + \Z)^n = rn + \Z = \Z$, for some positive integer $n$. That
+               is, $rn \in \Z$, so that $r$ is a rational number, a
+               contradiction. Thus every coset in $(\R - \Q)/\Z$ has infinite
+               order. So conclude that the torsion subgroup of $\R/\Z$ is
+               $\Q/\Z$.
+         \item Consider the map $\alpha : \Q/\Z \rightarrow H$, (where $H$ is
+               the multiplicative group of roots of unity in $\C^\times$)
+               $q + \Z \mapsto e^{2\pi i q}$. First we will show that this map
+               is well defined. So suppose that $p + \Z = q + \Z$ for some
+               cosets in $\Q/\Z$, so that $p - q = n \in \Z$ (Proposition 4).
+               Now we have that
+               $$\alpha(p + \Z) = e^{2\pi i p} = e^{2\pi i (n+q)} = 
+                 e^{2\pi i n}e^{2\pi i q} = 1 \cdot e^{2\pi i q} = 
+                 \alpha(q + \Z).$$
+               Hence $\alpha$ is well defined, and it is a homomorphism because
+               $$\alpha((p + \Z) + (q + \Z)) = \alpha((p + q) + \Z) =
+                 e^{2\pi i (p+q)} = e^{2\pi i p}e^{2\pi i q} = \alpha(p + \Z)
+                 \alpha(q + \Z),$$
+               for all $p + \Z, q + \Z \in \Q/\Z$. Now observe that 
+               $\alpha(a + \Z) = e^{2\pi i a} = 1$ if and only if $a$ is an 
+               integer if and only if $a + \Z = \Z$. Thus the kernel of
+               $\alpha$ is trivial so that $\alpha$ is injective by Exercise 
+               1.6.14. Let $z \in H$. Then $z^m = 1$ for some positive integer
+               $m$. It follows that $z = e^{2\pi i/m}$ for some integer $i$.
+               Surjectivity of $\alpha$ follows $\alpha(1/m + \Z) = z$. Conclude
+               that $\alpha$ is an isomorphism, so that $\Q/\Z \cong H$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.15]  Prove that a quotient of a divisible abelian group by any
                   proper subgroup is also divisible. Deduce that $\Q/\Z$ is
