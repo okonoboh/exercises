@@ -630,6 +630,47 @@ Let $G$ and $H$ be groups.
                      \item Prove that $\m{G}$ is abelian and is isomorphic to
                            $Z_2 \times Z_4$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item Since $\cyc{v^4} = \{1, v^4\}$, it follows that each left coset
+               of $\cyc{v^4}$ in $G$ has order 2. Thus $|\m{G}| = |G|/2 = 8$.
+         \item The elements of $\m{G}$ are:
+               \begin{align*}
+                  \cyc{v^4} = \{1, v^4\} &= \m{1} \\
+                  v\cyc{v^4} = \{v, v^5\} &= \m{v} \\
+                  v^2\cyc{v^4} = \{v^2, v^6\} &= \m{v}^2 \\
+                  v^3\cyc{v^4} =\{v^3, v^7\} &= \m{v}^3 \\
+                  u\cyc{v^4} = \{u, uv^4\} &= \m{u} \\
+                  uv\cyc{v^4} = \{uv, uv^5\} &= \m{u} \cdot \m{v} \\
+                  uv^2\cyc{v^4} = \{uv^2, uv^6\} &= \m{u} \cdot \m{v}^2 \\
+                  uv^3\cyc{v^4} = \{uv^3, uv^7\} &= \m{u} \cdot \m{v}^3.
+               \end{align*}
+         \item \begin{align*}
+                  |\m{1}| &= 1 \\
+                  |\m{v}| &= |\m{v}^3| = 4 \\
+                  |\m{v}^2|&= |\m{u}| = |\m{u} \cdot \m{v}| =
+                  |\m{u} \cdot \m{v}^2| = |\m{u} \cdot \m{v}^3| = 2.
+               \end{align*}
+         \item \begin{align*}
+                  \m{vu} &= \m{u} \cdot \m{v}^5 = \m{u} \cdot \m{v} = \m{uv} \\
+                  \m{uv^{-2}u} &= \m{uv^6u} = \m{uuv^{30}} = \m{v}^2\\
+                  \m{u^{-1}v^{-1}uv} &= \m{uv^7uv} = \m{uuv^{36}} = \m{1}.
+               \end{align*}
+         \item By (c), (d), and Exercise 16, it follows that
+               \begin{align*}
+                  \m{G} = \cyc{\m{u}, \m{v} : \m{u}^2 = \m{v}^8 = \m{v}^4 = 1,
+                     \m{vu} = \m{uv}}
+               \end{align*}
+               It follows that
+               $x^4 = y^2 = \m{1}$, $yx = x^{-1}y$, so that $x$ and $y \in\m{G}$ 
+               satisy the relations that $r$ and $s \in D_8$ satisy,
+               respectively; additionally observe that since $|\m{G}| = 8$ and 
+               since every element in $\m{G}$ can be written in the form
+               $y^ax^b$ for appropriate integers $a$ and $b$, it follows that
+               $$\m{G} = \cyc{x, y : x^4 = y^2 = 1, yx = x^{-1}y} \cong D_8.$$
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.20]  Let $G = \Z/24\Z$ and let
                   $\widetilde{G} = G/\cyc{\m{12}}$, where for each integer $a$
