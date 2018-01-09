@@ -567,6 +567,49 @@ Let $G$ and $H$ be groups.
                            $\m{\tau^{-1}\sigma^{-1}\tau\sigma}$.
                      \item Prove that $\m{G} \cong D_8$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item Since $\cyc{\sigma^4} = \{1, \sigma^4\}$, it follows that each 
+               left coset of $\cyc{\sigma^4}$ in $G$ has order 2. Thus
+               $|\m{G}| = |G|/2 = 8$.
+         \item The elements of $\m{G}$ are:
+               \begin{align*}
+                  \cyc{\sigma^4} = \{1, \sigma^4\} &= \m{1} \\
+                  \sigma\cyc{\sigma^4} = \{\sigma, \sigma^5\} &= \m{\sigma} \\
+                  \sigma^2\cyc{\sigma^4}=\{\sigma^2,\sigma^6\} &=\m{\sigma}^2 \\
+                  \sigma^3\cyc{\sigma^4} =\{\sigma^3,\sigma^7\}&=\m{\sigma}^3 \\
+                  \tau\cyc{\sigma^4} = \{\tau, \tau\sigma^4\} &= \m{\tau} \\
+                  \tau\sigma\cyc{\sigma^4} = \{\tau\sigma, \tau\sigma^5\} &=
+                     \m{\tau}\cdot\m{\sigma} \\
+                  \tau\sigma^2\cyc{\sigma^4} = \{\tau\sigma^2, \tau\sigma^6\} &= 
+                     \m{\tau}\cdot\m{\sigma}^2 \\
+                  \tau\sigma^3\cyc{\sigma^4} = \{\tau\sigma^3, \tau\sigma^7\} &= 
+                     \m{\tau}\cdot\m{\sigma}^3.
+               \end{align*}
+         \item \begin{align*}
+                  |\m{1}| &= 1 \\
+                  |\m{\sigma}| &= |\m{\sigma}^3| = 4 \\
+                  |\m{\sigma}^2|&= |\m{\tau}| = |\m{\tau}\cdot\m{\sigma}| =
+                  |\m{\tau}\cdot\m{\sigma}^2| = |\m{\tau}\cdot\m{\sigma}^3| = 2.
+               \end{align*}
+         \item \begin{align*}
+                  \m{\sigma\tau} &= \m{\tau}\cdot\m{\sigma}^3 \\
+                  \m{\tau\sigma^{-2}\tau} &= \m{\tau\sigma^6\tau} =
+                     \m{\sigma^2\tau\tau} = \m{\sigma}^2\\
+                  \m{\tau^{-1}\sigma^{-1}\tau\sigma} &=
+                     \m{\tau\sigma^3\tau\sigma} =
+                     \m{\sigma\tau\tau\sigma} = \m{\sigma}^2.
+               \end{align*}
+         \item Let $x = \m{\sigma}$ and $y = \m{\tau}$. It follows that
+               $x^4 = y^2 = \m{1}$, $yx = x^{-1}y$, so that $x$ and $y \in\m{G}$ 
+               satisy the relations that $r$ and $s \in D_8$ satisy,
+               respectively; additionally observe that since $|\m{G}| = 8$ and 
+               since every element in $\m{G}$ can be written in the form
+               $y^ax^b$ for appropriate integers $a$ and $b$, it follows that
+               $$\m{G} = \cyc{x, y : x^4 = y^2 = 1, yx = x^{-1}y} \cong D_8.$$
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.19%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.19]  Let $G$ be the modular group of order 16 (whose lattice was
                   computed in Exercise 2.5.14):
