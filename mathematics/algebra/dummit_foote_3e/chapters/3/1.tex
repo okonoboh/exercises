@@ -479,7 +479,8 @@ Let $G$ and $H$ be groups.
       \begin{enumerate}
          \item Since $\cyc{r^4} = \{1, r^4\}$, it follows that each left coset
                of $\cyc{r^4}$ in $G$ has order 2. Thus $|\m{G}| = |G|/2 = 8$.
-         \item \begin{align*}
+         \item The elements of $\m{G}$ are:
+               \begin{align*}
                   \cyc{r^4} = \{1, r^4\} &= \m{r}^0 = \m{1} \\
                   r\cyc{r^4} = \{r, r^5\} &= \m{r}^1 \\
                   r^2\cyc{r^4} = \{r^2, r^6\} &= \m{r}^2 \\
@@ -489,6 +490,9 @@ Let $G$ and $H$ be groups.
                   sr^2\cyc{r^4} = \{sr^2, sr^6\} &= \m{s}^1\m{r}^2 \\
                   sr^3\cyc{r^4} = \{sr^3, sr^7\} &= \m{s}^1\m{r}^3.
                \end{align*}
+               Observe that
+               $$\m{G} = \cyc{\m{r}, \m{s} : \m{r}^4 = \m{s}^2 = \m{1},
+                 \m{s}\m{r}  = \m{r}^{-1}\m{s}} \cong D_8.$$
          \item \begin{align*}
                   |\m{1}| &= 1 \\
                   |\m{r}| &= |\m{r}^3| = 4 \\
@@ -501,7 +505,7 @@ Let $G$ and $H$ be groups.
                   \m{s^{-1}r^{-1}sr} &= \m{s^{-1}srr} = \m{r}^2.
                \end{align*}
          \item Observe first that the generators of $\m{H}$ commute. Since each
-               of the generators has order, the maximum order of $\m{H}$ is 4;
+               of the generators has order 2, the maximum order of $\m{H}$ is 4;
                indeed, we have $\m{H} = \{\m{1}, \m{s}, \m{r}^2,
                \m{s}\cdot\m{r}^2\}$. By Exercise 2.2.6(a), we have that
                $\m{H} \le N_{\m{G}}(\m{H})$, so that $|N_{\m{G}}(\m{H})| \ge 4$.
@@ -520,7 +524,26 @@ Let $G$ and $H$ be groups.
                $|N_{\m{G}}(\m{H})| = 8$, so that $N_{\m{G}}(\m{H}) = \m{G}$;
                that is, $\m{H} \trianglelefteq \m{G}$. Since $\m{H}$ has no
                element of order 4, it follows by Exercise 2.5.10 that $\m{H}$ is
-               isomorphic to the Klein 4-group. \qed
+               isomorphic to the Klein 4-group. By definition, we have that the
+               complete preimage of $\m{H}$ in $G$, say X, is
+               $$\{g \in G : \m{g} \in \m{H}\} =
+                 \{1, r^2, r^4, r^6, s, sr^2, sr^4, sr^6\}.$$
+               Now let $x = r^2$ and $y = s$. It follows that $x^4 = r^8 = 1$,
+               $y^2 = s^2 = 1$, $yx = sr^2 = r^{-2}s = x^{-1}y$, so that $x$ and
+               $y \in X$ satisy the relations that $r$ and $s \in D_8$ satisy, 
+               respectively; additionally observe that since $|X| = 8$ and since 
+               every element in $X$ can be written in the form $y^ax^b$ for 
+               appropriate integers $a$ and $b$, it follows that
+               $$X = \cyc{x, y : x^4 = y^2 = 1, yx = x^{-1}y} \cong D_8.$$
+         \item By Exercise 2.2.7(b), $Z(D_8) = \cyc{r^2}$. Thus since
+               $\m{G} \cong D_8$ (see (b)), it follows that
+               $Z(\m{G}) = \cyc{\m{r}^2}$. Thus
+               $$\m{G}/Z(\m{G}) = \{Z(\m{G}), \m{r}Z(\m{G}), \m{s}Z(\m{G}),
+                 \m{sr}Z(\m{G})\}.$$
+               The order of each nonidentity element in the preceding set is 2;
+               conclude by Exercise 2.5.10 that $\m{G}/Z(\m{G})$ is isomorphic
+               to the Klein 4-group.
+               \qed
       \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.18%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.18]  Let $G$ be the quasidihedral group of order 16 (whose lattice
