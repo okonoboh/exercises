@@ -780,12 +780,64 @@ Let $G$ and $H$ be groups.
                            collection of normal subgroups of a group is a normal
                            subgroup (do not assume the collection is countable).
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $I = \{1, 2\}, H_1 = H$, and $H_2 = K$ in part (b).
+         \item Let $G$ be a group and let $I$ be an indexing set such that
+               $H_i \trianglelefteq G$ for each $i \in I$. Let
+               $$H = \bigcap_{i \in I} H_i.$$
+               By Exercise 2.1.10(b), $H \le G$, so it remains to show that $H$
+               is normal in $G$. Let $g \in G$ and $h \in H$. By definition, it
+               follows that $h \in H_i$ for each $i \in I$. Since each $H_i$ is
+               normal it follows that $ghg^{-1} \in H_i$ (for each $i \in I$),
+               so that $ghg^{-1} \in H$; that is, $H \trianglelefteq G$ by 
+               Theorem 6(5).
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.23%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.23]  Prove that the join of any nonempty collection of normal
                   subgroups of a group is a normal subgroup.
+
+      \textbf{Proof.} Let $G$ be a group and let $I$ be an indexing set such
+      that $H_i \trianglelefteq G$ for each $i \in I$. Let
+      $$H = \bigcup_{i \in I} H_i.$$
+      We want to show that $\cyc{H} \trianglelefteq G$. Since $\cyc{H} \le G$,
+      it remains to show that $\cyc{H}$ is normal in $G$. Let $g \in G$ and
+      $h \in \cyc{H}$. It follows that
+      $h = {h_1}^{\epsilon_1}h_2^{\epsilon_2}\cdots h_n^{\epsilon_n}$, where
+      $n \in \Z^+$, $\epsilon_i \in \Z$, and $h_i \in H$, for each $i \in I$.
+      Now
+      \begin{align*}
+         ghg^{-1} &= g{h_1}^{\epsilon_1}h_2^{\epsilon_2} \cdots
+                     h_n^{\epsilon_n}g^{-1} \\
+           &= g{h_1}^{\epsilon_1}1h_2^{\epsilon_2}1 \cdots
+                     1h_n^{\epsilon_n}g^{-1} \\
+           &= g{h_1}^{\epsilon_1}g^{-1}gh_2^{\epsilon_2}g^{-1}g \cdots
+                     g^{-1}gh_n^{\epsilon_n}g^{-1} \\
+           &= (g{h_1}^{\epsilon_1}g^{-1})(gh_2^{\epsilon_2}g^{-1})\cdots
+                     (gh_n^{\epsilon_n}g^{-1}).
+      \end{align*}
+      Consider $g{h_r}^{\epsilon_r}g^{-1}$, where $1 \le r \le n$. Since
+      $h_r \in H$, it follows that $h_r \in H_k$ for some $k \in I$; and since
+      $H_k$ is normal in $G$, it follows that
+      $g{h_r}^{\epsilon_r}g^{-1} \in H_k$, so that
+      $g{h_r}^{\epsilon_r}g^{-1} \in H$. Hence
+      $g{h_i}^{\epsilon_i}g^{-1} \in H$, for each $i \in \{1, \ldots, n\}$. So
+      it follows that $ghg^{-1} \in H$, so that $ghg^{-1} \in \cyc{H}$. That is,
+      $\cyc{H} \trianglelefteq G$ by Theorem 6(5). \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.24]  Prove that if $N \trianglelefteq G$ and $H$ is any subgroup of
                   $G$ then $N \cap H \trianglelefteq H$.
+
+      \textbf{Proof.} Suppose $N \trianglelefteq G$ and $H \le G$. We have
+      $N \cap H \le H$ by Exercise 2.1.10(a), so it remains to show that
+      $N \cap H$ is normal in $H$. Let $h \in H$ and $m \in N \cap H$. Since 
+      $m \in N \cap H$, we must particularly have that $m \in N$. Since $N$ is 
+      normal in $G$, we have that $hmh^{-1} \in N$. Also, we must have that
+      $m \in H$ and by closure of $H$, it follows that $hmh^{-1} \in H$, so that
+      $hmh^{-1} \in N \cap H$. Conclude by Theorem 6(5) that
+      $N \cap H \trianglelefteq H$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.25%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.25]  \begin{enumerate}
                      \item Prove that a subgroup $N$ of $G$ is normal if and
@@ -797,6 +849,38 @@ Let $G$ and $H$ be groups.
                            entries 2,1. Show that $gNg^{-1} \subseteq N$ but $g$
                            does $\textit{not}$ normalize $N$.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item Let $N \le G$.
+
+               ($\Leftarrow$) Suppose $gNg^{-1} \subseteq N$ for each $g \in G$.
+               Let $g \in G$. To show that $N$ is normal in $G$, it suffices to
+               show that $gNg^{-1} = N$. By our assumption, we already have that
+               $gNg^{-1} \subseteq N$, so we will now show reverse containment.
+               Let $n \in N$. Since $g^{-1} \in G$, it follows from our 
+               assumption that $g^{-1}Ng = g^{-1}N(g^{-1})^{-1} \subseteq N$.
+               Hence $g^{-1}ng \in N$, so that
+               $n = g(g^{-1}ng)g^{-1} \in gNg^{-1}$. That is,
+               $N \subseteq gNg^{-1}$. Conclude that $gNg^{-1} = N$, so that
+               $N \trianglelefteq G$.
+      
+               ($\Rightarrow$) Suppose $N \trianglelefteq G$. Let $g \in G$. By
+               normality, we have that $gNg^{-1} = N$; particularly, it follows
+               that $gNg^{-1} \subseteq N$. Since $g$ was arbitrary, conclude
+               that $gNg^{-1} \subseteq N$ for each $g \in G$.
+         \item Let $X_j$ be the matrix in $N$ whose entry in the 1st row and
+               2nd column is $j \in \Z$. Thus each matrix in $N$ can be written
+               as $X_j$ for some unique integer $j$. Observe that $g^{-1}$ is
+               the diagonal matrix with entries $1/2, 1$. So for some integer
+               $i$, we have that
+               $$gX_ig^{-1} = X_{2i} \in N.$$
+               That is, $gNg^{-1} \subseteq N$. Thus the (1,2)-entry of
+               $gng^{-1}$ is even for each $n \in N$; so $X_1 \neq gng^{-1}$ for
+               each $n \in N$, but $X_1 \in N$. Conclude that
+               $gNg^{-1} \neq N$, so that $g$ does not normalize $N$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.26%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.26]  Let $a, b \in G$.
                   \begin{enumerate}
