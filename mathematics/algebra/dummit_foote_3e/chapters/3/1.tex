@@ -663,13 +663,21 @@ Let $G$ and $H$ be groups.
                   \m{G} = \cyc{\m{u}, \m{v} : \m{u}^2 = \m{v}^8 = \m{v}^4 = 1,
                      \m{vu} = \m{uv}}
                \end{align*}
-               It follows that
-               $x^4 = y^2 = \m{1}$, $yx = x^{-1}y$, so that $x$ and $y \in\m{G}$ 
-               satisy the relations that $r$ and $s \in D_8$ satisy,
-               respectively; additionally observe that since $|\m{G}| = 8$ and 
-               since every element in $\m{G}$ can be written in the form
-               $y^ax^b$ for appropriate integers $a$ and $b$, it follows that
-               $$\m{G} = \cyc{x, y : x^4 = y^2 = 1, yx = x^{-1}y} \cong D_8.$$
+               Suppose $Z_2 = \cyc{x}$ and $Z_4 = \cyc{y}$. Let $p = (x,1)$ and
+               $q = (1, y)$ be elements in $Z_2 \times Z_4$. The elements of
+               $Z_2 \times Z_4$ are:
+               \begin{align*}
+                  (1, 1) &= q^0 & (1, y) &= q &
+                     (1, y^2) &= q^2 & (1, y^3) &= q^3 \\
+                  (x, 1) &= p & (x, y) &= pq &
+                     (x, y^2) &= pq^2 & (x, y^3) &= pq^3
+               \end{align*}
+               Thus
+               $$Z_2 \times Z_4 = \cyc{p , q: p^2 = q^4 = 1, qp = pq}.$$
+               We see from above that $p, q \in Z_2 \times Z_4$ satisfy the same
+               relations that $\m{u}, \m{v}$ satisfy in $\m{G}$; and since they
+               have the same order, we conclude that these two groups are 
+               isomorphic.
       \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.20%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.20]  Let $G = \Z/24\Z$ and let
@@ -680,14 +688,46 @@ Let $G$ and $H$ be groups.
                      \item Show that $\widetilde{G} = \{\widetilde{0},
                            \widetilde{1}, \ldots, \widetilde{11}\}$.
                      \item Find the order of each element of $\widetilde{G}$.
-                     \item Prove that $\cyc{G} \cong \Z/12\Z$. (Thus
+                     \item Prove that $\widetilde{G} \cong \Z/12\Z$. (Thus
                            $(\Z/24\Z)/(12\Z/24\Z) \cong \Z/12\Z$, just as if we
                            inverted and called the $24\Z\text{'s}$.)
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item The elements of $\widetilde{G}$ are:
+               \begin{align*}
+                  \m{0} + \cyc{\m{12}} &= \{\m{0}, \m{12}\} = \widetilde{0}
+                  &\m{6} + \cyc{\m{12}} = \{\m{6}, \m{18}\} &= \widetilde{6}\\
+                  \m{1} + \cyc{\m{12}} &= \{\m{1}, \m{13}\} = \widetilde{1}
+                  &\m{7} + \cyc{\m{12}} = \{\m{7}, \m{19}\} &= \widetilde{7}\\
+                  \m{2} + \cyc{\m{12}} &= \{\m{2}, \m{14}\} = \widetilde{2}
+                  &\m{8} + \cyc{\m{12}} = \{\m{8}, \m{20}\} &= \widetilde{8}\\
+                  \m{3} + \cyc{\m{12}} &= \{\m{3}, \m{15}\} = \widetilde{3}
+                  &\m{9} + \cyc{\m{12}} = \{\m{9}, \m{21}\} &= \widetilde{9}\\
+                  \m{4} + \cyc{\m{12}} &= \{\m{4}, \m{16}\} = \widetilde{4}
+                  &\m{10} + \cyc{\m{12}} = \{\m{10},\m{22}\}&=\widetilde{10}\\
+                  \m{5} + \cyc{\m{12}} &= \{\m{5}, \m{17}\} = \widetilde{5}
+                  &\m{11}+\cyc{\m{12}} = \{\m{11},\m{23}\} &= \widetilde{11}
+               \end{align*}
+         \item The orders of $\widetilde{G}$'s elements are:
+               \begin{align*}
+                  |\widetilde{0}| &= 1 &|\widetilde{3}| &= 4
+                     &|\widetilde{6}| &= 2 &|\widetilde{9}| &= 4 \\
+                  |\widetilde{1}| &= 12 &|\widetilde{4}| &= 3
+                     &|\widetilde{7}| &= 12 &|\widetilde{10}| &= 6 \\
+                  |\widetilde{2}| &= 6 &|\widetilde{5}| &= 12
+                     &|\widetilde{8}| &= 3 &|\widetilde{11}| &= 12
+               \end{align*}
+         \item Since $|\widetilde{G}| = |\widetilde{1}| =12$, it follows that
+               $\widetilde{G} = \cyc{\widetilde{1}}$, so that
+               $\widetilde{G} \cong \Z/12\Z$ by Theorem 2.4.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.21%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.21]  Let $G = Z_4 \times Z_4$ be given in terms of the following
                   generators and relations:
-                  $$G = \cyc{x, y : x^4 = y^4 = 1, xy = yx}$$.
+                  $$G = \cyc{x, y : x^4 = y^4 = 1, xy = yx}.$$
                   Let $\m{G} = G/\cyc{x^2y^2}$ (note that every subgroup of the
                   abelian group $G$ is normal).
                   \begin{enumerate}
@@ -698,6 +738,39 @@ Let $G$ and $H$ be groups.
                            exhibited in (b).
                      \item Prove that $\m{G} \cong Z_4 \times Z_2$.
                   \end{enumerate}
+
+      \textbf{Solution.}
+
+      \begin{enumerate}
+         \item Since $\cyc{x^2y^2} = \{1, x^2y^2\}$, it follows that each left 
+               coset of $\cyc{x^2y^2}$ in $G$ has order 2. Thus
+               $|\m{G}| = |G|/2 = 8$.
+         \item The elements of $\m{G}$ are:
+               \begin{align*}
+                  1\cyc{x^2y^2} = \{1, x^2y^2\} &= \m{1}
+                     &y\cyc{x^2y^2} = \{y, x^2y^3\} &= \m{y} \\
+                  x\cyc{x^2y^2} = \{x, x^3y^2\} &= \m{x}
+                     &xy\cyc{x^2y^2} = \{xy, x^3y^3\} &= \m{x}\cdot\m{y} \\
+                  x^2\cyc{x^2y^2} = \{x^2, y^2\} &= \m{x}^2
+                     &x^2y\cyc{x^2y^2} = \{x^2y, y^3\} &= \m{x}^2 \cdot \m{y} \\
+                  x^3\cyc{x^2y^2} = \{x^3, xy^2\} &= \m{x}^3
+                     &x^3y\cyc{x^2y^2} = \{x^3y, xy^3\} &= \m{x}^3 \cdot \m{y}
+               \end{align*}
+         \item The orders of $\m{G}$'s elements are:
+               \begin{align*}
+                  |\m{1}| &= 1 &|\m{x}| &= 4 &|\m{x}^2| &= 2 &|\m{x}^3| &= 4 \\
+                  |\m{y}| &= 4 &|\m{xy}| &= 2 &|\m{x^2y}| &= 4 &|\m{x^3y}| &= 2
+               \end{align*}
+         \item Now $\m{G}$ is abelian by Exercise 3 and observe that every 
+               element of $\m{G}$ can be generated by $\m{x}$ and $\m{xy}$.
+               Since $\m{x}^4 = \m{xy}^2 = \m{1}$, it follows that
+               $$\m{G} = \cyc{\m{x}, \m{xy} : \m{x}^4 = \m{xy}^2 = \m{1},
+                  \m{x}\cdot\m{xy} = \m{xy}\cdot\m{x}}.$$
+               Thus $\m{x}$ and $\m{xy}$ in $\m{G}$ satisfy the relations that
+               the generators of $Z_2 \times Z_4$ satisfy in Exercise 19(e), so
+               that $\m{G} \cong Z_2 \times Z_4$. Conclude by Exercise 1.6.11
+               that $\m{G} \cong Z_4 \times Z_2$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.22%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.22]  \begin{enumerate}
                      \item Prove that if $H$ and $K$ are normal subgroups of a
