@@ -806,26 +806,27 @@ Let $G$ and $H$ be groups.
       it remains to show that $\cyc{H}$ is normal in $G$. Let $g \in G$ and
       $h \in \cyc{H}$. It follows that
       $h = {h_1}^{\epsilon_1}{h_2}^{\epsilon_2}\cdots {h_n}^{\epsilon_n}$, where
-      $n \in \Z^+$, $\epsilon_i \in \Z$, and $h_i \in H$, for each $i \in I$.
+      $n \in \Z^+$, $\epsilon_i \in \Z$, and $h_i \in H$, for $1 \le i \le n$.
       Now
       \begin{align*}
-         ghg^{-1} &= g{h_1}^{\epsilon_1}{h_2}^{\epsilon_2} \cdots
-                     {h_n}^{\epsilon_n}g^{-1} \\
-           &= g{h_1}^{\epsilon_1}1{h_2}^{\epsilon_2}1 \cdots
-                     1{h_n}^{\epsilon_n}g^{-1} \\
-           &= g{h_1}^{\epsilon_1}g^{-1}g{h_2}^{\epsilon_2}g^{-1}g \cdots
-                     g^{-1}g{h_n}^{\epsilon_n}g^{-1} \\
+         ghg^{-1} &= g({h_1}^{\epsilon_1}{h_2}^{\epsilon_2} \cdots
+                     {h_n}^{\epsilon_n})g^{-1} \\
            &= (g{h_1}^{\epsilon_1}g^{-1})(g{h_2}^{\epsilon_2}g^{-1})\cdots
-                     (g{h_n}^{\epsilon_n}g^{-1}).
+                     (g{h_n}^{\epsilon_n}g^{-1}) &[\text{Exercise 26(a)}] \\
+            &= (g{h_1}g^{-1})^{\epsilon_1}(g{h_2}g^{-1})^{\epsilon_2}\cdots
+                     (g{h_n}g^{-1})^{\epsilon_n} &[\text{Lemma }\ref{1_1_22_1}]
       \end{align*}
-      Consider $g{h_r}^{\epsilon_r}g^{-1}$, where $1 \le r \le n$. Since
-      $h_r \in H$, it follows that $h_r \in H_k$ for some $k \in I$; and since
-      $H_k$ is normal in $G$, it follows that
+      Consider $g{h_r}g^{-1}$, where $1 \le r \le n$. Since $h_r \in H$, it 
+      follows that $h_r \in H_k$ for some $k \in I$; and since $H_k$ is normal 
+      in $G$, it follows that $g{h_r}g^{-1} \in H_k$; also, since
+      $(g{h_r}g^{-1})^{\epsilon_r} = g{h_r}^{\epsilon_r}g^{-1}$
+      (Lemma \ref{1_1_22_1}), it follows by closure of $H_k$ that
       $g{h_r}^{\epsilon_r}g^{-1} \in H_k$, so that
       $g{h_r}^{\epsilon_r}g^{-1} \in H$. Hence
-      $g{h_i}^{\epsilon_i}g^{-1} \in H$, for each $i \in \{1, \ldots, n\}$. So
-      it follows that $ghg^{-1} \in H$, so that $ghg^{-1} \in \cyc{H}$. That is,
-      $\cyc{H} \trianglelefteq G$ by Theorem 6(5). \qed
+      $g{h_i}^{\epsilon_i}g^{-1} \in H \subseteq \cyc{H}$, for each
+      $i \in \{1, \ldots, n\}$. So it follows by closure of multiplication that  
+      $ghg^{-1} \in \cyc{H}$. That is, $\cyc{H} \trianglelefteq G$ by Theorem
+      6(5). \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.24%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.24]  Prove that if $N \trianglelefteq G$ and $H$ is any subgroup of
                   $G$ then $N \cap H \trianglelefteq H$.

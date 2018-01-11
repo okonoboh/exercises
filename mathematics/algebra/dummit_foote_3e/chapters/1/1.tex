@@ -642,11 +642,11 @@
                   $a, b \in G$.
 
       \begin{lemma} \label{1_1_22_1} \textit{Let $x$ and $g$ be members of a 
-                  group $G$, and let $n$ be a positive integer, then it follows 
-                  that $(g^{-1}xg)^n = g^{-1}x^ng$.}
+                  group $G$, and let $n$ be an integer, then it follows that
+                  $(g^{-1}xg)^n = g^{-1}x^ng$.}
       \end{lemma}
 
-      \textbf{Proof.} Let $x, g \in G$. We shall show by induction that the 
+      \textbf{Proof.} Let $x, g \in G$. We will first show by induction that the 
       equation
       \begin{equation}
          (g^{-1}xg)^n = g^{-1}x^ng \label{1_1_22_2}
@@ -655,14 +655,27 @@
       holds for $n = 1$. So assume that it also holds for some positive integer 
       $k$. So we must now show that the equation also holds for $k + 1$. Thus
       \begin{align*}
-         (g^{-1}xg)^{k+1} &= (g^{-1}xg)^kg^{-1}xg &[\text{Execise 1.1.19}] \\
-                     &= g^{-1}x^kgg^{-1}xg &[\text{Inductive hypothesis}] \\
+         (g^{-1}xg)^{k+1} &= (g^{-1}xg)^kg^{-1}xg &[\text{Exercise 19}] \\
+                     &= g^{-1}x^kgg^{-1}xg &[\text{Inductive Hypothesis}] \\
                      &= g^{-1}x^kxg \\
                      &= g^{-1}x^{k+1}g,
       \end{align*}
       so that \eqref{1_1_22_2} holds for $k+1$. Hence by the Principle 
-      of Mathematical Induction, equation \eqref{1_1_22_1} holds for every 
-      positive integer $n$. Now we show $|x| = |g^{-1}xg|$.
+      of Mathematical Induction, \eqref{1_1_22_2} holds for every positive 
+      integer $n$. Since
+      $$(g^{-1}xg)^0 = 1 = g^{-1}g = g^{-1}1g = g^{-1}x^0g,$$
+      and, for every negative integer $m$ (so that $m = -n$ for some positive
+      integer $n$), we have that
+      \begin{align*}
+         (g^{-1}xg)^m = (g^{-1}xg)^{-n} &= ((g^{-1}xg)^{-1})^n
+            &[\text{Definition}] \\
+            &= (g^{-1}x^{-1}(g^{-1})^{-1})^n &[\text{Exercise 15}] \\
+            &= (g^{-1}x^{-1}g)^n           &[\text{Proposition 1 (3)}] \\
+            &= g^{-1}(x^{-1})^ng     &[\eqref{1_1_22_2} \text{ holds for } n] \\
+            &= g^{-1}x^{-n}g = g^{-1}x^mg, &[\text{Definition}]
+      \end{align*}
+      so that \eqref{1_1_22_2} holds for each integer $n$. Now we show
+      $|x| = |g^{-1}xg|$.
 
       \textbf{Case 1.} \textit{$|x| = n \in \Z^+$}. By Lemma \ref{1_1_22_1}, it 
       follows that $(g^{-1}xg)^n = g^{-1}x^ng = g^{-1}g =1$, so that
