@@ -1010,9 +1010,25 @@ Let $G$ and $H$ be groups.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.30]  Let $N \le G$ and let $g \in G$. Prove that $gN = Ng$ if and
                   only if $g \in N_G(N)$.
+
+      \textbf{Proof.} ($\Rightarrow$) Suppose first that $gN = Ng$. Let
+      $n \in N$. Then since $ng \in Ng$ and $gN = Ng$, it follows that
+      $ng = gn'$ for some $n' \in N$, so that $n = gn'g^{-1} \in gNg^{-1}$;
+      i.e., $N \subseteq gNg^{-1}$. Now consider $m \in gNg^{-1}$. It follows
+      that $m = gn''g^{-1}$ for some $n'' \in N$. Similarly, since $gn'' \in gN$
+      and $gN = Ng$, we have that $gn'' = n_1g$ for some $n_1 \in N$, so that
+      $m = gn''g^{-1} = n_1 \in N$. Thus, $gNg^{-1} \subseteq N$; conclude that
+      $gNg^{-1} = N$; in other words, $g \in N_G(N)$.
+
+      ($\Leftarrow$) Now suppose that $g \in N_G(N)$. By definition, we have
+      that $gNg^{-1} = N$. Let $m \in gN$, so that $m = gn$ for some $n \in N$.
+      It follows that $gng^{-1} = n'$ for some $n' \in N$ (because
+      $gNg^{-1} = N$), so that $m = gn = n'g \in Ng$; that is $gN \subseteq Ng$.
+      By a symmetric argument, we conclude that $Ng \subseteq gN$, so that
+      $gN = Ng$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.31%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.31]  Prove that if $H \le G$ and $N$ is a normal subgroup of $H$
-                  then $H \le N_G(H)$. Deduce that $N_G(N)$ is the largest
+                  then $H \le N_G(N)$. Deduce that $N_G(N)$ is the largest
                   subgroup of $G$ in which $N$ is normal (i.e., is the join of
                   all subgroups $H$ for which $N \trianglelefteq H$).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
