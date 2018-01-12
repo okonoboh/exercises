@@ -905,13 +905,13 @@ Let $G$ and $H$ be groups.
       \textbf{Proof.}
 
       \begin{enumerate}
-         \item Let $g(ab)g^{-1}$ be a conjugate of $ab$ for some $g \in G$. Thus
+         \item Let $g(ab)g^{-1}$ be the conjugate of $ab$ by $g \in G$. Thus
                $$g(ab)g^{-1} = ga1bg^{-1} = gag^{-1} \cdot gbg^{-1},$$
                so that $g(ab)g^{-1}$ is the product of the conjugate of $a$ and
                the conjugate of $b$. The equality $|a| = |gag^{-1}|$ follows
                from Exercise 1.1.22.
-         \item Let $ga^{-1}g^{-1}$ be a conjugate of $a^{-1}$ for some
-               $g \in G$. Then it follows that
+         \item Let $ga^{-1}g^{-1}$ be the conjugate of $a^{-1}$ by $g \in G$. 
+               Then it follows that
                $$ga^{-1}g^{-1} = (g^{-1})^{-1}a^{-1}g^{-1} = (gag^{-1})^{-1},$$
                as desired.
          \item If $S$ is empty, then $N = 1 \trianglelefteq G$, so suppose that
@@ -923,11 +923,15 @@ Let $G$ and $H$ be groups.
                \begin{align*}
                   gng^{-1} &= g({s_1}^{\epsilon_1}{s_2}^{\epsilon_2} \cdots
                      {s_m}^{\epsilon_m})g^{-1} \\
-                     &= g{s_1}^{\epsilon_1}g^{-1}\cdot g{s_2}^{\epsilon_2}g^{-1} 
-                        \cdots g{s_m}^{\epsilon_m}g^{-1}. &[(a)]
+                     &= (g{s_1}^{\epsilon_1}g^{-1})\cdot
+                        (g{s_2}^{\epsilon_2}g^{-1}) 
+                        \cdots (g{s_m}^{\epsilon_m}g^{-1}). &[(a)]
                \end{align*}
-               By assumption $g{s_i}^{\epsilon_i}g^{-1} \in N$ for each
-               $1 \le i \le m$. Thus $gng^{-1} \in N$ by closure of 
+               By assumption $g{s_i}g^{-1} \in N$, and by closure of $N$ and 
+               Lemma \ref{1_1_22_1}, it follows that
+               $(g{s_i}g^{-1})^{\epsilon_i} = g{s_i}^{\epsilon_i}g^{-1} \in N$,
+               for each $1 \le i \le m$, so that $gng^{-1} \in N$ by closure of 
+               $N$. Thus $gng^{-1} \in N$ by closure of $N$ under 
                multiplication, so that $N \trianglelefteq G$ by Theorem 6(5).
          \item Suppose $N = \cyc{x}$.
 
@@ -978,12 +982,15 @@ Let $G$ and $H$ be groups.
       \begin{align*}
          gng^{-1} &= g({s_1}^{\epsilon_1}{s_2}^{\epsilon_2} \cdots
             {s_m}^{\epsilon_m})g^{-1} \\
-            &= g{s_1}^{\epsilon_1}g^{-1}\cdot g{s_2}^{\epsilon_2}g^{-1} \cdots
-            g{s_m}^{\epsilon_m}g^{-1}. &[\text{Exercise 26(a)}]
+            &= (g{s_1}^{\epsilon_1}g^{-1})\cdot (g{s_2}^{\epsilon_2}g^{-1})
+               \cdots(g{s_m}^{\epsilon_m}g^{-1}). &[\text{Exercise 26(a)}]
       \end{align*}
-      By assumption $g{s_i}^{\epsilon_i}g^{-1} \in N$ for each $1 \le i \le m$,
-      so that $gng^{-1} \in N$ by closure of $N$. That is,
-      $gNg^{-1} \subseteq N$. Conclude by Exercise 27 that $gNg^{-1} = N$. \qed
+      By assumption $g{s_i}g^{-1} \in N$, and by closure of $N$ and Lemma
+      \ref{1_1_22_1}, it follows that
+      $(g{s_i}g^{-1})^{\epsilon_i} = g{s_i}^{\epsilon_i}g^{-1} \in N$,
+      for each $1 \le i \le m$, so that $gng^{-1} \in N$ by closure of $N$.
+      That is, $gNg^{-1} \subseteq N$. Conclude by Exercise 27 that $g$ 
+      normalizes $N$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.29%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.29]  Let $N$ be a \textit{finite} subgroup of a group $G$ and
                   suppose $G = \cyc{T}$ and $N = \cyc{S}$ for some subsets $S$
@@ -995,20 +1002,11 @@ Let $G$ and $H$ be groups.
       $G$. Let $t \in T$. Since $T$ generates $G$, it follows particularly that
       $t \in G$, so that $t$ normalizes $N$. Thus $tSt^{-1} \subseteq N$ by
       Exercise 28. Conversely, suppose that $tSt^{-1} \subseteq N$ for each
-      $t \in T$. That is, $tst^{-1} \in N$ for each $t \in T$ and each
-      $s \in S$. Let $g \in G$. Then
-      $g = {t_1}^{\epsilon_1}{t_2}^{\epsilon_2} \cdots
-       {t_m}^{\epsilon_m}$, where $m \in \Z^+$, and for each $1 \le i \le m$,
-      $\epsilon_i \in \Z$ and $t_i \in T$. Now let $s \in S$. It follows that
-      \begin{align*}
-         gsg^{-1} &= ({t_1}^{\epsilon_1}{t_2}^{\epsilon_2} \cdots
-                     {t_m}^{\epsilon_m})s({t_1}^{\epsilon_1}{t_2}^{\epsilon_2} 
-                  \cdots{t_m}^{\epsilon_m})^{-1} \\
-                     &= g{s_1}^{\epsilon_1}g^{-1}\cdot g{s_2}^{\epsilon_2}g^{-1} 
-                        \cdots g{s_m}^{\epsilon_m}g^{-1}. &[(a)]
-               \end{align*}
-               By assumption $g{s_i}^{\epsilon_i}g^{-1} \in N$ for each
-               $1 \le i \le m$.
+      $t \in T$. Since $G = \cyc{T}$, it follows that $T \subseteq G$, so that
+      each $t\in T$ normalizes $N$ by Exercise 28. Thus $T \subseteq N_G(N)$, 
+      and since $N_G(N)$ is a group, it follows by closure that
+      $G = \cyc{T} \subseteq N_G(N)$. But $N_G(N) \subseteq G$ by definition;
+      thus $G = N_G(N)$; that is, $N \trianglelefteq G$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.30%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.30]  Let $N \le G$ and let $g \in G$. Prove that $gN = Ng$ if and
                   only if $g \in N_G(N)$.
