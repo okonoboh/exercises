@@ -1142,17 +1142,51 @@ Let $G$ and $H$ be groups.
       (Proposition 4) if and only if $\det(Y^{-1}X) = 1$ if and only if
       $\det(Y^{-1})\det(X) = 1$ if and only if $\det(X) = \det(Y)$. Thus all the
       matrices in each left coset of $GL_n(F)/SL_n(F)$ have the same
-      determinant. So there is a bijection from each coset to an element of
+      determinant. So there is a bijection from each left coset to an element of
       $F^\times$. Conclude that $GL_n(F)/SL_n(F) \cong F^\times$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.36]  Prove that if $G/Z(G)$ is cyclic then $G$ is abelian. [If
                   $G/Z(G)$ is cyclic with generator $xZ(G)$, show that every
                   element of $G$ can be written in the form $x^az$ for some
                   integer $a \in \Z$ and some element $z \in Z(G)$.]
+
+      \textbf{Proof.} Suppose that $G/Z(G)$ is cyclic. That is,
+      $G/Z(G) = \cyc{xZ(G)}$, for some $x \in G$. Let $g, h \in G$. It follows
+      that $gZ(G), hZ(G) \in G/Z(G)$, so that $gZ(G) = (xZ(G))^a = x^aZ(G)$ and
+      $hZ(G) = (xZ(G))^b = x^bZ(G)$ for some integers $a$ and $b$. Since
+      $g = g \cdot 1 \in gZ(G) = x^aZ(G)$, it follows that $g = x^az_1$ for some
+      $z_1 \in Z(G)$; similarly, $h = x^bz_2$ for some $z_2 \in Z(G)$. Since
+      \begin{align*}
+         gh &= (x^az_1)(x^bz_2) = x^a(z_1(x^bz_2)) \\
+            &= x^a((x^bz_2)z_1) &[z_1 \in Z(G)] \\
+            &= ((x^ax^b)z_2)z_1 = ((x^bx^a)z_2)z_1
+               &[\text{Powers of $x$ commute}] \\
+            &= (x^b(x^az_2)z_1) =  (x^b(z_2x^a)z_1) &[z_2 \in Z(G)] \\
+            &= (x^bz_2)(x^az_1) = hg,
+      \end{align*}
+      we conclude that $G$ is abelian. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.37%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.37]  Let $A$ and $B$ be groups. Show that $\{(a, 1) : a \in A\}$ is
                   a normal subgroup of $A \times B$ and the quotient of
                   $A \times B$ by this subgroup is isomorphic to $B$.
+
+      \textbf{Proof.} Define $S := \{(a, 1) : a \in A\}$. Let $g \in A \times B$
+      and $s \in S$. It follows that $g = (a, b)$ and $s = (c, 1)$, where
+      $a, c \in A$ and $b \in B$. Since $aca^{-1} \in A$ by closure, it follows
+      that
+      $$gsg^{-1} = (a, b)(c, 1)(a^{-1}, b^{-1}) = (ac, b)(a^{-1}, b^{-1}) =
+        (aca^{-1}, 1) \in S.$$
+      Conclude by Theorem 6(5) that $S \trianglelefteq A \times B$. Consider the
+      map $\varphi : B \rightarrow (A \times B) / S$, $b \mapsto \m{(1, b)}$.
+      This map is a homomorphism because, for $x, y \in B$, we have that
+      $$\varphi(xy) = \m{(1, xy)} = \m{(1, x)}\cdot\m{(1, y)} =
+        \varphi(x)\varphi(y).$$
+      Since the kernel of $\varphi = \{1\}$, it follows by Exercise 1.6.14 that
+      $\varphi$ is injective. Now if $\m{(a, b)} \in (A \times B) / S$, then
+      $\varphi(b) = \m{(1, b)} = \m{(a, b)}$; the last equality followed because
+      $(a^{-1}, b^{-1})(1, b) = (a^{-1}, 1) \in S$ (Proposition 4). Thus
+      $\varphi$ is surjective. Conclude that $\varphi$ is an isomorphism; that
+      is, $(A \times B) / S \cong B$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.38%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.38]  Let $A$ be an abelian group and let $D$ be the (diagonal)
                   subgroup $\{(a, a) : a \in A\}$ of $A \times A$. Prove that
