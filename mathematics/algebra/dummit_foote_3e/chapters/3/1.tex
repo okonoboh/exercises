@@ -1031,15 +1031,72 @@ Let $G$ and $H$ be groups.
                   then $H \le N_G(N)$. Deduce that $N_G(N)$ is the largest
                   subgroup of $G$ in which $N$ is normal (i.e., is the join of
                   all subgroups $H$ for which $N \trianglelefteq H$).
+
+      \textbf{Proof.} Suppose $H \le G$ and $N$ is a normal subgroup of $H$. By
+      definition, every element of $H$ normalizes $N$; thus
+      $H \subseteq N_G(N)$. Indeed, since $H$ is a group, it follows that
+      $H \le N_G(N)$. Since $H$ was an arbitary subgroup, it follows that
+      $N_G(H)$ is a superset of all subgroups of $G$ in which $N$ is normal; and
+      since $N \trianglelefteq N_G(N)$ (by definition), conclude $N_G(N)$ is the 
+      largest subgroup of $G$ in which $N$ is normal. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.32%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.32]  Prove that every subgroup of $Q_8$ is normal. For each
                   subgroup find the isomorphism type of its corresponding
                   quotient. [You may use the lattice of subgroups for $Q_8$ in
                   Section 2.5]
+
+      \textbf{Proof.} Recall from Exercise 1.5.3 that
+      $$Q_8 = \cyc{i, j : i^2 = j^2, i^4 = 1, ij = j^{-1}i }.$$
+      The subgroups 1 and $Q_8$ are both normal in $Q_8$ and we have that
+      $Q_8/1 \cong Q_8$ and $Q_8/Q_8 \cong 1$. From the lattice of subgroups for
+      $Q_8$ in Section 2.5, the remaining subgroups of $Q_8$ are:
+      $$\cyc{i}, \cyc{j}, \cyc{k}, \text{ and } \cyc{-1}.$$
+      Now
+      \begin{align*}
+         i\{i\}i^{-1} &= \{i\} \subseteq \cyc{i}
+            &j\{i\}j^{-1} &= \{-i\} \subseteq \cyc{i} \\
+         i\{j\}i^{-1} &= \{-j\} \subseteq \cyc{j}
+            &j\{j\}j^{-1} &= \{j\} \subseteq \cyc{j} \\
+         i\{k\}i^{-1} &= \{-k\} \subseteq \cyc{k}
+            &j\{k\}j^{-1} &= \{-k\} \subseteq \cyc{k} \\
+         i\{-1\}i^{-1} &= \{-1\} \subseteq \cyc{-1}
+            &j\{-1\}j^{-1} &= \{-1\} \subseteq \cyc{-1}.
+      \end{align*}
+      Conclude by Exercise 29, that
+      $\cyc{i}$, $\cyc{j}$, $\cyc{k}$, \text{ and } $\cyc{-1}$ are all normal in
+      $Q_8$. Since $|\cyc{i}| = |\cyc{j}| = |\cyc{k}| = 4$, it follows that
+      $Q/\cyc{i} \cong Q/\cyc{j} \cong Q/\cyc{k} \cong Q/\cyc{i} \cong Z_2$.
+      Since every nonidentity element of
+      $Q_8/\cyc{-1} = \{\m{1}, \m{i}, \m{j}, \m{k}\}$ has order 2, conclude by
+      Exercise 2.5.10 that $Q_8/\cyc{-1} \cong V_4$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.33%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.33]  Find all normal subgroups of $D_8$ and for each find the
                   isomorphism type of its corresponding quotient. [You may use
                   the lattice of subgroups for $D_8$ in Section 2.5.]
+
+      \textbf{Proof.} The normal subgroups 1 and $D_8$ of $D_8$ corresponds to
+      the quotient groups $D_8/1 \cong D_8$ and $D_8/D_8 \cong 1$, respectively.
+      First observe that $\{r, s\}$ generates $D_8$; now since
+      $rsr^{-1} = r^2s \notin \cyc{s}$, $r(r^2s)r^{-1} = s \notin \cyc{r^2s}$,
+      $r(rs)r^{-1} = r^3s \notin \cyc{rs}$,
+      $r(r^3s)r^{-1} = rs \notin \cyc{r^3s}$, it follows by Exercise 29 that 
+      that these subgroups of $D_8$ are not normal: $\cyc{s}$, $\cyc{r^2s}$,
+      $\cyc{rs}$, $\cyc{r^3s}$. By Exercise 2.2.7(b), $Z(D_8) = \cyc{r^2}$, so
+      that $\cyc{r^2} \trianglelefteq D_8$. Now
+      \begin{align*}
+         r\{s, r^2\}r^{-1} &= \{r^2s, r^2\} \subseteq \cyc{s, r^2}
+            &s\{s, r^2\}s^{-1} &= \{s, r^2\} \subseteq \cyc{s, r^2} \\
+         r\{r\}r^{-1} &= \{r\} \subseteq \cyc{r}
+            &s\{r\}s^{-1} &= \{r^3\} \subseteq \cyc{r} \\
+         r\{rs, r^2\}r^{-1} &= \{r^3s, r^2\} \subseteq \cyc{rs, r^2}
+            &s\{rs, r^2\}s^{-1} &= \{r^3s, r^2\} \subseteq \cyc{rs, r^2}.
+      \end{align*}
+      Conclude by Exercise 29 that the subgroups $\cyc{s, r^2}$, $\cyc{r}$, and
+      $\cyc{rs, r^2}$ are normal in $D_8$. Now
+      $$D_8/\cyc{s, r^2} \cong D_8/\cyc{r} \cong D_8/\cyc{rs, r^2} \cong Z_2,$$
+      because $|\cyc{s, r^2}| = |\cyc{r}| = |\cyc{rs, r^2}| = 4$. Finally,
+      $D_8/\cyc{r^2} = \{\m{1}, \m{r}, \m{s}, \m{rs}\} \cong V_4$ because
+      each element in $D_8/\cyc{r^2}$ has order 2 (Exercise 2.5.10). \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.34%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.34]  Let $D_{2n} = \cyc{r, s : r^n = s^2 = 1, rs = sr^{-1}}$ be the
                   usual presentation of the dihedral group of order $2n$ and let
@@ -1049,9 +1106,44 @@ Let $G$ and $H$ be groups.
                            $D_{2n}$.
                      \item Prove that $D_{2n}/\cyc{r^k} \cong D_{2k}$.
                   \end{enumerate}
+
+      \textbf{Proof.}
+
+      \begin{enumerate}
+         \item We have $r\{r^k\}r^{-1} = \{r^k\} \subseteq \cyc{r^k}$ and
+               $s\{r^k\}s^{-1} = \{r^{-k}\} \subseteq \cyc{r^k}$, so that
+               $\cyc{r^k} \trianglelefteq D_{2n}$ by Exercise 29.
+         \item By Proposition 2.5 (3) $|r^k| = n/k$; so $|\cyc{r^k}| = n/k$ by
+               Proposition 2.2. So each coset of $D_{2n}/\cyc{r^k}$ has order
+               $n/k$; that is, $|D_{2n}/\cyc{r^k}| = 2n/(n/k) = 2k$. We have 
+               that $\m{r}^k = \m{s}^2 = \m{1}$ because
+               $1 = s^2, r^k \in \cyc{r^k}$. Thus we have by Exercise 16 that
+               $$D_{2n}/\cyc{r^k} = \{\m{r}, \m{s} : \m{r}^k = \m{s}^2 = \m{1},
+                 \m{r}\cdot\m{s} = \m{s}\cdot\m{r}^{-1}\}.$$
+               The above presentation for $D_{2n}/\cyc{r^k}$ shows that
+               $\m{r}$, $\m{s} \in D_{2n}/\cyc{r^k}$ satisfy the same
+               relations that $r, s \in D_{2k}$ satisfy, and since
+               $|D_{2n}/\cyc{r^k}| = |D_{2k}| = 2k$, conclude that
+               $D_{2n}/\cyc{r^k} \cong D_{2k}$.
+      \end{enumerate} \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.35]  Prove that $SL_n(F) \trianglelefteq GL_n(F)$ and describe the
                   isomorphism type of the quotient group.
+
+      \textbf{Proof.} Let $G \in GL_n(F)$ and $S \in SL_n(F)$. By definition,
+      $\det(G) \neq 0$ and $\det(S) = 1$. Using the fact that the determinant of
+      a product is the product of the determinants, it follows that
+      $$\det(GSG^{-1}) = \det(G)\det(S)\det(G^{-1}) = \det(G)\det(G^{-1}) =
+        \det(GG^{-1}) = 1,$$
+      so that $GSG^{-1} \in SL_n(F)$. Conclude by Theorem 6(5) that
+      $SL_n(F) \trianglelefteq GL_n(F)$. Now let $\m{X}$ and $\m{Y}$ be two 
+      equal left cosets in $GL_n(F)/SL_n(F)$, for some $X, Y \in GL_n(F)$. It 
+      follows that $\m{X} = \m{Y}$ if and only if $Y^{-1}X \in SL_n(F)$ 
+      (Proposition 4) if and only if $\det(Y^{-1}X) = 1$ if and only if
+      $\det(Y^{-1})\det(X) = 1$ if and only if $\det(X) = \det(Y)$. Thus all the
+      matrices in each left coset of $GL_n(F)/SL_n(F)$ have the same
+      determinant. So there is a bijection from each coset to an element of
+      $F^\times$. Conclude that $GL_n(F)/SL_n(F) \cong F^\times$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.36%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.36]  Prove that if $G/Z(G)$ is cyclic then $G$ is abelian. [If
                   $G/Z(G)$ is cyclic with generator $xZ(G)$, show that every
@@ -1088,7 +1180,7 @@ Let $G$ and $H$ be groups.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.43%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.43]  Assume that $\mathcal{P} = \{A_i : i \in I\}$ is any partition
                   of $G$ with the property that $\mathcal{P}$ is a group under
-                  the ``quotienet operation" defined as follows: to compute the
+                  the ``quotient operation" defined as follows: to compute the
                   product of $A_i$ with $A_j$ take any element $a_i$ of $A_i$
                   and any element $a_j$ of $A_j$ and let $A_iA_j$ be the element
                   of $\mathcal{P}$ containing $a_ia_j$ (this operation is
