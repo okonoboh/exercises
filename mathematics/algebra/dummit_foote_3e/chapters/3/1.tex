@@ -1192,25 +1192,80 @@ Let $G$ and $H$ be groups.
                   subgroup $\{(a, a) : a \in A\}$ of $A \times A$. Prove that
                   $D$ is a normal subgroup of $A \times A$ and
                   $(A \times A)/D \cong A$.
+
+      \textbf{Proof.} Since $A$ is abelian, it follows immediately that
+      $A \times A$ is also abelian; that is, all the subgroups of $A \times A$
+      are normal; thus $D \trianglelefteq A \times A$. Now consider the map
+      $\alpha : A \rightarrow (A \times A)/D$, $a \mapsto \m{(a, 1)}$. It
+      follows immediately that $\alpha$ is a homomorphism because for
+      $x, y \in A$, we have that
+      $$\alpha(xy) = \m{(xy, 1)} = \m{(x, 1)}\cdot\m{(y, 1)} =
+        \alpha(x)\alpha(y).$$
+      We have that $\alpha(a) = \m{1}$ if and only if $(a, 1)D = D$ if and only
+      if $(a, 1) \in D$ (Proposition 4) if and only if $a = 1$, so that the
+      kernel of $\alpha$ is trivial; it follows by Exercise 1.6.14 that $\alpha$
+      is injective. Now consider $(a, b)D \in (A \times A)/D$. We have that
+      $\alpha(ab^{-1}) = (ab^{-1}, 1)S = (a, b)S$ because
+      $(a, b)^{-1}(ab^{-1}, 1) = (a^{-1}ab^{-1}, b^{-1}) = (b^{-1}, b^{-1}) \in
+      S$, so that $\alpha$ is onto. Thus $\alpha$ is an isomorphism. Conclude
+      that $(A \times A)/D \cong A$. \qed      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.39%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.39]  Suppose $A$ is the non-abelian group $S_3$ and $D$ is the
                   diagonal subgroup $\{(a, a) : a \in A\}$ of $A \times A$.
                   Prove that $D$ is not normal in $A \times A$.
+
+      \textbf{Proof.} Let $x = (1\;2\;3)$, $y = (1\;2) \in A$. We have
+      $(x, y) \in A \times A$ and $(y, y) \in D$, but since
+      $$(x, y)(y, y)(x, y)^{-1} = (xyx^{-1}, y) = ((2\;3), (1\;2)) \notin D,$$
+      we conclude that $D$ is not normal in $A \times A$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.40%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.40]  Let $G$ be a group, let $N$ be a normal subgroup of $G$ and
                   let $\m{G} = G/N$. Prove that $\m{x}$ and $\m{y}$ commute in
                   $\m{G}$ if and only if $x^{-1}y^{-1}xy \in N$. (The element
                   $x^{-1}y^{-1}xy$ is called the \textit{commutator} of $x$ and
                   $y$ and is denoted by $[x, y]$.)
+
+      \textbf{Proof.} Let $x, y \in G$. Suppose first that
+      $x^{-1}y^{-1}xy \in N$. It follows by Proposition 4 that
+      $\m{x^{-1}y^{-1}xy} = \m{1}$. Pre-multiply the preceding equality by
+      $\m{yx}$ on both sides to get $\m{xy} = \m{yx}$. Thus $xN$ and $yN$
+      commute in $G/N$. Now suppose that $\m{x} \cdot \m{y} = \m{y}\cdot \m{x}$. 
+      Pre-multiply the preceding equality (on both sides) by
+      $\m{x^{-1}}\cdot \m{y^{-1}}$ to get $\m{x^{-1}y^{-1}xy} = \m{1}$. Conclude
+      by Proposition 4 that $x^{-1}y^{-1}xy \in N$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.41%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.41]  Let $G$ be a group. Prove that
                   $N = \cyc{x^{-1}y^{-1}xy : x, y \in G}$ is a normal sugroup of
                   $G$ and $G/N$ is abelian ($N$ is called the
                   \textit{commutator subgroup} of $G$).
+
+      \textbf{Proof.} We have that $N = \cyc{S}$, where
+      $S = \{[x, y] : x, y \in G\}$. Let $g \in G$ and $s \in S$. Then
+      $s = [r, t] = r^{-1}t^{-1}rt$ for some $r, t \in G$. Now it follows that
+      \begin{align*}
+         gsg^{-1} &= g(r^{-1}t^{-1}rt)g^{-1} \\
+            &= (gr^{-1}g^{-1})(gt^{-1}g^{-1})(grg^{-1})(gtg^{-1})
+               &[\text{Exercise }26(a)] \\
+            &= (grg^{-1})^{-1}(gtg^{-1})^{-1}(grg^{-1})(gtg^{-1})
+               &[\text{Lemma }\ref{1_1_22_1}] \\
+            &= [grg^{-1}, gtg^{-1}] \in S.
+      \end{align*}
+      Hence $gSg^{-1} \subseteq S \subseteq N$ for all $g \in G$. Conclude by
+      Exercise 26(b) that $N \trianglelefteq G$. Let $a, b \in G$. Since
+      $[a, b] \in S$, it follows that $[a, b] \in N$, so that $aN$ commute with
+      $bN$ by Exercise 40. Thus $G/N$ is abelian. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.42%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.42]  Assume both $H$ and $K$ are normal subgroups of $G$ with
                   $H \cap K = 1$. Prove that $xy = yx$ for all $x \in H$ and
                   $y \in K$. [Show that $x^{-1}y^{-1}xy \in H \cap K$.]
+
+      \textbf{Proof.} Let $x \in H$ and $y \in K$. Since $H$ is normal in $G$,
+      it follows by Theorem 6(5) that $y^{-1}xy \in H$. By closure, it follows
+      that $x^{-1}(y^{-1}xy) = x^{-1}(y^{-1}xy) \in H$. Similarly,
+      $x^{-1}y^{-1}x \in K$ by normality of $K$ in $G$, so that
+      $x^{-1}y^{-1}xy = (x^{-1}y^{-1}x)y \in K$ by closure. That is,
+      $x^{-1}y^{-1}xy \in H \cap K = 1$, so that $x^{-1}y^{-1}xy = 1$. Thus
+      $xy = yx$. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.1.43%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.1.43]  Assume that $\mathcal{P} = \{A_i : i \in I\}$ is any partition
                   of $G$ with the property that $\mathcal{P}$ is a group under
@@ -1223,4 +1278,24 @@ Let $G$ and $H$ be groups.
                   subgroup of $G$ and the elements of $\mathcal{P}$ are the
                   cosets of this subgroup (so $\mathcal{P}$ is just a quotient
                   group of $G$ in the usual sense.)
+
+      \textbf{Proof.} Let $X_a$ be the set in $\mathcal{P}$ that contains
+      $a \in G$. Consider the map $\varphi : G \rightarrow \mathcal{P}$,
+      $g \mapsto X_g$. This map is well-defined because the sets in
+      $\mathcal{P}$ are mutually disjoint. For $x, y \in G$, we have that
+      $$\varphi(xy) = X_{xy} = X_xX_y = \alpha(x)\alpha(y),$$
+      so that $\varphi$ is a homomorphism. Since $X_gX_1 = X_g = X_1X_g$, it
+      follows that $X_1$ is the identity of $\mathcal{P}$. Now
+      $\varphi(a) = X_a = X_1$ if and only if $a$ and $1$ are in the same set
+      that lies in $\mathcal{P}$ if and only if $a \in X_1$. Thus, the kernel of
+      $\varphi$ is $X_1$, which is the element of $\mathcal{P}$ that contains 
+      the identity of $G$. By Proposition 7, $X_1 \trianglelefteq G$. Now let
+      $gX_1 \in G/X_1$. For $gu \in gX_1$ (with $u \in X_1$), we have that
+      $\varphi(gu) = \varphi(g)\varphi(u) = X_gX_1 = X_g$, so that
+      $gX_1 \subseteq X_g$. Now if $y \in X_g$ (i.e., $X_g = X_y$), then
+      $$\varphi(g^{-1}y) = \varphi(g^{-1})\varphi(y) = X_{g^{-1}}X_y =
+        X_{g^{-1}}X_g = X_1,$$
+      so that $g^{-1}y \in \text{kernel}(\varphi) = X_1$. Thus
+      $y = g(g^{-1}y) \in gX_1$ implies that $X_g \subseteq gX_1$. Conclude that
+      $X_g = gX_1$. It follows that $\mathcal{P} = G/X_1$. \qed
 \end{enumerate}
