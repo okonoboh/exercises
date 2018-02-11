@@ -47,6 +47,12 @@ Let $G$ a group.
    \item[3.2.4]   Show that if $|G| = pq$ for some primes $p$ and $q$ (not
                   necessarily distinct) then either $G$ is abelian or
                   $Z(G) = 1$. [See Exercise 36 in Section 1.]
+
+      \textbf{Proof.} Suppose $|G| = pq$, for some primes $p$ and $q$. If
+      $Z(G)$ is trivial, we are done, so assume $|Z(G)| > 1$. It follows by 
+      Lagrange's Theorem that $|Z(G)| \in \{p, q, pq\}$. Thus
+      $|G/Z(G)| \in \{1, p, q\}$, so that $G/Z(G)$ is cyclic by Corollary 3.10.
+      Conclude by Exercise 3.1.36 that $G$ is abelian. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%3.2.5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[3.2.5]   Let $H$ be a subgroup of $G$ and fix some element $g \in G$.
                   \begin{enumerate}
