@@ -82,9 +82,11 @@
       and $\overline{c}$ in $\Z/n\Z$. By Theorem 3, Pg. 9, we have that
       \begin{align*}
          \overline{a} + (\overline{b} + \overline{c})
-            &= \overline{a} + \overline{b + c} \\
-            &= \overline{a + b + c} \\
-            &= \overline{a + b} + \overline{c} \\
+            &= \overline{a} + \overline{(b + c)} \\
+            &= \overline{a + (b + c)} \\
+            &= \overline{(a + b) + c}
+               &\text{[By Associativity of Integers]} \\
+            &= \overline{(a + b)} + \overline{c} \\
             &= (\overline{a} + \overline{b}) + \overline{c},
       \end{align*}
       so that addition of residue classes in $\Z/n\Z$ is associative. \qed
@@ -97,7 +99,8 @@
       \begin{align*}
          \overline{a} \cdot (\overline{b} \cdot \overline{c})
             &= \overline{a} \cdot \overline{bc} \\
-            &= \overline{abc} \\
+            &= \overline{a(bc)} \\
+            &= \overline{(ab)c)} &\text{[By Associativity of Integers]} \\
             &= \overline{ab} \cdot \overline{c} \\
             &= (\overline{a} \cdot \overline{b}) \cdot \overline{c},
       \end{align*}
@@ -106,9 +109,14 @@
    \item[1.1.5]   Prove that for all $n > 1$ that $\Z/n\Z$ is not a group under
                   multiplication of residue classes.
                   
-      \textbf{Proof.} Let $n$ be positive integer greater than 1. It follows
-      that $\Z/n\Z$ is not a group under multiplication because $\overline{0}$
-      has no multiplicative inverse. \qed
+      \textbf{Proof.} Let $n$ be a positive integer greater than 1. For each
+      $\overline{x} \in \Z/n\Z$, we have
+      $\overline{x} \cdot \overline{1} = \overline{1} \cdot \overline{x} =
+      \overline{x}$, so that $\overline{1}$ is the identity. However,
+      $\overline{0} \cdot \overline{y} = \overline{0} \neq \overline{1}$ for
+      each $\overline{y} \in \Z/n\Z$. So $\overline{0}$ has no inverse under
+      multiplication; conclude that $\Z/n\Z$ is not a group under
+      multiplication of residue classes. \qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1.1.6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \item[1.1.6]   Determine which of the following sets are groups under
                   addition:
